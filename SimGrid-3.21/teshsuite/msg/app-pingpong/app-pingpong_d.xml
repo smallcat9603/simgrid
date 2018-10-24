@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4.1">
+<!-- For using with ping_pong, platform_sendrecv.xml -->
+  <actor host="Tremblay" function="pinger">
+    <argument value="Jupiter"/>
+  </actor>
+  <actor host="Jupiter"  function="ponger">
+    <argument value="Tremblay"/>
+  </actor>
+</platform>

@@ -1,0 +1,163 @@
+#!/usr/bin/env tesh
+
+p This is a basic test
+
+< TOTO \
+TUTU
+$ mkfile tmp_fich
+
+$ cat tmp_fich
+> TOTO TUTU
+
+! expect return 2
+! output ignore
+< $ cat tmp_fich
+< > TUTU TOTO
+$ ${bindir:=.}/tesh 
+
+$ rm tmp_fich
+
+p And now, some multilines examples
+
+p Really basic multiline
+< a
+< b
+< c
+< d
+$ mkfile tmp_fich
+
+$ cat tmp_fich
+> a
+> b
+> c
+> d
+
+$ sed -n '$=' tmp_fich
+> 4
+
+$ rm tmp_fich
+
+p Now, check for spaces in input
+
+p * leading and trailing spaces...
+<   a
+<  b 
+< c  
+$ sed 's/ /_/g'
+> __a
+> _b_
+> c__
+
+p * empty lines...
+< a
+<
+< c
+$ sed '2s/^/b/'
+> a
+> b
+> c
+
+<
+< b
+< c
+$ sed '1s/^/a/'
+> a
+> b
+> c
+
+p Now that input should be good, check for spaces in output
+
+p * leading spaces...
+< _x
+$ sed 's/_/ /'
+>  x
+
+! expect return 2
+! output ignore
+< < _x
+< $ sed 's/_/ /'
+< > x
+$ ${bindir:=.}/tesh
+
+! expect return 2
+! output ignore
+< < x
+< $ cat
+< >  x
+$ ${bindir:=.}/tesh
+
+p * trailing spaces...
+< x_
+$ sed 's/_/ /'
+> x 
+
+! expect return 2
+! output ignore
+< < x_
+< $ sed 's/_/ /'
+< > x
+$ ${bindir:=.}/tesh
+
+! expect return 2
+! output ignore
+< < x
+< $ cat
+< > x 
+$ ${bindir:=.}/tesh
+
+p * empty lines...
+< a
+<
+< c
+$ cat
+> a
+>
+> c
+
+! expect return 2
+! output ignore
+< < a
+< <
+< < c
+< $ cat
+< > a
+< > c
+$ ${bindir:=.}/tesh 
+
+! expect return 2
+! output ignore
+< < a
+< < c
+< $ cat
+< > a
+< >
+< > c
+$ ${bindir:=.}/tesh 
+
+<
+< b
+< c
+$ cat
+>
+> b
+> c
+
+! expect return 2
+! output ignore
+< <
+< < b
+< < c
+< $ cat
+< > b
+< > c
+$ ${bindir:=.}/tesh 
+
+! expect return 2
+! output ignore
+< < b
+< < c
+< $ cat
+< >
+< > b
+< > c
+$ ${bindir:=.}/tesh 

@@ -1,0 +1,25 @@
+! output ignore
+$ cmake -E remove bgtesh.pl bgtesh.data
+
+< use strict;
+< sleep(1);
+< open (FILE, "<bgtesh.data") || die "Cannot open bgtesh.data: $!\n";
+<
+< while (<FILE>) {
+<   print;
+< }
+< close(FILE);
+< exit 0;
+<
+$ mkfile bgtesh.pl
+
+& perl bgtesh.pl
+> TOTO
+
+< TOTO
+$ mkfile bgtesh.data
+
+$ sleep 2
+
+! output ignore
+$ cmake -E remove bgtesh.pl bgtesh.data

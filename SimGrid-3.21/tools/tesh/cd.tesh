@@ -1,0 +1,29 @@
+#!/usr/bin/env tesh
+
+# This example uses the cd command
+
+! output ignore
+$ cmake -E remove_directory testdir_temp-cd
+
+$ mkdir testdir_temp-cd
+$ cd testdir_temp-cd
+
+# Check that there is nothing in the current dir (which must be testdir_temp-cd)
+$ ls
+
+# Check that tesh detects properly cd to non-existing directories
+! expect return 4
+< $ cd toto
+> Test suite from stdin
+> Chdir to toto failed: No such file or directory
+> Test suite `(stdin)': NOK (system error)
+$ ${bindir:=.}/tesh
+
+# The next command checks that there is a testdir_temp-cd in the upper directory,
+# ie that mkdir and cd both worked.
+$ test -e ../testdir_temp-cd
+
+$ cd ..
+
+! output ignore
+$ cmake -E remove_directory testdir_temp-cd

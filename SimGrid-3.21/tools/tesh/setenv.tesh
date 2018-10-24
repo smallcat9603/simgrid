@@ -1,0 +1,21 @@
+#!/usr/bin/env tesh
+# This suite builds and uses a program returning 1.
+# tesh is instructed of this return code and must not whine.
+
+! output ignore
+$ cmake -E remove_directory temp_testdir_setenv
+
+$ mkdir temp_testdir_setenv
+$ cd temp_testdir_setenv
+
+< print "tesh_test_toto=$ENV{tesh_test_toto}";
+$ mkfile testenv.pl
+
+! setenv tesh_test_toto=blah
+$ perl testenv.pl
+> tesh_test_toto=blah
+
+$ cd ..
+
+! output ignore
+$ cmake -E remove_directory temp_testdir_setenv
