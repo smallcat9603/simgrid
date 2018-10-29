@@ -1,0 +1,380 @@
+#This file was generated using SimGrid-3.21.90
+#[./master-workers small_platform.xml master-workers_d.xml --cfg=tracing:yes --cfg=tracing/msg/process:yes ]
+%EventDef PajeDefineContainerType 0
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineVariableType 1
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeDefineStateType 2
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEventType 3
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineLinkType 4
+%       Alias string
+%       Type string
+%       StartContainerType string
+%       EndContainerType string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEntityValue 5
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeCreateContainer 6
+%       Time date
+%       Alias string
+%       Type string
+%       Container string
+%       Name string
+%EndEventDef
+%EventDef PajeDestroyContainer 7
+%       Time date
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeSetVariable 8
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeAddVariable 9
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSubVariable 10
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSetState 11
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePushState 12
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePopState 13
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeResetState 14
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeStartLink 15
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       StartContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeEndLink 16
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       EndContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeNewEvent 17
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+0 1 0 HOST
+6 0.000000 1 1 0 "Tremblay"
+6 0.000000 2 1 0 "Jupiter"
+6 0.000000 3 1 0 "Fafard"
+6 0.000000 4 1 0 "Ginette"
+6 0.000000 5 1 0 "Bourassa"
+6 0.000000 6 1 0 "Jacquelin"
+6 0.000000 7 1 0 "Boivin"
+0 2 0 LINK
+6 0.000000 8 2 0 "6"
+6 0.000000 9 2 0 "3"
+6 0.000000 10 2 0 "7"
+6 0.000000 11 2 0 "9"
+6 0.000000 12 2 0 "2"
+6 0.000000 13 2 0 "8"
+6 0.000000 14 2 0 "1"
+6 0.000000 15 2 0 "4"
+6 0.000000 16 2 0 "0"
+6 0.000000 17 2 0 "5"
+6 0.000000 18 2 0 "145"
+6 0.000000 19 2 0 "10"
+6 0.000000 20 2 0 "11"
+6 0.000000 21 2 0 "16"
+6 0.000000 22 2 0 "17"
+6 0.000000 23 2 0 "44"
+6 0.000000 24 2 0 "47"
+6 0.000000 25 2 0 "54"
+6 0.000000 26 2 0 "56"
+6 0.000000 27 2 0 "59"
+6 0.000000 28 2 0 "78"
+6 0.000000 29 2 0 "79"
+6 0.000000 30 2 0 "80"
+6 0.000000 31 2 0 "loopback"
+4 3 0 2 2 0-LINK2-LINK2
+4 4 0 1 2 0-HOST1-LINK2
+4 5 0 2 1 0-LINK2-HOST1
+15 0.000000 3 0 topology 12 0
+16 0.000000 3 0 topology 16 0
+15 0.000000 3 0 topology 9 1
+16 0.000000 3 0 topology 16 1
+15 0.000000 3 0 topology 16 2
+16 0.000000 3 0 topology 14 2
+15 0.000000 3 0 topology 21 3
+16 0.000000 3 0 topology 19 3
+15 0.000000 3 0 topology 8 4
+16 0.000000 3 0 topology 19 4
+15 0.000000 3 0 topology 19 5
+16 0.000000 3 0 topology 20 5
+15 0.000000 3 0 topology 8 6
+16 0.000000 3 0 topology 20 6
+15 0.000000 3 0 topology 27 7
+16 0.000000 3 0 topology 18 7
+15 0.000000 4 0 topology 5 8
+16 0.000000 4 0 topology 18 8
+15 0.000000 4 0 topology 4 9
+16 0.000000 4 0 topology 18 9
+15 0.000000 4 0 topology 2 10
+16 0.000000 4 0 topology 18 10
+15 0.000000 3 0 topology 16 11
+16 0.000000 3 0 topology 21 11
+15 0.000000 3 0 topology 21 12
+16 0.000000 3 0 topology 22 12
+15 0.000000 3 0 topology 9 13
+16 0.000000 3 0 topology 12 13
+15 0.000000 3 0 topology 15 14
+16 0.000000 3 0 topology 9 14
+15 0.000000 4 0 topology 1 15
+16 0.000000 4 0 topology 9 15
+15 0.000000 3 0 topology 20 16
+16 0.000000 3 0 topology 23 16
+15 0.000000 3 0 topology 23 17
+16 0.000000 3 0 topology 24 17
+15 0.000000 4 0 topology 5 18
+16 0.000000 4 0 topology 24 18
+15 0.000000 4 0 topology 4 19
+16 0.000000 4 0 topology 24 19
+15 0.000000 4 0 topology 2 20
+16 0.000000 4 0 topology 24 20
+15 0.000000 3 0 topology 11 21
+16 0.000000 3 0 topology 15 21
+15 0.000000 4 0 topology 1 22
+16 0.000000 4 0 topology 15 22
+15 0.000000 3 0 topology 12 23
+16 0.000000 3 0 topology 17 23
+15 0.000000 3 0 topology 9 24
+16 0.000000 3 0 topology 17 24
+15 0.000000 3 0 topology 22 25
+16 0.000000 3 0 topology 25 25
+15 0.000000 3 0 topology 12 26
+16 0.000000 3 0 topology 25 26
+15 0.000000 3 0 topology 25 27
+16 0.000000 3 0 topology 26 27
+15 0.000000 3 0 topology 26 28
+16 0.000000 3 0 topology 27 28
+15 0.000000 3 0 topology 14 29
+16 0.000000 3 0 topology 8 29
+15 0.000000 3 0 topology 13 30
+16 0.000000 3 0 topology 8 30
+15 0.000000 3 0 topology 11 31
+16 0.000000 3 0 topology 8 31
+15 0.000000 3 0 topology 8 32
+16 0.000000 3 0 topology 10 32
+15 0.000000 3 0 topology 30 33
+16 0.000000 3 0 topology 28 33
+15 0.000000 4 0 topology 3 34
+16 0.000000 4 0 topology 28 34
+15 0.000000 3 0 topology 28 35
+16 0.000000 3 0 topology 29 35
+15 0.000000 4 0 topology 3 36
+16 0.000000 4 0 topology 30 36
+15 0.000000 3 0 topology 14 37
+16 0.000000 3 0 topology 13 37
+15 0.000000 3 0 topology 29 38
+16 0.000000 3 0 topology 11 38
+15 0.000000 4 0 topology 1 39
+16 0.000000 4 0 topology 11 39
+15 0.000000 5 0 topology 24 40
+16 0.000000 5 0 topology 7 40
+15 0.000000 5 0 topology 10 41
+16 0.000000 5 0 topology 5 41
+15 0.000000 5 0 topology 13 42
+16 0.000000 5 0 topology 3 42
+15 0.000000 5 0 topology 17 43
+16 0.000000 5 0 topology 4 43
+15 0.000000 5 0 topology 18 44
+16 0.000000 5 0 topology 6 44
+15 0.000000 5 0 topology 11 45
+16 0.000000 5 0 topology 2 45
+0 6 1 ACTOR
+6 0.000000 32 6 1 "master-1"
+2 7 6 ACTOR_STATE
+5 8 7 suspend "1 0 1"
+5 9 7 sleep "1 1 0"
+5 10 7 receive "1 0 0"
+5 11 7 send "0 0 1"
+5 12 7 execute "0 1 1"
+4 13 0 6 6 ACTOR_LINK
+4 14 0 6 6 ACTOR_TASK_LINK
+6 0.000000 33 6 1 "worker-2"
+6 0.000000 34 6 2 "worker-3"
+6 0.000000 35 6 3 "worker-4"
+6 0.000000 36 6 4 "worker-5"
+6 0.000000 37 6 5 "worker-6"
+12 0.000000 7 32 11
+12 0.000000 7 33 10
+12 0.000000 7 34 10
+12 0.000000 7 35 10
+12 0.000000 7 36 10
+12 0.000000 7 37 10
+12 0.002265 7 32 11
+12 0.002265 7 33 12
+12 0.171420 7 32 11
+12 0.171420 7 34 12
+12 0.329817 7 32 11
+12 0.329817 7 35 12
+12 0.453549 7 32 11
+12 0.453549 7 36 12
+13 0.511975 7 33
+12 0.511975 7 33 10
+12 0.586168 7 32 11
+12 0.586168 7 37 12
+12 0.588433 7 32 11
+12 0.588433 7 33 12
+13 0.826762 7 34
+12 0.826762 7 34 10
+13 0.985159 7 35
+12 0.985159 7 35 10
+12 0.995917 7 32 11
+12 0.995917 7 34 12
+13 1.098143 7 33
+12 1.098143 7 33 10
+12 1.154314 7 32 11
+12 1.154314 7 35 12
+13 1.484647 7 36
+12 1.484647 7 36 10
+12 1.608379 7 32 11
+12 1.608379 7 36 12
+13 1.617266 7 37
+12 1.617266 7 37 10
+13 1.651259 7 34
+12 1.651259 7 34 10
+12 1.749885 7 32 11
+12 1.749885 7 37 12
+12 1.752150 7 32 11
+12 1.752150 7 33 12
+13 1.809656 7 35
+12 1.809656 7 35 10
+12 1.921304 7 32 11
+12 1.921304 7 34 12
+12 2.079701 7 32 11
+12 2.079701 7 35 12
+13 2.261860 7 33
+12 2.261860 7 33 10
+13 2.576647 7 34
+12 2.576647 7 34 10
+13 2.639477 7 36
+12 2.639477 7 36 10
+13 2.735044 7 35
+12 2.735044 7 35 10
+12 2.763209 7 32 11
+12 2.763209 7 36 12
+13 2.780982 7 37
+12 2.780982 7 37 10
+12 2.913601 7 32 11
+12 2.913601 7 37 12
+12 2.915867 7 32 11
+12 2.915867 7 33 12
+12 3.085021 7 32 11
+12 3.085021 7 34 12
+12 3.243418 7 32 11
+12 3.243418 7 35 12
+13 3.425577 7 33
+12 3.425577 7 33 10
+13 3.740364 7 34
+12 3.740364 7 34 10
+13 3.794306 7 36
+12 3.794306 7 36 10
+13 3.898760 7 35
+12 3.898760 7 35 10
+12 3.918038 7 32 11
+12 3.918038 7 36 12
+13 3.944699 7 37
+12 3.944699 7 37 10
+12 4.077318 7 32 11
+12 4.077318 7 37 12
+7 4.077513 6 33
+12 4.077513 7 32 11
+7 4.096528 6 34
+12 4.096528 7 32 11
+7 4.122236 6 35
+12 4.122236 7 32 11
+13 4.949136 7 36
+12 4.949136 7 36 10
+12 4.965689 7 32 11
+7 4.965689 6 36
+13 5.108416 7 37
+12 5.108416 7 37 10
+7 5.133855 6 32
+7 5.133855 6 37
+7 5.133855 2 16
+7 5.133855 2 14
+7 5.133855 2 19
+7 5.133855 2 20
+7 5.133855 2 18
+7 5.133855 2 21
+7 5.133855 2 22
+7 5.133855 2 12
+7 5.133855 2 9
+7 5.133855 2 15
+7 5.133855 2 23
+7 5.133855 2 24
+7 5.133855 2 17
+7 5.133855 2 25
+7 5.133855 2 26
+7 5.133855 2 27
+7 5.133855 2 8
+7 5.133855 2 10
+7 5.133855 2 28
+7 5.133855 2 29
+7 5.133855 2 13
+7 5.133855 2 30
+7 5.133855 2 11
+7 5.133855 1 7
+7 5.133855 1 5
+7 5.133855 1 3
+7 5.133855 1 4
+7 5.133855 1 6
+7 5.133855 1 2
+7 5.133855 1 1
+7 5.133855 2 31
