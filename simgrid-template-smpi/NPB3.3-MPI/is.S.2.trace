@@ -1,0 +1,289 @@
+#This file was generated using SimGrid-3.21.90
+#[bin/is.S.2 --cfg=smpi/privatization:1 --cfg=tracing:yes --cfg=tracing/filename:smpi_simgrid.trace --cfg=tracing/smpi:yes --cfg=surf/precision:1e-9 --cfg=network/model:SMPI --cfg=tracing/filename:is.2.4.trace ../cluster_crossbar.xml smpitmp-appKjgADB ]
+%EventDef PajeDefineContainerType 0
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineVariableType 1
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeDefineStateType 2
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEventType 3
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineLinkType 4
+%       Alias string
+%       Type string
+%       StartContainerType string
+%       EndContainerType string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEntityValue 5
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeCreateContainer 6
+%       Time date
+%       Alias string
+%       Type string
+%       Container string
+%       Name string
+%EndEventDef
+%EventDef PajeDestroyContainer 7
+%       Time date
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeSetVariable 8
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeAddVariable 9
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSubVariable 10
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSetState 11
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePushState 12
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePopState 13
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeResetState 14
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeStartLink 15
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       StartContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeEndLink 16
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       EndContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeNewEvent 17
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+0 1 0 MPI
+2 2 1 MPI_STATE
+4 3 0 1 1 MPI_LINK
+4 4 0 1 1 MIGRATE_LINK
+2 5 1 MIGRATE_STATE
+6 0.000000 1 1 0 "rank-1"
+5 6 2 PMPI_Init "0 1 0"
+6 0.000000 2 1 0 "rank-2"
+12 0.000000 2 1 6
+13 0.000000 2 1
+12 0.000000 2 2 6
+13 0.000000 2 2
+5 7 2 PMPI_Bcast "0 0.78 0.39"
+5 8 2 PMPI_Allreduce "1 0 1"
+5 9 2 PMPI_Alltoall "0.52 0 1"
+5 10 2 PMPI_Alltoallv "0.78 0.52 1"
+5 11 2 PMPI_Reduce "0 1 0"
+5 12 2 PMPI_Irecv "1 0.52 0.52"
+5 13 2 PMPI_Wait "1 1 0"
+5 14 2 PMPI_Send "0 0 1"
+5 15 2 PMPI_Finalize "0 1 0"
+12 0.000000 2 2 7
+12 0.000000 2 1 7
+13 0.000000 2 1
+12 0.000000 2 1 8
+13 0.000202 2 2
+12 0.000202 2 2 8
+13 0.000390 2 1
+12 0.000390 2 1 9
+13 0.000578 2 2
+12 0.000578 2 2 9
+13 0.000780 2 1
+13 0.000780 2 2
+12 0.000780 2 2 10
+12 0.000780 2 1 10
+13 0.002502 2 1
+13 0.002502 2 2
+12 0.002502 2 1 8
+12 0.002502 2 2 8
+13 0.002690 2 1
+12 0.002690 2 1 9
+13 0.002879 2 2
+12 0.002879 2 2 9
+13 0.003080 2 1
+12 0.003080 2 1 10
+13 0.003080 2 2
+12 0.003080 2 2 10
+13 0.004803 2 1
+13 0.004803 2 2
+12 0.004803 2 1 8
+12 0.004803 2 2 8
+13 0.004991 2 1
+12 0.004991 2 1 9
+13 0.005179 2 2
+12 0.005179 2 2 9
+13 0.005381 2 1
+12 0.005381 2 1 10
+13 0.005381 2 2
+12 0.005381 2 2 10
+13 0.007103 2 1
+13 0.007103 2 2
+12 0.007103 2 1 8
+12 0.007103 2 2 8
+13 0.007291 2 1
+12 0.007291 2 1 9
+13 0.007480 2 2
+12 0.007480 2 2 9
+13 0.007681 2 1
+12 0.007681 2 1 10
+13 0.007681 2 2
+12 0.007681 2 2 10
+13 0.009404 2 1
+13 0.009404 2 2
+12 0.009404 2 2 8
+12 0.009404 2 1 8
+13 0.009592 2 1
+12 0.009592 2 1 9
+13 0.009780 2 2
+12 0.009780 2 2 9
+13 0.009982 2 1
+12 0.009982 2 1 10
+13 0.009982 2 2
+12 0.009982 2 2 10
+13 0.011704 2 1
+13 0.011704 2 2
+12 0.011704 2 2 8
+12 0.011704 2 1 8
+13 0.011892 2 1
+12 0.011892 2 1 9
+13 0.012080 2 2
+12 0.012080 2 2 9
+13 0.012282 2 1
+12 0.012282 2 1 10
+13 0.012282 2 2
+12 0.012282 2 2 10
+13 0.014004 2 1
+13 0.014004 2 2
+12 0.014004 2 2 8
+12 0.014004 2 1 8
+13 0.014193 2 1
+12 0.014193 2 1 9
+13 0.014381 2 2
+12 0.014381 2 2 9
+13 0.014582 2 1
+12 0.014582 2 1 10
+13 0.014582 2 2
+12 0.014582 2 2 10
+13 0.016305 2 1
+13 0.016305 2 2
+12 0.016305 2 1 8
+12 0.016305 2 2 8
+13 0.016493 2 1
+12 0.016493 2 1 9
+13 0.016681 2 2
+12 0.016681 2 2 9
+13 0.016883 2 1
+12 0.016883 2 1 10
+13 0.016883 2 2
+12 0.016883 2 2 10
+13 0.018605 2 1
+13 0.018605 2 2
+12 0.018605 2 2 8
+12 0.018605 2 1 8
+13 0.018794 2 1
+12 0.018794 2 1 9
+13 0.018982 2 2
+12 0.018982 2 2 9
+13 0.019183 2 1
+12 0.019183 2 1 10
+13 0.019183 2 2
+12 0.019183 2 2 10
+13 0.020906 2 1
+13 0.020906 2 2
+12 0.020906 2 1 8
+12 0.020906 2 2 8
+13 0.021094 2 1
+12 0.021094 2 1 9
+13 0.021282 2 2
+12 0.021282 2 2 9
+13 0.021484 2 1
+12 0.021484 2 1 10
+13 0.021484 2 2
+12 0.021484 2 2 10
+13 0.023206 2 1
+13 0.023206 2 2
+12 0.023206 2 1 8
+12 0.023206 2 2 8
+13 0.023395 2 1
+12 0.023395 2 1 9
+13 0.023583 2 2
+12 0.023583 2 2 9
+13 0.023784 2 1
+12 0.023784 2 1 10
+13 0.023784 2 2
+12 0.023784 2 2 10
+13 0.025507 2 1
+13 0.025507 2 2
+12 0.025507 2 2 11
+12 0.025507 2 1 11
+13 0.025507 2 2
+12 0.025507 2 2 12
+13 0.025507 2 2
+12 0.025507 2 2 13
+13 0.025708 2 1
+12 0.025708 2 1 14
+15 0.025708 3 0 PTP 1 1_2_1000_1
+13 0.025708 2 1
+12 0.025708 2 1 11
+13 0.025910 2 2
+16 0.025910 3 0 PTP 2 1_2_1000_1
+12 0.025910 2 2 11
+13 0.025910 2 2
+12 0.025910 2 2 15
+13 0.026111 2 1
+12 0.026111 2 1 15
+13 0.026111 2 1
+7 0.026111 1 1
+13 0.026111 2 2
+7 0.026111 1 2
