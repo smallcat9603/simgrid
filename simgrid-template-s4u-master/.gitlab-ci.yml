@@ -1,0 +1,23 @@
+# Test that the git version of this template compiles on the simgrid/unstable docker image 
+test-git:
+  image: simgrid/stable
+  script:
+  - apt-get update
+  - apt-get install -y cmake build-essential libboost-dev
+  - cmake .
+  - make VERBOSE=1
+  - ./master-workers small_platform.xml master-workers_d.xml
+  - ./ping-pong cluster_platform.xml
+
+# Test that the simgrid/tuto-s4u docker image is usable as advised in tuto
+test-image:
+  image: simgrid/tuto-s4u
+  script:
+  - mkdir /source/tutorial # create the pseudo-volume
+  - cp -r /source/simgrid-template-s4u.git/* /source/tutorial
+  - cd /source/tutorial
+  - cmake .
+  - make VERBOSE=1
+  - ./master-workers small_platform.xml master-workers_d.xml
+  - ./ping-pong cluster_platform.xml
+ 
