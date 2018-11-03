@@ -1,0 +1,5 @@
+batsim -p batsim-v2.0.0/platforms/cluster512.xml -w batsim-v2.0.0/workload_profiles/batsim_paper_workload_example.json -m 'master_host0' -e "expe-out/out"
+export PATH="$PATH:/home/smallcat/.nix-profile/bin"
+~/.nix-profile/bin/batsched -v easy_bf
+robin generate ./expe.yaml --output-dir=expe-out --batcmd="batsim -p batsim-v2.0.0/platforms/cluster512.xml -w batsim-v2.0.0/workload_profiles/batsim_paper_workload_example.json -m 'master_host0' -e expe-out/out" --schedcmd='batsched -v easy_bf'
+robin ./expe.yaml
