@@ -1,1 +1,1 @@
-batsched -v easy_bf
+batsched -v fcfs_fast
