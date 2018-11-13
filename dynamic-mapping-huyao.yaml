@@ -1,0 +1,9 @@
+batcmd: 'batsim -p batsim-v2.0.0/platforms/small_platform.xml
+                -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json
+                -e dynamic-mapping-out/out'
+failure-timeout: 0
+output-dir: dynamic-mapping-out
+ready-timeout: 3
+schedcmd: "batsched -v filler --variant_options '{\"custom_mapping\": true}'"
+simulation-timeout: 30
+success-timeout: 3
