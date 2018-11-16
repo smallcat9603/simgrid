@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4.1">
+  <actor host="Tremblay" function="master">
+    <argument value="100"/>
+    <argument value="Jupiter"/>
+    <argument value="1"/>
+  </actor>
+  <actor host="Jupiter" function="worker">
+    <argument value="1"/>
+  </actor>
+</platform>
