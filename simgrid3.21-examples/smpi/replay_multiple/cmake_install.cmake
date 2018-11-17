@@ -1,4 +1,4 @@
-# Install script for directory: /github-simgrid/simgrid3.21-examples/smpi/replay_multiple
+# Install script for directory: /source/tutorial/simgrid3.21-examples/smpi/replay_multiple
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/github-simgrid/simgrid3.21-examples/smpi/replay_multiple/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/source/tutorial/simgrid3.21-examples/smpi/replay_multiple/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
