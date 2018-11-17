@@ -1,0 +1,52 @@
++ batsim -p batsim-v2.0.0/platforms/small_platform.xml -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json -e dynamic-mapping-easy-out/out
+[0.000000] [batsim/INFO] Workload '347ebe' corresponds to workload file '/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json'.
+[0.000000] [batsim/INFO] Batsim version: v2.0.0
+[0.000000] [workload/INFO] Loading JSON workload '/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json'...
+[0.000000] [profiles/INFO] base_dir = '/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile '1': [/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/smpi/compute_only/actions0.txt, /mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/smpi/compute_only/actions1.txt]
+[0.000000] [workload/INFO] JSON workload parsed sucessfully. Read 4 jobs and 1 profiles.
+[0.000000] [workload/INFO] Checking workload validity...
+[0.000000] [workload/INFO] Workload seems to be valid.
+[0.000000] [batsim/INFO] Checking whether SMPI is used or not...
+[0.000000] [batsim/INFO] SMPI will be used.
+[0.000000] [workload/INFO] Registering SMPI applications of workload '347ebe'...
+[0.000000] [workload/INFO] Registering app. instance='347ebe!1', nb_process=2
+[0.000000] [workload/INFO] Registering app. instance='347ebe!2', nb_process=2
+[0.000000] [workload/INFO] Registering app. instance='347ebe!3', nb_process=2
+[0.000000] [workload/INFO] Registering app. instance='347ebe!4', nb_process=2
+[0.000000] [workload/INFO] SMPI applications of workload '347ebe' have been registered.
+[0.000000] [smpi_kernel/INFO] You did not set the power of the host running the simulation.  The timings will certainly not be accurate.  Use the option "--cfg=smpi/host-speed:<flops>" to set its value.Check http://simgrid.org/simgrid/latest/doc/options.html#options_smpi_bench for more information.
+[0.000000] [machines/INFO] Creating the machines from platform file 'batsim-v2.0.0/platforms/small_platform.xml'...
+[0.000000] [machines/INFO] Looking for master host 'master_host'
+[0.000000] [machines/INFO] Looking for parallel file system host (LCST) 'pfs_host'
+[0.000000] [machines/INFO] Looking for parallel file system host (HPST) 'hpst_host'
+[0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:266: [machines/WARNING] Could not find pfs_host 'pfs_host'!
+[0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:270: [machines/WARNING] Could not find hpst_host 'hpst_host'!
+[0.000000] [machines/INFO] The machines have been created successfully. There are 4 computing machines.
+[0.000000] [batsim/INFO] Batsim's export prefix is 'dynamic-mapping-easy-out/out'.
+[0.000000] [batsim/INFO] The process 'workload_submitter_347ebe' has been created.
+[0.000000] [batsim/INFO] The process 'server' has been created.
+[master_host:Scheduler REQ-REP:(3) 0.000000] [network/INFO] Sending '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":4,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"Bourassa","state":"idle","properties":{}},{"id":1,"name":"Fafard","state":"idle","properties":{}},{"id":2,"name":"Ginette","state":"idle","properties":{}},{"id":3,"name":"Jupiter","state":"idle","properties":{}}],"workloads":{"347ebe":"/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json"}}}]}'
+[master_host:Scheduler REQ-REP:(3) 0.000000] [network/INFO] Received '{"now":0.0,"events":[]}'
+[master_host:server:(2) 0.000195] [server/INFO] Server received a message of type SUBMITTER_HELLO:
+[master_host:server:(2) 0.000195] [server/INFO] New submitter said hello. Number of polite submitters: 1
+[master_host:server:(2) 0.000390] [server/INFO] Server received a message of type SCHED_READY:
+[master_host:server:(2) 0.000585] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host:server:(2) 0.000585] [server/INFO] Job received: 347ebe!1
+
+[master_host:server:(2) 0.000585] [server/INFO] Workloads: 347ebe: 347ebe 
+[master_host:server:(2) 0.000585] [server/INFO] Job 347ebe!1 SUBMITTED. 1 jobs submitted so far
+[master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Sending '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!1","job":{"id":"347ebe!1","subtime":0,"walltime":100,"res":2,"profile":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!1","alloc":"0-1"}}]}'
+[master_host:server:(2) 0.000781] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[Bourassa:job_347ebe!1:(5) 0.000781] [jobs_execution/INFO] Hello!
+[Bourassa:347ebe!1_0:(6) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
+[Bourassa:job_347ebe!1:(5) 0.000781] [jobs_execution/INFO] Hello!
+[Fafard:347ebe!1_1:(7) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host:server:(2) 0.000976] [server/INFO] Server received a message of type SCHED_READY:
+[master_host:server:(2) 300.000195] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host:server:(2) 300.000195] [server/INFO] Job received: 347ebe!2
+
+[master_host:server:(2) 300.000195] [server/INFO] Workloads: 347ebe: 347ebe 
+[master_host:server:(2) 300.000195] [server/INFO] Job 347ebe!2 SUBMITTED. 2 jobs submitted so far
+[master_host:Scheduler REQ-REP:(8) 300.000195] [network/INFO] Sending '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!2","job":{"id":"347ebe!2","subtime":300,"walltime":100,"res":2,"profile":"1"}}}]}'

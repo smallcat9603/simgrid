@@ -1,0 +1,6 @@
+variant_options = '{}'
+Received '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":4,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"Bourassa","state":"idle","properties":{}},{"id":1,"name":"Fafard","state":"idle","properties":{}},{"id":2,"name":"Ginette","state":"idle","properties":{}},{"id":3,"name":"Jupiter","state":"idle","properties":{}}],"workloads":{"347ebe":"/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json"}}}]}'
+Sending '{"now":0.0,"events":[]}'
+Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!1","job":{"id":"347ebe!1","subtime":0,"walltime":100,"res":2,"profile":"1"}}}]}'
+Sending '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!1","alloc":"0-1"}}]}'
+Received '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!2","job":{"id":"347ebe!2","subtime":300,"walltime":100,"res":2,"profile":"1"}}}]}'

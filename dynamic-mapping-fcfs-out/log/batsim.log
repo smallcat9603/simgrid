@@ -1,4 +1,4 @@
-+ batsim -p batsim-v2.0.0/platforms/small_platform.xml -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json -e dynamic-mapping-out/out
++ batsim -p batsim-v2.0.0/platforms/small_platform.xml -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json -e dynamic-mapping-fcfs-out/out
 [0.000000] [batsim/INFO] Workload '347ebe' corresponds to workload file '/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json'.
 [0.000000] [batsim/INFO] Batsim version: v2.0.0
 [0.000000] [workload/INFO] Loading JSON workload '/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json'...
@@ -23,7 +23,7 @@
 [0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:266: [machines/WARNING] Could not find pfs_host 'pfs_host'!
 [0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:270: [machines/WARNING] Could not find hpst_host 'hpst_host'!
 [0.000000] [machines/INFO] The machines have been created successfully. There are 4 computing machines.
-[0.000000] [batsim/INFO] Batsim's export prefix is 'dynamic-mapping-out/out'.
+[0.000000] [batsim/INFO] Batsim's export prefix is 'dynamic-mapping-fcfs-out/out'.
 [0.000000] [batsim/INFO] The process 'workload_submitter_347ebe' has been created.
 [0.000000] [batsim/INFO] The process 'server' has been created.
 [master_host:Scheduler REQ-REP:(3) 0.000000] [network/INFO] Sending '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":4,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"Bourassa","state":"idle","properties":{}},{"id":1,"name":"Fafard","state":"idle","properties":{}},{"id":2,"name":"Ginette","state":"idle","properties":{}},{"id":3,"name":"Jupiter","state":"idle","properties":{}}],"workloads":{"347ebe":"/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json"}}}]}'
@@ -37,7 +37,7 @@
 [master_host:server:(2) 0.000585] [server/INFO] Workloads: 347ebe: 347ebe 
 [master_host:server:(2) 0.000585] [server/INFO] Job 347ebe!1 SUBMITTED. 1 jobs submitted so far
 [master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Sending '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!1","job":{"id":"347ebe!1","subtime":0,"walltime":100,"res":2,"profile":"1"}}}]}'
-[master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!1","alloc":"0-1","mapping":{"0":"0","1":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!1","alloc":"0-1"}}]}'
 [master_host:server:(2) 0.000781] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
 [Bourassa:job_347ebe!1:(5) 0.000781] [jobs_execution/INFO] Hello!
 [Bourassa:347ebe!1_0:(6) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
@@ -50,7 +50,7 @@
 [master_host:server:(2) 300.000195] [server/INFO] Workloads: 347ebe: 347ebe 
 [master_host:server:(2) 300.000195] [server/INFO] Job 347ebe!2 SUBMITTED. 2 jobs submitted so far
 [master_host:Scheduler REQ-REP:(8) 300.000195] [network/INFO] Sending '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!2","job":{"id":"347ebe!2","subtime":300,"walltime":100,"res":2,"profile":"1"}}}]}'
-[master_host:Scheduler REQ-REP:(8) 300.000195] [network/INFO] Received '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!2","alloc":"2-3","mapping":{"0":"0","1":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(8) 300.000195] [network/INFO] Received '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!2","alloc":"2-3"}}]}'
 [master_host:server:(2) 300.000390] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
 [Ginette:job_347ebe!2:(9) 300.000390] [jobs_execution/INFO] Hello!
 [Ginette:347ebe!2_0:(10) 300.000390] [jobs_execution/INFO] Launching smpi_replay_run
@@ -81,7 +81,7 @@
 [master_host:server:(2) 20621958261.182701] [server/INFO] Server received a message of type JOB_COMPLETED:
 [master_host:server:(2) 20621958261.182701] [server/INFO] Job 347ebe!1 has COMPLETED. 1 jobs completed so far
 [master_host:Scheduler REQ-REP:(14) 20621958261.182701] [network/INFO] Sending '{"now":20621958261.182701,"events":[{"timestamp":20621958261.182701,"type":"JOB_COMPLETED","data":{"job_id":"347ebe!1","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-1"}}]}'
-[master_host:Scheduler REQ-REP:(14) 20621958261.182701] [network/INFO] Received '{"now":20621958261.1827,"events":[{"timestamp":20621958261.1827,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!3","alloc":"0-1","mapping":{"0":"0","1":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(14) 20621958261.182701] [network/INFO] Received '{"now":20621958261.1827,"events":[{"timestamp":20621958261.1827,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!3","alloc":"0-1"}}]}'
 [master_host:server:(2) 20621958261.182896] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
 [Bourassa:job_347ebe!3:(15) 20621958261.182896] [jobs_execution/INFO] Hello!
 [Bourassa:347ebe!3_0:(16) 20621958261.182896] [jobs_execution/INFO] Launching smpi_replay_run
@@ -94,7 +94,7 @@
 [master_host:server:(2) 20621958561.173420] [server/INFO] Server received a message of type JOB_COMPLETED:
 [master_host:server:(2) 20621958561.173420] [server/INFO] Job 347ebe!2 has COMPLETED. 2 jobs completed so far
 [master_host:Scheduler REQ-REP:(18) 20621958561.173420] [network/INFO] Sending '{"now":20621958561.173420,"events":[{"timestamp":20621958561.173420,"type":"JOB_COMPLETED","data":{"job_id":"347ebe!2","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"2-3"}}]}'
-[master_host:Scheduler REQ-REP:(18) 20621958561.173420] [network/INFO] Received '{"now":20621958561.17342,"events":[{"timestamp":20621958561.17342,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!4","alloc":"2-3","mapping":{"0":"0","1":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(18) 20621958561.173420] [network/INFO] Received '{"now":20621958561.17342,"events":[{"timestamp":20621958561.17342,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!4","alloc":"2-3"}}]}'
 [master_host:server:(2) 20621958561.173615] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
 [Ginette:job_347ebe!4:(19) 20621958561.173615] [jobs_execution/INFO] Hello!
 [Ginette:347ebe!4_0:(20) 20621958561.173615] [jobs_execution/INFO] Launching smpi_replay_run
@@ -121,5 +121,5 @@
 [master_host:server:(2) 41243916822.346848] [server/INFO] Simulation is finished!
 [41243916822.346848] [export/INFO] PajeTracer finalized
 [41243916822.346848] [export/INFO] jobs=4, finished=4, success=4, killed=0, success_rate=1.000000
-[41243916822.346848] [export/INFO] makespan=41243916822.330093, scheduling_time=0.022227, mean_waiting_time=10310978903.089420, mean_turnaround_time=30932937164.245899, mean_slowdown=1.500000, max_waiting_time=20621957951.173615, max_turnaround_time=41243916212.330093, max_slowdown=2.000000
+[41243916822.346848] [export/INFO] makespan=41243916822.330093, scheduling_time=0.008503, mean_waiting_time=10310978903.089420, mean_turnaround_time=30932937164.245899, mean_slowdown=1.500000, max_waiting_time=20621957951.173615, max_turnaround_time=41243916212.330093, max_slowdown=2.000000
 [41243916822.346848] [export/INFO] mean_machines_running=41243916522.312958, max_machines_running=41243916522.312958

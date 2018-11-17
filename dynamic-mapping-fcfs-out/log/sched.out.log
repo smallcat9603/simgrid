@@ -1,31 +1,19 @@
-variant_options = '{"custom_mapping": true}'
-custom_mapping: true
-fraction_of_machines_to_use: 1
-set_job_metadata: 0
+variant_options = '{}'
 Received '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":4,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"Bourassa","state":"idle","properties":{}},{"id":1,"name":"Fafard","state":"idle","properties":{}},{"id":2,"name":"Ginette","state":"idle","properties":{}},{"id":3,"name":"Jupiter","state":"idle","properties":{}}],"workloads":{"347ebe":"/mnt/c/Users/huyao/OneDrive/ドキュメント/GitHub/simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json"}}}]}'
-fill, availableMachines=0-3
 Sending '{"now":0.0,"events":[]}'
 Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!1","job":{"id":"347ebe!1","subtime":0,"walltime":100,"res":2,"profile":"1"}}}]}'
-fill, availableMachines=0-3
-Sending '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!1","alloc":"0-1","mapping":{"0":"0","1":"1"}}}]}'
+Sending '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!1","alloc":"0-1"}}]}'
 Received '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!2","job":{"id":"347ebe!2","subtime":300,"walltime":100,"res":2,"profile":"1"}}}]}'
-fill, availableMachines=2-3
-Sending '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!2","alloc":"2-3","mapping":{"0":"0","1":"1"}}}]}'
+Sending '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!2","alloc":"2-3"}}]}'
 Received '{"now":600.000195,"events":[{"timestamp":600.000195,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!3","job":{"id":"347ebe!3","subtime":600,"walltime":100,"res":2,"profile":"1"}}}]}'
-fill, availableMachines=
 Sending '{"now":600.000195,"events":[]}'
 Received '{"now":610.000195,"events":[{"timestamp":610.000195,"type":"JOB_SUBMITTED","data":{"job_id":"347ebe!4","job":{"id":"347ebe!4","subtime":610,"walltime":100,"res":2,"profile":"1"}}}]}'
-fill, availableMachines=
 Sending '{"now":610.000195,"events":[]}'
 Received '{"now":20621958261.182701,"events":[{"timestamp":20621958261.182701,"type":"JOB_COMPLETED","data":{"job_id":"347ebe!1","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-1"}}]}'
-fill, availableMachines=0-1
-Sending '{"now":20621958261.1827,"events":[{"timestamp":20621958261.1827,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!3","alloc":"0-1","mapping":{"0":"0","1":"1"}}}]}'
+Sending '{"now":20621958261.1827,"events":[{"timestamp":20621958261.1827,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!3","alloc":"0-1"}}]}'
 Received '{"now":20621958561.173420,"events":[{"timestamp":20621958561.173420,"type":"JOB_COMPLETED","data":{"job_id":"347ebe!2","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"2-3"}}]}'
-fill, availableMachines=2-3
-Sending '{"now":20621958561.17342,"events":[{"timestamp":20621958561.17342,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!4","alloc":"2-3","mapping":{"0":"0","1":"1"}}}]}'
+Sending '{"now":20621958561.17342,"events":[{"timestamp":20621958561.17342,"type":"EXECUTE_JOB","data":{"job_id":"347ebe!4","alloc":"2-3"}}]}'
 Received '{"now":41243916522.364807,"events":[{"timestamp":41243916522.364807,"type":"JOB_COMPLETED","data":{"job_id":"347ebe!3","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-1"}}]}'
-fill, availableMachines=0-1
 Sending '{"now":41243916522.36481,"events":[]}'
 Received '{"now":41243916822.346649,"events":[{"timestamp":41243916822.346649,"type":"JOB_COMPLETED","data":{"job_id":"347ebe!4","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"2-3"}},{"timestamp":41243916822.346649,"type":"SIMULATION_ENDS","data":{}}]}'
-fill, availableMachines=0-3
 Sending '{"now":41243916822.34665,"events":[]}'

@@ -1,0 +1,7 @@
++ batsched -v easy_bf
+Assertion 'current_time <= slice->end' failed (ERROR)
+  in file schedule.cpp, line 51
+  function: void Schedule::update_first_slice(Rational)
+  with message: current_time=300, slice->end=105.001
+
+dynamic-mapping-easy-out/cmd/sched.bash: line 1:   401 Aborted                 (core dumped) batsched -v easy_bf
