@@ -1,4 +1,4 @@
-+ batsim -p batsim-v2.0.0/platforms/small_platform.xml -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json -e dynamic-mapping-easy-out/out
++ batsim -p batsim-v2.0.0/platforms/small_platform.xml -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json -e dynamic-mapping-random-out/out
 [0.000000] [batsim/INFO] Workload 'b3c5fd' corresponds to workload file '/github-simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json'.
 [0.000000] [batsim/INFO] Batsim version: v2.0.0
 [0.000000] [workload/INFO] Loading JSON workload '/github-simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json'...
@@ -23,7 +23,7 @@
 [0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:266: [machines/WARNING] Could not find pfs_host 'pfs_host'!
 [0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:270: [machines/WARNING] Could not find hpst_host 'hpst_host'!
 [0.000000] [machines/INFO] The machines have been created successfully. There are 4 computing machines.
-[0.000000] [batsim/INFO] Batsim's export prefix is 'dynamic-mapping-easy-out/out'.
+[0.000000] [batsim/INFO] Batsim's export prefix is 'dynamic-mapping-random-out/out'.
 [0.000000] [batsim/INFO] The process 'workload_submitter_b3c5fd' has been created.
 [0.000000] [batsim/INFO] The process 'server' has been created.
 [master_host:Scheduler REQ-REP:(3) 0.000000] [network/INFO] Sending '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":4,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"Bourassa","state":"idle","properties":{}},{"id":1,"name":"Fafard","state":"idle","properties":{}},{"id":2,"name":"Ginette","state":"idle","properties":{}},{"id":3,"name":"Jupiter","state":"idle","properties":{}}],"workloads":{"b3c5fd":"/github-simgrid/batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json"}}}]}'
@@ -37,12 +37,12 @@
 [master_host:server:(2) 0.000585] [server/INFO] Workloads: b3c5fd: b3c5fd 
 [master_host:server:(2) 0.000585] [server/INFO] Job b3c5fd!1 SUBMITTED. 1 jobs submitted so far
 [master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Sending '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"JOB_SUBMITTED","data":{"job_id":"b3c5fd!1","job":{"id":"b3c5fd!1","subtime":0,"walltime":100,"res":2,"profile":"1"}}}]}'
-[master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"b3c5fd!1","alloc":"0-1"}}]}'
+[master_host:Scheduler REQ-REP:(4) 0.000585] [network/INFO] Received '{"now":0.000585,"events":[{"timestamp":0.000585,"type":"EXECUTE_JOB","data":{"job_id":"b3c5fd!1","alloc":"1 3"}}]}'
 [master_host:server:(2) 0.000781] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
-[Bourassa:job_b3c5fd!1:(5) 0.000781] [jobs_execution/INFO] Hello!
-[Bourassa:b3c5fd!1_0:(6) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
-[Bourassa:job_b3c5fd!1:(5) 0.000781] [jobs_execution/INFO] Hello!
-[Fafard:b3c5fd!1_1:(7) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
+[Fafard:job_b3c5fd!1:(5) 0.000781] [jobs_execution/INFO] Hello!
+[Fafard:b3c5fd!1_0:(6) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
+[Fafard:job_b3c5fd!1:(5) 0.000781] [jobs_execution/INFO] Hello!
+[Jupiter:b3c5fd!1_1:(7) 0.000781] [jobs_execution/INFO] Launching smpi_replay_run
 [master_host:server:(2) 0.000976] [server/INFO] Server received a message of type SCHED_READY:
 [master_host:server:(2) 300.000195] [server/INFO] Server received a message of type JOB_SUBMITTED:
 [master_host:server:(2) 300.000195] [server/INFO] Job received: b3c5fd!2
@@ -50,3 +50,26 @@
 [master_host:server:(2) 300.000195] [server/INFO] Workloads: b3c5fd: b3c5fd 
 [master_host:server:(2) 300.000195] [server/INFO] Job b3c5fd!2 SUBMITTED. 2 jobs submitted so far
 [master_host:Scheduler REQ-REP:(8) 300.000195] [network/INFO] Sending '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"JOB_SUBMITTED","data":{"job_id":"b3c5fd!2","job":{"id":"b3c5fd!2","subtime":300,"walltime":100,"res":2,"profile":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(8) 300.000195] [network/INFO] Received '{"now":300.000195,"events":[{"timestamp":300.000195,"type":"EXECUTE_JOB","data":{"job_id":"b3c5fd!2","alloc":"0 2"}}]}'
+[master_host:server:(2) 300.000390] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[Bourassa:job_b3c5fd!2:(9) 300.000390] [jobs_execution/INFO] Hello!
+[Bourassa:b3c5fd!2_0:(10) 300.000390] [jobs_execution/INFO] Launching smpi_replay_run
+[Bourassa:job_b3c5fd!2:(9) 300.000390] [jobs_execution/INFO] Hello!
+[Ginette:b3c5fd!2_1:(11) 300.000390] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host:server:(2) 300.000585] [server/INFO] Server received a message of type SCHED_READY:
+[master_host:server:(2) 600.000195] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host:server:(2) 600.000195] [server/INFO] Job received: b3c5fd!3
+
+[master_host:server:(2) 600.000195] [server/INFO] Workloads: b3c5fd: b3c5fd 
+[master_host:server:(2) 600.000195] [server/INFO] Job b3c5fd!3 SUBMITTED. 3 jobs submitted so far
+[master_host:Scheduler REQ-REP:(12) 600.000195] [network/INFO] Sending '{"now":600.000195,"events":[{"timestamp":600.000195,"type":"JOB_SUBMITTED","data":{"job_id":"b3c5fd!3","job":{"id":"b3c5fd!3","subtime":600,"walltime":100,"res":2,"profile":"1"}}}]}'
+[master_host:Scheduler REQ-REP:(12) 600.000195] [network/INFO] Received '{"now":600.000195,"events":[{"timestamp":600.000195,"type":"EXECUTE_JOB","data":{"job_id":"b3c5fd!3","alloc":"1-2"}}]}'
+[master_host:server:(2) 600.000390] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[master_host:server:(2) 600.000390] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/server.cpp:821: [root/CRITICAL] Job 'b3c5fd!3': Invalid allocation: machine 1 ('Fafard') is currently computing jobs (these ones: {b3c5fd!1}) whereas space sharing is forbidden. Space sharing can be enabled via an option, try --help to display the available options
+Backtrace (displayed in process server):
+---> xbt_backtrace_display_current at ??:?, 0x7fc53bea5c75
+---> server_on_execute_job(ServerData*, IPMessage*) at ??:?, 0x4bf7cd
+---> server_process(int, char**) at ??:?, 0x4bda00
+---> std::_Function_handler<void (), simgrid::xbt::MainFunction<int (*)(int, char**)> >::_M_invoke(std::_Any_data const&) at ??:?, 0x7fc53bd89598
+---> simgrid::kernel::context::RawContext::wrapper(void*) at ??:?, 0x7fc53be643d2
+dynamic-mapping-random-out/cmd/batsim.bash: line 1: 46208 Aborted                 batsim -p batsim-v2.0.0/platforms/small_platform.xml -w batsim-v2.0.0/workload_profiles/test_smpi_compute_only_multijobs.json -e dynamic-mapping-random-out/out
