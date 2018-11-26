@@ -1,0 +1,8093 @@
+9 init
+9 compute 0.31144
+9 bcast 1 0 1 
+9 compute 0.0325
+9 bcast 1 0 1 
+9 bcast 1 0 1 
+9 bcast 1 0 0 
+9 bcast 1 0 0 
+9 bcast 5 0 0 
+9 bcast 1 0 1 
+9 bcast 1 0 1 
+9 bcast 1 0 1 
+9 bcast 1 0 16 
+9 compute 1.04118
+9 irecv 8 2 360 0
+9 compute 0.0637
+9 send 10 2 360 0
+9 compute 0.02268
+9 wait 9 10 2
+9 compute 0.07264
+9 irecv 10 1 360 0
+9 compute 0.06658
+9 send 8 1 360 0
+9 compute 0.02806
+9 wait 11 10 1
+9 compute 0.31668
+9 irecv 5 4 360 0
+9 compute 0.03628
+9 send 13 4 360 0
+9 compute 0.02232
+9 wait 6 10 4
+9 compute 0.05536
+9 irecv 13 3 360 0
+9 compute 0.0403
+9 send 5 3 360 0
+9 compute 0.02118
+9 wait 14 10 3
+9 compute 0.40736
+9 irecv 8 2 360 0
+9 compute 0.05092
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04668
+9 irecv 10 1 360 0
+9 compute 0.033
+9 send 8 1 360 0
+9 compute 0.02052
+9 wait 11 10 1
+9 compute 0.14284
+9 irecv 5 4 360 0
+9 compute 0.02978
+9 send 13 4 360 0
+9 compute 0.02496
+9 wait 6 10 4
+9 compute 0.0315
+9 irecv 13 3 360 0
+9 compute 0.03526
+9 send 5 3 360 0
+9 compute 0.0238
+9 wait 14 10 3
+9 compute 0.22152
+9 allreduce 5 0 0 
+9 compute 0.021
+9 barrier
+9 compute 0.04062
+9 compute 0.09676
+9 recv 8 2 15 0
+9 compute 0.02232
+9 recv 5 4 15 0
+9 compute 0.04668
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03884
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03914
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03492
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03728
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04308
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0412
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.68994
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03964
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04114
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0407
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03526
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03772
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03658
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03914
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03334
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03876
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03838
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0386
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0669
+9 recv 10 1 15 0
+9 compute 0.02234
+9 recv 13 3 15 0
+9 compute 0.04684
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03554
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04422
+9 send 8 1 15 0
+9 compute 0.02366
+9 send 5 3 15 0
+9 compute 0.04414
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04004
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03602
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04174
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0367
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03786
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03654
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04584
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04196
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03496
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03924
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03922
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03942
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.036
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03814
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04006
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05702
+9 irecv 8 2 360 0
+9 compute 0.03568
+9 send 10 2 360 0
+9 compute 0.02254
+9 wait 9 10 2
+9 compute 0.03688
+9 irecv 10 1 360 0
+9 compute 0.03068
+9 send 8 1 360 0
+9 compute 0.02268
+9 wait 11 10 1
+9 compute 0.11476
+9 irecv 5 4 360 0
+9 compute 0.0269
+9 send 13 4 360 0
+9 compute 0.0235
+9 wait 6 10 4
+9 compute 0.0393
+9 irecv 13 3 360 0
+9 compute 0.02932
+9 send 5 3 360 0
+9 compute 0.02188
+9 wait 14 10 3
+9 compute 0.18692
+9 compute 0.02826
+9 allreduce 1 0 0 
+9 compute 1.13076
+9 irecv 8 2 360 0
+9 compute 0.03356
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.0365
+9 irecv 10 1 360 0
+9 compute 0.02854
+9 send 8 1 360 0
+9 compute 0.02038
+9 wait 11 10 1
+9 compute 0.10142
+9 irecv 5 4 360 0
+9 compute 0.0319
+9 send 13 4 360 0
+9 compute 0.02204
+9 wait 6 10 4
+9 compute 0.0395
+9 irecv 13 3 360 0
+9 compute 0.03072
+9 send 5 3 360 0
+9 compute 0.02162
+9 wait 14 10 3
+9 compute 0.18434
+9 allreduce 5 0 0 
+9 barrier
+9 compute 0.31586
+9 compute 0.06436
+9 recv 8 2 15 0
+9 compute 0.02578
+9 recv 5 4 15 0
+9 compute 0.05326
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04396
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04066
+9 send 10 2 15 0
+9 compute 0.02114
+9 send 13 4 15 0
+9 compute 0.0431
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04106
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03998
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04106
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03618
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05644
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04216
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04012
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0418
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03864
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0397
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04154
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03584
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03984
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0392
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03842
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04572
+9 recv 10 1 15 0
+9 compute 0.02912
+9 recv 13 3 15 0
+9 compute 0.0506
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0417
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04674
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.039
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04016
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03918
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0451
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04152
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03874
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04074
+9 recv 10 1 15 0
+9 compute 0.2833
+9 recv 13 3 15 0
+9 compute 0.0486
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04968
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06092
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04542
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03786
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03786
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03862
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03872
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04074
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0807
+9 irecv 8 2 360 0
+9 compute 0.03556
+9 send 10 2 360 0
+9 compute 0.02286
+9 wait 9 10 2
+9 compute 0.03772
+9 irecv 10 1 360 0
+9 compute 0.03296
+9 send 8 1 360 0
+9 compute 0.02096
+9 wait 11 10 1
+9 compute 0.13246
+9 irecv 5 4 360 0
+9 compute 0.0259
+9 send 13 4 360 0
+9 compute 0.02228
+9 wait 6 10 4
+9 compute 0.03616
+9 irecv 13 3 360 0
+9 compute 0.03064
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.27358
+9 recv 8 2 15 0
+9 compute 0.02328
+9 recv 5 4 15 0
+9 compute 0.05224
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03702
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03812
+9 send 10 2 15 0
+9 compute 0.03018
+9 send 13 4 15 0
+9 compute 0.0464
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04232
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.042
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04292
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03796
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05026
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05388
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04536
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04248
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0402
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03552
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03958
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03612
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03904
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04128
+9 recv 8 2 15 0
+9 compute 0.02746
+9 recv 5 4 15 0
+9 compute 0.0451
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05702
+9 recv 10 1 15 0
+9 compute 0.02252
+9 recv 13 3 15 0
+9 compute 0.05892
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03824
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04952
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04378
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04276
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0381
+9 recv 10 1 15 0
+9 compute 0.02076
+9 recv 13 3 15 0
+9 compute 0.04124
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04794
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03778
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04462
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03628
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03812
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04118
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0371
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03958
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03604
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.5207
+9 send 8 1 15 0
+9 compute 0.0219
+9 send 5 3 15 0
+9 compute 0.0675
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0432
+9 send 8 1 15 0
+9 compute 0.0222
+9 send 5 3 15 0
+9 compute 0.08404
+9 irecv 8 2 360 0
+9 compute 0.03144
+9 send 10 2 360 0
+9 compute 0.0218
+9 wait 9 10 2
+9 compute 0.03784
+9 irecv 10 1 360 0
+9 compute 0.03242
+9 send 8 1 360 0
+9 compute 0.02124
+9 wait 11 10 1
+9 compute 0.11262
+9 irecv 5 4 360 0
+9 compute 0.03156
+9 send 13 4 360 0
+9 wait 6 10 4
+9 compute 0.03752
+9 irecv 13 3 360 0
+9 compute 0.02866
+9 send 5 3 360 0
+9 compute 0.02344
+9 wait 14 10 3
+9 compute 0.2156
+9 recv 8 2 15 0
+9 compute 0.02422
+9 recv 5 4 15 0
+9 compute 0.0489
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03792
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03848
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03718
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03862
+9 send 10 2 15 0
+9 compute 0.02072
+9 send 13 4 15 0
+9 compute 0.04234
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03818
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04452
+9 recv 8 2 15 0
+9 compute 0.02158
+9 recv 5 4 15 0
+9 compute 0.0563
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06008
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04644
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0401
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04168
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0396
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0409
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0419
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0412
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04562
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04502
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05176
+9 recv 10 1 15 0
+9 compute 0.07168
+9 recv 13 3 15 0
+9 compute 0.08298
+9 send 8 1 15 0
+9 compute 0.0275
+9 send 5 3 15 0
+9 compute 0.06042
+9 recv 10 1 15 0
+9 compute 0.02016
+9 recv 13 3 15 0
+9 compute 0.04792
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04312
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03672
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05546
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03958
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0391
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04082
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03886
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03458
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0369
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03874
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0366
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04494
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03746
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0386
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0365
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0398
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06466
+9 irecv 8 2 360 0
+9 compute 0.03612
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.03744
+9 irecv 10 1 360 0
+9 compute 0.03156
+9 send 8 1 360 0
+9 compute 0.02068
+9 wait 11 10 1
+9 compute 0.11078
+9 irecv 5 4 360 0
+9 compute 0.02444
+9 send 13 4 360 0
+9 compute 0.02168
+9 wait 6 10 4
+9 compute 0.03584
+9 irecv 13 3 360 0
+9 compute 0.02534
+9 send 5 3 360 0
+9 compute 0.02282
+9 wait 14 10 3
+9 compute 0.20728
+9 recv 8 2 15 0
+9 compute 0.02324
+9 recv 5 4 15 0
+9 compute 0.0504
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03754
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03812
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03586
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0414
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03772
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03956
+9 send 10 2 15 0
+9 compute 0.02134
+9 send 13 4 15 0
+9 compute 0.04156
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04944
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0391
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03654
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03662
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03926
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03472
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03746
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03566
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05216
+9 send 10 2 15 0
+9 compute 0.02262
+9 send 13 4 15 0
+9 compute 0.12518
+9 recv 8 2 15 0
+9 compute 0.02018
+9 recv 5 4 15 0
+9 compute 0.045
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04858
+9 recv 10 1 15 0
+9 compute 0.02024
+9 recv 13 3 15 0
+9 compute 0.0461
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03766
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04218
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04862
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04402
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0357
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05296
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04472
+9 recv 10 1 15 0
+9 compute 0.02164
+9 recv 13 3 15 0
+9 compute 0.07638
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.041
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04144
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03574
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03928
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03578
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04036
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0358
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0384
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03576
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03936
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07556
+9 irecv 8 2 360 0
+9 compute 0.02764
+9 send 10 2 360 0
+9 compute 0.02252
+9 wait 9 10 2
+9 compute 0.0359
+9 irecv 10 1 360 0
+9 compute 0.02902
+9 send 8 1 360 0
+9 compute 0.02178
+9 wait 11 10 1
+9 compute 0.11444
+9 irecv 5 4 360 0
+9 compute 0.0273
+9 send 13 4 360 0
+9 compute 0.02194
+9 wait 6 10 4
+9 compute 0.04786
+9 irecv 13 3 360 0
+9 compute 0.027
+9 send 5 3 360 0
+9 compute 0.02342
+9 wait 14 10 3
+9 compute 0.21426
+9 recv 8 2 15 0
+9 compute 0.0224
+9 recv 5 4 15 0
+9 compute 0.05054
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0346
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04022
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03848
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03656
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03712
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03722
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03594
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03792
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0371
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0381
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0351
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03852
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03508
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04078
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03372
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03972
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03462
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0367
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04452
+9 recv 10 1 15 0
+9 compute 0.02394
+9 recv 13 3 15 0
+9 compute 0.04472
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03456
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04008
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0366
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04208
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04114
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0365
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0399
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03638
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0363
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03514
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03868
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03438
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03868
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03428
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03814
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.33092
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04892
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06062
+9 irecv 8 2 360 0
+9 compute 0.02734
+9 send 10 2 360 0
+9 compute 0.02546
+9 wait 9 10 2
+9 compute 0.30182
+9 irecv 10 1 360 0
+9 compute 0.03308
+9 send 8 1 360 0
+9 compute 0.02186
+9 wait 11 10 1
+9 compute 0.116
+9 irecv 5 4 360 0
+9 compute 0.03082
+9 send 13 4 360 0
+9 compute 0.02208
+9 wait 6 10 4
+9 compute 0.03504
+9 irecv 13 3 360 0
+9 compute 0.02568
+9 send 5 3 360 0
+9 compute 0.0213
+9 wait 14 10 3
+9 compute 0.2029
+9 recv 8 2 15 0
+9 compute 0.02252
+9 recv 5 4 15 0
+9 compute 0.31592
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0364
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03876
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0368
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03868
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03586
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0396
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0372
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03944
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03628
+9 recv 8 2 15 0
+9 compute 0.02028
+9 recv 5 4 15 0
+9 compute 0.04164
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03622
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03752
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03592
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03896
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03398
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03798
+9 send 10 2 15 0
+9 compute 0.02418
+9 send 13 4 15 0
+9 compute 0.05174
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04932
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04826
+9 recv 10 1 15 0
+9 compute 0.0223
+9 recv 13 3 15 0
+9 compute 0.07964
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04464
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05038
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0393
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.045
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03582
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04274
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04046
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0402
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04818
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03712
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03662
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04062
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03974
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04498
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03746
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0391
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03802
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0412
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07742
+9 irecv 8 2 360 0
+9 compute 0.03302
+9 send 10 2 360 0
+9 compute 0.02342
+9 wait 9 10 2
+9 compute 0.0374
+9 irecv 10 1 360 0
+9 compute 0.03012
+9 send 8 1 360 0
+9 compute 0.02262
+9 wait 11 10 1
+9 compute 0.11402
+9 irecv 5 4 360 0
+9 compute 0.02504
+9 send 13 4 360 0
+9 compute 0.02208
+9 wait 6 10 4
+9 compute 0.03982
+9 irecv 13 3 360 0
+9 compute 0.02566
+9 send 5 3 360 0
+9 compute 0.0256
+9 wait 14 10 3
+9 compute 0.2158
+9 recv 8 2 15 0
+9 compute 0.02502
+9 recv 5 4 15 0
+9 compute 0.04958
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0363
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03848
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03666
+9 recv 8 2 15 0
+9 compute 0.02012
+9 recv 5 4 15 0
+9 compute 0.03748
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03574
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04464
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04292
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.30832
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04062
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0418
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03562
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03768
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0363
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03826
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03422
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06176
+9 send 10 2 15 0
+9 compute 0.02064
+9 send 13 4 15 0
+9 compute 0.0896
+9 recv 8 2 15 0
+9 compute 0.031
+9 recv 5 4 15 0
+9 compute 0.05314
+9 send 10 2 15 0
+9 compute 0.02012
+9 send 13 4 15 0
+9 compute 0.3181
+9 recv 10 1 15 0
+9 compute 0.02324
+9 recv 13 3 15 0
+9 compute 0.06102
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.30824
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04342
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04002
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0453
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04304
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0449
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04234
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0426
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03848
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0419
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03774
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04322
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03558
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03948
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03908
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0567
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05516
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04464
+9 send 8 1 15 0
+9 compute 0.03986
+9 send 5 3 15 0
+9 compute 0.107
+9 irecv 8 2 360 0
+9 compute 0.0614
+9 send 10 2 360 0
+9 compute 0.04832
+9 wait 9 10 2
+9 compute 0.04546
+9 irecv 10 1 360 0
+9 compute 0.034
+9 send 8 1 360 0
+9 compute 0.03468
+9 wait 11 10 1
+9 compute 0.1236
+9 irecv 5 4 360 0
+9 compute 0.02564
+9 send 13 4 360 0
+9 compute 0.0336
+9 wait 6 10 4
+9 compute 0.05244
+9 irecv 13 3 360 0
+9 compute 0.0267
+9 send 5 3 360 0
+9 compute 0.03652
+9 wait 14 10 3
+9 compute 0.24408
+9 recv 8 2 15 0
+9 compute 0.02416
+9 recv 5 4 15 0
+9 compute 0.05078
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04644
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03886
+9 send 10 2 15 0
+9 compute 0.03148
+9 send 13 4 15 0
+9 compute 0.05302
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04484
+9 send 10 2 15 0
+9 compute 0.02838
+9 send 13 4 15 0
+9 compute 0.05722
+9 recv 8 2 15 0
+9 compute 0.02262
+9 recv 5 4 15 0
+9 compute 0.06524
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0737
+9 recv 8 2 15 0
+9 compute 0.03378
+9 recv 5 4 15 0
+9 compute 0.04534
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0555
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04062
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04948
+9 recv 8 2 15 0
+9 compute 0.0292
+9 recv 5 4 15 0
+9 compute 0.04564
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06672
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04394
+9 send 10 2 15 0
+9 compute 0.03126
+9 send 13 4 15 0
+9 compute 0.05184
+9 recv 8 2 15 0
+9 compute 0.03038
+9 recv 5 4 15 0
+9 compute 0.03794
+9 send 10 2 15 0
+9 compute 0.02962
+9 send 13 4 15 0
+9 compute 0.05396
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03762
+9 send 10 2 15 0
+9 compute 0.0416
+9 send 13 4 15 0
+9 compute 0.0738
+9 recv 10 1 15 0
+9 compute 0.03302
+9 recv 13 3 15 0
+9 compute 0.05212
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.047
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05442
+9 send 8 1 15 0
+9 compute 0.03858
+9 send 5 3 15 0
+9 compute 0.05636
+9 recv 10 1 15 0
+9 compute 0.02878
+9 recv 13 3 15 0
+9 compute 0.06782
+9 send 8 1 15 0
+9 compute 0.0292
+9 send 5 3 15 0
+9 compute 0.0575
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05716
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04512
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04412
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04062
+9 recv 10 1 15 0
+9 compute 0.04228
+9 recv 13 3 15 0
+9 compute 0.03894
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03966
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.07704
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05712
+9 recv 10 1 15 0
+9 compute 0.02794
+9 recv 13 3 15 0
+9 compute 0.03858
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05932
+9 recv 10 1 15 0
+9 compute 0.07854
+9 recv 13 3 15 0
+9 compute 0.03888
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04524
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04474
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.10462
+9 irecv 8 2 360 0
+9 compute 0.02894
+9 send 10 2 360 0
+9 compute 0.03688
+9 wait 9 10 2
+9 compute 0.05264
+9 irecv 10 1 360 0
+9 compute 0.03796
+9 send 8 1 360 0
+9 compute 0.0342
+9 wait 11 10 1
+9 compute 0.1258
+9 irecv 5 4 360 0
+9 compute 0.05932
+9 send 13 4 360 0
+9 compute 0.04284
+9 wait 6 10 4
+9 compute 0.0542
+9 irecv 13 3 360 0
+9 compute 0.02794
+9 send 5 3 360 0
+9 compute 0.0338
+9 wait 14 10 3
+9 compute 0.22878
+9 recv 8 2 15 0
+9 compute 0.02946
+9 recv 5 4 15 0
+9 compute 0.05288
+9 send 10 2 15 0
+9 compute 0.0425
+9 send 13 4 15 0
+9 compute 0.04132
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05486
+9 send 10 2 15 0
+9 compute 0.02894
+9 send 13 4 15 0
+9 compute 0.03766
+9 recv 8 2 15 0
+9 compute 0.04354
+9 recv 5 4 15 0
+9 compute 0.06742
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06432
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04156
+9 send 10 2 15 0
+9 compute 0.03092
+9 send 13 4 15 0
+9 compute 0.05186
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04458
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06164
+9 recv 8 2 15 0
+9 compute 0.02108
+9 recv 5 4 15 0
+9 compute 0.0684
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05508
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04156
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05576
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0393
+9 send 10 2 15 0
+9 compute 0.03014
+9 send 13 4 15 0
+9 compute 0.05116
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03658
+9 send 10 2 15 0
+9 compute 0.02948
+9 send 13 4 15 0
+9 compute 0.0581
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0434
+9 send 10 2 15 0
+9 compute 0.04056
+9 send 13 4 15 0
+9 compute 0.07414
+9 recv 10 1 15 0
+9 compute 0.0383
+9 recv 13 3 15 0
+9 compute 0.05916
+9 send 8 1 15 0
+9 compute 0.02966
+9 send 5 3 15 0
+9 compute 0.07904
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06156
+9 send 8 1 15 0
+9 compute 0.04156
+9 send 5 3 15 0
+9 compute 0.05552
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06146
+9 send 8 1 15 0
+9 compute 0.0398
+9 send 5 3 15 0
+9 compute 0.05266
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.08086
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06186
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0524
+9 send 8 1 15 0
+9 compute 0.03838
+9 send 5 3 15 0
+9 compute 0.05226
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0547
+9 send 8 1 15 0
+9 compute 0.03016
+9 send 5 3 15 0
+9 compute 0.05658
+9 recv 10 1 15 0
+9 compute 0.04256
+9 recv 13 3 15 0
+9 compute 0.05744
+9 send 8 1 15 0
+9 compute 0.02128
+9 send 5 3 15 0
+9 compute 0.0589
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05124
+9 send 8 1 15 0
+9 compute 0.02944
+9 send 5 3 15 0
+9 compute 0.05818
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06822
+9 send 8 1 15 0
+9 compute 0.0253
+9 send 5 3 15 0
+9 compute 0.05924
+9 recv 10 1 15 0
+9 compute 0.02748
+9 recv 13 3 15 0
+9 compute 0.04554
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07562
+9 irecv 8 2 360 0
+9 compute 0.05574
+9 send 10 2 360 0
+9 compute 0.04798
+9 wait 9 10 2
+9 compute 0.06044
+9 irecv 10 1 360 0
+9 compute 0.03592
+9 send 8 1 360 0
+9 compute 0.0342
+9 wait 11 10 1
+9 compute 0.14938
+9 irecv 5 4 360 0
+9 compute 0.04858
+9 send 13 4 360 0
+9 compute 0.038
+9 wait 6 10 4
+9 compute 0.03326
+9 irecv 13 3 360 0
+9 compute 0.03694
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.51732
+9 recv 8 2 15 0
+9 compute 0.0359
+9 recv 5 4 15 0
+9 compute 0.05838
+9 send 10 2 15 0
+9 compute 0.03032
+9 send 13 4 15 0
+9 compute 0.06708
+9 recv 8 2 15 0
+9 compute 0.02924
+9 recv 5 4 15 0
+9 compute 0.04186
+9 send 10 2 15 0
+9 compute 0.0289
+9 send 13 4 15 0
+9 compute 0.05912
+9 recv 8 2 15 0
+9 compute 0.02904
+9 recv 5 4 15 0
+9 compute 0.04086
+9 send 10 2 15 0
+9 compute 0.0297
+9 send 13 4 15 0
+9 compute 0.05614
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04596
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05558
+9 recv 8 2 15 0
+9 compute 0.0304
+9 recv 5 4 15 0
+9 compute 0.04032
+9 send 10 2 15 0
+9 compute 0.03174
+9 send 13 4 15 0
+9 compute 0.05738
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04006
+9 send 10 2 15 0
+9 compute 0.02984
+9 send 13 4 15 0
+9 compute 0.51694
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04216
+9 send 10 2 15 0
+9 compute 0.02864
+9 send 13 4 15 0
+9 compute 0.05704
+9 recv 8 2 15 0
+9 compute 0.0409
+9 recv 5 4 15 0
+9 compute 0.04274
+9 send 10 2 15 0
+9 compute 0.03294
+9 send 13 4 15 0
+9 compute 0.05226
+9 recv 8 2 15 0
+9 compute 0.03006
+9 recv 5 4 15 0
+9 compute 0.051
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0533
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0383
+9 send 10 2 15 0
+9 compute 0.04168
+9 send 13 4 15 0
+9 compute 0.075
+9 recv 10 1 15 0
+9 compute 0.0344
+9 recv 13 3 15 0
+9 compute 0.05332
+9 send 8 1 15 0
+9 compute 0.04652
+9 send 5 3 15 0
+9 compute 0.04444
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.08454
+9 send 8 1 15 0
+9 compute 0.03004
+9 send 5 3 15 0
+9 compute 0.0591
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05764
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05364
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0552
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05058
+9 recv 10 1 15 0
+9 compute 0.02212
+9 recv 13 3 15 0
+9 compute 0.04552
+9 send 8 1 15 0
+9 compute 0.02012
+9 send 5 3 15 0
+9 compute 0.05614
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04738
+9 send 8 1 15 0
+9 compute 0.02012
+9 send 5 3 15 0
+9 compute 0.057
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05594
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03852
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05432
+9 send 8 1 15 0
+9 compute 0.04146
+9 send 5 3 15 0
+9 compute 0.0513
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04648
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04594
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0478
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06998
+9 irecv 8 2 360 0
+9 compute 0.04982
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04232
+9 irecv 10 1 360 0
+9 compute 0.03422
+9 send 8 1 360 0
+9 compute 0.03426
+9 wait 11 10 1
+9 compute 0.11866
+9 irecv 5 4 360 0
+9 compute 0.02636
+9 send 13 4 360 0
+9 compute 0.03846
+9 wait 6 10 4
+9 compute 0.049
+9 irecv 13 3 360 0
+9 compute 0.0246
+9 send 5 3 360 0
+9 compute 0.03448
+9 wait 14 10 3
+9 compute 0.2317
+9 recv 8 2 15 0
+9 compute 0.0304
+9 recv 5 4 15 0
+9 compute 0.04678
+9 send 10 2 15 0
+9 compute 0.0289
+9 send 13 4 15 0
+9 compute 0.05278
+9 recv 8 2 15 0
+9 compute 0.03426
+9 recv 5 4 15 0
+9 compute 0.0409
+9 send 10 2 15 0
+9 compute 0.04124
+9 send 13 4 15 0
+9 compute 0.0648
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06958
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05392
+9 recv 8 2 15 0
+9 compute 0.02224
+9 recv 5 4 15 0
+9 compute 0.0475
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04096
+9 recv 8 2 15 0
+9 compute 0.04108
+9 recv 5 4 15 0
+9 compute 0.04122
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05516
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05334
+9 send 10 2 15 0
+9 compute 0.0316
+9 send 13 4 15 0
+9 compute 0.31842
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.044
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05862
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05578
+9 send 10 2 15 0
+9 compute 0.02856
+9 send 13 4 15 0
+9 compute 0.038
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0712
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05676
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04018
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05456
+9 recv 10 1 15 0
+9 compute 0.0341
+9 recv 13 3 15 0
+9 compute 0.06108
+9 send 8 1 15 0
+9 compute 0.02774
+9 send 5 3 15 0
+9 compute 0.05688
+9 recv 10 1 15 0
+9 compute 0.0202
+9 recv 13 3 15 0
+9 compute 0.05294
+9 send 8 1 15 0
+9 compute 0.03794
+9 send 5 3 15 0
+9 compute 0.05484
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0646
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05312
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0532
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05202
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03878
+9 recv 10 1 15 0
+9 compute 0.04008
+9 recv 13 3 15 0
+9 compute 0.03934
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03808
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05422
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05248
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03752
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03814
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05046
+9 send 8 1 15 0
+9 compute 0.0284
+9 send 5 3 15 0
+9 compute 0.31828
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0453
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.09
+9 irecv 8 2 360 0
+9 compute 0.03036
+9 send 10 2 360 0
+9 compute 0.03596
+9 wait 9 10 2
+9 compute 0.03532
+9 irecv 10 1 360 0
+9 compute 0.03038
+9 send 8 1 360 0
+9 compute 0.02108
+9 wait 11 10 1
+9 compute 0.11068
+9 irecv 5 4 360 0
+9 compute 0.02494
+9 send 13 4 360 0
+9 compute 0.02298
+9 wait 6 10 4
+9 compute 0.03924
+9 irecv 13 3 360 0
+9 compute 0.02702
+9 send 5 3 360 0
+9 compute 0.02288
+9 wait 14 10 3
+9 compute 0.21756
+9 recv 8 2 15 0
+9 compute 0.02762
+9 recv 5 4 15 0
+9 compute 0.04886
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0382
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04008
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03788
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03824
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03678
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03808
+9 send 10 2 15 0
+9 compute 0.06466
+9 send 13 4 15 0
+9 compute 0.04524
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03814
+9 send 10 2 15 0
+9 compute 0.02142
+9 send 13 4 15 0
+9 compute 0.03988
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03826
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03536
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03796
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03516
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03652
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03414
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0376
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03534
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03978
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04188
+9 recv 10 1 15 0
+9 compute 0.31982
+9 recv 13 3 15 0
+9 compute 0.04628
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0356
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03996
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0386
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03742
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04156
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04272
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03866
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03746
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03784
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03688
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03714
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0353
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03512
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04894
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.036
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03438
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03366
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.039
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06242
+9 irecv 8 2 360 0
+9 compute 0.02654
+9 send 10 2 360 0
+9 compute 0.02238
+9 wait 9 10 2
+9 compute 0.0375
+9 irecv 10 1 360 0
+9 compute 0.0322
+9 send 8 1 360 0
+9 compute 0.02202
+9 wait 11 10 1
+9 compute 0.10722
+9 irecv 5 4 360 0
+9 compute 0.02722
+9 send 13 4 360 0
+9 compute 0.02302
+9 wait 6 10 4
+9 compute 0.03934
+9 irecv 13 3 360 0
+9 compute 0.02602
+9 send 5 3 360 0
+9 compute 0.03442
+9 wait 14 10 3
+9 compute 0.20308
+9 recv 8 2 15 0
+9 compute 0.02148
+9 recv 5 4 15 0
+9 compute 0.04258
+9 send 10 2 15 0
+9 compute 0.0213
+9 send 13 4 15 0
+9 compute 0.03816
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03762
+9 send 10 2 15 0
+9 compute 0.02014
+9 send 13 4 15 0
+9 compute 0.041
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03834
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03606
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04094
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03636
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05302
+9 send 10 2 15 0
+9 compute 0.03056
+9 send 13 4 15 0
+9 compute 0.0534
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04526
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0527
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04136
+9 send 10 2 15 0
+9 compute 0.04186
+9 send 13 4 15 0
+9 compute 0.10442
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04096
+9 send 10 2 15 0
+9 compute 0.02842
+9 send 13 4 15 0
+9 compute 0.05462
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06306
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.038
+9 recv 8 2 15 0
+9 compute 0.0279
+9 recv 5 4 15 0
+9 compute 0.03886
+9 send 10 2 15 0
+9 compute 0.02786
+9 send 13 4 15 0
+9 compute 0.0545
+9 recv 10 1 15 0
+9 compute 0.03428
+9 recv 13 3 15 0
+9 compute 0.07808
+9 send 8 1 15 0
+9 compute 0.02932
+9 send 5 3 15 0
+9 compute 0.06826
+9 recv 10 1 15 0
+9 compute 0.04174
+9 recv 13 3 15 0
+9 compute 0.03898
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03594
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0437
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04172
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0533
+9 send 8 1 15 0
+9 compute 0.0296
+9 send 5 3 15 0
+9 compute 0.05492
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0532
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0389
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04252
+9 send 8 1 15 0
+9 compute 0.0393
+9 send 5 3 15 0
+9 compute 0.05492
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05012
+9 send 8 1 15 0
+9 compute 0.04076
+9 send 5 3 15 0
+9 compute 0.05308
+9 recv 10 1 15 0
+9 compute 0.04216
+9 recv 13 3 15 0
+9 compute 0.0393
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04152
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05282
+9 send 8 1 15 0
+9 compute 0.02988
+9 send 5 3 15 0
+9 compute 0.05594
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04894
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07834
+9 irecv 8 2 360 0
+9 compute 0.06258
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04458
+9 irecv 10 1 360 0
+9 compute 0.03184
+9 send 8 1 360 0
+9 compute 0.03404
+9 wait 11 10 1
+9 compute 0.1203
+9 irecv 5 4 360 0
+9 compute 0.02824
+9 send 13 4 360 0
+9 compute 0.03636
+9 wait 6 10 4
+9 compute 0.05212
+9 irecv 13 3 360 0
+9 compute 0.02496
+9 send 5 3 360 0
+9 compute 0.0356
+9 wait 14 10 3
+9 compute 0.21828
+9 recv 8 2 15 0
+9 compute 0.02962
+9 recv 5 4 15 0
+9 compute 0.05094
+9 send 10 2 15 0
+9 compute 0.03046
+9 send 13 4 15 0
+9 compute 0.05396
+9 recv 8 2 15 0
+9 compute 0.02766
+9 recv 5 4 15 0
+9 compute 0.04186
+9 send 10 2 15 0
+9 compute 0.0283
+9 send 13 4 15 0
+9 compute 0.05142
+9 recv 8 2 15 0
+9 compute 0.03266
+9 recv 5 4 15 0
+9 compute 0.07636
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06342
+9 recv 8 2 15 0
+9 compute 0.0286
+9 recv 5 4 15 0
+9 compute 0.0422
+9 send 10 2 15 0
+9 compute 0.0291
+9 send 13 4 15 0
+9 compute 0.052
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04264
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04294
+9 recv 8 2 15 0
+9 compute 0.04054
+9 recv 5 4 15 0
+9 compute 0.03902
+9 send 10 2 15 0
+9 compute 0.02948
+9 send 13 4 15 0
+9 compute 0.0525
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03966
+9 send 10 2 15 0
+9 compute 0.0317
+9 send 13 4 15 0
+9 compute 0.0543
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0384
+9 send 10 2 15 0
+9 compute 0.03374
+9 send 13 4 15 0
+9 compute 0.05086
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03926
+9 send 10 2 15 0
+9 compute 0.03056
+9 send 13 4 15 0
+9 compute 0.05596
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04006
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04722
+9 recv 10 1 15 0
+9 compute 0.03308
+9 recv 13 3 15 0
+9 compute 0.04718
+9 send 8 1 15 0
+9 compute 0.03026
+9 send 5 3 15 0
+9 compute 0.05476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05202
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06454
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04708
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03916
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05762
+9 send 8 1 15 0
+9 compute 0.02016
+9 send 5 3 15 0
+9 compute 0.06856
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0396
+9 send 8 1 15 0
+9 compute 0.02342
+9 send 5 3 15 0
+9 compute 0.05396
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04562
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04776
+9 recv 10 1 15 0
+9 compute 0.04034
+9 recv 13 3 15 0
+9 compute 0.03804
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03792
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0515
+9 send 8 1 15 0
+9 compute 0.02782
+9 send 5 3 15 0
+9 compute 0.05284
+9 recv 10 1 15 0
+9 compute 0.04028
+9 recv 13 3 15 0
+9 compute 0.04902
+9 send 8 1 15 0
+9 compute 0.02936
+9 send 5 3 15 0
+9 compute 0.06002
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04312
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.08296
+9 irecv 8 2 360 0
+9 compute 0.0287
+9 send 10 2 360 0
+9 compute 0.03618
+9 wait 9 10 2
+9 compute 0.04058
+9 irecv 10 1 360 0
+9 compute 0.0298
+9 send 8 1 360 0
+9 compute 0.0344
+9 wait 11 10 1
+9 compute 0.12398
+9 irecv 5 4 360 0
+9 compute 0.02508
+9 send 13 4 360 0
+9 compute 0.03224
+9 wait 6 10 4
+9 compute 0.03794
+9 irecv 13 3 360 0
+9 compute 0.04376
+9 send 5 3 360 0
+9 compute 0.02374
+9 wait 14 10 3
+9 compute 0.22568
+9 recv 8 2 15 0
+9 compute 0.03078
+9 recv 5 4 15 0
+9 compute 0.0517
+9 send 10 2 15 0
+9 compute 0.0425
+9 send 13 4 15 0
+9 compute 0.04018
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04242
+9 send 10 2 15 0
+9 compute 0.03218
+9 send 13 4 15 0
+9 compute 0.05434
+9 recv 8 2 15 0
+9 compute 0.02116
+9 recv 5 4 15 0
+9 compute 0.06956
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.07024
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04314
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05464
+9 recv 8 2 15 0
+9 compute 0.028
+9 recv 5 4 15 0
+9 compute 0.06046
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06494
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03846
+9 send 10 2 15 0
+9 compute 0.02764
+9 send 13 4 15 0
+9 compute 0.05306
+9 recv 8 2 15 0
+9 compute 0.03548
+9 recv 5 4 15 0
+9 compute 0.0429
+9 send 10 2 15 0
+9 compute 0.04084
+9 send 13 4 15 0
+9 compute 0.07016
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05402
+9 send 10 2 15 0
+9 compute 0.02868
+9 send 13 4 15 0
+9 compute 0.0497
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04166
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06656
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04992
+9 send 10 2 15 0
+9 compute 0.0283
+9 send 13 4 15 0
+9 compute 0.06126
+9 recv 10 1 15 0
+9 compute 0.03226
+9 recv 13 3 15 0
+9 compute 0.05288
+9 send 8 1 15 0
+9 compute 0.03856
+9 send 5 3 15 0
+9 compute 0.05524
+9 recv 10 1 15 0
+9 compute 0.0294
+9 recv 13 3 15 0
+9 compute 0.04056
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03958
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05156
+9 send 8 1 15 0
+9 compute 0.02242
+9 send 5 3 15 0
+9 compute 0.05852
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0554
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04176
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06138
+9 send 8 1 15 0
+9 compute 0.02908
+9 send 5 3 15 0
+9 compute 0.05338
+9 recv 10 1 15 0
+9 compute 0.02674
+9 recv 13 3 15 0
+9 compute 0.05386
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05262
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03808
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04056
+9 recv 10 1 15 0
+9 compute 0.02182
+9 recv 13 3 15 0
+9 compute 0.05218
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05344
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04972
+9 send 8 1 15 0
+9 compute 0.07376
+9 send 5 3 15 0
+9 compute 0.06232
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05228
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07278
+9 irecv 8 2 360 0
+9 compute 0.04848
+9 send 10 2 360 0
+9 compute 0.03294
+9 wait 9 10 2
+9 compute 0.0504
+9 irecv 10 1 360 0
+9 compute 0.03486
+9 send 8 1 360 0
+9 compute 0.0341
+9 wait 11 10 1
+9 compute 0.11734
+9 irecv 5 4 360 0
+9 compute 0.05922
+9 send 13 4 360 0
+9 compute 0.04334
+9 wait 6 10 4
+9 compute 0.05
+9 irecv 13 3 360 0
+9 compute 0.02612
+9 send 5 3 360 0
+9 compute 0.29398
+9 wait 14 10 3
+9 compute 0.2301
+9 recv 8 2 15 0
+9 compute 0.02932
+9 recv 5 4 15 0
+9 compute 0.0556
+9 send 10 2 15 0
+9 compute 0.02946
+9 send 13 4 15 0
+9 compute 0.05664
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.07064
+9 send 10 2 15 0
+9 compute 0.03852
+9 send 13 4 15 0
+9 compute 0.03896
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04226
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04704
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04022
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0359
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04008
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03524
+9 recv 8 2 15 0
+9 compute 0.02058
+9 recv 5 4 15 0
+9 compute 0.061
+9 send 10 2 15 0
+9 compute 0.02026
+9 send 13 4 15 0
+9 compute 0.04346
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04028
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03418
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04006
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.049
+9 recv 8 2 15 0
+9 compute 0.02878
+9 recv 5 4 15 0
+9 compute 0.04074
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04264
+9 recv 8 2 15 0
+9 compute 0.03024
+9 recv 5 4 15 0
+9 compute 0.04758
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06286
+9 recv 10 1 15 0
+9 compute 0.0386
+9 recv 13 3 15 0
+9 compute 0.07552
+9 send 8 1 15 0
+9 compute 0.04588
+9 send 5 3 15 0
+9 compute 0.07118
+9 recv 10 1 15 0
+9 compute 0.02812
+9 recv 13 3 15 0
+9 compute 0.07638
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04458
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05766
+9 send 8 1 15 0
+9 compute 0.0326
+9 send 5 3 15 0
+9 compute 0.05464
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05508
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04336
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05408
+9 send 8 1 15 0
+9 compute 0.02946
+9 send 5 3 15 0
+9 compute 0.057
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04396
+9 send 8 1 15 0
+9 compute 0.02992
+9 send 5 3 15 0
+9 compute 0.05534
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05522
+9 send 8 1 15 0
+9 compute 0.02928
+9 send 5 3 15 0
+9 compute 0.04044
+9 recv 10 1 15 0
+9 compute 0.07292
+9 recv 13 3 15 0
+9 compute 0.0585
+9 send 8 1 15 0
+9 compute 0.02788
+9 send 5 3 15 0
+9 compute 0.0558
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03862
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04068
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04538
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0719
+9 irecv 8 2 360 0
+9 compute 0.06324
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04342
+9 irecv 10 1 360 0
+9 compute 0.03126
+9 send 8 1 360 0
+9 compute 0.0357
+9 wait 11 10 1
+9 compute 0.12098
+9 irecv 5 4 360 0
+9 compute 0.0255
+9 send 13 4 360 0
+9 compute 0.03364
+9 wait 6 10 4
+9 compute 0.05482
+9 irecv 13 3 360 0
+9 compute 0.02626
+9 send 5 3 360 0
+9 compute 0.04758
+9 wait 14 10 3
+9 compute 0.22194
+9 recv 8 2 15 0
+9 compute 0.03332
+9 recv 5 4 15 0
+9 compute 0.04736
+9 send 10 2 15 0
+9 compute 0.02756
+9 send 13 4 15 0
+9 compute 0.05112
+9 recv 8 2 15 0
+9 compute 0.04152
+9 recv 5 4 15 0
+9 compute 0.04248
+9 send 10 2 15 0
+9 compute 0.02968
+9 send 13 4 15 0
+9 compute 0.04952
+9 recv 8 2 15 0
+9 compute 0.03004
+9 recv 5 4 15 0
+9 compute 0.03986
+9 send 10 2 15 0
+9 compute 0.03288
+9 send 13 4 15 0
+9 compute 0.05326
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04408
+9 send 10 2 15 0
+9 compute 0.02872
+9 send 13 4 15 0
+9 compute 0.0557
+9 recv 8 2 15 0
+9 compute 0.03446
+9 recv 5 4 15 0
+9 compute 0.06692
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06568
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05304
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.051
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04518
+9 send 10 2 15 0
+9 compute 0.0422
+9 send 13 4 15 0
+9 compute 0.06836
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04176
+9 send 10 2 15 0
+9 compute 0.03044
+9 send 13 4 15 0
+9 compute 0.05256
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03898
+9 send 10 2 15 0
+9 compute 0.03042
+9 send 13 4 15 0
+9 compute 0.0555
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04048
+9 send 10 2 15 0
+9 compute 0.02824
+9 send 13 4 15 0
+9 compute 0.05834
+9 recv 10 1 15 0
+9 compute 0.04604
+9 recv 13 3 15 0
+9 compute 0.05996
+9 send 8 1 15 0
+9 compute 0.03856
+9 send 5 3 15 0
+9 compute 0.04004
+9 recv 10 1 15 0
+9 compute 0.04228
+9 recv 13 3 15 0
+9 compute 0.0523
+9 send 8 1 15 0
+9 compute 0.03032
+9 send 5 3 15 0
+9 compute 0.05674
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05096
+9 send 8 1 15 0
+9 compute 0.02908
+9 send 5 3 15 0
+9 compute 0.056
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04434
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04444
+9 recv 10 1 15 0
+9 compute 0.04092
+9 recv 13 3 15 0
+9 compute 0.03804
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06456
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04278
+9 send 8 1 15 0
+9 compute 0.03958
+9 send 5 3 15 0
+9 compute 0.05096
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0677
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03866
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05222
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0506
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0502
+9 send 8 1 15 0
+9 compute 0.0288
+9 send 5 3 15 0
+9 compute 0.05476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04256
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07918
+9 irecv 8 2 360 0
+9 compute 0.04808
+9 send 10 2 360 0
+9 compute 0.04856
+9 wait 9 10 2
+9 compute 0.05308
+9 irecv 10 1 360 0
+9 compute 0.03292
+9 send 8 1 360 0
+9 compute 0.03486
+9 wait 11 10 1
+9 compute 0.14682
+9 irecv 5 4 360 0
+9 compute 0.02624
+9 send 13 4 360 0
+9 compute 0.0361
+9 wait 6 10 4
+9 compute 0.0562
+9 irecv 13 3 360 0
+9 compute 0.0392
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.27006
+9 recv 8 2 15 0
+9 compute 0.0323
+9 recv 5 4 15 0
+9 compute 0.05208
+9 send 10 2 15 0
+9 compute 0.02766
+9 send 13 4 15 0
+9 compute 0.0519
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04716
+9 send 10 2 15 0
+9 compute 0.04156
+9 send 13 4 15 0
+9 compute 0.05802
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04384
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06272
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04234
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03676
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0407
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05252
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04394
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05246
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03986
+9 send 10 2 15 0
+9 compute 0.04066
+9 send 13 4 15 0
+9 compute 0.06244
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04002
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04984
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05132
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.07164
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0414
+9 send 10 2 15 0
+9 compute 0.02786
+9 send 13 4 15 0
+9 compute 0.06306
+9 recv 10 1 15 0
+9 compute 0.03268
+9 recv 13 3 15 0
+9 compute 0.08958
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0433
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06432
+9 send 8 1 15 0
+9 compute 0.0439
+9 send 5 3 15 0
+9 compute 0.0677
+9 recv 10 1 15 0
+9 compute 0.04362
+9 recv 13 3 15 0
+9 compute 0.0509
+9 send 8 1 15 0
+9 compute 0.02982
+9 send 5 3 15 0
+9 compute 0.05796
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0668
+9 send 8 1 15 0
+9 compute 0.02704
+9 send 5 3 15 0
+9 compute 0.05564
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06308
+9 send 8 1 15 0
+9 compute 0.02636
+9 send 5 3 15 0
+9 compute 0.0735
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05674
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05104
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05414
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05326
+9 recv 10 1 15 0
+9 compute 0.0403
+9 recv 13 3 15 0
+9 compute 0.03906
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03822
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0494
+9 send 8 1 15 0
+9 compute 0.0403
+9 send 5 3 15 0
+9 compute 0.05394
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04464
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06542
+9 irecv 8 2 360 0
+9 compute 0.05018
+9 send 10 2 360 0
+9 compute 0.04072
+9 wait 9 10 2
+9 compute 0.05236
+9 irecv 10 1 360 0
+9 compute 0.0362
+9 send 8 1 360 0
+9 compute 0.03494
+9 wait 11 10 1
+9 compute 0.12552
+9 irecv 5 4 360 0
+9 compute 0.05724
+9 send 13 4 360 0
+9 wait 6 10 4
+9 compute 0.05466
+9 irecv 13 3 360 0
+9 compute 0.05962
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.23304
+9 recv 8 2 15 0
+9 compute 0.03476
+9 recv 5 4 15 0
+9 compute 0.05616
+9 send 10 2 15 0
+9 compute 0.02934
+9 send 13 4 15 0
+9 compute 0.04994
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04206
+9 send 10 2 15 0
+9 compute 0.03268
+9 send 13 4 15 0
+9 compute 0.05634
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04116
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03956
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04336
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05174
+9 recv 8 2 15 0
+9 compute 0.0294
+9 recv 5 4 15 0
+9 compute 0.05154
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0513
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03908
+9 send 10 2 15 0
+9 compute 0.03112
+9 send 13 4 15 0
+9 compute 0.05196
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04016
+9 send 10 2 15 0
+9 compute 0.02898
+9 send 13 4 15 0
+9 compute 0.05282
+9 recv 8 2 15 0
+9 compute 0.03994
+9 recv 5 4 15 0
+9 compute 0.04254
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0528
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03744
+9 send 10 2 15 0
+9 compute 0.02942
+9 send 13 4 15 0
+9 compute 0.05144
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04018
+9 send 10 2 15 0
+9 compute 0.03108
+9 send 13 4 15 0
+9 compute 0.0598
+9 recv 10 1 15 0
+9 compute 0.0329
+9 recv 13 3 15 0
+9 compute 0.05984
+9 send 8 1 15 0
+9 compute 0.02768
+9 send 5 3 15 0
+9 compute 0.05332
+9 recv 10 1 15 0
+9 compute 0.04318
+9 recv 13 3 15 0
+9 compute 0.03896
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06178
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04522
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04174
+9 recv 10 1 15 0
+9 compute 0.02932
+9 recv 13 3 15 0
+9 compute 0.0395
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04172
+9 recv 10 1 15 0
+9 compute 0.02116
+9 recv 13 3 15 0
+9 compute 0.07128
+9 send 8 1 15 0
+9 compute 0.02966
+9 send 5 3 15 0
+9 compute 0.05908
+9 recv 10 1 15 0
+9 compute 0.02102
+9 recv 13 3 15 0
+9 compute 0.05764
+9 send 8 1 15 0
+9 compute 0.03248
+9 send 5 3 15 0
+9 compute 0.06798
+9 recv 10 1 15 0
+9 compute 0.03954
+9 recv 13 3 15 0
+9 compute 0.0375
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03876
+9 recv 10 1 15 0
+9 compute 0.0286
+9 recv 13 3 15 0
+9 compute 0.03638
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05582
+9 recv 10 1 15 0
+9 compute 0.0278
+9 recv 13 3 15 0
+9 compute 0.04894
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05022
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06702
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06886
+9 irecv 8 2 360 0
+9 compute 0.0515
+9 send 10 2 360 0
+9 compute 0.0333
+9 wait 9 10 2
+9 compute 0.04088
+9 irecv 10 1 360 0
+9 compute 0.03404
+9 send 8 1 360 0
+9 compute 0.033
+9 wait 11 10 1
+9 compute 0.1199
+9 irecv 5 4 360 0
+9 compute 0.02538
+9 send 13 4 360 0
+9 compute 0.03574
+9 wait 6 10 4
+9 compute 0.052
+9 irecv 13 3 360 0
+9 compute 0.0267
+9 send 5 3 360 0
+9 compute 0.03682
+9 wait 14 10 3
+9 compute 0.2199
+9 recv 8 2 15 0
+9 compute 0.0415
+9 recv 5 4 15 0
+9 compute 0.07418
+9 send 10 2 15 0
+9 compute 0.02804
+9 send 13 4 15 0
+9 compute 0.06854
+9 recv 8 2 15 0
+9 compute 0.03162
+9 recv 5 4 15 0
+9 compute 0.05258
+9 send 10 2 15 0
+9 compute 0.02972
+9 send 13 4 15 0
+9 compute 0.05716
+9 recv 8 2 15 0
+9 compute 0.03204
+9 recv 5 4 15 0
+9 compute 0.04548
+9 send 10 2 15 0
+9 compute 0.0292
+9 send 13 4 15 0
+9 compute 0.05614
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04088
+9 send 10 2 15 0
+9 compute 0.03118
+9 send 13 4 15 0
+9 compute 0.0578
+9 recv 8 2 15 0
+9 compute 0.03106
+9 recv 5 4 15 0
+9 compute 0.03894
+9 send 10 2 15 0
+9 compute 0.03038
+9 send 13 4 15 0
+9 compute 0.05522
+9 recv 8 2 15 0
+9 compute 0.0436
+9 recv 5 4 15 0
+9 compute 0.04772
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05642
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04128
+9 send 10 2 15 0
+9 compute 0.02874
+9 send 13 4 15 0
+9 compute 0.05436
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05448
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05678
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04516
+9 send 10 2 15 0
+9 compute 0.03246
+9 send 13 4 15 0
+9 compute 0.05606
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04166
+9 send 10 2 15 0
+9 compute 0.02834
+9 send 13 4 15 0
+9 compute 0.05958
+9 recv 10 1 15 0
+9 compute 0.03232
+9 recv 13 3 15 0
+9 compute 0.07316
+9 send 8 1 15 0
+9 compute 0.02852
+9 send 5 3 15 0
+9 compute 0.0638
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0527
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04504
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0452
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0428
+9 recv 10 1 15 0
+9 compute 0.02992
+9 recv 13 3 15 0
+9 compute 0.05266
+9 send 8 1 15 0
+9 compute 0.03616
+9 send 5 3 15 0
+9 compute 0.0742
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06336
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0425
+9 recv 10 1 15 0
+9 compute 0.04578
+9 recv 13 3 15 0
+9 compute 0.0528
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0657
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06398
+9 send 8 1 15 0
+9 compute 0.03108
+9 send 5 3 15 0
+9 compute 0.07146
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04398
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06488
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05362
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.043
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0745
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.11704
+9 irecv 8 2 360 0
+9 compute 0.06254
+9 send 10 2 360 0
+9 compute 0.05096
+9 wait 9 10 2
+9 compute 0.05814
+9 irecv 10 1 360 0
+9 compute 0.04316
+9 send 8 1 360 0
+9 compute 0.03634
+9 wait 11 10 1
+9 compute 0.15924
+9 irecv 5 4 360 0
+9 compute 0.03966
+9 send 13 4 360 0
+9 wait 6 10 4
+9 compute 0.06596
+9 irecv 13 3 360 0
+9 compute 0.03484
+9 send 5 3 360 0
+9 compute 0.0366
+9 wait 14 10 3
+9 compute 0.30402
+9 recv 8 2 15 0
+9 compute 0.03234
+9 recv 5 4 15 0
+9 compute 0.06518
+9 send 10 2 15 0
+9 compute 0.0287
+9 send 13 4 15 0
+9 compute 0.0618
+9 recv 8 2 15 0
+9 compute 0.03012
+9 recv 5 4 15 0
+9 compute 0.05152
+9 send 10 2 15 0
+9 compute 0.03058
+9 send 13 4 15 0
+9 compute 0.0404
+9 recv 8 2 15 0
+9 compute 0.04566
+9 recv 5 4 15 0
+9 compute 0.04912
+9 send 10 2 15 0
+9 compute 0.03018
+9 send 13 4 15 0
+9 compute 0.06382
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04526
+9 send 10 2 15 0
+9 compute 0.02884
+9 send 13 4 15 0
+9 compute 0.05308
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04158
+9 send 10 2 15 0
+9 compute 0.0351
+9 send 13 4 15 0
+9 compute 0.06034
+9 recv 8 2 15 0
+9 compute 0.06582
+9 recv 5 4 15 0
+9 compute 0.04792
+9 send 10 2 15 0
+9 compute 0.04176
+9 send 13 4 15 0
+9 compute 0.05832
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04106
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0634
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04424
+9 send 10 2 15 0
+9 compute 0.02786
+9 send 13 4 15 0
+9 compute 0.05438
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04246
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0535
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04094
+9 send 10 2 15 0
+9 compute 0.0443
+9 send 13 4 15 0
+9 compute 0.07988
+9 recv 10 1 15 0
+9 compute 0.05262
+9 recv 13 3 15 0
+9 compute 0.08766
+9 send 8 1 15 0
+9 compute 0.0333
+9 send 5 3 15 0
+9 compute 0.09102
+9 recv 10 1 15 0
+9 compute 0.04438
+9 recv 13 3 15 0
+9 compute 0.10486
+9 send 8 1 15 0
+9 compute 0.03648
+9 send 5 3 15 0
+9 compute 0.0742
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0719
+9 send 8 1 15 0
+9 compute 0.03896
+9 send 5 3 15 0
+9 compute 0.0415
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06754
+9 send 8 1 15 0
+9 compute 0.03074
+9 send 5 3 15 0
+9 compute 0.05734
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05514
+9 send 8 1 15 0
+9 compute 0.0409
+9 send 5 3 15 0
+9 compute 0.05872
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04434
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04288
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05138
+9 send 8 1 15 0
+9 compute 0.03002
+9 send 5 3 15 0
+9 compute 0.05234
+9 recv 10 1 15 0
+9 compute 0.04044
+9 recv 13 3 15 0
+9 compute 0.03736
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03892
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0584
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06906
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0507
+9 send 8 1 15 0
+9 compute 0.02608
+9 send 5 3 15 0
+9 compute 0.08718
+9 irecv 8 2 360 0
+9 compute 0.03766
+9 send 10 2 360 0
+9 compute 0.03488
+9 wait 9 10 2
+9 compute 0.04328
+9 irecv 10 1 360 0
+9 compute 0.03194
+9 send 8 1 360 0
+9 compute 0.03482
+9 wait 11 10 1
+9 compute 0.11652
+9 irecv 5 4 360 0
+9 compute 0.02582
+9 send 13 4 360 0
+9 compute 0.03586
+9 wait 6 10 4
+9 compute 0.05394
+9 irecv 13 3 360 0
+9 compute 0.0256
+9 send 5 3 360 0
+9 compute 0.04708
+9 wait 14 10 3
+9 compute 0.22912
+9 recv 8 2 15 0
+9 compute 0.03146
+9 recv 5 4 15 0
+9 compute 0.0513
+9 send 10 2 15 0
+9 compute 0.02924
+9 send 13 4 15 0
+9 compute 0.05218
+9 recv 8 2 15 0
+9 compute 0.02974
+9 recv 5 4 15 0
+9 compute 0.04166
+9 send 10 2 15 0
+9 compute 0.03258
+9 send 13 4 15 0
+9 compute 0.06646
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0417
+9 send 10 2 15 0
+9 compute 0.03186
+9 send 13 4 15 0
+9 compute 0.0395
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04056
+9 send 10 2 15 0
+9 compute 0.05314
+9 send 13 4 15 0
+9 compute 0.04414
+9 recv 8 2 15 0
+9 compute 0.03026
+9 recv 5 4 15 0
+9 compute 0.067
+9 send 10 2 15 0
+9 compute 0.03122
+9 send 13 4 15 0
+9 compute 0.05638
+9 recv 8 2 15 0
+9 compute 0.0418
+9 recv 5 4 15 0
+9 compute 0.03924
+9 send 10 2 15 0
+9 compute 0.02852
+9 send 13 4 15 0
+9 compute 0.04896
+9 recv 8 2 15 0
+9 compute 0.04204
+9 recv 5 4 15 0
+9 compute 0.0395
+9 send 10 2 15 0
+9 compute 0.03034
+9 send 13 4 15 0
+9 compute 0.05688
+9 recv 8 2 15 0
+9 compute 0.02056
+9 recv 5 4 15 0
+9 compute 0.04116
+9 send 10 2 15 0
+9 compute 0.02902
+9 send 13 4 15 0
+9 compute 0.05588
+9 recv 8 2 15 0
+9 compute 0.0283
+9 recv 5 4 15 0
+9 compute 0.03796
+9 send 10 2 15 0
+9 compute 0.051
+9 send 13 4 15 0
+9 compute 0.0682
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03988
+9 send 10 2 15 0
+9 compute 0.02964
+9 send 13 4 15 0
+9 compute 0.04472
+9 recv 10 1 15 0
+9 compute 0.03556
+9 recv 13 3 15 0
+9 compute 0.06878
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0538
+9 recv 10 1 15 0
+9 compute 0.02368
+9 recv 13 3 15 0
+9 compute 0.05638
+9 send 8 1 15 0
+9 compute 0.03212
+9 send 5 3 15 0
+9 compute 0.062
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05626
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05736
+9 recv 10 1 15 0
+9 compute 0.0403
+9 recv 13 3 15 0
+9 compute 0.03926
+9 send 8 1 15 0
+9 compute 0.02962
+9 send 5 3 15 0
+9 compute 0.05726
+9 recv 10 1 15 0
+9 compute 0.02096
+9 recv 13 3 15 0
+9 compute 0.05418
+9 send 8 1 15 0
+9 compute 0.02856
+9 send 5 3 15 0
+9 compute 0.05996
+9 recv 10 1 15 0
+9 compute 0.02872
+9 recv 13 3 15 0
+9 compute 0.05028
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05456
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05138
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03622
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05128
+9 send 8 1 15 0
+9 compute 0.02902
+9 send 5 3 15 0
+9 compute 0.05128
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03502
+9 send 8 1 15 0
+9 compute 0.03146
+9 send 5 3 15 0
+9 compute 0.05524
+9 recv 10 1 15 0
+9 compute 0.02014
+9 recv 13 3 15 0
+9 compute 0.04416
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07432
+9 irecv 8 2 360 0
+9 compute 0.04724
+9 send 10 2 360 0
+9 compute 0.03692
+9 wait 9 10 2
+9 compute 0.04512
+9 irecv 10 1 360 0
+9 compute 0.032
+9 send 8 1 360 0
+9 compute 0.03408
+9 wait 11 10 1
+9 compute 0.13286
+9 irecv 5 4 360 0
+9 compute 0.02696
+9 send 13 4 360 0
+9 compute 0.03414
+9 wait 6 10 4
+9 compute 0.06006
+9 irecv 13 3 360 0
+9 compute 0.02578
+9 send 5 3 360 0
+9 compute 0.04598
+9 wait 14 10 3
+9 compute 0.2113
+9 recv 8 2 15 0
+9 compute 0.03008
+9 recv 5 4 15 0
+9 compute 0.045
+9 send 10 2 15 0
+9 compute 0.02896
+9 send 13 4 15 0
+9 compute 0.0493
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04078
+9 send 10 2 15 0
+9 compute 0.04232
+9 send 13 4 15 0
+9 compute 0.0666
+9 recv 8 2 15 0
+9 compute 0.03184
+9 recv 5 4 15 0
+9 compute 0.04296
+9 send 10 2 15 0
+9 compute 0.03126
+9 send 13 4 15 0
+9 compute 0.0535
+9 recv 8 2 15 0
+9 compute 0.04686
+9 recv 5 4 15 0
+9 compute 0.0456
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0547
+9 recv 8 2 15 0
+9 compute 0.03204
+9 recv 5 4 15 0
+9 compute 0.0507
+9 send 10 2 15 0
+9 compute 0.03104
+9 send 13 4 15 0
+9 compute 0.04158
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.045
+9 send 10 2 15 0
+9 compute 0.04256
+9 send 13 4 15 0
+9 compute 0.06382
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04042
+9 send 10 2 15 0
+9 compute 0.02864
+9 send 13 4 15 0
+9 compute 0.054
+9 recv 8 2 15 0
+9 compute 0.0409
+9 recv 5 4 15 0
+9 compute 0.0407
+9 send 10 2 15 0
+9 compute 0.02884
+9 send 13 4 15 0
+9 compute 0.04394
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04032
+9 send 10 2 15 0
+9 compute 0.03024
+9 send 13 4 15 0
+9 compute 0.05834
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04036
+9 send 10 2 15 0
+9 compute 0.0281
+9 send 13 4 15 0
+9 compute 0.06232
+9 recv 10 1 15 0
+9 compute 0.03324
+9 recv 13 3 15 0
+9 compute 0.04954
+9 send 8 1 15 0
+9 compute 0.02944
+9 send 5 3 15 0
+9 compute 0.05706
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04474
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06446
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04802
+9 send 8 1 15 0
+9 compute 0.02942
+9 send 5 3 15 0
+9 compute 0.06196
+9 recv 10 1 15 0
+9 compute 0.02958
+9 recv 13 3 15 0
+9 compute 0.03582
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04556
+9 recv 10 1 15 0
+9 compute 0.04302
+9 recv 13 3 15 0
+9 compute 0.05694
+9 send 8 1 15 0
+9 compute 0.02246
+9 send 5 3 15 0
+9 compute 0.0555
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05762
+9 send 8 1 15 0
+9 compute 0.04162
+9 send 5 3 15 0
+9 compute 0.04056
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06346
+9 send 8 1 15 0
+9 compute 0.02802
+9 send 5 3 15 0
+9 compute 0.05306
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03736
+9 send 8 1 15 0
+9 compute 0.02692
+9 send 5 3 15 0
+9 compute 0.0567
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03762
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03952
+9 recv 10 1 15 0
+9 compute 0.04146
+9 recv 13 3 15 0
+9 compute 0.04172
+9 send 8 1 15 0
+9 compute 0.0373
+9 send 5 3 15 0
+9 compute 0.35418
+9 irecv 8 2 360 0
+9 compute 0.03788
+9 send 10 2 360 0
+9 compute 0.0336
+9 wait 9 10 2
+9 compute 0.42374
+9 irecv 10 1 360 0
+9 compute 0.06488
+9 send 8 1 360 0
+9 compute 0.29988
+9 wait 11 10 1
+9 compute 0.1418
+9 irecv 5 4 360 0
+9 compute 0.02954
+9 send 13 4 360 0
+9 compute 0.02646
+9 wait 6 10 4
+9 compute 0.05642
+9 irecv 13 3 360 0
+9 compute 0.02714
+9 send 5 3 360 0
+9 compute 0.03468
+9 wait 14 10 3
+9 compute 0.23616
+9 recv 8 2 15 0
+9 compute 0.02942
+9 recv 5 4 15 0
+9 compute 0.05894
+9 send 10 2 15 0
+9 compute 0.02756
+9 send 13 4 15 0
+9 compute 0.05088
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04144
+9 send 10 2 15 0
+9 compute 0.03988
+9 send 13 4 15 0
+9 compute 0.07238
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04132
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05256
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03916
+9 send 10 2 15 0
+9 compute 0.033
+9 send 13 4 15 0
+9 compute 0.0576
+9 recv 8 2 15 0
+9 compute 0.02206
+9 recv 5 4 15 0
+9 compute 0.04332
+9 send 10 2 15 0
+9 compute 0.03106
+9 send 13 4 15 0
+9 compute 0.0544
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03986
+9 send 10 2 15 0
+9 compute 0.02842
+9 send 13 4 15 0
+9 compute 0.05224
+9 recv 8 2 15 0
+9 compute 0.03054
+9 recv 5 4 15 0
+9 compute 0.06214
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05174
+9 recv 8 2 15 0
+9 compute 0.0414
+9 recv 5 4 15 0
+9 compute 0.04144
+9 send 10 2 15 0
+9 compute 0.0315
+9 send 13 4 15 0
+9 compute 0.05258
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06364
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0538
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03958
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05984
+9 recv 10 1 15 0
+9 compute 0.0355
+9 recv 13 3 15 0
+9 compute 0.06712
+9 send 8 1 15 0
+9 compute 0.02794
+9 send 5 3 15 0
+9 compute 0.08908
+9 recv 10 1 15 0
+9 compute 0.04362
+9 recv 13 3 15 0
+9 compute 0.04632
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04036
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0689
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04008
+9 recv 10 1 15 0
+9 compute 0.02142
+9 recv 13 3 15 0
+9 compute 0.0584
+9 send 8 1 15 0
+9 compute 0.028
+9 send 5 3 15 0
+9 compute 0.06322
+9 recv 10 1 15 0
+9 compute 0.05124
+9 recv 13 3 15 0
+9 compute 0.03898
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05802
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04474
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0381
+9 recv 10 1 15 0
+9 compute 0.0286
+9 recv 13 3 15 0
+9 compute 0.04202
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05754
+9 recv 10 1 15 0
+9 compute 0.03934
+9 recv 13 3 15 0
+9 compute 0.03708
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04448
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0639
+9 send 8 1 15 0
+9 compute 0.0285
+9 send 5 3 15 0
+9 compute 0.05146
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04492
+9 send 8 1 15 0
+9 compute 0.0345
+9 send 5 3 15 0
+9 compute 0.08862
+9 irecv 8 2 360 0
+9 compute 0.03706
+9 send 10 2 360 0
+9 compute 0.0338
+9 wait 9 10 2
+9 compute 0.04154
+9 irecv 10 1 360 0
+9 compute 0.03224
+9 send 8 1 360 0
+9 compute 0.03346
+9 wait 11 10 1
+9 compute 0.12826
+9 irecv 5 4 360 0
+9 compute 0.02674
+9 send 13 4 360 0
+9 compute 0.03592
+9 wait 6 10 4
+9 compute 0.03226
+9 irecv 13 3 360 0
+9 compute 0.03502
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.24892
+9 recv 8 2 15 0
+9 compute 0.03112
+9 recv 5 4 15 0
+9 compute 0.05258
+9 send 10 2 15 0
+9 compute 0.03124
+9 send 13 4 15 0
+9 compute 0.05488
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03978
+9 send 10 2 15 0
+9 compute 0.03058
+9 send 13 4 15 0
+9 compute 0.03724
+9 recv 8 2 15 0
+9 compute 0.0421
+9 recv 5 4 15 0
+9 compute 0.0446
+9 send 10 2 15 0
+9 compute 0.04102
+9 send 13 4 15 0
+9 compute 0.0608
+9 recv 8 2 15 0
+9 compute 0.02924
+9 recv 5 4 15 0
+9 compute 0.0412
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0637
+9 recv 8 2 15 0
+9 compute 0.0321
+9 recv 5 4 15 0
+9 compute 0.04764
+9 send 10 2 15 0
+9 compute 0.03002
+9 send 13 4 15 0
+9 compute 0.06428
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0638
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.07094
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03994
+9 send 10 2 15 0
+9 compute 0.02822
+9 send 13 4 15 0
+9 compute 0.05154
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.048
+9 send 10 2 15 0
+9 compute 0.03206
+9 send 13 4 15 0
+9 compute 0.05442
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06728
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04292
+9 recv 8 2 15 0
+9 compute 0.02796
+9 recv 5 4 15 0
+9 compute 0.03942
+9 send 10 2 15 0
+9 compute 0.02884
+9 send 13 4 15 0
+9 compute 0.04656
+9 recv 10 1 15 0
+9 compute 0.03896
+9 recv 13 3 15 0
+9 compute 0.07652
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04596
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0556
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04256
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04392
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.041
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03914
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04646
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03742
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04002
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05056
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03614
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03856
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03666
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0395
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03608
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04022
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06092
+9 irecv 8 2 360 0
+9 compute 0.0344
+9 send 10 2 360 0
+9 compute 0.02206
+9 wait 9 10 2
+9 compute 0.05338
+9 irecv 10 1 360 0
+9 compute 0.03488
+9 send 8 1 360 0
+9 compute 0.03418
+9 wait 11 10 1
+9 compute 0.12962
+9 irecv 5 4 360 0
+9 compute 0.04854
+9 send 13 4 360 0
+9 compute 0.03306
+9 wait 6 10 4
+9 compute 0.0359
+9 irecv 13 3 360 0
+9 compute 0.0369
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.2486
+9 recv 8 2 15 0
+9 compute 0.03474
+9 recv 5 4 15 0
+9 compute 0.05084
+9 send 10 2 15 0
+9 compute 0.02834
+9 send 13 4 15 0
+9 compute 0.05408
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03758
+9 send 10 2 15 0
+9 compute 0.02828
+9 send 13 4 15 0
+9 compute 0.05198
+9 recv 8 2 15 0
+9 compute 0.02952
+9 recv 5 4 15 0
+9 compute 0.06638
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.29786
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04176
+9 send 10 2 15 0
+9 compute 0.03032
+9 send 13 4 15 0
+9 compute 0.05376
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04006
+9 send 10 2 15 0
+9 compute 0.02968
+9 send 13 4 15 0
+9 compute 0.05302
+9 recv 8 2 15 0
+9 compute 0.04192
+9 recv 5 4 15 0
+9 compute 0.0475
+9 send 10 2 15 0
+9 compute 0.0292
+9 send 13 4 15 0
+9 compute 0.0547
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03992
+9 send 10 2 15 0
+9 compute 0.02792
+9 send 13 4 15 0
+9 compute 0.0491
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04028
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04912
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0553
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05884
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03988
+9 send 10 2 15 0
+9 compute 0.02858
+9 send 13 4 15 0
+9 compute 0.0574
+9 recv 10 1 15 0
+9 compute 0.0347
+9 recv 13 3 15 0
+9 compute 0.07054
+9 send 8 1 15 0
+9 compute 0.03002
+9 send 5 3 15 0
+9 compute 0.0698
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05682
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05466
+9 recv 10 1 15 0
+9 compute 0.03208
+9 recv 13 3 15 0
+9 compute 0.0559
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04214
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05794
+9 send 8 1 15 0
+9 compute 0.02918
+9 send 5 3 15 0
+9 compute 0.06022
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0517
+9 send 8 1 15 0
+9 compute 0.03126
+9 send 5 3 15 0
+9 compute 0.05358
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0545
+9 send 8 1 15 0
+9 compute 0.04796
+9 send 5 3 15 0
+9 compute 0.04758
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0437
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0379
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05342
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05598
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05604
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05292
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0644
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.08306
+9 irecv 8 2 360 0
+9 compute 0.04908
+9 send 10 2 360 0
+9 compute 0.0322
+9 wait 9 10 2
+9 compute 0.05092
+9 irecv 10 1 360 0
+9 compute 0.0382
+9 send 8 1 360 0
+9 compute 0.03364
+9 wait 11 10 1
+9 compute 0.1204
+9 irecv 5 4 360 0
+9 compute 0.02638
+9 send 13 4 360 0
+9 compute 0.03604
+9 wait 6 10 4
+9 compute 0.05108
+9 irecv 13 3 360 0
+9 compute 0.04742
+9 send 5 3 360 0
+9 compute 0.03262
+9 wait 14 10 3
+9 compute 0.21966
+9 recv 8 2 15 0
+9 compute 0.03318
+9 recv 5 4 15 0
+9 compute 0.05002
+9 send 10 2 15 0
+9 compute 0.03194
+9 send 13 4 15 0
+9 compute 0.0542
+9 recv 8 2 15 0
+9 compute 0.02004
+9 recv 5 4 15 0
+9 compute 0.03992
+9 send 10 2 15 0
+9 compute 0.03174
+9 send 13 4 15 0
+9 compute 0.05534
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06362
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05768
+9 recv 8 2 15 0
+9 compute 0.02
+9 recv 5 4 15 0
+9 compute 0.04186
+9 send 10 2 15 0
+9 compute 0.03222
+9 send 13 4 15 0
+9 compute 0.05918
+9 recv 8 2 15 0
+9 compute 0.0311
+9 recv 5 4 15 0
+9 compute 0.04374
+9 send 10 2 15 0
+9 compute 0.02906
+9 send 13 4 15 0
+9 compute 0.05526
+9 recv 8 2 15 0
+9 compute 0.04148
+9 recv 5 4 15 0
+9 compute 0.04226
+9 send 10 2 15 0
+9 compute 0.02866
+9 send 13 4 15 0
+9 compute 0.05566
+9 recv 8 2 15 0
+9 compute 0.04012
+9 recv 5 4 15 0
+9 compute 0.0514
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06284
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04174
+9 send 10 2 15 0
+9 compute 0.04798
+9 send 13 4 15 0
+9 compute 0.05814
+9 recv 8 2 15 0
+9 compute 0.0416
+9 recv 5 4 15 0
+9 compute 0.04134
+9 send 10 2 15 0
+9 compute 0.0291
+9 send 13 4 15 0
+9 compute 0.05374
+9 recv 8 2 15 0
+9 compute 0.03112
+9 recv 5 4 15 0
+9 compute 0.03926
+9 send 10 2 15 0
+9 compute 0.03058
+9 send 13 4 15 0
+9 compute 0.06012
+9 recv 10 1 15 0
+9 compute 0.0479
+9 recv 13 3 15 0
+9 compute 0.05204
+9 send 8 1 15 0
+9 compute 0.03042
+9 send 5 3 15 0
+9 compute 0.05796
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05506
+9 send 8 1 15 0
+9 compute 0.03984
+9 send 5 3 15 0
+9 compute 0.05416
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.07264
+9 send 8 1 15 0
+9 compute 0.02848
+9 send 5 3 15 0
+9 compute 0.09822
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.07052
+9 send 8 1 15 0
+9 compute 0.0257
+9 send 5 3 15 0
+9 compute 0.08146
+9 recv 10 1 15 0
+9 compute 0.02174
+9 recv 13 3 15 0
+9 compute 0.05052
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0459
+9 recv 10 1 15 0
+9 compute 0.02856
+9 recv 13 3 15 0
+9 compute 0.04306
+9 send 8 1 15 0
+9 compute 0.032
+9 send 5 3 15 0
+9 compute 0.0565
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0553
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05392
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03948
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03956
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05312
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05534
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04908
+9 send 8 1 15 0
+9 compute 0.02988
+9 send 5 3 15 0
+9 compute 0.0851
+9 irecv 8 2 360 0
+9 compute 0.05986
+9 send 10 2 360 0
+9 compute 0.04584
+9 wait 9 10 2
+9 compute 0.0437
+9 irecv 10 1 360 0
+9 compute 0.03362
+9 send 8 1 360 0
+9 compute 0.0326
+9 wait 11 10 1
+9 compute 0.12264
+9 irecv 5 4 360 0
+9 compute 0.02796
+9 send 13 4 360 0
+9 compute 0.03348
+9 wait 6 10 4
+9 compute 0.04874
+9 irecv 13 3 360 0
+9 compute 0.02546
+9 send 5 3 360 0
+9 compute 0.03734
+9 wait 14 10 3
+9 compute 0.78352
+9 recv 8 2 15 0
+9 compute 0.03122
+9 recv 5 4 15 0
+9 compute 0.05652
+9 send 10 2 15 0
+9 compute 0.02944
+9 send 13 4 15 0
+9 compute 0.10128
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04092
+9 send 10 2 15 0
+9 compute 0.04156
+9 send 13 4 15 0
+9 compute 0.05576
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0404
+9 send 10 2 15 0
+9 compute 0.03204
+9 send 13 4 15 0
+9 compute 0.05414
+9 recv 8 2 15 0
+9 compute 0.03216
+9 recv 5 4 15 0
+9 compute 0.04116
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04984
+9 recv 8 2 15 0
+9 compute 0.02894
+9 recv 5 4 15 0
+9 compute 0.05494
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05362
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0524
+9 send 10 2 15 0
+9 compute 0.02932
+9 send 13 4 15 0
+9 compute 0.03812
+9 recv 8 2 15 0
+9 compute 0.02224
+9 recv 5 4 15 0
+9 compute 0.04076
+9 send 10 2 15 0
+9 compute 0.0286
+9 send 13 4 15 0
+9 compute 0.0556
+9 recv 8 2 15 0
+9 compute 0.02818
+9 recv 5 4 15 0
+9 compute 0.04032
+9 send 10 2 15 0
+9 compute 0.02864
+9 send 13 4 15 0
+9 compute 0.05388
+9 recv 8 2 15 0
+9 compute 0.04026
+9 recv 5 4 15 0
+9 compute 0.03774
+9 send 10 2 15 0
+9 compute 0.02954
+9 send 13 4 15 0
+9 compute 0.05268
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03934
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04694
+9 recv 10 1 15 0
+9 compute 0.03534
+9 recv 13 3 15 0
+9 compute 0.05116
+9 send 8 1 15 0
+9 compute 0.02806
+9 send 5 3 15 0
+9 compute 0.05462
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05226
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05632
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04056
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05772
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0533
+9 send 8 1 15 0
+9 compute 0.02946
+9 send 5 3 15 0
+9 compute 0.05928
+9 recv 10 1 15 0
+9 compute 0.04386
+9 recv 13 3 15 0
+9 compute 0.03884
+9 send 8 1 15 0
+9 compute 0.02036
+9 send 5 3 15 0
+9 compute 0.05934
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05186
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03908
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05134
+9 send 8 1 15 0
+9 compute 0.02984
+9 send 5 3 15 0
+9 compute 0.05378
+9 recv 10 1 15 0
+9 compute 0.029
+9 recv 13 3 15 0
+9 compute 0.04188
+9 send 8 1 15 0
+9 compute 0.0398
+9 send 5 3 15 0
+9 compute 0.05988
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0541
+9 send 8 1 15 0
+9 compute 0.0298
+9 send 5 3 15 0
+9 compute 0.05476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0441
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06554
+9 irecv 8 2 360 0
+9 compute 0.0491
+9 send 10 2 360 0
+9 compute 0.04552
+9 wait 9 10 2
+9 compute 0.04188
+9 irecv 10 1 360 0
+9 compute 0.03178
+9 send 8 1 360 0
+9 compute 0.0461
+9 wait 11 10 1
+9 compute 0.1478
+9 irecv 5 4 360 0
+9 compute 0.02988
+9 send 13 4 360 0
+9 compute 0.03608
+9 wait 6 10 4
+9 compute 0.04924
+9 irecv 13 3 360 0
+9 compute 0.0254
+9 send 5 3 360 0
+9 compute 0.03526
+9 wait 14 10 3
+9 compute 0.2267
+9 recv 8 2 15 0
+9 compute 0.0297
+9 recv 5 4 15 0
+9 compute 0.0506
+9 send 10 2 15 0
+9 compute 0.02768
+9 send 13 4 15 0
+9 compute 0.05184
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0456
+9 send 10 2 15 0
+9 compute 0.02742
+9 send 13 4 15 0
+9 compute 0.05058
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0763
+9 send 10 2 15 0
+9 compute 0.0217
+9 send 13 4 15 0
+9 compute 0.05864
+9 recv 8 2 15 0
+9 compute 0.02194
+9 recv 5 4 15 0
+9 compute 0.04212
+9 send 10 2 15 0
+9 compute 0.03158
+9 send 13 4 15 0
+9 compute 0.05462
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06498
+9 send 10 2 15 0
+9 compute 0.04914
+9 send 13 4 15 0
+9 compute 0.05362
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04502
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05612
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05074
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05042
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0418
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05426
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05254
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05198
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06474
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04912
+9 recv 10 1 15 0
+9 compute 0.03218
+9 recv 13 3 15 0
+9 compute 0.04776
+9 send 8 1 15 0
+9 compute 0.02914
+9 send 5 3 15 0
+9 compute 0.05398
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05112
+9 send 8 1 15 0
+9 compute 0.03938
+9 send 5 3 15 0
+9 compute 0.05628
+9 recv 10 1 15 0
+9 compute 0.02868
+9 recv 13 3 15 0
+9 compute 0.06502
+9 send 8 1 15 0
+9 compute 0.02698
+9 send 5 3 15 0
+9 compute 0.05138
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0554
+9 send 8 1 15 0
+9 compute 0.02866
+9 send 5 3 15 0
+9 compute 0.0554
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05222
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03784
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0456
+9 send 8 1 15 0
+9 compute 0.03932
+9 send 5 3 15 0
+9 compute 0.05476
+9 recv 10 1 15 0
+9 compute 0.0259
+9 recv 13 3 15 0
+9 compute 0.05366
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04394
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06984
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05216
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05692
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05924
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04708
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.08676
+9 irecv 8 2 360 0
+9 compute 0.04858
+9 send 10 2 360 0
+9 compute 0.04614
+9 wait 9 10 2
+9 compute 0.0427
+9 irecv 10 1 360 0
+9 compute 0.03522
+9 send 8 1 360 0
+9 compute 0.03504
+9 wait 11 10 1
+9 compute 0.13976
+9 irecv 5 4 360 0
+9 compute 0.0249
+9 send 13 4 360 0
+9 compute 0.03502
+9 wait 6 10 4
+9 compute 0.05216
+9 irecv 13 3 360 0
+9 compute 0.02494
+9 send 5 3 360 0
+9 compute 0.0366
+9 wait 14 10 3
+9 compute 0.23366
+9 recv 8 2 15 0
+9 compute 0.03044
+9 recv 5 4 15 0
+9 compute 0.05326
+9 send 10 2 15 0
+9 compute 0.02912
+9 send 13 4 15 0
+9 compute 0.05486
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04272
+9 send 10 2 15 0
+9 compute 0.03092
+9 send 13 4 15 0
+9 compute 0.05348
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03912
+9 send 10 2 15 0
+9 compute 0.0332
+9 send 13 4 15 0
+9 compute 0.05334
+9 recv 8 2 15 0
+9 compute 0.02
+9 recv 5 4 15 0
+9 compute 0.04502
+9 send 10 2 15 0
+9 compute 0.03028
+9 send 13 4 15 0
+9 compute 0.05318
+9 recv 8 2 15 0
+9 compute 0.04174
+9 recv 5 4 15 0
+9 compute 0.05326
+9 send 10 2 15 0
+9 compute 0.02998
+9 send 13 4 15 0
+9 compute 0.05398
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0383
+9 send 10 2 15 0
+9 compute 0.03076
+9 send 13 4 15 0
+9 compute 0.05568
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.382
+9 send 10 2 15 0
+9 compute 0.0391
+9 send 13 4 15 0
+9 compute 0.03914
+9 recv 8 2 15 0
+9 compute 0.04662
+9 recv 5 4 15 0
+9 compute 0.06792
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0646
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05218
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05246
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03824
+9 send 10 2 15 0
+9 compute 0.04104
+9 send 13 4 15 0
+9 compute 0.07454
+9 recv 10 1 15 0
+9 compute 0.03136
+9 recv 13 3 15 0
+9 compute 0.04814
+9 send 8 1 15 0
+9 compute 0.03214
+9 send 5 3 15 0
+9 compute 0.067
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0525
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0434
+9 recv 10 1 15 0
+9 compute 0.02006
+9 recv 13 3 15 0
+9 compute 0.06554
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0393
+9 recv 10 1 15 0
+9 compute 0.02076
+9 recv 13 3 15 0
+9 compute 0.06328
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04282
+9 recv 10 1 15 0
+9 compute 0.0201
+9 recv 13 3 15 0
+9 compute 0.03834
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0428
+9 recv 10 1 15 0
+9 compute 0.02834
+9 recv 13 3 15 0
+9 compute 0.03856
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04014
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05354
+9 send 8 1 15 0
+9 compute 0.03166
+9 send 5 3 15 0
+9 compute 0.05298
+9 recv 10 1 15 0
+9 compute 0.0417
+9 recv 13 3 15 0
+9 compute 0.05078
+9 send 8 1 15 0
+9 compute 0.02014
+9 send 5 3 15 0
+9 compute 0.05548
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05214
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0521
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06946
+9 send 8 1 15 0
+9 compute 0.0428
+9 send 5 3 15 0
+9 compute 1.82056
+9 irecv 8 2 360 0
+9 compute 0.05504
+9 send 10 2 360 0
+9 compute 0.03478
+9 wait 9 10 2
+9 compute 0.05718
+9 irecv 10 1 360 0
+9 compute 0.03584
+9 send 8 1 360 0
+9 compute 0.03472
+9 wait 11 10 1
+9 compute 0.12624
+9 irecv 5 4 360 0
+9 compute 0.06058
+9 send 13 4 360 0
+9 compute 0.04412
+9 wait 6 10 4
+9 compute 0.0389
+9 irecv 13 3 360 0
+9 compute 0.03518
+9 send 5 3 360 0
+9 compute 0.02008
+9 wait 14 10 3
+9 compute 0.25418
+9 recv 8 2 15 0
+9 compute 0.03228
+9 recv 5 4 15 0
+9 compute 0.05176
+9 send 10 2 15 0
+9 compute 0.04102
+9 send 13 4 15 0
+9 compute 0.7679
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05176
+9 send 10 2 15 0
+9 compute 0.0314
+9 send 13 4 15 0
+9 compute 0.057
+9 recv 8 2 15 0
+9 compute 0.03088
+9 recv 5 4 15 0
+9 compute 0.044
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04826
+9 recv 8 2 15 0
+9 compute 0.02996
+9 recv 5 4 15 0
+9 compute 0.04164
+9 send 10 2 15 0
+9 compute 0.03374
+9 send 13 4 15 0
+9 compute 0.0548
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04466
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06646
+9 recv 8 2 15 0
+9 compute 0.02324
+9 recv 5 4 15 0
+9 compute 0.0425
+9 send 10 2 15 0
+9 compute 0.03128
+9 send 13 4 15 0
+9 compute 0.057
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.07008
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06838
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03988
+9 send 10 2 15 0
+9 compute 0.0288
+9 send 13 4 15 0
+9 compute 0.05264
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04138
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03882
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0392
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04722
+9 recv 10 1 15 0
+9 compute 0.04452
+9 recv 13 3 15 0
+9 compute 0.06456
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04634
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.07422
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04536
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04316
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03858
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0538
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04432
+9 recv 10 1 15 0
+9 compute 0.02008
+9 recv 13 3 15 0
+9 compute 0.08526
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05718
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0483
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03568
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04096
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03782
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04342
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0349
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03774
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0365
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04036
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07908
+9 irecv 8 2 360 0
+9 compute 0.02826
+9 send 10 2 360 0
+9 compute 0.02252
+9 wait 9 10 2
+9 compute 0.03902
+9 irecv 10 1 360 0
+9 compute 0.02936
+9 send 8 1 360 0
+9 compute 0.02188
+9 wait 11 10 1
+9 compute 0.16554
+9 irecv 5 4 360 0
+9 compute 0.02994
+9 send 13 4 360 0
+9 compute 0.0373
+9 wait 6 10 4
+9 compute 0.03874
+9 irecv 13 3 360 0
+9 compute 0.02548
+9 send 5 3 360 0
+9 compute 0.02278
+9 wait 14 10 3
+9 compute 0.22246
+9 recv 8 2 15 0
+9 compute 0.02188
+9 recv 5 4 15 0
+9 compute 0.04764
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03622
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04154
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0378
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04184
+9 send 10 2 15 0
+9 compute 0.04074
+9 send 13 4 15 0
+9 compute 0.05666
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05638
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.058
+9 recv 8 2 15 0
+9 compute 0.03054
+9 recv 5 4 15 0
+9 compute 0.0667
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06648
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04216
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04014
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03694
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03782
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04854
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04254
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03922
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03872
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.20036
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05154
+9 recv 10 1 15 0
+9 compute 0.02302
+9 recv 13 3 15 0
+9 compute 0.05068
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04336
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0371
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03904
+9 recv 10 1 15 0
+9 compute 0.02008
+9 recv 13 3 15 0
+9 compute 0.04406
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04074
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0459
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04164
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0393
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04164
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0425
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04168
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03444
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03958
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0524
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04274
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04676
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04084
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04308
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07378
+9 irecv 8 2 360 0
+9 compute 0.03478
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.03904
+9 irecv 10 1 360 0
+9 compute 0.03116
+9 send 8 1 360 0
+9 compute 0.02108
+9 wait 11 10 1
+9 compute 0.11536
+9 irecv 5 4 360 0
+9 compute 0.02418
+9 send 13 4 360 0
+9 compute 0.02232
+9 wait 6 10 4
+9 compute 0.03902
+9 irecv 13 3 360 0
+9 compute 0.02592
+9 send 5 3 360 0
+9 compute 0.0229
+9 wait 14 10 3
+9 compute 0.2169
+9 recv 8 2 15 0
+9 compute 0.02412
+9 recv 5 4 15 0
+9 compute 0.04988
+9 send 10 2 15 0
+9 compute 0.28658
+9 send 13 4 15 0
+9 compute 0.03938
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03978
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03772
+9 recv 8 2 15 0
+9 compute 0.02652
+9 recv 5 4 15 0
+9 compute 0.04026
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03852
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0427
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0411
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0443
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04004
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04064
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03582
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05228
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04406
+9 recv 8 2 15 0
+9 compute 0.02534
+9 recv 5 4 15 0
+9 compute 0.04934
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04038
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04968
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05824
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0494
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06478
+9 recv 10 1 15 0
+9 compute 0.04198
+9 recv 13 3 15 0
+9 compute 0.06354
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05892
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05702
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03916
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04702
+9 send 8 1 15 0
+9 compute 0.0303
+9 send 5 3 15 0
+9 compute 0.0662
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0548
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05606
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0431
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03906
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04282
+9 send 8 1 15 0
+9 compute 0.02598
+9 send 5 3 15 0
+9 compute 0.04636
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04988
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03902
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04034
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03596
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04006
+9 send 8 1 15 0
+9 compute 0.0276
+9 send 5 3 15 0
+9 compute 0.06202
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04508
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.09162
+9 irecv 8 2 360 0
+9 compute 0.03658
+9 send 10 2 360 0
+9 compute 0.02434
+9 wait 9 10 2
+9 compute 0.0402
+9 irecv 10 1 360 0
+9 compute 0.0322
+9 send 8 1 360 0
+9 compute 0.0212
+9 wait 11 10 1
+9 compute 0.11944
+9 irecv 5 4 360 0
+9 compute 0.02496
+9 send 13 4 360 0
+9 compute 0.0214
+9 wait 6 10 4
+9 compute 0.03594
+9 irecv 13 3 360 0
+9 compute 0.02746
+9 send 5 3 360 0
+9 compute 0.02154
+9 wait 14 10 3
+9 compute 0.2087
+9 recv 8 2 15 0
+9 compute 0.03264
+9 recv 5 4 15 0
+9 compute 0.0528
+9 send 10 2 15 0
+9 compute 0.03048
+9 send 13 4 15 0
+9 compute 0.0415
+9 recv 8 2 15 0
+9 compute 0.0216
+9 recv 5 4 15 0
+9 compute 0.04134
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03928
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0415
+9 send 10 2 15 0
+9 compute 0.03092
+9 send 13 4 15 0
+9 compute 0.05602
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03974
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0395
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04438
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03932
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03906
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0352
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03966
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03686
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04156
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0371
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0394
+9 send 10 2 15 0
+9 compute 0.03026
+9 send 13 4 15 0
+9 compute 0.05052
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04312
+9 send 10 2 15 0
+9 compute 0.02888
+9 send 13 4 15 0
+9 compute 0.05342
+9 recv 10 1 15 0
+9 compute 0.02636
+9 recv 13 3 15 0
+9 compute 0.04734
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0397
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04274
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03738
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04764
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03856
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04578
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06156
+9 recv 10 1 15 0
+9 compute 0.02146
+9 recv 13 3 15 0
+9 compute 0.06146
+9 send 8 1 15 0
+9 compute 0.02454
+9 send 5 3 15 0
+9 compute 0.0434
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03654
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03664
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04146
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04234
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03508
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03824
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03414
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.36222
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0413
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06636
+9 irecv 8 2 360 0
+9 compute 0.03732
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04066
+9 irecv 10 1 360 0
+9 compute 0.02996
+9 send 8 1 360 0
+9 compute 0.02138
+9 wait 11 10 1
+9 compute 0.1313
+9 irecv 5 4 360 0
+9 compute 0.02534
+9 send 13 4 360 0
+9 compute 0.02386
+9 wait 6 10 4
+9 compute 0.04412
+9 irecv 13 3 360 0
+9 compute 0.04736
+9 send 5 3 360 0
+9 compute 0.03264
+9 wait 14 10 3
+9 compute 0.2324
+9 recv 8 2 15 0
+9 compute 0.0264
+9 recv 5 4 15 0
+9 compute 0.07456
+9 send 10 2 15 0
+9 compute 0.02802
+9 send 13 4 15 0
+9 compute 0.05224
+9 recv 8 2 15 0
+9 compute 0.03216
+9 recv 5 4 15 0
+9 compute 0.04558
+9 send 10 2 15 0
+9 compute 0.03008
+9 send 13 4 15 0
+9 compute 0.05402
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03966
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0396
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04238
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03512
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03922
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03632
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0376
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03854
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.036
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03728
+9 recv 8 2 15 0
+9 compute 0.07966
+9 recv 5 4 15 0
+9 compute 0.04284
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0405
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04242
+9 send 10 2 15 0
+9 compute 0.0281
+9 send 13 4 15 0
+9 compute 0.0534
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06138
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0579
+9 recv 10 1 15 0
+9 compute 0.0507
+9 recv 13 3 15 0
+9 compute 0.08182
+9 send 8 1 15 0
+9 compute 0.0256
+9 send 5 3 15 0
+9 compute 0.0592
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05626
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04392
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04496
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0484
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05504
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03914
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04286
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0411
+9 recv 10 1 15 0
+9 compute 0.02832
+9 recv 13 3 15 0
+9 compute 0.03814
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03956
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0355
+9 send 8 1 15 0
+9 compute 0.0205
+9 send 5 3 15 0
+9 compute 0.04124
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0537
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03572
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04092
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03868
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04352
+9 send 8 1 15 0
+9 compute 0.02648
+9 send 5 3 15 0
+9 compute 0.08728
+9 irecv 8 2 360 0
+9 compute 0.03878
+9 send 10 2 360 0
+9 compute 0.0222
+9 wait 9 10 2
+9 compute 0.07802
+9 irecv 10 1 360 0
+9 compute 0.04216
+9 send 8 1 360 0
+9 compute 0.03494
+9 wait 11 10 1
+9 compute 0.1357
+9 irecv 5 4 360 0
+9 compute 0.05896
+9 send 13 4 360 0
+9 compute 0.04278
+9 wait 6 10 4
+9 compute 0.03714
+9 irecv 13 3 360 0
+9 compute 0.02718
+9 send 5 3 360 0
+9 compute 0.02386
+9 wait 14 10 3
+9 compute 0.23216
+9 recv 8 2 15 0
+9 compute 0.03138
+9 recv 5 4 15 0
+9 compute 0.05168
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03688
+9 recv 8 2 15 0
+9 compute 0.0221
+9 recv 5 4 15 0
+9 compute 0.0448
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04054
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04422
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03694
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04112
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03984
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0404
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03884
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04166
+9 send 10 2 15 0
+9 compute 0.03068
+9 send 13 4 15 0
+9 compute 0.05496
+9 recv 8 2 15 0
+9 compute 0.0428
+9 recv 5 4 15 0
+9 compute 0.03974
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0414
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06272
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04074
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03894
+9 send 10 2 15 0
+9 compute 0.0422
+9 send 13 4 15 0
+9 compute 0.05414
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04292
+9 send 10 2 15 0
+9 compute 0.03068
+9 send 13 4 15 0
+9 compute 0.06328
+9 recv 10 1 15 0
+9 compute 0.02288
+9 recv 13 3 15 0
+9 compute 0.06148
+9 send 8 1 15 0
+9 compute 0.02772
+9 send 5 3 15 0
+9 compute 0.05728
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05354
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05606
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0561
+9 send 8 1 15 0
+9 compute 0.0286
+9 send 5 3 15 0
+9 compute 0.05718
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.3196
+9 send 8 1 15 0
+9 compute 0.04006
+9 send 5 3 15 0
+9 compute 0.04708
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03612
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03892
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03582
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03616
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03858
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0361
+9 recv 10 1 15 0
+9 compute 0.04238
+9 recv 13 3 15 0
+9 compute 0.0377
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03862
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05248
+9 send 8 1 15 0
+9 compute 0.0285
+9 send 5 3 15 0
+9 compute 0.0448
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03992
+9 send 8 1 15 0
+9 compute 0.02486
+9 send 5 3 15 0
+9 compute 0.07452
+9 irecv 8 2 360 0
+9 compute 0.03578
+9 send 10 2 360 0
+9 compute 0.0234
+9 wait 9 10 2
+9 compute 0.0372
+9 irecv 10 1 360 0
+9 compute 0.03212
+9 send 8 1 360 0
+9 compute 0.02246
+9 wait 11 10 1
+9 compute 0.1282
+9 irecv 5 4 360 0
+9 compute 0.02752
+9 send 13 4 360 0
+9 compute 0.02348
+9 wait 6 10 4
+9 compute 0.03662
+9 irecv 13 3 360 0
+9 compute 0.02746
+9 send 5 3 360 0
+9 compute 0.02246
+9 wait 14 10 3
+9 compute 0.93178
+9 recv 8 2 15 0
+9 compute 0.02348
+9 recv 5 4 15 0
+9 compute 0.05348
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03514
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0399
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03916
+9 recv 8 2 15 0
+9 compute 0.0204
+9 recv 5 4 15 0
+9 compute 0.06718
+9 send 10 2 15 0
+9 compute 0.06162
+9 send 13 4 15 0
+9 compute 0.05908
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04792
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03512
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04222
+9 send 10 2 15 0
+9 compute 0.02176
+9 send 13 4 15 0
+9 compute 0.04276
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06758
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05504
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04236
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0383
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04042
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03914
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04322
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05848
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04598
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05356
+9 recv 10 1 15 0
+9 compute 0.02436
+9 recv 13 3 15 0
+9 compute 0.05006
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03836
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05668
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05682
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04354
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03742
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05098
+9 send 8 1 15 0
+9 compute 0.03924
+9 send 5 3 15 0
+9 compute 0.0608
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03866
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04322
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04952
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03814
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04186
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04136
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05296
+9 send 8 1 15 0
+9 compute 0.04018
+9 send 5 3 15 0
+9 compute 0.05114
+9 recv 10 1 15 0
+9 compute 0.04018
+9 recv 13 3 15 0
+9 compute 0.03926
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04134
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04446
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0699
+9 irecv 8 2 360 0
+9 compute 0.02856
+9 send 10 2 360 0
+9 compute 0.04414
+9 wait 9 10 2
+9 compute 0.04018
+9 irecv 10 1 360 0
+9 compute 0.03128
+9 send 8 1 360 0
+9 compute 0.02
+9 wait 11 10 1
+9 compute 0.11858
+9 irecv 5 4 360 0
+9 compute 0.02602
+9 send 13 4 360 0
+9 compute 0.04002
+9 wait 6 10 4
+9 compute 0.0399
+9 irecv 13 3 360 0
+9 compute 0.02688
+9 send 5 3 360 0
+9 compute 0.02264
+9 wait 14 10 3
+9 compute 0.20928
+9 recv 8 2 15 0
+9 compute 0.03156
+9 recv 5 4 15 0
+9 compute 0.0477
+9 send 10 2 15 0
+9 compute 0.03006
+9 send 13 4 15 0
+9 compute 0.04196
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04094
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03558
+9 recv 8 2 15 0
+9 compute 0.02662
+9 recv 5 4 15 0
+9 compute 0.04608
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05784
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04256
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0492
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03782
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03754
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04396
+9 send 10 2 15 0
+9 compute 0.05376
+9 send 13 4 15 0
+9 compute 0.0437
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03878
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03998
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04156
+9 send 10 2 15 0
+9 compute 0.03856
+9 send 13 4 15 0
+9 compute 0.03892
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0373
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0419
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03924
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0472
+9 recv 10 1 15 0
+9 compute 0.0243
+9 recv 13 3 15 0
+9 compute 0.06592
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0398
+9 recv 10 1 15 0
+9 compute 0.02082
+9 recv 13 3 15 0
+9 compute 0.04394
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0401
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04264
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.037
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0428
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0433
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03708
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03874
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03634
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0366
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03898
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0363
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03942
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03692
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04006
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0367
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04452
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.09406
+9 irecv 8 2 360 0
+9 compute 0.0307
+9 send 10 2 360 0
+9 compute 0.03718
+9 wait 9 10 2
+9 compute 0.04052
+9 irecv 10 1 360 0
+9 compute 0.0325
+9 send 8 1 360 0
+9 compute 0.02042
+9 wait 11 10 1
+9 compute 0.12596
+9 irecv 5 4 360 0
+9 compute 0.0255
+9 send 13 4 360 0
+9 compute 0.02308
+9 wait 6 10 4
+9 compute 0.0365
+9 irecv 13 3 360 0
+9 compute 0.02708
+9 send 5 3 360 0
+9 compute 0.0224
+9 wait 14 10 3
+9 compute 0.21692
+9 recv 8 2 15 0
+9 compute 0.02266
+9 recv 5 4 15 0
+9 compute 0.05342
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03828
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04176
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0367
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0378
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0366
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04044
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03666
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03946
+9 send 10 2 15 0
+9 compute 0.03144
+9 send 13 4 15 0
+9 compute 0.05656
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04106
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03634
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04116
+9 send 10 2 15 0
+9 compute 0.02066
+9 send 13 4 15 0
+9 compute 0.04312
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04098
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03626
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03898
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03802
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03998
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04576
+9 recv 10 1 15 0
+9 compute 0.05382
+9 recv 13 3 15 0
+9 compute 0.06942
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0578
+9 recv 10 1 15 0
+9 compute 0.06636
+9 recv 13 3 15 0
+9 compute 0.04866
+9 send 8 1 15 0
+9 compute 0.02264
+9 send 5 3 15 0
+9 compute 0.06024
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04524
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04052
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05716
+9 send 8 1 15 0
+9 compute 0.02848
+9 send 5 3 15 0
+9 compute 0.05664
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05662
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05722
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04578
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03722
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03952
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03554
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04296
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04228
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04792
+9 send 8 1 15 0
+9 compute 0.03848
+9 send 5 3 15 0
+9 compute 0.05232
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03944
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06818
+9 irecv 8 2 360 0
+9 compute 0.0345
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.0396
+9 irecv 10 1 360 0
+9 compute 0.03304
+9 send 8 1 360 0
+9 compute 0.02096
+9 wait 11 10 1
+9 compute 0.13284
+9 irecv 5 4 360 0
+9 compute 0.02392
+9 send 13 4 360 0
+9 compute 0.02634
+9 wait 6 10 4
+9 compute 0.03266
+9 irecv 13 3 360 0
+9 compute 0.03628
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.22258
+9 recv 8 2 15 0
+9 compute 0.02662
+9 recv 5 4 15 0
+9 compute 0.05344
+9 send 10 2 15 0
+9 compute 0.02872
+9 send 13 4 15 0
+9 compute 0.04956
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03854
+9 send 10 2 15 0
+9 compute 0.04074
+9 send 13 4 15 0
+9 compute 0.04682
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04346
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03918
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0423
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04466
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03924
+9 send 10 2 15 0
+9 compute 0.02
+9 send 13 4 15 0
+9 compute 0.04542
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03808
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0394
+9 recv 8 2 15 0
+9 compute 0.9129
+9 recv 5 4 15 0
+9 compute 0.04396
+9 send 10 2 15 0
+9 compute 0.02902
+9 send 13 4 15 0
+9 compute 0.04542
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04014
+9 send 10 2 15 0
+9 compute 0.0404
+9 send 13 4 15 0
+9 compute 0.05582
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04274
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0434
+9 recv 8 2 15 0
+9 compute 0.32242
+9 recv 5 4 15 0
+9 compute 0.05082
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05044
+9 recv 10 1 15 0
+9 compute 0.02674
+9 recv 13 3 15 0
+9 compute 0.05026
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04234
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04768
+9 send 8 1 15 0
+9 compute 0.02106
+9 send 5 3 15 0
+9 compute 0.0441
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0401
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04174
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03994
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0403
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04034
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06388
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0492
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03712
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04074
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0369
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04056
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03762
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04086
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0406
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04302
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06702
+9 irecv 8 2 360 0
+9 compute 0.0348
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.0413
+9 irecv 10 1 360 0
+9 compute 0.03556
+9 send 8 1 360 0
+9 compute 0.02184
+9 wait 11 10 1
+9 compute 0.1122
+9 irecv 5 4 360 0
+9 compute 0.02466
+9 send 13 4 360 0
+9 compute 0.02272
+9 wait 6 10 4
+9 compute 0.05848
+9 irecv 13 3 360 0
+9 compute 0.03942
+9 send 5 3 360 0
+9 compute 0.03746
+9 wait 14 10 3
+9 compute 0.2429
+9 recv 8 2 15 0
+9 compute 0.0355
+9 recv 5 4 15 0
+9 compute 0.0604
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05284
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03988
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03924
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04018
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04014
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0435
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04386
+9 recv 8 2 15 0
+9 compute 0.02184
+9 recv 5 4 15 0
+9 compute 0.05496
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04792
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.08122
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.07146
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0395
+9 send 10 2 15 0
+9 compute 0.02916
+9 send 13 4 15 0
+9 compute 0.04262
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04396
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04214
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0412
+9 send 10 2 15 0
+9 compute 0.0203
+9 send 13 4 15 0
+9 compute 0.04564
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04012
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06138
+9 recv 10 1 15 0
+9 compute 0.02562
+9 recv 13 3 15 0
+9 compute 0.07422
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0546
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.09168
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07832
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05086
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04308
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05894
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03912
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06608
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0433
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.057
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0378
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.31332
+9 send 8 1 15 0
+9 compute 0.02288
+9 send 5 3 15 0
+9 compute 0.05848
+9 recv 10 1 15 0
+9 compute 0.02382
+9 recv 13 3 15 0
+9 compute 0.05974
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05018
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0436
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03924
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.043
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07376
+9 irecv 8 2 360 0
+9 compute 0.03962
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04126
+9 irecv 10 1 360 0
+9 compute 0.03332
+9 send 8 1 360 0
+9 compute 0.02182
+9 wait 11 10 1
+9 compute 0.12572
+9 irecv 5 4 360 0
+9 compute 0.02798
+9 send 13 4 360 0
+9 compute 0.0217
+9 wait 6 10 4
+9 compute 0.03
+9 irecv 13 3 360 0
+9 compute 0.03088
+9 send 5 3 360 0
+9 wait 14 10 3
+9 compute 0.23256
+9 recv 8 2 15 0
+9 compute 0.02536
+9 recv 5 4 15 0
+9 compute 0.05442
+9 send 10 2 15 0
+9 compute 0.02024
+9 send 13 4 15 0
+9 compute 0.04824
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03906
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03794
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04006
+9 send 10 2 15 0
+9 compute 0.0204
+9 send 13 4 15 0
+9 compute 0.0432
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05086
+9 send 10 2 15 0
+9 compute 0.0303
+9 send 13 4 15 0
+9 compute 0.05726
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05722
+9 send 10 2 15 0
+9 compute 0.02054
+9 send 13 4 15 0
+9 compute 0.06492
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04508
+9 send 10 2 15 0
+9 compute 0.02108
+9 send 13 4 15 0
+9 compute 0.04474
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0549
+9 send 10 2 15 0
+9 compute 0.0513
+9 send 13 4 15 0
+9 compute 0.08056
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.06406
+9 send 10 2 15 0
+9 compute 0.03378
+9 send 13 4 15 0
+9 compute 0.07506
+9 recv 8 2 15 0
+9 compute 0.03188
+9 recv 5 4 15 0
+9 compute 0.05698
+9 send 10 2 15 0
+9 compute 0.02016
+9 send 13 4 15 0
+9 compute 0.05022
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0695
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.07188
+9 recv 10 1 15 0
+9 compute 0.0263
+9 recv 13 3 15 0
+9 compute 0.05912
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04568
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05786
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04074
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05716
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04056
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04698
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03866
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05454
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04202
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04254
+9 send 8 1 15 0
+9 compute 0.06808
+9 send 5 3 15 0
+9 compute 0.06682
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04428
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04038
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04246
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03708
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03934
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03882
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.07338
+9 send 8 1 15 0
+9 compute 0.0233
+9 send 5 3 15 0
+9 compute 0.07998
+9 irecv 8 2 360 0
+9 compute 0.03484
+9 send 10 2 360 0
+9 compute 0.02328
+9 wait 9 10 2
+9 compute 0.0419
+9 irecv 10 1 360 0
+9 compute 0.03224
+9 send 8 1 360 0
+9 compute 0.0222
+9 wait 11 10 1
+9 compute 0.1356
+9 irecv 5 4 360 0
+9 compute 0.02828
+9 send 13 4 360 0
+9 compute 0.0347
+9 wait 6 10 4
+9 compute 0.0532
+9 irecv 13 3 360 0
+9 compute 0.0264
+9 send 5 3 360 0
+9 compute 0.0364
+9 wait 14 10 3
+9 compute 0.2261
+9 recv 8 2 15 0
+9 compute 0.03278
+9 recv 5 4 15 0
+9 compute 0.06894
+9 send 10 2 15 0
+9 compute 0.04042
+9 send 13 4 15 0
+9 compute 0.04692
+9 recv 8 2 15 0
+9 compute 0.03118
+9 recv 5 4 15 0
+9 compute 0.04428
+9 send 10 2 15 0
+9 compute 0.04028
+9 send 13 4 15 0
+9 compute 0.05486
+9 recv 8 2 15 0
+9 compute 0.02032
+9 recv 5 4 15 0
+9 compute 0.03828
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04166
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03932
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03786
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03978
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03748
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03848
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0517
+9 recv 8 2 15 0
+9 compute 0.18662
+9 recv 5 4 15 0
+9 compute 0.0695
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04118
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05448
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05342
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04226
+9 send 10 2 15 0
+9 compute 0.02064
+9 send 13 4 15 0
+9 compute 0.0437
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04172
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0515
+9 recv 10 1 15 0
+9 compute 0.03482
+9 recv 13 3 15 0
+9 compute 0.04888
+9 send 8 1 15 0
+9 compute 0.02798
+9 send 5 3 15 0
+9 compute 0.05656
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.30224
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03782
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05792
+9 send 8 1 15 0
+9 compute 0.02692
+9 send 5 3 15 0
+9 compute 0.05396
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05494
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0582
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.31726
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04002
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04406
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03952
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0372
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0397
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03734
+9 send 8 1 15 0
+9 compute 0.02928
+9 send 5 3 15 0
+9 compute 0.05412
+9 recv 10 1 15 0
+9 compute 0.02484
+9 recv 13 3 15 0
+9 compute 0.04914
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04278
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05034
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07542
+9 irecv 8 2 360 0
+9 compute 0.04166
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.0432
+9 irecv 10 1 360 0
+9 compute 0.0322
+9 send 8 1 360 0
+9 compute 0.03366
+9 wait 11 10 1
+9 compute 0.13364
+9 irecv 5 4 360 0
+9 compute 0.026
+9 send 13 4 360 0
+9 compute 0.03516
+9 wait 6 10 4
+9 compute 0.04146
+9 irecv 13 3 360 0
+9 compute 0.0256
+9 send 5 3 360 0
+9 compute 0.0359
+9 wait 14 10 3
+9 compute 0.21094
+9 recv 8 2 15 0
+9 compute 0.02506
+9 recv 5 4 15 0
+9 compute 0.05262
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04156
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04182
+9 send 10 2 15 0
+9 compute 0.02856
+9 send 13 4 15 0
+9 compute 0.0535
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04402
+9 send 10 2 15 0
+9 compute 0.02018
+9 send 13 4 15 0
+9 compute 0.04706
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04022
+9 send 10 2 15 0
+9 compute 0.0283
+9 send 13 4 15 0
+9 compute 0.04438
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03922
+9 send 10 2 15 0
+9 compute 0.02862
+9 send 13 4 15 0
+9 compute 0.04392
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0396
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03642
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03936
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03874
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04072
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0331
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03842
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03836
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04132
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04596
+9 recv 10 1 15 0
+9 compute 0.02662
+9 recv 13 3 15 0
+9 compute 0.04764
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03834
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03716
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03866
+9 recv 10 1 15 0
+9 compute 0.04202
+9 recv 13 3 15 0
+9 compute 0.0451
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04302
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03744
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04476
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.039
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03924
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04256
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0388
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05322
+9 send 8 1 15 0
+9 compute 0.03094
+9 send 5 3 15 0
+9 compute 0.05324
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0386
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05738
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03684
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03906
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0448
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0716
+9 irecv 8 2 360 0
+9 compute 0.0347
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.04084
+9 irecv 10 1 360 0
+9 compute 0.03098
+9 send 8 1 360 0
+9 wait 11 10 1
+9 compute 0.12922
+9 irecv 5 4 360 0
+9 compute 0.02782
+9 send 13 4 360 0
+9 compute 0.02204
+9 wait 6 10 4
+9 compute 0.0399
+9 irecv 13 3 360 0
+9 compute 0.0271
+9 send 5 3 360 0
+9 compute 0.02304
+9 wait 14 10 3
+9 compute 0.23492
+9 recv 8 2 15 0
+9 compute 0.03828
+9 recv 5 4 15 0
+9 compute 0.05956
+9 send 10 2 15 0
+9 compute 0.02006
+9 send 13 4 15 0
+9 compute 0.04942
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05148
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03956
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0396
+9 send 10 2 15 0
+9 compute 0.0208
+9 send 13 4 15 0
+9 compute 0.05256
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.05448
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04476
+9 recv 8 2 15 0
+9 compute 0.02162
+9 recv 5 4 15 0
+9 compute 0.0511
+9 send 10 2 15 0
+9 compute 0.0201
+9 send 13 4 15 0
+9 compute 0.05716
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03914
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04716
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03986
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03934
+9 recv 8 2 15 0
+9 compute 0.02002
+9 recv 5 4 15 0
+9 compute 0.04324
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04198
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04334
+9 send 10 2 15 0
+9 compute 0.02072
+9 send 13 4 15 0
+9 compute 0.04404
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04264
+9 send 10 2 15 0
+9 compute 0.0201
+9 send 13 4 15 0
+9 compute 0.0538
+9 recv 10 1 15 0
+9 compute 0.02284
+9 recv 13 3 15 0
+9 compute 0.05358
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03906
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04558
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04832
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03842
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03946
+9 recv 10 1 15 0
+9 compute 0.48784
+9 recv 13 3 15 0
+9 compute 0.04156
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0551
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04288
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03714
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0393
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03812
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03946
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03728
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04206
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0388
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03946
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03814
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0401
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07606
+9 irecv 8 2 360 0
+9 compute 0.03556
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.03764
+9 irecv 10 1 360 0
+9 compute 0.0311
+9 send 8 1 360 0
+9 compute 0.02148
+9 wait 11 10 1
+9 compute 0.11372
+9 irecv 5 4 360 0
+9 compute 0.02624
+9 send 13 4 360 0
+9 compute 0.02172
+9 wait 6 10 4
+9 compute 0.04026
+9 irecv 13 3 360 0
+9 compute 0.0252
+9 send 5 3 360 0
+9 compute 0.0218
+9 wait 14 10 3
+9 compute 0.22574
+9 recv 8 2 15 0
+9 compute 0.0261
+9 recv 5 4 15 0
+9 compute 0.04894
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03918
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04634
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0386
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03902
+9 send 10 2 15 0
+9 compute 0.02286
+9 send 13 4 15 0
+9 compute 0.04412
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04576
+9 send 10 2 15 0
+9 compute 0.02856
+9 send 13 4 15 0
+9 compute 0.05812
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04524
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04116
+9 recv 8 2 15 0
+9 compute 0.0292
+9 recv 5 4 15 0
+9 compute 0.04404
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03904
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03818
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04038
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04008
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04242
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04188
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.05388
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03632
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04438
+9 recv 10 1 15 0
+9 compute 0.02444
+9 recv 13 3 15 0
+9 compute 0.04914
+9 send 8 1 15 0
+9 compute 0.02196
+9 send 5 3 15 0
+9 compute 0.04254
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03806
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03728
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03902
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.05388
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05264
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03654
+9 recv 10 1 15 0
+9 compute 0.02348
+9 recv 13 3 15 0
+9 compute 0.03954
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03882
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03622
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03928
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0367
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03846
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03382
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03778
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03998
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03992
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0438
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06874
+9 irecv 8 2 360 0
+9 compute 0.03378
+9 send 10 2 360 0
+9 compute 0.02164
+9 wait 9 10 2
+9 compute 0.04414
+9 irecv 10 1 360 0
+9 compute 0.0308
+9 send 8 1 360 0
+9 compute 0.0234
+9 wait 11 10 1
+9 compute 0.11298
+9 irecv 5 4 360 0
+9 compute 0.0255
+9 send 13 4 360 0
+9 compute 0.02218
+9 wait 6 10 4
+9 compute 0.03666
+9 irecv 13 3 360 0
+9 compute 0.02458
+9 send 5 3 360 0
+9 compute 0.02252
+9 wait 14 10 3
+9 compute 0.2139
+9 recv 8 2 15 0
+9 compute 0.02342
+9 recv 5 4 15 0
+9 compute 0.04502
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0359
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04016
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03766
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04602
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0359
+9 recv 8 2 15 0
+9 compute 0.0251
+9 recv 5 4 15 0
+9 compute 0.0584
+9 send 10 2 15 0
+9 compute 0.02784
+9 send 13 4 15 0
+9 compute 0.05604
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04238
+9 send 10 2 15 0
+9 compute 0.03106
+9 send 13 4 15 0
+9 compute 0.05798
+9 recv 8 2 15 0
+9 compute 0.0389
+9 recv 5 4 15 0
+9 compute 0.04552
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06476
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.53542
+9 send 10 2 15 0
+9 compute 0.02152
+9 send 13 4 15 0
+9 compute 0.06496
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04066
+9 send 10 2 15 0
+9 compute 0.02808
+9 send 13 4 15 0
+9 compute 0.05164
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04142
+9 send 10 2 15 0
+9 compute 0.0321
+9 send 13 4 15 0
+9 compute 0.05896
+9 recv 8 2 15 0
+9 compute 0.02994
+9 recv 5 4 15 0
+9 compute 0.04468
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.06136
+9 recv 10 1 15 0
+9 compute 0.0466
+9 recv 13 3 15 0
+9 compute 0.06562
+9 send 8 1 15 0
+9 compute 0.0296
+9 send 5 3 15 0
+9 compute 0.06264
+9 recv 10 1 15 0
+9 compute 0.02842
+9 recv 13 3 15 0
+9 compute 0.04168
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03946
+9 recv 10 1 15 0
+9 compute 0.0414
+9 recv 13 3 15 0
+9 compute 0.03954
+9 send 8 1 15 0
+9 compute 0.03036
+9 send 5 3 15 0
+9 compute 0.05932
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04114
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04642
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03632
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03914
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0403
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03848
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03876
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0413
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04148
+9 send 8 1 15 0
+9 compute 0.03878
+9 send 5 3 15 0
+9 compute 0.04602
+9 recv 10 1 15 0
+9 compute 0.04212
+9 recv 13 3 15 0
+9 compute 0.03898
+9 send 8 1 15 0
+9 compute 0.02744
+9 send 5 3 15 0
+9 compute 0.04936
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05086
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0713
+9 irecv 8 2 360 0
+9 compute 0.04242
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.03904
+9 irecv 10 1 360 0
+9 compute 0.03336
+9 send 8 1 360 0
+9 compute 0.0213
+9 wait 11 10 1
+9 compute 0.13056
+9 irecv 5 4 360 0
+9 compute 0.02654
+9 send 13 4 360 0
+9 compute 0.02128
+9 wait 6 10 4
+9 compute 0.03934
+9 irecv 13 3 360 0
+9 compute 0.02608
+9 send 5 3 360 0
+9 compute 0.02242
+9 wait 14 10 3
+9 compute 0.2137
+9 recv 8 2 15 0
+9 compute 0.3411
+9 recv 5 4 15 0
+9 compute 0.07742
+9 send 10 2 15 0
+9 compute 0.0286
+9 send 13 4 15 0
+9 compute 0.04554
+9 recv 8 2 15 0
+9 compute 0.02252
+9 recv 5 4 15 0
+9 compute 0.0417
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03812
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04162
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04154
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03866
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0389
+9 recv 8 2 15 0
+9 compute 0.02238
+9 recv 5 4 15 0
+9 compute 0.05426
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.30258
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04244
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03836
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04042
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04082
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03984
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03704
+9 recv 8 2 15 0
+9 compute 0.02004
+9 recv 5 4 15 0
+9 compute 0.04474
+9 send 10 2 15 0
+9 compute 0.02748
+9 send 13 4 15 0
+9 compute 0.05808
+9 recv 8 2 15 0
+9 compute 0.03124
+9 recv 5 4 15 0
+9 compute 0.04414
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04872
+9 recv 10 1 15 0
+9 compute 0.04596
+9 recv 13 3 15 0
+9 compute 0.08524
+9 send 8 1 15 0
+9 compute 0.02712
+9 send 5 3 15 0
+9 compute 0.08312
+9 recv 10 1 15 0
+9 compute 0.02814
+9 recv 13 3 15 0
+9 compute 0.09522
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.07722
+9 recv 10 1 15 0
+9 compute 0.02858
+9 recv 13 3 15 0
+9 compute 0.1206
+9 send 8 1 15 0
+9 compute 0.0304
+9 send 5 3 15 0
+9 compute 0.08158
+9 recv 10 1 15 0
+9 compute 0.03366
+9 recv 13 3 15 0
+9 compute 0.07656
+9 send 8 1 15 0
+9 compute 0.02756
+9 send 5 3 15 0
+9 compute 0.06134
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05334
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04586
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.27334
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0392
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.34336
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04056
+9 recv 10 1 15 0
+9 compute 0.03466
+9 recv 13 3 15 0
+9 compute 0.053
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04056
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04054
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0394
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04778
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0726
+9 irecv 8 2 360 0
+9 compute 0.0288
+9 send 10 2 360 0
+9 compute 0.03338
+9 wait 9 10 2
+9 compute 0.041
+9 irecv 10 1 360 0
+9 compute 0.02962
+9 send 8 1 360 0
+9 compute 0.02116
+9 wait 11 10 1
+9 compute 0.14326
+9 irecv 5 4 360 0
+9 compute 0.02606
+9 send 13 4 360 0
+9 compute 0.02534
+9 wait 6 10 4
+9 compute 0.04096
+9 irecv 13 3 360 0
+9 compute 0.0284
+9 send 5 3 360 0
+9 compute 0.02278
+9 wait 14 10 3
+9 compute 0.225
+9 recv 8 2 15 0
+9 compute 0.02394
+9 recv 5 4 15 0
+9 compute 0.05434
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03604
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03948
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03806
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04322
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03744
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04852
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04276
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03928
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03918
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04182
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04004
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0396
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03452
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0392
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04288
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03934
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03868
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03858
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0448
+9 recv 10 1 15 0
+9 compute 0.0248
+9 recv 13 3 15 0
+9 compute 0.05724
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0379
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04596
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03612
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04172
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0406
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04244
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04398
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.06736
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04184
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0402
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04748
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03546
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0373
+9 recv 10 1 15 0
+9 compute 0.03252
+9 recv 13 3 15 0
+9 compute 0.04892
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0421
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0365
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03896
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04616
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.06738
+9 irecv 8 2 360 0
+9 compute 0.03856
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.0454
+9 irecv 10 1 360 0
+9 compute 0.03356
+9 send 8 1 360 0
+9 compute 0.0219
+9 wait 11 10 1
+9 compute 0.1221
+9 irecv 5 4 360 0
+9 compute 0.03306
+9 send 13 4 360 0
+9 wait 6 10 4
+9 compute 0.05002
+9 irecv 13 3 360 0
+9 compute 0.02652
+9 send 5 3 360 0
+9 compute 0.02502
+9 wait 14 10 3
+9 compute 0.23474
+9 recv 8 2 15 0
+9 compute 0.02756
+9 recv 5 4 15 0
+9 compute 0.06018
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04146
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03768
+9 send 10 2 15 0
+9 compute 0.0212
+9 send 13 4 15 0
+9 compute 0.0438
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04104
+9 send 10 2 15 0
+9 compute 0.0228
+9 send 13 4 15 0
+9 compute 0.04668
+9 recv 8 2 15 0
+9 compute 0.0303
+9 recv 5 4 15 0
+9 compute 0.04194
+9 send 10 2 15 0
+9 compute 0.02216
+9 send 13 4 15 0
+9 compute 0.05508
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04118
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04106
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.0489
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.04728
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04062
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03752
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04024
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.03818
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.03916
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0489
+9 recv 8 2 15 0
+9 recv 5 4 15 0
+9 compute 0.04352
+9 send 10 2 15 0
+9 send 13 4 15 0
+9 compute 0.0469
+9 recv 10 1 15 0
+9 compute 0.02512
+9 recv 13 3 15 0
+9 compute 0.0472
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04022
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.05664
+9 send 8 1 15 0
+9 compute 0.02078
+9 send 5 3 15 0
+9 compute 0.05148
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04134
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0413
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03972
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0377
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.0419
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03604
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.3396
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04094
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03664
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03764
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04816
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.04302
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.03578
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.03866
+9 recv 10 1 15 0
+9 recv 13 3 15 0
+9 compute 0.04066
+9 send 8 1 15 0
+9 send 5 3 15 0
+9 compute 0.0544
+9 allreduce 5 0 0 
+9 compute 0.063
+9 irecv 8 2 360 0
+9 compute 0.0439
+9 send 10 2 360 0
+9 wait 9 10 2
+9 compute 0.03596
+9 irecv 10 1 360 0
+9 compute 0.0291
+9 send 8 1 360 0
+9 compute 0.02146
+9 wait 11 10 1
+9 compute 0.1155
+9 irecv 5 4 360 0
+9 compute 0.02918
+9 send 13 4 360 0
+9 compute 0.02138
+9 wait 6 10 4
+9 compute 0.03932
+9 irecv 13 3 360 0
+9 compute 0.03124
+9 send 5 3 360 0
+9 compute 0.02208
+9 wait 14 10 3
+9 compute 0.21358
+9 allreduce 5 0 0 
+9 compute 0.03074
+9 allreduce 1 0 0 
+9 compute 0.11974
+9 allreduce 5 0 0 
+9 compute 0.09452
+9 irecv 13 3 6 0
+9 compute 0.03512
+9 wait 14 10 3
+9 compute 0.03472
+9 send 5 3 6 0
+9 compute 0.02222
+9 irecv 10 1 10 0
+9 compute 0.02824
+9 wait 11 10 1
+9 compute 0.03064
+9 send 8 1 10 0
+9 compute 0.02548
+9 allreduce 1 0 0 
+9 compute 0.02584
+9 allreduce 1 0 0 
+9 compute 0.02526
+9 allreduce 1 0 0 
+9 compute 0.03972
+9 finalize

@@ -1,0 +1,1 @@
+batsim -p batsim-v2.0.0/platforms/torus-64.xml -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json -e dynamic-mapping-npb-out/out

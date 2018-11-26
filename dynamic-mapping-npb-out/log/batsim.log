@@ -1,0 +1,22 @@
++ batsim -p batsim-v2.0.0/platforms/torus-64.xml -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json -e dynamic-mapping-npb-out/out
+[0.000000] [batsim/INFO] Workload 'b1fac0' corresponds to workload file '/github-simgrid/batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json'.
+[0.000000] [batsim/INFO] Batsim version: v2.0.0
+[0.000000] [workload/INFO] Loading JSON workload '/github-simgrid/batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json'...
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'LU.S.4': [/github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-1.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-2.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-3.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'LU.S.16': [/github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-1.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-2.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-3.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-4.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-5.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-6.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-7.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-8.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-9.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-10.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-11.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-12.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-13.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-14.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-15.txt, /github-simgrid/batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-16.txt]
+[0.000000] [workload/INFO] JSON workload parsed sucessfully. Read 2 jobs and 2 profiles.
+[0.000000] [workload/INFO] Checking workload validity...
+[0.000000] [workload/INFO] Workload seems to be valid.
+[0.000000] [batsim/INFO] Checking whether SMPI is used or not...
+[0.000000] [batsim/INFO] SMPI will be used.
+[0.000000] [workload/INFO] Registering SMPI applications of workload 'b1fac0'...
+[0.000000] [workload/INFO] Registering app. instance='b1fac0!1', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='b1fac0!2', nb_process=16
+[0.000000] [workload/INFO] SMPI applications of workload 'b1fac0' have been registered.
+[0.000000] [smpi_kernel/INFO] You did not set the power of the host running the simulation.  The timings will certainly not be accurate.  Use the option "--cfg=smpi/host-speed:<flops>" to set its value.Check http://simgrid.org/simgrid/latest/doc/options.html#options_smpi_bench for more information.
+Invalid XML (XML input line 4, state 78): Unexpected character `<': `</platform>' expected.
+[0.000000] /tmp/nix-build-simgrid-batsim.drv-0/simgrid/src/surf/xml/surfxml_sax_cb.cpp:57: [surf_parse/ERROR] Parse error at (null):4: Parse error in batsim-v2.0.0/platforms/torus-64.xml
+[0.000000] /tmp/nix-build-simgrid-batsim.drv-0/simgrid/src/surf/xml/surfxml_sax_cb.cpp:59: [xbt/CRITICAL] Exiting now
+dynamic-mapping-npb-out/cmd/batsim.bash: line 1: 51204 Aborted                 batsim -p batsim-v2.0.0/platforms/torus-64.xml -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json -e dynamic-mapping-npb-out/out

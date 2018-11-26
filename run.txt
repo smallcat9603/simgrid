@@ -11,3 +11,8 @@ robin generate ./test.yaml --output-dir=expe-out --batcmd="batsim -p batsim-v2.0
 robin ./test.yaml
 
 export PATH=$PATH:/home/smallcat/.nix-profile/bin
+
+smpirun -trace-ti --cfg=tracing/filename:LU.S.4 -np 4 -platform ../torus-4.xml bin/lu.S.4
+smpirun -trace-ti --cfg=tracing/filename:LU.S.16 -np 16 -platform ../torus-16.xml bin/lu.S.16
+smpirun -trace-ti --cfg=tracing/filename:LU.S.64 -np 64 -platform ../torus-64.xml bin/lu.S.64
+smpirun -trace-ti --cfg=tracing/filename:LU.S.256 -np 256 -platform ../torus-256.xml bin/lu.S.256

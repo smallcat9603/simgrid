@@ -1,0 +1,23 @@
+{
+    "version": 0,
+    "command:": "",
+    "date": "Mon, 26 Nov 2015 13:50:30 +0900",
+    "description": "workload with profile file for test",
+
+    "nb_res": 64,
+    "jobs": [
+        {"id":1, "subtime":10, "walltime": 100, "res": 4, "profile": "LU.S.4"},
+        {"id":2, "subtime":100, "walltime": 100, "res": 16, "profile": "LU.S.16"}
+    ],
+
+    "profiles": {
+        "LU.S.4": {
+            "type": "smpi",
+            "trace": "smpi/npb/LU.S.4"
+        },
+        "LU.S.16": {
+            "type": "smpi",
+            "trace": "smpi/npb/LU.S.16"
+        }        
+    }
+}
