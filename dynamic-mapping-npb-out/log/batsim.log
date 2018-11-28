@@ -16,7 +16,6 @@
 [0.000000] [workload/INFO] Registering app. instance='b1fac0!2', nb_process=16
 [0.000000] [workload/INFO] SMPI applications of workload 'b1fac0' have been registered.
 [0.000000] [smpi_kernel/INFO] You did not set the power of the host running the simulation.  The timings will certainly not be accurate.  Use the option "--cfg=smpi/host-speed:<flops>" to set its value.Check http://simgrid.org/simgrid/latest/doc/options.html#options_smpi_bench for more information.
-Invalid XML (XML input line 4, state 78): Unexpected character `<': `</platform>' expected.
-[0.000000] /tmp/nix-build-simgrid-batsim.drv-0/simgrid/src/surf/xml/surfxml_sax_cb.cpp:57: [surf_parse/ERROR] Parse error at (null):4: Parse error in batsim-v2.0.0/platforms/torus-64.xml
-[0.000000] /tmp/nix-build-simgrid-batsim.drv-0/simgrid/src/surf/xml/surfxml_sax_cb.cpp:59: [xbt/CRITICAL] Exiting now
-dynamic-mapping-npb-out/cmd/batsim.bash: line 1: 46232 Aborted                 batsim -p batsim-v2.0.0/platforms/torus-64.xml -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json -e dynamic-mapping-npb-out/out
+[0.000000] /tmp/nix-build-simgrid-batsim.drv-0/simgrid/src/surf/xml/surfxml_sax_cb.cpp:45: [surf_parse/ERROR] Parse error at batsim-v2.0.0/platforms/torus-64.xml:8: ASroute gw_dst='master_hostmy_cluster0' does name a node.
+[0.000000] /tmp/nix-build-simgrid-batsim.drv-0/simgrid/src/surf/xml/surfxml_sax_cb.cpp:47: [xbt/CRITICAL] Exiting now
+dynamic-mapping-npb-out/cmd/batsim.bash: line 1: 46401 Aborted                 batsim -p batsim-v2.0.0/platforms/torus-64.xml -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json -e dynamic-mapping-npb-out/out
