@@ -1,9 +1,10 @@
 batcmd: 'batsim -p batsim-v2.0.0/platforms/torus-64.xml
                 -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json
-                -e dynamic-mapping-npb-out/out'
+                -e dynamic-mapping-npb-out/out
+                -m node-64.simgrid.org'
 failure-timeout: 0
 output-dir: dynamic-mapping-npb-out
 ready-timeout: 3
 schedcmd: "batsched -v easy_bf"
-simulation-timeout: 30
+simulation-timeout: 300000
 success-timeout: 3
