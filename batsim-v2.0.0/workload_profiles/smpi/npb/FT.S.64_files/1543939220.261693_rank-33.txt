@@ -1,0 +1,22 @@
+32 init
+32 bcast 1 0 1 
+32 bcast 1 0 1 
+32 bcast 1 0 1 
+32 bcast 1 0 1 
+32 bcast 1 0 16 
+32 alltoall 1024 1024 26 26
+32 barrier
+32 alltoall 1024 1024 26 26
+32 alltoall 1024 1024 26 26
+32 reduce 16 0 0 26 
+32 alltoall 1024 1024 26 26
+32 reduce 16 0 0 26 
+32 alltoall 1024 1024 26 26
+32 reduce 16 0 0 26 
+32 alltoall 1024 1024 26 26
+32 reduce 16 0 0 26 
+32 alltoall 1024 1024 26 26
+32 reduce 16 0 0 26 
+32 alltoall 1024 1024 26 26
+32 reduce 16 0 0 26 
+32 finalize

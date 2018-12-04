@@ -1,0 +1,30 @@
+91 init
+91 bcast 1 0 1 
+91 bcast 1 0 1 
+91 bcast 1 0 1 
+91 bcast 1 0 1 
+91 bcast 1 0 16 
+91 alltoall 256 256 26 26
+91 alltoall 4096 4096 26 26
+91 barrier
+91 alltoall 256 256 26 26
+91 alltoall 4096 4096 26 26
+91 alltoall 4096 4096 26 26
+91 alltoall 256 256 26 26
+91 reduce 16 0 0 26 
+91 alltoall 4096 4096 26 26
+91 alltoall 256 256 26 26
+91 reduce 16 0 0 26 
+91 alltoall 4096 4096 26 26
+91 alltoall 256 256 26 26
+91 reduce 16 0 0 26 
+91 alltoall 4096 4096 26 26
+91 alltoall 256 256 26 26
+91 reduce 16 0 0 26 
+91 alltoall 4096 4096 26 26
+91 alltoall 256 256 26 26
+91 reduce 16 0 0 26 
+91 alltoall 4096 4096 26 26
+91 alltoall 256 256 26 26
+91 reduce 16 0 0 26 
+91 finalize

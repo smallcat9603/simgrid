@@ -1,0 +1,22 @@
+52 init
+52 bcast 1 0 1 
+52 bcast 1 0 1 
+52 bcast 1 0 1 
+52 bcast 1 0 1 
+52 bcast 1 0 16 
+52 alltoall 1024 1024 26 26
+52 barrier
+52 alltoall 1024 1024 26 26
+52 alltoall 1024 1024 26 26
+52 reduce 16 0 0 26 
+52 alltoall 1024 1024 26 26
+52 reduce 16 0 0 26 
+52 alltoall 1024 1024 26 26
+52 reduce 16 0 0 26 
+52 alltoall 1024 1024 26 26
+52 reduce 16 0 0 26 
+52 alltoall 1024 1024 26 26
+52 reduce 16 0 0 26 
+52 alltoall 1024 1024 26 26
+52 reduce 16 0 0 26 
+52 finalize

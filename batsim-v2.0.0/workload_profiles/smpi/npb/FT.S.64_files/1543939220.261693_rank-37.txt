@@ -1,0 +1,23 @@
+36 init
+36 bcast 1 0 1 
+36 bcast 1 0 1 
+36 bcast 1 0 1 
+36 bcast 1 0 1 
+36 bcast 1 0 16 
+36 alltoall 1024 1024 26 26
+36 compute 312.5
+36 barrier
+36 alltoall 1024 1024 26 26
+36 alltoall 1024 1024 26 26
+36 reduce 16 0 0 26 
+36 alltoall 1024 1024 26 26
+36 reduce 16 0 0 26 
+36 alltoall 1024 1024 26 26
+36 reduce 16 0 0 26 
+36 alltoall 1024 1024 26 26
+36 reduce 16 0 0 26 
+36 alltoall 1024 1024 26 26
+36 reduce 16 0 0 26 
+36 alltoall 1024 1024 26 26
+36 reduce 16 0 0 26 
+36 finalize

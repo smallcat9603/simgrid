@@ -1,0 +1,1316 @@
+2 init
+2 barrier
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 8 0 1 
+2 bcast 1 0 16 
+2 barrier
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 barrier
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 allreduce 1 0 0 
+2 allreduce 1 0 0 
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 allreduce 1 0 0 
+2 allreduce 1 0 0 
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 barrier
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 allreduce 1 0 0 
+2 allreduce 4 0 1 
+2 barrier
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 barrier
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 allreduce 1 0 0 
+2 allreduce 1 0 0 
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 1 0
+2 send 1 1100 1 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 3 0
+2 send 14 2100 3 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 9 0
+2 send 50 3100 9 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 4 0
+2 send 1 1100 4 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 8 0
+2 send 14 2100 8 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 16 0
+2 send 50 3100 16 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 16 0
+2 send 1 1100 16 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 24 0
+2 send 14 2100 24 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 36 0
+2 send 50 3100 36 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 irecv 3 1100 200 0
+2 irecv 1 1300 200 0
+2 send 3 1300 64 0
+2 send 1 1100 64 0
+2 wait 4 3 1100
+2 wait 2 3 1300
+2 irecv 6 2100 200 0
+2 irecv 14 2300 200 0
+2 send 6 2300 80 0
+2 send 14 2100 80 0
+2 wait 7 3 2100
+2 wait 15 3 2300
+2 irecv 18 3100 200 0
+2 irecv 50 3300 200 0
+2 send 18 3300 100 0
+2 send 50 3100 100 0
+2 wait 19 3 3100
+2 wait 51 3 3300
+2 allreduce 1 0 0 
+2 allreduce 1 0 0 
+2 reduce 1 0 0 0 
+2 finalize

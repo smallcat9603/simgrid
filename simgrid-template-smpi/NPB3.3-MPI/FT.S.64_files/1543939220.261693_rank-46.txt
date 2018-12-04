@@ -1,0 +1,22 @@
+45 init
+45 bcast 1 0 1 
+45 bcast 1 0 1 
+45 bcast 1 0 1 
+45 bcast 1 0 1 
+45 bcast 1 0 16 
+45 alltoall 1024 1024 26 26
+45 barrier
+45 alltoall 1024 1024 26 26
+45 alltoall 1024 1024 26 26
+45 reduce 16 0 0 26 
+45 alltoall 1024 1024 26 26
+45 reduce 16 0 0 26 
+45 alltoall 1024 1024 26 26
+45 reduce 16 0 0 26 
+45 alltoall 1024 1024 26 26
+45 reduce 16 0 0 26 
+45 alltoall 1024 1024 26 26
+45 reduce 16 0 0 26 
+45 alltoall 1024 1024 26 26
+45 reduce 16 0 0 26 
+45 finalize

@@ -1,0 +1,30 @@
+217 init
+217 bcast 1 0 1 
+217 bcast 1 0 1 
+217 bcast 1 0 1 
+217 bcast 1 0 1 
+217 bcast 1 0 16 
+217 alltoall 256 256 26 26
+217 alltoall 4096 4096 26 26
+217 barrier
+217 alltoall 256 256 26 26
+217 alltoall 4096 4096 26 26
+217 alltoall 4096 4096 26 26
+217 alltoall 256 256 26 26
+217 reduce 16 0 0 26 
+217 alltoall 4096 4096 26 26
+217 alltoall 256 256 26 26
+217 reduce 16 0 0 26 
+217 alltoall 4096 4096 26 26
+217 alltoall 256 256 26 26
+217 reduce 16 0 0 26 
+217 alltoall 4096 4096 26 26
+217 alltoall 256 256 26 26
+217 reduce 16 0 0 26 
+217 alltoall 4096 4096 26 26
+217 alltoall 256 256 26 26
+217 reduce 16 0 0 26 
+217 alltoall 4096 4096 26 26
+217 alltoall 256 256 26 26
+217 reduce 16 0 0 26 
+217 finalize

@@ -1,0 +1,25 @@
+2 init
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 1 0 1 
+2 bcast 1 0 16 
+2 alltoall 262144 262144 26 26
+2 barrier
+2 alltoall 262144 262144 26 26
+2 alltoall 262144 262144 26 26
+2 compute 312.5
+2 reduce 16 0 0 26 
+2 alltoall 262144 262144 26 26
+2 reduce 16 0 0 26 
+2 compute 312.5
+2 alltoall 262144 262144 26 26
+2 reduce 16 0 0 26 
+2 alltoall 262144 262144 26 26
+2 reduce 16 0 0 26 
+2 alltoall 262144 262144 26 26
+2 compute 312.5
+2 reduce 16 0 0 26 
+2 alltoall 262144 262144 26 26
+2 reduce 16 0 0 26 
+2 finalize

@@ -1,0 +1,30 @@
+101 init
+101 bcast 1 0 1 
+101 bcast 1 0 1 
+101 bcast 1 0 1 
+101 bcast 1 0 1 
+101 bcast 1 0 16 
+101 alltoall 256 256 26 26
+101 alltoall 4096 4096 26 26
+101 barrier
+101 alltoall 256 256 26 26
+101 alltoall 4096 4096 26 26
+101 alltoall 4096 4096 26 26
+101 alltoall 256 256 26 26
+101 reduce 16 0 0 26 
+101 alltoall 4096 4096 26 26
+101 alltoall 256 256 26 26
+101 reduce 16 0 0 26 
+101 alltoall 4096 4096 26 26
+101 alltoall 256 256 26 26
+101 reduce 16 0 0 26 
+101 alltoall 4096 4096 26 26
+101 alltoall 256 256 26 26
+101 reduce 16 0 0 26 
+101 alltoall 4096 4096 26 26
+101 alltoall 256 256 26 26
+101 reduce 16 0 0 26 
+101 alltoall 4096 4096 26 26
+101 alltoall 256 256 26 26
+101 reduce 16 0 0 26 
+101 finalize

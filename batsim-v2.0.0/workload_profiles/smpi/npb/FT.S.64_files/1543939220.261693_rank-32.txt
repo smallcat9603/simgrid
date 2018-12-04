@@ -1,0 +1,22 @@
+31 init
+31 bcast 1 0 1 
+31 bcast 1 0 1 
+31 bcast 1 0 1 
+31 bcast 1 0 1 
+31 bcast 1 0 16 
+31 alltoall 1024 1024 26 26
+31 barrier
+31 alltoall 1024 1024 26 26
+31 alltoall 1024 1024 26 26
+31 reduce 16 0 0 26 
+31 alltoall 1024 1024 26 26
+31 reduce 16 0 0 26 
+31 alltoall 1024 1024 26 26
+31 reduce 16 0 0 26 
+31 alltoall 1024 1024 26 26
+31 reduce 16 0 0 26 
+31 alltoall 1024 1024 26 26
+31 reduce 16 0 0 26 
+31 alltoall 1024 1024 26 26
+31 reduce 16 0 0 26 
+31 finalize

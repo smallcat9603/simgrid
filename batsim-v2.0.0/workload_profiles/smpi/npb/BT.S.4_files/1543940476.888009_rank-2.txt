@@ -1,0 +1,2288 @@
+1 init
+1 bcast 1 0 1 
+1 bcast 1 0 0 
+1 bcast 3 0 1 
+1 bcast 1 0 1 
+1 bcast 1 0 1 
+1 bcast 1 0 16 
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 barrier
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 compute 312.5
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 compute 312.5
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 compute 312.5
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 compute 312.5
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 compute 312.5
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 isend 0 3003 1470 0
+1 irecv 0 3000 1470 0
+1 wait 2 1 3003
+1 wait 1 2 3000
+1 isend 0 2000 245 0
+1 irecv 0 2003 245 0
+1 wait 2 1 2000
+1 wait 1 2 2003
+1 isend 3 5001 1470 0
+1 irecv 3 5002 1470 0
+1 wait 2 4 5001
+1 wait 4 2 5002
+1 isend 3 4002 245 0
+1 irecv 3 4001 245 0
+1 wait 2 4 4002
+1 wait 4 2 4001
+1 isend 2 6001 1470 0
+1 irecv 2 6002 1470 0
+1 wait 2 3 6001
+1 wait 3 2 6002
+1 isend 2 7002 245 0
+1 irecv 2 7001 245 0
+1 wait 2 3 7002
+1 wait 3 2 7001
+1 allreduce 5 0 0 
+1 irecv 0 3000 360 0
+1 irecv 0 2000 360 0
+1 irecv 3 5000 360 0
+1 irecv 3 4000 360 0
+1 irecv 2 6000 360 0
+1 irecv 2 7000 360 0
+1 isend 0 2000 360 0
+1 isend 0 3000 360 0
+1 isend 3 4000 360 0
+1 isend 3 5000 360 0
+1 isend 2 7000 360 0
+1 isend 2 6000 360 0
+1 waitall 12
+1 allreduce 5 0 0 
+1 reduce 1 0 0 0 
+1 barrier
+1 finalize

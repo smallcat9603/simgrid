@@ -1,0 +1,22 @@
+44 init
+44 bcast 1 0 1 
+44 bcast 1 0 1 
+44 bcast 1 0 1 
+44 bcast 1 0 1 
+44 bcast 1 0 16 
+44 alltoall 1024 1024 26 26
+44 barrier
+44 alltoall 1024 1024 26 26
+44 alltoall 1024 1024 26 26
+44 reduce 16 0 0 26 
+44 alltoall 1024 1024 26 26
+44 reduce 16 0 0 26 
+44 alltoall 1024 1024 26 26
+44 reduce 16 0 0 26 
+44 alltoall 1024 1024 26 26
+44 reduce 16 0 0 26 
+44 alltoall 1024 1024 26 26
+44 reduce 16 0 0 26 
+44 alltoall 1024 1024 26 26
+44 reduce 16 0 0 26 
+44 finalize

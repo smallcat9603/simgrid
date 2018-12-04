@@ -1,0 +1,22 @@
+11 init
+11 bcast 1 0 1 
+11 bcast 1 0 1 
+11 bcast 1 0 1 
+11 bcast 1 0 1 
+11 bcast 1 0 16 
+11 alltoall 16384 16384 26 26
+11 barrier
+11 alltoall 16384 16384 26 26
+11 alltoall 16384 16384 26 26
+11 reduce 16 0 0 26 
+11 alltoall 16384 16384 26 26
+11 reduce 16 0 0 26 
+11 alltoall 16384 16384 26 26
+11 reduce 16 0 0 26 
+11 alltoall 16384 16384 26 26
+11 reduce 16 0 0 26 
+11 alltoall 16384 16384 26 26
+11 reduce 16 0 0 26 
+11 alltoall 16384 16384 26 26
+11 reduce 16 0 0 26 
+11 finalize

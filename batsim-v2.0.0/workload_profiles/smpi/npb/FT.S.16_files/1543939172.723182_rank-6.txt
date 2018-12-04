@@ -1,0 +1,22 @@
+5 init
+5 bcast 1 0 1 
+5 bcast 1 0 1 
+5 bcast 1 0 1 
+5 bcast 1 0 1 
+5 bcast 1 0 16 
+5 alltoall 16384 16384 26 26
+5 barrier
+5 alltoall 16384 16384 26 26
+5 alltoall 16384 16384 26 26
+5 reduce 16 0 0 26 
+5 alltoall 16384 16384 26 26
+5 reduce 16 0 0 26 
+5 alltoall 16384 16384 26 26
+5 reduce 16 0 0 26 
+5 alltoall 16384 16384 26 26
+5 reduce 16 0 0 26 
+5 alltoall 16384 16384 26 26
+5 reduce 16 0 0 26 
+5 alltoall 16384 16384 26 26
+5 reduce 16 0 0 26 
+5 finalize

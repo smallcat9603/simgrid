@@ -1,0 +1,22 @@
+7 init
+7 bcast 1 0 1 
+7 bcast 1 0 1 
+7 bcast 1 0 1 
+7 bcast 1 0 1 
+7 bcast 1 0 16 
+7 alltoall 16384 16384 26 26
+7 barrier
+7 alltoall 16384 16384 26 26
+7 alltoall 16384 16384 26 26
+7 reduce 16 0 0 26 
+7 alltoall 16384 16384 26 26
+7 reduce 16 0 0 26 
+7 alltoall 16384 16384 26 26
+7 reduce 16 0 0 26 
+7 alltoall 16384 16384 26 26
+7 reduce 16 0 0 26 
+7 alltoall 16384 16384 26 26
+7 reduce 16 0 0 26 
+7 alltoall 16384 16384 26 26
+7 reduce 16 0 0 26 
+7 finalize

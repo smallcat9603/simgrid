@@ -1,0 +1,30 @@
+168 init
+168 bcast 1 0 1 
+168 bcast 1 0 1 
+168 bcast 1 0 1 
+168 bcast 1 0 1 
+168 bcast 1 0 16 
+168 alltoall 256 256 26 26
+168 alltoall 4096 4096 26 26
+168 barrier
+168 alltoall 256 256 26 26
+168 alltoall 4096 4096 26 26
+168 alltoall 4096 4096 26 26
+168 alltoall 256 256 26 26
+168 reduce 16 0 0 26 
+168 alltoall 4096 4096 26 26
+168 alltoall 256 256 26 26
+168 reduce 16 0 0 26 
+168 alltoall 4096 4096 26 26
+168 alltoall 256 256 26 26
+168 reduce 16 0 0 26 
+168 alltoall 4096 4096 26 26
+168 alltoall 256 256 26 26
+168 reduce 16 0 0 26 
+168 alltoall 4096 4096 26 26
+168 alltoall 256 256 26 26
+168 reduce 16 0 0 26 
+168 alltoall 4096 4096 26 26
+168 alltoall 256 256 26 26
+168 reduce 16 0 0 26 
+168 finalize

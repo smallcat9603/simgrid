@@ -1,0 +1,30 @@
+231 init
+231 bcast 1 0 1 
+231 bcast 1 0 1 
+231 bcast 1 0 1 
+231 bcast 1 0 1 
+231 bcast 1 0 16 
+231 alltoall 256 256 26 26
+231 alltoall 4096 4096 26 26
+231 barrier
+231 alltoall 256 256 26 26
+231 alltoall 4096 4096 26 26
+231 alltoall 4096 4096 26 26
+231 alltoall 256 256 26 26
+231 reduce 16 0 0 26 
+231 alltoall 4096 4096 26 26
+231 alltoall 256 256 26 26
+231 reduce 16 0 0 26 
+231 alltoall 4096 4096 26 26
+231 alltoall 256 256 26 26
+231 reduce 16 0 0 26 
+231 alltoall 4096 4096 26 26
+231 alltoall 256 256 26 26
+231 reduce 16 0 0 26 
+231 alltoall 4096 4096 26 26
+231 alltoall 256 256 26 26
+231 reduce 16 0 0 26 
+231 alltoall 4096 4096 26 26
+231 alltoall 256 256 26 26
+231 reduce 16 0 0 26 
+231 finalize

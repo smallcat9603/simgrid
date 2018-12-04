@@ -1,0 +1,30 @@
+202 init
+202 bcast 1 0 1 
+202 bcast 1 0 1 
+202 bcast 1 0 1 
+202 bcast 1 0 1 
+202 bcast 1 0 16 
+202 alltoall 256 256 26 26
+202 alltoall 4096 4096 26 26
+202 barrier
+202 alltoall 256 256 26 26
+202 alltoall 4096 4096 26 26
+202 alltoall 4096 4096 26 26
+202 alltoall 256 256 26 26
+202 reduce 16 0 0 26 
+202 alltoall 4096 4096 26 26
+202 alltoall 256 256 26 26
+202 reduce 16 0 0 26 
+202 alltoall 4096 4096 26 26
+202 alltoall 256 256 26 26
+202 reduce 16 0 0 26 
+202 alltoall 4096 4096 26 26
+202 alltoall 256 256 26 26
+202 reduce 16 0 0 26 
+202 alltoall 4096 4096 26 26
+202 alltoall 256 256 26 26
+202 reduce 16 0 0 26 
+202 alltoall 4096 4096 26 26
+202 alltoall 256 256 26 26
+202 reduce 16 0 0 26 
+202 finalize

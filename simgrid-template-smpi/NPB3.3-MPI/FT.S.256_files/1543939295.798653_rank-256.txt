@@ -1,0 +1,31 @@
+255 init
+255 bcast 1 0 1 
+255 bcast 1 0 1 
+255 bcast 1 0 1 
+255 bcast 1 0 1 
+255 bcast 1 0 16 
+255 alltoall 256 256 26 26
+255 alltoall 4096 4096 26 26
+255 barrier
+255 alltoall 256 256 26 26
+255 alltoall 4096 4096 26 26
+255 alltoall 4096 4096 26 26
+255 alltoall 256 256 26 26
+255 reduce 16 0 0 26 
+255 alltoall 4096 4096 26 26
+255 alltoall 256 256 26 26
+255 reduce 16 0 0 26 
+255 alltoall 4096 4096 26 26
+255 alltoall 256 256 26 26
+255 compute 312.5
+255 reduce 16 0 0 26 
+255 alltoall 4096 4096 26 26
+255 alltoall 256 256 26 26
+255 reduce 16 0 0 26 
+255 alltoall 4096 4096 26 26
+255 alltoall 256 256 26 26
+255 reduce 16 0 0 26 
+255 alltoall 4096 4096 26 26
+255 alltoall 256 256 26 26
+255 reduce 16 0 0 26 
+255 finalize

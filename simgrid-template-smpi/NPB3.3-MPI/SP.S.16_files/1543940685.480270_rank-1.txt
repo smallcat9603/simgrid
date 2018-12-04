@@ -1,0 +1,6793 @@
+0 init
+0 bcast 1 0 1 
+0 bcast 1 0 0 
+0 bcast 3 0 1 
+0 bcast 1 0 16 
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 compute 312.5
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 barrier
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 compute 312.5
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 isend 1 0 88 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 1 0 132 0
+0 irecv 3 0 198 0
+0 waitall 2
+0 isend 1 0 198 0
+0 irecv 3 0 132 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 90 0
+0 waitall 2
+0 isend 3 0 90 0
+0 irecv 1 0 60 0
+0 waitall 2
+0 isend 3 0 60 0
+0 irecv 1 0 40 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 88 0
+0 waitall 2
+0 isend 4 0 88 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 4 0 198 0
+0 irecv 12 0 198 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 90 0
+0 waitall 2
+0 isend 12 0 90 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 12 0 40 0
+0 irecv 4 0 40 0
+0 waitall 2
+0 isend 7 0 88 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 7 0 132 0
+0 irecv 13 0 198 0
+0 waitall 2
+0 isend 7 0 198 0
+0 irecv 13 0 132 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 90 0
+0 waitall 2
+0 isend 13 0 90 0
+0 irecv 7 0 60 0
+0 waitall 2
+0 isend 13 0 60 0
+0 irecv 7 0 40 0
+0 waitall 2
+0 allreduce 5 0 0 
+0 irecv 1 3000 270 0
+0 irecv 3 2000 270 0
+0 irecv 4 5000 270 0
+0 irecv 12 4000 270 0
+0 irecv 7 6000 270 0
+0 irecv 13 7000 270 0
+0 isend 1 2000 270 0
+0 isend 3 3000 270 0
+0 isend 4 4000 270 0
+0 isend 12 5000 270 0
+0 isend 7 7000 270 0
+0 isend 13 6000 270 0
+0 waitall 12
+0 allreduce 5 0 0 
+0 reduce 1 0 0 0 
+0 barrier
+0 finalize

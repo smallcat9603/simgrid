@@ -1,0 +1,22 @@
+22 init
+22 bcast 1 0 1 
+22 bcast 1 0 1 
+22 bcast 1 0 1 
+22 bcast 1 0 1 
+22 bcast 1 0 16 
+22 alltoall 1024 1024 26 26
+22 barrier
+22 alltoall 1024 1024 26 26
+22 alltoall 1024 1024 26 26
+22 reduce 16 0 0 26 
+22 alltoall 1024 1024 26 26
+22 reduce 16 0 0 26 
+22 alltoall 1024 1024 26 26
+22 reduce 16 0 0 26 
+22 alltoall 1024 1024 26 26
+22 reduce 16 0 0 26 
+22 alltoall 1024 1024 26 26
+22 reduce 16 0 0 26 
+22 alltoall 1024 1024 26 26
+22 reduce 16 0 0 26 
+22 finalize

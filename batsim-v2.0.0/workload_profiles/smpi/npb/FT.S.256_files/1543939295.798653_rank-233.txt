@@ -1,0 +1,30 @@
+232 init
+232 bcast 1 0 1 
+232 bcast 1 0 1 
+232 bcast 1 0 1 
+232 bcast 1 0 1 
+232 bcast 1 0 16 
+232 alltoall 256 256 26 26
+232 alltoall 4096 4096 26 26
+232 barrier
+232 alltoall 256 256 26 26
+232 alltoall 4096 4096 26 26
+232 alltoall 4096 4096 26 26
+232 alltoall 256 256 26 26
+232 reduce 16 0 0 26 
+232 alltoall 4096 4096 26 26
+232 alltoall 256 256 26 26
+232 reduce 16 0 0 26 
+232 alltoall 4096 4096 26 26
+232 alltoall 256 256 26 26
+232 reduce 16 0 0 26 
+232 alltoall 4096 4096 26 26
+232 alltoall 256 256 26 26
+232 reduce 16 0 0 26 
+232 alltoall 4096 4096 26 26
+232 alltoall 256 256 26 26
+232 reduce 16 0 0 26 
+232 alltoall 4096 4096 26 26
+232 alltoall 256 256 26 26
+232 reduce 16 0 0 26 
+232 finalize

@@ -1,0 +1,30 @@
+246 init
+246 bcast 1 0 1 
+246 bcast 1 0 1 
+246 bcast 1 0 1 
+246 bcast 1 0 1 
+246 bcast 1 0 16 
+246 alltoall 256 256 26 26
+246 alltoall 4096 4096 26 26
+246 barrier
+246 alltoall 256 256 26 26
+246 alltoall 4096 4096 26 26
+246 alltoall 4096 4096 26 26
+246 alltoall 256 256 26 26
+246 reduce 16 0 0 26 
+246 alltoall 4096 4096 26 26
+246 alltoall 256 256 26 26
+246 reduce 16 0 0 26 
+246 alltoall 4096 4096 26 26
+246 alltoall 256 256 26 26
+246 reduce 16 0 0 26 
+246 alltoall 4096 4096 26 26
+246 alltoall 256 256 26 26
+246 reduce 16 0 0 26 
+246 alltoall 4096 4096 26 26
+246 alltoall 256 256 26 26
+246 reduce 16 0 0 26 
+246 alltoall 4096 4096 26 26
+246 alltoall 256 256 26 26
+246 reduce 16 0 0 26 
+246 finalize

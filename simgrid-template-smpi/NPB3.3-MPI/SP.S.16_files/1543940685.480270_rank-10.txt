@@ -1,0 +1,6794 @@
+9 init
+9 bcast 1 0 1 
+9 bcast 1 0 0 
+9 bcast 3 0 1 
+9 bcast 1 0 16 
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 barrier
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 compute 312.5
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 compute 312.5
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 compute 312.5
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 isend 10 0 88 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 10 0 132 0
+9 irecv 8 0 198 0
+9 waitall 2
+9 isend 10 0 198 0
+9 irecv 8 0 132 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 90 0
+9 waitall 2
+9 isend 8 0 90 0
+9 irecv 10 0 60 0
+9 waitall 2
+9 isend 8 0 60 0
+9 irecv 10 0 40 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 198 0
+9 waitall 2
+9 isend 13 0 198 0
+9 irecv 5 0 132 0
+9 waitall 2
+9 isend 13 0 132 0
+9 irecv 5 0 88 0
+9 waitall 2
+9 isend 5 0 40 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 5 0 60 0
+9 irecv 13 0 90 0
+9 waitall 2
+9 isend 5 0 90 0
+9 irecv 13 0 60 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 198 0
+9 waitall 2
+9 isend 12 0 198 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 12 0 88 0
+9 irecv 6 0 88 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 40 0
+9 waitall 2
+9 isend 6 0 40 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 isend 6 0 90 0
+9 irecv 12 0 90 0
+9 waitall 2
+9 allreduce 5 0 0 
+9 irecv 10 3000 270 0
+9 irecv 8 2000 270 0
+9 irecv 13 5000 270 0
+9 irecv 5 4000 270 0
+9 irecv 12 6000 270 0
+9 irecv 6 7000 270 0
+9 isend 10 2000 270 0
+9 isend 8 3000 270 0
+9 isend 13 4000 270 0
+9 isend 5 5000 270 0
+9 isend 12 7000 270 0
+9 isend 6 6000 270 0
+9 waitall 12
+9 allreduce 5 0 0 
+9 reduce 1 0 0 0 
+9 barrier
+9 finalize

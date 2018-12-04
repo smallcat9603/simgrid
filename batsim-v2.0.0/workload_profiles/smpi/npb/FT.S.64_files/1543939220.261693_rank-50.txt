@@ -1,0 +1,22 @@
+49 init
+49 bcast 1 0 1 
+49 bcast 1 0 1 
+49 bcast 1 0 1 
+49 bcast 1 0 1 
+49 bcast 1 0 16 
+49 alltoall 1024 1024 26 26
+49 barrier
+49 alltoall 1024 1024 26 26
+49 alltoall 1024 1024 26 26
+49 reduce 16 0 0 26 
+49 alltoall 1024 1024 26 26
+49 reduce 16 0 0 26 
+49 alltoall 1024 1024 26 26
+49 reduce 16 0 0 26 
+49 alltoall 1024 1024 26 26
+49 reduce 16 0 0 26 
+49 alltoall 1024 1024 26 26
+49 reduce 16 0 0 26 
+49 alltoall 1024 1024 26 26
+49 reduce 16 0 0 26 
+49 finalize

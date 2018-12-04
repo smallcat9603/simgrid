@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+  <AS id="world" routing="Full">
+    <cluster id="bob_cluster" topology="TORUS" topo_parameters="4, 4" prefix="node-" radical="0-15" suffix=".simgrid.org" speed="1Gf" bw="125MBps" lat="50us" loopback_bw="100MBps" loopback_lat="0"/>
+    <cluster id="master_cluster" prefix="master_host" suffix="" radical="0-0" speed="1Gf" bw="125MBps" lat="50us" bb_bw="2.25GBps" bb_lat="500us" />
+
+    <link id="backbone" bandwidth="1.25GBps" latency="500us" />
+
+    <ASroute src="bob_cluster" dst="master_cluster" gw_src="node-bob_cluster_router.simgrid.org" gw_dst="master_hostmaster_cluster_router">
+        <link_ctn id="backbone" />
+    </ASroute>
+  </AS>
+</platform>

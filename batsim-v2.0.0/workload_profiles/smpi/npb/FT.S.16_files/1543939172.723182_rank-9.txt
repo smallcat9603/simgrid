@@ -1,0 +1,24 @@
+8 init
+8 bcast 1 0 1 
+8 bcast 1 0 1 
+8 bcast 1 0 1 
+8 bcast 1 0 1 
+8 bcast 1 0 16 
+8 compute 312.5
+8 alltoall 16384 16384 26 26
+8 barrier
+8 alltoall 16384 16384 26 26
+8 alltoall 16384 16384 26 26
+8 reduce 16 0 0 26 
+8 alltoall 16384 16384 26 26
+8 reduce 16 0 0 26 
+8 alltoall 16384 16384 26 26
+8 reduce 16 0 0 26 
+8 compute 312.5
+8 alltoall 16384 16384 26 26
+8 reduce 16 0 0 26 
+8 alltoall 16384 16384 26 26
+8 reduce 16 0 0 26 
+8 alltoall 16384 16384 26 26
+8 reduce 16 0 0 26 
+8 finalize

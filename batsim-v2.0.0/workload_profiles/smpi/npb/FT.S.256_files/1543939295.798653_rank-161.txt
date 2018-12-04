@@ -1,0 +1,30 @@
+160 init
+160 bcast 1 0 1 
+160 bcast 1 0 1 
+160 bcast 1 0 1 
+160 bcast 1 0 1 
+160 bcast 1 0 16 
+160 alltoall 256 256 26 26
+160 alltoall 4096 4096 26 26
+160 barrier
+160 alltoall 256 256 26 26
+160 alltoall 4096 4096 26 26
+160 alltoall 4096 4096 26 26
+160 alltoall 256 256 26 26
+160 reduce 16 0 0 26 
+160 alltoall 4096 4096 26 26
+160 alltoall 256 256 26 26
+160 reduce 16 0 0 26 
+160 alltoall 4096 4096 26 26
+160 alltoall 256 256 26 26
+160 reduce 16 0 0 26 
+160 alltoall 4096 4096 26 26
+160 alltoall 256 256 26 26
+160 reduce 16 0 0 26 
+160 alltoall 4096 4096 26 26
+160 alltoall 256 256 26 26
+160 reduce 16 0 0 26 
+160 alltoall 4096 4096 26 26
+160 alltoall 256 256 26 26
+160 reduce 16 0 0 26 
+160 finalize
