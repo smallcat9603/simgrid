@@ -1,6 +1,6 @@
 batcmd: 'batsim -p batsim-v2.0.0/platforms/torus-1024-master.xml
                 -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json
-                -e dynamic-mapping-npb-out/out
+                -e dynamic-mapping-npb-conti-desc-out/out
                 -m master_host0'
 # batcmd: 'batsim -p batsim-v2.0.0/platforms/torus-64-master.xml
 #                 -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json
@@ -10,8 +10,8 @@ batcmd: 'batsim -p batsim-v2.0.0/platforms/torus-1024-master.xml
 #                 -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json
 #                 -e dynamic-mapping-npb-out/out'
 failure-timeout: 0
-output-dir: dynamic-mapping-npb-out
+output-dir: dynamic-mapping-npb-conti-desc-out
 ready-timeout: 3
-schedcmd: "batsched -v filler --variant_options '{\"custom_mapping\": true}'"
+schedcmd: "batsched -v filler --variant_options '{\"custom_mapping\": true}' --policy=contiguous --queue_order=desc_size"
 simulation-timeout: 3000
 success-timeout: 3
