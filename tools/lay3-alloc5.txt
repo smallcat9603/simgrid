@@ -1,0 +1,218 @@
+#	
+#	Ikki's Topology & Layout Toolkit
+#	2015/04/21
+#	Ikki Fujiwara <ikki@nii.ac.jp>
+#	
+
+======================================================================
+1. Getting Started
+======================================================================
+
+Ikki's tool consists of 2 steps like "Layout -> Allocation" performed in this order.
+Each step is implemented in a separate program.
+
+	gate:/home/ikki/work/lay3.rb
+	gate:/home/ikki/work/alloc5.rb
+	gate:/home/ikki/work/tabou_qap
+
+Copy these 3 files from my working directory on the "gate" machine and put them all in a same directory of yours.
+Hereafter I suppose to put them in "~/work" and to work in "calc0:~/work/0421_test".
+
+Note:
+- The Ruby scripts ("*.rb") require Ruby 1.9.x.
+- The original "tabou_qap" is written by Eric Taillard. http://mistic.heig-vd.ch/taillard
+- The source code of "tabou_qap", which is modified by Ikki, is here:
+	gate:/home/ikki/work/tools/taillard/tabou_qap.cpp
+
+
+======================================================================
+2. Layout
+======================================================================
+
+"lay3.rb" creates a layout of racks/nodes, and then connects the nodes according to a specified topology.
+Run "lay3.rb" with no arguments to see a help message.
+
+[calc0] ~/work/0421_test$ ../lay3.rb
+Usage: ../lay3.rb [Options]... Geometry Topologies...
+<snip>
+
+----------------------------------------------------------------------
+2-1. Input
+----------------------------------------------------------------------
+
+See an example command line:
+
+[calc0] ~/work/0421_test$ ../lay3.rb -c 64r4 DLN-64-2-5.edges
+
+The "-c" option generates an additional output file, namely "*.clu.edges", so that you can optimize the rack layout (described below).
+
+The 1st argument ("64r4") means that there are 64 nodes and a rack stores 4 nodes; thus there are 64/4=16 racks in total. The racks are aligned in a square-numbered layout (4x4 in this case) on a floor.
+
+The 2nd argument ("DLN-64-2-5.edges") specifies the edgelist file that defines the topology. It includes lines like "32 46" which means "the nodes #32 and #46 are connected".
+
+You can instead generate a pre-defined topology by specifying it in the 2nd argument like "torus-2-2-4-4", which means that the nodes are connected in 4-D torus topology with a dimenstion of 2x2x4x4.
+Multiple topologies can be given to create a union of them.
+
+----------------------------------------------------------------------
+2-2. Standard Output
+----------------------------------------------------------------------
+
+It displays a tab-separated record as follows. You can copy & paste it onto Excel.
+
+64r4+DLN-64-2-5	127771.21	27899.21	99872.00	0.00	139300	224	621.88	1254.40
+
+The 1st column is the parameters.
+The 2nd column is the total cost (127771.21 dollars).
+The 3rd column is the cable cost (27899.21 dollars).
+The 4th column is the switch cost (99872.00 dollars).
+The 5th column is reserved.
+The 6th column is the total length of cables (139300 cm).
+The 7th column is the number of cables (224 cables).
+The 9th column is the average length of a cable (621.88 cm).
+The 10th column is the total power consumption (1254.40 W).
+
+The output is done in line #117 of "lay3.rb". You can change it as you like.
+
+----------------------------------------------------------------------
+2-3. Generated Files
+----------------------------------------------------------------------
+
+It generates 2 files (or 3 files given "-c" option) after execution.
+
+[calc0] ~/work/0421_test$ ls
+64r4.coord
+64r4+DLN-64-2-5.edges
+64r4+DLN-64-2-5.clu.edges
+
+"*.coord" records the physical layout of nodes/racks. It includes a line like "31 7 180 210" which means "the node #31 is stored in the rack #7 and is located at x=180cm y=210cm on the floor".
+
+"*.edges" records the per-node edgelist, i.e. the topological connections between the nodes. It includes a line like "33 45 580" which means "the nodes #33 and #45 are connected with a cable of 580cm long".
+
+The following file is generated only if the "-c" option is given.
+
+"*.clu.edges" records the per-rack edgelist, i.e. the topological connections between the racks. It includes a line like "9 13 4" which means "the racks #9 and #13 are connected with 4 cables".
+
+
+======================================================================
+3. Allocation
+======================================================================
+
+"alloc5.rb" optimizes the layout of the racks on the floor.
+"tabou_qap", which is a solver for a quadratic assignment problem, must exist in the same directory to perform the optimization.
+Run "alloc5.rb" with no arguments to see a help message.
+
+[calc0] ~/work/0421_test$ ../alloc5.rb
+Usage:
+  ../alloc5.rb [Options] Input_file Objective Method
+<snip>
+
+----------------------------------------------------------------------
+3-1. Input
+----------------------------------------------------------------------
+
+See an example command line:
+
+[calc0] ~/work/0421_test$ ../alloc5.rb --nodes 64r4+DLN-64-2-5.edges 64r4+DLN-64-2-5.clu.edges ca ts
+
+The --nodes option ("--nodes 64r4+DLN-64-2-5.edges") specifies the per-node edgelist file genereted by "lay3.rb".
+
+The 1st argument ("64r4+DLN-64-2-5.clu.edges") specifies the per-rack edgelist file genereted by "lay3.rb" with "-c" option.
+
+The 2nd argument ("ca") specifies the objective function, which can be "ca" (cable length [cm]), "po" (power consumption [mW]) or "en" (energy consumption [pJ] considering traffic). You may change their parameters by editing the corresponding methods in the CostModel class of "alloc5.rb".
+
+The 3rd argument ("ts") gives the optimization method, which can be "base" (baseline non-optimized) or "ts" (optimized by Taboo Search).
+
+Note:
+- As the optimization takes a long time, "alloc5.rb" avoids running the solver multiple times. When a corresponding log file exists in the working directory, it just reads the log file and reproduce the results. Use "-f" option to force to re-run the solver.
+
+----------------------------------------------------------------------
+3-2. Standard Output
+----------------------------------------------------------------------
+
+It displays a tab-separated record as follows. You can copy & paste it onto Excel.
+
+64r4+DLN-64-2-5.clu.ca-ts	16	50040	126195.11	26323.11	99872.00	129640	224	578.75	1254.40	0.00
+
+The 1st column is the parameters.
+The 2nd column is the number of racks (16).
+The 3rd column is the objective function value (50040).
+The 4th column is the total cost (126195.11 dollars).
+The 5th column is the cable cost (26323.11 dollars).
+The 6th column is the switch cost (99872.00 dollars).
+The 7th column is the total length of cables (129640 cm).
+The 8th column is the number of cables (224 cables).
+The 9th column is the average length of a cable (578.75 cm).
+The 10th column is the total power consumption (1254.40 W).
+The 11st column is the total energy consumption (0.00 pJ). "--traffic" option is required to calculate the energy.
+
+The output is done in line #237 of "alloc5.rb". You may change it as you like.
+
+----------------------------------------------------------------------
+3-3. Generated Files
+----------------------------------------------------------------------
+
+It generates 1 file (or 3 files given "--nodes" option) after execution.
+
+[calc0] ~/work/0421_test$ ls
+64r4+DLN-64-2-5.clu.ca-ts.log
+64r4+DLN-64-2-5.clu.ca-ts.coord
+64r4+DLN-64-2-5.clu.ca-ts.edges
+
+"*.clu.*-*.log" includes a line like "@160 100080 [0,15,4,14,9,7,5,13,11,2,6,8,10,12,3,1]", which means "at the 160th iteration the best solution with cost 100080 was found, where the rack #0 is assigned at the first location on the floor (upper-left corner), rack #15 is assigned at the second location, etc.". Note that the objective function value = cost / 2.
+
+The following 2 files are generated only if the "--nodes" option is given. 
+
+"*.clu.*-*.coord" records the physical layout of nodes/racks after optimization. It includes a line like "52 13 180 210", which means "the node #52 is stored in the rack #13 and is located at x=180cm y=210cm on the floor".
+
+"*.clu.*-*.edges" records the per-node edgelist after optimization. It includes a line like "46 52 790", which means "the nodes #46 and #52 are connected with a cable of 790cm long". Its 3rd column value changes according to the objective function.
+
+
+======================================================================
+4. Running in Parallel
+======================================================================
+
+Use GNU Parallel. Example:
+
+[gate] ~/work/0421_test$ cat ~/.parallel/config
+--sshlogin calc3,calc2,calc1,calc0
+--workdir .
+--nice 10
+--progress
+
+[gate] ~/work/0421_test$ cat lay.sh
+../lay3.rb -f -c 16r4 hc-4
+../lay3.rb -f -c 32r4 hc-5
+../lay3.rb -f -c 64r4 hc-6
+../lay3.rb -f -c 128r4 hc-7
+../lay3.rb -f -c 256r4 hc-8
+
+[gate] ~/work/0421_test$ parallel -a lay.sh > lay.tsv
+<snip>
+
+[gate] ~/work/0421_test$ cat lay.tsv
+16r4+hc-4	38781.04	6781.04	32000.00	0.0	11760	32	367
+32r4+hc-5	103436.64	23436.64	80000.00	0.0	36760	80	459
+64r4+hc-6	252284.16	60284.16	192000.00	0.0	89920	192	468
+128r4+hc-7	604488.72	156488.72	448000.00	0.0	266880	448	595
+256r4+hc-8	1402096.64	378096.64	1024000.00	0.0	600320	1024	586
+
+[gate] ~/work/0421_test$ cat alloc.sh
+../alloc5.rb --nodes 16r4+hc-4.edges 16r4+hc-4.clu.edges ca ts
+../alloc5.rb --nodes 16r4+hc-4.edges 32r4+hc-5.clu.edges ca ts
+../alloc5.rb --nodes 64r4+hc-6.edges 64r4+hc-6.clu.edges ca ts
+../alloc5.rb --nodes 128r4+hc-7.edges 128r4+hc-7.clu.edges ca ts
+../alloc5.rb --nodes 256r4+hc-8.edges 256r4+hc-8.clu.edges ca ts
+
+[gate] ~/work/0421_test$ parallel -a alloc.sh > alloc.tsv
+<snip>
+
+[gate] ~/work/0421_test$ cat alloc.tsv
+16r4+hc-4.clu.ca-ts	4	2160	11760	211200	0
+32r4+hc-5.clu.ca-ts	8	9720	35320	551200	0
+64r4+hc-6.clu.ca-ts	16	25920	89920	1360000	0
+128r4+hc-7.clu.ca-ts	32	88800	242400	3513600	0
+256r4+hc-8.clu.ca-ts	64	241920	600320	8057600	0
+
+
+That's it. Enjoy!
+
