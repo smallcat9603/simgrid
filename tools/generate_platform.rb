@@ -49,7 +49,7 @@ require "optparse"
 require "time"
 require "rexml/document"
 require "socket"
-require_relative "../extensible/config"
+require_relative "config"
 include REXML
 
 def checkfile(filename,type)

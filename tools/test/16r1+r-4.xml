@@ -1,0 +1,484 @@
+<?xml version='1.0'?> 
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid.dtd">
+<platform version='3'>
+ <config>
+  <prop id='maxmin/precision' value='1e-4'/>
+  <prop id='network/model' value='SMPI'/>
+  <!--  Negative values enable auto-select... -->
+  <prop id='contexts/nthreads' value='1'/>
+  <!--  Power of the executing computer in Flop per seconds. Used for extrapolating tasks execution time by SMPI [default is 20000]-->
+  <prop id='smpi/running_power' value='10000000000.0'/>
+  <!--  Display simulated timing at the end of simulation -->
+  <prop id='smpi/display_timing' value='1'/>
+  <prop id='cpu/optim' value='Lazy'/>
+  <prop id='network/optim' value='Lazy'/>
+  <prop id='smpi/coll_selector' value='mvapich2'/>
+  <prop id='smpi/cpu_threshold' value='0.00000001'/>
+ </config>
+ <AS id='AS0' routing='Dijkstra'>
+  <host id='n1' power='100000000000.0' core='1'/>
+  <link id='linkn1s0' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls0' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s0'/>
+  <host id='n2' power='100000000000.0' core='1'/>
+  <link id='linkn2s1' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls1' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s1'/>
+  <host id='n3' power='100000000000.0' core='1'/>
+  <link id='linkn3s2' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls2' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s2'/>
+  <host id='n4' power='100000000000.0' core='1'/>
+  <link id='linkn4s3' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls3' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s3'/>
+  <host id='n5' power='100000000000.0' core='1'/>
+  <link id='linkn5s4' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls4' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s4'/>
+  <host id='n6' power='100000000000.0' core='1'/>
+  <link id='linkn6s5' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls5' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s5'/>
+  <host id='n7' power='100000000000.0' core='1'/>
+  <link id='linkn7s6' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls6' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s6'/>
+  <host id='n8' power='100000000000.0' core='1'/>
+  <link id='linkn8s7' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls7' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s7'/>
+  <host id='n9' power='100000000000.0' core='1'/>
+  <link id='linkn9s8' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls8' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s8'/>
+  <host id='n10' power='100000000000.0' core='1'/>
+  <link id='linkn10s9' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls9' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s9'/>
+  <host id='n11' power='100000000000.0' core='1'/>
+  <link id='linkn11s10' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls10' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s10'/>
+  <host id='n12' power='100000000000.0' core='1'/>
+  <link id='linkn12s11' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls11' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s11'/>
+  <host id='n13' power='100000000000.0' core='1'/>
+  <link id='linkn13s12' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls12' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s12'/>
+  <host id='n14' power='100000000000.0' core='1'/>
+  <link id='linkn14s13' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls13' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s13'/>
+  <host id='n15' power='100000000000.0' core='1'/>
+  <link id='linkn15s14' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls14' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s14'/>
+  <host id='n16' power='100000000000.0' core='1'/>
+  <link id='linkn16s15' bandwidth='5000000000.0' latency='8.799999999999999e-07'/>
+  <link id='ls15' bandwidth='1000000000000.0' latency='2.0e-07'/>
+  <router id='s15'/>
+  <link id='links0s1' bandwidth='5000000000.0' latency='4.4720000000000006e-06'/>
+  <link id='links0s3' bandwidth='5000000000.0' latency='5.096e-06'/>
+  <link id='links0s5' bandwidth='5000000000.0' latency='5.5640000000000004e-06'/>
+  <link id='links0s6' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links1s2' bandwidth='5000000000.0' latency='4.4720000000000006e-06'/>
+  <link id='links1s8' bandwidth='5000000000.0' latency='6.656e-06'/>
+  <link id='links1s14' bandwidth='5000000000.0' latency='7.748000000000001e-06'/>
+  <link id='links3s4' bandwidth='5000000000.0' latency='6.188e-06'/>
+  <link id='links3s5' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links3s15' bandwidth='5000000000.0' latency='7.4360000000000005e-06'/>
+  <link id='links5s9' bandwidth='5000000000.0' latency='5.252e-06'/>
+  <link id='links5s14' bandwidth='5000000000.0' latency='6.656e-06'/>
+  <link id='links6s8' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links6s10' bandwidth='5000000000.0' latency='5.252e-06'/>
+  <link id='links6s15' bandwidth='5000000000.0' latency='6.656e-06'/>
+  <link id='links2s4' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links2s13' bandwidth='5000000000.0' latency='7.748000000000001e-06'/>
+  <link id='links2s15' bandwidth='5000000000.0' latency='7.748000000000001e-06'/>
+  <link id='links8s12' bandwidth='5000000000.0' latency='5.252e-06'/>
+  <link id='links8s14' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links4s9' bandwidth='5000000000.0' latency='5.5640000000000004e-06'/>
+  <link id='links4s11' bandwidth='5000000000.0' latency='6.188e-06'/>
+  <link id='links9s10' bandwidth='5000000000.0' latency='4.4720000000000006e-06'/>
+  <link id='links11s12' bandwidth='5000000000.0' latency='6.188e-06'/>
+  <link id='links11s13' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links11s14' bandwidth='5000000000.0' latency='5.5640000000000004e-06'/>
+  <link id='links10s13' bandwidth='5000000000.0' latency='5.5640000000000004e-06'/>
+  <link id='links7s9' bandwidth='5000000000.0' latency='5.876e-06'/>
+  <link id='links7s10' bandwidth='5000000000.0' latency='5.5640000000000004e-06'/>
+  <link id='links7s12' bandwidth='5000000000.0' latency='7.280000000000001e-06'/>
+  <link id='links7s13' bandwidth='5000000000.0' latency='6.968e-06'/>
+  <link id='links12s15' bandwidth='5000000000.0' latency='5.096e-06'/>
+  <route src='n1' dst='s0' symmetrical='NO'>
+   <link_ctn id='linkn1s0'/>
+   <link_ctn id='ls0'/>
+  </route>
+  <route src='s0' dst='n1' symmetrical='NO'>
+   <link_ctn id='linkn1s0'/>
+  </route>
+  <route src='n2' dst='s1' symmetrical='NO'>
+   <link_ctn id='linkn2s1'/>
+   <link_ctn id='ls1'/>
+  </route>
+  <route src='s1' dst='n2' symmetrical='NO'>
+   <link_ctn id='linkn2s1'/>
+  </route>
+  <route src='n3' dst='s2' symmetrical='NO'>
+   <link_ctn id='linkn3s2'/>
+   <link_ctn id='ls2'/>
+  </route>
+  <route src='s2' dst='n3' symmetrical='NO'>
+   <link_ctn id='linkn3s2'/>
+  </route>
+  <route src='n4' dst='s3' symmetrical='NO'>
+   <link_ctn id='linkn4s3'/>
+   <link_ctn id='ls3'/>
+  </route>
+  <route src='s3' dst='n4' symmetrical='NO'>
+   <link_ctn id='linkn4s3'/>
+  </route>
+  <route src='n5' dst='s4' symmetrical='NO'>
+   <link_ctn id='linkn5s4'/>
+   <link_ctn id='ls4'/>
+  </route>
+  <route src='s4' dst='n5' symmetrical='NO'>
+   <link_ctn id='linkn5s4'/>
+  </route>
+  <route src='n6' dst='s5' symmetrical='NO'>
+   <link_ctn id='linkn6s5'/>
+   <link_ctn id='ls5'/>
+  </route>
+  <route src='s5' dst='n6' symmetrical='NO'>
+   <link_ctn id='linkn6s5'/>
+  </route>
+  <route src='n7' dst='s6' symmetrical='NO'>
+   <link_ctn id='linkn7s6'/>
+   <link_ctn id='ls6'/>
+  </route>
+  <route src='s6' dst='n7' symmetrical='NO'>
+   <link_ctn id='linkn7s6'/>
+  </route>
+  <route src='n8' dst='s7' symmetrical='NO'>
+   <link_ctn id='linkn8s7'/>
+   <link_ctn id='ls7'/>
+  </route>
+  <route src='s7' dst='n8' symmetrical='NO'>
+   <link_ctn id='linkn8s7'/>
+  </route>
+  <route src='n9' dst='s8' symmetrical='NO'>
+   <link_ctn id='linkn9s8'/>
+   <link_ctn id='ls8'/>
+  </route>
+  <route src='s8' dst='n9' symmetrical='NO'>
+   <link_ctn id='linkn9s8'/>
+  </route>
+  <route src='n10' dst='s9' symmetrical='NO'>
+   <link_ctn id='linkn10s9'/>
+   <link_ctn id='ls9'/>
+  </route>
+  <route src='s9' dst='n10' symmetrical='NO'>
+   <link_ctn id='linkn10s9'/>
+  </route>
+  <route src='n11' dst='s10' symmetrical='NO'>
+   <link_ctn id='linkn11s10'/>
+   <link_ctn id='ls10'/>
+  </route>
+  <route src='s10' dst='n11' symmetrical='NO'>
+   <link_ctn id='linkn11s10'/>
+  </route>
+  <route src='n12' dst='s11' symmetrical='NO'>
+   <link_ctn id='linkn12s11'/>
+   <link_ctn id='ls11'/>
+  </route>
+  <route src='s11' dst='n12' symmetrical='NO'>
+   <link_ctn id='linkn12s11'/>
+  </route>
+  <route src='n13' dst='s12' symmetrical='NO'>
+   <link_ctn id='linkn13s12'/>
+   <link_ctn id='ls12'/>
+  </route>
+  <route src='s12' dst='n13' symmetrical='NO'>
+   <link_ctn id='linkn13s12'/>
+  </route>
+  <route src='n14' dst='s13' symmetrical='NO'>
+   <link_ctn id='linkn14s13'/>
+   <link_ctn id='ls13'/>
+  </route>
+  <route src='s13' dst='n14' symmetrical='NO'>
+   <link_ctn id='linkn14s13'/>
+  </route>
+  <route src='n15' dst='s14' symmetrical='NO'>
+   <link_ctn id='linkn15s14'/>
+   <link_ctn id='ls14'/>
+  </route>
+  <route src='s14' dst='n15' symmetrical='NO'>
+   <link_ctn id='linkn15s14'/>
+  </route>
+  <route src='n16' dst='s15' symmetrical='NO'>
+   <link_ctn id='linkn16s15'/>
+   <link_ctn id='ls15'/>
+  </route>
+  <route src='s15' dst='n16' symmetrical='NO'>
+   <link_ctn id='linkn16s15'/>
+  </route>
+  <route src='s0' dst='s1' symmetrical='NO'>
+   <link_ctn id='links0s1'/>
+   <link_ctn id='ls1'/>
+  </route>
+  <route src='s1' dst='s0' symmetrical='NO'>
+   <link_ctn id='links0s1'/>
+   <link_ctn id='ls0'/>
+  </route>
+  <route src='s0' dst='s3' symmetrical='NO'>
+   <link_ctn id='links0s3'/>
+   <link_ctn id='ls3'/>
+  </route>
+  <route src='s3' dst='s0' symmetrical='NO'>
+   <link_ctn id='links0s3'/>
+   <link_ctn id='ls0'/>
+  </route>
+  <route src='s0' dst='s5' symmetrical='NO'>
+   <link_ctn id='links0s5'/>
+   <link_ctn id='ls5'/>
+  </route>
+  <route src='s5' dst='s0' symmetrical='NO'>
+   <link_ctn id='links0s5'/>
+   <link_ctn id='ls0'/>
+  </route>
+  <route src='s0' dst='s6' symmetrical='NO'>
+   <link_ctn id='links0s6'/>
+   <link_ctn id='ls6'/>
+  </route>
+  <route src='s6' dst='s0' symmetrical='NO'>
+   <link_ctn id='links0s6'/>
+   <link_ctn id='ls0'/>
+  </route>
+  <route src='s1' dst='s2' symmetrical='NO'>
+   <link_ctn id='links1s2'/>
+   <link_ctn id='ls2'/>
+  </route>
+  <route src='s2' dst='s1' symmetrical='NO'>
+   <link_ctn id='links1s2'/>
+   <link_ctn id='ls1'/>
+  </route>
+  <route src='s1' dst='s8' symmetrical='NO'>
+   <link_ctn id='links1s8'/>
+   <link_ctn id='ls8'/>
+  </route>
+  <route src='s8' dst='s1' symmetrical='NO'>
+   <link_ctn id='links1s8'/>
+   <link_ctn id='ls1'/>
+  </route>
+  <route src='s1' dst='s14' symmetrical='NO'>
+   <link_ctn id='links1s14'/>
+   <link_ctn id='ls14'/>
+  </route>
+  <route src='s14' dst='s1' symmetrical='NO'>
+   <link_ctn id='links1s14'/>
+   <link_ctn id='ls1'/>
+  </route>
+  <route src='s3' dst='s4' symmetrical='NO'>
+   <link_ctn id='links3s4'/>
+   <link_ctn id='ls4'/>
+  </route>
+  <route src='s4' dst='s3' symmetrical='NO'>
+   <link_ctn id='links3s4'/>
+   <link_ctn id='ls3'/>
+  </route>
+  <route src='s3' dst='s5' symmetrical='NO'>
+   <link_ctn id='links3s5'/>
+   <link_ctn id='ls5'/>
+  </route>
+  <route src='s5' dst='s3' symmetrical='NO'>
+   <link_ctn id='links3s5'/>
+   <link_ctn id='ls3'/>
+  </route>
+  <route src='s3' dst='s15' symmetrical='NO'>
+   <link_ctn id='links3s15'/>
+   <link_ctn id='ls15'/>
+  </route>
+  <route src='s15' dst='s3' symmetrical='NO'>
+   <link_ctn id='links3s15'/>
+   <link_ctn id='ls3'/>
+  </route>
+  <route src='s5' dst='s9' symmetrical='NO'>
+   <link_ctn id='links5s9'/>
+   <link_ctn id='ls9'/>
+  </route>
+  <route src='s9' dst='s5' symmetrical='NO'>
+   <link_ctn id='links5s9'/>
+   <link_ctn id='ls5'/>
+  </route>
+  <route src='s5' dst='s14' symmetrical='NO'>
+   <link_ctn id='links5s14'/>
+   <link_ctn id='ls14'/>
+  </route>
+  <route src='s14' dst='s5' symmetrical='NO'>
+   <link_ctn id='links5s14'/>
+   <link_ctn id='ls5'/>
+  </route>
+  <route src='s6' dst='s8' symmetrical='NO'>
+   <link_ctn id='links6s8'/>
+   <link_ctn id='ls8'/>
+  </route>
+  <route src='s8' dst='s6' symmetrical='NO'>
+   <link_ctn id='links6s8'/>
+   <link_ctn id='ls6'/>
+  </route>
+  <route src='s6' dst='s10' symmetrical='NO'>
+   <link_ctn id='links6s10'/>
+   <link_ctn id='ls10'/>
+  </route>
+  <route src='s10' dst='s6' symmetrical='NO'>
+   <link_ctn id='links6s10'/>
+   <link_ctn id='ls6'/>
+  </route>
+  <route src='s6' dst='s15' symmetrical='NO'>
+   <link_ctn id='links6s15'/>
+   <link_ctn id='ls15'/>
+  </route>
+  <route src='s15' dst='s6' symmetrical='NO'>
+   <link_ctn id='links6s15'/>
+   <link_ctn id='ls6'/>
+  </route>
+  <route src='s2' dst='s4' symmetrical='NO'>
+   <link_ctn id='links2s4'/>
+   <link_ctn id='ls4'/>
+  </route>
+  <route src='s4' dst='s2' symmetrical='NO'>
+   <link_ctn id='links2s4'/>
+   <link_ctn id='ls2'/>
+  </route>
+  <route src='s2' dst='s13' symmetrical='NO'>
+   <link_ctn id='links2s13'/>
+   <link_ctn id='ls13'/>
+  </route>
+  <route src='s13' dst='s2' symmetrical='NO'>
+   <link_ctn id='links2s13'/>
+   <link_ctn id='ls2'/>
+  </route>
+  <route src='s2' dst='s15' symmetrical='NO'>
+   <link_ctn id='links2s15'/>
+   <link_ctn id='ls15'/>
+  </route>
+  <route src='s15' dst='s2' symmetrical='NO'>
+   <link_ctn id='links2s15'/>
+   <link_ctn id='ls2'/>
+  </route>
+  <route src='s8' dst='s12' symmetrical='NO'>
+   <link_ctn id='links8s12'/>
+   <link_ctn id='ls12'/>
+  </route>
+  <route src='s12' dst='s8' symmetrical='NO'>
+   <link_ctn id='links8s12'/>
+   <link_ctn id='ls8'/>
+  </route>
+  <route src='s8' dst='s14' symmetrical='NO'>
+   <link_ctn id='links8s14'/>
+   <link_ctn id='ls14'/>
+  </route>
+  <route src='s14' dst='s8' symmetrical='NO'>
+   <link_ctn id='links8s14'/>
+   <link_ctn id='ls8'/>
+  </route>
+  <route src='s4' dst='s9' symmetrical='NO'>
+   <link_ctn id='links4s9'/>
+   <link_ctn id='ls9'/>
+  </route>
+  <route src='s9' dst='s4' symmetrical='NO'>
+   <link_ctn id='links4s9'/>
+   <link_ctn id='ls4'/>
+  </route>
+  <route src='s4' dst='s11' symmetrical='NO'>
+   <link_ctn id='links4s11'/>
+   <link_ctn id='ls11'/>
+  </route>
+  <route src='s11' dst='s4' symmetrical='NO'>
+   <link_ctn id='links4s11'/>
+   <link_ctn id='ls4'/>
+  </route>
+  <route src='s9' dst='s10' symmetrical='NO'>
+   <link_ctn id='links9s10'/>
+   <link_ctn id='ls10'/>
+  </route>
+  <route src='s10' dst='s9' symmetrical='NO'>
+   <link_ctn id='links9s10'/>
+   <link_ctn id='ls9'/>
+  </route>
+  <route src='s11' dst='s12' symmetrical='NO'>
+   <link_ctn id='links11s12'/>
+   <link_ctn id='ls12'/>
+  </route>
+  <route src='s12' dst='s11' symmetrical='NO'>
+   <link_ctn id='links11s12'/>
+   <link_ctn id='ls11'/>
+  </route>
+  <route src='s11' dst='s13' symmetrical='NO'>
+   <link_ctn id='links11s13'/>
+   <link_ctn id='ls13'/>
+  </route>
+  <route src='s13' dst='s11' symmetrical='NO'>
+   <link_ctn id='links11s13'/>
+   <link_ctn id='ls11'/>
+  </route>
+  <route src='s11' dst='s14' symmetrical='NO'>
+   <link_ctn id='links11s14'/>
+   <link_ctn id='ls14'/>
+  </route>
+  <route src='s14' dst='s11' symmetrical='NO'>
+   <link_ctn id='links11s14'/>
+   <link_ctn id='ls11'/>
+  </route>
+  <route src='s10' dst='s13' symmetrical='NO'>
+   <link_ctn id='links10s13'/>
+   <link_ctn id='ls13'/>
+  </route>
+  <route src='s13' dst='s10' symmetrical='NO'>
+   <link_ctn id='links10s13'/>
+   <link_ctn id='ls10'/>
+  </route>
+  <route src='s7' dst='s9' symmetrical='NO'>
+   <link_ctn id='links7s9'/>
+   <link_ctn id='ls9'/>
+  </route>
+  <route src='s9' dst='s7' symmetrical='NO'>
+   <link_ctn id='links7s9'/>
+   <link_ctn id='ls7'/>
+  </route>
+  <route src='s7' dst='s10' symmetrical='NO'>
+   <link_ctn id='links7s10'/>
+   <link_ctn id='ls10'/>
+  </route>
+  <route src='s10' dst='s7' symmetrical='NO'>
+   <link_ctn id='links7s10'/>
+   <link_ctn id='ls7'/>
+  </route>
+  <route src='s7' dst='s12' symmetrical='NO'>
+   <link_ctn id='links7s12'/>
+   <link_ctn id='ls12'/>
+  </route>
+  <route src='s12' dst='s7' symmetrical='NO'>
+   <link_ctn id='links7s12'/>
+   <link_ctn id='ls7'/>
+  </route>
+  <route src='s7' dst='s13' symmetrical='NO'>
+   <link_ctn id='links7s13'/>
+   <link_ctn id='ls13'/>
+  </route>
+  <route src='s13' dst='s7' symmetrical='NO'>
+   <link_ctn id='links7s13'/>
+   <link_ctn id='ls7'/>
+  </route>
+  <route src='s12' dst='s15' symmetrical='NO'>
+   <link_ctn id='links12s15'/>
+   <link_ctn id='ls15'/>
+  </route>
+  <route src='s15' dst='s12' symmetrical='NO'>
+   <link_ctn id='links12s15'/>
+   <link_ctn id='ls12'/>
+  </route>
+ </AS>
+</platform>
