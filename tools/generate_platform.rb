@@ -3,6 +3,7 @@
 #	Generate Simgrid platform configuration files from an edgelist file
 #	Fabien Chaix	<fabien_chaix@nii.ac.jp>  
 #	Ikki Fujiwara <ikki@nii.ac.jp>
+# Yao Hu <huyao@nii.ac.jp>
 # 
 
 OVERHEAD_OUTER = 400 # Inter-rack cabling overhead [cm]
@@ -173,8 +174,8 @@ def generateplatform(edgefile,platformbase,opts)
 
   configString=
 "<?xml version='1.0'?>
-<!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid.dtd'>
-<platform version='3'>
+<!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd'>
+<platform version='4'>
  <config>
   <prop id='maxmin/precision' value='1e-4'/> 
   <prop id='network/model' value='#{opts[:networkmodel]}'/>
