@@ -4,6 +4,7 @@
 import argparse
 import json
 import random
+import time
 
 
 def generate_workload(nb_jobs, input_profiles, nb_res,
@@ -14,9 +15,10 @@ def generate_workload(nb_jobs, input_profiles, nb_res,
     walltime = 4200
 
     """Generate a workload with Poisson distribution."""
-    makespan = 100
+    makespan = 10
     subtime = 0.0
     jobs = []
+    localtime = time.asctime( time.localtime(time.time()) )
 
     for i in range(1, nb_jobs+1):
         profile = random.choice(profile_names)
@@ -25,7 +27,12 @@ def generate_workload(nb_jobs, input_profiles, nb_res,
         job = {"id": i, "subtime": subtime, "walltime": walltime, "res": res, "profile": profile}
         jobs.append(job)
 
-    content = {"nb_res": nb_res,
+    content = { "version": 0,
+                "command:": "",
+                "date": localtime,
+                "description": "workload with profile file for npb",
+
+                "nb_res": nb_res,
             #    "jobs": [{"id": i, "subtime": subtime + random.expovariate(nb_jobs/float(makespan)), "walltime": walltime, "res": 1,
             #              "profile": random.choice(profile_names)}
             #             for i in range(1, nb_jobs + 1)

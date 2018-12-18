@@ -1,0 +1,1 @@
+batsim -p batsim-v2.0.0/platforms/torus-256-master.xml -w batsim-v2.0.0/workload_profiles/workload_npb.json -e npb-basic-asc-out/out -m master_host0

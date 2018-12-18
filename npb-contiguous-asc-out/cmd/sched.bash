@@ -1,0 +1,1 @@
+batsched -v filler --variant_options '{"custom_mapping": true}' --policy=contiguous --queue_order=asc_size
