@@ -11,10 +11,10 @@ OVERHEAD_INNER = 200 # Intra-rack cabling overhead [cm]
 
 
 #Default values 
-NODEPOWER = 100E9
-CABLEBW= 5E9
-SWITCHBW= 1E12
-SWITCHLAT=200E-9
+NODEPOWER = 1E9
+CABLEBW= 100E6
+SWITCHBW= 125E6
+SWITCHLAT=50E-6
 DEFAULTDISTANCE = 500 #Default distance between racks
 
 # Latency
@@ -132,7 +132,7 @@ def generateplatform(edgefile,platformbase,opts)
       opts[:machinepower]=50e9
       STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
     else
-      opts[:machinepower]=10e9
+      opts[:machinepower]=1e9
       STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
     end
   end
