@@ -1,0 +1,3213 @@
+%EventDef PajeDefineContainerType 1
+% Type string
+% Alias string
+% Name string
+%EndEventDef
+
+%EventDef PajeCreateContainer 2
+% Time date 
+% Type string  
+% Alias string 
+% Name string   
+% Container string  
+%EndEventDef
+
+%EventDef PajeDestroyContainer 3
+% Time date
+% Name string 
+% Type string
+%EndEventDef
+
+%EventDef PajeDefineStateType 4
+% Alias string 
+% Type string 
+% Name string 
+%EndEventDef
+
+%EventDef PajeDefineEntityValue 5
+% Alias string  
+% Type string  
+% Name string  
+% Color color 
+%EndEventDef
+
+%EventDef PajeSetState 6
+% Time date  
+% Type string  
+% Container string  
+% Value string  
+%EndEventDef 
+
+%EventDef PajeDefineEventType 7
+% Type string
+% Alias string
+% Name string
+%EndEventDef
+
+%EventDef PajeNewEvent 8
+% Time date
+% Type string
+% Container string
+% Value string
+%EndEventDef
+
+%EventDef PajeDefineVariableType 9
+% Type string
+% Alias string
+% Name string
+% Color string
+%EndEventDef
+
+%EventDef PajeSetVariable 10
+% Time date
+% Type string
+% Container string
+% Value double
+%EndEventDef
+
+# Container types creation
+1 0 root_ct "Machines"
+1 root_ct machine_ct "Machine"
+1 0 scheduler_ct "Scheduler"
+1 scheduler_ct killer_ct "Killer"
+
+# Event types creation
+7 killer_ct kk "Job kill"
+7 machine_ct km "Job kill"
+
+# Variable types creation
+9 scheduler_ct vu_vt "Utilization" "0.0 0.5 0.0"
+
+# Containers creation
+2 0.000000 root_ct root "Machines" 0
+2 0.000000 machine_ct m0 "n1" root
+2 0.000000 machine_ct m1 "n2" root
+2 0.000000 machine_ct m2 "n3" root
+2 0.000000 machine_ct m3 "n4" root
+2 0.000000 machine_ct m4 "n5" root
+2 0.000000 machine_ct m5 "n6" root
+2 0.000000 machine_ct m6 "n7" root
+2 0.000000 machine_ct m7 "n8" root
+2 0.000000 machine_ct m8 "n9" root
+2 0.000000 machine_ct m9 "n10" root
+2 0.000000 machine_ct m10 "n11" root
+2 0.000000 machine_ct m11 "n12" root
+2 0.000000 machine_ct m12 "n13" root
+2 0.000000 machine_ct m13 "n14" root
+2 0.000000 machine_ct m14 "n15" root
+2 0.000000 machine_ct m15 "n16" root
+2 0.000000 machine_ct m16 "n17" root
+2 0.000000 machine_ct m17 "n18" root
+2 0.000000 machine_ct m18 "n19" root
+2 0.000000 machine_ct m19 "n20" root
+2 0.000000 machine_ct m20 "n21" root
+2 0.000000 machine_ct m21 "n22" root
+2 0.000000 machine_ct m22 "n23" root
+2 0.000000 machine_ct m23 "n24" root
+2 0.000000 machine_ct m24 "n25" root
+2 0.000000 machine_ct m25 "n26" root
+2 0.000000 machine_ct m26 "n27" root
+2 0.000000 machine_ct m27 "n28" root
+2 0.000000 machine_ct m28 "n29" root
+2 0.000000 machine_ct m29 "n30" root
+2 0.000000 machine_ct m30 "n31" root
+2 0.000000 machine_ct m31 "n32" root
+2 0.000000 machine_ct m32 "n33" root
+2 0.000000 machine_ct m33 "n34" root
+2 0.000000 machine_ct m34 "n35" root
+2 0.000000 machine_ct m35 "n36" root
+2 0.000000 machine_ct m36 "n37" root
+2 0.000000 machine_ct m37 "n38" root
+2 0.000000 machine_ct m38 "n39" root
+2 0.000000 machine_ct m39 "n40" root
+2 0.000000 machine_ct m40 "n41" root
+2 0.000000 machine_ct m41 "n42" root
+2 0.000000 machine_ct m42 "n43" root
+2 0.000000 machine_ct m43 "n44" root
+2 0.000000 machine_ct m44 "n45" root
+2 0.000000 machine_ct m45 "n46" root
+2 0.000000 machine_ct m46 "n47" root
+2 0.000000 machine_ct m47 "n48" root
+2 0.000000 machine_ct m48 "n49" root
+2 0.000000 machine_ct m49 "n50" root
+2 0.000000 machine_ct m50 "n51" root
+2 0.000000 machine_ct m51 "n52" root
+2 0.000000 machine_ct m52 "n53" root
+2 0.000000 machine_ct m53 "n54" root
+2 0.000000 machine_ct m54 "n55" root
+2 0.000000 machine_ct m55 "n56" root
+2 0.000000 machine_ct m56 "n57" root
+2 0.000000 machine_ct m57 "n58" root
+2 0.000000 machine_ct m58 "n59" root
+2 0.000000 machine_ct m59 "n60" root
+2 0.000000 machine_ct m60 "n61" root
+2 0.000000 machine_ct m61 "n62" root
+2 0.000000 machine_ct m62 "n63" root
+2 0.000000 machine_ct m63 "n64" root
+2 0.000000 machine_ct m64 "n65" root
+2 0.000000 machine_ct m65 "n66" root
+2 0.000000 machine_ct m66 "n67" root
+2 0.000000 machine_ct m67 "n68" root
+2 0.000000 machine_ct m68 "n69" root
+2 0.000000 machine_ct m69 "n70" root
+2 0.000000 machine_ct m70 "n71" root
+2 0.000000 machine_ct m71 "n72" root
+2 0.000000 machine_ct m72 "n73" root
+2 0.000000 machine_ct m73 "n74" root
+2 0.000000 machine_ct m74 "n75" root
+2 0.000000 machine_ct m75 "n76" root
+2 0.000000 machine_ct m76 "n77" root
+2 0.000000 machine_ct m77 "n78" root
+2 0.000000 machine_ct m78 "n79" root
+2 0.000000 machine_ct m79 "n80" root
+2 0.000000 machine_ct m80 "n81" root
+2 0.000000 machine_ct m81 "n82" root
+2 0.000000 machine_ct m82 "n83" root
+2 0.000000 machine_ct m83 "n84" root
+2 0.000000 machine_ct m84 "n85" root
+2 0.000000 machine_ct m85 "n86" root
+2 0.000000 machine_ct m86 "n87" root
+2 0.000000 machine_ct m87 "n88" root
+2 0.000000 machine_ct m88 "n89" root
+2 0.000000 machine_ct m89 "n90" root
+2 0.000000 machine_ct m90 "n91" root
+2 0.000000 machine_ct m91 "n92" root
+2 0.000000 machine_ct m92 "n93" root
+2 0.000000 machine_ct m93 "n94" root
+2 0.000000 machine_ct m94 "n95" root
+2 0.000000 machine_ct m95 "n96" root
+2 0.000000 machine_ct m96 "n97" root
+2 0.000000 machine_ct m97 "n98" root
+2 0.000000 machine_ct m98 "n99" root
+2 0.000000 machine_ct m99 "n100" root
+2 0.000000 machine_ct m100 "n101" root
+2 0.000000 machine_ct m101 "n102" root
+2 0.000000 machine_ct m102 "n103" root
+2 0.000000 machine_ct m103 "n104" root
+2 0.000000 machine_ct m104 "n105" root
+2 0.000000 machine_ct m105 "n106" root
+2 0.000000 machine_ct m106 "n107" root
+2 0.000000 machine_ct m107 "n108" root
+2 0.000000 machine_ct m108 "n109" root
+2 0.000000 machine_ct m109 "n110" root
+2 0.000000 machine_ct m110 "n111" root
+2 0.000000 machine_ct m111 "n112" root
+2 0.000000 machine_ct m112 "n113" root
+2 0.000000 machine_ct m113 "n114" root
+2 0.000000 machine_ct m114 "n115" root
+2 0.000000 machine_ct m115 "n116" root
+2 0.000000 machine_ct m116 "n117" root
+2 0.000000 machine_ct m117 "n118" root
+2 0.000000 machine_ct m118 "n119" root
+2 0.000000 machine_ct m119 "n120" root
+2 0.000000 machine_ct m120 "n121" root
+2 0.000000 machine_ct m121 "n122" root
+2 0.000000 machine_ct m122 "n123" root
+2 0.000000 machine_ct m123 "n124" root
+2 0.000000 machine_ct m124 "n125" root
+2 0.000000 machine_ct m125 "n126" root
+2 0.000000 machine_ct m126 "n127" root
+2 0.000000 machine_ct m127 "n128" root
+2 0.000000 machine_ct m128 "n129" root
+2 0.000000 machine_ct m129 "n130" root
+2 0.000000 machine_ct m130 "n131" root
+2 0.000000 machine_ct m131 "n132" root
+2 0.000000 machine_ct m132 "n133" root
+2 0.000000 machine_ct m133 "n134" root
+2 0.000000 machine_ct m134 "n135" root
+2 0.000000 machine_ct m135 "n136" root
+2 0.000000 machine_ct m136 "n137" root
+2 0.000000 machine_ct m137 "n138" root
+2 0.000000 machine_ct m138 "n139" root
+2 0.000000 machine_ct m139 "n140" root
+2 0.000000 machine_ct m140 "n141" root
+2 0.000000 machine_ct m141 "n142" root
+2 0.000000 machine_ct m142 "n143" root
+2 0.000000 machine_ct m143 "n144" root
+2 0.000000 machine_ct m144 "n145" root
+2 0.000000 machine_ct m145 "n146" root
+2 0.000000 machine_ct m146 "n147" root
+2 0.000000 machine_ct m147 "n148" root
+2 0.000000 machine_ct m148 "n149" root
+2 0.000000 machine_ct m149 "n150" root
+2 0.000000 machine_ct m150 "n151" root
+2 0.000000 machine_ct m151 "n152" root
+2 0.000000 machine_ct m152 "n153" root
+2 0.000000 machine_ct m153 "n154" root
+2 0.000000 machine_ct m154 "n155" root
+2 0.000000 machine_ct m155 "n156" root
+2 0.000000 machine_ct m156 "n157" root
+2 0.000000 machine_ct m157 "n158" root
+2 0.000000 machine_ct m158 "n159" root
+2 0.000000 machine_ct m159 "n160" root
+2 0.000000 machine_ct m160 "n161" root
+2 0.000000 machine_ct m161 "n162" root
+2 0.000000 machine_ct m162 "n163" root
+2 0.000000 machine_ct m163 "n164" root
+2 0.000000 machine_ct m164 "n165" root
+2 0.000000 machine_ct m165 "n166" root
+2 0.000000 machine_ct m166 "n167" root
+2 0.000000 machine_ct m167 "n168" root
+2 0.000000 machine_ct m168 "n169" root
+2 0.000000 machine_ct m169 "n170" root
+2 0.000000 machine_ct m170 "n171" root
+2 0.000000 machine_ct m171 "n172" root
+2 0.000000 machine_ct m172 "n173" root
+2 0.000000 machine_ct m173 "n174" root
+2 0.000000 machine_ct m174 "n175" root
+2 0.000000 machine_ct m175 "n176" root
+2 0.000000 machine_ct m176 "n177" root
+2 0.000000 machine_ct m177 "n178" root
+2 0.000000 machine_ct m178 "n179" root
+2 0.000000 machine_ct m179 "n180" root
+2 0.000000 machine_ct m180 "n181" root
+2 0.000000 machine_ct m181 "n182" root
+2 0.000000 machine_ct m182 "n183" root
+2 0.000000 machine_ct m183 "n184" root
+2 0.000000 machine_ct m184 "n185" root
+2 0.000000 machine_ct m185 "n186" root
+2 0.000000 machine_ct m186 "n187" root
+2 0.000000 machine_ct m187 "n188" root
+2 0.000000 machine_ct m188 "n189" root
+2 0.000000 machine_ct m189 "n190" root
+2 0.000000 machine_ct m190 "n191" root
+2 0.000000 machine_ct m191 "n192" root
+2 0.000000 machine_ct m192 "n193" root
+2 0.000000 machine_ct m193 "n194" root
+2 0.000000 machine_ct m194 "n195" root
+2 0.000000 machine_ct m195 "n196" root
+2 0.000000 machine_ct m196 "n197" root
+2 0.000000 machine_ct m197 "n198" root
+2 0.000000 machine_ct m198 "n199" root
+2 0.000000 machine_ct m199 "n200" root
+2 0.000000 machine_ct m200 "n201" root
+2 0.000000 machine_ct m201 "n202" root
+2 0.000000 machine_ct m202 "n203" root
+2 0.000000 machine_ct m203 "n204" root
+2 0.000000 machine_ct m204 "n205" root
+2 0.000000 machine_ct m205 "n206" root
+2 0.000000 machine_ct m206 "n207" root
+2 0.000000 machine_ct m207 "n208" root
+2 0.000000 machine_ct m208 "n209" root
+2 0.000000 machine_ct m209 "n210" root
+2 0.000000 machine_ct m210 "n211" root
+2 0.000000 machine_ct m211 "n212" root
+2 0.000000 machine_ct m212 "n213" root
+2 0.000000 machine_ct m213 "n214" root
+2 0.000000 machine_ct m214 "n215" root
+2 0.000000 machine_ct m215 "n216" root
+2 0.000000 machine_ct m216 "n217" root
+2 0.000000 machine_ct m217 "n218" root
+2 0.000000 machine_ct m218 "n219" root
+2 0.000000 machine_ct m219 "n220" root
+2 0.000000 machine_ct m220 "n221" root
+2 0.000000 machine_ct m221 "n222" root
+2 0.000000 machine_ct m222 "n223" root
+2 0.000000 machine_ct m223 "n224" root
+2 0.000000 machine_ct m224 "n225" root
+2 0.000000 machine_ct m225 "n226" root
+2 0.000000 machine_ct m226 "n227" root
+2 0.000000 machine_ct m227 "n228" root
+2 0.000000 machine_ct m228 "n229" root
+2 0.000000 machine_ct m229 "n230" root
+2 0.000000 machine_ct m230 "n231" root
+2 0.000000 machine_ct m231 "n232" root
+2 0.000000 machine_ct m232 "n233" root
+2 0.000000 machine_ct m233 "n234" root
+2 0.000000 machine_ct m234 "n235" root
+2 0.000000 machine_ct m235 "n236" root
+2 0.000000 machine_ct m236 "n237" root
+2 0.000000 machine_ct m237 "n238" root
+2 0.000000 machine_ct m238 "n239" root
+2 0.000000 machine_ct m239 "n240" root
+2 0.000000 machine_ct m240 "n241" root
+2 0.000000 machine_ct m241 "n242" root
+2 0.000000 machine_ct m242 "n243" root
+2 0.000000 machine_ct m243 "n244" root
+2 0.000000 machine_ct m244 "n245" root
+2 0.000000 machine_ct m245 "n246" root
+2 0.000000 machine_ct m246 "n247" root
+2 0.000000 machine_ct m247 "n248" root
+2 0.000000 machine_ct m248 "n249" root
+2 0.000000 machine_ct m249 "n250" root
+2 0.000000 machine_ct m250 "n251" root
+2 0.000000 machine_ct m251 "n252" root
+2 0.000000 machine_ct m252 "n253" root
+2 0.000000 machine_ct m253 "n254" root
+2 0.000000 machine_ct m254 "n255" root
+2 0.000000 machine_ct m255 "n256" root
+2 0.000000 scheduler_ct sc "Scheduler" 0
+2 0.000000 killer_ct k "Killer" sc
+
+# States creation
+4 machine_state machine_ct "Machine state"
+
+# Creation of the different values the machine state can be
+5 w machine_state "Waiting" "0.0 0.0 0.0"
+5 l machine_state "Launching" "0.3 0.3 0.3"
+
+# Begin of events
+6 0.000000 machine_state m0 w
+6 0.000000 machine_state m1 w
+6 0.000000 machine_state m2 w
+6 0.000000 machine_state m3 w
+6 0.000000 machine_state m4 w
+6 0.000000 machine_state m5 w
+6 0.000000 machine_state m6 w
+6 0.000000 machine_state m7 w
+6 0.000000 machine_state m8 w
+6 0.000000 machine_state m9 w
+6 0.000000 machine_state m10 w
+6 0.000000 machine_state m11 w
+6 0.000000 machine_state m12 w
+6 0.000000 machine_state m13 w
+6 0.000000 machine_state m14 w
+6 0.000000 machine_state m15 w
+6 0.000000 machine_state m16 w
+6 0.000000 machine_state m17 w
+6 0.000000 machine_state m18 w
+6 0.000000 machine_state m19 w
+6 0.000000 machine_state m20 w
+6 0.000000 machine_state m21 w
+6 0.000000 machine_state m22 w
+6 0.000000 machine_state m23 w
+6 0.000000 machine_state m24 w
+6 0.000000 machine_state m25 w
+6 0.000000 machine_state m26 w
+6 0.000000 machine_state m27 w
+6 0.000000 machine_state m28 w
+6 0.000000 machine_state m29 w
+6 0.000000 machine_state m30 w
+6 0.000000 machine_state m31 w
+6 0.000000 machine_state m32 w
+6 0.000000 machine_state m33 w
+6 0.000000 machine_state m34 w
+6 0.000000 machine_state m35 w
+6 0.000000 machine_state m36 w
+6 0.000000 machine_state m37 w
+6 0.000000 machine_state m38 w
+6 0.000000 machine_state m39 w
+6 0.000000 machine_state m40 w
+6 0.000000 machine_state m41 w
+6 0.000000 machine_state m42 w
+6 0.000000 machine_state m43 w
+6 0.000000 machine_state m44 w
+6 0.000000 machine_state m45 w
+6 0.000000 machine_state m46 w
+6 0.000000 machine_state m47 w
+6 0.000000 machine_state m48 w
+6 0.000000 machine_state m49 w
+6 0.000000 machine_state m50 w
+6 0.000000 machine_state m51 w
+6 0.000000 machine_state m52 w
+6 0.000000 machine_state m53 w
+6 0.000000 machine_state m54 w
+6 0.000000 machine_state m55 w
+6 0.000000 machine_state m56 w
+6 0.000000 machine_state m57 w
+6 0.000000 machine_state m58 w
+6 0.000000 machine_state m59 w
+6 0.000000 machine_state m60 w
+6 0.000000 machine_state m61 w
+6 0.000000 machine_state m62 w
+6 0.000000 machine_state m63 w
+6 0.000000 machine_state m64 w
+6 0.000000 machine_state m65 w
+6 0.000000 machine_state m66 w
+6 0.000000 machine_state m67 w
+6 0.000000 machine_state m68 w
+6 0.000000 machine_state m69 w
+6 0.000000 machine_state m70 w
+6 0.000000 machine_state m71 w
+6 0.000000 machine_state m72 w
+6 0.000000 machine_state m73 w
+6 0.000000 machine_state m74 w
+6 0.000000 machine_state m75 w
+6 0.000000 machine_state m76 w
+6 0.000000 machine_state m77 w
+6 0.000000 machine_state m78 w
+6 0.000000 machine_state m79 w
+6 0.000000 machine_state m80 w
+6 0.000000 machine_state m81 w
+6 0.000000 machine_state m82 w
+6 0.000000 machine_state m83 w
+6 0.000000 machine_state m84 w
+6 0.000000 machine_state m85 w
+6 0.000000 machine_state m86 w
+6 0.000000 machine_state m87 w
+6 0.000000 machine_state m88 w
+6 0.000000 machine_state m89 w
+6 0.000000 machine_state m90 w
+6 0.000000 machine_state m91 w
+6 0.000000 machine_state m92 w
+6 0.000000 machine_state m93 w
+6 0.000000 machine_state m94 w
+6 0.000000 machine_state m95 w
+6 0.000000 machine_state m96 w
+6 0.000000 machine_state m97 w
+6 0.000000 machine_state m98 w
+6 0.000000 machine_state m99 w
+6 0.000000 machine_state m100 w
+6 0.000000 machine_state m101 w
+6 0.000000 machine_state m102 w
+6 0.000000 machine_state m103 w
+6 0.000000 machine_state m104 w
+6 0.000000 machine_state m105 w
+6 0.000000 machine_state m106 w
+6 0.000000 machine_state m107 w
+6 0.000000 machine_state m108 w
+6 0.000000 machine_state m109 w
+6 0.000000 machine_state m110 w
+6 0.000000 machine_state m111 w
+6 0.000000 machine_state m112 w
+6 0.000000 machine_state m113 w
+6 0.000000 machine_state m114 w
+6 0.000000 machine_state m115 w
+6 0.000000 machine_state m116 w
+6 0.000000 machine_state m117 w
+6 0.000000 machine_state m118 w
+6 0.000000 machine_state m119 w
+6 0.000000 machine_state m120 w
+6 0.000000 machine_state m121 w
+6 0.000000 machine_state m122 w
+6 0.000000 machine_state m123 w
+6 0.000000 machine_state m124 w
+6 0.000000 machine_state m125 w
+6 0.000000 machine_state m126 w
+6 0.000000 machine_state m127 w
+6 0.000000 machine_state m128 w
+6 0.000000 machine_state m129 w
+6 0.000000 machine_state m130 w
+6 0.000000 machine_state m131 w
+6 0.000000 machine_state m132 w
+6 0.000000 machine_state m133 w
+6 0.000000 machine_state m134 w
+6 0.000000 machine_state m135 w
+6 0.000000 machine_state m136 w
+6 0.000000 machine_state m137 w
+6 0.000000 machine_state m138 w
+6 0.000000 machine_state m139 w
+6 0.000000 machine_state m140 w
+6 0.000000 machine_state m141 w
+6 0.000000 machine_state m142 w
+6 0.000000 machine_state m143 w
+6 0.000000 machine_state m144 w
+6 0.000000 machine_state m145 w
+6 0.000000 machine_state m146 w
+6 0.000000 machine_state m147 w
+6 0.000000 machine_state m148 w
+6 0.000000 machine_state m149 w
+6 0.000000 machine_state m150 w
+6 0.000000 machine_state m151 w
+6 0.000000 machine_state m152 w
+6 0.000000 machine_state m153 w
+6 0.000000 machine_state m154 w
+6 0.000000 machine_state m155 w
+6 0.000000 machine_state m156 w
+6 0.000000 machine_state m157 w
+6 0.000000 machine_state m158 w
+6 0.000000 machine_state m159 w
+6 0.000000 machine_state m160 w
+6 0.000000 machine_state m161 w
+6 0.000000 machine_state m162 w
+6 0.000000 machine_state m163 w
+6 0.000000 machine_state m164 w
+6 0.000000 machine_state m165 w
+6 0.000000 machine_state m166 w
+6 0.000000 machine_state m167 w
+6 0.000000 machine_state m168 w
+6 0.000000 machine_state m169 w
+6 0.000000 machine_state m170 w
+6 0.000000 machine_state m171 w
+6 0.000000 machine_state m172 w
+6 0.000000 machine_state m173 w
+6 0.000000 machine_state m174 w
+6 0.000000 machine_state m175 w
+6 0.000000 machine_state m176 w
+6 0.000000 machine_state m177 w
+6 0.000000 machine_state m178 w
+6 0.000000 machine_state m179 w
+6 0.000000 machine_state m180 w
+6 0.000000 machine_state m181 w
+6 0.000000 machine_state m182 w
+6 0.000000 machine_state m183 w
+6 0.000000 machine_state m184 w
+6 0.000000 machine_state m185 w
+6 0.000000 machine_state m186 w
+6 0.000000 machine_state m187 w
+6 0.000000 machine_state m188 w
+6 0.000000 machine_state m189 w
+6 0.000000 machine_state m190 w
+6 0.000000 machine_state m191 w
+6 0.000000 machine_state m192 w
+6 0.000000 machine_state m193 w
+6 0.000000 machine_state m194 w
+6 0.000000 machine_state m195 w
+6 0.000000 machine_state m196 w
+6 0.000000 machine_state m197 w
+6 0.000000 machine_state m198 w
+6 0.000000 machine_state m199 w
+6 0.000000 machine_state m200 w
+6 0.000000 machine_state m201 w
+6 0.000000 machine_state m202 w
+6 0.000000 machine_state m203 w
+6 0.000000 machine_state m204 w
+6 0.000000 machine_state m205 w
+6 0.000000 machine_state m206 w
+6 0.000000 machine_state m207 w
+6 0.000000 machine_state m208 w
+6 0.000000 machine_state m209 w
+6 0.000000 machine_state m210 w
+6 0.000000 machine_state m211 w
+6 0.000000 machine_state m212 w
+6 0.000000 machine_state m213 w
+6 0.000000 machine_state m214 w
+6 0.000000 machine_state m215 w
+6 0.000000 machine_state m216 w
+6 0.000000 machine_state m217 w
+6 0.000000 machine_state m218 w
+6 0.000000 machine_state m219 w
+6 0.000000 machine_state m220 w
+6 0.000000 machine_state m221 w
+6 0.000000 machine_state m222 w
+6 0.000000 machine_state m223 w
+6 0.000000 machine_state m224 w
+6 0.000000 machine_state m225 w
+6 0.000000 machine_state m226 w
+6 0.000000 machine_state m227 w
+6 0.000000 machine_state m228 w
+6 0.000000 machine_state m229 w
+6 0.000000 machine_state m230 w
+6 0.000000 machine_state m231 w
+6 0.000000 machine_state m232 w
+6 0.000000 machine_state m233 w
+6 0.000000 machine_state m234 w
+6 0.000000 machine_state m235 w
+6 0.000000 machine_state m236 w
+6 0.000000 machine_state m237 w
+6 0.000000 machine_state m238 w
+6 0.000000 machine_state m239 w
+6 0.000000 machine_state m240 w
+6 0.000000 machine_state m241 w
+6 0.000000 machine_state m242 w
+6 0.000000 machine_state m243 w
+6 0.000000 machine_state m244 w
+6 0.000000 machine_state m245 w
+6 0.000000 machine_state m246 w
+6 0.000000 machine_state m247 w
+6 0.000000 machine_state m248 w
+6 0.000000 machine_state m249 w
+6 0.000000 machine_state m250 w
+6 0.000000 machine_state m251 w
+6 0.000000 machine_state m252 w
+6 0.000000 machine_state m253 w
+6 0.000000 machine_state m254 w
+6 0.000000 machine_state m255 w
+5 j84faa9!1 machine_state "84faa9!1" "0.000000 0.812500 1.000000"
+6 1.000060 machine_state m0 j84faa9!1
+6 1.000060 machine_state m1 j84faa9!1
+6 1.000060 machine_state m2 j84faa9!1
+6 1.000060 machine_state m3 j84faa9!1
+6 1.755678 machine_state m0 w
+6 1.755678 machine_state m1 w
+6 1.755678 machine_state m2 w
+6 1.755678 machine_state m3 w
+5 j84faa9!2 machine_state "84faa9!2" "1.000000 0.000000 0.000000"
+6 2.000060 machine_state m0 j84faa9!2
+6 2.000060 machine_state m1 j84faa9!2
+6 2.000060 machine_state m2 j84faa9!2
+6 2.000060 machine_state m3 j84faa9!2
+6 2.000060 machine_state m4 j84faa9!2
+6 2.000060 machine_state m5 j84faa9!2
+6 2.000060 machine_state m6 j84faa9!2
+6 2.000060 machine_state m7 j84faa9!2
+6 2.000060 machine_state m8 j84faa9!2
+6 2.000060 machine_state m9 j84faa9!2
+6 2.000060 machine_state m10 j84faa9!2
+6 2.000060 machine_state m11 j84faa9!2
+6 2.000060 machine_state m12 j84faa9!2
+6 2.000060 machine_state m13 j84faa9!2
+6 2.000060 machine_state m14 j84faa9!2
+6 2.000060 machine_state m15 j84faa9!2
+6 2.973025 machine_state m0 w
+6 2.973025 machine_state m1 w
+6 2.973025 machine_state m2 w
+6 2.973025 machine_state m3 w
+6 2.973025 machine_state m4 w
+6 2.973025 machine_state m5 w
+6 2.973025 machine_state m6 w
+6 2.973025 machine_state m7 w
+6 2.973025 machine_state m8 w
+6 2.973025 machine_state m9 w
+6 2.973025 machine_state m10 w
+6 2.973025 machine_state m11 w
+6 2.973025 machine_state m12 w
+6 2.973025 machine_state m13 w
+6 2.973025 machine_state m14 w
+6 2.973025 machine_state m15 w
+5 j84faa9!3 machine_state "84faa9!3" "1.000000 0.750000 0.000000"
+6 3.000060 machine_state m0 j84faa9!3
+6 3.000060 machine_state m1 j84faa9!3
+6 3.000060 machine_state m2 j84faa9!3
+6 3.000060 machine_state m3 j84faa9!3
+6 3.239811 machine_state m0 w
+6 3.239811 machine_state m1 w
+6 3.239811 machine_state m2 w
+6 3.239811 machine_state m3 w
+5 j84faa9!4 machine_state "84faa9!4" "0.593750 0.000000 1.000000"
+6 4.000060 machine_state m0 j84faa9!4
+6 4.000060 machine_state m1 j84faa9!4
+6 4.000060 machine_state m2 j84faa9!4
+6 4.000060 machine_state m3 j84faa9!4
+6 4.000060 machine_state m4 j84faa9!4
+6 4.000060 machine_state m5 j84faa9!4
+6 4.000060 machine_state m6 j84faa9!4
+6 4.000060 machine_state m7 j84faa9!4
+6 4.000060 machine_state m8 j84faa9!4
+6 4.000060 machine_state m9 j84faa9!4
+6 4.000060 machine_state m10 j84faa9!4
+6 4.000060 machine_state m11 j84faa9!4
+6 4.000060 machine_state m12 j84faa9!4
+6 4.000060 machine_state m13 j84faa9!4
+6 4.000060 machine_state m14 j84faa9!4
+6 4.000060 machine_state m15 j84faa9!4
+5 j84faa9!5 machine_state "84faa9!5" "0.000000 1.000000 0.062500"
+6 5.000060 machine_state m16 j84faa9!5
+6 5.000060 machine_state m17 j84faa9!5
+6 5.000060 machine_state m18 j84faa9!5
+6 5.000060 machine_state m19 j84faa9!5
+6 5.178318 machine_state m0 w
+6 5.178318 machine_state m1 w
+6 5.178318 machine_state m2 w
+6 5.178318 machine_state m3 w
+6 5.178318 machine_state m4 w
+6 5.178318 machine_state m5 w
+6 5.178318 machine_state m6 w
+6 5.178318 machine_state m7 w
+6 5.178318 machine_state m8 w
+6 5.178318 machine_state m9 w
+6 5.178318 machine_state m10 w
+6 5.178318 machine_state m11 w
+6 5.178318 machine_state m12 w
+6 5.178318 machine_state m13 w
+6 5.178318 machine_state m14 w
+6 5.178318 machine_state m15 w
+6 5.529397 machine_state m16 w
+6 5.529397 machine_state m17 w
+6 5.529397 machine_state m18 w
+6 5.529397 machine_state m19 w
+5 j84faa9!6 machine_state "84faa9!6" "0.687500 0.000000 1.000000"
+6 6.000060 machine_state m0 j84faa9!6
+6 6.000060 machine_state m1 j84faa9!6
+6 6.000060 machine_state m2 j84faa9!6
+6 6.000060 machine_state m3 j84faa9!6
+6 6.000060 machine_state m4 j84faa9!6
+6 6.000060 machine_state m5 j84faa9!6
+6 6.000060 machine_state m6 j84faa9!6
+6 6.000060 machine_state m7 j84faa9!6
+6 6.000060 machine_state m8 j84faa9!6
+6 6.000060 machine_state m9 j84faa9!6
+6 6.000060 machine_state m10 j84faa9!6
+6 6.000060 machine_state m11 j84faa9!6
+6 6.000060 machine_state m12 j84faa9!6
+6 6.000060 machine_state m13 j84faa9!6
+6 6.000060 machine_state m14 j84faa9!6
+6 6.000060 machine_state m15 j84faa9!6
+6 6.958403 machine_state m0 w
+6 6.958403 machine_state m1 w
+6 6.958403 machine_state m2 w
+6 6.958403 machine_state m3 w
+6 6.958403 machine_state m4 w
+6 6.958403 machine_state m5 w
+6 6.958403 machine_state m6 w
+6 6.958403 machine_state m7 w
+6 6.958403 machine_state m8 w
+6 6.958403 machine_state m9 w
+6 6.958403 machine_state m10 w
+6 6.958403 machine_state m11 w
+6 6.958403 machine_state m12 w
+6 6.958403 machine_state m13 w
+6 6.958403 machine_state m14 w
+6 6.958403 machine_state m15 w
+5 j84faa9!7 machine_state "84faa9!7" "0.968750 1.000000 0.000000"
+6 7.000060 machine_state m0 j84faa9!7
+6 7.000060 machine_state m1 j84faa9!7
+6 7.000060 machine_state m2 j84faa9!7
+6 7.000060 machine_state m3 j84faa9!7
+6 7.000060 machine_state m4 j84faa9!7
+6 7.000060 machine_state m5 j84faa9!7
+6 7.000060 machine_state m6 j84faa9!7
+6 7.000060 machine_state m7 j84faa9!7
+6 7.000060 machine_state m8 j84faa9!7
+6 7.000060 machine_state m9 j84faa9!7
+6 7.000060 machine_state m10 j84faa9!7
+6 7.000060 machine_state m11 j84faa9!7
+6 7.000060 machine_state m12 j84faa9!7
+6 7.000060 machine_state m13 j84faa9!7
+6 7.000060 machine_state m14 j84faa9!7
+6 7.000060 machine_state m15 j84faa9!7
+6 7.000060 machine_state m16 j84faa9!7
+6 7.000060 machine_state m17 j84faa9!7
+6 7.000060 machine_state m18 j84faa9!7
+6 7.000060 machine_state m19 j84faa9!7
+6 7.000060 machine_state m20 j84faa9!7
+6 7.000060 machine_state m21 j84faa9!7
+6 7.000060 machine_state m22 j84faa9!7
+6 7.000060 machine_state m23 j84faa9!7
+6 7.000060 machine_state m24 j84faa9!7
+6 7.000060 machine_state m25 j84faa9!7
+6 7.000060 machine_state m26 j84faa9!7
+6 7.000060 machine_state m27 j84faa9!7
+6 7.000060 machine_state m28 j84faa9!7
+6 7.000060 machine_state m29 j84faa9!7
+6 7.000060 machine_state m30 j84faa9!7
+6 7.000060 machine_state m31 j84faa9!7
+6 7.000060 machine_state m32 j84faa9!7
+6 7.000060 machine_state m33 j84faa9!7
+6 7.000060 machine_state m34 j84faa9!7
+6 7.000060 machine_state m35 j84faa9!7
+6 7.000060 machine_state m36 j84faa9!7
+6 7.000060 machine_state m37 j84faa9!7
+6 7.000060 machine_state m38 j84faa9!7
+6 7.000060 machine_state m39 j84faa9!7
+6 7.000060 machine_state m40 j84faa9!7
+6 7.000060 machine_state m41 j84faa9!7
+6 7.000060 machine_state m42 j84faa9!7
+6 7.000060 machine_state m43 j84faa9!7
+6 7.000060 machine_state m44 j84faa9!7
+6 7.000060 machine_state m45 j84faa9!7
+6 7.000060 machine_state m46 j84faa9!7
+6 7.000060 machine_state m47 j84faa9!7
+6 7.000060 machine_state m48 j84faa9!7
+6 7.000060 machine_state m49 j84faa9!7
+6 7.000060 machine_state m50 j84faa9!7
+6 7.000060 machine_state m51 j84faa9!7
+6 7.000060 machine_state m52 j84faa9!7
+6 7.000060 machine_state m53 j84faa9!7
+6 7.000060 machine_state m54 j84faa9!7
+6 7.000060 machine_state m55 j84faa9!7
+6 7.000060 machine_state m56 j84faa9!7
+6 7.000060 machine_state m57 j84faa9!7
+6 7.000060 machine_state m58 j84faa9!7
+6 7.000060 machine_state m59 j84faa9!7
+6 7.000060 machine_state m60 j84faa9!7
+6 7.000060 machine_state m61 j84faa9!7
+6 7.000060 machine_state m62 j84faa9!7
+6 7.000060 machine_state m63 j84faa9!7
+6 8.374612 machine_state m0 w
+6 8.374612 machine_state m1 w
+6 8.374612 machine_state m2 w
+6 8.374612 machine_state m3 w
+6 8.374612 machine_state m4 w
+6 8.374612 machine_state m5 w
+6 8.374612 machine_state m6 w
+6 8.374612 machine_state m7 w
+6 8.374612 machine_state m8 w
+6 8.374612 machine_state m9 w
+6 8.374612 machine_state m10 w
+6 8.374612 machine_state m11 w
+6 8.374612 machine_state m12 w
+6 8.374612 machine_state m13 w
+6 8.374612 machine_state m14 w
+6 8.374612 machine_state m15 w
+6 8.374612 machine_state m16 w
+6 8.374612 machine_state m17 w
+6 8.374612 machine_state m18 w
+6 8.374612 machine_state m19 w
+6 8.374612 machine_state m20 w
+6 8.374612 machine_state m21 w
+6 8.374612 machine_state m22 w
+6 8.374612 machine_state m23 w
+6 8.374612 machine_state m24 w
+6 8.374612 machine_state m25 w
+6 8.374612 machine_state m26 w
+6 8.374612 machine_state m27 w
+6 8.374612 machine_state m28 w
+6 8.374612 machine_state m29 w
+6 8.374612 machine_state m30 w
+6 8.374612 machine_state m31 w
+6 8.374612 machine_state m32 w
+6 8.374612 machine_state m33 w
+6 8.374612 machine_state m34 w
+6 8.374612 machine_state m35 w
+6 8.374612 machine_state m36 w
+6 8.374612 machine_state m37 w
+6 8.374612 machine_state m38 w
+6 8.374612 machine_state m39 w
+6 8.374612 machine_state m40 w
+6 8.374612 machine_state m41 w
+6 8.374612 machine_state m42 w
+6 8.374612 machine_state m43 w
+6 8.374612 machine_state m44 w
+6 8.374612 machine_state m45 w
+6 8.374612 machine_state m46 w
+6 8.374612 machine_state m47 w
+6 8.374612 machine_state m48 w
+6 8.374612 machine_state m49 w
+6 8.374612 machine_state m50 w
+6 8.374612 machine_state m51 w
+6 8.374612 machine_state m52 w
+6 8.374612 machine_state m53 w
+6 8.374612 machine_state m54 w
+6 8.374612 machine_state m55 w
+6 8.374612 machine_state m56 w
+6 8.374612 machine_state m57 w
+6 8.374612 machine_state m58 w
+6 8.374612 machine_state m59 w
+6 8.374612 machine_state m60 w
+6 8.374612 machine_state m61 w
+6 8.374612 machine_state m62 w
+6 8.374612 machine_state m63 w
+5 j84faa9!8 machine_state "84faa9!8" "0.000000 1.000000 0.718750"
+6 8.374862 machine_state m0 j84faa9!8
+6 8.374862 machine_state m1 j84faa9!8
+6 8.374862 machine_state m2 j84faa9!8
+6 8.374862 machine_state m3 j84faa9!8
+6 8.374862 machine_state m4 j84faa9!8
+6 8.374862 machine_state m5 j84faa9!8
+6 8.374862 machine_state m6 j84faa9!8
+6 8.374862 machine_state m7 j84faa9!8
+6 8.374862 machine_state m8 j84faa9!8
+6 8.374862 machine_state m9 j84faa9!8
+6 8.374862 machine_state m10 j84faa9!8
+6 8.374862 machine_state m11 j84faa9!8
+6 8.374862 machine_state m12 j84faa9!8
+6 8.374862 machine_state m13 j84faa9!8
+6 8.374862 machine_state m14 j84faa9!8
+6 8.374862 machine_state m15 j84faa9!8
+6 8.374862 machine_state m16 j84faa9!8
+6 8.374862 machine_state m17 j84faa9!8
+6 8.374862 machine_state m18 j84faa9!8
+6 8.374862 machine_state m19 j84faa9!8
+6 8.374862 machine_state m20 j84faa9!8
+6 8.374862 machine_state m21 j84faa9!8
+6 8.374862 machine_state m22 j84faa9!8
+6 8.374862 machine_state m23 j84faa9!8
+6 8.374862 machine_state m24 j84faa9!8
+6 8.374862 machine_state m25 j84faa9!8
+6 8.374862 machine_state m26 j84faa9!8
+6 8.374862 machine_state m27 j84faa9!8
+6 8.374862 machine_state m28 j84faa9!8
+6 8.374862 machine_state m29 j84faa9!8
+6 8.374862 machine_state m30 j84faa9!8
+6 8.374862 machine_state m31 j84faa9!8
+6 8.374862 machine_state m32 j84faa9!8
+6 8.374862 machine_state m33 j84faa9!8
+6 8.374862 machine_state m34 j84faa9!8
+6 8.374862 machine_state m35 j84faa9!8
+6 8.374862 machine_state m36 j84faa9!8
+6 8.374862 machine_state m37 j84faa9!8
+6 8.374862 machine_state m38 j84faa9!8
+6 8.374862 machine_state m39 j84faa9!8
+6 8.374862 machine_state m40 j84faa9!8
+6 8.374862 machine_state m41 j84faa9!8
+6 8.374862 machine_state m42 j84faa9!8
+6 8.374862 machine_state m43 j84faa9!8
+6 8.374862 machine_state m44 j84faa9!8
+6 8.374862 machine_state m45 j84faa9!8
+6 8.374862 machine_state m46 j84faa9!8
+6 8.374862 machine_state m47 j84faa9!8
+6 8.374862 machine_state m48 j84faa9!8
+6 8.374862 machine_state m49 j84faa9!8
+6 8.374862 machine_state m50 j84faa9!8
+6 8.374862 machine_state m51 j84faa9!8
+6 8.374862 machine_state m52 j84faa9!8
+6 8.374862 machine_state m53 j84faa9!8
+6 8.374862 machine_state m54 j84faa9!8
+6 8.374862 machine_state m55 j84faa9!8
+6 8.374862 machine_state m56 j84faa9!8
+6 8.374862 machine_state m57 j84faa9!8
+6 8.374862 machine_state m58 j84faa9!8
+6 8.374862 machine_state m59 j84faa9!8
+6 8.374862 machine_state m60 j84faa9!8
+6 8.374862 machine_state m61 j84faa9!8
+6 8.374862 machine_state m62 j84faa9!8
+6 8.374862 machine_state m63 j84faa9!8
+6 8.374862 machine_state m64 j84faa9!8
+6 8.374862 machine_state m65 j84faa9!8
+6 8.374862 machine_state m66 j84faa9!8
+6 8.374862 machine_state m67 j84faa9!8
+6 8.374862 machine_state m68 j84faa9!8
+6 8.374862 machine_state m69 j84faa9!8
+6 8.374862 machine_state m70 j84faa9!8
+6 8.374862 machine_state m71 j84faa9!8
+6 8.374862 machine_state m72 j84faa9!8
+6 8.374862 machine_state m73 j84faa9!8
+6 8.374862 machine_state m74 j84faa9!8
+6 8.374862 machine_state m75 j84faa9!8
+6 8.374862 machine_state m76 j84faa9!8
+6 8.374862 machine_state m77 j84faa9!8
+6 8.374862 machine_state m78 j84faa9!8
+6 8.374862 machine_state m79 j84faa9!8
+6 8.374862 machine_state m80 j84faa9!8
+6 8.374862 machine_state m81 j84faa9!8
+6 8.374862 machine_state m82 j84faa9!8
+6 8.374862 machine_state m83 j84faa9!8
+6 8.374862 machine_state m84 j84faa9!8
+6 8.374862 machine_state m85 j84faa9!8
+6 8.374862 machine_state m86 j84faa9!8
+6 8.374862 machine_state m87 j84faa9!8
+6 8.374862 machine_state m88 j84faa9!8
+6 8.374862 machine_state m89 j84faa9!8
+6 8.374862 machine_state m90 j84faa9!8
+6 8.374862 machine_state m91 j84faa9!8
+6 8.374862 machine_state m92 j84faa9!8
+6 8.374862 machine_state m93 j84faa9!8
+6 8.374862 machine_state m94 j84faa9!8
+6 8.374862 machine_state m95 j84faa9!8
+6 8.374862 machine_state m96 j84faa9!8
+6 8.374862 machine_state m97 j84faa9!8
+6 8.374862 machine_state m98 j84faa9!8
+6 8.374862 machine_state m99 j84faa9!8
+6 8.374862 machine_state m100 j84faa9!8
+6 8.374862 machine_state m101 j84faa9!8
+6 8.374862 machine_state m102 j84faa9!8
+6 8.374862 machine_state m103 j84faa9!8
+6 8.374862 machine_state m104 j84faa9!8
+6 8.374862 machine_state m105 j84faa9!8
+6 8.374862 machine_state m106 j84faa9!8
+6 8.374862 machine_state m107 j84faa9!8
+6 8.374862 machine_state m108 j84faa9!8
+6 8.374862 machine_state m109 j84faa9!8
+6 8.374862 machine_state m110 j84faa9!8
+6 8.374862 machine_state m111 j84faa9!8
+6 8.374862 machine_state m112 j84faa9!8
+6 8.374862 machine_state m113 j84faa9!8
+6 8.374862 machine_state m114 j84faa9!8
+6 8.374862 machine_state m115 j84faa9!8
+6 8.374862 machine_state m116 j84faa9!8
+6 8.374862 machine_state m117 j84faa9!8
+6 8.374862 machine_state m118 j84faa9!8
+6 8.374862 machine_state m119 j84faa9!8
+6 8.374862 machine_state m120 j84faa9!8
+6 8.374862 machine_state m121 j84faa9!8
+6 8.374862 machine_state m122 j84faa9!8
+6 8.374862 machine_state m123 j84faa9!8
+6 8.374862 machine_state m124 j84faa9!8
+6 8.374862 machine_state m125 j84faa9!8
+6 8.374862 machine_state m126 j84faa9!8
+6 8.374862 machine_state m127 j84faa9!8
+6 8.374862 machine_state m128 j84faa9!8
+6 8.374862 machine_state m129 j84faa9!8
+6 8.374862 machine_state m130 j84faa9!8
+6 8.374862 machine_state m131 j84faa9!8
+6 8.374862 machine_state m132 j84faa9!8
+6 8.374862 machine_state m133 j84faa9!8
+6 8.374862 machine_state m134 j84faa9!8
+6 8.374862 machine_state m135 j84faa9!8
+6 8.374862 machine_state m136 j84faa9!8
+6 8.374862 machine_state m137 j84faa9!8
+6 8.374862 machine_state m138 j84faa9!8
+6 8.374862 machine_state m139 j84faa9!8
+6 8.374862 machine_state m140 j84faa9!8
+6 8.374862 machine_state m141 j84faa9!8
+6 8.374862 machine_state m142 j84faa9!8
+6 8.374862 machine_state m143 j84faa9!8
+6 8.374862 machine_state m144 j84faa9!8
+6 8.374862 machine_state m145 j84faa9!8
+6 8.374862 machine_state m146 j84faa9!8
+6 8.374862 machine_state m147 j84faa9!8
+6 8.374862 machine_state m148 j84faa9!8
+6 8.374862 machine_state m149 j84faa9!8
+6 8.374862 machine_state m150 j84faa9!8
+6 8.374862 machine_state m151 j84faa9!8
+6 8.374862 machine_state m152 j84faa9!8
+6 8.374862 machine_state m153 j84faa9!8
+6 8.374862 machine_state m154 j84faa9!8
+6 8.374862 machine_state m155 j84faa9!8
+6 8.374862 machine_state m156 j84faa9!8
+6 8.374862 machine_state m157 j84faa9!8
+6 8.374862 machine_state m158 j84faa9!8
+6 8.374862 machine_state m159 j84faa9!8
+6 8.374862 machine_state m160 j84faa9!8
+6 8.374862 machine_state m161 j84faa9!8
+6 8.374862 machine_state m162 j84faa9!8
+6 8.374862 machine_state m163 j84faa9!8
+6 8.374862 machine_state m164 j84faa9!8
+6 8.374862 machine_state m165 j84faa9!8
+6 8.374862 machine_state m166 j84faa9!8
+6 8.374862 machine_state m167 j84faa9!8
+6 8.374862 machine_state m168 j84faa9!8
+6 8.374862 machine_state m169 j84faa9!8
+6 8.374862 machine_state m170 j84faa9!8
+6 8.374862 machine_state m171 j84faa9!8
+6 8.374862 machine_state m172 j84faa9!8
+6 8.374862 machine_state m173 j84faa9!8
+6 8.374862 machine_state m174 j84faa9!8
+6 8.374862 machine_state m175 j84faa9!8
+6 8.374862 machine_state m176 j84faa9!8
+6 8.374862 machine_state m177 j84faa9!8
+6 8.374862 machine_state m178 j84faa9!8
+6 8.374862 machine_state m179 j84faa9!8
+6 8.374862 machine_state m180 j84faa9!8
+6 8.374862 machine_state m181 j84faa9!8
+6 8.374862 machine_state m182 j84faa9!8
+6 8.374862 machine_state m183 j84faa9!8
+6 8.374862 machine_state m184 j84faa9!8
+6 8.374862 machine_state m185 j84faa9!8
+6 8.374862 machine_state m186 j84faa9!8
+6 8.374862 machine_state m187 j84faa9!8
+6 8.374862 machine_state m188 j84faa9!8
+6 8.374862 machine_state m189 j84faa9!8
+6 8.374862 machine_state m190 j84faa9!8
+6 8.374862 machine_state m191 j84faa9!8
+6 8.374862 machine_state m192 j84faa9!8
+6 8.374862 machine_state m193 j84faa9!8
+6 8.374862 machine_state m194 j84faa9!8
+6 8.374862 machine_state m195 j84faa9!8
+6 8.374862 machine_state m196 j84faa9!8
+6 8.374862 machine_state m197 j84faa9!8
+6 8.374862 machine_state m198 j84faa9!8
+6 8.374862 machine_state m199 j84faa9!8
+6 8.374862 machine_state m200 j84faa9!8
+6 8.374862 machine_state m201 j84faa9!8
+6 8.374862 machine_state m202 j84faa9!8
+6 8.374862 machine_state m203 j84faa9!8
+6 8.374862 machine_state m204 j84faa9!8
+6 8.374862 machine_state m205 j84faa9!8
+6 8.374862 machine_state m206 j84faa9!8
+6 8.374862 machine_state m207 j84faa9!8
+6 8.374862 machine_state m208 j84faa9!8
+6 8.374862 machine_state m209 j84faa9!8
+6 8.374862 machine_state m210 j84faa9!8
+6 8.374862 machine_state m211 j84faa9!8
+6 8.374862 machine_state m212 j84faa9!8
+6 8.374862 machine_state m213 j84faa9!8
+6 8.374862 machine_state m214 j84faa9!8
+6 8.374862 machine_state m215 j84faa9!8
+6 8.374862 machine_state m216 j84faa9!8
+6 8.374862 machine_state m217 j84faa9!8
+6 8.374862 machine_state m218 j84faa9!8
+6 8.374862 machine_state m219 j84faa9!8
+6 8.374862 machine_state m220 j84faa9!8
+6 8.374862 machine_state m221 j84faa9!8
+6 8.374862 machine_state m222 j84faa9!8
+6 8.374862 machine_state m223 j84faa9!8
+6 8.374862 machine_state m224 j84faa9!8
+6 8.374862 machine_state m225 j84faa9!8
+6 8.374862 machine_state m226 j84faa9!8
+6 8.374862 machine_state m227 j84faa9!8
+6 8.374862 machine_state m228 j84faa9!8
+6 8.374862 machine_state m229 j84faa9!8
+6 8.374862 machine_state m230 j84faa9!8
+6 8.374862 machine_state m231 j84faa9!8
+6 8.374862 machine_state m232 j84faa9!8
+6 8.374862 machine_state m233 j84faa9!8
+6 8.374862 machine_state m234 j84faa9!8
+6 8.374862 machine_state m235 j84faa9!8
+6 8.374862 machine_state m236 j84faa9!8
+6 8.374862 machine_state m237 j84faa9!8
+6 8.374862 machine_state m238 j84faa9!8
+6 8.374862 machine_state m239 j84faa9!8
+6 8.374862 machine_state m240 j84faa9!8
+6 8.374862 machine_state m241 j84faa9!8
+6 8.374862 machine_state m242 j84faa9!8
+6 8.374862 machine_state m243 j84faa9!8
+6 8.374862 machine_state m244 j84faa9!8
+6 8.374862 machine_state m245 j84faa9!8
+6 8.374862 machine_state m246 j84faa9!8
+6 8.374862 machine_state m247 j84faa9!8
+6 8.374862 machine_state m248 j84faa9!8
+6 8.374862 machine_state m249 j84faa9!8
+6 8.374862 machine_state m250 j84faa9!8
+6 8.374862 machine_state m251 j84faa9!8
+6 8.374862 machine_state m252 j84faa9!8
+6 8.374862 machine_state m253 j84faa9!8
+6 8.374862 machine_state m254 j84faa9!8
+6 8.374862 machine_state m255 j84faa9!8
+6 10.199824 machine_state m0 w
+6 10.199824 machine_state m1 w
+6 10.199824 machine_state m2 w
+6 10.199824 machine_state m3 w
+6 10.199824 machine_state m4 w
+6 10.199824 machine_state m5 w
+6 10.199824 machine_state m6 w
+6 10.199824 machine_state m7 w
+6 10.199824 machine_state m8 w
+6 10.199824 machine_state m9 w
+6 10.199824 machine_state m10 w
+6 10.199824 machine_state m11 w
+6 10.199824 machine_state m12 w
+6 10.199824 machine_state m13 w
+6 10.199824 machine_state m14 w
+6 10.199824 machine_state m15 w
+6 10.199824 machine_state m16 w
+6 10.199824 machine_state m17 w
+6 10.199824 machine_state m18 w
+6 10.199824 machine_state m19 w
+6 10.199824 machine_state m20 w
+6 10.199824 machine_state m21 w
+6 10.199824 machine_state m22 w
+6 10.199824 machine_state m23 w
+6 10.199824 machine_state m24 w
+6 10.199824 machine_state m25 w
+6 10.199824 machine_state m26 w
+6 10.199824 machine_state m27 w
+6 10.199824 machine_state m28 w
+6 10.199824 machine_state m29 w
+6 10.199824 machine_state m30 w
+6 10.199824 machine_state m31 w
+6 10.199824 machine_state m32 w
+6 10.199824 machine_state m33 w
+6 10.199824 machine_state m34 w
+6 10.199824 machine_state m35 w
+6 10.199824 machine_state m36 w
+6 10.199824 machine_state m37 w
+6 10.199824 machine_state m38 w
+6 10.199824 machine_state m39 w
+6 10.199824 machine_state m40 w
+6 10.199824 machine_state m41 w
+6 10.199824 machine_state m42 w
+6 10.199824 machine_state m43 w
+6 10.199824 machine_state m44 w
+6 10.199824 machine_state m45 w
+6 10.199824 machine_state m46 w
+6 10.199824 machine_state m47 w
+6 10.199824 machine_state m48 w
+6 10.199824 machine_state m49 w
+6 10.199824 machine_state m50 w
+6 10.199824 machine_state m51 w
+6 10.199824 machine_state m52 w
+6 10.199824 machine_state m53 w
+6 10.199824 machine_state m54 w
+6 10.199824 machine_state m55 w
+6 10.199824 machine_state m56 w
+6 10.199824 machine_state m57 w
+6 10.199824 machine_state m58 w
+6 10.199824 machine_state m59 w
+6 10.199824 machine_state m60 w
+6 10.199824 machine_state m61 w
+6 10.199824 machine_state m62 w
+6 10.199824 machine_state m63 w
+6 10.199824 machine_state m64 w
+6 10.199824 machine_state m65 w
+6 10.199824 machine_state m66 w
+6 10.199824 machine_state m67 w
+6 10.199824 machine_state m68 w
+6 10.199824 machine_state m69 w
+6 10.199824 machine_state m70 w
+6 10.199824 machine_state m71 w
+6 10.199824 machine_state m72 w
+6 10.199824 machine_state m73 w
+6 10.199824 machine_state m74 w
+6 10.199824 machine_state m75 w
+6 10.199824 machine_state m76 w
+6 10.199824 machine_state m77 w
+6 10.199824 machine_state m78 w
+6 10.199824 machine_state m79 w
+6 10.199824 machine_state m80 w
+6 10.199824 machine_state m81 w
+6 10.199824 machine_state m82 w
+6 10.199824 machine_state m83 w
+6 10.199824 machine_state m84 w
+6 10.199824 machine_state m85 w
+6 10.199824 machine_state m86 w
+6 10.199824 machine_state m87 w
+6 10.199824 machine_state m88 w
+6 10.199824 machine_state m89 w
+6 10.199824 machine_state m90 w
+6 10.199824 machine_state m91 w
+6 10.199824 machine_state m92 w
+6 10.199824 machine_state m93 w
+6 10.199824 machine_state m94 w
+6 10.199824 machine_state m95 w
+6 10.199824 machine_state m96 w
+6 10.199824 machine_state m97 w
+6 10.199824 machine_state m98 w
+6 10.199824 machine_state m99 w
+6 10.199824 machine_state m100 w
+6 10.199824 machine_state m101 w
+6 10.199824 machine_state m102 w
+6 10.199824 machine_state m103 w
+6 10.199824 machine_state m104 w
+6 10.199824 machine_state m105 w
+6 10.199824 machine_state m106 w
+6 10.199824 machine_state m107 w
+6 10.199824 machine_state m108 w
+6 10.199824 machine_state m109 w
+6 10.199824 machine_state m110 w
+6 10.199824 machine_state m111 w
+6 10.199824 machine_state m112 w
+6 10.199824 machine_state m113 w
+6 10.199824 machine_state m114 w
+6 10.199824 machine_state m115 w
+6 10.199824 machine_state m116 w
+6 10.199824 machine_state m117 w
+6 10.199824 machine_state m118 w
+6 10.199824 machine_state m119 w
+6 10.199824 machine_state m120 w
+6 10.199824 machine_state m121 w
+6 10.199824 machine_state m122 w
+6 10.199824 machine_state m123 w
+6 10.199824 machine_state m124 w
+6 10.199824 machine_state m125 w
+6 10.199824 machine_state m126 w
+6 10.199824 machine_state m127 w
+6 10.199824 machine_state m128 w
+6 10.199824 machine_state m129 w
+6 10.199824 machine_state m130 w
+6 10.199824 machine_state m131 w
+6 10.199824 machine_state m132 w
+6 10.199824 machine_state m133 w
+6 10.199824 machine_state m134 w
+6 10.199824 machine_state m135 w
+6 10.199824 machine_state m136 w
+6 10.199824 machine_state m137 w
+6 10.199824 machine_state m138 w
+6 10.199824 machine_state m139 w
+6 10.199824 machine_state m140 w
+6 10.199824 machine_state m141 w
+6 10.199824 machine_state m142 w
+6 10.199824 machine_state m143 w
+6 10.199824 machine_state m144 w
+6 10.199824 machine_state m145 w
+6 10.199824 machine_state m146 w
+6 10.199824 machine_state m147 w
+6 10.199824 machine_state m148 w
+6 10.199824 machine_state m149 w
+6 10.199824 machine_state m150 w
+6 10.199824 machine_state m151 w
+6 10.199824 machine_state m152 w
+6 10.199824 machine_state m153 w
+6 10.199824 machine_state m154 w
+6 10.199824 machine_state m155 w
+6 10.199824 machine_state m156 w
+6 10.199824 machine_state m157 w
+6 10.199824 machine_state m158 w
+6 10.199824 machine_state m159 w
+6 10.199824 machine_state m160 w
+6 10.199824 machine_state m161 w
+6 10.199824 machine_state m162 w
+6 10.199824 machine_state m163 w
+6 10.199824 machine_state m164 w
+6 10.199824 machine_state m165 w
+6 10.199824 machine_state m166 w
+6 10.199824 machine_state m167 w
+6 10.199824 machine_state m168 w
+6 10.199824 machine_state m169 w
+6 10.199824 machine_state m170 w
+6 10.199824 machine_state m171 w
+6 10.199824 machine_state m172 w
+6 10.199824 machine_state m173 w
+6 10.199824 machine_state m174 w
+6 10.199824 machine_state m175 w
+6 10.199824 machine_state m176 w
+6 10.199824 machine_state m177 w
+6 10.199824 machine_state m178 w
+6 10.199824 machine_state m179 w
+6 10.199824 machine_state m180 w
+6 10.199824 machine_state m181 w
+6 10.199824 machine_state m182 w
+6 10.199824 machine_state m183 w
+6 10.199824 machine_state m184 w
+6 10.199824 machine_state m185 w
+6 10.199824 machine_state m186 w
+6 10.199824 machine_state m187 w
+6 10.199824 machine_state m188 w
+6 10.199824 machine_state m189 w
+6 10.199824 machine_state m190 w
+6 10.199824 machine_state m191 w
+6 10.199824 machine_state m192 w
+6 10.199824 machine_state m193 w
+6 10.199824 machine_state m194 w
+6 10.199824 machine_state m195 w
+6 10.199824 machine_state m196 w
+6 10.199824 machine_state m197 w
+6 10.199824 machine_state m198 w
+6 10.199824 machine_state m199 w
+6 10.199824 machine_state m200 w
+6 10.199824 machine_state m201 w
+6 10.199824 machine_state m202 w
+6 10.199824 machine_state m203 w
+6 10.199824 machine_state m204 w
+6 10.199824 machine_state m205 w
+6 10.199824 machine_state m206 w
+6 10.199824 machine_state m207 w
+6 10.199824 machine_state m208 w
+6 10.199824 machine_state m209 w
+6 10.199824 machine_state m210 w
+6 10.199824 machine_state m211 w
+6 10.199824 machine_state m212 w
+6 10.199824 machine_state m213 w
+6 10.199824 machine_state m214 w
+6 10.199824 machine_state m215 w
+6 10.199824 machine_state m216 w
+6 10.199824 machine_state m217 w
+6 10.199824 machine_state m218 w
+6 10.199824 machine_state m219 w
+6 10.199824 machine_state m220 w
+6 10.199824 machine_state m221 w
+6 10.199824 machine_state m222 w
+6 10.199824 machine_state m223 w
+6 10.199824 machine_state m224 w
+6 10.199824 machine_state m225 w
+6 10.199824 machine_state m226 w
+6 10.199824 machine_state m227 w
+6 10.199824 machine_state m228 w
+6 10.199824 machine_state m229 w
+6 10.199824 machine_state m230 w
+6 10.199824 machine_state m231 w
+6 10.199824 machine_state m232 w
+6 10.199824 machine_state m233 w
+6 10.199824 machine_state m234 w
+6 10.199824 machine_state m235 w
+6 10.199824 machine_state m236 w
+6 10.199824 machine_state m237 w
+6 10.199824 machine_state m238 w
+6 10.199824 machine_state m239 w
+6 10.199824 machine_state m240 w
+6 10.199824 machine_state m241 w
+6 10.199824 machine_state m242 w
+6 10.199824 machine_state m243 w
+6 10.199824 machine_state m244 w
+6 10.199824 machine_state m245 w
+6 10.199824 machine_state m246 w
+6 10.199824 machine_state m247 w
+6 10.199824 machine_state m248 w
+6 10.199824 machine_state m249 w
+6 10.199824 machine_state m250 w
+6 10.199824 machine_state m251 w
+6 10.199824 machine_state m252 w
+6 10.199824 machine_state m253 w
+6 10.199824 machine_state m254 w
+6 10.199824 machine_state m255 w
+5 j84faa9!9 machine_state "84faa9!9" "0.593750 1.000000 0.000000"
+6 10.200063 machine_state m0 j84faa9!9
+6 10.200063 machine_state m1 j84faa9!9
+6 10.200063 machine_state m2 j84faa9!9
+6 10.200063 machine_state m3 j84faa9!9
+5 j84faa9!10 machine_state "84faa9!10" "0.312500 0.000000 1.000000"
+6 10.200094 machine_state m4 j84faa9!10
+6 10.200094 machine_state m5 j84faa9!10
+6 10.200094 machine_state m6 j84faa9!10
+6 10.200094 machine_state m7 j84faa9!10
+6 10.200094 machine_state m8 j84faa9!10
+6 10.200094 machine_state m9 j84faa9!10
+6 10.200094 machine_state m10 j84faa9!10
+6 10.200094 machine_state m11 j84faa9!10
+6 10.200094 machine_state m12 j84faa9!10
+6 10.200094 machine_state m13 j84faa9!10
+6 10.200094 machine_state m14 j84faa9!10
+6 10.200094 machine_state m15 j84faa9!10
+6 10.200094 machine_state m16 j84faa9!10
+6 10.200094 machine_state m17 j84faa9!10
+6 10.200094 machine_state m18 j84faa9!10
+6 10.200094 machine_state m19 j84faa9!10
+6 10.567036 machine_state m4 w
+6 10.567036 machine_state m5 w
+6 10.567036 machine_state m6 w
+6 10.567036 machine_state m7 w
+6 10.567036 machine_state m8 w
+6 10.567036 machine_state m9 w
+6 10.567036 machine_state m10 w
+6 10.567036 machine_state m11 w
+6 10.567036 machine_state m12 w
+6 10.567036 machine_state m13 w
+6 10.567036 machine_state m14 w
+6 10.567036 machine_state m15 w
+6 10.567036 machine_state m16 w
+6 10.567036 machine_state m17 w
+6 10.567036 machine_state m18 w
+6 10.567036 machine_state m19 w
+6 10.678618 machine_state m0 w
+6 10.678618 machine_state m1 w
+6 10.678618 machine_state m2 w
+6 10.678618 machine_state m3 w
+5 j84faa9!11 machine_state "84faa9!11" "1.000000 0.000000 0.093750"
+6 11.000060 machine_state m0 j84faa9!11
+6 11.000060 machine_state m1 j84faa9!11
+6 11.000060 machine_state m2 j84faa9!11
+6 11.000060 machine_state m3 j84faa9!11
+6 11.000060 machine_state m4 j84faa9!11
+6 11.000060 machine_state m5 j84faa9!11
+6 11.000060 machine_state m6 j84faa9!11
+6 11.000060 machine_state m7 j84faa9!11
+6 11.000060 machine_state m8 j84faa9!11
+6 11.000060 machine_state m9 j84faa9!11
+6 11.000060 machine_state m10 j84faa9!11
+6 11.000060 machine_state m11 j84faa9!11
+6 11.000060 machine_state m12 j84faa9!11
+6 11.000060 machine_state m13 j84faa9!11
+6 11.000060 machine_state m14 j84faa9!11
+6 11.000060 machine_state m15 j84faa9!11
+6 11.000060 machine_state m16 j84faa9!11
+6 11.000060 machine_state m17 j84faa9!11
+6 11.000060 machine_state m18 j84faa9!11
+6 11.000060 machine_state m19 j84faa9!11
+6 11.000060 machine_state m20 j84faa9!11
+6 11.000060 machine_state m21 j84faa9!11
+6 11.000060 machine_state m22 j84faa9!11
+6 11.000060 machine_state m23 j84faa9!11
+6 11.000060 machine_state m24 j84faa9!11
+6 11.000060 machine_state m25 j84faa9!11
+6 11.000060 machine_state m26 j84faa9!11
+6 11.000060 machine_state m27 j84faa9!11
+6 11.000060 machine_state m28 j84faa9!11
+6 11.000060 machine_state m29 j84faa9!11
+6 11.000060 machine_state m30 j84faa9!11
+6 11.000060 machine_state m31 j84faa9!11
+6 11.000060 machine_state m32 j84faa9!11
+6 11.000060 machine_state m33 j84faa9!11
+6 11.000060 machine_state m34 j84faa9!11
+6 11.000060 machine_state m35 j84faa9!11
+6 11.000060 machine_state m36 j84faa9!11
+6 11.000060 machine_state m37 j84faa9!11
+6 11.000060 machine_state m38 j84faa9!11
+6 11.000060 machine_state m39 j84faa9!11
+6 11.000060 machine_state m40 j84faa9!11
+6 11.000060 machine_state m41 j84faa9!11
+6 11.000060 machine_state m42 j84faa9!11
+6 11.000060 machine_state m43 j84faa9!11
+6 11.000060 machine_state m44 j84faa9!11
+6 11.000060 machine_state m45 j84faa9!11
+6 11.000060 machine_state m46 j84faa9!11
+6 11.000060 machine_state m47 j84faa9!11
+6 11.000060 machine_state m48 j84faa9!11
+6 11.000060 machine_state m49 j84faa9!11
+6 11.000060 machine_state m50 j84faa9!11
+6 11.000060 machine_state m51 j84faa9!11
+6 11.000060 machine_state m52 j84faa9!11
+6 11.000060 machine_state m53 j84faa9!11
+6 11.000060 machine_state m54 j84faa9!11
+6 11.000060 machine_state m55 j84faa9!11
+6 11.000060 machine_state m56 j84faa9!11
+6 11.000060 machine_state m57 j84faa9!11
+6 11.000060 machine_state m58 j84faa9!11
+6 11.000060 machine_state m59 j84faa9!11
+6 11.000060 machine_state m60 j84faa9!11
+6 11.000060 machine_state m61 j84faa9!11
+6 11.000060 machine_state m62 j84faa9!11
+6 11.000060 machine_state m63 j84faa9!11
+6 11.263314 machine_state m0 w
+6 11.263314 machine_state m1 w
+6 11.263314 machine_state m2 w
+6 11.263314 machine_state m3 w
+6 11.263314 machine_state m4 w
+6 11.263314 machine_state m5 w
+6 11.263314 machine_state m6 w
+6 11.263314 machine_state m7 w
+6 11.263314 machine_state m8 w
+6 11.263314 machine_state m9 w
+6 11.263314 machine_state m10 w
+6 11.263314 machine_state m11 w
+6 11.263314 machine_state m12 w
+6 11.263314 machine_state m13 w
+6 11.263314 machine_state m14 w
+6 11.263314 machine_state m15 w
+6 11.263314 machine_state m16 w
+6 11.263314 machine_state m17 w
+6 11.263314 machine_state m18 w
+6 11.263314 machine_state m19 w
+6 11.263314 machine_state m20 w
+6 11.263314 machine_state m21 w
+6 11.263314 machine_state m22 w
+6 11.263314 machine_state m23 w
+6 11.263314 machine_state m24 w
+6 11.263314 machine_state m25 w
+6 11.263314 machine_state m26 w
+6 11.263314 machine_state m27 w
+6 11.263314 machine_state m28 w
+6 11.263314 machine_state m29 w
+6 11.263314 machine_state m30 w
+6 11.263314 machine_state m31 w
+6 11.263314 machine_state m32 w
+6 11.263314 machine_state m33 w
+6 11.263314 machine_state m34 w
+6 11.263314 machine_state m35 w
+6 11.263314 machine_state m36 w
+6 11.263314 machine_state m37 w
+6 11.263314 machine_state m38 w
+6 11.263314 machine_state m39 w
+6 11.263314 machine_state m40 w
+6 11.263314 machine_state m41 w
+6 11.263314 machine_state m42 w
+6 11.263314 machine_state m43 w
+6 11.263314 machine_state m44 w
+6 11.263314 machine_state m45 w
+6 11.263314 machine_state m46 w
+6 11.263314 machine_state m47 w
+6 11.263314 machine_state m48 w
+6 11.263314 machine_state m49 w
+6 11.263314 machine_state m50 w
+6 11.263314 machine_state m51 w
+6 11.263314 machine_state m52 w
+6 11.263314 machine_state m53 w
+6 11.263314 machine_state m54 w
+6 11.263314 machine_state m55 w
+6 11.263314 machine_state m56 w
+6 11.263314 machine_state m57 w
+6 11.263314 machine_state m58 w
+6 11.263314 machine_state m59 w
+6 11.263314 machine_state m60 w
+6 11.263314 machine_state m61 w
+6 11.263314 machine_state m62 w
+6 11.263314 machine_state m63 w
+5 j84faa9!12 machine_state "84faa9!12" "1.000000 0.000000 0.187500"
+6 12.000060 machine_state m0 j84faa9!12
+6 12.000060 machine_state m1 j84faa9!12
+6 12.000060 machine_state m2 j84faa9!12
+6 12.000060 machine_state m3 j84faa9!12
+6 12.000060 machine_state m4 j84faa9!12
+6 12.000060 machine_state m5 j84faa9!12
+6 12.000060 machine_state m6 j84faa9!12
+6 12.000060 machine_state m7 j84faa9!12
+6 12.000060 machine_state m8 j84faa9!12
+6 12.000060 machine_state m9 j84faa9!12
+6 12.000060 machine_state m10 j84faa9!12
+6 12.000060 machine_state m11 j84faa9!12
+6 12.000060 machine_state m12 j84faa9!12
+6 12.000060 machine_state m13 j84faa9!12
+6 12.000060 machine_state m14 j84faa9!12
+6 12.000060 machine_state m15 j84faa9!12
+6 12.000060 machine_state m16 j84faa9!12
+6 12.000060 machine_state m17 j84faa9!12
+6 12.000060 machine_state m18 j84faa9!12
+6 12.000060 machine_state m19 j84faa9!12
+6 12.000060 machine_state m20 j84faa9!12
+6 12.000060 machine_state m21 j84faa9!12
+6 12.000060 machine_state m22 j84faa9!12
+6 12.000060 machine_state m23 j84faa9!12
+6 12.000060 machine_state m24 j84faa9!12
+6 12.000060 machine_state m25 j84faa9!12
+6 12.000060 machine_state m26 j84faa9!12
+6 12.000060 machine_state m27 j84faa9!12
+6 12.000060 machine_state m28 j84faa9!12
+6 12.000060 machine_state m29 j84faa9!12
+6 12.000060 machine_state m30 j84faa9!12
+6 12.000060 machine_state m31 j84faa9!12
+6 12.000060 machine_state m32 j84faa9!12
+6 12.000060 machine_state m33 j84faa9!12
+6 12.000060 machine_state m34 j84faa9!12
+6 12.000060 machine_state m35 j84faa9!12
+6 12.000060 machine_state m36 j84faa9!12
+6 12.000060 machine_state m37 j84faa9!12
+6 12.000060 machine_state m38 j84faa9!12
+6 12.000060 machine_state m39 j84faa9!12
+6 12.000060 machine_state m40 j84faa9!12
+6 12.000060 machine_state m41 j84faa9!12
+6 12.000060 machine_state m42 j84faa9!12
+6 12.000060 machine_state m43 j84faa9!12
+6 12.000060 machine_state m44 j84faa9!12
+6 12.000060 machine_state m45 j84faa9!12
+6 12.000060 machine_state m46 j84faa9!12
+6 12.000060 machine_state m47 j84faa9!12
+6 12.000060 machine_state m48 j84faa9!12
+6 12.000060 machine_state m49 j84faa9!12
+6 12.000060 machine_state m50 j84faa9!12
+6 12.000060 machine_state m51 j84faa9!12
+6 12.000060 machine_state m52 j84faa9!12
+6 12.000060 machine_state m53 j84faa9!12
+6 12.000060 machine_state m54 j84faa9!12
+6 12.000060 machine_state m55 j84faa9!12
+6 12.000060 machine_state m56 j84faa9!12
+6 12.000060 machine_state m57 j84faa9!12
+6 12.000060 machine_state m58 j84faa9!12
+6 12.000060 machine_state m59 j84faa9!12
+6 12.000060 machine_state m60 j84faa9!12
+6 12.000060 machine_state m61 j84faa9!12
+6 12.000060 machine_state m62 j84faa9!12
+6 12.000060 machine_state m63 j84faa9!12
+6 12.000060 machine_state m64 j84faa9!12
+6 12.000060 machine_state m65 j84faa9!12
+6 12.000060 machine_state m66 j84faa9!12
+6 12.000060 machine_state m67 j84faa9!12
+6 12.000060 machine_state m68 j84faa9!12
+6 12.000060 machine_state m69 j84faa9!12
+6 12.000060 machine_state m70 j84faa9!12
+6 12.000060 machine_state m71 j84faa9!12
+6 12.000060 machine_state m72 j84faa9!12
+6 12.000060 machine_state m73 j84faa9!12
+6 12.000060 machine_state m74 j84faa9!12
+6 12.000060 machine_state m75 j84faa9!12
+6 12.000060 machine_state m76 j84faa9!12
+6 12.000060 machine_state m77 j84faa9!12
+6 12.000060 machine_state m78 j84faa9!12
+6 12.000060 machine_state m79 j84faa9!12
+6 12.000060 machine_state m80 j84faa9!12
+6 12.000060 machine_state m81 j84faa9!12
+6 12.000060 machine_state m82 j84faa9!12
+6 12.000060 machine_state m83 j84faa9!12
+6 12.000060 machine_state m84 j84faa9!12
+6 12.000060 machine_state m85 j84faa9!12
+6 12.000060 machine_state m86 j84faa9!12
+6 12.000060 machine_state m87 j84faa9!12
+6 12.000060 machine_state m88 j84faa9!12
+6 12.000060 machine_state m89 j84faa9!12
+6 12.000060 machine_state m90 j84faa9!12
+6 12.000060 machine_state m91 j84faa9!12
+6 12.000060 machine_state m92 j84faa9!12
+6 12.000060 machine_state m93 j84faa9!12
+6 12.000060 machine_state m94 j84faa9!12
+6 12.000060 machine_state m95 j84faa9!12
+6 12.000060 machine_state m96 j84faa9!12
+6 12.000060 machine_state m97 j84faa9!12
+6 12.000060 machine_state m98 j84faa9!12
+6 12.000060 machine_state m99 j84faa9!12
+6 12.000060 machine_state m100 j84faa9!12
+6 12.000060 machine_state m101 j84faa9!12
+6 12.000060 machine_state m102 j84faa9!12
+6 12.000060 machine_state m103 j84faa9!12
+6 12.000060 machine_state m104 j84faa9!12
+6 12.000060 machine_state m105 j84faa9!12
+6 12.000060 machine_state m106 j84faa9!12
+6 12.000060 machine_state m107 j84faa9!12
+6 12.000060 machine_state m108 j84faa9!12
+6 12.000060 machine_state m109 j84faa9!12
+6 12.000060 machine_state m110 j84faa9!12
+6 12.000060 machine_state m111 j84faa9!12
+6 12.000060 machine_state m112 j84faa9!12
+6 12.000060 machine_state m113 j84faa9!12
+6 12.000060 machine_state m114 j84faa9!12
+6 12.000060 machine_state m115 j84faa9!12
+6 12.000060 machine_state m116 j84faa9!12
+6 12.000060 machine_state m117 j84faa9!12
+6 12.000060 machine_state m118 j84faa9!12
+6 12.000060 machine_state m119 j84faa9!12
+6 12.000060 machine_state m120 j84faa9!12
+6 12.000060 machine_state m121 j84faa9!12
+6 12.000060 machine_state m122 j84faa9!12
+6 12.000060 machine_state m123 j84faa9!12
+6 12.000060 machine_state m124 j84faa9!12
+6 12.000060 machine_state m125 j84faa9!12
+6 12.000060 machine_state m126 j84faa9!12
+6 12.000060 machine_state m127 j84faa9!12
+6 12.000060 machine_state m128 j84faa9!12
+6 12.000060 machine_state m129 j84faa9!12
+6 12.000060 machine_state m130 j84faa9!12
+6 12.000060 machine_state m131 j84faa9!12
+6 12.000060 machine_state m132 j84faa9!12
+6 12.000060 machine_state m133 j84faa9!12
+6 12.000060 machine_state m134 j84faa9!12
+6 12.000060 machine_state m135 j84faa9!12
+6 12.000060 machine_state m136 j84faa9!12
+6 12.000060 machine_state m137 j84faa9!12
+6 12.000060 machine_state m138 j84faa9!12
+6 12.000060 machine_state m139 j84faa9!12
+6 12.000060 machine_state m140 j84faa9!12
+6 12.000060 machine_state m141 j84faa9!12
+6 12.000060 machine_state m142 j84faa9!12
+6 12.000060 machine_state m143 j84faa9!12
+6 12.000060 machine_state m144 j84faa9!12
+6 12.000060 machine_state m145 j84faa9!12
+6 12.000060 machine_state m146 j84faa9!12
+6 12.000060 machine_state m147 j84faa9!12
+6 12.000060 machine_state m148 j84faa9!12
+6 12.000060 machine_state m149 j84faa9!12
+6 12.000060 machine_state m150 j84faa9!12
+6 12.000060 machine_state m151 j84faa9!12
+6 12.000060 machine_state m152 j84faa9!12
+6 12.000060 machine_state m153 j84faa9!12
+6 12.000060 machine_state m154 j84faa9!12
+6 12.000060 machine_state m155 j84faa9!12
+6 12.000060 machine_state m156 j84faa9!12
+6 12.000060 machine_state m157 j84faa9!12
+6 12.000060 machine_state m158 j84faa9!12
+6 12.000060 machine_state m159 j84faa9!12
+6 12.000060 machine_state m160 j84faa9!12
+6 12.000060 machine_state m161 j84faa9!12
+6 12.000060 machine_state m162 j84faa9!12
+6 12.000060 machine_state m163 j84faa9!12
+6 12.000060 machine_state m164 j84faa9!12
+6 12.000060 machine_state m165 j84faa9!12
+6 12.000060 machine_state m166 j84faa9!12
+6 12.000060 machine_state m167 j84faa9!12
+6 12.000060 machine_state m168 j84faa9!12
+6 12.000060 machine_state m169 j84faa9!12
+6 12.000060 machine_state m170 j84faa9!12
+6 12.000060 machine_state m171 j84faa9!12
+6 12.000060 machine_state m172 j84faa9!12
+6 12.000060 machine_state m173 j84faa9!12
+6 12.000060 machine_state m174 j84faa9!12
+6 12.000060 machine_state m175 j84faa9!12
+6 12.000060 machine_state m176 j84faa9!12
+6 12.000060 machine_state m177 j84faa9!12
+6 12.000060 machine_state m178 j84faa9!12
+6 12.000060 machine_state m179 j84faa9!12
+6 12.000060 machine_state m180 j84faa9!12
+6 12.000060 machine_state m181 j84faa9!12
+6 12.000060 machine_state m182 j84faa9!12
+6 12.000060 machine_state m183 j84faa9!12
+6 12.000060 machine_state m184 j84faa9!12
+6 12.000060 machine_state m185 j84faa9!12
+6 12.000060 machine_state m186 j84faa9!12
+6 12.000060 machine_state m187 j84faa9!12
+6 12.000060 machine_state m188 j84faa9!12
+6 12.000060 machine_state m189 j84faa9!12
+6 12.000060 machine_state m190 j84faa9!12
+6 12.000060 machine_state m191 j84faa9!12
+6 12.000060 machine_state m192 j84faa9!12
+6 12.000060 machine_state m193 j84faa9!12
+6 12.000060 machine_state m194 j84faa9!12
+6 12.000060 machine_state m195 j84faa9!12
+6 12.000060 machine_state m196 j84faa9!12
+6 12.000060 machine_state m197 j84faa9!12
+6 12.000060 machine_state m198 j84faa9!12
+6 12.000060 machine_state m199 j84faa9!12
+6 12.000060 machine_state m200 j84faa9!12
+6 12.000060 machine_state m201 j84faa9!12
+6 12.000060 machine_state m202 j84faa9!12
+6 12.000060 machine_state m203 j84faa9!12
+6 12.000060 machine_state m204 j84faa9!12
+6 12.000060 machine_state m205 j84faa9!12
+6 12.000060 machine_state m206 j84faa9!12
+6 12.000060 machine_state m207 j84faa9!12
+6 12.000060 machine_state m208 j84faa9!12
+6 12.000060 machine_state m209 j84faa9!12
+6 12.000060 machine_state m210 j84faa9!12
+6 12.000060 machine_state m211 j84faa9!12
+6 12.000060 machine_state m212 j84faa9!12
+6 12.000060 machine_state m213 j84faa9!12
+6 12.000060 machine_state m214 j84faa9!12
+6 12.000060 machine_state m215 j84faa9!12
+6 12.000060 machine_state m216 j84faa9!12
+6 12.000060 machine_state m217 j84faa9!12
+6 12.000060 machine_state m218 j84faa9!12
+6 12.000060 machine_state m219 j84faa9!12
+6 12.000060 machine_state m220 j84faa9!12
+6 12.000060 machine_state m221 j84faa9!12
+6 12.000060 machine_state m222 j84faa9!12
+6 12.000060 machine_state m223 j84faa9!12
+6 12.000060 machine_state m224 j84faa9!12
+6 12.000060 machine_state m225 j84faa9!12
+6 12.000060 machine_state m226 j84faa9!12
+6 12.000060 machine_state m227 j84faa9!12
+6 12.000060 machine_state m228 j84faa9!12
+6 12.000060 machine_state m229 j84faa9!12
+6 12.000060 machine_state m230 j84faa9!12
+6 12.000060 machine_state m231 j84faa9!12
+6 12.000060 machine_state m232 j84faa9!12
+6 12.000060 machine_state m233 j84faa9!12
+6 12.000060 machine_state m234 j84faa9!12
+6 12.000060 machine_state m235 j84faa9!12
+6 12.000060 machine_state m236 j84faa9!12
+6 12.000060 machine_state m237 j84faa9!12
+6 12.000060 machine_state m238 j84faa9!12
+6 12.000060 machine_state m239 j84faa9!12
+6 12.000060 machine_state m240 j84faa9!12
+6 12.000060 machine_state m241 j84faa9!12
+6 12.000060 machine_state m242 j84faa9!12
+6 12.000060 machine_state m243 j84faa9!12
+6 12.000060 machine_state m244 j84faa9!12
+6 12.000060 machine_state m245 j84faa9!12
+6 12.000060 machine_state m246 j84faa9!12
+6 12.000060 machine_state m247 j84faa9!12
+6 12.000060 machine_state m248 j84faa9!12
+6 12.000060 machine_state m249 j84faa9!12
+6 12.000060 machine_state m250 j84faa9!12
+6 12.000060 machine_state m251 j84faa9!12
+6 12.000060 machine_state m252 j84faa9!12
+6 12.000060 machine_state m253 j84faa9!12
+6 12.000060 machine_state m254 j84faa9!12
+6 12.000060 machine_state m255 j84faa9!12
+6 30.102213 machine_state m0 w
+6 30.102213 machine_state m1 w
+6 30.102213 machine_state m2 w
+6 30.102213 machine_state m3 w
+6 30.102213 machine_state m4 w
+6 30.102213 machine_state m5 w
+6 30.102213 machine_state m6 w
+6 30.102213 machine_state m7 w
+6 30.102213 machine_state m8 w
+6 30.102213 machine_state m9 w
+6 30.102213 machine_state m10 w
+6 30.102213 machine_state m11 w
+6 30.102213 machine_state m12 w
+6 30.102213 machine_state m13 w
+6 30.102213 machine_state m14 w
+6 30.102213 machine_state m15 w
+6 30.102213 machine_state m16 w
+6 30.102213 machine_state m17 w
+6 30.102213 machine_state m18 w
+6 30.102213 machine_state m19 w
+6 30.102213 machine_state m20 w
+6 30.102213 machine_state m21 w
+6 30.102213 machine_state m22 w
+6 30.102213 machine_state m23 w
+6 30.102213 machine_state m24 w
+6 30.102213 machine_state m25 w
+6 30.102213 machine_state m26 w
+6 30.102213 machine_state m27 w
+6 30.102213 machine_state m28 w
+6 30.102213 machine_state m29 w
+6 30.102213 machine_state m30 w
+6 30.102213 machine_state m31 w
+6 30.102213 machine_state m32 w
+6 30.102213 machine_state m33 w
+6 30.102213 machine_state m34 w
+6 30.102213 machine_state m35 w
+6 30.102213 machine_state m36 w
+6 30.102213 machine_state m37 w
+6 30.102213 machine_state m38 w
+6 30.102213 machine_state m39 w
+6 30.102213 machine_state m40 w
+6 30.102213 machine_state m41 w
+6 30.102213 machine_state m42 w
+6 30.102213 machine_state m43 w
+6 30.102213 machine_state m44 w
+6 30.102213 machine_state m45 w
+6 30.102213 machine_state m46 w
+6 30.102213 machine_state m47 w
+6 30.102213 machine_state m48 w
+6 30.102213 machine_state m49 w
+6 30.102213 machine_state m50 w
+6 30.102213 machine_state m51 w
+6 30.102213 machine_state m52 w
+6 30.102213 machine_state m53 w
+6 30.102213 machine_state m54 w
+6 30.102213 machine_state m55 w
+6 30.102213 machine_state m56 w
+6 30.102213 machine_state m57 w
+6 30.102213 machine_state m58 w
+6 30.102213 machine_state m59 w
+6 30.102213 machine_state m60 w
+6 30.102213 machine_state m61 w
+6 30.102213 machine_state m62 w
+6 30.102213 machine_state m63 w
+6 30.102213 machine_state m64 w
+6 30.102213 machine_state m65 w
+6 30.102213 machine_state m66 w
+6 30.102213 machine_state m67 w
+6 30.102213 machine_state m68 w
+6 30.102213 machine_state m69 w
+6 30.102213 machine_state m70 w
+6 30.102213 machine_state m71 w
+6 30.102213 machine_state m72 w
+6 30.102213 machine_state m73 w
+6 30.102213 machine_state m74 w
+6 30.102213 machine_state m75 w
+6 30.102213 machine_state m76 w
+6 30.102213 machine_state m77 w
+6 30.102213 machine_state m78 w
+6 30.102213 machine_state m79 w
+6 30.102213 machine_state m80 w
+6 30.102213 machine_state m81 w
+6 30.102213 machine_state m82 w
+6 30.102213 machine_state m83 w
+6 30.102213 machine_state m84 w
+6 30.102213 machine_state m85 w
+6 30.102213 machine_state m86 w
+6 30.102213 machine_state m87 w
+6 30.102213 machine_state m88 w
+6 30.102213 machine_state m89 w
+6 30.102213 machine_state m90 w
+6 30.102213 machine_state m91 w
+6 30.102213 machine_state m92 w
+6 30.102213 machine_state m93 w
+6 30.102213 machine_state m94 w
+6 30.102213 machine_state m95 w
+6 30.102213 machine_state m96 w
+6 30.102213 machine_state m97 w
+6 30.102213 machine_state m98 w
+6 30.102213 machine_state m99 w
+6 30.102213 machine_state m100 w
+6 30.102213 machine_state m101 w
+6 30.102213 machine_state m102 w
+6 30.102213 machine_state m103 w
+6 30.102213 machine_state m104 w
+6 30.102213 machine_state m105 w
+6 30.102213 machine_state m106 w
+6 30.102213 machine_state m107 w
+6 30.102213 machine_state m108 w
+6 30.102213 machine_state m109 w
+6 30.102213 machine_state m110 w
+6 30.102213 machine_state m111 w
+6 30.102213 machine_state m112 w
+6 30.102213 machine_state m113 w
+6 30.102213 machine_state m114 w
+6 30.102213 machine_state m115 w
+6 30.102213 machine_state m116 w
+6 30.102213 machine_state m117 w
+6 30.102213 machine_state m118 w
+6 30.102213 machine_state m119 w
+6 30.102213 machine_state m120 w
+6 30.102213 machine_state m121 w
+6 30.102213 machine_state m122 w
+6 30.102213 machine_state m123 w
+6 30.102213 machine_state m124 w
+6 30.102213 machine_state m125 w
+6 30.102213 machine_state m126 w
+6 30.102213 machine_state m127 w
+6 30.102213 machine_state m128 w
+6 30.102213 machine_state m129 w
+6 30.102213 machine_state m130 w
+6 30.102213 machine_state m131 w
+6 30.102213 machine_state m132 w
+6 30.102213 machine_state m133 w
+6 30.102213 machine_state m134 w
+6 30.102213 machine_state m135 w
+6 30.102213 machine_state m136 w
+6 30.102213 machine_state m137 w
+6 30.102213 machine_state m138 w
+6 30.102213 machine_state m139 w
+6 30.102213 machine_state m140 w
+6 30.102213 machine_state m141 w
+6 30.102213 machine_state m142 w
+6 30.102213 machine_state m143 w
+6 30.102213 machine_state m144 w
+6 30.102213 machine_state m145 w
+6 30.102213 machine_state m146 w
+6 30.102213 machine_state m147 w
+6 30.102213 machine_state m148 w
+6 30.102213 machine_state m149 w
+6 30.102213 machine_state m150 w
+6 30.102213 machine_state m151 w
+6 30.102213 machine_state m152 w
+6 30.102213 machine_state m153 w
+6 30.102213 machine_state m154 w
+6 30.102213 machine_state m155 w
+6 30.102213 machine_state m156 w
+6 30.102213 machine_state m157 w
+6 30.102213 machine_state m158 w
+6 30.102213 machine_state m159 w
+6 30.102213 machine_state m160 w
+6 30.102213 machine_state m161 w
+6 30.102213 machine_state m162 w
+6 30.102213 machine_state m163 w
+6 30.102213 machine_state m164 w
+6 30.102213 machine_state m165 w
+6 30.102213 machine_state m166 w
+6 30.102213 machine_state m167 w
+6 30.102213 machine_state m168 w
+6 30.102213 machine_state m169 w
+6 30.102213 machine_state m170 w
+6 30.102213 machine_state m171 w
+6 30.102213 machine_state m172 w
+6 30.102213 machine_state m173 w
+6 30.102213 machine_state m174 w
+6 30.102213 machine_state m175 w
+6 30.102213 machine_state m176 w
+6 30.102213 machine_state m177 w
+6 30.102213 machine_state m178 w
+6 30.102213 machine_state m179 w
+6 30.102213 machine_state m180 w
+6 30.102213 machine_state m181 w
+6 30.102213 machine_state m182 w
+6 30.102213 machine_state m183 w
+6 30.102213 machine_state m184 w
+6 30.102213 machine_state m185 w
+6 30.102213 machine_state m186 w
+6 30.102213 machine_state m187 w
+6 30.102213 machine_state m188 w
+6 30.102213 machine_state m189 w
+6 30.102213 machine_state m190 w
+6 30.102213 machine_state m191 w
+6 30.102213 machine_state m192 w
+6 30.102213 machine_state m193 w
+6 30.102213 machine_state m194 w
+6 30.102213 machine_state m195 w
+6 30.102213 machine_state m196 w
+6 30.102213 machine_state m197 w
+6 30.102213 machine_state m198 w
+6 30.102213 machine_state m199 w
+6 30.102213 machine_state m200 w
+6 30.102213 machine_state m201 w
+6 30.102213 machine_state m202 w
+6 30.102213 machine_state m203 w
+6 30.102213 machine_state m204 w
+6 30.102213 machine_state m205 w
+6 30.102213 machine_state m206 w
+6 30.102213 machine_state m207 w
+6 30.102213 machine_state m208 w
+6 30.102213 machine_state m209 w
+6 30.102213 machine_state m210 w
+6 30.102213 machine_state m211 w
+6 30.102213 machine_state m212 w
+6 30.102213 machine_state m213 w
+6 30.102213 machine_state m214 w
+6 30.102213 machine_state m215 w
+6 30.102213 machine_state m216 w
+6 30.102213 machine_state m217 w
+6 30.102213 machine_state m218 w
+6 30.102213 machine_state m219 w
+6 30.102213 machine_state m220 w
+6 30.102213 machine_state m221 w
+6 30.102213 machine_state m222 w
+6 30.102213 machine_state m223 w
+6 30.102213 machine_state m224 w
+6 30.102213 machine_state m225 w
+6 30.102213 machine_state m226 w
+6 30.102213 machine_state m227 w
+6 30.102213 machine_state m228 w
+6 30.102213 machine_state m229 w
+6 30.102213 machine_state m230 w
+6 30.102213 machine_state m231 w
+6 30.102213 machine_state m232 w
+6 30.102213 machine_state m233 w
+6 30.102213 machine_state m234 w
+6 30.102213 machine_state m235 w
+6 30.102213 machine_state m236 w
+6 30.102213 machine_state m237 w
+6 30.102213 machine_state m238 w
+6 30.102213 machine_state m239 w
+6 30.102213 machine_state m240 w
+6 30.102213 machine_state m241 w
+6 30.102213 machine_state m242 w
+6 30.102213 machine_state m243 w
+6 30.102213 machine_state m244 w
+6 30.102213 machine_state m245 w
+6 30.102213 machine_state m246 w
+6 30.102213 machine_state m247 w
+6 30.102213 machine_state m248 w
+6 30.102213 machine_state m249 w
+6 30.102213 machine_state m250 w
+6 30.102213 machine_state m251 w
+6 30.102213 machine_state m252 w
+6 30.102213 machine_state m253 w
+6 30.102213 machine_state m254 w
+6 30.102213 machine_state m255 w
+5 j84faa9!13 machine_state "84faa9!13" "1.000000 0.000000 0.937500"
+6 30.102452 machine_state m0 j84faa9!13
+6 30.102452 machine_state m1 j84faa9!13
+6 30.102452 machine_state m2 j84faa9!13
+6 30.102452 machine_state m3 j84faa9!13
+5 j84faa9!14 machine_state "84faa9!14" "0.000000 0.156250 1.000000"
+6 30.102483 machine_state m4 j84faa9!14
+6 30.102483 machine_state m5 j84faa9!14
+6 30.102483 machine_state m6 j84faa9!14
+6 30.102483 machine_state m7 j84faa9!14
+6 30.102483 machine_state m8 j84faa9!14
+6 30.102483 machine_state m9 j84faa9!14
+6 30.102483 machine_state m10 j84faa9!14
+6 30.102483 machine_state m11 j84faa9!14
+6 30.102483 machine_state m12 j84faa9!14
+6 30.102483 machine_state m13 j84faa9!14
+6 30.102483 machine_state m14 j84faa9!14
+6 30.102483 machine_state m15 j84faa9!14
+6 30.102483 machine_state m16 j84faa9!14
+6 30.102483 machine_state m17 j84faa9!14
+6 30.102483 machine_state m18 j84faa9!14
+6 30.102483 machine_state m19 j84faa9!14
+5 j84faa9!15 machine_state "84faa9!15" "0.000000 0.718750 1.000000"
+6 30.102513 machine_state m20 j84faa9!15
+6 30.102513 machine_state m21 j84faa9!15
+6 30.102513 machine_state m22 j84faa9!15
+6 30.102513 machine_state m23 j84faa9!15
+6 30.102513 machine_state m24 j84faa9!15
+6 30.102513 machine_state m25 j84faa9!15
+6 30.102513 machine_state m26 j84faa9!15
+6 30.102513 machine_state m27 j84faa9!15
+6 30.102513 machine_state m28 j84faa9!15
+6 30.102513 machine_state m29 j84faa9!15
+6 30.102513 machine_state m30 j84faa9!15
+6 30.102513 machine_state m31 j84faa9!15
+6 30.102513 machine_state m32 j84faa9!15
+6 30.102513 machine_state m33 j84faa9!15
+6 30.102513 machine_state m34 j84faa9!15
+6 30.102513 machine_state m35 j84faa9!15
+6 30.102513 machine_state m36 j84faa9!15
+6 30.102513 machine_state m37 j84faa9!15
+6 30.102513 machine_state m38 j84faa9!15
+6 30.102513 machine_state m39 j84faa9!15
+6 30.102513 machine_state m40 j84faa9!15
+6 30.102513 machine_state m41 j84faa9!15
+6 30.102513 machine_state m42 j84faa9!15
+6 30.102513 machine_state m43 j84faa9!15
+6 30.102513 machine_state m44 j84faa9!15
+6 30.102513 machine_state m45 j84faa9!15
+6 30.102513 machine_state m46 j84faa9!15
+6 30.102513 machine_state m47 j84faa9!15
+6 30.102513 machine_state m48 j84faa9!15
+6 30.102513 machine_state m49 j84faa9!15
+6 30.102513 machine_state m50 j84faa9!15
+6 30.102513 machine_state m51 j84faa9!15
+6 30.102513 machine_state m52 j84faa9!15
+6 30.102513 machine_state m53 j84faa9!15
+6 30.102513 machine_state m54 j84faa9!15
+6 30.102513 machine_state m55 j84faa9!15
+6 30.102513 machine_state m56 j84faa9!15
+6 30.102513 machine_state m57 j84faa9!15
+6 30.102513 machine_state m58 j84faa9!15
+6 30.102513 machine_state m59 j84faa9!15
+6 30.102513 machine_state m60 j84faa9!15
+6 30.102513 machine_state m61 j84faa9!15
+6 30.102513 machine_state m62 j84faa9!15
+6 30.102513 machine_state m63 j84faa9!15
+6 30.102513 machine_state m64 j84faa9!15
+6 30.102513 machine_state m65 j84faa9!15
+6 30.102513 machine_state m66 j84faa9!15
+6 30.102513 machine_state m67 j84faa9!15
+6 30.102513 machine_state m68 j84faa9!15
+6 30.102513 machine_state m69 j84faa9!15
+6 30.102513 machine_state m70 j84faa9!15
+6 30.102513 machine_state m71 j84faa9!15
+6 30.102513 machine_state m72 j84faa9!15
+6 30.102513 machine_state m73 j84faa9!15
+6 30.102513 machine_state m74 j84faa9!15
+6 30.102513 machine_state m75 j84faa9!15
+6 30.102513 machine_state m76 j84faa9!15
+6 30.102513 machine_state m77 j84faa9!15
+6 30.102513 machine_state m78 j84faa9!15
+6 30.102513 machine_state m79 j84faa9!15
+6 30.102513 machine_state m80 j84faa9!15
+6 30.102513 machine_state m81 j84faa9!15
+6 30.102513 machine_state m82 j84faa9!15
+6 30.102513 machine_state m83 j84faa9!15
+5 j84faa9!16 machine_state "84faa9!16" "1.000000 0.000000 0.468750"
+6 30.102543 machine_state m84 j84faa9!16
+6 30.102543 machine_state m85 j84faa9!16
+6 30.102543 machine_state m86 j84faa9!16
+6 30.102543 machine_state m87 j84faa9!16
+5 j84faa9!17 machine_state "84faa9!17" "0.000000 1.000000 0.812500"
+6 30.102573 machine_state m88 j84faa9!17
+6 30.102573 machine_state m89 j84faa9!17
+6 30.102573 machine_state m90 j84faa9!17
+6 30.102573 machine_state m91 j84faa9!17
+6 30.102573 machine_state m92 j84faa9!17
+6 30.102573 machine_state m93 j84faa9!17
+6 30.102573 machine_state m94 j84faa9!17
+6 30.102573 machine_state m95 j84faa9!17
+6 30.102573 machine_state m96 j84faa9!17
+6 30.102573 machine_state m97 j84faa9!17
+6 30.102573 machine_state m98 j84faa9!17
+6 30.102573 machine_state m99 j84faa9!17
+6 30.102573 machine_state m100 j84faa9!17
+6 30.102573 machine_state m101 j84faa9!17
+6 30.102573 machine_state m102 j84faa9!17
+6 30.102573 machine_state m103 j84faa9!17
+5 j84faa9!18 machine_state "84faa9!18" "0.000000 0.906250 1.000000"
+6 30.102603 machine_state m104 j84faa9!18
+6 30.102603 machine_state m105 j84faa9!18
+6 30.102603 machine_state m106 j84faa9!18
+6 30.102603 machine_state m107 j84faa9!18
+6 30.102603 machine_state m108 j84faa9!18
+6 30.102603 machine_state m109 j84faa9!18
+6 30.102603 machine_state m110 j84faa9!18
+6 30.102603 machine_state m111 j84faa9!18
+6 30.102603 machine_state m112 j84faa9!18
+6 30.102603 machine_state m113 j84faa9!18
+6 30.102603 machine_state m114 j84faa9!18
+6 30.102603 machine_state m115 j84faa9!18
+6 30.102603 machine_state m116 j84faa9!18
+6 30.102603 machine_state m117 j84faa9!18
+6 30.102603 machine_state m118 j84faa9!18
+6 30.102603 machine_state m119 j84faa9!18
+6 30.102603 machine_state m120 j84faa9!18
+6 30.102603 machine_state m121 j84faa9!18
+6 30.102603 machine_state m122 j84faa9!18
+6 30.102603 machine_state m123 j84faa9!18
+6 30.102603 machine_state m124 j84faa9!18
+6 30.102603 machine_state m125 j84faa9!18
+6 30.102603 machine_state m126 j84faa9!18
+6 30.102603 machine_state m127 j84faa9!18
+6 30.102603 machine_state m128 j84faa9!18
+6 30.102603 machine_state m129 j84faa9!18
+6 30.102603 machine_state m130 j84faa9!18
+6 30.102603 machine_state m131 j84faa9!18
+6 30.102603 machine_state m132 j84faa9!18
+6 30.102603 machine_state m133 j84faa9!18
+6 30.102603 machine_state m134 j84faa9!18
+6 30.102603 machine_state m135 j84faa9!18
+6 30.102603 machine_state m136 j84faa9!18
+6 30.102603 machine_state m137 j84faa9!18
+6 30.102603 machine_state m138 j84faa9!18
+6 30.102603 machine_state m139 j84faa9!18
+6 30.102603 machine_state m140 j84faa9!18
+6 30.102603 machine_state m141 j84faa9!18
+6 30.102603 machine_state m142 j84faa9!18
+6 30.102603 machine_state m143 j84faa9!18
+6 30.102603 machine_state m144 j84faa9!18
+6 30.102603 machine_state m145 j84faa9!18
+6 30.102603 machine_state m146 j84faa9!18
+6 30.102603 machine_state m147 j84faa9!18
+6 30.102603 machine_state m148 j84faa9!18
+6 30.102603 machine_state m149 j84faa9!18
+6 30.102603 machine_state m150 j84faa9!18
+6 30.102603 machine_state m151 j84faa9!18
+6 30.102603 machine_state m152 j84faa9!18
+6 30.102603 machine_state m153 j84faa9!18
+6 30.102603 machine_state m154 j84faa9!18
+6 30.102603 machine_state m155 j84faa9!18
+6 30.102603 machine_state m156 j84faa9!18
+6 30.102603 machine_state m157 j84faa9!18
+6 30.102603 machine_state m158 j84faa9!18
+6 30.102603 machine_state m159 j84faa9!18
+6 30.102603 machine_state m160 j84faa9!18
+6 30.102603 machine_state m161 j84faa9!18
+6 30.102603 machine_state m162 j84faa9!18
+6 30.102603 machine_state m163 j84faa9!18
+6 30.102603 machine_state m164 j84faa9!18
+6 30.102603 machine_state m165 j84faa9!18
+6 30.102603 machine_state m166 j84faa9!18
+6 30.102603 machine_state m167 j84faa9!18
+5 j84faa9!20 machine_state "84faa9!20" "0.218750 0.000000 1.000000"
+6 30.102634 machine_state m168 j84faa9!20
+6 30.102634 machine_state m169 j84faa9!20
+6 30.102634 machine_state m170 j84faa9!20
+6 30.102634 machine_state m171 j84faa9!20
+5 j84faa9!21 machine_state "84faa9!21" "0.031250 1.000000 0.000000"
+6 30.102664 machine_state m172 j84faa9!21
+6 30.102664 machine_state m173 j84faa9!21
+6 30.102664 machine_state m174 j84faa9!21
+6 30.102664 machine_state m175 j84faa9!21
+6 30.102664 machine_state m176 j84faa9!21
+6 30.102664 machine_state m177 j84faa9!21
+6 30.102664 machine_state m178 j84faa9!21
+6 30.102664 machine_state m179 j84faa9!21
+6 30.102664 machine_state m180 j84faa9!21
+6 30.102664 machine_state m181 j84faa9!21
+6 30.102664 machine_state m182 j84faa9!21
+6 30.102664 machine_state m183 j84faa9!21
+6 30.102664 machine_state m184 j84faa9!21
+6 30.102664 machine_state m185 j84faa9!21
+6 30.102664 machine_state m186 j84faa9!21
+6 30.102664 machine_state m187 j84faa9!21
+6 30.350562 machine_state m4 w
+6 30.350562 machine_state m5 w
+6 30.350562 machine_state m6 w
+6 30.350562 machine_state m7 w
+6 30.350562 machine_state m8 w
+6 30.350562 machine_state m9 w
+6 30.350562 machine_state m10 w
+6 30.350562 machine_state m11 w
+6 30.350562 machine_state m12 w
+6 30.350562 machine_state m13 w
+6 30.350562 machine_state m14 w
+6 30.350562 machine_state m15 w
+6 30.350562 machine_state m16 w
+6 30.350562 machine_state m17 w
+6 30.350562 machine_state m18 w
+6 30.350562 machine_state m19 w
+6 30.409524 machine_state m20 w
+6 30.409524 machine_state m21 w
+6 30.409524 machine_state m22 w
+6 30.409524 machine_state m23 w
+6 30.409524 machine_state m24 w
+6 30.409524 machine_state m25 w
+6 30.409524 machine_state m26 w
+6 30.409524 machine_state m27 w
+6 30.409524 machine_state m28 w
+6 30.409524 machine_state m29 w
+6 30.409524 machine_state m30 w
+6 30.409524 machine_state m31 w
+6 30.409524 machine_state m32 w
+6 30.409524 machine_state m33 w
+6 30.409524 machine_state m34 w
+6 30.409524 machine_state m35 w
+6 30.409524 machine_state m36 w
+6 30.409524 machine_state m37 w
+6 30.409524 machine_state m38 w
+6 30.409524 machine_state m39 w
+6 30.409524 machine_state m40 w
+6 30.409524 machine_state m41 w
+6 30.409524 machine_state m42 w
+6 30.409524 machine_state m43 w
+6 30.409524 machine_state m44 w
+6 30.409524 machine_state m45 w
+6 30.409524 machine_state m46 w
+6 30.409524 machine_state m47 w
+6 30.409524 machine_state m48 w
+6 30.409524 machine_state m49 w
+6 30.409524 machine_state m50 w
+6 30.409524 machine_state m51 w
+6 30.409524 machine_state m52 w
+6 30.409524 machine_state m53 w
+6 30.409524 machine_state m54 w
+6 30.409524 machine_state m55 w
+6 30.409524 machine_state m56 w
+6 30.409524 machine_state m57 w
+6 30.409524 machine_state m58 w
+6 30.409524 machine_state m59 w
+6 30.409524 machine_state m60 w
+6 30.409524 machine_state m61 w
+6 30.409524 machine_state m62 w
+6 30.409524 machine_state m63 w
+6 30.409524 machine_state m64 w
+6 30.409524 machine_state m65 w
+6 30.409524 machine_state m66 w
+6 30.409524 machine_state m67 w
+6 30.409524 machine_state m68 w
+6 30.409524 machine_state m69 w
+6 30.409524 machine_state m70 w
+6 30.409524 machine_state m71 w
+6 30.409524 machine_state m72 w
+6 30.409524 machine_state m73 w
+6 30.409524 machine_state m74 w
+6 30.409524 machine_state m75 w
+6 30.409524 machine_state m76 w
+6 30.409524 machine_state m77 w
+6 30.409524 machine_state m78 w
+6 30.409524 machine_state m79 w
+6 30.409524 machine_state m80 w
+6 30.409524 machine_state m81 w
+6 30.409524 machine_state m82 w
+6 30.409524 machine_state m83 w
+6 30.700898 machine_state m0 w
+6 30.700898 machine_state m1 w
+6 30.700898 machine_state m2 w
+6 30.700898 machine_state m3 w
+6 30.827319 machine_state m84 w
+6 30.827319 machine_state m85 w
+6 30.827319 machine_state m86 w
+6 30.827319 machine_state m87 w
+6 31.325983 machine_state m88 w
+6 31.325983 machine_state m89 w
+6 31.325983 machine_state m90 w
+6 31.325983 machine_state m91 w
+6 31.325983 machine_state m92 w
+6 31.325983 machine_state m93 w
+6 31.325983 machine_state m94 w
+6 31.325983 machine_state m95 w
+6 31.325983 machine_state m96 w
+6 31.325983 machine_state m97 w
+6 31.325983 machine_state m98 w
+6 31.325983 machine_state m99 w
+6 31.325983 machine_state m100 w
+6 31.325983 machine_state m101 w
+6 31.325983 machine_state m102 w
+6 31.325983 machine_state m103 w
+6 31.378725 machine_state m168 w
+6 31.378725 machine_state m169 w
+6 31.378725 machine_state m170 w
+6 31.378725 machine_state m171 w
+6 31.594353 machine_state m104 w
+6 31.594353 machine_state m105 w
+6 31.594353 machine_state m106 w
+6 31.594353 machine_state m107 w
+6 31.594353 machine_state m108 w
+6 31.594353 machine_state m109 w
+6 31.594353 machine_state m110 w
+6 31.594353 machine_state m111 w
+6 31.594353 machine_state m112 w
+6 31.594353 machine_state m113 w
+6 31.594353 machine_state m114 w
+6 31.594353 machine_state m115 w
+6 31.594353 machine_state m116 w
+6 31.594353 machine_state m117 w
+6 31.594353 machine_state m118 w
+6 31.594353 machine_state m119 w
+6 31.594353 machine_state m120 w
+6 31.594353 machine_state m121 w
+6 31.594353 machine_state m122 w
+6 31.594353 machine_state m123 w
+6 31.594353 machine_state m124 w
+6 31.594353 machine_state m125 w
+6 31.594353 machine_state m126 w
+6 31.594353 machine_state m127 w
+6 31.594353 machine_state m128 w
+6 31.594353 machine_state m129 w
+6 31.594353 machine_state m130 w
+6 31.594353 machine_state m131 w
+6 31.594353 machine_state m132 w
+6 31.594353 machine_state m133 w
+6 31.594353 machine_state m134 w
+6 31.594353 machine_state m135 w
+6 31.594353 machine_state m136 w
+6 31.594353 machine_state m137 w
+6 31.594353 machine_state m138 w
+6 31.594353 machine_state m139 w
+6 31.594353 machine_state m140 w
+6 31.594353 machine_state m141 w
+6 31.594353 machine_state m142 w
+6 31.594353 machine_state m143 w
+6 31.594353 machine_state m144 w
+6 31.594353 machine_state m145 w
+6 31.594353 machine_state m146 w
+6 31.594353 machine_state m147 w
+6 31.594353 machine_state m148 w
+6 31.594353 machine_state m149 w
+6 31.594353 machine_state m150 w
+6 31.594353 machine_state m151 w
+6 31.594353 machine_state m152 w
+6 31.594353 machine_state m153 w
+6 31.594353 machine_state m154 w
+6 31.594353 machine_state m155 w
+6 31.594353 machine_state m156 w
+6 31.594353 machine_state m157 w
+6 31.594353 machine_state m158 w
+6 31.594353 machine_state m159 w
+6 31.594353 machine_state m160 w
+6 31.594353 machine_state m161 w
+6 31.594353 machine_state m162 w
+6 31.594353 machine_state m163 w
+6 31.594353 machine_state m164 w
+6 31.594353 machine_state m165 w
+6 31.594353 machine_state m166 w
+6 31.594353 machine_state m167 w
+6 31.902031 machine_state m172 w
+6 31.902031 machine_state m173 w
+6 31.902031 machine_state m174 w
+6 31.902031 machine_state m175 w
+6 31.902031 machine_state m176 w
+6 31.902031 machine_state m177 w
+6 31.902031 machine_state m178 w
+6 31.902031 machine_state m179 w
+6 31.902031 machine_state m180 w
+6 31.902031 machine_state m181 w
+6 31.902031 machine_state m182 w
+6 31.902031 machine_state m183 w
+6 31.902031 machine_state m184 w
+6 31.902031 machine_state m185 w
+6 31.902031 machine_state m186 w
+6 31.902031 machine_state m187 w
+5 j84faa9!19 machine_state "84faa9!19" "0.000000 1.000000 0.906250"
+6 31.902271 machine_state m0 j84faa9!19
+6 31.902271 machine_state m1 j84faa9!19
+6 31.902271 machine_state m2 j84faa9!19
+6 31.902271 machine_state m3 j84faa9!19
+6 31.902271 machine_state m4 j84faa9!19
+6 31.902271 machine_state m5 j84faa9!19
+6 31.902271 machine_state m6 j84faa9!19
+6 31.902271 machine_state m7 j84faa9!19
+6 31.902271 machine_state m8 j84faa9!19
+6 31.902271 machine_state m9 j84faa9!19
+6 31.902271 machine_state m10 j84faa9!19
+6 31.902271 machine_state m11 j84faa9!19
+6 31.902271 machine_state m12 j84faa9!19
+6 31.902271 machine_state m13 j84faa9!19
+6 31.902271 machine_state m14 j84faa9!19
+6 31.902271 machine_state m15 j84faa9!19
+6 31.902271 machine_state m16 j84faa9!19
+6 31.902271 machine_state m17 j84faa9!19
+6 31.902271 machine_state m18 j84faa9!19
+6 31.902271 machine_state m19 j84faa9!19
+6 31.902271 machine_state m20 j84faa9!19
+6 31.902271 machine_state m21 j84faa9!19
+6 31.902271 machine_state m22 j84faa9!19
+6 31.902271 machine_state m23 j84faa9!19
+6 31.902271 machine_state m24 j84faa9!19
+6 31.902271 machine_state m25 j84faa9!19
+6 31.902271 machine_state m26 j84faa9!19
+6 31.902271 machine_state m27 j84faa9!19
+6 31.902271 machine_state m28 j84faa9!19
+6 31.902271 machine_state m29 j84faa9!19
+6 31.902271 machine_state m30 j84faa9!19
+6 31.902271 machine_state m31 j84faa9!19
+6 31.902271 machine_state m32 j84faa9!19
+6 31.902271 machine_state m33 j84faa9!19
+6 31.902271 machine_state m34 j84faa9!19
+6 31.902271 machine_state m35 j84faa9!19
+6 31.902271 machine_state m36 j84faa9!19
+6 31.902271 machine_state m37 j84faa9!19
+6 31.902271 machine_state m38 j84faa9!19
+6 31.902271 machine_state m39 j84faa9!19
+6 31.902271 machine_state m40 j84faa9!19
+6 31.902271 machine_state m41 j84faa9!19
+6 31.902271 machine_state m42 j84faa9!19
+6 31.902271 machine_state m43 j84faa9!19
+6 31.902271 machine_state m44 j84faa9!19
+6 31.902271 machine_state m45 j84faa9!19
+6 31.902271 machine_state m46 j84faa9!19
+6 31.902271 machine_state m47 j84faa9!19
+6 31.902271 machine_state m48 j84faa9!19
+6 31.902271 machine_state m49 j84faa9!19
+6 31.902271 machine_state m50 j84faa9!19
+6 31.902271 machine_state m51 j84faa9!19
+6 31.902271 machine_state m52 j84faa9!19
+6 31.902271 machine_state m53 j84faa9!19
+6 31.902271 machine_state m54 j84faa9!19
+6 31.902271 machine_state m55 j84faa9!19
+6 31.902271 machine_state m56 j84faa9!19
+6 31.902271 machine_state m57 j84faa9!19
+6 31.902271 machine_state m58 j84faa9!19
+6 31.902271 machine_state m59 j84faa9!19
+6 31.902271 machine_state m60 j84faa9!19
+6 31.902271 machine_state m61 j84faa9!19
+6 31.902271 machine_state m62 j84faa9!19
+6 31.902271 machine_state m63 j84faa9!19
+6 31.902271 machine_state m64 j84faa9!19
+6 31.902271 machine_state m65 j84faa9!19
+6 31.902271 machine_state m66 j84faa9!19
+6 31.902271 machine_state m67 j84faa9!19
+6 31.902271 machine_state m68 j84faa9!19
+6 31.902271 machine_state m69 j84faa9!19
+6 31.902271 machine_state m70 j84faa9!19
+6 31.902271 machine_state m71 j84faa9!19
+6 31.902271 machine_state m72 j84faa9!19
+6 31.902271 machine_state m73 j84faa9!19
+6 31.902271 machine_state m74 j84faa9!19
+6 31.902271 machine_state m75 j84faa9!19
+6 31.902271 machine_state m76 j84faa9!19
+6 31.902271 machine_state m77 j84faa9!19
+6 31.902271 machine_state m78 j84faa9!19
+6 31.902271 machine_state m79 j84faa9!19
+6 31.902271 machine_state m80 j84faa9!19
+6 31.902271 machine_state m81 j84faa9!19
+6 31.902271 machine_state m82 j84faa9!19
+6 31.902271 machine_state m83 j84faa9!19
+6 31.902271 machine_state m84 j84faa9!19
+6 31.902271 machine_state m85 j84faa9!19
+6 31.902271 machine_state m86 j84faa9!19
+6 31.902271 machine_state m87 j84faa9!19
+6 31.902271 machine_state m88 j84faa9!19
+6 31.902271 machine_state m89 j84faa9!19
+6 31.902271 machine_state m90 j84faa9!19
+6 31.902271 machine_state m91 j84faa9!19
+6 31.902271 machine_state m92 j84faa9!19
+6 31.902271 machine_state m93 j84faa9!19
+6 31.902271 machine_state m94 j84faa9!19
+6 31.902271 machine_state m95 j84faa9!19
+6 31.902271 machine_state m96 j84faa9!19
+6 31.902271 machine_state m97 j84faa9!19
+6 31.902271 machine_state m98 j84faa9!19
+6 31.902271 machine_state m99 j84faa9!19
+6 31.902271 machine_state m100 j84faa9!19
+6 31.902271 machine_state m101 j84faa9!19
+6 31.902271 machine_state m102 j84faa9!19
+6 31.902271 machine_state m103 j84faa9!19
+6 31.902271 machine_state m104 j84faa9!19
+6 31.902271 machine_state m105 j84faa9!19
+6 31.902271 machine_state m106 j84faa9!19
+6 31.902271 machine_state m107 j84faa9!19
+6 31.902271 machine_state m108 j84faa9!19
+6 31.902271 machine_state m109 j84faa9!19
+6 31.902271 machine_state m110 j84faa9!19
+6 31.902271 machine_state m111 j84faa9!19
+6 31.902271 machine_state m112 j84faa9!19
+6 31.902271 machine_state m113 j84faa9!19
+6 31.902271 machine_state m114 j84faa9!19
+6 31.902271 machine_state m115 j84faa9!19
+6 31.902271 machine_state m116 j84faa9!19
+6 31.902271 machine_state m117 j84faa9!19
+6 31.902271 machine_state m118 j84faa9!19
+6 31.902271 machine_state m119 j84faa9!19
+6 31.902271 machine_state m120 j84faa9!19
+6 31.902271 machine_state m121 j84faa9!19
+6 31.902271 machine_state m122 j84faa9!19
+6 31.902271 machine_state m123 j84faa9!19
+6 31.902271 machine_state m124 j84faa9!19
+6 31.902271 machine_state m125 j84faa9!19
+6 31.902271 machine_state m126 j84faa9!19
+6 31.902271 machine_state m127 j84faa9!19
+6 31.902271 machine_state m128 j84faa9!19
+6 31.902271 machine_state m129 j84faa9!19
+6 31.902271 machine_state m130 j84faa9!19
+6 31.902271 machine_state m131 j84faa9!19
+6 31.902271 machine_state m132 j84faa9!19
+6 31.902271 machine_state m133 j84faa9!19
+6 31.902271 machine_state m134 j84faa9!19
+6 31.902271 machine_state m135 j84faa9!19
+6 31.902271 machine_state m136 j84faa9!19
+6 31.902271 machine_state m137 j84faa9!19
+6 31.902271 machine_state m138 j84faa9!19
+6 31.902271 machine_state m139 j84faa9!19
+6 31.902271 machine_state m140 j84faa9!19
+6 31.902271 machine_state m141 j84faa9!19
+6 31.902271 machine_state m142 j84faa9!19
+6 31.902271 machine_state m143 j84faa9!19
+6 31.902271 machine_state m144 j84faa9!19
+6 31.902271 machine_state m145 j84faa9!19
+6 31.902271 machine_state m146 j84faa9!19
+6 31.902271 machine_state m147 j84faa9!19
+6 31.902271 machine_state m148 j84faa9!19
+6 31.902271 machine_state m149 j84faa9!19
+6 31.902271 machine_state m150 j84faa9!19
+6 31.902271 machine_state m151 j84faa9!19
+6 31.902271 machine_state m152 j84faa9!19
+6 31.902271 machine_state m153 j84faa9!19
+6 31.902271 machine_state m154 j84faa9!19
+6 31.902271 machine_state m155 j84faa9!19
+6 31.902271 machine_state m156 j84faa9!19
+6 31.902271 machine_state m157 j84faa9!19
+6 31.902271 machine_state m158 j84faa9!19
+6 31.902271 machine_state m159 j84faa9!19
+6 31.902271 machine_state m160 j84faa9!19
+6 31.902271 machine_state m161 j84faa9!19
+6 31.902271 machine_state m162 j84faa9!19
+6 31.902271 machine_state m163 j84faa9!19
+6 31.902271 machine_state m164 j84faa9!19
+6 31.902271 machine_state m165 j84faa9!19
+6 31.902271 machine_state m166 j84faa9!19
+6 31.902271 machine_state m167 j84faa9!19
+6 31.902271 machine_state m168 j84faa9!19
+6 31.902271 machine_state m169 j84faa9!19
+6 31.902271 machine_state m170 j84faa9!19
+6 31.902271 machine_state m171 j84faa9!19
+6 31.902271 machine_state m172 j84faa9!19
+6 31.902271 machine_state m173 j84faa9!19
+6 31.902271 machine_state m174 j84faa9!19
+6 31.902271 machine_state m175 j84faa9!19
+6 31.902271 machine_state m176 j84faa9!19
+6 31.902271 machine_state m177 j84faa9!19
+6 31.902271 machine_state m178 j84faa9!19
+6 31.902271 machine_state m179 j84faa9!19
+6 31.902271 machine_state m180 j84faa9!19
+6 31.902271 machine_state m181 j84faa9!19
+6 31.902271 machine_state m182 j84faa9!19
+6 31.902271 machine_state m183 j84faa9!19
+6 31.902271 machine_state m184 j84faa9!19
+6 31.902271 machine_state m185 j84faa9!19
+6 31.902271 machine_state m186 j84faa9!19
+6 31.902271 machine_state m187 j84faa9!19
+6 31.902271 machine_state m188 j84faa9!19
+6 31.902271 machine_state m189 j84faa9!19
+6 31.902271 machine_state m190 j84faa9!19
+6 31.902271 machine_state m191 j84faa9!19
+6 31.902271 machine_state m192 j84faa9!19
+6 31.902271 machine_state m193 j84faa9!19
+6 31.902271 machine_state m194 j84faa9!19
+6 31.902271 machine_state m195 j84faa9!19
+6 31.902271 machine_state m196 j84faa9!19
+6 31.902271 machine_state m197 j84faa9!19
+6 31.902271 machine_state m198 j84faa9!19
+6 31.902271 machine_state m199 j84faa9!19
+6 31.902271 machine_state m200 j84faa9!19
+6 31.902271 machine_state m201 j84faa9!19
+6 31.902271 machine_state m202 j84faa9!19
+6 31.902271 machine_state m203 j84faa9!19
+6 31.902271 machine_state m204 j84faa9!19
+6 31.902271 machine_state m205 j84faa9!19
+6 31.902271 machine_state m206 j84faa9!19
+6 31.902271 machine_state m207 j84faa9!19
+6 31.902271 machine_state m208 j84faa9!19
+6 31.902271 machine_state m209 j84faa9!19
+6 31.902271 machine_state m210 j84faa9!19
+6 31.902271 machine_state m211 j84faa9!19
+6 31.902271 machine_state m212 j84faa9!19
+6 31.902271 machine_state m213 j84faa9!19
+6 31.902271 machine_state m214 j84faa9!19
+6 31.902271 machine_state m215 j84faa9!19
+6 31.902271 machine_state m216 j84faa9!19
+6 31.902271 machine_state m217 j84faa9!19
+6 31.902271 machine_state m218 j84faa9!19
+6 31.902271 machine_state m219 j84faa9!19
+6 31.902271 machine_state m220 j84faa9!19
+6 31.902271 machine_state m221 j84faa9!19
+6 31.902271 machine_state m222 j84faa9!19
+6 31.902271 machine_state m223 j84faa9!19
+6 31.902271 machine_state m224 j84faa9!19
+6 31.902271 machine_state m225 j84faa9!19
+6 31.902271 machine_state m226 j84faa9!19
+6 31.902271 machine_state m227 j84faa9!19
+6 31.902271 machine_state m228 j84faa9!19
+6 31.902271 machine_state m229 j84faa9!19
+6 31.902271 machine_state m230 j84faa9!19
+6 31.902271 machine_state m231 j84faa9!19
+6 31.902271 machine_state m232 j84faa9!19
+6 31.902271 machine_state m233 j84faa9!19
+6 31.902271 machine_state m234 j84faa9!19
+6 31.902271 machine_state m235 j84faa9!19
+6 31.902271 machine_state m236 j84faa9!19
+6 31.902271 machine_state m237 j84faa9!19
+6 31.902271 machine_state m238 j84faa9!19
+6 31.902271 machine_state m239 j84faa9!19
+6 31.902271 machine_state m240 j84faa9!19
+6 31.902271 machine_state m241 j84faa9!19
+6 31.902271 machine_state m242 j84faa9!19
+6 31.902271 machine_state m243 j84faa9!19
+6 31.902271 machine_state m244 j84faa9!19
+6 31.902271 machine_state m245 j84faa9!19
+6 31.902271 machine_state m246 j84faa9!19
+6 31.902271 machine_state m247 j84faa9!19
+6 31.902271 machine_state m248 j84faa9!19
+6 31.902271 machine_state m249 j84faa9!19
+6 31.902271 machine_state m250 j84faa9!19
+6 31.902271 machine_state m251 j84faa9!19
+6 31.902271 machine_state m252 j84faa9!19
+6 31.902271 machine_state m253 j84faa9!19
+6 31.902271 machine_state m254 j84faa9!19
+6 31.902271 machine_state m255 j84faa9!19
+6 35.477722 machine_state m0 w
+6 35.477722 machine_state m1 w
+6 35.477722 machine_state m2 w
+6 35.477722 machine_state m3 w
+6 35.477722 machine_state m4 w
+6 35.477722 machine_state m5 w
+6 35.477722 machine_state m6 w
+6 35.477722 machine_state m7 w
+6 35.477722 machine_state m8 w
+6 35.477722 machine_state m9 w
+6 35.477722 machine_state m10 w
+6 35.477722 machine_state m11 w
+6 35.477722 machine_state m12 w
+6 35.477722 machine_state m13 w
+6 35.477722 machine_state m14 w
+6 35.477722 machine_state m15 w
+6 35.477722 machine_state m16 w
+6 35.477722 machine_state m17 w
+6 35.477722 machine_state m18 w
+6 35.477722 machine_state m19 w
+6 35.477722 machine_state m20 w
+6 35.477722 machine_state m21 w
+6 35.477722 machine_state m22 w
+6 35.477722 machine_state m23 w
+6 35.477722 machine_state m24 w
+6 35.477722 machine_state m25 w
+6 35.477722 machine_state m26 w
+6 35.477722 machine_state m27 w
+6 35.477722 machine_state m28 w
+6 35.477722 machine_state m29 w
+6 35.477722 machine_state m30 w
+6 35.477722 machine_state m31 w
+6 35.477722 machine_state m32 w
+6 35.477722 machine_state m33 w
+6 35.477722 machine_state m34 w
+6 35.477722 machine_state m35 w
+6 35.477722 machine_state m36 w
+6 35.477722 machine_state m37 w
+6 35.477722 machine_state m38 w
+6 35.477722 machine_state m39 w
+6 35.477722 machine_state m40 w
+6 35.477722 machine_state m41 w
+6 35.477722 machine_state m42 w
+6 35.477722 machine_state m43 w
+6 35.477722 machine_state m44 w
+6 35.477722 machine_state m45 w
+6 35.477722 machine_state m46 w
+6 35.477722 machine_state m47 w
+6 35.477722 machine_state m48 w
+6 35.477722 machine_state m49 w
+6 35.477722 machine_state m50 w
+6 35.477722 machine_state m51 w
+6 35.477722 machine_state m52 w
+6 35.477722 machine_state m53 w
+6 35.477722 machine_state m54 w
+6 35.477722 machine_state m55 w
+6 35.477722 machine_state m56 w
+6 35.477722 machine_state m57 w
+6 35.477722 machine_state m58 w
+6 35.477722 machine_state m59 w
+6 35.477722 machine_state m60 w
+6 35.477722 machine_state m61 w
+6 35.477722 machine_state m62 w
+6 35.477722 machine_state m63 w
+6 35.477722 machine_state m64 w
+6 35.477722 machine_state m65 w
+6 35.477722 machine_state m66 w
+6 35.477722 machine_state m67 w
+6 35.477722 machine_state m68 w
+6 35.477722 machine_state m69 w
+6 35.477722 machine_state m70 w
+6 35.477722 machine_state m71 w
+6 35.477722 machine_state m72 w
+6 35.477722 machine_state m73 w
+6 35.477722 machine_state m74 w
+6 35.477722 machine_state m75 w
+6 35.477722 machine_state m76 w
+6 35.477722 machine_state m77 w
+6 35.477722 machine_state m78 w
+6 35.477722 machine_state m79 w
+6 35.477722 machine_state m80 w
+6 35.477722 machine_state m81 w
+6 35.477722 machine_state m82 w
+6 35.477722 machine_state m83 w
+6 35.477722 machine_state m84 w
+6 35.477722 machine_state m85 w
+6 35.477722 machine_state m86 w
+6 35.477722 machine_state m87 w
+6 35.477722 machine_state m88 w
+6 35.477722 machine_state m89 w
+6 35.477722 machine_state m90 w
+6 35.477722 machine_state m91 w
+6 35.477722 machine_state m92 w
+6 35.477722 machine_state m93 w
+6 35.477722 machine_state m94 w
+6 35.477722 machine_state m95 w
+6 35.477722 machine_state m96 w
+6 35.477722 machine_state m97 w
+6 35.477722 machine_state m98 w
+6 35.477722 machine_state m99 w
+6 35.477722 machine_state m100 w
+6 35.477722 machine_state m101 w
+6 35.477722 machine_state m102 w
+6 35.477722 machine_state m103 w
+6 35.477722 machine_state m104 w
+6 35.477722 machine_state m105 w
+6 35.477722 machine_state m106 w
+6 35.477722 machine_state m107 w
+6 35.477722 machine_state m108 w
+6 35.477722 machine_state m109 w
+6 35.477722 machine_state m110 w
+6 35.477722 machine_state m111 w
+6 35.477722 machine_state m112 w
+6 35.477722 machine_state m113 w
+6 35.477722 machine_state m114 w
+6 35.477722 machine_state m115 w
+6 35.477722 machine_state m116 w
+6 35.477722 machine_state m117 w
+6 35.477722 machine_state m118 w
+6 35.477722 machine_state m119 w
+6 35.477722 machine_state m120 w
+6 35.477722 machine_state m121 w
+6 35.477722 machine_state m122 w
+6 35.477722 machine_state m123 w
+6 35.477722 machine_state m124 w
+6 35.477722 machine_state m125 w
+6 35.477722 machine_state m126 w
+6 35.477722 machine_state m127 w
+6 35.477722 machine_state m128 w
+6 35.477722 machine_state m129 w
+6 35.477722 machine_state m130 w
+6 35.477722 machine_state m131 w
+6 35.477722 machine_state m132 w
+6 35.477722 machine_state m133 w
+6 35.477722 machine_state m134 w
+6 35.477722 machine_state m135 w
+6 35.477722 machine_state m136 w
+6 35.477722 machine_state m137 w
+6 35.477722 machine_state m138 w
+6 35.477722 machine_state m139 w
+6 35.477722 machine_state m140 w
+6 35.477722 machine_state m141 w
+6 35.477722 machine_state m142 w
+6 35.477722 machine_state m143 w
+6 35.477722 machine_state m144 w
+6 35.477722 machine_state m145 w
+6 35.477722 machine_state m146 w
+6 35.477722 machine_state m147 w
+6 35.477722 machine_state m148 w
+6 35.477722 machine_state m149 w
+6 35.477722 machine_state m150 w
+6 35.477722 machine_state m151 w
+6 35.477722 machine_state m152 w
+6 35.477722 machine_state m153 w
+6 35.477722 machine_state m154 w
+6 35.477722 machine_state m155 w
+6 35.477722 machine_state m156 w
+6 35.477722 machine_state m157 w
+6 35.477722 machine_state m158 w
+6 35.477722 machine_state m159 w
+6 35.477722 machine_state m160 w
+6 35.477722 machine_state m161 w
+6 35.477722 machine_state m162 w
+6 35.477722 machine_state m163 w
+6 35.477722 machine_state m164 w
+6 35.477722 machine_state m165 w
+6 35.477722 machine_state m166 w
+6 35.477722 machine_state m167 w
+6 35.477722 machine_state m168 w
+6 35.477722 machine_state m169 w
+6 35.477722 machine_state m170 w
+6 35.477722 machine_state m171 w
+6 35.477722 machine_state m172 w
+6 35.477722 machine_state m173 w
+6 35.477722 machine_state m174 w
+6 35.477722 machine_state m175 w
+6 35.477722 machine_state m176 w
+6 35.477722 machine_state m177 w
+6 35.477722 machine_state m178 w
+6 35.477722 machine_state m179 w
+6 35.477722 machine_state m180 w
+6 35.477722 machine_state m181 w
+6 35.477722 machine_state m182 w
+6 35.477722 machine_state m183 w
+6 35.477722 machine_state m184 w
+6 35.477722 machine_state m185 w
+6 35.477722 machine_state m186 w
+6 35.477722 machine_state m187 w
+6 35.477722 machine_state m188 w
+6 35.477722 machine_state m189 w
+6 35.477722 machine_state m190 w
+6 35.477722 machine_state m191 w
+6 35.477722 machine_state m192 w
+6 35.477722 machine_state m193 w
+6 35.477722 machine_state m194 w
+6 35.477722 machine_state m195 w
+6 35.477722 machine_state m196 w
+6 35.477722 machine_state m197 w
+6 35.477722 machine_state m198 w
+6 35.477722 machine_state m199 w
+6 35.477722 machine_state m200 w
+6 35.477722 machine_state m201 w
+6 35.477722 machine_state m202 w
+6 35.477722 machine_state m203 w
+6 35.477722 machine_state m204 w
+6 35.477722 machine_state m205 w
+6 35.477722 machine_state m206 w
+6 35.477722 machine_state m207 w
+6 35.477722 machine_state m208 w
+6 35.477722 machine_state m209 w
+6 35.477722 machine_state m210 w
+6 35.477722 machine_state m211 w
+6 35.477722 machine_state m212 w
+6 35.477722 machine_state m213 w
+6 35.477722 machine_state m214 w
+6 35.477722 machine_state m215 w
+6 35.477722 machine_state m216 w
+6 35.477722 machine_state m217 w
+6 35.477722 machine_state m218 w
+6 35.477722 machine_state m219 w
+6 35.477722 machine_state m220 w
+6 35.477722 machine_state m221 w
+6 35.477722 machine_state m222 w
+6 35.477722 machine_state m223 w
+6 35.477722 machine_state m224 w
+6 35.477722 machine_state m225 w
+6 35.477722 machine_state m226 w
+6 35.477722 machine_state m227 w
+6 35.477722 machine_state m228 w
+6 35.477722 machine_state m229 w
+6 35.477722 machine_state m230 w
+6 35.477722 machine_state m231 w
+6 35.477722 machine_state m232 w
+6 35.477722 machine_state m233 w
+6 35.477722 machine_state m234 w
+6 35.477722 machine_state m235 w
+6 35.477722 machine_state m236 w
+6 35.477722 machine_state m237 w
+6 35.477722 machine_state m238 w
+6 35.477722 machine_state m239 w
+6 35.477722 machine_state m240 w
+6 35.477722 machine_state m241 w
+6 35.477722 machine_state m242 w
+6 35.477722 machine_state m243 w
+6 35.477722 machine_state m244 w
+6 35.477722 machine_state m245 w
+6 35.477722 machine_state m246 w
+6 35.477722 machine_state m247 w
+6 35.477722 machine_state m248 w
+6 35.477722 machine_state m249 w
+6 35.477722 machine_state m250 w
+6 35.477722 machine_state m251 w
+6 35.477722 machine_state m252 w
+6 35.477722 machine_state m253 w
+6 35.477722 machine_state m254 w
+6 35.477722 machine_state m255 w
+
+# End of events, containers destruction
+3 35.477972 m0 machine_ct
+3 35.477972 m1 machine_ct
+3 35.477972 m2 machine_ct
+3 35.477972 m3 machine_ct
+3 35.477972 m4 machine_ct
+3 35.477972 m5 machine_ct
+3 35.477972 m6 machine_ct
+3 35.477972 m7 machine_ct
+3 35.477972 m8 machine_ct
+3 35.477972 m9 machine_ct
+3 35.477972 m10 machine_ct
+3 35.477972 m11 machine_ct
+3 35.477972 m12 machine_ct
+3 35.477972 m13 machine_ct
+3 35.477972 m14 machine_ct
+3 35.477972 m15 machine_ct
+3 35.477972 m16 machine_ct
+3 35.477972 m17 machine_ct
+3 35.477972 m18 machine_ct
+3 35.477972 m19 machine_ct
+3 35.477972 m20 machine_ct
+3 35.477972 m21 machine_ct
+3 35.477972 m22 machine_ct
+3 35.477972 m23 machine_ct
+3 35.477972 m24 machine_ct
+3 35.477972 m25 machine_ct
+3 35.477972 m26 machine_ct
+3 35.477972 m27 machine_ct
+3 35.477972 m28 machine_ct
+3 35.477972 m29 machine_ct
+3 35.477972 m30 machine_ct
+3 35.477972 m31 machine_ct
+3 35.477972 m32 machine_ct
+3 35.477972 m33 machine_ct
+3 35.477972 m34 machine_ct
+3 35.477972 m35 machine_ct
+3 35.477972 m36 machine_ct
+3 35.477972 m37 machine_ct
+3 35.477972 m38 machine_ct
+3 35.477972 m39 machine_ct
+3 35.477972 m40 machine_ct
+3 35.477972 m41 machine_ct
+3 35.477972 m42 machine_ct
+3 35.477972 m43 machine_ct
+3 35.477972 m44 machine_ct
+3 35.477972 m45 machine_ct
+3 35.477972 m46 machine_ct
+3 35.477972 m47 machine_ct
+3 35.477972 m48 machine_ct
+3 35.477972 m49 machine_ct
+3 35.477972 m50 machine_ct
+3 35.477972 m51 machine_ct
+3 35.477972 m52 machine_ct
+3 35.477972 m53 machine_ct
+3 35.477972 m54 machine_ct
+3 35.477972 m55 machine_ct
+3 35.477972 m56 machine_ct
+3 35.477972 m57 machine_ct
+3 35.477972 m58 machine_ct
+3 35.477972 m59 machine_ct
+3 35.477972 m60 machine_ct
+3 35.477972 m61 machine_ct
+3 35.477972 m62 machine_ct
+3 35.477972 m63 machine_ct
+3 35.477972 m64 machine_ct
+3 35.477972 m65 machine_ct
+3 35.477972 m66 machine_ct
+3 35.477972 m67 machine_ct
+3 35.477972 m68 machine_ct
+3 35.477972 m69 machine_ct
+3 35.477972 m70 machine_ct
+3 35.477972 m71 machine_ct
+3 35.477972 m72 machine_ct
+3 35.477972 m73 machine_ct
+3 35.477972 m74 machine_ct
+3 35.477972 m75 machine_ct
+3 35.477972 m76 machine_ct
+3 35.477972 m77 machine_ct
+3 35.477972 m78 machine_ct
+3 35.477972 m79 machine_ct
+3 35.477972 m80 machine_ct
+3 35.477972 m81 machine_ct
+3 35.477972 m82 machine_ct
+3 35.477972 m83 machine_ct
+3 35.477972 m84 machine_ct
+3 35.477972 m85 machine_ct
+3 35.477972 m86 machine_ct
+3 35.477972 m87 machine_ct
+3 35.477972 m88 machine_ct
+3 35.477972 m89 machine_ct
+3 35.477972 m90 machine_ct
+3 35.477972 m91 machine_ct
+3 35.477972 m92 machine_ct
+3 35.477972 m93 machine_ct
+3 35.477972 m94 machine_ct
+3 35.477972 m95 machine_ct
+3 35.477972 m96 machine_ct
+3 35.477972 m97 machine_ct
+3 35.477972 m98 machine_ct
+3 35.477972 m99 machine_ct
+3 35.477972 m100 machine_ct
+3 35.477972 m101 machine_ct
+3 35.477972 m102 machine_ct
+3 35.477972 m103 machine_ct
+3 35.477972 m104 machine_ct
+3 35.477972 m105 machine_ct
+3 35.477972 m106 machine_ct
+3 35.477972 m107 machine_ct
+3 35.477972 m108 machine_ct
+3 35.477972 m109 machine_ct
+3 35.477972 m110 machine_ct
+3 35.477972 m111 machine_ct
+3 35.477972 m112 machine_ct
+3 35.477972 m113 machine_ct
+3 35.477972 m114 machine_ct
+3 35.477972 m115 machine_ct
+3 35.477972 m116 machine_ct
+3 35.477972 m117 machine_ct
+3 35.477972 m118 machine_ct
+3 35.477972 m119 machine_ct
+3 35.477972 m120 machine_ct
+3 35.477972 m121 machine_ct
+3 35.477972 m122 machine_ct
+3 35.477972 m123 machine_ct
+3 35.477972 m124 machine_ct
+3 35.477972 m125 machine_ct
+3 35.477972 m126 machine_ct
+3 35.477972 m127 machine_ct
+3 35.477972 m128 machine_ct
+3 35.477972 m129 machine_ct
+3 35.477972 m130 machine_ct
+3 35.477972 m131 machine_ct
+3 35.477972 m132 machine_ct
+3 35.477972 m133 machine_ct
+3 35.477972 m134 machine_ct
+3 35.477972 m135 machine_ct
+3 35.477972 m136 machine_ct
+3 35.477972 m137 machine_ct
+3 35.477972 m138 machine_ct
+3 35.477972 m139 machine_ct
+3 35.477972 m140 machine_ct
+3 35.477972 m141 machine_ct
+3 35.477972 m142 machine_ct
+3 35.477972 m143 machine_ct
+3 35.477972 m144 machine_ct
+3 35.477972 m145 machine_ct
+3 35.477972 m146 machine_ct
+3 35.477972 m147 machine_ct
+3 35.477972 m148 machine_ct
+3 35.477972 m149 machine_ct
+3 35.477972 m150 machine_ct
+3 35.477972 m151 machine_ct
+3 35.477972 m152 machine_ct
+3 35.477972 m153 machine_ct
+3 35.477972 m154 machine_ct
+3 35.477972 m155 machine_ct
+3 35.477972 m156 machine_ct
+3 35.477972 m157 machine_ct
+3 35.477972 m158 machine_ct
+3 35.477972 m159 machine_ct
+3 35.477972 m160 machine_ct
+3 35.477972 m161 machine_ct
+3 35.477972 m162 machine_ct
+3 35.477972 m163 machine_ct
+3 35.477972 m164 machine_ct
+3 35.477972 m165 machine_ct
+3 35.477972 m166 machine_ct
+3 35.477972 m167 machine_ct
+3 35.477972 m168 machine_ct
+3 35.477972 m169 machine_ct
+3 35.477972 m170 machine_ct
+3 35.477972 m171 machine_ct
+3 35.477972 m172 machine_ct
+3 35.477972 m173 machine_ct
+3 35.477972 m174 machine_ct
+3 35.477972 m175 machine_ct
+3 35.477972 m176 machine_ct
+3 35.477972 m177 machine_ct
+3 35.477972 m178 machine_ct
+3 35.477972 m179 machine_ct
+3 35.477972 m180 machine_ct
+3 35.477972 m181 machine_ct
+3 35.477972 m182 machine_ct
+3 35.477972 m183 machine_ct
+3 35.477972 m184 machine_ct
+3 35.477972 m185 machine_ct
+3 35.477972 m186 machine_ct
+3 35.477972 m187 machine_ct
+3 35.477972 m188 machine_ct
+3 35.477972 m189 machine_ct
+3 35.477972 m190 machine_ct
+3 35.477972 m191 machine_ct
+3 35.477972 m192 machine_ct
+3 35.477972 m193 machine_ct
+3 35.477972 m194 machine_ct
+3 35.477972 m195 machine_ct
+3 35.477972 m196 machine_ct
+3 35.477972 m197 machine_ct
+3 35.477972 m198 machine_ct
+3 35.477972 m199 machine_ct
+3 35.477972 m200 machine_ct
+3 35.477972 m201 machine_ct
+3 35.477972 m202 machine_ct
+3 35.477972 m203 machine_ct
+3 35.477972 m204 machine_ct
+3 35.477972 m205 machine_ct
+3 35.477972 m206 machine_ct
+3 35.477972 m207 machine_ct
+3 35.477972 m208 machine_ct
+3 35.477972 m209 machine_ct
+3 35.477972 m210 machine_ct
+3 35.477972 m211 machine_ct
+3 35.477972 m212 machine_ct
+3 35.477972 m213 machine_ct
+3 35.477972 m214 machine_ct
+3 35.477972 m215 machine_ct
+3 35.477972 m216 machine_ct
+3 35.477972 m217 machine_ct
+3 35.477972 m218 machine_ct
+3 35.477972 m219 machine_ct
+3 35.477972 m220 machine_ct
+3 35.477972 m221 machine_ct
+3 35.477972 m222 machine_ct
+3 35.477972 m223 machine_ct
+3 35.477972 m224 machine_ct
+3 35.477972 m225 machine_ct
+3 35.477972 m226 machine_ct
+3 35.477972 m227 machine_ct
+3 35.477972 m228 machine_ct
+3 35.477972 m229 machine_ct
+3 35.477972 m230 machine_ct
+3 35.477972 m231 machine_ct
+3 35.477972 m232 machine_ct
+3 35.477972 m233 machine_ct
+3 35.477972 m234 machine_ct
+3 35.477972 m235 machine_ct
+3 35.477972 m236 machine_ct
+3 35.477972 m237 machine_ct
+3 35.477972 m238 machine_ct
+3 35.477972 m239 machine_ct
+3 35.477972 m240 machine_ct
+3 35.477972 m241 machine_ct
+3 35.477972 m242 machine_ct
+3 35.477972 m243 machine_ct
+3 35.477972 m244 machine_ct
+3 35.477972 m245 machine_ct
+3 35.477972 m246 machine_ct
+3 35.477972 m247 machine_ct
+3 35.477972 m248 machine_ct
+3 35.477972 m249 machine_ct
+3 35.477972 m250 machine_ct
+3 35.477972 m251 machine_ct
+3 35.477972 m252 machine_ct
+3 35.477972 m253 machine_ct
+3 35.477972 m254 machine_ct
+3 35.477972 m255 machine_ct
+3 35.477972 root root_ct
