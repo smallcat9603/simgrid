@@ -247,7 +247,7 @@ def generateplatform(edgefile,platformbase,opts)
     for j in 1..nodeperswitch
       platformas.add_element "host", {
         "id" => "n#{i*nodeperswitch+j}",
-        "power" => opts[:power],
+        "speed" => opts[:power],
         "core" => corepernode
       }	
       platformas.add_element "link", {
