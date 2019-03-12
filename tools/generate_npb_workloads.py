@@ -15,7 +15,7 @@ def generate_workload(nb_jobs, input_profiles, nb_res,
     walltime = 4200
 
     """Generate a workload with Poisson distribution."""
-    makespan = 10
+    makespan = 20
     subtime = 0.0
     jobs = []
     localtime = time.asctime( time.localtime(time.time()) )

@@ -1,0 +1,1091 @@
++ batsim -p ../batsim-v2.0.0/platforms/torus-8-8-master.xml -w ../batsim-v2.0.0/workload_profiles/npb_20_jobs.json -e npb-scheduling-torus-8-8-contiguous-20/out -m master_host0
+[0.000000] [batsim/INFO] Workload 'e9e7ab' corresponds to workload file '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/npb_20_jobs.json'.
+[0.000000] [batsim/INFO] Batsim version: v2.0.0
+[0.000000] [workload/INFO] Loading JSON workload '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/npb_20_jobs.json'...
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'BT.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.16_files/1543940518.081838_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'BT.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.4_files/1543940476.888009_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.4_files/1543940476.888009_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.4_files/1543940476.888009_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/BT.S.4_files/1543940476.888009_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'CG.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.16_files/1543940037.759720_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'CG.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.4_files/1543940003.787957_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.4_files/1543940003.787957_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.4_files/1543940003.787957_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/CG.S.4_files/1543940003.787957_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'FT.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.16_files/1543939172.723182_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'FT.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.4_files/1543939126.626388_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.4_files/1543939126.626388_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.4_files/1543939126.626388_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/FT.S.4_files/1543939126.626388_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'IS.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.16_files/1543939730.459092_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'IS.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.4_files/1543939696.687537_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.4_files/1543939696.687537_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.4_files/1543939696.687537_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/IS.S.4_files/1543939696.687537_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'LU.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.16_files/1543212598.643994_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'LU.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/LU.S.4_files/1543212543.837546_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'MG.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.16_files/1543940860.184679_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'MG.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.4_files/1543940831.473262_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.4_files/1543940831.473262_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.4_files/1543940831.473262_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/MG.S.4_files/1543940831.473262_rank-4.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'SP.S.16': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-4.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-5.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-6.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-7.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-8.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-9.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-10.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-11.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-12.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-13.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-14.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-15.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.16_files/1543940685.480270_rank-16.txt]
+[0.000000] [profiles/INFO] base_dir = '/github-simgrid/190311/../batsim-v2.0.0/workload_profiles'
+[0.000000] [profiles/INFO] Filenames of profile 'SP.S.4': [/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.4_files/1543940638.483009_rank-1.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.4_files/1543940638.483009_rank-2.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.4_files/1543940638.483009_rank-3.txt, /github-simgrid/190311/../batsim-v2.0.0/workload_profiles/smpi/npb/SP.S.4_files/1543940638.483009_rank-4.txt]
+[0.000000] [workload/INFO] JSON workload parsed sucessfully. Read 20 jobs and 14 profiles.
+[0.000000] [workload/INFO] Checking workload validity...
+[0.000000] [workload/INFO] Workload seems to be valid.
+[0.000000] [batsim/INFO] Checking whether SMPI is used or not...
+[0.000000] [batsim/INFO] SMPI will be used.
+[0.000000] [workload/INFO] Registering SMPI applications of workload 'e9e7ab'...
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!1', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!10', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!11', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!12', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!13', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!14', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!15', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!16', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!17', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!18', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!19', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!2', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!20', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!3', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!4', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!5', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!6', nb_process=4
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!7', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!8', nb_process=16
+[0.000000] [workload/INFO] Registering app. instance='e9e7ab!9', nb_process=16
+[0.000000] [workload/INFO] SMPI applications of workload 'e9e7ab' have been registered.
+[0.000000] [smpi_kernel/INFO] You did not set the power of the host running the simulation.  The timings will certainly not be accurate.  Use the option "--cfg=smpi/host-speed:<flops>" to set its value.Check http://simgrid.org/simgrid/latest/doc/options.html#options_smpi_bench for more information.
+[0.000000] [machines/INFO] Creating the machines from platform file '../batsim-v2.0.0/platforms/torus-8-8-master.xml'...
+[0.000000] [machines/INFO] Looking for master host 'master_host0'
+[0.000000] [machines/INFO] Looking for parallel file system host (LCST) 'pfs_host'
+[0.000000] [machines/INFO] Looking for parallel file system host (HPST) 'hpst_host'
+[0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:266: [machines/WARNING] Could not find pfs_host 'pfs_host'!
+[0.000000] /tmp/nix-build-batsim-2.0.0.drv-0/batsim-v2.0.0-dc9abe94777739b8543eb20872cb8011c8585f38/src/machines.cpp:270: [machines/WARNING] Could not find hpst_host 'hpst_host'!
+[0.000000] [machines/INFO] The machines have been created successfully. There are 64 computing machines.
+[0.000000] [batsim/INFO] Batsim's export prefix is 'npb-scheduling-torus-8-8-contiguous-20/out'.
+[0.000000] [batsim/INFO] The process 'workload_submitter_e9e7ab' has been created.
+[0.000000] [batsim/INFO] The process 'server' has been created.
+[master_host0:Scheduler REQ-REP:(3) 0.000000] [network/INFO] Sending '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":64,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"node-0.simgrid.org","state":"idle","properties":{}},{"id":1,"name":"node-1.simgrid.org","state":"idle","properties":{}},{"id":2,"name":"node-2.simgrid.org","state":"idle","properties":{}},{"id":3,"name":"node-3.simgrid.org","state":"idle","properties":{}},{"id":4,"name":"node-4.simgrid.org","state":"idle","properties":{}},{"id":5,"name":"node-5.simgrid.org","state":"idle","properties":{}},{"id":6,"name":"node-6.simgrid.org","state":"idle","properties":{}},{"id":7,"name":"node-7.simgrid.org","state":"idle","properties":{}},{"id":8,"name":"node-8.simgrid.org","state":"idle","properties":{}},{"id":9,"name":"node-9.simgrid.org","state":"idle","properties":{}},{"id":10,"name":"node-10.simgrid.org","state":"idle","properties":{}},{"id":11,"name":"node-11.simgrid.org","state":"idle","properties":{}},{"id":12,"name":"node-12.simgrid.org","state":"idle","properties":{}},{"id":13,"name":"node-13.simgrid.org","state":"idle","properties":{}},{"id":14,"name":"node-14.simgrid.org","state":"idle","properties":{}},{"id":15,"name":"node-15.simgrid.org","state":"idle","properties":{}},{"id":16,"name":"node-16.simgrid.org","state":"idle","properties":{}},{"id":17,"name":"node-17.simgrid.org","state":"idle","properties":{}},{"id":18,"name":"node-18.simgrid.org","state":"idle","properties":{}},{"id":19,"name":"node-19.simgrid.org","state":"idle","properties":{}},{"id":20,"name":"node-20.simgrid.org","state":"idle","properties":{}},{"id":21,"name":"node-21.simgrid.org","state":"idle","properties":{}},{"id":22,"name":"node-22.simgrid.org","state":"idle","properties":{}},{"id":23,"name":"node-23.simgrid.org","state":"idle","properties":{}},{"id":24,"name":"node-24.simgrid.org","state":"idle","properties":{}},{"id":25,"name":"node-25.simgrid.org","state":"idle","properties":{}},{"id":26,"name":"node-26.simgrid.org","state":"idle","properties":{}},{"id":27,"name":"node-27.simgrid.org","state":"idle","properties":{}},{"id":28,"name":"node-28.simgrid.org","state":"idle","properties":{}},{"id":29,"name":"node-29.simgrid.org","state":"idle","properties":{}},{"id":30,"name":"node-30.simgrid.org","state":"idle","properties":{}},{"id":31,"name":"node-31.simgrid.org","state":"idle","properties":{}},{"id":32,"name":"node-32.simgrid.org","state":"idle","properties":{}},{"id":33,"name":"node-33.simgrid.org","state":"idle","properties":{}},{"id":34,"name":"node-34.simgrid.org","state":"idle","properties":{}},{"id":35,"name":"node-35.simgrid.org","state":"idle","properties":{}},{"id":36,"name":"node-36.simgrid.org","state":"idle","properties":{}},{"id":37,"name":"node-37.simgrid.org","state":"idle","properties":{}},{"id":38,"name":"node-38.simgrid.org","state":"idle","properties":{}},{"id":39,"name":"node-39.simgrid.org","state":"idle","properties":{}},{"id":40,"name":"node-40.simgrid.org","state":"idle","properties":{}},{"id":41,"name":"node-41.simgrid.org","state":"idle","properties":{}},{"id":42,"name":"node-42.simgrid.org","state":"idle","properties":{}},{"id":43,"name":"node-43.simgrid.org","state":"idle","properties":{}},{"id":44,"name":"node-44.simgrid.org","state":"idle","properties":{}},{"id":45,"name":"node-45.simgrid.org","state":"idle","properties":{}},{"id":46,"name":"node-46.simgrid.org","state":"idle","properties":{}},{"id":47,"name":"node-47.simgrid.org","state":"idle","properties":{}},{"id":48,"name":"node-48.simgrid.org","state":"idle","properties":{}},{"id":49,"name":"node-49.simgrid.org","state":"idle","properties":{}},{"id":50,"name":"node-50.simgrid.org","state":"idle","properties":{}},{"id":51,"name":"node-51.simgrid.org","state":"idle","properties":{}},{"id":52,"name":"node-52.simgrid.org","state":"idle","properties":{}},{"id":53,"name":"node-53.simgrid.org","state":"idle","properties":{}},{"id":54,"name":"node-54.simgrid.org","state":"idle","properties":{}},{"id":55,"name":"node-55.simgrid.org","state":"idle","properties":{}},{"id":56,"name":"node-56.simgrid.org","state":"idle","properties":{}},{"id":57,"name":"node-57.simgrid.org","state":"idle","properties":{}},{"id":58,"name":"node-58.simgrid.org","state":"idle","properties":{}},{"id":59,"name":"node-59.simgrid.org","state":"idle","properties":{}},{"id":60,"name":"node-60.simgrid.org","state":"idle","properties":{}},{"id":61,"name":"node-61.simgrid.org","state":"idle","properties":{}},{"id":62,"name":"node-62.simgrid.org","state":"idle","properties":{}},{"id":63,"name":"node-63.simgrid.org","state":"idle","properties":{}}],"workloads":{"e9e7ab":"/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/npb_20_jobs.json"}}}]}'
+[master_host0:Scheduler REQ-REP:(3) 0.000000] [network/INFO] Received '{"now":0.0,"events":[]}'
+[master_host0:server:(2) 0.007806] [server/INFO] Server received a message of type SUBMITTER_HELLO:
+[master_host0:server:(2) 0.007806] [server/INFO] New submitter said hello. Number of polite submitters: 1
+[master_host0:server:(2) 0.015612] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 2.981742] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 2.981742] [server/INFO] Job received: e9e7ab!1
+
+[master_host0:server:(2) 2.981742] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 2.981742] [server/INFO] Job e9e7ab!1 SUBMITTED. 1 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(4) 2.981742] [network/INFO] Sending '{"now":2.981742,"events":[{"timestamp":2.981742,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!1","job":{"id":"e9e7ab!1","profile":"FT.S.16","res":16,"subtime":2.973936,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(4) 2.981742] [network/INFO] Received '{"now":2.981742,"events":[{"timestamp":2.981742,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!1","alloc":"0-15"}}]}'
+[master_host0:server:(2) 2.989548] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!1_0:(6) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!1_1:(7) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!1_2:(8) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!1_3:(9) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!1_4:(10) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!1_5:(11) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!1_6:(12) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!1_7:(13) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!1_8:(14) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!1_9:(15) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!1_10:(16) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!1_11:(17) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!1_12:(18) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!1_13:(19) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!1_14:(20) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!1:(5) 2.989548] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!1_15:(21) 2.989548] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 2.997354] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 3.135167] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 3.135167] [server/INFO] Job received: e9e7ab!2
+
+[master_host0:server:(2) 3.135167] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 3.135167] [server/INFO] Job e9e7ab!2 SUBMITTED. 2 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(22) 3.135167] [network/INFO] Sending '{"now":3.135167,"events":[{"timestamp":3.135167,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!2","job":{"id":"e9e7ab!2","profile":"IS.S.4","res":4,"subtime":3.127361,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(22) 3.135167] [network/INFO] Received '{"now":3.135167,"events":[{"timestamp":3.135167,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!2","alloc":"16-19"}}]}'
+[master_host0:server:(2) 3.142973] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-16.simgrid.org:job_e9e7ab!2:(23) 3.142973] [jobs_execution/INFO] Hello!
+[node-16.simgrid.org:e9e7ab!2_0:(24) 3.142973] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!2:(23) 3.142973] [jobs_execution/INFO] Hello!
+[node-17.simgrid.org:e9e7ab!2_1:(25) 3.142973] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!2:(23) 3.142973] [jobs_execution/INFO] Hello!
+[node-18.simgrid.org:e9e7ab!2_2:(26) 3.142973] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!2:(23) 3.142973] [jobs_execution/INFO] Hello!
+[node-19.simgrid.org:e9e7ab!2_3:(27) 3.142973] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 3.150779] [server/INFO] Server received a message of type SCHED_READY:
+[node-16.simgrid.org:e9e7ab!2_0:(24) 3.246849] [jobs_execution/INFO] smpi_replay_run finished
+[node-18.simgrid.org:e9e7ab!2_2:(26) 3.246849] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:job_e9e7ab!2:(23) 3.246849] [jobs_execution/INFO] Job e9e7ab!2 finished in time (success)
+[node-19.simgrid.org:e9e7ab!2_3:(27) 3.246849] [jobs_execution/INFO] smpi_replay_run finished
+[node-17.simgrid.org:e9e7ab!2_1:(25) 3.246849] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 3.260510] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 3.260510] [server/INFO] Job e9e7ab!2 has COMPLETED. 1 jobs completed so far
+[master_host0:Scheduler REQ-REP:(28) 3.260510] [network/INFO] Sending '{"now":3.260510,"events":[{"timestamp":3.260510,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!2","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"16-19"}}]}'
+[master_host0:Scheduler REQ-REP:(28) 3.260510] [network/INFO] Received '{"now":3.26051,"events":[]}'
+[master_host0:server:(2) 3.268326] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!1_0:(6) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-9.simgrid.org:e9e7ab!1_9:(15) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!1:(5) 3.291503] [jobs_execution/INFO] Job e9e7ab!1 finished in time (success)
+[node-8.simgrid.org:e9e7ab!1_8:(14) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!1_1:(7) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!1_2:(8) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!1_10:(16) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!1_4:(10) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!1_11:(17) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!1_12:(18) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!1_3:(9) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!1_6:(12) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!1_14:(20) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!1_13:(19) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!1_5:(11) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!1_7:(13) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!1_15:(21) 3.291503] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 3.305164] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 3.305164] [server/INFO] Job e9e7ab!1 has COMPLETED. 2 jobs completed so far
+[master_host0:Scheduler REQ-REP:(29) 3.305164] [network/INFO] Sending '{"now":3.305164,"events":[{"timestamp":3.305164,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!1","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(29) 3.305164] [network/INFO] Received '{"now":3.305164,"events":[]}'
+[master_host0:server:(2) 3.312980] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 3.555157] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 3.555157] [server/INFO] Job received: e9e7ab!3
+
+[master_host0:server:(2) 3.555157] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 3.555157] [server/INFO] Job e9e7ab!3 SUBMITTED. 3 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(30) 3.555157] [network/INFO] Sending '{"now":3.555157,"events":[{"timestamp":3.555157,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!3","job":{"id":"e9e7ab!3","profile":"CG.S.4","res":4,"subtime":3.547351,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(30) 3.555157] [network/INFO] Received '{"now":3.555157,"events":[{"timestamp":3.555157,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!3","alloc":"0-3"}}]}'
+[master_host0:server:(2) 3.562963] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!3:(31) 3.562963] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!3_0:(32) 3.562963] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!3:(31) 3.562963] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!3_1:(33) 3.562963] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!3:(31) 3.562963] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!3_2:(34) 3.562963] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!3:(31) 3.562963] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!3_3:(35) 3.562963] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 3.570769] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 3.838494] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 3.838494] [server/INFO] Job received: e9e7ab!4
+
+[master_host0:server:(2) 3.838494] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 3.838494] [server/INFO] Job e9e7ab!4 SUBMITTED. 4 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(36) 3.838494] [network/INFO] Sending '{"now":3.838494,"events":[{"timestamp":3.838494,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!4","job":{"id":"e9e7ab!4","profile":"FT.S.4","res":4,"subtime":3.830688,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(36) 3.838494] [network/INFO] Received '{"now":3.838494,"events":[{"timestamp":3.838494,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!4","alloc":"4-7"}}]}'
+[master_host0:server:(2) 3.846300] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-4.simgrid.org:job_e9e7ab!4:(37) 3.846300] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!4_0:(38) 3.846300] [jobs_execution/INFO] Launching smpi_replay_run
+[node-4.simgrid.org:job_e9e7ab!4:(37) 3.846300] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!4_1:(39) 3.846300] [jobs_execution/INFO] Launching smpi_replay_run
+[node-4.simgrid.org:job_e9e7ab!4:(37) 3.846300] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!4_2:(40) 3.846300] [jobs_execution/INFO] Launching smpi_replay_run
+[node-4.simgrid.org:job_e9e7ab!4:(37) 3.846300] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!4_3:(41) 3.846300] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 3.854106] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 3.936581] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 3.936581] [server/INFO] Job received: e9e7ab!5
+
+[master_host0:server:(2) 3.936581] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 3.936581] [server/INFO] Job e9e7ab!5 SUBMITTED. 5 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(42) 3.936581] [network/INFO] Sending '{"now":3.936581,"events":[{"timestamp":3.936581,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!5","job":{"id":"e9e7ab!5","profile":"CG.S.16","res":16,"subtime":3.928775,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(42) 3.936581] [network/INFO] Received '{"now":3.936581,"events":[{"timestamp":3.936581,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!5","alloc":"8-23"}}]}'
+[master_host0:server:(2) 3.944397] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!5_0:(44) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!5_1:(45) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!5_2:(46) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!5_3:(47) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!5_4:(48) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!5_5:(49) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!5_6:(50) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!5_7:(51) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-16.simgrid.org:e9e7ab!5_8:(52) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-17.simgrid.org:e9e7ab!5_9:(53) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-18.simgrid.org:e9e7ab!5_10:(54) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-19.simgrid.org:e9e7ab!5_11:(55) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-20.simgrid.org:e9e7ab!5_12:(56) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-21.simgrid.org:e9e7ab!5_13:(57) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-22.simgrid.org:e9e7ab!5_14:(58) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[node-8.simgrid.org:job_e9e7ab!5:(43) 3.944397] [jobs_execution/INFO] Hello!
+[node-23.simgrid.org:e9e7ab!5_15:(59) 3.944397] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 3.952201] [server/INFO] Server received a message of type SCHED_READY:
+[node-4.simgrid.org:e9e7ab!4_0:(38) 4.003999] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!4_2:(40) 4.003999] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:job_e9e7ab!4:(37) 4.003999] [jobs_execution/INFO] Job e9e7ab!4 finished in time (success)
+[node-5.simgrid.org:e9e7ab!4_1:(39) 4.003999] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!4_3:(41) 4.003999] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 4.017659] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 4.017659] [server/INFO] Job e9e7ab!4 has COMPLETED. 3 jobs completed so far
+[master_host0:Scheduler REQ-REP:(60) 4.017659] [network/INFO] Sending '{"now":4.017659,"events":[{"timestamp":4.017659,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!4","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"4-7"}}]}'
+[master_host0:Scheduler REQ-REP:(60) 4.017659] [network/INFO] Received '{"now":4.017659,"events":[]}'
+[master_host0:server:(2) 4.025465] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 4.064546] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 4.064546] [server/INFO] Job received: e9e7ab!6
+
+[master_host0:server:(2) 4.064546] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 4.064546] [server/INFO] Job e9e7ab!6 SUBMITTED. 6 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(61) 4.064546] [network/INFO] Sending '{"now":4.064546,"events":[{"timestamp":4.064546,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!6","job":{"id":"e9e7ab!6","profile":"SP.S.4","res":4,"subtime":4.056740,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(61) 4.064546] [network/INFO] Received '{"now":4.064546,"events":[{"timestamp":4.064546,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!6","alloc":"4-7"}}]}'
+[master_host0:server:(2) 4.072352] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-4.simgrid.org:job_e9e7ab!6:(62) 4.072352] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!6_0:(63) 4.072352] [jobs_execution/INFO] Launching smpi_replay_run
+[node-4.simgrid.org:job_e9e7ab!6:(62) 4.072352] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!6_1:(64) 4.072352] [jobs_execution/INFO] Launching smpi_replay_run
+[node-4.simgrid.org:job_e9e7ab!6:(62) 4.072352] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!6_2:(65) 4.072352] [jobs_execution/INFO] Launching smpi_replay_run
+[node-4.simgrid.org:job_e9e7ab!6:(62) 4.072352] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!6_3:(66) 4.072352] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 4.080158] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!3_0:(32) 4.663567] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!3_2:(34) 4.663567] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!3:(31) 4.663567] [jobs_execution/INFO] Job e9e7ab!3 finished in time (success)
+[node-1.simgrid.org:e9e7ab!3_1:(33) 4.663567] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!3_3:(35) 4.663567] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 4.677228] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 4.677228] [server/INFO] Job e9e7ab!3 has COMPLETED. 4 jobs completed so far
+[master_host0:Scheduler REQ-REP:(67) 4.677228] [network/INFO] Sending '{"now":4.677228,"events":[{"timestamp":4.677228,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!3","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-3"}}]}'
+[master_host0:Scheduler REQ-REP:(67) 4.677228] [network/INFO] Received '{"now":4.677228,"events":[]}'
+[master_host0:server:(2) 4.685044] [server/INFO] Server received a message of type SCHED_READY:
+[node-7.simgrid.org:e9e7ab!6_3:(66) 5.245914] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!6_0:(63) 5.245914] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!6_1:(64) 5.245914] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:job_e9e7ab!6:(62) 5.245914] [jobs_execution/INFO] Job e9e7ab!6 finished in time (success)
+[node-6.simgrid.org:e9e7ab!6_2:(65) 5.245914] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 5.259575] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 5.259575] [server/INFO] Job e9e7ab!6 has COMPLETED. 5 jobs completed so far
+[master_host0:Scheduler REQ-REP:(68) 5.259575] [network/INFO] Sending '{"now":5.259575,"events":[{"timestamp":5.259575,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!6","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"4-7"}}]}'
+[master_host0:Scheduler REQ-REP:(68) 5.259575] [network/INFO] Received '{"now":5.259575,"events":[]}'
+[master_host0:server:(2) 5.267391] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 5.521584] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 5.521584] [server/INFO] Job received: e9e7ab!7
+
+[master_host0:server:(2) 5.521584] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 5.521584] [server/INFO] Job e9e7ab!7 SUBMITTED. 7 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(69) 5.521584] [network/INFO] Sending '{"now":5.521584,"events":[{"timestamp":5.521584,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!7","job":{"id":"e9e7ab!7","profile":"CG.S.16","res":16,"subtime":5.513778,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(69) 5.521584] [network/INFO] Received '{"now":5.521584,"events":[{"timestamp":5.521584,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!7","alloc":"24-39"}}]}'
+[master_host0:server:(2) 5.529390] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-24.simgrid.org:e9e7ab!7_0:(71) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-25.simgrid.org:e9e7ab!7_1:(72) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-26.simgrid.org:e9e7ab!7_2:(73) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-27.simgrid.org:e9e7ab!7_3:(74) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-28.simgrid.org:e9e7ab!7_4:(75) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-29.simgrid.org:e9e7ab!7_5:(76) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-30.simgrid.org:e9e7ab!7_6:(77) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-31.simgrid.org:e9e7ab!7_7:(78) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-32.simgrid.org:e9e7ab!7_8:(79) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-33.simgrid.org:e9e7ab!7_9:(80) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-34.simgrid.org:e9e7ab!7_10:(81) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-35.simgrid.org:e9e7ab!7_11:(82) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-36.simgrid.org:e9e7ab!7_12:(83) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-37.simgrid.org:e9e7ab!7_13:(84) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-38.simgrid.org:e9e7ab!7_14:(85) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[node-24.simgrid.org:job_e9e7ab!7:(70) 5.529390] [jobs_execution/INFO] Hello!
+[node-39.simgrid.org:e9e7ab!7_15:(86) 5.529390] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 5.537196] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 5.790898] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 5.790898] [server/INFO] Job received: e9e7ab!8
+
+[master_host0:server:(2) 5.790898] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 5.790898] [server/INFO] Job e9e7ab!8 SUBMITTED. 8 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(87) 5.790898] [network/INFO] Sending '{"now":5.790898,"events":[{"timestamp":5.790898,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!8","job":{"id":"e9e7ab!8","profile":"IS.S.16","res":16,"subtime":5.783100,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(87) 5.790898] [network/INFO] Received '{"now":5.790898,"events":[{"timestamp":5.790898,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!8","alloc":"40-55"}}]}'
+[master_host0:server:(2) 5.798704] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-40.simgrid.org:e9e7ab!8_0:(89) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-41.simgrid.org:e9e7ab!8_1:(90) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-42.simgrid.org:e9e7ab!8_2:(91) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-43.simgrid.org:e9e7ab!8_3:(92) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-44.simgrid.org:e9e7ab!8_4:(93) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-45.simgrid.org:e9e7ab!8_5:(94) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-46.simgrid.org:e9e7ab!8_6:(95) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-47.simgrid.org:e9e7ab!8_7:(96) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-48.simgrid.org:e9e7ab!8_8:(97) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-49.simgrid.org:e9e7ab!8_9:(98) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-50.simgrid.org:e9e7ab!8_10:(99) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-51.simgrid.org:e9e7ab!8_11:(100) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-52.simgrid.org:e9e7ab!8_12:(101) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-53.simgrid.org:e9e7ab!8_13:(102) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-54.simgrid.org:e9e7ab!8_14:(103) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.798704] [jobs_execution/INFO] Hello!
+[node-55.simgrid.org:e9e7ab!8_15:(104) 5.798704] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 5.806510] [server/INFO] Server received a message of type SCHED_READY:
+[node-40.simgrid.org:e9e7ab!8_0:(89) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-50.simgrid.org:e9e7ab!8_10:(99) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-40.simgrid.org:job_e9e7ab!8:(88) 5.962577] [jobs_execution/INFO] Job e9e7ab!8 finished in time (success)
+[node-46.simgrid.org:e9e7ab!8_6:(95) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-53.simgrid.org:e9e7ab!8_13:(102) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-47.simgrid.org:e9e7ab!8_7:(96) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-52.simgrid.org:e9e7ab!8_12:(101) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-51.simgrid.org:e9e7ab!8_11:(100) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-45.simgrid.org:e9e7ab!8_5:(94) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-42.simgrid.org:e9e7ab!8_2:(91) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-54.simgrid.org:e9e7ab!8_14:(103) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-49.simgrid.org:e9e7ab!8_9:(98) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-55.simgrid.org:e9e7ab!8_15:(104) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-44.simgrid.org:e9e7ab!8_4:(93) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-43.simgrid.org:e9e7ab!8_3:(92) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-48.simgrid.org:e9e7ab!8_8:(97) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[node-41.simgrid.org:e9e7ab!8_1:(90) 5.962577] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 5.976238] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 5.976238] [server/INFO] Job e9e7ab!8 has COMPLETED. 6 jobs completed so far
+[master_host0:Scheduler REQ-REP:(105) 5.976238] [network/INFO] Sending '{"now":5.976238,"events":[{"timestamp":5.976238,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!8","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"40-55"}}]}'
+[master_host0:Scheduler REQ-REP:(105) 5.976238] [network/INFO] Received '{"now":5.976238,"events":[]}'
+[master_host0:server:(2) 5.984054] [server/INFO] Server received a message of type SCHED_READY:
+[node-8.simgrid.org:e9e7ab!5_0:(44) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-22.simgrid.org:e9e7ab!5_14:(58) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-8.simgrid.org:job_e9e7ab!5:(43) 7.505822] [jobs_execution/INFO] Job e9e7ab!5 finished in time (success)
+[node-20.simgrid.org:e9e7ab!5_12:(56) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-21.simgrid.org:e9e7ab!5_13:(57) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-9.simgrid.org:e9e7ab!5_1:(45) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-23.simgrid.org:e9e7ab!5_15:(59) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!5_3:(47) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!5_2:(46) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!5_5:(49) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!5_4:(48) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!5_6:(50) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!5_7:(51) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-17.simgrid.org:e9e7ab!5_9:(53) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:e9e7ab!5_8:(52) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-18.simgrid.org:e9e7ab!5_10:(54) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[node-19.simgrid.org:e9e7ab!5_11:(55) 7.505822] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 7.519482] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 7.519482] [server/INFO] Job e9e7ab!5 has COMPLETED. 7 jobs completed so far
+[master_host0:Scheduler REQ-REP:(106) 7.519482] [network/INFO] Sending '{"now":7.519482,"events":[{"timestamp":7.519482,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!5","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"8-23"}}]}'
+[master_host0:Scheduler REQ-REP:(106) 7.519482] [network/INFO] Received '{"now":7.519482,"events":[]}'
+[master_host0:server:(2) 7.527288] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 8.153188] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 8.153188] [server/INFO] Job received: e9e7ab!9
+
+[master_host0:server:(2) 8.153188] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 8.153188] [server/INFO] Job e9e7ab!9 SUBMITTED. 9 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(107) 8.153188] [network/INFO] Sending '{"now":8.153188,"events":[{"timestamp":8.153188,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!9","job":{"id":"e9e7ab!9","profile":"FT.S.16","res":16,"subtime":8.145382,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(107) 8.153188] [network/INFO] Received '{"now":8.153188,"events":[{"timestamp":8.153188,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!9","alloc":"0-15"}}]}'
+[master_host0:server:(2) 8.160994] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!9_0:(109) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!9_1:(110) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!9_2:(111) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!9_3:(112) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!9_4:(113) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!9_5:(114) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!9_6:(115) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!9_7:(116) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!9_8:(117) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!9_9:(118) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!9_10:(119) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!9_11:(120) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!9_12:(121) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!9_13:(122) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!9_14:(123) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.160994] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!9_15:(124) 8.160994] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 8.168800] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!9_0:(109) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-8.simgrid.org:e9e7ab!9_8:(117) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!9:(108) 8.462999] [jobs_execution/INFO] Job e9e7ab!9 finished in time (success)
+[node-9.simgrid.org:e9e7ab!9_9:(118) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!9_1:(110) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!9_10:(119) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!9_2:(111) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!9_4:(113) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!9_12:(121) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!9_11:(120) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!9_3:(112) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!9_13:(122) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!9_5:(114) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!9_14:(123) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!9_6:(115) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!9_7:(116) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!9_15:(124) 8.462999] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 8.476660] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 8.476660] [server/INFO] Job e9e7ab!9 has COMPLETED. 8 jobs completed so far
+[master_host0:Scheduler REQ-REP:(125) 8.476660] [network/INFO] Sending '{"now":8.476660,"events":[{"timestamp":8.476660,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!9","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(125) 8.476660] [network/INFO] Received '{"now":8.47666,"events":[]}'
+[master_host0:server:(2) 8.484476] [server/INFO] Server received a message of type SCHED_READY:
+[node-24.simgrid.org:e9e7ab!7_0:(71) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-39.simgrid.org:e9e7ab!7_15:(86) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-24.simgrid.org:job_e9e7ab!7:(70) 9.090845] [jobs_execution/INFO] Job e9e7ab!7 finished in time (success)
+[node-38.simgrid.org:e9e7ab!7_14:(85) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-27.simgrid.org:e9e7ab!7_3:(74) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-26.simgrid.org:e9e7ab!7_2:(73) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-36.simgrid.org:e9e7ab!7_12:(83) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-37.simgrid.org:e9e7ab!7_13:(84) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-25.simgrid.org:e9e7ab!7_1:(72) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-29.simgrid.org:e9e7ab!7_5:(76) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-28.simgrid.org:e9e7ab!7_4:(75) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-35.simgrid.org:e9e7ab!7_11:(82) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-32.simgrid.org:e9e7ab!7_8:(79) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-33.simgrid.org:e9e7ab!7_9:(80) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-30.simgrid.org:e9e7ab!7_6:(77) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-31.simgrid.org:e9e7ab!7_7:(78) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[node-34.simgrid.org:e9e7ab!7_10:(81) 9.090845] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 9.104506] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 9.104506] [server/INFO] Job e9e7ab!7 has COMPLETED. 9 jobs completed so far
+[master_host0:Scheduler REQ-REP:(126) 9.104506] [network/INFO] Sending '{"now":9.104506,"events":[{"timestamp":9.104506,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!7","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"24-39"}}]}'
+[master_host0:Scheduler REQ-REP:(126) 9.104506] [network/INFO] Received '{"now":9.104506,"events":[]}'
+[master_host0:server:(2) 9.112322] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 9.574719] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 9.574719] [server/INFO] Job received: e9e7ab!10
+
+[master_host0:server:(2) 9.574719] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 9.574719] [server/INFO] Job e9e7ab!10 SUBMITTED. 10 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(127) 9.574719] [network/INFO] Sending '{"now":9.574719,"events":[{"timestamp":9.574719,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!10","job":{"id":"e9e7ab!10","profile":"LU.S.16","res":16,"subtime":9.566913,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(127) 9.574719] [network/INFO] Received '{"now":9.574719,"events":[{"timestamp":9.574719,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!10","alloc":"0-15"}}]}'
+[master_host0:server:(2) 9.582535] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!10_0:(129) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!10_1:(130) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!10_2:(131) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!10_3:(132) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!10_4:(133) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!10_5:(134) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!10_6:(135) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!10_7:(136) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!10_8:(137) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!10_9:(138) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!10_10:(139) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!10_11:(140) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!10_12:(141) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!10_13:(142) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!10_14:(143) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!10:(128) 9.582535] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!10_15:(144) 9.582535] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 9.590341] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 11.466274] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 11.466274] [server/INFO] Job received: e9e7ab!11
+
+[master_host0:server:(2) 11.466274] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 11.466274] [server/INFO] Job e9e7ab!11 SUBMITTED. 11 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(145) 11.466274] [network/INFO] Sending '{"now":11.466274,"events":[{"timestamp":11.466274,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!11","job":{"id":"e9e7ab!11","profile":"IS.S.16","res":16,"subtime":11.458468,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(145) 11.466274] [network/INFO] Received '{"now":11.466274,"events":[{"timestamp":11.466274,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!11","alloc":"16-31"}}]}'
+[master_host0:server:(2) 11.474090] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-16.simgrid.org:e9e7ab!11_0:(147) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-17.simgrid.org:e9e7ab!11_1:(148) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-18.simgrid.org:e9e7ab!11_2:(149) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-19.simgrid.org:e9e7ab!11_3:(150) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-20.simgrid.org:e9e7ab!11_4:(151) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-21.simgrid.org:e9e7ab!11_5:(152) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-22.simgrid.org:e9e7ab!11_6:(153) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-23.simgrid.org:e9e7ab!11_7:(154) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-24.simgrid.org:e9e7ab!11_8:(155) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-25.simgrid.org:e9e7ab!11_9:(156) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-26.simgrid.org:e9e7ab!11_10:(157) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-27.simgrid.org:e9e7ab!11_11:(158) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-28.simgrid.org:e9e7ab!11_12:(159) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-29.simgrid.org:e9e7ab!11_13:(160) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-30.simgrid.org:e9e7ab!11_14:(161) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.474090] [jobs_execution/INFO] Hello!
+[node-31.simgrid.org:e9e7ab!11_15:(162) 11.474090] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 11.481896] [server/INFO] Server received a message of type SCHED_READY:
+[node-16.simgrid.org:e9e7ab!11_0:(147) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-29.simgrid.org:e9e7ab!11_13:(160) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:job_e9e7ab!11:(146) 11.637965] [jobs_execution/INFO] Job e9e7ab!11 finished in time (success)
+[node-26.simgrid.org:e9e7ab!11_10:(157) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-22.simgrid.org:e9e7ab!11_6:(153) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-23.simgrid.org:e9e7ab!11_7:(154) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-28.simgrid.org:e9e7ab!11_12:(159) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-27.simgrid.org:e9e7ab!11_11:(158) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-18.simgrid.org:e9e7ab!11_2:(149) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-21.simgrid.org:e9e7ab!11_5:(152) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-30.simgrid.org:e9e7ab!11_14:(161) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-25.simgrid.org:e9e7ab!11_9:(156) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-31.simgrid.org:e9e7ab!11_15:(162) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-19.simgrid.org:e9e7ab!11_3:(150) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-20.simgrid.org:e9e7ab!11_4:(151) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-24.simgrid.org:e9e7ab!11_8:(155) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[node-17.simgrid.org:e9e7ab!11_1:(148) 11.637965] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 11.651626] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 11.651626] [server/INFO] Job e9e7ab!11 has COMPLETED. 10 jobs completed so far
+[master_host0:Scheduler REQ-REP:(163) 11.651626] [network/INFO] Sending '{"now":11.651626,"events":[{"timestamp":11.651626,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!11","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"16-31"}}]}'
+[master_host0:Scheduler REQ-REP:(163) 11.651626] [network/INFO] Received '{"now":11.651626,"events":[]}'
+[master_host0:server:(2) 11.659442] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 12.790991] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 12.790991] [server/INFO] Job received: e9e7ab!12
+
+[master_host0:server:(2) 12.790991] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 12.790991] [server/INFO] Job e9e7ab!12 SUBMITTED. 12 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(164) 12.790991] [network/INFO] Sending '{"now":12.790991,"events":[{"timestamp":12.790991,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!12","job":{"id":"e9e7ab!12","profile":"MG.S.4","res":4,"subtime":12.783185,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(164) 12.790991] [network/INFO] Received '{"now":12.790991,"events":[{"timestamp":12.790991,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!12","alloc":"16-19"}}]}'
+[master_host0:server:(2) 12.798807] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-16.simgrid.org:job_e9e7ab!12:(165) 12.798807] [jobs_execution/INFO] Hello!
+[node-16.simgrid.org:e9e7ab!12_0:(166) 12.798807] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!12:(165) 12.798807] [jobs_execution/INFO] Hello!
+[node-17.simgrid.org:e9e7ab!12_1:(167) 12.798807] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!12:(165) 12.798807] [jobs_execution/INFO] Hello!
+[node-18.simgrid.org:e9e7ab!12_2:(168) 12.798807] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!12:(165) 12.798807] [jobs_execution/INFO] Hello!
+[node-19.simgrid.org:e9e7ab!12_3:(169) 12.798807] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 12.806613] [server/INFO] Server received a message of type SCHED_READY:
+[node-16.simgrid.org:e9e7ab!12_0:(166) 13.337106] [jobs_execution/INFO] smpi_replay_run finished
+[node-17.simgrid.org:e9e7ab!12_1:(167) 13.337106] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:job_e9e7ab!12:(165) 13.337106] [jobs_execution/INFO] Job e9e7ab!12 finished in time (success)
+[node-18.simgrid.org:e9e7ab!12_2:(168) 13.337106] [jobs_execution/INFO] smpi_replay_run finished
+[node-19.simgrid.org:e9e7ab!12_3:(169) 13.337106] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 13.350766] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 13.350766] [server/INFO] Job e9e7ab!12 has COMPLETED. 11 jobs completed so far
+[master_host0:Scheduler REQ-REP:(170) 13.350766] [network/INFO] Sending '{"now":13.350766,"events":[{"timestamp":13.350766,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!12","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"16-19"}}]}'
+[master_host0:Scheduler REQ-REP:(170) 13.350766] [network/INFO] Received '{"now":13.350766,"events":[]}'
+[master_host0:server:(2) 13.358572] [server/INFO] Server received a message of type SCHED_READY:
+[node-15.simgrid.org:e9e7ab!10_15:(144) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:e9e7ab!10_0:(129) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-8.simgrid.org:e9e7ab!10_8:(137) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!10:(128) 15.740189] [jobs_execution/INFO] Job e9e7ab!10 finished in time (success)
+[node-1.simgrid.org:e9e7ab!10_1:(130) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-9.simgrid.org:e9e7ab!10_9:(138) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!10_2:(131) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!10_3:(132) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!10_10:(139) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!10_4:(133) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!10_11:(140) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!10_12:(141) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!10_5:(134) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!10_13:(142) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!10_6:(135) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!10_14:(143) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!10_7:(136) 15.740189] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 15.753849] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 15.753849] [server/INFO] Job e9e7ab!10 has COMPLETED. 12 jobs completed so far
+[master_host0:Scheduler REQ-REP:(171) 15.753849] [network/INFO] Sending '{"now":15.753849,"events":[{"timestamp":15.753849,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!10","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(171) 15.753849] [network/INFO] Received '{"now":15.753849,"events":[]}'
+[master_host0:server:(2) 15.761655] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 18.001484] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 18.001484] [server/INFO] Job received: e9e7ab!13
+
+[master_host0:server:(2) 18.001484] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 18.001484] [server/INFO] Job e9e7ab!13 SUBMITTED. 13 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(172) 18.001484] [network/INFO] Sending '{"now":18.001484,"events":[{"timestamp":18.001484,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!13","job":{"id":"e9e7ab!13","profile":"SP.S.4","res":4,"subtime":17.993678,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(172) 18.001484] [network/INFO] Received '{"now":18.001484,"events":[{"timestamp":18.001484,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!13","alloc":"0-3"}}]}'
+[master_host0:server:(2) 18.009300] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!13:(173) 18.009300] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!13_0:(174) 18.009300] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!13:(173) 18.009300] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!13_1:(175) 18.009300] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!13:(173) 18.009300] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!13_2:(176) 18.009300] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!13:(173) 18.009300] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!13_3:(177) 18.009300] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 18.017106] [server/INFO] Server received a message of type SCHED_READY:
+[node-3.simgrid.org:e9e7ab!13_3:(177) 19.182850] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:e9e7ab!13_0:(174) 19.182850] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!13_1:(175) 19.182850] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!13:(173) 19.182850] [jobs_execution/INFO] Job e9e7ab!13 finished in time (success)
+[node-2.simgrid.org:e9e7ab!13_2:(176) 19.182850] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 19.196511] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 19.196511] [server/INFO] Job e9e7ab!13 has COMPLETED. 13 jobs completed so far
+[master_host0:Scheduler REQ-REP:(178) 19.196511] [network/INFO] Sending '{"now":19.196511,"events":[{"timestamp":19.196511,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!13","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-3"}}]}'
+[master_host0:Scheduler REQ-REP:(178) 19.196511] [network/INFO] Received '{"now":19.196511,"events":[]}'
+[master_host0:server:(2) 19.204327] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 19.235443] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 19.235443] [server/INFO] Job received: e9e7ab!14
+
+[master_host0:server:(2) 19.235443] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 19.235443] [server/INFO] Job e9e7ab!14 SUBMITTED. 14 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(179) 19.235443] [network/INFO] Sending '{"now":19.235443,"events":[{"timestamp":19.235443,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!14","job":{"id":"e9e7ab!14","profile":"FT.S.16","res":16,"subtime":19.227637,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(179) 19.235443] [network/INFO] Received '{"now":19.235443,"events":[{"timestamp":19.235443,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!14","alloc":"0-15"}}]}'
+[master_host0:server:(2) 19.243259] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!14_0:(181) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!14_1:(182) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!14_2:(183) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!14_3:(184) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!14_4:(185) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!14_5:(186) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!14_6:(187) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!14_7:(188) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!14_8:(189) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!14_9:(190) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!14_10:(191) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!14_11:(192) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!14_12:(193) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!14_13:(194) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!14_14:(195) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.243259] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!14_15:(196) 19.243259] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 19.251065] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!14_0:(181) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-9.simgrid.org:e9e7ab!14_9:(190) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!14:(180) 19.545258] [jobs_execution/INFO] Job e9e7ab!14 finished in time (success)
+[node-8.simgrid.org:e9e7ab!14_8:(189) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!14_1:(182) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!14_2:(183) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!14_10:(191) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!14_4:(185) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!14_11:(192) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!14_12:(193) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!14_3:(184) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!14_6:(187) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!14_14:(195) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!14_13:(194) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!14_5:(186) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!14_7:(188) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!14_15:(196) 19.545258] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 19.558919] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 19.558919] [server/INFO] Job e9e7ab!14 has COMPLETED. 14 jobs completed so far
+[master_host0:Scheduler REQ-REP:(197) 19.558919] [network/INFO] Sending '{"now":19.558919,"events":[{"timestamp":19.558919,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!14","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(197) 19.558919] [network/INFO] Received '{"now":19.558919,"events":[]}'
+[master_host0:server:(2) 19.566735] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 19.658393] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 19.658393] [server/INFO] Job received: e9e7ab!15
+
+[master_host0:server:(2) 19.658393] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 19.658393] [server/INFO] Job e9e7ab!15 SUBMITTED. 15 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(198) 19.658393] [network/INFO] Sending '{"now":19.658393,"events":[{"timestamp":19.658393,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!15","job":{"id":"e9e7ab!15","profile":"FT.S.16","res":16,"subtime":19.650587,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(198) 19.658393] [network/INFO] Received '{"now":19.658393,"events":[{"timestamp":19.658393,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!15","alloc":"0-15"}}]}'
+[master_host0:server:(2) 19.666209] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!15_0:(200) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!15_1:(201) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!15_2:(202) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!15_3:(203) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!15_4:(204) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!15_5:(205) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!15_6:(206) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!15_7:(207) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!15_8:(208) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!15_9:(209) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!15_10:(210) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!15_11:(211) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!15_12:(212) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!15_13:(213) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!15_14:(214) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.666209] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!15_15:(215) 19.666209] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 19.674015] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!15_0:(200) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-9.simgrid.org:e9e7ab!15_9:(209) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!15:(199) 19.968208] [jobs_execution/INFO] Job e9e7ab!15 finished in time (success)
+[node-8.simgrid.org:e9e7ab!15_8:(208) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!15_1:(201) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!15_2:(202) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!15_10:(210) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!15_4:(204) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!15_11:(211) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!15_12:(212) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!15_3:(203) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!15_6:(206) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!15_14:(214) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!15_13:(213) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!15_5:(205) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!15_7:(207) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!15_15:(215) 19.968208] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 19.981868] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 19.981868] [server/INFO] Job e9e7ab!15 has COMPLETED. 15 jobs completed so far
+[master_host0:Scheduler REQ-REP:(216) 19.981868] [network/INFO] Sending '{"now":19.981868,"events":[{"timestamp":19.981868,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!15","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(216) 19.981868] [network/INFO] Received '{"now":19.981868,"events":[]}'
+[master_host0:server:(2) 19.989674] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 20.403400] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 20.403400] [server/INFO] Job received: e9e7ab!16
+
+[master_host0:server:(2) 20.403400] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 20.403400] [server/INFO] Job e9e7ab!16 SUBMITTED. 16 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(217) 20.403400] [network/INFO] Sending '{"now":20.403400,"events":[{"timestamp":20.403400,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!16","job":{"id":"e9e7ab!16","profile":"FT.S.16","res":16,"subtime":20.395594,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(217) 20.403400] [network/INFO] Received '{"now":20.4034,"events":[{"timestamp":20.4034,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!16","alloc":"0-15"}}]}'
+[master_host0:server:(2) 20.411206] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!16_0:(219) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!16_1:(220) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!16_2:(221) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!16_3:(222) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!16_4:(223) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!16_5:(224) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!16_6:(225) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!16_7:(226) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!16_8:(227) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!16_9:(228) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!16_10:(229) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!16_11:(230) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!16_12:(231) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!16_13:(232) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!16_14:(233) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.411206] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!16_15:(234) 20.411206] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 20.419012] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 20.523720] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 20.523720] [server/INFO] Job received: e9e7ab!17
+
+[master_host0:server:(2) 20.523720] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 20.523720] [server/INFO] Job e9e7ab!17 SUBMITTED. 17 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(235) 20.523720] [network/INFO] Sending '{"now":20.523720,"events":[{"timestamp":20.523720,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!17","job":{"id":"e9e7ab!17","profile":"FT.S.16","res":16,"subtime":20.515914,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(235) 20.523720] [network/INFO] Received '{"now":20.52372,"events":[{"timestamp":20.52372,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!17","alloc":"16-31"}}]}'
+[master_host0:server:(2) 20.531536] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-16.simgrid.org:e9e7ab!17_0:(237) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-17.simgrid.org:e9e7ab!17_1:(238) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-18.simgrid.org:e9e7ab!17_2:(239) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-19.simgrid.org:e9e7ab!17_3:(240) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-20.simgrid.org:e9e7ab!17_4:(241) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-21.simgrid.org:e9e7ab!17_5:(242) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-22.simgrid.org:e9e7ab!17_6:(243) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-23.simgrid.org:e9e7ab!17_7:(244) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-24.simgrid.org:e9e7ab!17_8:(245) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-25.simgrid.org:e9e7ab!17_9:(246) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-26.simgrid.org:e9e7ab!17_10:(247) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-27.simgrid.org:e9e7ab!17_11:(248) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-28.simgrid.org:e9e7ab!17_12:(249) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-29.simgrid.org:e9e7ab!17_13:(250) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-30.simgrid.org:e9e7ab!17_14:(251) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.531536] [jobs_execution/INFO] Hello!
+[node-31.simgrid.org:e9e7ab!17_15:(252) 20.531536] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 20.539342] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!16_0:(219) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-9.simgrid.org:e9e7ab!16_9:(228) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!16:(218) 20.713175] [jobs_execution/INFO] Job e9e7ab!16 finished in time (success)
+[node-1.simgrid.org:e9e7ab!16_1:(220) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-8.simgrid.org:e9e7ab!16_8:(227) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!16_10:(229) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!16_2:(221) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!16_12:(231) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!16_11:(230) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!16_3:(222) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!16_4:(223) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!16_5:(224) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!16_6:(225) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!16_13:(232) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!16_14:(233) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!16_7:(226) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!16_15:(234) 20.713175] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 20.726826] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 20.726826] [server/INFO] Job e9e7ab!16 has COMPLETED. 16 jobs completed so far
+[master_host0:Scheduler REQ-REP:(253) 20.726826] [network/INFO] Sending '{"now":20.726826,"events":[{"timestamp":20.726826,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!16","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(253) 20.726826] [network/INFO] Received '{"now":20.726826,"events":[]}'
+[master_host0:server:(2) 20.734632] [server/INFO] Server received a message of type SCHED_READY:
+[node-16.simgrid.org:e9e7ab!17_0:(237) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-25.simgrid.org:e9e7ab!17_9:(246) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:job_e9e7ab!17:(236) 20.833158] [jobs_execution/INFO] Job e9e7ab!17 finished in time (success)
+[node-24.simgrid.org:e9e7ab!17_8:(245) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-17.simgrid.org:e9e7ab!17_1:(238) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-18.simgrid.org:e9e7ab!17_2:(239) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-26.simgrid.org:e9e7ab!17_10:(247) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-20.simgrid.org:e9e7ab!17_4:(241) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-27.simgrid.org:e9e7ab!17_11:(248) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-28.simgrid.org:e9e7ab!17_12:(249) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-19.simgrid.org:e9e7ab!17_3:(240) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-22.simgrid.org:e9e7ab!17_6:(243) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-30.simgrid.org:e9e7ab!17_14:(251) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-29.simgrid.org:e9e7ab!17_13:(250) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-21.simgrid.org:e9e7ab!17_5:(242) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-23.simgrid.org:e9e7ab!17_7:(244) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[node-31.simgrid.org:e9e7ab!17_15:(252) 20.833158] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 20.846818] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 20.846818] [server/INFO] Job e9e7ab!17 has COMPLETED. 17 jobs completed so far
+[master_host0:Scheduler REQ-REP:(254) 20.846818] [network/INFO] Sending '{"now":20.846818,"events":[{"timestamp":20.846818,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!17","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"16-31"}}]}'
+[master_host0:Scheduler REQ-REP:(254) 20.846818] [network/INFO] Received '{"now":20.846818,"events":[]}'
+[master_host0:server:(2) 20.854624] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 21.200658] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 21.200658] [server/INFO] Job received: e9e7ab!18
+
+[master_host0:server:(2) 21.200658] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 21.200658] [server/INFO] Job e9e7ab!18 SUBMITTED. 18 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(255) 21.200658] [network/INFO] Sending '{"now":21.200658,"events":[{"timestamp":21.200658,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!18","job":{"id":"e9e7ab!18","profile":"IS.S.4","res":4,"subtime":21.192852,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(255) 21.200658] [network/INFO] Received '{"now":21.200658,"events":[{"timestamp":21.200658,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!18","alloc":"0-3"}}]}'
+[master_host0:server:(2) 21.208474] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!18:(256) 21.208474] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!18_0:(257) 21.208474] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!18:(256) 21.208474] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!18_1:(258) 21.208474] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!18:(256) 21.208474] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!18_2:(259) 21.208474] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!18:(256) 21.208474] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!18_3:(260) 21.208474] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 21.216280] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!18_0:(257) 21.312352] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!18_2:(259) 21.312352] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!18:(256) 21.312352] [jobs_execution/INFO] Job e9e7ab!18 finished in time (success)
+[node-3.simgrid.org:e9e7ab!18_3:(260) 21.312352] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!18_1:(258) 21.312352] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 21.326013] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 21.326013] [server/INFO] Job e9e7ab!18 has COMPLETED. 18 jobs completed so far
+[master_host0:Scheduler REQ-REP:(261) 21.326013] [network/INFO] Sending '{"now":21.326013,"events":[{"timestamp":21.326013,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!18","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-3"}}]}'
+[master_host0:Scheduler REQ-REP:(261) 21.326013] [network/INFO] Received '{"now":21.326013,"events":[]}'
+[master_host0:server:(2) 21.333829] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 21.795351] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 21.795351] [server/INFO] Job received: e9e7ab!19
+
+[master_host0:server:(2) 21.795351] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 21.795351] [server/INFO] Job e9e7ab!19 SUBMITTED. 19 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(262) 21.795351] [network/INFO] Sending '{"now":21.795351,"events":[{"timestamp":21.795351,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!19","job":{"id":"e9e7ab!19","profile":"FT.S.16","res":16,"subtime":21.787545,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(262) 21.795351] [network/INFO] Received '{"now":21.795351,"events":[{"timestamp":21.795351,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!19","alloc":"0-15"}}]}'
+[master_host0:server:(2) 21.803157] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-0.simgrid.org:e9e7ab!19_0:(264) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-1.simgrid.org:e9e7ab!19_1:(265) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-2.simgrid.org:e9e7ab!19_2:(266) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-3.simgrid.org:e9e7ab!19_3:(267) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-4.simgrid.org:e9e7ab!19_4:(268) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-5.simgrid.org:e9e7ab!19_5:(269) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-6.simgrid.org:e9e7ab!19_6:(270) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-7.simgrid.org:e9e7ab!19_7:(271) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-8.simgrid.org:e9e7ab!19_8:(272) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-9.simgrid.org:e9e7ab!19_9:(273) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-10.simgrid.org:e9e7ab!19_10:(274) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-11.simgrid.org:e9e7ab!19_11:(275) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-12.simgrid.org:e9e7ab!19_12:(276) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-13.simgrid.org:e9e7ab!19_13:(277) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-14.simgrid.org:e9e7ab!19_14:(278) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[node-0.simgrid.org:job_e9e7ab!19:(263) 21.803157] [jobs_execution/INFO] Hello!
+[node-15.simgrid.org:e9e7ab!19_15:(279) 21.803157] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 21.810963] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 22.034222] [server/INFO] Server received a message of type JOB_SUBMITTED:
+[master_host0:server:(2) 22.034222] [server/INFO] Job received: e9e7ab!20
+
+[master_host0:server:(2) 22.034222] [server/INFO] Workloads: e9e7ab: e9e7ab 
+[master_host0:server:(2) 22.034222] [server/INFO] Job e9e7ab!20 SUBMITTED. 20 jobs submitted so far
+[master_host0:Scheduler REQ-REP:(280) 22.034222] [network/INFO] Sending '{"now":22.034222,"events":[{"timestamp":22.034222,"type":"JOB_SUBMITTED","data":{"job_id":"e9e7ab!20","job":{"id":"e9e7ab!20","profile":"SP.S.16","res":16,"subtime":22.026425,"walltime":4200}}}]}'
+[master_host0:Scheduler REQ-REP:(280) 22.034222] [network/INFO] Received '{"now":22.034222,"events":[{"timestamp":22.034222,"type":"EXECUTE_JOB","data":{"job_id":"e9e7ab!20","alloc":"16-31"}}]}'
+[master_host0:server:(2) 22.042028] [server/INFO] Server received a message of type SUBMITTER_BYE:
+[master_host0:server:(2) 22.042028] [server/INFO] A submitted said goodbye. Number of finished submitters: 1
+[master_host0:server:(2) 22.049834] [server/INFO] Server received a message of type SCHED_EXECUTE_JOB:
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-16.simgrid.org:e9e7ab!20_0:(282) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-17.simgrid.org:e9e7ab!20_1:(283) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-18.simgrid.org:e9e7ab!20_2:(284) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-19.simgrid.org:e9e7ab!20_3:(285) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-20.simgrid.org:e9e7ab!20_4:(286) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-21.simgrid.org:e9e7ab!20_5:(287) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-22.simgrid.org:e9e7ab!20_6:(288) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-23.simgrid.org:e9e7ab!20_7:(289) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-24.simgrid.org:e9e7ab!20_8:(290) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-25.simgrid.org:e9e7ab!20_9:(291) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-26.simgrid.org:e9e7ab!20_10:(292) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-27.simgrid.org:e9e7ab!20_11:(293) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-28.simgrid.org:e9e7ab!20_12:(294) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-29.simgrid.org:e9e7ab!20_13:(295) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-30.simgrid.org:e9e7ab!20_14:(296) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[node-16.simgrid.org:job_e9e7ab!20:(281) 22.049834] [jobs_execution/INFO] Hello!
+[node-31.simgrid.org:e9e7ab!20_15:(297) 22.049834] [jobs_execution/INFO] Launching smpi_replay_run
+[master_host0:server:(2) 22.057640] [server/INFO] Server received a message of type SCHED_READY:
+[node-0.simgrid.org:e9e7ab!19_0:(264) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-1.simgrid.org:e9e7ab!19_1:(265) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-0.simgrid.org:job_e9e7ab!19:(263) 22.105108] [jobs_execution/INFO] Job e9e7ab!19 finished in time (success)
+[node-9.simgrid.org:e9e7ab!19_9:(273) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-8.simgrid.org:e9e7ab!19_8:(272) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-10.simgrid.org:e9e7ab!19_10:(274) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-2.simgrid.org:e9e7ab!19_2:(266) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-12.simgrid.org:e9e7ab!19_12:(276) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-4.simgrid.org:e9e7ab!19_4:(268) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-11.simgrid.org:e9e7ab!19_11:(275) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-3.simgrid.org:e9e7ab!19_3:(267) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-6.simgrid.org:e9e7ab!19_6:(270) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-14.simgrid.org:e9e7ab!19_14:(278) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-5.simgrid.org:e9e7ab!19_5:(269) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-13.simgrid.org:e9e7ab!19_13:(277) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-15.simgrid.org:e9e7ab!19_15:(279) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[node-7.simgrid.org:e9e7ab!19_7:(271) 22.105108] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 22.118765] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 22.118765] [server/INFO] Job e9e7ab!19 has COMPLETED. 19 jobs completed so far
+[master_host0:Scheduler REQ-REP:(298) 22.118765] [network/INFO] Sending '{"now":22.118765,"events":[{"timestamp":22.118765,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!19","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0-15"}}]}'
+[master_host0:Scheduler REQ-REP:(298) 22.118765] [network/INFO] Received '{"now":22.118765,"events":[]}'
+[master_host0:server:(2) 22.126581] [server/INFO] Server received a message of type SCHED_READY:
+[node-28.simgrid.org:e9e7ab!20_12:(294) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:e9e7ab!20_0:(282) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-17.simgrid.org:e9e7ab!20_1:(283) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-16.simgrid.org:job_e9e7ab!20:(281) 27.876024] [jobs_execution/INFO] Job e9e7ab!20 finished in time (success)
+[node-23.simgrid.org:e9e7ab!20_7:(289) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-24.simgrid.org:e9e7ab!20_8:(290) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-22.simgrid.org:e9e7ab!20_6:(288) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-31.simgrid.org:e9e7ab!20_15:(297) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-25.simgrid.org:e9e7ab!20_9:(291) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-18.simgrid.org:e9e7ab!20_2:(284) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-19.simgrid.org:e9e7ab!20_3:(285) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-21.simgrid.org:e9e7ab!20_5:(287) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-26.simgrid.org:e9e7ab!20_10:(292) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-30.simgrid.org:e9e7ab!20_14:(296) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-27.simgrid.org:e9e7ab!20_11:(293) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-29.simgrid.org:e9e7ab!20_13:(295) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[node-20.simgrid.org:e9e7ab!20_4:(286) 27.876024] [jobs_execution/INFO] smpi_replay_run finished
+[master_host0:server:(2) 27.889685] [server/INFO] Server received a message of type JOB_COMPLETED:
+[master_host0:server:(2) 27.889685] [server/INFO] Job e9e7ab!20 has COMPLETED. 20 jobs completed so far
+[master_host0:server:(2) 27.889685] [server/INFO] It seems that all jobs have been submitted and completed!
+[master_host0:Scheduler REQ-REP:(299) 27.889685] [network/INFO] Sending '{"now":27.889685,"events":[{"timestamp":27.889685,"type":"JOB_COMPLETED","data":{"job_id":"e9e7ab!20","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"16-31"}},{"timestamp":27.889685,"type":"SIMULATION_ENDS","data":{}}]}'
+[master_host0:Scheduler REQ-REP:(299) 27.889685] [network/INFO] Received '{"now":27.889685,"events":[]}'
+[master_host0:server:(2) 27.897501] [server/INFO] Server received a message of type SCHED_READY:
+[master_host0:server:(2) 27.897501] [server/INFO] Simulation is finished!
+[27.897501] [export/INFO] PajeTracer finalized
+[27.897501] [export/INFO] jobs=20, finished=20, success=20, killed=0, success_rate=1.000000
+[27.897501] [export/INFO] makespan=27.876024, scheduling_time=0.075262, mean_waiting_time=0.016006, mean_turnaround_time=1.310978, mean_slowdown=1.051871, max_waiting_time=0.023409, max_turnaround_time=6.173276, max_slowdown=1.150387
+[27.897501] [export/INFO] mean_machines_running=5.658960, max_machines_running=11.530956

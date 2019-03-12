@@ -1,0 +1,40 @@
+variant_options = '{"custom_mapping": true}'
+custom_mapping: true
+fraction_of_machines_to_use: 1
+set_job_metadata: 0
+Received '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":8,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"node-0.simgrid.org","state":"idle","properties":{}},{"id":1,"name":"node-1.simgrid.org","state":"idle","properties":{}},{"id":2,"name":"node-2.simgrid.org","state":"idle","properties":{}},{"id":3,"name":"node-3.simgrid.org","state":"idle","properties":{}},{"id":4,"name":"node-4.simgrid.org","state":"idle","properties":{}},{"id":5,"name":"node-5.simgrid.org","state":"idle","properties":{}},{"id":6,"name":"node-6.simgrid.org","state":"idle","properties":{}},{"id":7,"name":"node-7.simgrid.org","state":"idle","properties":{}}],"workloads":{"d94f51":"/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/npb-two-jobs-8p2mg.json"}}}]}'
+fill, availableMachines=0-7
+Sending '{"now":0.0,"events":[]}'
+Received '{"now":1.007806,"events":[{"timestamp":1.007806,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!1","job":{"id":"d94f51!1","profile":"delay10","res":1,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=0-7
+Sending '{"now":1.007806,"events":[{"timestamp":1.007806,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!1","alloc":"0","mapping":{"0":"0"}}}]}'
+Received '{"now":1.039030,"events":[{"timestamp":1.015612,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!2","job":{"id":"d94f51!2","profile":"delay1","res":2,"subtime":1,"walltime":4200}}},{"timestamp":1.031224,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!3","job":{"id":"d94f51!3","profile":"delay10","res":2,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=1-7
+Sending '{"now":1.03903,"events":[{"timestamp":1.03903,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!2","alloc":"1-2","mapping":{"0":"0","1":"1"}}},{"timestamp":1.03903,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!3","alloc":"3-4","mapping":{"0":"0","1":"1"}}}]}'
+Received '{"now":1.078060,"events":[{"timestamp":1.046836,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!4","job":{"id":"d94f51!4","profile":"delay1","res":2,"subtime":1,"walltime":4200}}},{"timestamp":1.062448,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!5","job":{"id":"d94f51!5","profile":"delay10","res":1,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=5-7
+Sending '{"now":1.07806,"events":[{"timestamp":1.07806,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!4","alloc":"5-6","mapping":{"0":"0","1":"1"}}},{"timestamp":1.07806,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!5","alloc":"7","mapping":{"0":"0"}}}]}'
+Received '{"now":2.068303,"events":[{"timestamp":2.068303,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!2","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"1-2"}}]}'
+fill, availableMachines=1-2
+Sending '{"now":2.068303,"events":[]}'
+Received '{"now":2.099527,"events":[{"timestamp":2.099527,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!4","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"5-6"}}]}'
+fill, availableMachines=1-2,5-6
+Sending '{"now":2.099527,"events":[]}'
+Received '{"now":11.007806,"events":[{"timestamp":11.007806,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!6","job":{"id":"d94f51!6","profile":"MG.S.4","res":4,"subtime":11,"walltime":4200}}}]}'
+fill, availableMachines=1-2,5-6
+Sending '{"now":11.007806,"events":[{"timestamp":11.007806,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!6","alloc":"1-2 5-6","mapping":{"0":"0","1":"1","2":"2","3":"3"}}}]}'
+Received '{"now":11.052691,"events":[{"timestamp":11.015612,"type":"JOB_SUBMITTED","data":{"job_id":"d94f51!7","job":{"id":"d94f51!7","profile":"MG.S.4","res":4,"subtime":11,"walltime":4200}}},{"timestamp":11.044885,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!1","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0"}}]}'
+fill, availableMachines=0
+Sending '{"now":11.052691,"events":[]}'
+Received '{"now":11.083915,"events":[{"timestamp":11.083915,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!3","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"3-4"}}]}'
+fill, availableMachines=0,3-4
+Sending '{"now":11.083915,"events":[]}'
+Received '{"now":11.107333,"events":[{"timestamp":11.107333,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!5","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"7"}}]}'
+fill, availableMachines=0,3-4,7
+Sending '{"now":11.107333,"events":[{"timestamp":11.107333,"type":"EXECUTE_JOB","data":{"job_id":"d94f51!7","alloc":"0 3-4 7","mapping":{"0":"0","1":"1","2":"2","3":"3"}}}]}'
+Received '{"now":11.395756,"events":[{"timestamp":11.395756,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!6","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"1-2 5-6"}}]}'
+fill, availableMachines=1-2,5-6
+Sending '{"now":11.395756,"events":[]}'
+Received '{"now":11.487498,"events":[{"timestamp":11.487498,"type":"JOB_COMPLETED","data":{"job_id":"d94f51!7","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0 3-4 7"}},{"timestamp":11.487498,"type":"SIMULATION_ENDS","data":{}}]}'
+fill, availableMachines=0-7
+Sending '{"now":11.487498,"events":[]}'

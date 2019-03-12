@@ -1,0 +1,87 @@
+# robin npb-scheduling-torus-4-4-4-basic-20.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-40.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-60.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-80.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-100.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-120.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-140.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-160.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-180.yaml;
+# robin npb-scheduling-torus-4-4-4-basic-200.yaml;
+
+# robin npb-scheduling-torus-4-4-4-contiguous-20.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-40.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-60.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-80.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-100.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-120.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-140.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-160.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-180.yaml;
+# robin npb-scheduling-torus-4-4-4-contiguous-200.yaml;
+
+# robin npb-scheduling-torus-8-8-basic-20.yaml;
+# robin npb-scheduling-torus-8-8-basic-40.yaml;
+# robin npb-scheduling-torus-8-8-basic-60.yaml;
+# robin npb-scheduling-torus-8-8-basic-80.yaml;
+# robin npb-scheduling-torus-8-8-basic-100.yaml;
+# robin npb-scheduling-torus-8-8-basic-120.yaml;
+# robin npb-scheduling-torus-8-8-basic-140.yaml;
+# robin npb-scheduling-torus-8-8-basic-160.yaml;
+# robin npb-scheduling-torus-8-8-basic-180.yaml;
+# robin npb-scheduling-torus-8-8-basic-200.yaml;
+
+# robin npb-scheduling-torus-8-8-contiguous-20.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-40.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-60.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-80.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-100.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-120.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-140.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-160.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-180.yaml;
+# robin npb-scheduling-torus-8-8-contiguous-200.yaml;
+
+# robin npb-scheduling-random-4-basic-20.yaml;
+# robin npb-scheduling-random-4-basic-40.yaml;
+# robin npb-scheduling-random-4-basic-60.yaml;
+# robin npb-scheduling-random-4-basic-80.yaml;
+# robin npb-scheduling-random-4-basic-100.yaml;
+# robin npb-scheduling-random-4-basic-120.yaml;
+# robin npb-scheduling-random-4-basic-140.yaml;
+# robin npb-scheduling-random-4-basic-160.yaml;
+# robin npb-scheduling-random-4-basic-180.yaml;
+# robin npb-scheduling-random-4-basic-200.yaml;
+
+# robin npb-scheduling-random-4-contiguous-20.yaml;
+# robin npb-scheduling-random-4-contiguous-40.yaml;
+# robin npb-scheduling-random-4-contiguous-60.yaml;
+# robin npb-scheduling-random-4-contiguous-80.yaml;
+# robin npb-scheduling-random-4-contiguous-100.yaml;
+# robin npb-scheduling-random-4-contiguous-120.yaml;
+# robin npb-scheduling-random-4-contiguous-140.yaml;
+# robin npb-scheduling-random-4-contiguous-160.yaml;
+# robin npb-scheduling-random-4-contiguous-180.yaml;
+# robin npb-scheduling-random-4-contiguous-200.yaml;
+
+# robin npb-scheduling-random-6-basic-20.yaml;
+# robin npb-scheduling-random-6-basic-40.yaml;
+# robin npb-scheduling-random-6-basic-60.yaml;
+# robin npb-scheduling-random-6-basic-80.yaml;
+# robin npb-scheduling-random-6-basic-100.yaml;
+# robin npb-scheduling-random-6-basic-120.yaml;
+# robin npb-scheduling-random-6-basic-140.yaml;
+# robin npb-scheduling-random-6-basic-160.yaml;
+# robin npb-scheduling-random-6-basic-180.yaml;
+# robin npb-scheduling-random-6-basic-200.yaml;
+
+robin npb-scheduling-random-6-contiguous-20.yaml;
+robin npb-scheduling-random-6-contiguous-40.yaml;
+robin npb-scheduling-random-6-contiguous-60.yaml;
+robin npb-scheduling-random-6-contiguous-80.yaml;
+robin npb-scheduling-random-6-contiguous-100.yaml;
+robin npb-scheduling-random-6-contiguous-120.yaml;
+robin npb-scheduling-random-6-contiguous-140.yaml;
+robin npb-scheduling-random-6-contiguous-160.yaml;
+robin npb-scheduling-random-6-contiguous-180.yaml;
+robin npb-scheduling-random-6-contiguous-200.yaml;

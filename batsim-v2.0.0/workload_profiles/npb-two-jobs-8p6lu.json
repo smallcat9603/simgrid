@@ -1,0 +1,133 @@
+{
+    "command:": "",
+    "date": "Tue Dec 18 23:49:56 2018",
+    "description": "workload with profile file for npb",
+    "jobs": [
+        {
+            "id": 1,
+            "profile": "delay1",
+            "res": 2,
+            "subtime": 1,
+            "walltime": 4200
+        },
+        {
+            "id": 2,
+            "profile": "delay10",
+            "res": 2,
+            "subtime": 1,
+            "walltime": 4200
+        },
+        {
+            "id": 3,
+            "profile": "delay1",
+            "res": 2,
+            "subtime": 1,
+            "walltime": 4200
+        }, 
+        {
+            "id": 4,
+            "profile": "delay10",
+            "res": 2,
+            "subtime": 1,
+            "walltime": 4200
+        },             
+        {
+            "id": 5,
+            "profile": "LU.S.4",
+            "res": 4,
+            "subtime": 11,
+            "walltime": 4200
+        },
+        {
+            "id": 6,
+            "profile": "LU.S.4",
+            "res": 4,
+            "subtime": 11,
+            "walltime": 4200
+        }
+    ],
+    "nb_res": 8,
+    "profiles": {
+        "delay10": {
+            "type": "delay",
+            "delay": 10
+        },        
+        "delay1": {
+            "type": "delay",
+            "delay": 1
+        },        
+        "BT.S.16": {
+            "trace": "smpi/npb/BT.S.16",
+            "type": "smpi"
+        },
+        "BT.S.4": {
+            "trace": "smpi/npb/BT.S.4",
+            "type": "smpi"
+        },
+        "CG.S.16": {
+            "trace": "smpi/npb/CG.S.16",
+            "type": "smpi"
+        },
+        "CG.S.4": {
+            "trace": "smpi/npb/CG.S.4",
+            "type": "smpi"
+        },
+        "CG.S.64": {
+            "trace": "smpi/npb/CG.S.64",
+            "type": "smpi"
+        },
+        "FT.S.16": {
+            "trace": "smpi/npb/FT.S.16",
+            "type": "smpi"
+        },
+        "FT.S.4": {
+            "trace": "smpi/npb/FT.S.4",
+            "type": "smpi"
+        },
+        "FT.S.64": {
+            "trace": "smpi/npb/FT.S.64",
+            "type": "smpi"
+        },
+        "IS.S.16": {
+            "trace": "smpi/npb/IS.S.16",
+            "type": "smpi"
+        },
+        "IS.S.4": {
+            "trace": "smpi/npb/IS.S.4",
+            "type": "smpi"
+        },
+        "IS.S.64": {
+            "trace": "smpi/npb/IS.S.64",
+            "type": "smpi"
+        },
+        "LU.S.16": {
+            "trace": "smpi/npb/LU.S.16",
+            "type": "smpi"
+        },
+        "LU.S.4": {
+            "trace": "smpi/npb/LU.S.4",
+            "type": "smpi"
+        },
+        "MG.S.16": {
+            "trace": "smpi/npb/MG.S.16",
+            "type": "smpi"
+        },
+        "MG.S.4": {
+            "trace": "smpi/npb/MG.S.4",
+            "type": "smpi"
+        },
+        "MG.S.64": {
+            "trace": "smpi/npb/MG.S.64",
+            "type": "smpi"
+        },
+        "SP.S.16": {
+            "trace": "smpi/npb/SP.S.16",
+            "type": "smpi"
+        },
+        "SP.S.4": {
+            "trace": "smpi/npb/SP.S.4",
+            "type": "smpi"
+        }
+    },
+    "version": 0
+}

@@ -1,0 +1,52 @@
+variant_options = '{"custom_mapping": true}'
+custom_mapping: true
+fraction_of_machines_to_use: 1
+set_job_metadata: 0
+Received '{"now":0.000000,"events":[{"timestamp":0.000000,"type":"SIMULATION_BEGINS","data":{"nb_resources":8,"allow_time_sharing":false,"config":{"redis":{"enabled":false,"hostname":"127.0.0.1","port":6379,"prefix":"default"},"job_submission":{"forward_profiles":false,"from_scheduler":{"enabled":false,"acknowledge":true}}},"resources_data":[{"id":0,"name":"node-0.simgrid.org","state":"idle","properties":{}},{"id":1,"name":"node-1.simgrid.org","state":"idle","properties":{}},{"id":2,"name":"node-2.simgrid.org","state":"idle","properties":{}},{"id":3,"name":"node-3.simgrid.org","state":"idle","properties":{}},{"id":4,"name":"node-4.simgrid.org","state":"idle","properties":{}},{"id":5,"name":"node-5.simgrid.org","state":"idle","properties":{}},{"id":6,"name":"node-6.simgrid.org","state":"idle","properties":{}},{"id":7,"name":"node-7.simgrid.org","state":"idle","properties":{}}],"workloads":{"3aa334":"/github-simgrid/190311/../batsim-v2.0.0/workload_profiles/npb-two-jobs-8p5sp.json"}}}]}'
+fill, availableMachines=0-7
+Sending '{"now":0.0,"events":[]}'
+Received '{"now":1.007806,"events":[{"timestamp":1.007806,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!1","job":{"id":"3aa334!1","profile":"delay1","res":1,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=0-7
+Sending '{"now":1.007806,"events":[{"timestamp":1.007806,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!1","alloc":"0","mapping":{"0":"0"}}}]}'
+Received '{"now":1.039030,"events":[{"timestamp":1.015612,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!2","job":{"id":"3aa334!2","profile":"delay10","res":1,"subtime":1,"walltime":4200}}},{"timestamp":1.031224,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!3","job":{"id":"3aa334!3","profile":"delay1","res":1,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=1-7
+Sending '{"now":1.03903,"events":[{"timestamp":1.03903,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!2","alloc":"1","mapping":{"0":"0"}}},{"timestamp":1.03903,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!3","alloc":"2","mapping":{"0":"0"}}}]}'
+Received '{"now":1.085866,"events":[{"timestamp":1.046836,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!4","job":{"id":"3aa334!4","profile":"delay10","res":2,"subtime":1,"walltime":4200}}},{"timestamp":1.062448,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!5","job":{"id":"3aa334!5","profile":"delay1","res":1,"subtime":1,"walltime":4200}}},{"timestamp":1.078060,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!6","job":{"id":"3aa334!6","profile":"delay10","res":1,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=3-7
+Sending '{"now":1.085866,"events":[{"timestamp":1.085866,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!4","alloc":"3-4","mapping":{"0":"0","1":"1"}}},{"timestamp":1.085866,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!5","alloc":"5","mapping":{"0":"0"}}},{"timestamp":1.085866,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!6","alloc":"6","mapping":{"0":"0"}}}]}'
+Received '{"now":1.124896,"events":[{"timestamp":1.093672,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!7","job":{"id":"3aa334!7","profile":"delay1","res":1,"subtime":1,"walltime":4200}}}]}'
+fill, availableMachines=7
+Sending '{"now":1.124896,"events":[{"timestamp":1.124896,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!7","alloc":"7","mapping":{"0":"0"}}}]}'
+Received '{"now":2.037079,"events":[{"timestamp":2.037079,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!1","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0"}}]}'
+fill, availableMachines=0
+Sending '{"now":2.037079,"events":[]}'
+Received '{"now":2.083915,"events":[{"timestamp":2.083915,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!3","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"2"}}]}'
+fill, availableMachines=0,2
+Sending '{"now":2.083915,"events":[]}'
+Received '{"now":2.122945,"events":[{"timestamp":2.122945,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!5","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"5"}}]}'
+fill, availableMachines=0,2,5
+Sending '{"now":2.122945,"events":[]}'
+Received '{"now":2.146363,"events":[{"timestamp":2.146363,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!7","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"7"}}]}'
+fill, availableMachines=0,2,5,7
+Sending '{"now":2.146363,"events":[]}'
+Received '{"now":11.007806,"events":[{"timestamp":11.007806,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!8","job":{"id":"3aa334!8","profile":"SP.S.4","res":4,"subtime":11,"walltime":4200}}}]}'
+fill, availableMachines=0,2,5,7
+Sending '{"now":11.007806,"events":[{"timestamp":11.007806,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!8","alloc":"0 2 5 7","mapping":{"0":"0","1":"1","2":"2","3":"3"}}}]}'
+Received '{"now":11.039030,"events":[{"timestamp":11.015612,"type":"JOB_SUBMITTED","data":{"job_id":"3aa334!9","job":{"id":"3aa334!9","profile":"SP.S.4","res":4,"subtime":11,"walltime":4200}}}]}'
+fill, availableMachines=
+Sending '{"now":11.03903,"events":[]}'
+Received '{"now":11.068303,"events":[{"timestamp":11.068303,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!2","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"1"}}]}'
+fill, availableMachines=1
+Sending '{"now":11.068303,"events":[]}'
+Received '{"now":11.115139,"events":[{"timestamp":11.115139,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!4","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"3-4"}}]}'
+fill, availableMachines=1,3-4
+Sending '{"now":11.115139,"events":[]}'
+Received '{"now":11.136615,"events":[{"timestamp":11.136615,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!6","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"6"}}]}'
+fill, availableMachines=1,3-4,6
+Sending '{"now":11.136615,"events":[{"timestamp":11.136615,"type":"EXECUTE_JOB","data":{"job_id":"3aa334!9","alloc":"1 3-4 6","mapping":{"0":"0","1":"1","2":"2","3":"3"}}}]}'
+Received '{"now":12.059229,"events":[{"timestamp":12.059229,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!8","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"0 2 5 7"}}]}'
+fill, availableMachines=0,2,5,7
+Sending '{"now":12.059229,"events":[]}'
+Received '{"now":12.180232,"events":[{"timestamp":12.180232,"type":"JOB_COMPLETED","data":{"job_id":"3aa334!9","job_state":"COMPLETED_SUCCESSFULLY","return_code":0,"kill_reason":"","alloc":"1 3-4 6"}},{"timestamp":12.180232,"type":"SIMULATION_ENDS","data":{}}]}'
+fill, availableMachines=0-7
+Sending '{"now":12.180232,"events":[]}'

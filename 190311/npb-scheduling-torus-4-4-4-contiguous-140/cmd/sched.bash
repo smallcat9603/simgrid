@@ -1,0 +1,1 @@
+batsched -v easy_bf --variant_options '{"custom_mapping": true}' --policy=contiguous --queue_order=fcfs

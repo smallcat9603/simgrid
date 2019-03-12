@@ -1,0 +1,9 @@
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-40.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-60.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-80.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-100.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-120.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-140.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-160.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-180.yaml
+cp npb-scheduling-torus-4-4-4-basic-20.yaml npb-scheduling-torus-4-4-4-basic-200.yaml

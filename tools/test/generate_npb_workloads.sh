@@ -1,0 +1,10 @@
+python ../generate_npb_workloads.py -n 20 --nb-res 64 -p ../npb_profiles_16.json -o npb_20_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 40 --nb-res 64 -p ../npb_profiles_16.json -o npb_40_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 60 --nb-res 64 -p ../npb_profiles_16.json -o npb_60_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 80 --nb-res 64 -p ../npb_profiles_16.json -o npb_80_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 100 --nb-res 64 -p ../npb_profiles_16.json -o npb_100_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 120 --nb-res 64 -p ../npb_profiles_16.json -o npb_120_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 140 --nb-res 64 -p ../npb_profiles_16.json -o npb_140_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 160 --nb-res 64 -p ../npb_profiles_16.json -o npb_160_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 180 --nb-res 64 -p ../npb_profiles_16.json -o npb_180_jobs.json -i 4;
+python ../generate_npb_workloads.py -n 200 --nb-res 64 -p ../npb_profiles_16.json -o npb_200_jobs.json -i 4

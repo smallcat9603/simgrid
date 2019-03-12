@@ -1,0 +1,30 @@
+# npb-two-jobs
+batcmd: 'batsim -p ../batsim-v2.0.0/platforms/torus-8-master.xml
+                -w ../batsim-v2.0.0/workload_profiles/npb-two-jobs-8p2bt.json
+                -e npb-two-jobs-out-8p2bt/out
+                -m master_host0'
+
+# random-256-stupid
+# batcmd: 'batsim -p batsim-v2.0.0/platforms/256r1+r-4.xml
+#                 -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json
+#                 -e stupid-basic-desc-r4-out/out
+#                 -m n257'
+
+# torus-256-npb
+# batcmd: 'batsim -p batsim-v2.0.0/platforms/torus-256-master.xml
+#                 -w batsim-v2.0.0/workload_profiles/workload_npb.json
+#                 -e npb-contiguous-desc-out/out
+#                 -m master_host0'
+
+# example
+# batcmd: 'batsim -p batsim-v2.0.0/platforms/small_platform.xml
+#                 -w batsim-v2.0.0/workload_profiles/dynamic-mapping-npb.json
+#                 -e dynamic-mapping-npb-out/out'
+
+failure-timeout: 0
+output-dir: npb-two-jobs-out-8p2bt
+ready-timeout: 3
+#--policy=basic/contiguous --queue_order=fcfs/asc_size/desc_size
+schedcmd: "batsched -v filler --variant_options '{\"custom_mapping\": true}' --policy=basic --queue_order=fcfs" 
+simulation-timeout: 3000
+success-timeout: 3
