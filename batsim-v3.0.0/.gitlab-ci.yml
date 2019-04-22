@@ -1,0 +1,101 @@
+image: oarteam/batsim_ci:2018-11-07
+
+variables:
+  GIT_SUBMODULE_STRATEGY: none
+
+stages:
+  - nix_build_and_update_dependencies_cache
+  - manual_build
+  - test
+  - deploy
+
+###############################################################################
+# Nix Builds + Dependencies cache stage
+###############################################################################
+nix_build_gcc:
+  stage: nix_build_and_update_dependencies_cache
+  script:
+    - ./ci/nix-build-gcc-and-update-dependencies-cache.bash
+
+nix_build_clang:
+  stage: nix_build_and_update_dependencies_cache
+  script:
+    - ./ci/nix-build-clang-and-update-dependencies-cache.bash
+
+###############################################################################
+# Manual Build stage
+###############################################################################
+manual_build:
+  stage: manual_build
+  script:
+    - ./ci/manual-build.bash
+  artifacts:
+    paths:
+      - /builds/batsim/batsim/build
+
+###############################################################################
+# Test stage
+###############################################################################
+test_test:
+  stage: test
+  script:
+    - ./ci/run-tests.bash
+  dependencies:
+    - manual_build
+  artifacts:
+    paths:
+      - /builds/batsim/batsim/doc/doxygen_doc/html
+
+test_unittest:
+  stage: test
+  script:
+    - ./ci/run-unittests.bash
+  dependencies:
+    - manual_build
+
+###############################################################################
+# Deploy stage
+###############################################################################
+update_batsim_dev_cache:
+  stage: deploy
+  script:
+    - ./ci/update-batsim_dev-cache.bash
+  dependencies:
+    - test_test
+    - test_unittest
+
+deploy_code_doc:
+  stage: deploy
+  script:
+      # Pushes Batsim's code doc (doxygen) onto the gforge website.
+      # SSH setup (do NOT run these commands on your machine)
+      - eval $(ssh-agent -s)
+      - ssh-add <(echo "$SSH_PRIVATE_KEY")
+      - mkdir -p ~/.ssh
+      - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" >> ~/.ssh/config'
+      # Finally push the code documentation on the gforge website
+      - cd /builds/batsim/batsim/doc
+      - rsync -rlgoDz --delete doxygen_doc/html/ mpoquet@scm.gforge.inria.fr:/home/groups/batsim/htdocs/batsim/doxygen
+  dependencies:
+    - test_test
+  only:
+    - master
+
+###############################################################################
+# Tutorials
+###############################################################################
+# tuto_first_simulation-stable:
+#   only:
+#     - schedules
+#   script:
+#     - cd docs/tuto-first-simulation
+#     - nix-shell ./tuto-env.nix --command './run_simulation_manually.bash'
+#     - nix-shell ./tuto-env.nix --command './run_simulation_robin.bash'
+
+tuto_first_simulation:
+  only:
+    - schedules
+  script:
+    - cd docs/tuto-first-simulation
+    - DO_NOT_CHECK_VERSION=1 nix-shell ./tuto-env-dev.nix --command './run_simulation_manually.bash'
+    - DO_NOT_CHECK_VERSION=1 nix-shell ./tuto-env-dev.nix --command './run_simulation_robin.bash'
