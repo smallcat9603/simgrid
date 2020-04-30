@@ -11,10 +11,10 @@ OVERHEAD_INNER = 200 # Intra-rack cabling overhead [cm]
 
 
 #Default values 
-NODEPOWER = 1E9
-CABLEBW= 100E6
-SWITCHBW= 125E6
-SWITCHLAT=50E-6
+NODEPOWER = 5E12 # 1E9
+CABLEBW= 200E9 # 100E6
+SWITCHBW= 50E9 # 125E6
+SWITCHLAT= 10E-9 # 50E-6
 DEFAULTDISTANCE = 500 #Default distance between racks
 
 # Latency
@@ -129,10 +129,10 @@ def generateplatform(edgefile,platformbase,opts)
   if !opts.has_key?(:machinepower)
     case Socket.gethostname
     when /calc[0-9]/
-      opts[:machinepower]=50e9
+      opts[:machinepower]=NODEPOWER #50e9
       STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
     else
-      opts[:machinepower]=1e9
+      opts[:machinepower]=NODEPOWER #1e9
       STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
     end
   end
