@@ -10,7 +10,7 @@
 #define absErrBound_binary  20 //bitwise, SZ, equal to above
 #define CT                  5 //compress type for pingpong & himeno & k-means, 0 no compress, 1 mycompress, 2 no-lossy-performance, 3 no-lossy-area, 4 sz, 5 bitwise
 #define byte_or_bit         2 //1 byte, 2 bit
-#define tp                  1 //0 uniform, 1 matrix, 2 reversal
+#define tp                  0 //0 uniform, 1 matrix, 2 reversal
 
 int reversal(int src, int num);
 int matrix(int src, int num, int array_size, int dimension);
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Get_processor_name(hostname,&hostname_len);
 
-  //src-dst mapping
+  //src-dst mapping (tag = src rank)
   int *srcdst = malloc(sizeof(int) * size);
   if(tp == 0) //uniform
   {
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
   {
     for(int i=0; i<size; i++)
     {
-      srcdst[i] = matrix(i, size, 4, 3);
+      srcdst[i] = matrix(i, size, 4, 3); //array_size = 4, dimension = 3
       if(rank == 0) printf("%d, ", srcdst[i]);
     }    
   }
@@ -96,17 +96,6 @@ int main(int argc, char *argv[])
     printf("compression ratio: sz %f, nolossy_performance %f, nolossy_area %f \n", 1/sz_comp_ratio, 1/nolossy_performance, 1/nolossy_area);
   }
 
-  double* data_small = NULL;
-  double min = toSmallDataset_double(data, &data_small, data_num);
-
-  unsigned char* data_bits = NULL;
-  //int flag = 0; //0, 1
-  int bytes = 0; //total bytes of compressed data
-  int pos = 8; //position of filled bit in last byte --> 87654321
-
-  myCompress_bitwise_double(data_small, data_num, &data_bits, &bytes, &pos);
-
-  double *buffer = malloc(sizeof(double) * data_num);
   int dst = srcdst[rank];
   int src;
   for(int i = 0; i < size; i++)
@@ -116,12 +105,70 @@ int main(int argc, char *argv[])
       src = i;
     }
   }
-  MPI_Request* mr = (MPI_Request *)malloc(sizeof(MPI_Request) * 2); 
-  MPI_Status* ms = (MPI_Status *)malloc(sizeof(MPI_Status) * 2); 
 
-  MPI_Irecv(buffer, data_num, MPI_DOUBLE, src, src, MPI_COMM_WORLD, &mr[0]);
-  MPI_Isend(buffer, data_num, MPI_DOUBLE, dst, rank, MPI_COMM_WORLD, &mr[1]);
-  MPI_Waitall(2, mr, ms);
+  double* data_small = NULL;
+  double data_min = toSmallDataset_double(data, &data_small, data_num);
+
+  if(CT == 0)
+  {
+    double *buffer = malloc(sizeof(double) * data_num);
+
+    MPI_Request* mr = (MPI_Request *)malloc(sizeof(MPI_Request) * 2); 
+    MPI_Status* ms = (MPI_Status *)malloc(sizeof(MPI_Status) * 2); 
+
+    MPI_Irecv(buffer, data_num, MPI_DOUBLE, src, src, MPI_COMM_WORLD, &mr[0]);
+    MPI_Isend(data, data_num, MPI_DOUBLE, dst, rank, MPI_COMM_WORLD, &mr[1]);
+    MPI_Waitall(2, mr, ms);
+  }
+  else if(CT == 1)
+  {
+
+  }
+  else if(CT == 5)
+  {
+    MPI_Request* mr0 = (MPI_Request *)malloc(sizeof(MPI_Request) * 2); 
+    MPI_Status* ms0 = (MPI_Status *)malloc(sizeof(MPI_Status) * 2);     
+
+    int data_bytes_recv;
+    MPI_Irecv(&data_bytes_recv, 1, MPI_INT, src, src, MPI_COMM_WORLD, &mr0[0]);
+
+    unsigned char* data_bits_send = NULL;
+    //int flag = 0; //0, 1
+    int bytes = 0; //total bytes of compressed data
+    int pos = 8; //position of filled bit in last byte --> 87654321
+
+    myCompress_bitwise_double(data_small, data_num, &data_bits_send, &bytes, &pos);
+    if(rank == 0)
+    {
+      float compress_ratio = bytes*8.0/(data_num*sizeof(double)*8); 
+      printf("compress ratio = %f \n", 1/compress_ratio);
+    }
+    MPI_Isend(&bytes, 1, MPI_INT, dst, rank, MPI_COMM_WORLD, &mr0[1]); 
+
+    MPI_Waitall(2, mr0, ms0);
+
+    MPI_Request* mr1 = (MPI_Request *)malloc(sizeof(MPI_Request) * 2); 
+    MPI_Status* ms1 = (MPI_Status *)malloc(sizeof(MPI_Status) * 2); 
+
+    unsigned char* data_bits_recv = (unsigned char*) malloc(sizeof(unsigned char)*data_bytes_recv);
+    MPI_Irecv(data_bits_recv, data_bytes_recv, MPI_UNSIGNED_CHAR, src, src, MPI_COMM_WORLD, &mr1[0]);
+    MPI_Isend(data_bits_send, bytes, MPI_UNSIGNED_CHAR, dst, rank, MPI_COMM_WORLD, &mr1[1]); 
+
+    MPI_Waitall(2, mr1, ms1); 
+
+    //bitwise decompress
+    double* decompressed_data = myDecompress_bitwise_double(data_bits_recv, data_bytes_recv, data_num);
+    double gosa = 0;
+    if(rank == 0)
+    {
+      for(int j = 0; j < data_num; j++)
+      {
+        gosa += decompressed_data[j] + data_min - data[j];
+      }
+      gosa = gosa/data_num;
+      printf("gosa is %.10f\n", gosa);         
+    }
+  }
 
   // // Allocate a 1 MiB buffer
   // char *buffer = malloc(sizeof(char) * N);
