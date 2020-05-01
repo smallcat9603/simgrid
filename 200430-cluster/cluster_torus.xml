@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4.1">
+  <zone id="world" routing="Full">
+    <cluster id="bob_cluster" topology="TORUS" topo_parameters="4,4,4"
+	     prefix="node-" radical="0-63" suffix=".simgrid.org"
+	     speed="50Tf" bw="200Gbps" lat="10ns"
+	     loopback_bw="200Gbps" loopback_lat="0"/>
+  </zone>
+</platform>
