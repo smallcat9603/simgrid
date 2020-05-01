@@ -8,7 +8,7 @@
 // #define N (1024 * 1024 * 1)
 #define absErrBound         0.000001 //default 0.0001=2^{-12} (-13?), 0.000001=2^{-20}, 0.00001=2^{-16}, 0.001=2^{-10}, 0.01=2^{-7}
 #define absErrBound_binary  20 //bitwise, SZ, equal to above
-#define CT                  5 //compress type for pingpong & himeno & k-means, 0 no compress, 1 mycompress, 2 no-lossy-performance, 3 no-lossy-area, 4 sz, 5 bitwise
+#define CT                  1 //compress type for pingpong & himeno & k-means, 0 no compress, 1 mycompress, 2 no-lossy-performance, 3 no-lossy-area, 4 sz, 5 bitwise
 #define byte_or_bit         2 //1 byte, 2 bit
 #define tp                  0 //0 uniform, 1 matrix, 2 reversal
 
@@ -122,7 +122,60 @@ int main(int argc, char *argv[])
   }
   else if(CT == 1)
   {
+    int array_double_len_send;
+    int array_double_len_recv;
 
+    double* array_double_send = NULL;
+    char* array_char_send = NULL;
+    int* array_char_displacement_send = NULL;
+
+    MPI_Request* mr0 = (MPI_Request *)malloc(sizeof(MPI_Request) * 2); 
+    MPI_Status* ms0 = (MPI_Status *)malloc(sizeof(MPI_Status) * 2); 
+
+    MPI_Irecv(&array_double_len_recv, 1, MPI_INT, src, src, MPI_COMM_WORLD, &mr0[0]);
+    int array_double_len = myCompress_double(data, &array_double_send, &array_char_send, &array_char_displacement_send, data_num);
+    array_double_len_send = array_double_len;
+    MPI_Isend(&array_double_len, 1, MPI_INT, dst, rank, MPI_COMM_WORLD, &mr0[1]); 
+    MPI_Waitall(2, mr0, ms0);
+
+    double* array_double_recv; 
+    char* array_char_recv; 
+    int* array_char_displacement_recv; 
+
+    MPI_Request* mr1 = (MPI_Request *)malloc(sizeof(MPI_Request) * 6); 
+    MPI_Status* ms1 = (MPI_Status *)malloc(sizeof(MPI_Status) * 6); 
+
+    int num_p = array_double_len_recv, num_c = data_num - array_double_len_recv;
+    array_double_recv = (double*) malloc(sizeof(double)*num_p);
+    array_char_recv = (char*) malloc(sizeof(char)*num_c);
+    array_char_displacement_recv = (int*) malloc(sizeof(int)*num_c);
+    MPI_Irecv(array_double_recv, num_p, MPI_DOUBLE, src, src, MPI_COMM_WORLD, &mr1[0]);
+    MPI_Irecv(array_char_recv, num_c, MPI_CHAR, src, src, MPI_COMM_WORLD, &mr1[1]);
+    MPI_Irecv(array_char_displacement_recv, num_c, MPI_INT, src, src, MPI_COMM_WORLD, &mr1[2]);    
+    num_p = array_double_len_send;
+    num_c = data_num - array_double_len_send;
+    if(rank == 0)
+    {
+      float compress_ratio = (float)(num_c*sizeof(char)+num_p*sizeof(double))/((num_c+num_p)*sizeof(double));
+      printf("compress ratio = %f \n", 1/compress_ratio);
+    }
+    MPI_Isend(array_double_send, num_p, MPI_DOUBLE, dst, rank, MPI_COMM_WORLD, &mr1[3]); 
+    MPI_Isend(array_char_send, num_c, MPI_CHAR, dst, rank, MPI_COMM_WORLD, &mr1[4]); 
+    MPI_Isend(array_char_displacement_send, num_c, MPI_INT, dst, rank, MPI_COMM_WORLD, &mr1[5]); 
+
+    MPI_Waitall(6, mr1, ms1);
+
+    double* decompressed_data = myDecompress_double(array_double_recv, array_char_recv, array_char_displacement_recv, data_num);
+    double gosa = 0;
+    if(rank == 0)
+    {
+      for(int j = 0; j < data_num; j++)
+      {
+        gosa += decompressed_data[j] - data[j];
+      }
+      gosa = gosa/data_num;
+      printf("gosa is %.10f\n", gosa);   
+    }
   }
   else if(CT == 5)
   {
