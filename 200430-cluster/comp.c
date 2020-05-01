@@ -8,9 +8,9 @@
 // #define N (1024 * 1024 * 1)
 #define absErrBound         0.000001 //default 0.0001=2^{-12} (-13?), 0.000001=2^{-20}, 0.00001=2^{-16}, 0.001=2^{-10}, 0.01=2^{-7}
 #define absErrBound_binary  20 //bitwise, SZ, equal to above
-#define CT                  1 //compress type for pingpong & himeno & k-means, 0 no compress, 1 mycompress, 2 no-lossy-performance, 3 no-lossy-area, 4 sz, 5 bitwise
+#define CT                  5 //compress type for pingpong & himeno & k-means, 0 no compress, 1 mycompress, 2 no-lossy-performance, 3 no-lossy-area, 4 sz, 5 bitwise
 #define byte_or_bit         2 //1 byte, 2 bit
-#define tp                  0 //0 uniform, 1 matrix, 2 reversal
+#define tp                  2 //0 uniform, 1 matrix, 2 reversal
 
 int reversal(int src, int num);
 int matrix(int src, int num, int array_size, int dimension);
@@ -61,7 +61,6 @@ int main(int argc, char *argv[])
     for(int i=0; i<size; i++)
     {
       srcdst[i] = matrix(i, size, 4, 3); //array_size = 4, dimension = 3
-      if(rank == 0) printf("%d, ", srcdst[i]);
     }    
   }
   else if(tp == 2) //reversal
