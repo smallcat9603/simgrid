@@ -175,7 +175,7 @@ def generateplatform(edgefile,platformbase,opts)
   configString=
 "<?xml version='1.0'?>
 <!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd'>
-<platform version='4'>
+<platform version='4.1'>
  <config>
   <prop id='maxmin/precision' value='1e-4'/> 
   <prop id='network/model' value='#{opts[:networkmodel]}'/>
