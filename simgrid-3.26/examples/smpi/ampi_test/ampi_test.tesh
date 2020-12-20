@@ -1,0 +1,30 @@
+p Test if the AMPI code gets traced correctly
+
+$ rm -rf ${bindir:=.}/smpi_trace.trace ${bindir:=.}/smpi_trace.trace_files
+
+$ ../../smpi_script/bin/smpirun -trace-ti --cfg=tracing/filename:${bindir:=.}/smpi_trace.trace --cfg=tracing/smpi/format/ti-one-file:yes -no-privatize -replay ${srcdir:=.}/replay/actions_bcast.txt --log=replay.thresh:critical --log=smpi_replay.thresh:verbose --log=no_loc --cfg=smpi/simulate-computation:no -np 3 -platform ${srcdir:=.}/../platforms/small_platform.xml -hostfile ${srcdir:=.}/hostfile ./ampi_test/smpi_ampi_test --log=smpi_config.thres:warning --log=xbt_cfg.thres:warning --cfg=smpi/wtime:0
+
+$ sh -c "cat ${bindir:=.}/smpi_trace.trace_files/*"
+> 0 init
+> 0 iteration_in
+> 0 iteration_out
+> 0 iteration_in
+> 0 iteration_out
+> 0 migrate 0
+> 0 finalize
+> 1 init
+> 1 iteration_in
+> 2 init
+> 2 iteration_in
+> 1 iteration_out
+> 1 iteration_in
+> 2 iteration_out
+> 2 iteration_in
+> 1 iteration_out
+> 1 migrate 400
+> 1 finalize
+> 2 iteration_out
+> 2 migrate 400
+> 2 finalize
+
+$ rm -rf ${bindir:=.}/smpi_trace.trace ${bindir:=.}/smpi_trace.trace_files

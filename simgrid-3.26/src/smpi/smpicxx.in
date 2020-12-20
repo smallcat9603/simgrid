@@ -1,0 +1,105 @@
+#!/usr/bin/env sh
+
+# Copyright (c) 2014-2020. The SimGrid Team.
+# All rights reserved.
+
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the license (GNU LGPL) which comes with this package.
+
+SIMGRID_VERSION="@SIMGRID_VERSION_STRING@"
+SIMGRID_GITHASH="@SIMGRID_GITHASH@"
+
+CXX=@CMAKE_CXX_COMPILER@
+
+INCLUDEARGS="@includeflag@"
+CMAKE_LINKARGS="-L@libdir@"
+
+@SMPITOOLS_SH@
+
+list_set CXXFLAGS "-std=gnu++11" @SMPI_CXX_FLAGS@
+list_set LINKARGS
+
+if [ "@CMAKE_C_COMPILER_ID@" = "Clang" ] && [ "@HAVE_SANITIZER_ADDRESS@" = "TRUE" ]; then
+    LINKER_UNDEFINED_ERROR=""
+else
+    LINKER_UNDEFINED_ERROR="1"
+fi
+
+if [ "x@WIN32@" = "x1" ]; then
+    list_add CXXFLAGS "-include" "@includedir@/smpi/smpi_main.h"
+    list_add LINKARGS "@libdir@\libsimgrid.dll"
+elif [ "x@APPLE@" = "x1" ]; then
+    list_add CXXFLAGS "-fPIC"
+    if [ "x${SMPI_PRETEND_CC}" = "x" ]; then
+       list_add CXXFLAGS "-include" "@includedir@/smpi/smpi_helpers.h"
+       list_add LINKARGS "-shared"
+    else
+       echo "Warning: smpicc pretends to be a regular compiler (SMPI_PRETEND_CC is set). Produced binaries will not be usable in SimGrid."
+    fi
+    if [ "x${SMPI_NO_UNDEFINED_CHECK}" = "x" ]; then
+      list_add LINKARGS "-lsimgrid" "-lm" ${LINKER_UNDEFINED_ERROR:+"-Wl,-undefined,error"}
+    fi
+else
+    list_add CXXFLAGS "-fPIC"
+    if [ "x${SMPI_PRETEND_CC}" = "x" ]; then
+       list_add CXXFLAGS "-include" "@includedir@/smpi/smpi_helpers.h"
+       list_add LINKARGS "-shared"
+    else
+       echo "Warning: smpicc pretends to be a regular compiler (SMPI_PRETEND_CC is set). Produced binaries will not be usable in SimGrid."
+    fi
+    if [ "x${SMPI_NO_UNDEFINED_CHECK}" = "x" ]; then
+      list_add LINKARGS "-lsimgrid" "-lm"  ${LINKER_UNDEFINED_ERROR:+"-Wl,-z,defs"}
+    fi
+fi
+
+list_set CMDARGS
+while [ $# -gt 0 ]; do
+    ARG="$1"
+    shift
+    case "${ARG}" in
+        -c)
+            CMAKE_LINKARGS=""
+            LINKARGS=""
+            list_add CMDARGS "-c"
+            ;;
+        *.c)
+            SRCFILE="$(readlink -f "${ARG}" 2>/dev/null)"
+            if [ -z "$SRCFILE" ] ; then
+                SRCFILE="$ARG"
+            fi
+            list_add CMDARGS "${SRCFILE}"
+            ;;
+        '-version' | '--version')
+            printf '%b\n' "$SIMGRID_VERSION"
+            exit 0
+            ;;
+        "-git-version" | "--git-version")
+            printf '%b\n' "$SIMGRID_GITHASH"
+            exit 0
+            ;;
+        '-compiler-version' | '--compiler-version')
+            ${CXX} --version
+            ;;
+	'-show'|'-compile-info'|'-link-info')
+            # Dry run displaying commands instead of executing them. Useful to cmake
+	    show=1
+	    ;;
+        *)
+            list_add CMDARGS "${ARG}"
+      ;;
+  esac
+done
+
+list_set CMDLINE "${CXX}"
+list_add_not_empty CMDLINE "${CXXFLAGS}"
+list_add_not_empty CMDLINE ${INCLUDEARGS}
+list_add_not_empty CMDLINE "${CMAKE_LINKARGS}"
+list_add_not_empty CMDLINE "${CMDARGS}"
+list_add_not_empty CMDLINE "${LINKARGS}"
+
+eval $(list_get CMDLINE)
+if [ "x$VERBOSE" = x1 ] || [ "x$show" = x1 ] ; then
+  echo "$@"
+  [ "x$show" = x1 ] && exit 0
+fi
+"$@"

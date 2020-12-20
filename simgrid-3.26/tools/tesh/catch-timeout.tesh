@@ -1,0 +1,12 @@
+#!/usr/bin/env tesh
+
+# This suite must be functional because we changed the timeout value to 1
+# before sleeping 6 secs.
+
+! expect return 3
+< ! timeout 1
+< $ sleep 6
+> Test suite from stdin
+> [(stdin):2] sleep 6
+> Test suite `(stdin)': NOK (<(stdin):2> timeout after 1 sec)
+$ ${bindir:=.}/tesh

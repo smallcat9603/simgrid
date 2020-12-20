@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <zone id="AS0" routing="Full">
+    <cluster id="my_cluster_1" prefix="" suffix="" radical="1" speed="1Gf" bw="125MBps" lat="50us"/>
+    <cluster id="my_cluster_2" prefix="" suffix="" radical="2" speed="1Gf" bw="125MBps" lat="50us"/>
+    <cluster id="my_cluster_3" prefix="" suffix="" radical="3" speed="1Gf" bw="125MBps" lat="50us"/>
+
+    <link id="link1" bandwidth="1.25GBps" latency="500us"/>
+    <link id="link2" bandwidth="1.25GBps" latency="500us"/>
+    <link id="link3" bandwidth="1.25GBps" latency="500us"/>
+
+    <link id="link_tmp"  bandwidth="1.25GBps" latency="500us"/>
+
+    <zoneRoute src="my_cluster_1" dst="my_cluster_2" gw_src="my_cluster_1_router" gw_dst="my_cluster_2_router">
+      <link_ctn id="link1"/>
+      <link_ctn id="link2"/>
+    </zoneRoute>
+    <zoneRoute src="my_cluster_1" dst="my_cluster_3" gw_src="my_cluster_1_router" gw_dst="my_cluster_3_router">
+      <link_ctn id="link1"/>
+      <link_ctn id="link3"/>
+    </zoneRoute>
+    <zoneRoute src="my_cluster_2" dst="my_cluster_3" gw_src="my_cluster_2_router" gw_dst="my_cluster_3_router">
+      <link_ctn id="link2"/>
+      <link_ctn id="link3"/>
+    </zoneRoute>
+
+    <bypassASroute src="my_cluster_1" dst="my_cluster_2" gw_src="my_cluster_1_router" gw_dst="my_cluster_2_router">
+      <link_ctn id="link_tmp"/>
+    </bypassASroute>
+  </zone>
+</platform>

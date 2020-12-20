@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+# Wrapper around the real `as` which adds filtering capabilities.
+
+import os
+import re
+import subprocess
+import sys
+import tempfile
+
+# Process the arguments:
+# * build the argument array for calling the real assembler;
+# * get the input file name.
+args = []
+input_filename = None
+args.append('as')
+i = 1
+while i < len(sys.argv):
+    if sys.argv[i] == '-o' or sys.argv[i] == '-I':
+        args.append(sys.argv[i])
+        if i + 1 >= len(sys.argv):
+            sys.stderr.write("Missing argument\n")
+            sys.exit(1)
+        args.append(sys.argv[i + 1])
+        i = i + 1
+    elif re.match('^-', sys.argv[i][0]):
+        args.append(sys.argv[i])
+    elif input_filename:
+        sys.stdout.write("Too many input files\n")
+        sys.exit(1)
+    else:
+        input_filename = sys.argv[i]
+    i = i + 1
+if input_filename is None:
+    sys.stderr.write("Missing input file\n")
+    sys.exit(1)
+
+temp_file, temp_filename = tempfile.mkstemp(suffix=".s", prefix="as_wrapper")
+try:
+    # Generate temporary file with modified assembly code:
+    script_file = os.path.join(
+        os.path.dirname(sys.argv[0]), "clean-stack-filter")
+    input_file = os.open(input_filename, os.O_RDONLY)
+    status = subprocess.call([script_file], stdin=input_file, stdout=temp_file)
+    os.close(input_file)
+    if status != 0:
+        sys.stderr.write("Filtering the assembly code failed.\n")
+        sys.exit(status)
+
+    # Call the real assembler on this modified assembly code:
+    args.append(temp_filename)
+    sys.exit(subprocess.call(args))
+finally:
+    os.remove(temp_filename)

@@ -1,0 +1,62 @@
+# Copyright (c) 2014-2020. The SimGrid Team. All rights reserved.
+
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the license (GNU LGPL) which comes with this package.
+
+# The simcalls are given as C-like signatures (one per line):
+#
+# int foo(int x, int y);
+# int foo(int x, int y) [[block]];
+# int foo(int x, int y) [[nohandler]];
+# int foo(int x, int y) [[block, nohandler]];
+#
+# The `block` attribute is used for calls which do not return in the same
+# scheduling round. The answer requires some interaction with SURF,
+# even if this can still occur at the same timestamp under some
+# circumstances (eg if the surf_action cannot start because of resources
+# that are down) examples: things that last some time (communicate, execute,
+# mutex_lock).
+#
+# The `nohandler` is used to disable handlers.
+# I wish we could completely remove the handlers as their only use is
+# to adapt the interface between the exported symbol that is visible
+# by the user applications and the internal symbol that is implemented
+# by the kernel.
+# The only remaining use of that mechanism is to add the caller
+# identity as a parameter of internal call, but that could be
+# automated too (eg by having a special parameter type called "self")
+
+# Please note that in addition to completing this file with your new simcall,
+# you should complete the libsmx.c file by adding the corresponding function
+# (a.k.a. stub). Anyway, if you omit to do it, the invocation of ./simcalls.py will notify you ;)
+# If you want to remove an handler, it is important to remove although
+# the corresponding code (simcall_HANDLER_name_of_simcall(xxx) (note that comment the code
+# is not sufficient, the python script does not check whether the code is commented or not).
+# Last but not the least, you should declare the new simix call in
+# ./include/simgrid/simix.h (otherwise you will get a warning at compile time)
+
+int           execution_waitany_for(simgrid::kernel::activity::ExecImpl** execs, size_t count, double timeout) [[block]];
+
+void           comm_send(smx_actor_t sender, smx_mailbox_t mbox, double task_size, double rate, unsigned char* src_buff, size_t src_buff_size, simix_match_func_t match_fun, simix_copy_data_func_t copy_data_fun, void* data, double timeout) [[block]];
+boost::intrusive_ptr<simgrid::kernel::activity::ActivityImpl> comm_isend(smx_actor_t sender, smx_mailbox_t mbox, double task_size, double rate, unsigned char* src_buff, size_t src_buff_size, simix_match_func_t match_fun, simix_clean_func_t clean_fun, simix_copy_data_func_t copy_data_fun, void* data, bool detached);
+void           comm_recv(smx_actor_t receiver, smx_mailbox_t mbox, unsigned char* dst_buff, size_t* dst_buff_size, simix_match_func_t match_fun, simix_copy_data_func_t copy_data_fun, void* data, double timeout, double rate) [[block]];
+boost::intrusive_ptr<simgrid::kernel::activity::ActivityImpl> comm_irecv(smx_actor_t receiver, smx_mailbox_t mbox, unsigned char* dst_buff, size_t* dst_buff_size, simix_match_func_t match_fun, simix_copy_data_func_t copy_data_fun, void* data, double rate);
+int            comm_waitany(simgrid::kernel::activity::CommImpl** comms, size_t count, double timeout) [[block]];
+void           comm_wait(simgrid::kernel::activity::CommImpl* comm, double timeout) [[block]];
+bool           comm_test(simgrid::kernel::activity::CommImpl* comm) [[block]];
+int            comm_testany(simgrid::kernel::activity::CommImpl** comms, size_t count) [[block]];
+
+void        mutex_lock(smx_mutex_t mutex) [[block]];
+int         mutex_trylock(smx_mutex_t mutex);
+void        mutex_unlock(smx_mutex_t mutex);
+
+void       cond_wait(smx_cond_t cond, smx_mutex_t mutex) [[block]];
+int        cond_wait_timeout(smx_cond_t cond, smx_mutex_t mutex, double timeout) [[block]];
+
+void      sem_acquire(smx_sem_t sem) [[block]];
+int       sem_acquire_timeout(smx_sem_t sem, double timeout) [[block]];
+
+int        mc_random(int min, int max);
+
+void       run_kernel(std::function<void()> const* code) [[nohandler]];
+void       run_blocking(std::function<void()> const* code) [[block,nohandler]];

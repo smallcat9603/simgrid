@@ -1,0 +1,18 @@
+#!/usr/bin/env tesh
+
+p This tests whether TESH detects wrong outputs
+
+! expect return 2
+< > TOTO
+< < TUTU
+< $ cat
+$ ${bindir:=.}/tesh
+> Test suite from stdin
+> [(stdin):3] cat
+> Output of <(stdin):3> mismatch:
+>--- expected
+>+++ obtained
+>@@ -1 +1 @@
+> -TOTO
+> +TUTU
+> Test suite `(stdin)': NOK (<(stdin):3> output mismatch)

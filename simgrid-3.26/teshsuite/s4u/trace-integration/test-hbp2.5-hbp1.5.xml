@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <actor host="Cpu B" function="test_trace" start_time="10">
+    <argument value="50"/>
+    <argument value="2.5"/>
+  </actor>
+  <actor host="Cpu B" function="test_trace" start_time="10.5">
+    <argument value="70"/>
+    <argument value="1.5"/>
+  </actor>
+</platform>

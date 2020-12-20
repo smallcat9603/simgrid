@@ -1,0 +1,259 @@
+/**
+@page inside_extending Extending SimGrid
+
+@tableofcontents
+
+@section simgrid_dev_guide_model How to add a new model?
+The figure below shows the architecture of the SURF layer. This layer is composed
+of different kinds of models representing the different systems we want to
+model (i.e., cpu, network, storage, workstation, virtual machine).
+
+A model in SimGrid is composed of three classes: Model, Resource and Action
+(@ref SURF_interface "surf_interface.hpp").
+
+@image html surf++.png
+@image latex surf++.pdf "surf++" width=\textwidth
+
+Actually there are five kind of models: CpuModel, NetworkModel, WorkstationModel,
+WorkstationVMModel and StorageModel. For each kind of model, there is an
+interface (e.g.: @ref SURF_cpu_interface "cpu_interface.hpp") and some implementations (e.g.: cpu_cas01.hpp,
+cpu_ti.hpp).
+
+The CPU model Cas01, for instance, is initialized by the function
+    void surf_cpu_model_init_Cas01()
+
+The different network models that are offered by simgrid are stored in the array
+that is defined as follows:
+
+s_surf_model_description_t surf_network_model_description[] = {
+
+@subsection simgrid_dev_guide_model_implem How to implement a new model?
+
+If you want to create a new implementation of a kind of model you must extend
+the classes of the corresponding interfaces.
+
+For instance, if you want to add a new cup model called `Plop`, create two files
+cpu_plop.hpp and cpu_plop_cpp which contains classes CpuPlopModel, CpuPlop and
+CpuPlopAction implementing respectively the interfaces CpuModel, Cpu and
+CpuAction. You also need to define an initializing function like this:
+
+~~~~
+void surf_cpu_model_init_plop()
+{
+  xbt_assert(!surf_cpu_model_pm);
+
+  surf_cpu_model_pm = new CpuPlopModel();
+
+  simgrid::surf::on_postparse.connect(cpu_add_traces);
+
+  xbt_dynar_push(model_list, &surf_cpu_model_pm);
+}
+~~~~
+
+and add an entry in the corresponding array in surf_interface.cpp
+
+~~~~
+s_surf_model_description_t surf_cpu_model_description[] = {
+  {"Cas01",
+   "Simplistic CPU model (time=size/speed).",
+   surf_cpu_model_init_Cas01},
+  {"Plop",
+   "The new plop CPU model.",
+   surf_cpu_model_init_plop},
+  {NULL, NULL, NULL}      // this array must be NULL terminated
+};
+~~~~
+
+@subsection simgrid_dev_guide_model_kind How to add a new kind of model?
+
+If you want to create a new kind of model, you must create a new interface
+where you extend the classes Model, Resource and Action, and then create an
+implementation of this interface.
+
+
+@section simgrid_dev_guide_surf_callbacks How to use surf callbacks?
+
+Adding features to surf could also be handle by using surf callbacks (instead
+of adding new implementation model). The list of available callbacks is
+accessible there @ref SURF_callbacks. An example of using surf callbacks is the
+energy plugin. If you want to add a plugin you need to define callback function
+and to connect them to callbacks handler in an initialization function.
+
+~~~~
+static void MyNetworkLinkCreatedCallback(NetworkLinkPtr cpu){
+  // your code
+}
+
+static void MyNetworkLinkDestructedCallback(NetworkLinkPtr cpu){
+  // your code
+}
+
+static void MyNetworkCommunicationCallback(NetworkActionPtr cpu,
+                                           RoutingEdgePtr src,
+                                           RoutingEdgePtr dst){
+  // your code
+}
+
+void sg_my_network_plugin_init() {
+  networkLinkCreatedCallbacks.connect(MyNetworkLinkCreatedCallback);
+  networkLinkDestructedCallbacks.connect(MyNetworkLinkDestructedCallback);
+  networkCommunicationCallbacks.connect(MyNetworkCommunicationCallback);
+}
+~~~~
+
+Then you need to add an entry in surf_interface.cpp referring to your
+initialization function.
+
+~~~~
+s_surf_model_description_t surf_plugin_description[] = {
+                  {"Energy",
+                   "Cpu energy consumption.",
+                   sg_host_energy_plugin_init},
+                  {"MyNetworkPlugin",
+                   "My network plugin.",
+                   sg_my_network_plugin_init},
+                  {NULL, NULL, NULL}      // this array must be NULL terminated
+};
+~~~~
+
+@section simgrid_dev_guide_simcall How to add a new simcall?
+
+First of all you might want to avoid defining a new simcall if possible:
+@ref simgrid_dev_guide_generic_simcall.
+
+A simcall is used to go from user mode to kernel mode. There is some
+sort of popping dance involved, as we want to isolate the user
+contextes from their environment (so that they can run in parallel and
+so that we can model-check them).
+
+In short, just add a line to src/simix/simcalls.in and run the
+src/simix/simcalls.py script. It will guide you about how to implement
+your simcall. Please keep reading this section (only) if you want to
+understand how it goes.
+
+
+The workflow of a simcall is the following:
+
+- `<ret> simcall_<name>(<args>)`
+ - `simcall_BODY_<name>(<args>)`
+  - Initializes the simcall (store the arguments in position)
+  - If maestro, executes the simcall directly (and return)
+  - If not, call `ActorImpl::yield` to give back the control to maestro
+  - ========== KERNEL MODE ==========
+  - `ActorImpl::simcall_handle` large switch (on simcall) doing for each:
+   - `simcall_HANDLER_<name>(simcall, <args>)` (the manual code handling the simcall)
+   - If the simcall is not marked as "blocking" in its definition,
+     call `ActorImpl::simcall_answer()` that adds back the issuer
+     process to the list of processes to run in the next scheduling round.
+     It is thus the responsibility of the blocking simcalls to call
+     `ActorImpl::simcall_answer()` themselves in their handler.
+
+Note that empty HANDLERs can be omitted. These functions usually do
+some parameter checking, or retrieve some information about the
+simcall issuer, but when there no need for such things, the handler
+can be omitted. In that case, we directly call the function
+`simcall_<name>(<args>)`.
+
+To simplify the simcall creation, a python script generates most of
+the code and give helpers for the remaining stuff. That script reads
+the simcall definitions from src/simix/simcalls.in, checks that both
+`simcall_<name>()` and `simcall_HANDLER()` are defined somewhere, and
+generates the following files:
+
+- popping_accessors.hpp:
+  Helper functions to get and set simcall arguments and results
+- popping_bodies.cpp:
+  The BODY function of each simcall
+- popping_enum.hpp:
+  Definition of type `enum class Simcall` (one value per existing simcall)
+- popping_generated.cpp:
+  Definitions of `simcall_names[]` (debug name of each simcall), and
+  ActorImpl::simcall_handle() that deals with the simcall from within the kernel
+
+The simcall.in file list all the simcalls in sections. A line starting by "##"
+define a new section which will be replace by a "ifdef" in the generated code.
+
+@section simgrid_dev_guide_generic_simcall How to avoid adding a new simcall?
+
+We now have some generic simcalls which can be used to interface with the
+Maestro without creating new simcalls. You might want to use them instead of
+the defining additional simcalls.  The long term goal is to replace most of
+the simcalls with the generic ones.
+
+For simcalls which never block, `kernelImmediate()` can be used. It takes a
+C++ callback executes it in maestro. Any value returned by the callback is
+returned by `kernelImmediate()`. Conversely, if the callback throws an
+exception, this exception is propagated out of `kernelImmediate()`. Executing
+the code in maestro enforces mutual exclusion (no other user process is running)
+and enforce a deterministic order which guarantees the reproducibility of the
+simulation.  This call is particularly useful for implementing mutable calls:
+
+~~~
+void Host::setProperty(const char*key, const char *value){
+  simgrid::simix::kernelImmediate([&] {
+    simgrid::surf::HostImpl* surf_host = this->extension<simgrid::surf::HostImpl>();
+    surf_host->setProperty(key,value);
+  });
+}
+~~~
+
+If there is no blocking and no mutation involved (getters), you might consider
+avoiding switching to Maestro and reading directly the data you're interested
+in.
+
+For simcalls which might block, `kernel_sync()` can be used. It takes a
+C++ callback and executes it immediately in maestro. This C++ callback is
+expected to return a `simgrid::kernel::Future<T>` reprensenting the operation
+in the kernel. When the operations completes, the user process is waken up
+with the result:
+
+~~~
+try {
+  std::vector<char> result = simgrid::simix::kernel_sync([&] {
+    // Fictional example, simgrid::kernel::readFile does not exist.
+    simgrid::kernel::Future<std::vector<char>> result = simgrid::kernel::readFile(file);
+    return result;
+  });
+  XBT_DEBUG("Finished reading file %s: length %zu", file, result.size());
+}
+// If the operation failed, kernel_sync() throws an exception:
+catch (std::runtime_error& e) {
+  XBT_ERROR("Could not read file %s", file);
+}
+~~~
+
+Asynchronous blocks can be implemented with `kernel_async()`. It works
+like `kernel_sync()` but does not block. Instead, it returns a
+`simgrid::simix::Future` representing the operation in the process:
+
+~~~
+simgrid::simix::Future<std:vector<char>> result = simgrid::simix::kernel_sync([&] {
+  // Fictional example, simgrid::kernel::readFile does not exist.
+  simgrid::kernek::Future<std::vector<char>> result = simgrid::kernel::readFile(file);
+  return result;
+};
+
+// Do some work while the operation is pending:
+while (!result.is_ready() && hasWorkToDo())
+  doMoreWork();
+
+// We don't have anything to do, wait for the operation to complete and
+// get its value:
+try {
+  std:vector<char> data = result.get();
+  XBT_DEBUG("Finished reading file %s: length %zu", file, data.size());
+}
+// If the operation failed, .get() throws an exception:
+catch (std::runtime_error& e) {
+  XBT_ERROR("Could not read file %s", file);
+}
+~~~
+
+<b>Note:</b> `kernel_sync(f)` could be implemented as `kernel_async(f).get()`.
+
+@section simgrid_dev_guide_tag What is How to add a new tag for xml files?
+
+You should not do something like that. Please work instead to make XML
+avoidable, ie to make the C++ interface nice and usable.
+
+*/

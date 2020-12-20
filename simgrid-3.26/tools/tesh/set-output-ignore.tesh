@@ -1,0 +1,13 @@
+#!/usr/bin/env tesh
+
+p This tests whether TESH accepts to ignore command output
+
+< ! output ignore
+< > TOTO
+< < TUTU
+< $ cat
+$ ${bindir:=.}/tesh
+> Test suite from stdin
+> [(stdin):4] cat
+> (ignoring the output of <(stdin):4> as requested)
+> Test suite from stdin OK
