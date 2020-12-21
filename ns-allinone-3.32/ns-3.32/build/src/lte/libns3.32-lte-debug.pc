@@ -1,0 +1,10 @@
+prefix=/opt/ns3.32
+libdir=/opt/ns3.32/lib
+includedir=/opt/ns3.32/include/ns3.32
+
+Name: libns3-lte
+Description: ns-3 module ns3-lte
+Version: 3.32
+Libs: -L${libdir} -Wl,-Bdynamic -lns3.32-lte-debug
+Cflags: -I${includedir}
+Requires: libns3.32-core-debug libns3.32-network-debug libns3.32-spectrum-debug libns3.32-stats-debug libns3.32-buildings-debug libns3.32-virtual-net-device-debug libns3.32-point-to-point-debug libns3.32-applications-debug libns3.32-internet-debug libns3.32-csma-debug libns3.32-fd-net-device-debug

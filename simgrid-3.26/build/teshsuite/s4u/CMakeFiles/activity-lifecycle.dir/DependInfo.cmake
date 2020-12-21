@@ -1,0 +1,37 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/github/simgrid/simgrid-3.26/teshsuite/s4u/activity-lifecycle/activity-lifecycle.cpp" "/github/simgrid/simgrid-3.26/build/teshsuite/s4u/CMakeFiles/activity-lifecycle.dir/activity-lifecycle/activity-lifecycle.cpp.o"
+  "/github/simgrid/simgrid-3.26/teshsuite/s4u/activity-lifecycle/testing_comm.cpp" "/github/simgrid/simgrid-3.26/build/teshsuite/s4u/CMakeFiles/activity-lifecycle.dir/activity-lifecycle/testing_comm.cpp.o"
+  "/github/simgrid/simgrid-3.26/teshsuite/s4u/activity-lifecycle/testing_exec.cpp" "/github/simgrid/simgrid-3.26/build/teshsuite/s4u/CMakeFiles/activity-lifecycle.dir/activity-lifecycle/testing_exec.cpp.o"
+  "/github/simgrid/simgrid-3.26/teshsuite/s4u/activity-lifecycle/testing_sleep.cpp" "/github/simgrid/simgrid-3.26/build/teshsuite/s4u/CMakeFiles/activity-lifecycle.dir/activity-lifecycle/testing_sleep.cpp.o"
+  "/github/simgrid/simgrid-3.26/teshsuite/s4u/activity-lifecycle/testing_test-wait.cpp" "/github/simgrid/simgrid-3.26/build/teshsuite/s4u/CMakeFiles/activity-lifecycle.dir/activity-lifecycle/testing_test-wait.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "BOOST_ALL_NO_LIB"
+  "BOOST_CONTEXT_DYN_LINK"
+  )
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "include"
+  "../include"
+  "."
+  "../"
+  "../src/include"
+  "../src/smpi/include"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/github/simgrid/simgrid-3.26/build/CMakeFiles/simgrid.dir/DependInfo.cmake"
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "/github/simgrid/simgrid-3.26/build/include/smpi")

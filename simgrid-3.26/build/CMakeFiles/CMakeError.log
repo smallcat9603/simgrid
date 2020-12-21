@@ -1,0 +1,378 @@
+Performing C SOURCE FILE Test HAVE_C_STACK_CLEANER failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_21b1c/fast && /usr/bin/make -f CMakeFiles/cmTC_21b1c.dir/build.make CMakeFiles/cmTC_21b1c.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21b1c.dir/src.c.o
+/usr/bin/cc   -DHAVE_C_STACK_CLEANER   -fstack-cleaner -o CMakeFiles/cmTC_21b1c.dir/src.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fstack-cleaner'; did you mean '-fstack-check'?
+make[1]: *** [CMakeFiles/cmTC_21b1c.dir/build.make:66: CMakeFiles/cmTC_21b1c.dir/src.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_21b1c/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b43d1/fast && /usr/bin/make -f CMakeFiles/cmTC_b43d1.dir/build.make CMakeFiles/cmTC_b43d1.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b43d1.dir/src.c.o
+/usr/bin/cc   -g3 -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b43d1.dir/src.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b43d1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b43d1.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_b43d1.dir/src.c.o  -o cmTC_b43d1 
+/usr/bin/ld: CMakeFiles/cmTC_b43d1.dir/src.c.o: in function `main':
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/usr/bin/ld: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/usr/bin/ld: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_b43d1.dir/build.make:87: cmTC_b43d1] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_b43d1/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fc05d/fast && /usr/bin/make -f CMakeFiles/cmTC_fc05d.dir/build.make CMakeFiles/cmTC_fc05d.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fc05d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -g3 -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fc05d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fc05d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc05d.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_fc05d.dir/CheckFunctionExists.c.o  -o cmTC_fc05d  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_fc05d.dir/build.make:87: cmTC_fc05d] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_fc05d/fast] Error 2
+
+
+
+Determining if the include file pthread_np.h exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4af25/fast && /usr/bin/make -f CMakeFiles/cmTC_4af25.dir/build.make CMakeFiles/cmTC_4af25.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4af25.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -g3    -o CMakeFiles/cmTC_4af25.dir/CheckIncludeFile.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: pthread_np.h: No such file or directory
+    1 | #include <pthread_np.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_4af25.dir/build.make:66: CMakeFiles/cmTC_4af25.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_4af25/fast] Error 2
+
+
+
+Determining if the include file valgrind/valgrind.h exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_dfb61/fast && /usr/bin/make -f CMakeFiles/cmTC_dfb61.dir/build.make CMakeFiles/cmTC_dfb61.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dfb61.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -g3    -o CMakeFiles/cmTC_dfb61.dir/CheckIncludeFile.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: valgrind/valgrind.h: No such file or directory
+    1 | #include <valgrind/valgrind.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_dfb61.dir/build.make:66: CMakeFiles/cmTC_dfb61.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_dfb61/fast] Error 2
+
+
+
+Determining if the function dlfunc exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c34a5/fast && /usr/bin/make -f CMakeFiles/cmTC_c34a5.dir/build.make CMakeFiles/cmTC_c34a5.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c34a5.dir/CheckFunctionExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -g3 -DCHECK_FUNCTION_EXISTS=dlfunc   -o CMakeFiles/cmTC_c34a5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c34a5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c34a5.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCHECK_FUNCTION_EXISTS=dlfunc    CMakeFiles/cmTC_c34a5.dir/CheckFunctionExists.c.o  -o cmTC_c34a5 
+/usr/bin/ld: CMakeFiles/cmTC_c34a5.dir/CheckFunctionExists.c.o: in function `main':
+/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:17: undefined reference to `dlfunc'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_c34a5.dir/build.make:87: cmTC_c34a5] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_c34a5/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test HAVE_C_STACK_CLEANER failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e162d/fast && /usr/bin/make -f CMakeFiles/cmTC_e162d.dir/build.make CMakeFiles/cmTC_e162d.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e162d.dir/src.c.o
+/usr/bin/cc   -DHAVE_C_STACK_CLEANER   -fstack-cleaner -o CMakeFiles/cmTC_e162d.dir/src.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fstack-cleaner'; did you mean '-fstack-check'?
+make[1]: *** [CMakeFiles/cmTC_e162d.dir/build.make:66: CMakeFiles/cmTC_e162d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_e162d/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d55af/fast && /usr/bin/make -f CMakeFiles/cmTC_d55af.dir/build.make CMakeFiles/cmTC_d55af.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d55af.dir/src.c.o
+/usr/bin/cc   -g3 -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d55af.dir/src.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d55af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d55af.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_d55af.dir/src.c.o  -o cmTC_d55af 
+/usr/bin/ld: CMakeFiles/cmTC_d55af.dir/src.c.o: in function `main':
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/usr/bin/ld: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/usr/bin/ld: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_d55af.dir/build.make:87: cmTC_d55af] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_d55af/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0a2f4/fast && /usr/bin/make -f CMakeFiles/cmTC_0a2f4.dir/build.make CMakeFiles/cmTC_0a2f4.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0a2f4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -g3 -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0a2f4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0a2f4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a2f4.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0a2f4.dir/CheckFunctionExists.c.o  -o cmTC_0a2f4  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_0a2f4.dir/build.make:87: cmTC_0a2f4] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0a2f4/fast] Error 2
+
+
+
+Determining if the include file pthread_np.h exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0f097/fast && /usr/bin/make -f CMakeFiles/cmTC_0f097.dir/build.make CMakeFiles/cmTC_0f097.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f097.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -g3    -o CMakeFiles/cmTC_0f097.dir/CheckIncludeFile.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: pthread_np.h: No such file or directory
+    1 | #include <pthread_np.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_0f097.dir/build.make:66: CMakeFiles/cmTC_0f097.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0f097/fast] Error 2
+
+
+
+Determining if the include file valgrind/valgrind.h exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_52ed3/fast && /usr/bin/make -f CMakeFiles/cmTC_52ed3.dir/build.make CMakeFiles/cmTC_52ed3.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_52ed3.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -g3    -o CMakeFiles/cmTC_52ed3.dir/CheckIncludeFile.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: valgrind/valgrind.h: No such file or directory
+    1 | #include <valgrind/valgrind.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_52ed3.dir/build.make:66: CMakeFiles/cmTC_52ed3.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_52ed3/fast] Error 2
+
+
+
+Determining if the function dlfunc exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_64539/fast && /usr/bin/make -f CMakeFiles/cmTC_64539.dir/build.make CMakeFiles/cmTC_64539.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64539.dir/CheckFunctionExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -g3 -DCHECK_FUNCTION_EXISTS=dlfunc   -o CMakeFiles/cmTC_64539.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_64539
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64539.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCHECK_FUNCTION_EXISTS=dlfunc    CMakeFiles/cmTC_64539.dir/CheckFunctionExists.c.o  -o cmTC_64539 
+/usr/bin/ld: CMakeFiles/cmTC_64539.dir/CheckFunctionExists.c.o: in function `main':
+/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:17: undefined reference to `dlfunc'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_64539.dir/build.make:87: cmTC_64539] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_64539/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test HAVE_C_STACK_CLEANER failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6b4fb/fast && /usr/bin/make -f CMakeFiles/cmTC_6b4fb.dir/build.make CMakeFiles/cmTC_6b4fb.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6b4fb.dir/src.c.o
+/usr/bin/cc   -DHAVE_C_STACK_CLEANER   -fstack-cleaner -o CMakeFiles/cmTC_6b4fb.dir/src.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fstack-cleaner'; did you mean '-fstack-check'?
+make[1]: *** [CMakeFiles/cmTC_6b4fb.dir/build.make:66: CMakeFiles/cmTC_6b4fb.dir/src.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_6b4fb/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_993cb/fast && /usr/bin/make -f CMakeFiles/cmTC_993cb.dir/build.make CMakeFiles/cmTC_993cb.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_993cb.dir/src.c.o
+/usr/bin/cc   -g3 -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_993cb.dir/src.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_993cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_993cb.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_993cb.dir/src.c.o  -o cmTC_993cb 
+/usr/bin/ld: CMakeFiles/cmTC_993cb.dir/src.c.o: in function `main':
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/usr/bin/ld: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/usr/bin/ld: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_993cb.dir/build.make:87: cmTC_993cb] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_993cb/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_78907/fast && /usr/bin/make -f CMakeFiles/cmTC_78907.dir/build.make CMakeFiles/cmTC_78907.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78907.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -g3 -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_78907.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_78907
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78907.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_78907.dir/CheckFunctionExists.c.o  -o cmTC_78907  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_78907.dir/build.make:87: cmTC_78907] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_78907/fast] Error 2
+
+
+
+Determining if the include file pthread_np.h exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f5b1c/fast && /usr/bin/make -f CMakeFiles/cmTC_f5b1c.dir/build.make CMakeFiles/cmTC_f5b1c.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f5b1c.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -g3    -o CMakeFiles/cmTC_f5b1c.dir/CheckIncludeFile.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: pthread_np.h: No such file or directory
+    1 | #include <pthread_np.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_f5b1c.dir/build.make:66: CMakeFiles/cmTC_f5b1c.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_f5b1c/fast] Error 2
+
+
+
+Determining if the include file valgrind/valgrind.h exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d3708/fast && /usr/bin/make -f CMakeFiles/cmTC_d3708.dir/build.make CMakeFiles/cmTC_d3708.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d3708.dir/CheckIncludeFile.c.o
+/usr/bin/cc -D_GNU_SOURCE  -g3    -o CMakeFiles/cmTC_d3708.dir/CheckIncludeFile.c.o   -c /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: valgrind/valgrind.h: No such file or directory
+    1 | #include <valgrind/valgrind.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_d3708.dir/build.make:66: CMakeFiles/cmTC_d3708.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_d3708/fast] Error 2
+
+
+
+Determining if the function dlfunc exists failed with the following output:
+Change Dir: /github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9b718/fast && /usr/bin/make -f CMakeFiles/cmTC_9b718.dir/build.make CMakeFiles/cmTC_9b718.dir/build
+make[1]: Entering directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9b718.dir/CheckFunctionExists.c.o
+/usr/bin/cc -D_GNU_SOURCE  -g3 -DCHECK_FUNCTION_EXISTS=dlfunc   -o CMakeFiles/cmTC_9b718.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9b718
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b718.dir/link.txt --verbose=1
+/usr/bin/cc  -g3 -DCHECK_FUNCTION_EXISTS=dlfunc    CMakeFiles/cmTC_9b718.dir/CheckFunctionExists.c.o  -o cmTC_9b718 
+/usr/bin/ld: CMakeFiles/cmTC_9b718.dir/CheckFunctionExists.c.o: in function `main':
+/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:17: undefined reference to `dlfunc'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_9b718.dir/build.make:87: cmTC_9b718] Error 1
+make[1]: Leaving directory '/github/simgrid/simgrid-3.26/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_9b718/fast] Error 2
+
+
+

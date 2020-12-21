@@ -1,0 +1,184 @@
+#This file was generated using SimGrid-3.26.0
+#[/github/simgrid/simgrid-3.26/build/examples/s4u/exec-ptask/s4u-exec-ptask /github/simgrid/simgrid-3.26/examples/platforms/energy_platform.xml --cfg=host/model:ptask_L07 --cfg=tracing:yes --cfg=tracing/uncategorized:yes --log=instr_resource.t:verbose --log=no_loc --log=root.fmt:[%10.6r]%e(%i:%P@%h)%e%m%n --cfg=contexts/factory:boost ]
+%EventDef PajeDefineContainerType 0
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineVariableType 1
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeDefineStateType 2
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEventType 3
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineLinkType 4
+%       Alias string
+%       Type string
+%       StartContainerType string
+%       EndContainerType string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEntityValue 5
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeCreateContainer 6
+%       Time date
+%       Alias string
+%       Type string
+%       Container string
+%       Name string
+%EndEventDef
+%EventDef PajeDestroyContainer 7
+%       Time date
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeSetVariable 8
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeAddVariable 9
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSubVariable 10
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSetState 11
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePushState 12
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePopState 13
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeResetState 14
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeStartLink 15
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       StartContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeEndLink 16
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       EndContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeNewEvent 17
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+0 1 0 HOST
+6 0.000000 1 1 0 "MyHost1"
+1 2 1 speed "1 1 1"
+1 3 1 core_count "1 1 1"
+1 4 1 speed_used "0.5 0.5 0.5"
+6 0.000000 2 1 0 "MyHost2"
+6 0.000000 3 1 0 "MyHost3"
+0 5 0 LINK
+6 0.000000 4 5 0 "bus"
+1 6 5 bandwidth "1 1 1"
+1 7 5 latency "1 1 1"
+1 8 5 bandwidth_used "0.5 0.5 0.5"
+4 9 0 5 1 0-LINK5-HOST1
+4 10 0 1 5 0-HOST1-LINK5
+8 0.000000 2 1 100000000.000000
+8 0.000000 3 1 4.000000
+8 0.000000 2 2 100000000.000000
+8 0.000000 3 2 1.000000
+8 0.000000 2 3 100000000.000000
+8 0.000000 3 3 1.000000
+8 0.000000 6 4 100000.000000
+8 0.000000 7 4 0.000000
+15 0.000000 9 0 topology 4 0
+16 0.000000 9 0 topology 2 0
+15 0.000000 9 0 topology 4 1
+16 0.000000 9 0 topology 3 1
+15 0.000000 10 0 topology 1 2
+16 0.000000 10 0 topology 4 2
+8 0.000000 4 1 0.000000
+9 0.000000 4 1 3333333.333333
+8 0.000000 4 2 0.000000
+9 0.000000 4 2 3333333.333333
+8 0.000000 4 3 0.000000
+9 0.000000 4 3 3333333.333333
+8 0.000000 8 4 0.000000
+9 0.000000 8 4 100000.000000
+10 300.000000 4 1 3333333.333333
+10 300.000000 4 2 3333333.333333
+10 300.000000 4 3 3333333.333333
+10 300.000000 8 4 100000.000000
+9 310.000000 4 1 30000000.000000
+9 310.000000 4 2 60000000.000000
+9 310.000000 4 3 100000000.000000
+10 320.000000 4 1 30000000.000000
+10 320.000000 4 2 60000000.000000
+10 320.000000 4 3 100000000.000000
+9 320.000000 4 1 33333.333333
+9 320.000000 4 2 33333.333333
+9 320.000000 4 3 33333.333333
+9 320.000000 8 4 100000.000000
+10 350.000000 4 1 33333.333333
+10 350.000000 4 2 33333.333333
+10 350.000000 4 3 33333.333333
+10 350.000000 8 4 100000.000000
+9 350.000000 4 1 50000.000000
+9 350.000000 4 2 50000.000000
+9 350.000000 4 3 50000.000000
+9 350.000000 8 4 100000.000000
+10 360.000000 4 1 50000.000000
+10 360.000000 4 2 50000.000000
+10 360.000000 4 3 50000.000000
+10 360.000000 8 4 100000.000000
+9 360.000000 8 4 100000.000000
+10 360.500000 8 4 100000.000000
+9 360.500000 4 1 50000.000000
+9 360.500000 4 2 50000.000000
+9 360.500000 8 4 100000.000000
+10 375.500000 4 1 50000.000000
+10 375.500000 4 2 50000.000000
+10 375.500000 8 4 100000.000000
+7 375.500000 1 1
+7 375.500000 1 2
+7 375.500000 1 3
+7 375.500000 5 4

@@ -1,0 +1,11 @@
+prefix=/opt/simgrid3.26
+exec_prefix=/opt/simgrid3.26/bin
+libdir=/opt/simgrid3.26/lib
+includedir=/opt/simgrid3.26/include
+
+Name: SimGrid
+Description: Framework for the simulation of distributed applications (Clouds, HPC, Grids, IoT and others)
+Version: 3.26
+
+Libs: -L${libdir} -lsimgrid
+Cflags: -I${includedir}

@@ -1,0 +1,1 @@
+/usr/bin/gfortran -fPIC  -g -flto -fno-fat-lto-objects  -shared -Wl,-soname,libmpi.so -o lib/libmpi.so CMakeFiles/mpi.dir/src/smpi/mpif.f90.o 

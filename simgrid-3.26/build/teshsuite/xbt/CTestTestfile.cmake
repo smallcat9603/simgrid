@@ -1,0 +1,18 @@
+# CMake generated Testfile for 
+# Source directory: /github/simgrid/simgrid-3.26/teshsuite/xbt
+# Build directory: /github/simgrid/simgrid-3.26/build/teshsuite/xbt
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(tesh-xbt-cmdline "/usr/bin/python3.8" "/github/simgrid/simgrid-3.26/build/bin/tesh" "--ignore-jenkins" "--setenv" "bindir=/github/simgrid/simgrid-3.26/build/teshsuite/xbt/cmdline" "--cd" "/github/simgrid/simgrid-3.26/teshsuite/xbt/cmdline" "cmdline.tesh")
+set_tests_properties(tesh-xbt-cmdline PROPERTIES  _BACKTRACE_TRIPLES "/github/simgrid/simgrid-3.26/tools/cmake/Tests.cmake;49;ADD_TEST;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;36;ADD_TESH;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;0;")
+add_test(tesh-xbt-log_large "/usr/bin/python3.8" "/github/simgrid/simgrid-3.26/build/bin/tesh" "--ignore-jenkins" "--setenv" "bindir=/github/simgrid/simgrid-3.26/build/teshsuite/xbt/log_large" "--cd" "/github/simgrid/simgrid-3.26/teshsuite/xbt/log_large" "log_large.tesh")
+set_tests_properties(tesh-xbt-log_large PROPERTIES  _BACKTRACE_TRIPLES "/github/simgrid/simgrid-3.26/tools/cmake/Tests.cmake;49;ADD_TEST;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;36;ADD_TESH;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;0;")
+add_test(tesh-xbt-parallel_log_crashtest "/usr/bin/python3.8" "/github/simgrid/simgrid-3.26/build/bin/tesh" "--ignore-jenkins" "--setenv" "bindir=/github/simgrid/simgrid-3.26/build/teshsuite/xbt/parallel_log_crashtest" "--cd" "/github/simgrid/simgrid-3.26/teshsuite/xbt/parallel_log_crashtest" "parallel_log_crashtest.tesh")
+set_tests_properties(tesh-xbt-parallel_log_crashtest PROPERTIES  _BACKTRACE_TRIPLES "/github/simgrid/simgrid-3.26/tools/cmake/Tests.cmake;49;ADD_TEST;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;36;ADD_TESH;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;0;")
+add_test(tesh-xbt-parmap_test "/usr/bin/python3.8" "/github/simgrid/simgrid-3.26/build/bin/tesh" "--ignore-jenkins" "--setenv" "bindir=/github/simgrid/simgrid-3.26/build/teshsuite/xbt/parmap_test" "--cd" "/github/simgrid/simgrid-3.26/teshsuite/xbt/parmap_test" "parmap_test.tesh")
+set_tests_properties(tesh-xbt-parmap_test PROPERTIES  _BACKTRACE_TRIPLES "/github/simgrid/simgrid-3.26/tools/cmake/Tests.cmake;49;ADD_TEST;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;36;ADD_TESH;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;0;")
+add_test(tesh-xbt-signals "/usr/bin/python3.8" "/github/simgrid/simgrid-3.26/build/bin/tesh" "--ignore-jenkins" "--setenv" "bindir=/github/simgrid/simgrid-3.26/build/teshsuite/xbt/signals" "--setenv" "platfdir=/github/simgrid/simgrid-3.26/examples/platforms" "--cd" "/github/simgrid/simgrid-3.26/teshsuite/xbt/signals" "signals.tesh")
+set_tests_properties(tesh-xbt-signals PROPERTIES  _BACKTRACE_TRIPLES "/github/simgrid/simgrid-3.26/tools/cmake/Tests.cmake;49;ADD_TEST;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;42;ADD_TESH;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;0;")
+add_test(tesh-xbt-log "/usr/bin/python3.8" "/github/simgrid/simgrid-3.26/build/bin/tesh" "--ignore-jenkins" "--cd" "/github/simgrid/simgrid-3.26/build/teshsuite/xbt/log_usage" "/github/simgrid/simgrid-3.26/teshsuite/xbt/log_usage/log_usage.tesh")
+set_tests_properties(tesh-xbt-log PROPERTIES  _BACKTRACE_TRIPLES "/github/simgrid/simgrid-3.26/tools/cmake/Tests.cmake;49;ADD_TEST;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;45;ADD_TESH;/github/simgrid/simgrid-3.26/teshsuite/xbt/CMakeLists.txt;0;")

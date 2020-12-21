@@ -1,0 +1,10 @@
+prefix=/opt/ns3.32
+libdir=/opt/ns3.32/lib
+includedir=/opt/ns3.32/include/ns3.32
+
+Name: libns3-lr-wpan
+Description: ns-3 module ns3-lr-wpan
+Version: 3.32
+Libs: -L${libdir} -Wl,-Bdynamic -lns3.32-lr-wpan-debug
+Cflags: -I${includedir}
+Requires: libns3.32-core-debug libns3.32-network-debug libns3.32-mobility-debug libns3.32-spectrum-debug libns3.32-propagation-debug

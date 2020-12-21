@@ -1,0 +1,60 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <actor host="Tremblay" function="0"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="0"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Jupiter" function="1"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="1"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Fafard" function="2"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="2"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Ginette" function="3"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="3"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Bourassa" function="4"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="4"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Tremblay" function="5"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="5"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Jupiter" function="6"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="6"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+  <actor host="Fafard" function="7"> <!-- function name used only for logging -->
+    <prop id="instance_id" value="smpirun"/>
+    <prop id="rank" value="7"/>
+<argument value="1000"/>
+<argument value="sampling"/>
+
+  </actor>
+</platform>
