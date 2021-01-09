@@ -1,13 +1,38 @@
 # Test that the git version of this template compiles on the simgrid/unstable docker image 
-test-git:
-  image: simgrid/stable
+.build_git: &build_git
   script:
-  - apt-get update
+  - apt-get --allow-releaseinfo-change update
+  - apt-get -y install apt
+  - apt-get -y install libc6 -f -o APT::Immediate-Configure=false
+  - apt-get -y dist-upgrade 
   - apt-get install -y cmake build-essential libboost-dev
   - cmake .
   - make VERBOSE=1
   - ./master-workers small_platform.xml master-workers_d.xml
   - ./ping-pong cluster_platform.xml
+
+test-git-unstable:
+  image: simgrid/unstable
+  <<: *build_git
+
+test-git-v3.25:
+  image: simgrid/stable:v3.25
+  <<: *build_git
+
+test-git-v3.24:
+  image: simgrid/stable:v3.24
+  <<: *build_git
+
+test-git-v3.23.2:
+  image: simgrid/stable:v3.23.2
+  <<: *build_git
+
+test-git-v3.22:
+  image: simgrid/stable:v3.22.2
+  <<: *build_git
+    
+# S4U API broke in v3.22, we cannot easily make this template working
+# with previous versions.
 
 # Test that the simgrid/tuto-s4u docker image is usable as advised in tuto
 test-image:

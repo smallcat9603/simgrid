@@ -16,5 +16,5 @@ several small example applications.
    the `add_executable` line of your `CMakeLists.txt` file.
    
 ## Dependencies
-- SimGrid version 3.20 or better is required (S4U is rather recent)
+- SimGrid version 3.22 or better is required
 - cmake, g++ or clang++, libboost-dev

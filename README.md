@@ -16,6 +16,17 @@ source ~/.bashrc
 ```
 ## Test
 
+### master-workers
+```bash
+cd simgrid-template-s4u/
+export SimGrid_PATH=/opt/simgrid3.26
+cmake -D SimGrid_PATH=/opt/simgrid3.26 .
+make
+./master-workers small_platform.xml master-workers_d.xml [2>&1 | simgrid-colorizer]
+./master-workers small_platform.xml master-workers_d.xml --cfg=tracing:yes --cfg=tracing/actor:yes
+Rscript draw_gantt.R simgrid.trace
+```
+
 ### Example 1: roundtrip
 ```bash
 cd simgrid-template-smpi/
