@@ -1,6 +1,6 @@
-# Simgrid Install and Test
+# SimGrid Install and Test
 
-## Install
+## Install SimGrid
 
 ```bash
 cd SimGrid-3.26
@@ -14,7 +14,7 @@ ctest
 vim ~/.bashrc (add export PATH=$PATH:/opt/simgrid3.26/bin)
 source ~/.bashrc
 ```
-## Test
+## Test SimGrid
 
 ### master-workers
 ```bash
@@ -57,3 +57,20 @@ smpicxx -O3 gemm_mpi.cpp -o gemm
 time smpirun -np 16 -platform cluster_crossbar.xml -hostfile cluster_hostfile --cfg=smpi/display-timing:yes --cfg=smpi/host-speed:1000000000 ./gemm
 ```
 
+## Install Batsim
+```bash
+curl -L https://nixos.org/nix/install | sh
+# Follow the instructions displayed at the end of the script.
+. /home/smallcat/.nix-profile/etc/profile.d/nix.sh
+# Below are not passed!!! (Not supported on ‘aarch64-linux’)
+# Install the Batsim simulator.
+nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA batsim
+# Other packages from the Batsim ecosystem can also be installed this way.
+# For example schedulers.
+nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA batsched
+nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA pybatsim
+# Or interactive visualization tools.
+nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA evalys
+# Or experiment management tools...
+nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA batexpe
+```
