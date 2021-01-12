@@ -1,1 +1,1 @@
-batsim -p batsim-v2.0.0/platforms/cluster512.xml -w batsim-v2.0.0/workload_profiles/batsim_paper_workload_example.json -m 'master_host0' -e expe-out/out
+batsim -p batsim-v4.0.0/platforms/cluster512.xml -w batsim-v4.0.0/workloads/test_batsim_paper_workload_seed1.json -e expe-out/out

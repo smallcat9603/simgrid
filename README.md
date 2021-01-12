@@ -62,7 +62,6 @@ time smpirun -np 16 -platform cluster_crossbar.xml -hostfile cluster_hostfile --
 curl -L https://nixos.org/nix/install | sh
 # Follow the instructions displayed at the end of the script.
 . /home/smallcat/.nix-profile/etc/profile.d/nix.sh
-# Below are not passed!!! (Not supported on ‘aarch64-linux’)
 # Install the Batsim simulator.
 nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA batsim
 # Other packages from the Batsim ecosystem can also be installed this way.
@@ -70,7 +69,17 @@ nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA bats
 nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA batsched
 nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA pybatsim
 # Or interactive visualization tools.
-nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA evalys
+# nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA evalys
 # Or experiment management tools...
 nix-env -f https://github.com/oar-team/nur-kapack/archive/master.tar.gz -iA batexpe
+# Check installation
+batsim --version
+batsim --simgrid-version
+batsched --version
+robin --version
+# Test
+robin ./expe4.yaml
+# Add batsim to PATH
+vim ~/.bashrc (add export PATH=$PATH:/home/smallcat/.nix-profile/bin)
+source ~/.bashrc
 ```
