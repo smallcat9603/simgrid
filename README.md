@@ -77,8 +77,10 @@ batsim --version
 batsim --simgrid-version
 batsched --version
 robin --version
+```
 
 ## Test Batsim
+```bash
 robin ./expe4.yaml
 # Add batsim to PATH
 vim ~/.bashrc (add export PATH=$PATH:/home/smallcat/.nix-profile/bin)
