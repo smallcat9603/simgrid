@@ -1,133 +1,160 @@
-{
-  pkgs ? (let
-      hostPkgs = import <nixpkgs> {};
-      pinnedVersion = hostPkgs.lib.importJSON ./nixpkgs-18.03.json;
-      pinnedPkgs = hostPkgs.fetchFromGitHub {
-        owner = "NixOS";
-        repo = "nixpkgs-channels";
-        inherit (pinnedVersion) rev sha256;
-      };
-    in import pinnedPkgs {}),
-    #pkgs-unstable ? import (
-    #pkfetchTarball "https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz") {},
-  mylib ? import ./mylib {}
+# If called without explicitly setting the 'pkgs' arg, a pinned nixpkgs version is used by default.
+# If you want to use your <nixpkgs> instead, set usePinnedPkgs to false (e.g., nix-build --arg usePinnedPkgs false ...)
+{ usePinnedPkgs ? true
+, pkgs ? if usePinnedPkgs then import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz") {}
+                          else import <nixpkgs> {}
+, debug ? false
 }:
-let
-  # Add libraries to the scope of callPackage
-  callPackage = pkgs.lib.callPackageWith (pkgs // pkgs.xlibs // mylib // self);
-  #ocamlCallPackage = pkgs.ocamlPackages.callPackageWith (pkgs // pkgs.xlibs // self);
 
-  self = rec {
-    # Freeze python version to 3.6
-    pythonPackages = pkgs.python36Packages;
-    python = pkgs.python36;
+rec {
+  # The `lib`, `modules`, and `overlay` names are special
+  lib = import ./lib { inherit pkgs; }; # functions
+  modules = import ./modules; # NixOS modules
+  overlays = import ./overlays; # nixpkgs overlays
+  inherit pkgs;
 
-    # use Clang instead of GCC
-    # NOTE: Clang seems to optimize things even with -O0 so don't use this for debug
-    #stdenv = pkgs.clangStdenv;
+  glibc-batsky = pkgs.glibc.overrideAttrs (attrs: {
+    patches = attrs.patches ++ [ ./pkgs/glibc-batsky/clock_gettime.patch
+      ./pkgs/glibc-batsky/gettimeofday.patch ];
+    postConfigure = ''
+      export NIX_CFLAGS_LINK=
+      export NIX_LDFLAGS_BEFORE=
+      export NIX_DONT_SET_RPATH=1
+      unset CFLAGS
+      makeFlagsArray+=("bindir=$bin/bin" "sbindir=$bin/sbin" "rootsbindir=$bin/sbin" "--quiet")
+    '';
+  });
 
-    # Batsim tools an dependencies
-    simgrid = callPackage ./simgrid { };
-    simgrid_dev = callPackage ./simgrid/dev.nix { };
-    simgrid_dev_working = callPackage ./simgrid/dev_working.nix { };
-    simgrid_batsim = callPackage ./simgrid/batsim.nix { inherit simgrid; };
-    simgrid_remotesg = callPackage ./simgrid/remotesg.nix { inherit simgrid; };
-    simgrid_temperature = callPackage ./simgrid/temperature.nix { };
-    remote_simgrid = callPackage ./remote-simgrid {
-      simgrid = simgrid_remotesg; };
-    remote_simgrid_dev = callPackage ./remote-simgrid/dev.nix {
-      simgrid = simgrid_dev_working; };
-    openmpi = callPackage ./openmpi { };
-    openmpi_dev = callPackage ./openmpi/dev_pinned.nix { };
-    openmpi_rsg = callPackage ./openmpi-rsg { };
-    openmpi_rsg_dev = callPackage ./openmpi-rsg {
-      openmpi = openmpi_dev;
-      openmpi_rsg_plugins = openmpi_rsg_plugins_dev;
+  go_1_14-batsky = if (pkgs ? go_1_14) then
+    (pkgs.go_1_14.overrideAttrs (attrs: {
+    src = pkgs.fetchFromGitHub {
+      owner = "oar-team";
+      repo = "go_1_14-batsky";
+      rev = "0119ed47a612226f73a9db56d6572cfab858d59e";
+      sha256 = "1795xk5r0h6nl7fgjpdwzhmc4rgyz1v4jr6q46cdzp3fjqg345n3";
     };
-    openmpi_rsg_plugins = callPackage ./openmpi-rsg-plugins {
-      simgrid = simgrid_remotesg;
-      remote_simgrid = remote_simgrid;
-    };
-    openmpi_rsg_plugins_dev = callPackage ./openmpi-rsg-plugins/dev_pinned.nix {
-      simgrid = simgrid_dev_working;
-      remote_simgrid = remote_simgrid_dev;
-      openmpi = openmpi_dev;
-    };
-    pajeng = callPackage ./pajeng { };
-    batexpe = callPackage ./batexpe { };
-    batexpe_dev = callPackage ./batexpe/dev.nix { };
+    doCheck = false;
+  }))
+    else
+    pkgs.callPackage ({}: {meta.broken=true;}) {};
 
-    batsim140 = callPackage ./batsim/batsim140.nix { batsim = batsim200; };
-    batsim200 = callPackage ./batsim/batsim200.nix { simgrid = simgrid_batsim; };
-    batsim = batsim200;
-    batsim_dev = callPackage ./batsim/dev.nix {
-      simgrid = simgrid_dev_working;
-      batsched = batsched_dev;
-    };
-    batsim_upstreamsg = callPackage ./batsim/dev.nix {
-      simgrid = simgrid_dev;
-      batsched = batsched_dev;
-    };
-    batsim_temperature = callPackage ./batsim/dev.nix {
-      simgrid = simgrid_temperature;
-      batsched = batsched_dev;
-    };
-    batsched = callPackage ./batsched { };
-    batsched_dev = callPackage ./batsched/dev.nix { };
-    pybatsim = callPackage ./pybatsim/default.nix { };
-    pybatsim20 = callPackage ./pybatsim/pybatsim20.nix { };
-    pybatsim_dev = callPackage ./pybatsim/dev.nix { };
-    batbroker = callPackage ./batbroker/default.nix { };
-    intervalset = callPackage ./intervalset { };
-    redox = callPackage ./redox { };
-    rapidjson = callPackage ./rapidjson { };
-    procset = callPackage ./procset { };
-    procset_dev = callPackage ./procset/dev.nix { };
-    evalys = callPackage ./evalys { };
-    execo = callPackage ./execo { };
-    # TODO push this in nixpkgs (not even used here anymore)
-    coloredlogs = callPackage ./coloredlogs { inherit humanfriendly; };
-    humanfriendly = callPackage ./humanfriendly { };
-    gcovr = callPackage ./gcovr { };
+  libpowercap = pkgs.callPackage ./pkgs/libpowercap { };
 
-    # l2sched tools and dependencies
-    #nnpy = callPackage ./nnpy { };
-    nanomsg = callPackage ./nanomsg { };
-    #npb = callPackage ./npb { };
-    obandit = pkgs.ocamlPackages.callPackage ./obandit { };
-    ocaml-zmq = pkgs.ocamlPackages.callPackage ./ocaml-zmq { inherit stdint; };
-    bigstring = pkgs.ocamlPackages.callPackage ./bigstring { };
-    oocvx = pkgs.ocamlPackages.callPackage ./oocvx { };
-    zymake = pkgs.ocamlPackages.callPackage ./zymake { };
-    stdint = pkgs.ocamlPackages.callPackage ./stdint { };
-    onanomsg = pkgs.ocamlPackages.callPackage ./onanomsg { inherit nanomsg bigstring; };
-    ppx_deriving_protobuf = pkgs.ocamlPackages.callPackage ./ppx_deriving_protobuf { };
-    ocs = pkgs.ocamlPackages.callPackage ./ocs {
-      inherit obandit oocvx ppx_deriving_protobuf;
-      zmq=ocaml-zmq;
-    };
-    cuneiformlang = callPackage ./cuneiformlang { };
-    colmet = callPackage ./colmet {};
-    # Misc.
-    cgvg = callPackage ./cgvg { };
-    cgvg_mpoquet = callPackage ./cgvg/mpoquet.nix { };
-    yamldiff = callPackage ./yamldiff { };
-    gocov = callPackage ./gocov { };
-    gocovmerge = callPackage ./gocovmerge { };
-    gocov_xml = callPackage ./gocov-xml { };
-    loguru = callPackage ./loguru { };
+  haskellPackages = import ./pkgs/haskellPackages { inherit pkgs; };
 
-    evalysEnv = (python.withPackages (ps: [ ps.ipython evalys ])).env;
+  arion = pkgs.callPackage ./pkgs/arion { arion-compose = haskellPackages.arion-compose; };
 
-    evalysNotebookEnv = (python.withPackages (ps: with ps; [
-        jupyter
-        evalys
-        pip
-      ])).env;
+  batsched-130 = pkgs.callPackage ./pkgs/batsched/batsched130.nix { inherit intervalset loguru redox debug; };
+  batsched-140 = pkgs.callPackage ./pkgs/batsched/batsched140.nix { inherit intervalset loguru redox debug; };
+  batsched = batsched-140;
+  batsched-master = pkgs.callPackage ./pkgs/batsched/master.nix { inherit intervalset loguru redox debug; };
 
-    batsimImage = callPackage ./batsim/batsim-docker.nix {};
-    batsimDocker = batsimImage batsim null;
-    inherit pkgs;
-  };
-in
-  self
+  batexpe = pkgs.callPackage ./pkgs/batexpe { };
+  batexpe-master = pkgs.callPackage ./pkgs/batexpe/master.nix { inherit batexpe; };
+
+  batsim-310 = pkgs.callPackage ./pkgs/batsim/batsim310.nix { inherit docopt_cpp intervalset redox debug; simgrid = simgrid-324; };
+  batsim-400 = pkgs.callPackage ./pkgs/batsim/batsim400.nix { inherit docopt_cpp intervalset redox debug; simgrid = simgrid-325light; };
+  batsim = batsim-400;
+  batsim-master = pkgs.callPackage ./pkgs/batsim/master.nix { inherit docopt_cpp intervalset redox debug; simgrid = simgrid-light; };
+  batsim-docker = pkgs.callPackage ./pkgs/batsim/batsim-docker.nix { inherit batsim; };
+  batsim-docker-master = pkgs.callPackage ./pkgs/batsim/batsim-docker.nix { batsim = batsim-master; };
+
+  batsky = pkgs.callPackage ./pkgs/batsky { };
+
+  cgvg = pkgs.callPackage ./pkgs/cgvg { };
+
+  colmet = pkgs.callPackage ./pkgs/colmet { inherit libpowercap; };
+
+  colmet-rs = pkgs.callPackage ./pkgs/colmet-rs { };
+
+  colmet-collector = pkgs.callPackage ./pkgs/colmet-collector { };
+
+  evalys = pkgs.callPackage ./pkgs/evalys { inherit procset; };
+
+  melissa = pkgs.callPackage ./pkgs/melissa { };
+
+  docopt_cpp = pkgs.callPackage ./pkgs/docopt_cpp { };
+
+  go-swagger  = pkgs.callPackage ./pkgs/go-swagger { };
+
+  gcovr = pkgs.callPackage ./pkgs/gcovr/csv.nix { };
+
+  intervalset = pkgs.callPackage ./pkgs/intervalset { };
+
+  kube-batch = pkgs.callPackage ./pkgs/kube-batch { };
+
+  loguru = pkgs.callPackage ./pkgs/loguru { inherit debug; };
+
+  procset = pkgs.callPackage ./pkgs/procset { };
+
+  oxidisched = pkgs.callPackage ./pkgs/oxidisched { };
+
+  pybatsim-320 = pkgs.callPackage ./pkgs/pybatsim/pybatsim320.nix { inherit procset; };
+  pybatsim = pybatsim-320;
+  pybatsim-master = pkgs.callPackage ./pkgs/pybatsim/master.nix { inherit pybatsim; };
+
+  pytest_flask = pkgs.callPackage ./pkgs/pytest-flask { };
+
+  redox = pkgs.callPackage ./pkgs/redox { };
+
+  remote_pdb = pkgs.callPackage ./pkgs/remote-pdb { };
+
+  cigri = pkgs.callPackage ./pkgs/cigri { };
+
+  oar = pkgs.callPackage ./pkgs/oar { inherit procset sqlalchemy_utils pytest_flask pybatsim remote_pdb; };
+
+  rsg-030 = pkgs.callPackage ./pkgs/remote-simgrid/rsg030.nix { inherit debug docopt_cpp ; simgrid = simgrid; };
+  rsg = rsg-030;
+  rsg-master = pkgs.callPackage ./pkgs/remote-simgrid/master.nix { inherit rsg ; };
+
+  simgrid-324 = pkgs.callPackage ./pkgs/simgrid/simgrid324.nix { inherit debug; };
+  simgrid-325 = pkgs.callPackage ./pkgs/simgrid/simgrid325.nix { inherit debug; };
+  simgrid-326 = pkgs.callPackage ./pkgs/simgrid/simgrid326.nix { inherit debug; };
+  simgrid-325light = simgrid-325.override { minimalBindings = true; withoutBin = true; };
+  simgrid-326light = simgrid-326.override { minimalBindings = true; withoutBin = true; };
+  simgrid = simgrid-326;
+  simgrid-light = simgrid-326light;
+  simgrid-master = pkgs.callPackage ./pkgs/simgrid/master.nix { inherit simgrid; };
+  simgrid-light-master = pkgs.callPackage ./pkgs/simgrid/master.nix { simgrid = simgrid-light; };
+
+  sqlalchemy_utils = pkgs.callPackage ./pkgs/sqlalchemy-utils { };
+
+  # Setting needed for nixos-19.03 and nixos-19.09
+  slurm-bsc-simulator =
+    if pkgs ? libmysql
+    then pkgs.callPackage ./pkgs/slurm-simulator { libmysqlclient = pkgs.libmysql; }
+    else pkgs.callPackage ./pkgs/slurm-simulator { };
+  slurm-bsc-simulator-v17 = slurm-bsc-simulator;
+
+  #slurm-bsc-simulator-v14 = slurm-bsc-simulator.override { version="14"; };
+
+  slurm-multiple-slurmd = pkgs.slurm.overrideAttrs (oldAttrs: {
+    configureFlags = oldAttrs.configureFlags ++ ["--enable-multiple-slurmd" "--enable-silent-rules"];});
+
+  slurm-front-end = pkgs.slurm.overrideAttrs (oldAttrs: {
+    configureFlags = [
+      "--enable-front-end"
+      "--with-lz4=${pkgs.lz4.dev}"
+      "--with-zlib=${pkgs.zlib}"
+      "--sysconfdir=/etc/slurm"
+      "--enable-silent-rules"
+    ];
+  });
+
+  # bs-slurm = pkgs.replaceDependency {
+  #   drv = slurm-multiple-slurmd;
+  #   oldDependency = pkgs.glibc;
+  #   newDependency = glibc-batsky;
+  # };
+
+  # fe-slurm = pkgs.replaceDependency {
+  #   drv = slurm-front-end;
+  #   oldDependency = pkgs.glibc;
+  #   newDependency = glibc-batsky;
+  # };
+
+  tgz-g5k = pkgs.callPackage ./pkgs/tgz-g5k { };
+
+  wait-for-it = pkgs.callPackage ./pkgs/wait-for-it { };
+}
+

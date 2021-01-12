@@ -1,31 +1,38 @@
-## Kapack Nix Expressions
+ # Kapack [NUR](https://github.com/nix-community/NUR) repository
 
-#### Usage
+Basic usage
+-----------
 
-Clone the repository.
+* To make NUR accessible for your login user, add the following to `~/.config/nixpkgs/config.nix`:
 
-List available packages using:
-```
-nix-env -qaP -f /path/to/kapack
-```
-
-Install a package using:
-```
-nix-env -f /path/to/kapack -iA packagename
-```
-
-Some 'user' environments are available (e.g. evalysEnv).
-Enter an environment (either the build env for one of our packages,
-or a 'user' environment) using:
-```
-nix-shell /path/to/kapack -A environmentname
+```nix
+{
+  packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+}
 ```
 
-#### Development
+* For NixOS add the following to your `/etc/nixos/configuration.nix`:
 
-Add your package in a folder at the root and create a nix expression in it,
-preferably `default.nix`. Add your package to the root Kapack/default.nix.
+```nix
+{
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+}
+```
 
-The global pinned nixpkgs version can be updated with ./pin.sh, which updates the json
-file at the root of the package set. This should be done carefully, as it might break
-some user packages.
+* Install a package
+
+```console
+$ nix-env -iA -f "<nixpkgs>" nur.repos.kapack.pybatsim
+```
+
+[![Build Status](https://travis-ci.com/oar-team/nur-kapack.svg?branch=master)](https://travis-ci.com/oar-team/nur-kapack)
+[![Cachix Cache](https://img.shields.io/badge/cachix-kapack-blue.svg)](https://kapack.cachix.org)
+
