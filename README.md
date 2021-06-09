@@ -86,3 +86,29 @@ robin ./expe4.yaml
 vim ~/.bashrc (add export PATH=$PATH:/home/smallcat/.nix-profile/bin)
 source ~/.bashrc
 ```
+
+## Tools
+generate host file
+```bash
+python generate_host_file.py
+```
+
+generate master node (for batsim edge file use)
+```bash
+python generate_random_master.py
+```
+
+generate delay profiles (for batsim use)
+```bash
+python generate_delay_profiles.py -o delays.json -i 4 [-n NB_DELAYS]
+```
+
+generate stupid workload (for batsim use)
+```bash
+python generate_stupid_workloads.py -p delays.json -o stupid.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
+```
+
+generate npb workload (for batsim use)
+```bash
+python generate_npb_workloads.py -p npb_profiles.json -o npb.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
+```
