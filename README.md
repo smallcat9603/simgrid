@@ -88,27 +88,38 @@ source ~/.bashrc
 ```
 
 ## Tools
-generate host file
+### generate host file
 ```bash
 python generate_host_file.py
 ```
 
-generate master node (for batsim edge file use)
+### generate edge file
+```bash
+ruby lay4.rb [-c] 64r4 DLN-64-2-5.edges //64 nodes, 4 nodes/rack, 16 racks, nodes are connected by a specified edge file
+ruby lay4.rb [-c] 64r1 torus-4-4-4 //64 nodes, 1 node/rack, 64 racks, nodes are connected by a predefined topology (4*4*4 torus)
+```
+
+### generate platform file (for simgrid use)
+```bash
+ruby generate_platform.rb torus-4-4-4.edges torus-4-4-4 //with config.rb in the same relative path
+```
+
+### generate master node (for batsim edge file use)
 ```bash
 python generate_random_master.py
 ```
 
-generate delay profiles (for batsim use)
+### generate delay profiles (for batsim use)
 ```bash
-python generate_delay_profiles.py -o delays.json -i 4 [-n NB_DELAYS]
+python generate_delay_profiles.py -o ../output/delays.json -i 4 [-n NB_DELAYS]
 ```
 
-generate stupid workload (for batsim use)
+### generate stupid workload (for batsim use)
 ```bash
-python generate_stupid_workloads.py -p delays.json -o stupid.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
+python generate_stupid_workloads.py -p delays.json -o ../output/stupid.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
 ```
 
-generate npb workload (for batsim use)
+### generate npb workload (for batsim use)
 ```bash
-python generate_npb_workloads.py -p npb_profiles.json -o npb.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
+python generate_npb_workloads.py -p npb_profiles.json -o ../output/npb.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
 ```
