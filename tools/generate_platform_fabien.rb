@@ -3,7 +3,6 @@
 #	Generate Simgrid platform configuration files from an edgelist file
 #	Fabien Chaix	<fabien_chaix@nii.ac.jp>  
 #	Ikki Fujiwara <ikki@nii.ac.jp>
-# Yao Hu <huyao@nii.ac.jp>
 # 
 
 OVERHEAD_OUTER = 400 # Inter-rack cabling overhead [cm]
@@ -11,10 +10,10 @@ OVERHEAD_INNER = 200 # Intra-rack cabling overhead [cm]
 
 
 #Default values 
-NODEPOWER = 5E12 # 1E9
-CABLEBW= 100E9 # 100E6
-SWITCHBW= 5E12 # 125E6
-SWITCHLAT= 100E-9 # 50E-6
+NODEPOWER = 100E9
+CABLEBW= 5E9
+SWITCHBW= 1E12
+SWITCHLAT=200E-9
 DEFAULTDISTANCE = 500 #Default distance between racks
 
 # Latency
@@ -50,7 +49,7 @@ require "optparse"
 require "time"
 require "rexml/document"
 require "socket"
-require_relative "config"
+require_relative "../../../TopologyEnv/extensible/config"
 include REXML
 
 def checkfile(filename,type)
@@ -129,10 +128,10 @@ def generateplatform(edgefile,platformbase,opts)
   if !opts.has_key?(:machinepower)
     case Socket.gethostname
     when /calc[0-9]/
-      opts[:machinepower]=NODEPOWER #50e9
+      opts[:machinepower]=50e9
       STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
     else
-      opts[:machinepower]=NODEPOWER #1e9
+      opts[:machinepower]=10e9
       STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
     end
   end
@@ -174,8 +173,8 @@ def generateplatform(edgefile,platformbase,opts)
 
   configString=
 "<?xml version='1.0'?>
-<!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd'>
-<platform version='4.1'>
+<!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid.dtd'>
+<platform version='3'>
  <config>
   <prop id='maxmin/precision' value='1e-4'/> 
   <prop id='network/model' value='#{opts[:networkmodel]}'/>
@@ -211,7 +210,7 @@ def generateplatform(edgefile,platformbase,opts)
 
   configString+="
  </config>
- <AS  id='AS0'  routing='Dijkstra'>
+ <AS  id='AS0'  routing='Floyd'>
  </AS>
 </platform>"
 
@@ -247,7 +246,7 @@ def generateplatform(edgefile,platformbase,opts)
     for j in 1..nodeperswitch
       platformas.add_element "host", {
         "id" => "n#{i*nodeperswitch+j}",
-        "speed" => opts[:power],
+        "power" => opts[:power],
         "core" => corepernode
       }	
       platformas.add_element "link", {
