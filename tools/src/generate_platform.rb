@@ -175,7 +175,7 @@ def generateplatform(edgefile,platformbase,opts)
   <!--  Negative values enable auto-select... -->
   <prop id='contexts/nthreads' value='1'/>
   <!--  Power of the executing computer in Flop per seconds. Used for extrapolating tasks execution time by SMPI [default is 20000]-->
-  <prop id='smpi/host-speed' value='#{opts[:machinepower]}'/>
+  <prop id='smpi/host-speed' value='#{opts[:machinepower]}f'/>
   <!--  Display simulated timing at the end of simulation -->
   <prop id='smpi/display-timing' value='1'/>
   <prop id='cpu/optim' value='Lazy'/>
@@ -238,20 +238,20 @@ def generateplatform(edgefile,platformbase,opts)
     for j in 1..nodeperswitch
       platformas.add_element "host", {
         "id" => "n#{i*nodeperswitch+j}",
-        "speed" => opts[:power],
+        "speed" => "#{opts[:power]}f",
         "core" => corepernode
       }	
       platformas.add_element "link", {
         "id" => "linkn#{i*nodeperswitch+j}s#{i}",
-        "bandwidth" => opts[:cablebw],
-        "latency" => latency_of(0)
+        "bandwidth" => "#{opts[:cablebw]}Bps",
+        "latency" => "#{latency_of(0)}s"
       }	
     end
 
     platformas.add_element "link", {
       "id" => "ls#{i}",
-      "bandwidth" => opts[:switchbw],
-      "latency" => opts[:switchlat]
+      "bandwidth" => "#{opts[:switchbw]}Bps",
+      "latency" => "#{opts[:switchlat]}s"
     }	
 
     platformas.add_element "router", {
@@ -264,8 +264,8 @@ def generateplatform(edgefile,platformbase,opts)
   conn.each_link{ |i,j,dist|
     platformas.add_element "link", {
       "id" => "links#{i}s#{j}",
-      "bandwidth" => opts[:cablebw],
-      "latency" => latency_of(dist)
+      "bandwidth" => "#{opts[:cablebw]}Bps",
+      "latency" => "#{latency_of(dist)}s"
     }
 
   }
