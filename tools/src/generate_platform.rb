@@ -9,7 +9,6 @@
 OVERHEAD_OUTER = 400 # Inter-rack cabling overhead [cm]
 OVERHEAD_INNER = 200 # Intra-rack cabling overhead [cm]
 
-
 #Default values 
 NODEPOWER = 5E12 # 1E9
 CABLEBW= 100E9 # 100E6
@@ -62,7 +61,6 @@ end
 
 
 def main
-
   $opts = Hash.new
   opt = OptionParser.new
   opt.on("--cfg OPTIONPAIR") do |v|
@@ -80,9 +78,7 @@ def main
   outputbase=ARGV[1]
 
   generateplatform(edgefile,outputbase,$opts)
-
 end
-
 
 #**************************************************
 #Generate a Simgrid platform from an edge file
@@ -102,9 +98,6 @@ end
 #addproperties: Additional properties as a table of string pairs (For in-line parameters, use the following syntax: prop1=prop1val,prop2=prop2val,prop3=prop3val) 
 #tracing: If set, tracing is enabled for display on viva/vite/...
 #**************************************************
-
-
-
 
 def generateplatform(edgefile,platformbase,opts)
 
@@ -127,14 +120,15 @@ def generateplatform(edgefile,platformbase,opts)
     opts[:collselector]="mpich"
   end
   if !opts.has_key?(:machinepower)
-    case Socket.gethostname
-    when /calc[0-9]/
-      opts[:machinepower]=NODEPOWER #50e9
-      STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
-    else
-      opts[:machinepower]=NODEPOWER #1e9
-      STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
-    end
+    # case Socket.gethostname
+    # when /calc[0-9]/
+    #   opts[:machinepower]=NODEPOWER #50e9
+    #   STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
+    # else
+    #   opts[:machinepower]=NODEPOWER #1e9
+    #   STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
+    # end
+    opts[:machinepower]=NODEPOWER #50e9
   end
   if !opts.has_key?(:power)
     opts[:power]=NODEPOWER
@@ -157,7 +151,6 @@ def generateplatform(edgefile,platformbase,opts)
 	
   checkfile(edgefile,"edgefile")
   conn = MyMatrix.new.load_edgelist(edgefile,!(opts[:unidirectional]));
-
   
   #Not sure that the edge file provides the physical distance between racks.. So we say that if a length is below default distance, we force the default distance  
   conn.map{ |d|
@@ -173,10 +166,10 @@ def generateplatform(edgefile,platformbase,opts)
   #Generate the platform configuration element string
 
   configString=
-"<?xml version='1.0'?>
-<!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd'>
-<platform version='4.1'>
- <config>
+  "<?xml version='1.0'?>
+  <!DOCTYPE platform SYSTEM 'http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd'>
+  <platform version='4.1'>
+  <config>
   <prop id='maxmin/precision' value='1e-4'/> 
   <prop id='network/model' value='#{opts[:networkmodel]}'/>
   <!--  Negative values enable auto-select... -->
@@ -210,12 +203,10 @@ def generateplatform(edgefile,platformbase,opts)
   end
 
   configString+="
- </config>
- <AS  id='AS0'  routing='Dijkstra'>
- </AS>
-</platform>"
-
-
+  </config>
+  <AS  id='AS0'  routing='Dijkstra'>
+  </AS>
+  </platform>"
 
   connectedSwitches=[]
   doc = Document.new(configString)
@@ -253,109 +244,92 @@ def generateplatform(edgefile,platformbase,opts)
       platformas.add_element "link", {
         "id" => "linkn#{i*nodeperswitch+j}s#{i}",
         "bandwidth" => opts[:cablebw],
-                            "latency" => latency_of(0)
-                          }	
-                        end
-
-
-      platformas.add_element "link", {
-        "id" => "ls#{i}",
-        "bandwidth" => opts[:switchbw],
-        "latency" => opts[:switchlat]
+        "latency" => latency_of(0)
       }	
-
-      platformas.add_element "router", {
-        "id" => "s#{i}"
-      }
-
-
-      #Generate  routes -Step 1-
-      
-      
     end
 
-    
-    
-    #Generate inter-switch links
-    conn.each_link{ |i,j,dist|
-      platformas.add_element "link", {
-        "id" => "links#{i}s#{j}",
-        "bandwidth" => opts[:cablebw],
-        "latency" => latency_of(dist)
-      }
+    platformas.add_element "link", {
+      "id" => "ls#{i}",
+      "bandwidth" => opts[:switchbw],
+      "latency" => opts[:switchlat]
+    }	
 
+    platformas.add_element "router", {
+      "id" => "s#{i}"
+    }
+    #Generate  routes -Step 1-
+  end  
+    
+  #Generate inter-switch links
+  conn.each_link{ |i,j,dist|
+    platformas.add_element "link", {
+      "id" => "links#{i}s#{j}",
+      "bandwidth" => opts[:cablebw],
+      "latency" => latency_of(dist)
     }
 
+  }
+ 
+  #Generate  routes
+  #For each physical link, we nee to traverse:
+  #-> A Simgrid link representing the physical link with id linksxxsyy or linknxxsyy
+  #-> A Simgrid link representing the limitations of the physical router/switch with id lsxxx
+  #Since we need to cross the link emulating physical switch only once (we chose on input), we need non symmetrical routes.
+  #And naturally, unidirectionnal topoloies are created only by not setting up the reciprocal route (from yy to xx)
 
-    
-    #Generate  routes
-    #For each physical link, we nee to traverse:
-    #-> A Simgrid link representing the physical link with id linksxxsyy or linknxxsyy
-    #-> A Simgrid link representing the limitations of the physical router/switch with id lsxxx
-    #Since we need to cross the link emulating physical switch only once (we chose on input), we need non symmetrical routes.
-    #And naturally, unidirectionnal topoloies are created only by not setting up the reciprocal route (from yy to xx)
-
-    connectedSwitches.each{ |i|
-      #for switch to node
-      for j in 1..nodeperswitch
-        route=platformas.add_element "route", {
-          "src" => "n#{i*nodeperswitch+j}",
-          "dst" => "s#{i}",
-          "symmetrical" => "NO"
-        }
-        route.add_element "link_ctn", { "id" => "linkn#{i*nodeperswitch+j}s#{i}"}
-        route.add_element "link_ctn", { "id" => "ls#{i}"}
-        route2=platformas.add_element "route", {
-          "src" => "s#{i}",
-          "dst" => "n#{i*nodeperswitch+j}",
-          "symmetrical" => "NO"
-        }
-        route2.add_element "link_ctn", { "id" => "linkn#{i*nodeperswitch+j}s#{i}"}
-      end
-
-    }
-
-
-    
-    #for inter-switches	
-    conn.each_link{ |i,j,dist|
+  connectedSwitches.each{ |i|
+    #for switch to node
+    for j in 1..nodeperswitch
       route=platformas.add_element "route", {
-        "src" => "s#{i}",
-        "dst" => "s#{j}",
+        "src" => "n#{i*nodeperswitch+j}",
+        "dst" => "s#{i}",
         "symmetrical" => "NO"
       }
-      route.add_element "link_ctn", { "id" => "links#{i}s#{j}"}
-      route.add_element "link_ctn", { "id" => "ls#{j}"}
-
-      if !opts[:unidirectional]
-        route2=platformas.add_element "route", {
-          "src" => "s#{j}",
-          "dst" => "s#{i}",
-          "symmetrical" => "NO"
-        }
-        route2.add_element "link_ctn", { "id" => "links#{i}s#{j}"}
-        route2.add_element "link_ctn", { "id" => "ls#{i}"}
-      end
-
-    }
-
-    doc.write(simgridfile,1,false);	
-
-
-
-    #Generate dummy (S)MPI platform file
-    File.open("#{platformbase}.txt", 'w')  { |file| 
-      connectedSwitches.each{ |i|
-        for j in 1..nodeperswitch
-          file.write("n#{i*nodeperswitch+j}:#{corepernode}\n")
-        end 
+      route.add_element "link_ctn", { "id" => "linkn#{i*nodeperswitch+j}s#{i}"}
+      route.add_element "link_ctn", { "id" => "ls#{i}"}
+      route2=platformas.add_element "route", {
+        "src" => "s#{i}",
+        "dst" => "n#{i*nodeperswitch+j}",
+        "symmetrical" => "NO"
       }
-    }
+      route2.add_element "link_ctn", { "id" => "linkn#{i*nodeperswitch+j}s#{i}"}
+    end
 
-
+  }
     
+  #for inter-switches	
+  conn.each_link{ |i,j,dist|
+    route=platformas.add_element "route", {
+      "src" => "s#{i}",
+      "dst" => "s#{j}",
+      "symmetrical" => "NO"
+    }
+    route.add_element "link_ctn", { "id" => "links#{i}s#{j}"}
+    route.add_element "link_ctn", { "id" => "ls#{j}"}
 
-  end
+    if !opts[:unidirectional]
+      route2=platformas.add_element "route", {
+        "src" => "s#{j}",
+        "dst" => "s#{i}",
+        "symmetrical" => "NO"
+      }
+      route2.add_element "link_ctn", { "id" => "links#{i}s#{j}"}
+      route2.add_element "link_ctn", { "id" => "ls#{i}"}
+    end
+
+  }
+
+  doc.write(simgridfile,1,false);	
+
+  #Generate dummy (S)MPI platform file
+  File.open("#{platformbase}.txt", 'w')  { |file| 
+    connectedSwitches.each{ |i|
+      for j in 1..nodeperswitch
+        file.write("n#{i*nodeperswitch+j}:#{corepernode}\n")
+      end 
+    }
+  }
+
+end
   
-
-  main if $0 == __FILE__
+main if $0 == __FILE__
