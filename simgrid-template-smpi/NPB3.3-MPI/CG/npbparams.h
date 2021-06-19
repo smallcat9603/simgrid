@@ -1,4 +1,4 @@
-c NPROCS = 256 CLASS = S
+c NPROCS = 64 CLASS = S
 c  
 c  
 c  This file is generated automatically by the setparams utility.
@@ -15,9 +15,9 @@ c
 
 c number of nodes for which this version is compiled
         integer    nnodes_compiled
-        parameter( nnodes_compiled = 256)
+        parameter( nnodes_compiled = 64)
         integer    num_proc_cols, num_proc_rows
-        parameter( num_proc_cols=16, num_proc_rows=16 )
+        parameter( num_proc_cols=8, num_proc_rows=8 )
         logical  convertdouble
         parameter (convertdouble = .false.)
         character*11 compiletime
