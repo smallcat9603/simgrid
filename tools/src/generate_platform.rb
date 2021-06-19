@@ -123,9 +123,9 @@ def generateplatform(edgefile,platformbase,opts)
   if !opts.has_key?(:networkmodel)
     opts[:networkmodel]="SMPI"
   end
-  if !opts.has_key?(:collselector)
-    opts[:collselector]="mvapich2"
-  end
+  # if !opts.has_key?(:collselector)
+  #   opts[:collselector]="mvapich2"
+  # end
   if !opts.has_key?(:machinepower)
     case Socket.gethostname
     when /calc[0-9]/
