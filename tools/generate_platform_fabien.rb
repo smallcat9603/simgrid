@@ -10,10 +10,10 @@ OVERHEAD_INNER = 200 # Intra-rack cabling overhead [cm]
 
 
 #Default values 
-NODEPOWER = 100E9
-CABLEBW= 5E9
-SWITCHBW= 1E12
-SWITCHLAT=200E-9
+NODEPOWER = 5E12 #100E9
+CABLEBW= 100E9 #5E9
+SWITCHBW= 5E12 #1E12
+SWITCHLAT= 100E-9 #200E-9
 DEFAULTDISTANCE = 500 #Default distance between racks
 
 # Latency
@@ -49,7 +49,7 @@ require "optparse"
 require "time"
 require "rexml/document"
 require "socket"
-require_relative "../../../TopologyEnv/extensible/config"
+require_relative "config"
 include REXML
 
 def checkfile(filename,type)
@@ -126,14 +126,15 @@ def generateplatform(edgefile,platformbase,opts)
     opts[:collselector]="mvapich2"
   end
   if !opts.has_key?(:machinepower)
-    case Socket.gethostname
-    when /calc[0-9]/
-      opts[:machinepower]=50e9
-      STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
-    else
-      opts[:machinepower]=10e9
-      STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
-    end
+    # case Socket.gethostname
+    # when /calc[0-9]/
+    #   opts[:machinepower]=50e9
+    #   STDOUT.puts "Detected calcXX computer, hence I will assume host has #{opts[:machinepower]} Flops/sec power."
+    # else
+    #   opts[:machinepower]=10e9
+    #   STDOUT.puts "Unknown computer, hence using baseline host power #{opts[:machinepower]} Flops/sec"
+    # end
+    opts[:machinepower]=NODEPOWER
   end
   if !opts.has_key?(:power)
     opts[:power]=NODEPOWER
