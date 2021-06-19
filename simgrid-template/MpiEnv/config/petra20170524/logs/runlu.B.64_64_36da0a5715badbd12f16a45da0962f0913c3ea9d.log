@@ -1,0 +1,97 @@
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/config/petra20170524/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 64  --cfg=smpi/privatize_global_variables:yes -platform /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/petra20170524/platforms/0_3torus-4-4-4-400Gbps.xml -hostfile /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/petra20170524/platforms/0_3torus-4-4-4-400Gbps.txt  /tmp/mpienv_lu.B.6420170524-5485-18q3oxe/lu.B.64  
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "en_US:en",
+	LC_ALL = (unset),
+	LC_CTYPE = "ja_JP.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '50000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+[0.000000] [surf_config/INFO] Switching workstation model to compound since you changed the network and/or cpu model(s)
+
+
+ NAS Parallel Benchmarks 3.3 -- LU Benchmark
+
+ Size:  102x 102x 102
+ Iterations:  250
+ Number of processes:    64
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class B
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.3553267296998E+04 0.3553267296998E+04 0.3839401707302E-15
+           2   0.2621475079531E+03 0.2621475079531E+03 0.3903075590852E-14
+           3   0.8833372185095E+03 0.8833372185095E+03 0.1158313629331E-14
+           4   0.7781277473943E+03 0.7781277473943E+03 0.1607133557601E-14
+           5   0.7308796959255E+04 0.7308796959255E+04 0.5599726166693E-14
+ Comparison of RMS-norms of solution error
+           1   0.1140117638021E+03 0.1140117638021E+03 0.2492875163280E-15
+           2   0.8109896365542E+01 0.8109896365542E+01 0.7885285253474E-14
+           3   0.2848059731770E+02 0.2848059731770E+02 0.1871123157550E-14
+           4   0.2590539456783E+02 0.2590539456783E+02 0.2468553260247E-14
+           5   0.2605490750486E+03 0.2605490750486E+03 0.1090839007013E-14
+ Comparison of surface integral
+               0.4788716270331E+02 0.4788716270331E+02 0.1335406873333E-14
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      250
+ Time in seconds =                     0.12
+ Total processes =                       64
+ Compiled procs  =                       64
+ Mop/s total     =               4328071.38
+ Mop/s/process   =                 67626.12
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              24 May 2017
+
+ Compile options:
+    MPIF77       = ${SIMGRID_PATH}/bin/smpiff
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    FMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    FFLAGS       = -O
+    FLINKFLAGS   = -L${SIMGRID_PATH}/lib
+    RAND         = (none)
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+
+[0.115922] [smpi_kernel/INFO] Simulated time: 0.115922 seconds. 
+ The simulation took 1022.31 seconds (after parsing and platform setup)
+372.316 seconds were actual computation of the application

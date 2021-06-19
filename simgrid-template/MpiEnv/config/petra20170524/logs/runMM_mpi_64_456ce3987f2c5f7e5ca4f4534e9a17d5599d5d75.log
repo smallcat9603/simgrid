@@ -1,0 +1,859 @@
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/config/petra20170524/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 64  --cfg=smpi/privatize_global_variables:yes -platform /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/petra20170524/platforms/0_3torus-4-4-4-400Gbps.xml -hostfile /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/petra20170524/platforms/0_3torus-4-4-4-400Gbps.txt  /tmp/mpienv_MM_mpi20170524-5485-cvb037/MM_mpi   -K 2048 -B 64
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "en_US:en",
+	LC_ALL = (unset),
+	LC_CTYPE = "ja_JP.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '50000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+[0.000000] [surf_config/INFO] Switching workstation model to compound since you changed the network and/or cpu model(s)
+[n1:0:(0) 0.000019] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n1:0:(0) 0.000019] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 0,  col 0,size_row 2,  size_col 32
+
+[n2:1:(0) 0.000020] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n2:1:(0) 0.000020] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 0,  col 1,size_row 2,  size_col 32
+
+[n4:3:(0) 0.000020] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n4:3:(0) 0.000020] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 1,  col 1,size_row 2,  size_col 32
+
+[n3:2:(0) 0.000020] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n3:2:(0) 0.000020] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 1,  col 0,size_row 2,  size_col 32
+
+[n5:4:(0) 0.000020] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n5:4:(0) 0.000020] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 2,  col 0,size_row 2,  size_col 32
+
+[n6:5:(0) 0.000020] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n6:5:(0) 0.000020] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 2,  col 1,size_row 2,  size_col 32
+
+[n16:15:(0) 0.000020] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n16:15:(0) 0.000020] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 7,  col 1,size_row 2,  size_col 32
+
+[n15:14:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n15:14:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 7,  col 0,size_row 2,  size_col 32
+
+[n17:16:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n17:16:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 8,  col 0,size_row 2,  size_col 32
+
+[n7:6:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n7:6:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 3,  col 0,size_row 2,  size_col 32
+
+[n21:20:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n21:20:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 10,  col 0,size_row 2,  size_col 32
+
+[n22:21:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n22:21:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 10,  col 1,size_row 2,  size_col 32
+
+[n64:63:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n64:63:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 31,  col 1,size_row 2,  size_col 32
+
+[n14:13:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n14:13:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 6,  col 1,size_row 2,  size_col 32
+
+[n8:7:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n8:7:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 3,  col 1,size_row 2,  size_col 32
+
+[n11:10:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n11:10:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 5,  col 0,size_row 2,  size_col 32
+
+[n63:62:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n63:62:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 31,  col 0,size_row 2,  size_col 32
+
+[n23:22:(0) 0.000021] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n23:22:(0) 0.000021] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 11,  col 0,size_row 2,  size_col 32
+
+[n10:9:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n10:9:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 4,  col 1,size_row 2,  size_col 32
+
+[n13:12:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n13:12:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 6,  col 0,size_row 2,  size_col 32
+
+[n18:17:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n18:17:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 8,  col 1,size_row 2,  size_col 32
+
+[n20:19:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n20:19:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 9,  col 1,size_row 2,  size_col 32
+
+[n12:11:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n12:11:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 5,  col 1,size_row 2,  size_col 32
+
+[n25:24:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n25:24:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 12,  col 0,size_row 2,  size_col 32
+
+[n59:58:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n59:58:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 29,  col 0,size_row 2,  size_col 32
+
+[n62:61:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n62:61:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 30,  col 1,size_row 2,  size_col 32
+
+[n24:23:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n24:23:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 11,  col 1,size_row 2,  size_col 32
+
+[n9:8:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n9:8:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 4,  col 0,size_row 2,  size_col 32
+
+[n19:18:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n19:18:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 9,  col 0,size_row 2,  size_col 32
+
+[n27:26:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n27:26:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 13,  col 0,size_row 2,  size_col 32
+
+[n58:57:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n58:57:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 28,  col 1,size_row 2,  size_col 32
+
+[n61:60:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n61:60:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 30,  col 0,size_row 2,  size_col 32
+
+[n60:59:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n60:59:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 29,  col 1,size_row 2,  size_col 32
+
+[n28:27:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n28:27:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 13,  col 1,size_row 2,  size_col 32
+
+[n26:25:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n26:25:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 12,  col 1,size_row 2,  size_col 32
+
+[n43:42:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n43:42:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 21,  col 0,size_row 2,  size_col 32
+
+[n32:31:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n32:31:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 15,  col 1,size_row 2,  size_col 32
+
+[n54:53:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n54:53:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 26,  col 1,size_row 2,  size_col 32
+
+[n57:56:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n57:56:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 28,  col 0,size_row 2,  size_col 32
+
+[n42:41:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n42:41:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 20,  col 1,size_row 2,  size_col 32
+
+[n44:43:(0) 0.000022] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n44:43:(0) 0.000022] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 21,  col 1,size_row 2,  size_col 32
+
+[n33:32:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n33:32:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 16,  col 0,size_row 2,  size_col 32
+
+[n29:28:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n29:28:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 14,  col 0,size_row 2,  size_col 32
+
+[n31:30:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n31:30:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 15,  col 0,size_row 2,  size_col 32
+
+[n55:54:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n55:54:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 27,  col 0,size_row 2,  size_col 32
+
+[n52:51:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n52:51:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 25,  col 1,size_row 2,  size_col 32
+
+[n53:52:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n53:52:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 26,  col 0,size_row 2,  size_col 32
+
+[n38:37:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n38:37:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 18,  col 1,size_row 2,  size_col 32
+
+[n48:47:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n48:47:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 23,  col 1,size_row 2,  size_col 32
+
+[n50:49:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n50:49:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 24,  col 1,size_row 2,  size_col 32
+
+[n41:40:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n41:40:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 20,  col 0,size_row 2,  size_col 32
+
+[n56:55:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n56:55:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 27,  col 1,size_row 2,  size_col 32
+
+[n30:29:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n30:29:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 14,  col 1,size_row 2,  size_col 32
+
+[n37:36:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n37:36:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 18,  col 0,size_row 2,  size_col 32
+
+[n51:50:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n51:50:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 25,  col 0,size_row 2,  size_col 32
+
+[n45:44:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n45:44:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 22,  col 0,size_row 2,  size_col 32
+
+[n49:48:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n49:48:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 24,  col 0,size_row 2,  size_col 32
+
+[n39:38:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n39:38:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 19,  col 0,size_row 2,  size_col 32
+
+[n47:46:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n47:46:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 23,  col 0,size_row 2,  size_col 32
+
+[n40:39:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n40:39:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 19,  col 1,size_row 2,  size_col 32
+
+[n46:45:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n46:45:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 22,  col 1,size_row 2,  size_col 32
+
+[n34:33:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n34:33:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 16,  col 1,size_row 2,  size_col 32
+
+[n36:35:(0) 0.000023] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n36:35:(0) 0.000023] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 17,  col 1,size_row 2,  size_col 32
+
+[n35:34:(0) 0.000024] [25D_MM/INFO] group 0 NB_block: 32, NB_groups 1
+
+[n35:34:(0) 0.000024] [25D_MM/INFO] m 32,  k_a 1024,  k_b 64,  n 512,  Block_size 64, group*NB_Block/NB_groups 0, (group+1)*NB_Block/NB_groups 32, row 17,  col 0,size_row 2,  size_col 32
+
+communication time: 2.414311e-03 seconds, computation time: 2.406678e-09 seconds
+communication time: 2.412664e-03 seconds, computation time: 2.738303e-09 seconds
+communication time: 2.397352e-03 seconds, computation time: 3.740620e-09 seconds
+communication time: 2.406254e-03 seconds, computation time: 2.876408e-09 seconds
+communication time: 2.403463e-03 seconds, computation time: 3.020832e-09 seconds
+communication time: 2.394252e-03 seconds, computation time: 3.088184e-09 seconds
+communication time: 2.412515e-03 seconds, computation time: 3.956566e-09 seconds
+communication time: 2.406222e-03 seconds, computation time: 2.863127e-09 seconds
+communication time: 2.361525e-03 seconds, computation time: 3.110042e-09 seconds
+communication time: 2.383176e-03 seconds, computation time: 3.185445e-09 seconds
+communication time: 2.398879e-03 seconds, computation time: 3.087491e-09 seconds
+communication time: 2.370889e-03 seconds, computation time: 3.296308e-09 seconds
+communication time: 2.412348e-03 seconds, computation time: 3.460272e-09 seconds
+communication time: 2.367673e-03 seconds, computation time: 2.279097e-09 seconds
+communication time: 2.363866e-03 seconds, computation time: 3.065249e-09 seconds
+communication time: 2.364566e-03 seconds, computation time: 3.265122e-09 seconds
+communication time: 2.359689e-03 seconds, computation time: 2.989671e-09 seconds
+communication time: 2.395151e-03 seconds, computation time: 2.979056e-09 seconds
+communication time: 2.369146e-03 seconds, computation time: 3.310083e-09 seconds
+communication time: 2.382132e-03 seconds, computation time: 3.647227e-09 seconds
+communication time: 2.354317e-03 seconds, computation time: 2.783222e-09 seconds
+communication time: 2.362612e-03 seconds, computation time: 3.333089e-09 seconds
+communication time: 2.366443e-03 seconds, computation time: 2.078991e-09 seconds
+communication time: 2.364417e-03 seconds, computation time: 2.984690e-09 seconds
+communication time: 2.401809e-03 seconds, computation time: 2.692984e-09 seconds
+communication time: 2.359102e-03 seconds, computation time: 2.561571e-09 seconds
+communication time: 2.360794e-03 seconds, computation time: 3.115162e-09 seconds
+communication time: 2.392334e-03 seconds, computation time: 2.883605e-09 seconds
+communication time: 2.352877e-03 seconds, computation time: 2.786508e-09 seconds
+communication time: 2.358623e-03 seconds, computation time: 2.473874e-09 seconds
+communication time: 2.396678e-03 seconds, computation time: 2.166813e-09 seconds
+communication time: 2.359163e-03 seconds, computation time: 2.940832e-09 seconds
+communication time: 2.413074e-03 seconds, computation time: 2.660128e-09 seconds
+communication time: 2.413465e-03 seconds, computation time: 2.529310e-09 seconds
+communication time: 2.408159e-03 seconds, computation time: 2.930195e-09 seconds
+communication time: 2.438547e-03 seconds, computation time: 3.090455e-09 seconds
+communication time: 2.402848e-03 seconds, computation time: 2.508322e-09 seconds
+communication time: 2.409143e-03 seconds, computation time: 2.552745e-09 seconds
+communication time: 2.405388e-03 seconds, computation time: 2.495551e-09 seconds
+communication time: 2.355009e-03 seconds, computation time: 2.611463e-09 seconds
+communication time: 2.437805e-03 seconds, computation time: 3.146062e-09 seconds
+communication time: 2.402838e-03 seconds, computation time: 3.201074e-09 seconds
+communication time: 2.407270e-03 seconds, computation time: 2.321024e-09 seconds
+communication time: 2.404072e-03 seconds, computation time: 3.605197e-09 seconds
+communication time: 2.401494e-03 seconds, computation time: 2.819680e-09 seconds
+communication time: 2.378073e-03 seconds, computation time: 2.664049e-09 seconds
+communication time: 2.353695e-03 seconds, computation time: 2.643062e-09 seconds
+communication time: 2.405138e-03 seconds, computation time: 3.029399e-09 seconds
+communication time: 2.382378e-03 seconds, computation time: 2.619895e-09 seconds
+communication time: 2.400927e-03 seconds, computation time: 3.160993e-09 seconds
+communication time: 2.435601e-03 seconds, comp[n1:0:(0) 0.002475] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n1:0:(0) 0.002475] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n1:0:(0) 0.002475] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+utation time: 3.030137e-09 seconds
+communication time: 2.402665e-03 seconds, computation time: 3.351485e-09 seconds
+communication time: 2.376767e-03 seconds, computation time: 2.683881e-09 seconds
+communication time: 2.436894e-03 seconds, computation time: 2.672566e-09 seconds
+communication time: 2.432375e-03 seconds, computation time: 2.304776e-09 seconds
+communication time: 2.386321e-03 seconds, computation time: 2.572108e-09 seconds
+communication time: 2.405117e-03 seconds, computation time: 2.772973e-09 seconds
+communication time: 2.381367e-03 seconds, computation time: 2.638664e-09 seconds
+communication time: 2.426845e-03 seconds, computation time: 3.343074e-09 seconds
+communication time: 2.435070e-03 seconds, computation time: 3.031798e-09 seconds
+communication time: 2.431834e-03 seconds, computation time: 2.309549e-09 seconds
+communication time: 2.384729e-03 seconds, computation time: 2.648282e-09 seconds
+communication time: 2.436700e-03 seconds, computation time: 2.335680e-09 seconds
+communication time: 2.425757e-03 seconds, computation time: 3.205384e-09 seconds
+communication time: 2.366000e-14 reduce time: 3.043038e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 2.060000e-14 reduce time: 3.043038e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 4.480000e-14 reduce time: 3.317027e-06 seconds, total time: 2.451564e-03 seconds
+communication time: 0.000000e+00 reduce time: 3.043053e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 0.000000e+00 reduce time: 3.043053e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 0.000000e+00 reduce time: 3.317027e-06 seconds, total time: 2.451564e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.139012e-06 seconds, total time: 2.451838e-03 seconds
+communication time: 2.500000e-14 reduce time: 3.043053e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 3.404000e-14 reduce time: 3.317042e-06 seconds, total time: 2.451564e-03 seconds
+communication time: 0.000000e+00 reduce time: 3.043053e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 3.424000e-14 reduce time: 3.043053e-06 seconds, total time: 2.451554e-03 seconds
+communication time: 3.404000e-14 reduce time: 3.317042e-06 seconds, total time: 2.451564e-03 seconds
+communication time: 0.000000e+00 reduce time: 3.317017e-06 seconds, total time: 2.451564e-03 seconds
+communication time: 2.210000e-14 reduce time: 4.412992e-06 seconds, total time: 2.452386e-03 seconds
+communication time: 4.620000e-14 reduce time: 4.139012e-06 seconds, total time: 2.451838e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.139012e-06 seconds, total time: 2.451838e-03 seconds
+communication time: 4.520000e-14 reduce time: 4.139012e-06 seconds, total time: 2.451838e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.413007e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 2.060000e-14 reduce time: 4.413007e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 2.632000e-14 reduce time: 4.139021e-06 seconds, total time: 2.451838e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.960982e-06 seconds, total time: 2.452934e-03 seconds
+communication time: 4.612000e-14 reduce time: 4.413007e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.413007e-06 seconds, total time: 2.452386e-03 seconds
+communication time: 4.444000e-14 reduce time: 4.413001e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 2.632000e-14 reduce time: 4.413001e-06 seconds, total time: 2.452386e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.139012e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 2.632000e-14 reduce time: 4.413001e-06 seconds, total time: 2.452386e-03 seconds
+communication time: 2.030000e-14 reduce time: 4.139012e-06 seconds, total time: 2.454020e-03 seconds
+communication time: 3.404000e-14 reduce time: 4.413007e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.404000e-14 reduce time: 3.865000e-06 seconds, total time:[n5:4:(0) 0.002476] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n5:4:(0) 0.002476] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n5:4:(0) 0.002476] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n21:20:(0) 0.002476] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n21:20:(0) 0.002476] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n21:20:(0) 0.002476] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n2:1:(0) 0.002476] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n2:1:(0) 0.002476] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n2:1:(0) 0.002476] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n20:19:(0) 0.002477] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n20:19:(0) 0.002477] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n20:19:(0) 0.002477] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n18:17:(0) 0.002477] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n18:17:(0) 0.002477] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n18:17:(0) 0.002477] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n19:18:(0) 0.002477] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n19:18:(0) 0.002477] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n19:18:(0) 0.002477] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n6:5:(0) 0.002477] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n6:5:(0) 0.002477] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n6:5:(0) 0.002477] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n7:6:(0) 0.002477] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n7:6:(0) 0.002477] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n7:6:(0) 0.002477] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n22:21:(0) 0.002477] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n22:21:(0) 0.002477] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n22:21:(0) 0.002477] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n23:22:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n23:22:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n23:22:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n8:7:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n8:7:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n8:7:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n24:23:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n24:23:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n24:23:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n25:24:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n25:24:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n25:24:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n27:26:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n27:26:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n27:26:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n28:27:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n28:27:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n28:27:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n26:25:(0) 0.002478] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n26:25:(0) 0.002478] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n26:25:(0) 0.002478] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n4:3:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n4:3:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n4:3:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n3:2:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n3:2:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n3:2:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n29:28:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n29:28:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n29:28:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n32:31:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n32:31:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n32:31:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n16:15:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n16:15:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n16:15:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n31:30:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n31:30:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n31:30:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n33:32:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n33:32:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n33:32:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n17:16:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n17:16:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n17:16:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n11:10:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n11:10:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n11:10:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n15:14:(0) 0.002479] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n15:14:(0) 0.002479] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n15:14:(0) 0.002479] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n9:8:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n9:8:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n9:8:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n30:29:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n30:29:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n30:29:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n13:12:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n13:12:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n13:12:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n10:9:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n10:9:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n10:9:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n64:63:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n64:63:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n64:63:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n63:62:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n63:62:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n63:62:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n62:61:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n62:61:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n62:61:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n43:42:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n43:42:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n43:42:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n59:58:(0) 0.002480] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n59:58:(0) 0.002480] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n59:58:(0) 0.002480] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n42:41:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n42:41:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n42:41:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n44:43:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n44:43:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n44:43:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n61:60:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n61:60:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n61:60:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n58:57:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n58:57:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n58:57:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n60:59:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n60:59:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n60:59:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n37:36:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n37:36:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n37:36:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n38:37:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n38:37:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n38:37:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n41:40:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n41:40:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n41:40:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n53:52:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n53:52:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n53:52:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n52:51:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n52:51:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n52:51:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n50:49:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n50:49:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n50:49:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n12:11:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n12:11:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n12:11:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n39:38:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n39:38:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n39:38:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n45:44:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n45:44:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n45:44:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n51:50:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n51:50:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n51:50:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n36:35:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n36:35:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n36:35:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n34:33:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n34:33:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n34:33:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n14:13:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n14:13:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n14:13:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n40:39:(0) 0.002481] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n40:39:(0) 0.002481] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n40:39:(0) 0.002481] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n35:34:(0) 0.002482] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n35:34:(0) 0.002482] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n35:34:(0) 0.002482] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n48:47:(0) 0.002482] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n48:47:(0) 0.002482] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n48:47:(0) 0.002482] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n49:48:(0) 0.002482] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n49:48:(0) 0.002482] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n49:48:(0) 0.002482] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n47:46:(0) 0.002482] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n47:46:(0) 0.002482] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n47:46:(0) 0.002482] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n57:56:(0) 0.002482] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n57:56:(0) 0.002482] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n57:56:(0) 0.002482] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n54:53:(0) 0.002482] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n54:53:(0) 0.002482] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n54:53:(0) 0.002482] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n46:45:(0) 0.002483] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n46:45:(0) 0.002483] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n46:45:(0) 0.002483] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n55:54:(0) 0.002483] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n55:54:(0) 0.002483] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n55:54:(0) 0.002483] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[n56:55:(0) 0.002483] [MM_init/INFO] Value get : 1571840.000000 excepted 523776 multiply by y
+
+[n56:55:(0) 0.002483] [MM_init/INFO] 1571840.000000	523776, y : 1 x : 0 
+
+[n56:55:(0) 0.002483] [MM_init/INFO] result check not ok
+WARNING the test could be lead to some errors ( precision with double )
+
+[0.002492] [smpi_kernel/INFO] Simulated time: 0.00249179 seconds. 
+ The simulation took 16.9177 seconds (after parsing and platform setup)
+16.2633 seconds were actual computation of the application
+[0.002492] [smpi_kernel/INFO] More than 75% of the time was spent inside the application code.
+You may want to use sampling functions or trace replay to reduce this.
+ 2.453756e-03 seconds
+communication time: 3.340000e-14 reduce time: 4.413007e-06 seconds, total time: 2.452386e-03 seconds
+communication time: 4.574000e-14 reduce time: 4.413022e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 2.500000e-14 reduce time: 4.413016e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 3.340000e-14 reduce time: 4.960982e-06 seconds, total time: 2.452934e-03 seconds
+communication time: 3.424000e-14 reduce time: 4.138997e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 3.424000e-14 reduce time: 4.413001e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.139012e-06 seconds, total time: 2.454020e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.139032e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 2.632000e-14 reduce time: 4.139032e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 2.632000e-14 reduce time: 4.139032e-06 seconds, total time: 2.454304e-03 seconds
+communication time: 4.512000e-14 reduce time: 4.139012e-06 seconds, total time: 2.454020e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.139012e-06 seconds, total time: 2.454020e-03 seconds
+communication time: 4.378000e-14 reduce time: 4.961013e-06 seconds, total time: 2.452934e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.961013e-06 seconds, total time: 2.452934e-03 seconds
+communication time: 3.426000e-14 reduce time: 3.864934e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.426000e-14 reduce time: 4.412992e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.426000e-14 reduce time: 3.864934e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.426000e-14 reduce time: 3.864934e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.426000e-14 reduce time: 4.412992e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.404000e-14 reduce time: 4.412992e-06 seconds, total time: 2.455126e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.960987e-06 seconds, total time: 2.452934e-03 seconds
+communication time: 3.266000e-14 reduce time: 3.865007e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.266000e-14 reduce time: 4.413007e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 2.210000e-14 reduce time: 4.413007e-06 seconds, total time: 2.455683e-03 seconds
+communication time: 3.266000e-14 reduce time: 4.139012e-06 seconds, total time: 2.454020e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.413007e-06 seconds, total time: 2.453756e-03 seconds
+communication time: 3.426000e-14 reduce time: 4.412992e-06 seconds, total time: 2.455126e-03 seconds
+communication time: 3.266000e-14 reduce time: 4.412997e-06 seconds, total time: 2.455126e-03 seconds
+communication time: 3.402000e-14 reduce time: 4.412997e-06 seconds, total time: 2.455683e-03 seconds
+communication time: 3.402000e-14 reduce time: 4.412997e-06 seconds, total time: 2.455683e-03 seconds
+communication time: 3.266000e-14 reduce time: 4.412997e-06 seconds, total time: 2.455126e-03 seconds
+communication time: 2.632000e-14 reduce time: 4.413007e-06 seconds, total time: 2.455683e-03 seconds
+communication time: 4.416000e-14 reduce time: 4.413007e-06 seconds, total time: 2.455126e-03 seconds
+communication time: 0.000000e+00 reduce time: 4.413007e-06 seconds, total time: 2.455683e-03 seconds

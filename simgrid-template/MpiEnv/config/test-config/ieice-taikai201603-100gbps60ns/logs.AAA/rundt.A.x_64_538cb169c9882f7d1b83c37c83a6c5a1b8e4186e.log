@@ -1,0 +1,53 @@
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 64  --cfg=smpi/privatize_global_variables:yes -platform /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/platforms/0_random_d6_64-bTrue.xml -hostfile /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/platforms/0_random_d6_64-bTrue.txt  /tmp/mpienv_dt.A.x20160222-28618-1edafa5/dt.A.x  WH
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '50000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+1150695096.DT_WH.A: (21,20)
+ DT_WH.A L2 Norm = 1289925229.000000
+ Deviation = 0.000000
+[0.003756] [smpi_kernel/INFO] Simulated time: 0.00375631 seconds. 
+ The simulation took 0.130761 seconds (after parsing and platform setup)
+0.0900527 seconds were actual computation of the application
+
+
+ NAS Parallel Benchmarks 3.3 -- DT Benchmark
+
+
+
+ DT_WH.A Benchmark Completed
+ Class           =                        A
+ Size            =                   442368
+ Iterations      =                       21
+ Time in seconds =                     0.00
+ Total processes =                       64
+ Mop/s total     =                  2246.22
+ Mop/s/process   =                    35.10
+ Operation type  =        bytes transmitted
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              22 Feb 2016
+
+ Compile options:
+    MPICC        = ${SIMGRID_PATH}/bin/smpicc
+    CLINK        = $(MPICC)
+    CMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    CMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    CFLAGS       = -O
+    CLINKFLAGS   = -L${SIMGRID_PATH}/lib
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+

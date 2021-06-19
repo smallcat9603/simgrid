@@ -1,0 +1,45 @@
+make lu CLASS=A NPROCS=256
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd LU; make NPROCS=256 CLASS=A VERSION=
+make[1]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU'
+make[1]: Warning: File '../config/make.def' has modification time 32 s in the future
+make[2]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+make[2]: Warning: File '../config/make.def' has modification time 32 s in the future
+cc -g  -o setparams setparams.c
+make[2]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[2]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams lu 256 A 
+make[2]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU'
+make[2]: Warning: File '../config/make.def' has modification time 32 s in the future
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams lu 256 A 
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O lu.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O init_comm.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O read_input.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O bcast_inputs.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O proc_grid.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O neighbors.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O subdomain.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O setcoeff.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O setbv.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O exact.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O setiv.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O erhs.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O ssor.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O exchange_6.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O rhs.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O jacld.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O jacu.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O error.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O pintgr.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//include/smpi/ -O verify.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//bin/smpiff -L/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU/../../../..//simgrid/inst//lib -o ../bin/lu.A.256 lu.o init_comm.o read_input.o bcast_inputs.o proc_grid.o neighbors.o nodedim.o subdomain.o setcoeff.o setbv.o exact.o setiv.o erhs.o ssor.o exchange_1.o exchange_3.o exchange_4.o exchange_5.o exchange_6.o rhs.o l2norm.o jacld.o blts.o jacu.o buts.o error.o pintgr.o verify.o ../common/print_results.o ../common/timers.o -lsimgrid -lgfortran 
+make[2]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[2]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU'
+make[1]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[1]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/LU'

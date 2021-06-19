@@ -1,0 +1,48 @@
+make bt CLASS=A NPROCS=64
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd BT; make NPROCS=64 CLASS=A SUBTYPE= VERSION=
+make[1]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make[1]: Warning: File '../config/make.def' has modification time 49 s in the future
+make[2]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+make[2]: Warning: File '../config/make.def' has modification time 49 s in the future
+cc -g  -o setparams setparams.c
+make[2]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[2]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams bt 64 A 
+make[2]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make[2]: Warning: File '../config/make.def' has modification time 49 s in the future
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams bt 64 A 
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O bt.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O make_set.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O initialize.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O exact_solution.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O exact_rhs.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O set_constants.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O adi.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O define.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O copy_faces.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O rhs.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O solve_subs.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O x_solve.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O y_solve.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O z_solve.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O add.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O error.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O verify.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O setup_mpi.f
+make[3]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make[3]: Warning: File '../config/make.def' has modification time 45 s in the future
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O btio.f
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -L/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//lib -o ../bin/bt.A.64 bt.o make_set.o initialize.o exact_solution.o exact_rhs.o set_constants.o adi.o define.o copy_faces.o rhs.o solve_subs.o x_solve.o y_solve.o z_solve.o add.o error.o verify.o setup_mpi.o ../common/print_results.o ../common/timers.o btio.o -lsimgrid -lgfortran 
+make[3]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[3]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make[2]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[2]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make[1]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[1]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'

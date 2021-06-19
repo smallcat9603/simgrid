@@ -1,0 +1,20 @@
+
+#Global parameters
+#MPIINSTALLPATH=/usr/local/
+MPIINSTALLPATH=${MPIENVPREFIX}/ompi/
+
+
+#Fortran parameters
+MPIF77 = ${MPIINSTALLPATH}/bin/mpif90-vt
+FMPI_LIB  = -L$${MPIINSTALLPATH}/lib -lmpi 
+FMPI_INC = -I${MPIINSTALLPATH}/include
+FFLAGS	= -O
+FLINKFLAGS = -O
+
+
+#C++ Parameters
+MPICC= ${MPIINSTALLPATH}/bin/mpicc-vt
+CMPI_LIB  = -L${MPIINSTALLPATH}/lib -lmpi
+CMPI_INC = -I${MPIINSTALLPATH}/include/
+CFLAGS	= -O
+CLINKFLAGS = -O

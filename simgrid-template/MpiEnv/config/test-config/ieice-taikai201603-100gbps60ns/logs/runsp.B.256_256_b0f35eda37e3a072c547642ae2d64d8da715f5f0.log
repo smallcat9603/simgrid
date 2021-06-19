@@ -1,0 +1,93 @@
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 256  --cfg=smpi/privatize_global_variables:yes -platform /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/platforms/0_random_d6_64-bTrue.xml -hostfile /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/platforms/0_random_d6_64-bTrue.txt  /tmp/mpienv_sp.B.25620160226-56955-aw71s5/sp.B.256  
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '50000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+
+
+ NAS Parallel Benchmarks 3.3 -- SP Benchmark
+
+ No input file inputsp.data. Using compiled defaults
+ Size:  102x 102x 102
+ Iterations:  400    dt:   0.0010000
+ Number of active processes:   256
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  260
+ Time step  280
+ Time step  300
+ Time step  320
+ Time step  340
+ Time step  360
+ Time step  380
+ Time step  400
+ Verification being performed for class B
+ accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1 0.6903293579998E+02 0.6903293579998E+02 0.5763972333128E-13
+           2 0.3095134488084E+02 0.3095134488084E+02 0.9067921982252E-13
+           3 0.4103336647017E+02 0.4103336647017E+02 0.1174039607975E-12
+           4 0.3864769009604E+02 0.3864769009604E+02 0.2904850250328E-13
+           5 0.5643482272596E+02 0.5643482272596E+02 0.5640544795653E-13
+ Comparison of RMS-norms of solution error
+           1 0.9810006190188E-02 0.9810006190188E-02 0.4915930907403E-13
+           2 0.1022827905670E-02 0.1022827905670E-02 0.3924136621900E-12
+           3 0.1720597911692E-02 0.1720597911692E-02 0.1518615835771E-12
+           4 0.1694479428231E-02 0.1694479428231E-02 0.1081336038062E-12
+           5 0.1847456263981E-01 0.1847456263981E-01 0.8244239615316E-13
+ Verification Successful
+
+
+ SP Benchmark Completed.
+ Class           =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      400
+ Time in seconds =                     0.25
+ Total processes =                      256
+ Compiled procs  =                      256
+ Mop/s total     =               1415309.89
+ Mop/s/process   =                  5528.55
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              26 Feb 2016
+
+ Compile options:
+    MPIF77       = ${SIMGRID_PATH}/bin/smpiff
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    FMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    FFLAGS       = -O
+    FLINKFLAGS   = -L${SIMGRID_PATH}/lib
+    RAND         = (none)
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+
+[0.251719] [smpi_kernel/INFO] Simulated time: 0.251719 seconds. 
+ The simulation took 3456.55 seconds (after parsing and platform setup)
+740.713 seconds were actual computation of the application

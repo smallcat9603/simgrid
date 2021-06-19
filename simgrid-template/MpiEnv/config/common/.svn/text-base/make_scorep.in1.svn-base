@@ -1,0 +1,20 @@
+
+#Global parameters
+#MPIINSTALLPATH=/usr/local/
+MPIINSTALLPATH=${MPIENVPREFIX}/ompi/
+
+SCOREPINSTALLPATH=${MPIENVPREFIX}/trace/scorep-1.2.2/inst/
+
+#Fortran parameters
+MPIF77 =  ${SCOREPINSTALLPATH}/bin/scorep  ${MPIINSTALLPATH}/bin/mpif77
+FMPI_LIB  = -L${MPIINSTALLPATH}/lib -lmpi 
+FMPI_INC = -I${MPIINSTALLPATH}/include
+FFLAGS	= -O
+FLINKFLAGS = -O
+
+#C++ parameters
+MPICC= ${SCOREPINSTALLPATH}/bin/scorep  ${MPIINSTALLPATH}/bin/mpicc
+CMPI_LIB  = -L${MPIINSTALLPATH}/lib -lmpi
+CMPI_INC = -I${MPIINSTALLPATH}/include/
+CFLAGS	= -O
+CLINKFLAGS = -O

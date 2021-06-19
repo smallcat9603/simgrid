@@ -1,0 +1,18 @@
+make dt CLASS=B NPROCS=64
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd DT; make CLASS=B
+make[1]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT'
+make[2]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+cc -g  -o setparams setparams.c
+make[2]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams dt 64 B 
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams dt 64 B 
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//bin/smpicc  -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//include/smpi/ -O dt.c
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//bin/smpicc -O -L/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//lib -o ../bin/dt.B.x dt.o DGraph.o ../common/c_print_results.o ../common/c_timers.o ../common/c_randdp.o -lsimgrid -lgfortran 
+make[1]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT'

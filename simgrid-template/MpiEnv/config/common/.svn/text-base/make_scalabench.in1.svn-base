@@ -1,0 +1,21 @@
+
+#Global parameters
+#MPIINSTALLPATH=/usr/local/
+MPIINSTALLPATH=${MPIENVPREFIX}/ompi/
+ST=${MPIENVPREFIX}/trace/ScalaTraceV2/
+
+#Fortran parameters
+MPIF77 = ${MPIINSTALLPATH}/bin/mpif77
+FMPI_LIB  = -L${MPIINSTALLPATH}/lib/ -lmpi_cxx -L$(ST)/record/lib -L$(ST)/stackwalk/ver0 -lglob -lstackwalk -lstdc++
+FMPI_INC = -I${MPIINSTALLPATH}/include
+FFLAGS	= -O
+FLINKFLAGS = -O  -L$(ST)/record/lib -L$(ST)/stackwalk/ver0 
+
+
+#C++ parameters
+MPICC= ${MPIINSTALLPATH}/bin/mpicc
+CMPI_LIB  = -L${MPIINSTALLPATH}/lib/ -lmpi -L$(ST)/record/lib -L$(ST)/stackwalk/ver0 -lglob -lstackwalk
+CMPI_INC = -I${MPIINSTALLPATH}/include/
+CFLAGS	= -O
+CLINKFLAGS = -O -L$(ST)/record/lib -L$(ST)/stackwalk/ver0
+

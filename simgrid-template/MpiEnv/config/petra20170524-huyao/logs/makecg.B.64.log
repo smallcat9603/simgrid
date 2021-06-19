@@ -1,0 +1,23 @@
+make cg CLASS=B NPROCS=64
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd CG; make NPROCS=64 CLASS=B
+make[1]: Entering directory `/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG'
+make[2]: Entering directory `/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+cc -g  -o setparams setparams.c
+make[2]: Leaving directory `/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams cg 64 B 
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams cg 64 B 
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//include/smpi/ -O cg.f
+cg.f_z2Mrjt5Lya.f:1593.22:
+
+     >             v, iv(1), iv(n+1), nnza )                            
+                      1
+Warning: Type mismatch in argument 'mark' at (1); passed INTEGER(4) to LOGICAL(4)
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//bin/smpiff -O  -L/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//lib -o ../bin/cg.B.64 cg.o ../common/print_results.o ../common/randi8.o ../common/timers.o -lsimgrid -lgfortran 
+make[1]: Leaving directory `/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG'

@@ -1,0 +1,138 @@
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 256  --cfg=smpi/privatize_global_variables:yes -platform /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/platforms/0_3torus-4-4-4.xml -hostfile /home/koibuchi/simgrid/copyX20141203/MpiEnv/config/ieice-taikai201603-100gbps60ns/platforms/0_3torus-4-4-4.txt  /tmp/mpienv_cg.B.25620160223-12106-1hnmpt5/cg.B.256  
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '50000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+
+
+ NAS Parallel Benchmarks 3.3 -- CG Benchmark
+
+ Size:      75000
+ Iterations:    75
+ Number of active processes:   256
+ Number of nonzeroes per row:       13
+ Eigenvalue shift: .600E+02
+
+   iteration           ||r||                 zeta
+        1       0.11095900170425E-12    59.9994751578754
+        2       0.45059421418384E-15    21.7627846142538
+        3       0.48094778208166E-15    22.2876617043224
+        4       0.49125385881157E-15    22.5230738188352
+        5       0.49442209432274E-15    22.6275390653890
+        6       0.49773660035261E-15    22.6740259189537
+        7       0.49589126439156E-15    22.6949056826254
+        8       0.49593525832528E-15    22.7044023166871
+        9       0.49820702830522E-15    22.7087834345616
+       10       0.49440573974313E-15    22.7108351397172
+       11       0.49717538875869E-15    22.7118107121337
+       12       0.49517834407928E-15    22.7122816240973
+       13       0.49226077769581E-15    22.7125122663245
+       14       0.49351307072487E-15    22.7126268007597
+       15       0.49141908688458E-15    22.7126844161817
+       16       0.49155891165906E-15    22.7127137461757
+       17       0.49162746194118E-15    22.7127288401997
+       18       0.49223370953313E-15    22.7127366848298
+       19       0.48981057070999E-15    22.7127407981220
+       20       0.48877102965429E-15    22.7127429721364
+       21       0.48739186659893E-15    22.7127441294027
+       22       0.48712500263828E-15    22.7127447493899
+       23       0.48475836508679E-15    22.7127450834528
+       24       0.48757500579905E-15    22.7127452643879
+       25       0.48323477152605E-15    22.7127453628459
+       26       0.48502545269613E-15    22.7127454166513
+       27       0.48333465020568E-15    22.7127454461692
+       28       0.48192794646664E-15    22.7127454624205
+       29       0.48028676300697E-15    22.7127454713970
+       30       0.48186293112234E-15    22.7127454763704
+       31       0.47898077958017E-15    22.7127454791336
+       32       0.47921547223293E-15    22.7127454806729
+       33       0.47869322550633E-15    22.7127454815324
+       34       0.48086470612373E-15    22.7127454820135
+       35       0.47585292914876E-15    22.7127454822834
+       36       0.47690464970522E-15    22.7127454824351
+       37       0.47692662634148E-15    22.7127454825205
+       38       0.47440004618398E-15    22.7127454825687
+       39       0.47564655889740E-15    22.7127454825960
+       40       0.47514435417899E-15    22.7127454826114
+       41       0.47565207231736E-15    22.7127454826201
+       42       0.47753492529780E-15    22.7127454826252
+       43       0.47348226081559E-15    22.7127454826279
+       44       0.47116003234107E-15    22.7127454826296
+       45       0.46986815856171E-15    22.7127454826305
+       46       0.46788088399066E-15    22.7127454826310
+       47       0.47110489273623E-15    22.7127454826312
+       48       0.47225235070794E-15    22.7127454826315
+       49       0.46897523795791E-15    22.7127454826316
+       50       0.47040108010297E-15    22.7127454826316
+       51       0.46616092658451E-15    22.7127454826316
+       52       0.46781624856297E-15    22.7127454826317
+       53       0.46658185118221E-15    22.7127454826317
+       54       0.46232893536842E-15    22.7127454826317
+       55       0.46315010757621E-15    22.7127454826317
+       56       0.46348673818306E-15    22.7127454826317
+       57       0.46580016356358E-15    22.7127454826317
+       58       0.46126761852832E-15    22.7127454826317
+       59       0.45951087855891E-15    22.7127454826317
+       60       0.45740555996070E-15    22.7127454826317
+       61       0.46002279191795E-15    22.7127454826317
+       62       0.45730275975740E-15    22.7127454826317
+       63       0.45815881125321E-15    22.7127454826317
+       64       0.45770452591407E-15    22.7127454826317
+       65       0.45874606172562E-15    22.7127454826317
+       66       0.45876153600370E-15    22.7127454826317
+       67       0.45475841371853E-15    22.7127454826317
+       68       0.45601304690462E-15    22.7127454826317
+       69       0.45331545077031E-15    22.7127454826317
+       70       0.44994331376065E-15    22.7127454826317
+       71       0.45552654120741E-15    22.7127454826317
+       72       0.45230999310307E-15    22.7127454826317
+       73       0.45077246273314E-15    22.7127454826317
+       74       0.45245107181258E-15    22.7127454826317
+       75       0.44904762281911E-15    22.7127454826317
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is     0.2271274548263E+02
+ Error is    0.3190955452874E-13
+
+
+ CG Benchmark Completed.
+ Class           =                        B
+ Size            =                    75000
+ Iterations      =                       75
+ Time in seconds =                     0.47
+ Total processes =                      256
+ Compiled procs  =                      256
+ Mop/s total     =                115598.03
+ Mop/s/process   =                   451.55
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              23 Feb 2016
+
+ Compile options:
+    MPIF77       = ${SIMGRID_PATH}/bin/smpiff
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    FMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    FFLAGS       = -O
+    FLINKFLAGS   = -L${SIMGRID_PATH}/lib
+    RAND         = randi8
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+
+[0.479581] [smpi_kernel/INFO] Simulated time: 0.479581 seconds. 
+ The simulation took 725.528 seconds (after parsing and platform setup)
+300.197 seconds were actual computation of the application

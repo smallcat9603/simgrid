@@ -1,0 +1,22 @@
+make dt CLASS=A NPROCS=64
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd DT; make CLASS=A
+make[1]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT'
+make[1]: Warning: File '../config/make.def' has modification time 37 s in the future
+make[2]: Entering directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+make[2]: Warning: File '../config/make.def' has modification time 37 s in the future
+cc -g  -o setparams setparams.c
+make[2]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[2]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams dt 64 A 
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams dt 64 A 
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//bin/smpicc  -c -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//include/smpi/ -O dt.c
+/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//bin/smpicc -L/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT/../../../..//simgrid/inst//lib -o ../bin/dt.A.x dt.o DGraph.o ../common/c_print_results.o ../common/c_timers.o ../common/c_randdp.o -lsimgrid -lgfortran 
+make[1]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[1]: Leaving directory '/home/koibuchi/simgrid/copyX20141203/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/DT'

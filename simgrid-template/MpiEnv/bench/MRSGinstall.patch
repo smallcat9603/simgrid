@@ -1,0 +1,97 @@
+diff --git a/Makefile b/Makefile
+index 60562f2..c926cae 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,8 @@
+ CC = gcc
+ CFLAGS = -Wall -g3
+ 
+-INSTALL_PATH = $$HOME/simgrid
++INSTALL_PATH=../../../MpiEnv/simgrid/inst
++#INSTALL_PATH = $$HOME/simgrid
+ INCLUDES = -Iinclude -I$(INSTALL_PATH)/include
+ DEFS = -L$(INSTALL_PATH)/lib
+ LDADD = -lm -lsimgrid
+diff --git a/examples/Makefile b/examples/Makefile
+index 746ccf0..e9a4f36 100644
+--- a/examples/Makefile
++++ b/examples/Makefile
+@@ -1,6 +1,7 @@
+ CC = gcc
+ 
+-INSTALL_PATH = $$HOME/simgrid
++INSTALL_PATH = ../../../../MpiEnv/simgrid/inst/
++#INSTALL_PATH = $$HOME/simgrid
+ INCLUDES = -I../include -I$(INSTALL_PATH)/include
+ DEFS = -L$(INSTALL_PATH)/lib
+ LDADD = -lm -lsimgrid
+diff --git a/examples/hello.c b/examples/hello.c
+index 6baa7c9..b2fe243 100644
+--- a/examples/hello.c
++++ b/examples/hello.c
+@@ -43,7 +43,7 @@ int main (int argc, char* argv[])
+     /* Set the map output function. */
+     MRSG_set_map_output_f (my_map_output_function);
+     /* Run the simulation. */
+-    MRSG_main ("g5k.xml", "hello.deploy.xml", "hello.conf");
++	MRSG_main_args(&argc,argv); //"g5k.xml", "hello.deploy.xml", "hello.conf");
+ 
+     return 0;
+ }
+diff --git a/include/mrsg.h b/include/mrsg.h
+index 3c6956a..d05c58b 100644
+--- a/include/mrsg.h
++++ b/include/mrsg.h
+@@ -30,6 +30,8 @@ void MRSG_init (void);
+ 
+ int MRSG_main (const char* plat, const char* depl, const char* conf);
+ 
++int MRSG_main_args (int* argc , char* argv[]);
++
+ void MRSG_set_task_cost_f ( double (*f)(enum phase_e phase, size_t tid, size_t wid) );
+ 
+ void MRSG_set_dfs_f ( void (*f)(char** dfs_matrix, size_t chunks, size_t workers, int replicas) );
+diff --git a/src/simcore.c b/src/simcore.c
+index f407e3b..ae8084f 100644
+--- a/src/simcore.c
++++ b/src/simcore.c
+@@ -61,6 +61,8 @@ int MRSG_main (const char* plat, const char* depl, const char* conf)
+     check_config ();
+ 
+     MSG_init (&argc, argv);
++
++	
+     res = run_simulation (plat, depl, conf);
+ 
+     if (res == MSG_OK)
+@@ -69,6 +71,30 @@ int MRSG_main (const char* plat, const char* depl, const char* conf)
+ 	return 1;
+ }
+ 
++//Assume that arguments must be passed to MSG, but the last 3 ones, which are respectively the platform, the deploy;ent and the map-reduce configuration 
++int MRSG_main_args (int* argc, char* argv[])
++{
++    msg_error_t  res = MSG_OK;
++	int i=0;
++    config.initialized = 0;
++
++    check_config ();
++    MSG_init (argc, argv);
++	if(*argc>3){		
++		printf("Warning: After MSG has read his parameters, there are still reading %i parameters (instead of 4). Are you sure that MSG understands your configuration? Argv is now:\n",*argc);
++		for(i=0;i<*argc;i++){
++			printf("argv[%i]=%s\n",i,argv[i]);
++		}
++	}
++    res = run_simulation (argv[1],argv[2],argv[3]);
++
++    if (res == MSG_OK)
++	return 0;
++    else
++	return 1;
++}
++
++
+ /**
+  * @brief Check if the user configuration is sound.
+  */

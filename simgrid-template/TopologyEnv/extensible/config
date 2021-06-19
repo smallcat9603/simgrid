@@ -1,0 +1,125 @@
+# Defines the complete settings for generating the affectation of topologies to cabinets.
+# If the first character of a line is hash (#) or line is empty, it is not interpreted.
+# Fields must be separated by at least one space
+# There are 2 configuration parts in the file
+# First, the CABINETS part defines the positioning of cabinets and the total number of cabinets per year.
+# Second the TOPOLOGIES part defines the different topologies considered
+
+
+# CABINETS is a keyword to start cabinets configuration part.
+# It is assumed that the cabinets set form a rectangular area, where all years start from the same corner
+#
+#
+#  (1,1)------------------------------------------------
+#    !                   1          2                  3
+#    !                   1          2                  3
+#    !        Year 1     1          2                  3
+#    !                   1          2                  3
+#    !                   1          2                  3
+#    !11111111111111111111          2                  3
+#    !                              2                  3
+#    !                              2                  3
+#    !            Year 2            2     Year 3       3
+#    !                              2                  3
+#    !2222222222222222222222222222222                  3
+#    !                                                 3
+#    !33333333333333333333333333333333333333333333333333
+#
+# The cabinets line also include several global information
+# 1- The number of nodes per cabinet
+ 
+CABINETS 4
+
+
+# For each year, the required values are
+# 1- The total number of cabinets rows 
+# 2- The total number of cabinets columns
+# The total number of years is defined by the the number of valid lines of the CABINETS configuration part  
+
+# Year 1:
+4 4
+
+
+
+
+
+# TOPOLOGIES is a keyword to start the topologies configuration part.
+
+TOPOLOGIES
+
+# Each topology line contains:
+# 1- the fully-specified topology name according to lay.rb syntax (list is below)
+# 2- the year to which topology applies
+# 3- the probability to affect to this topology 
+
+# 4x4
+ring    1 1
+hc      1 1
+torus-2-2-2-2-2-2 1 1
+mesh-2-2-2-2-2-2  1 1
+
+
+
+# Here is the list of available topologies (through lay.rb)
+# hc    	hypercube, auto-sized
+# hc-<D>	hypercube
+# mesh  	3-D mesh, auto-sized
+# mesh-<C>	<C>-D mesh
+# torus 	3-D torus, auto-sized
+# torus-<C>	<C>-D torus
+# ring  	1-D torus, auto-sized
+# rr-<D>	random ring
+# rr~<L>	random ring, limited cable length
+# sky   	skywalk
+# sky~<L>	skywalk, limited cable length
+# di-<D>	partial dragonfly, intra-rack random
+# do-<D>	partial dragonfly, inter-rack random
+# do-<D>-<R>	partial dragonfly, inter-rack random neighbor
+# ds-<D>	partial dragonfly, inter-rack random straight
+# ds-<D>-<R>	partial dragonfly, inter-rack random straight neighbor
+# da-<D>	partial dragonfly, inter-rack random diagonal
+# da-<D>-<R>	partial dragonfly, inter-rack random diagonal neighbor
+# dh-<D>	partial dragonfly, inter-rack hypercube
+# dh    	partial dragonfly, inter-rack hypercube, auto-sized
+# dm-<C>	partial dragonfly, inter-rack mesh
+# dm    	partial dragonfly, inter-rack 2-D mesh, auto-sized
+# dt-<C>	partial dragonfly, inter-rack torus
+# dt    	partial dragonfly, inter-rack 2-D torus, auto-sized
+# df    	dragonfly, fully-connected
+# xc-<E>	express cube
+# rxc-<E>	random express cube
+# s-<E> 	straight
+# rs-<E>	random straight
+# r-<D> 	random
+# ri-<D>	intra-rack random
+# ro-<D>	inter-rack random
+# where
+# <D>	degree
+# <C>	#nodes for each dimension (ex. '5-4-3')
+# <E>	degrees for each dimension (ex. '3-2-1')
+# <L>	cable length (ex. '900m', '30km')
+# <R>	radius of neighborhood (% of diagonal distance)
+
+
+# The LAYOUT part defines the command-line options for layout operation. Note that the -c and -seed options are automatically defined already.
+
+LAYOUT 
+
+
+# The CLUSTERING part defines the command-line options for clustering operation. Note that the number of nodes per cabinet is defined automatically.
+# 1- The clustering method (cf. clust.R:143)
+# 2- (optional) the type of clustering capture (e.g. png) 
+
+CLUSTERING ward png
+
+# The ALLOCATION part defines the command-line options for allocation operation.
+# 1- The number of seconds for each allocation computation. 0 means no limit but default iteration count. 
+# 2- The type of optimization method 
+# *- (optional) ...
+ 
+ALLOCATION 36000 sa
+# ALLOCATION 1200 sa
+# ALLOCATION 60 sa
+
+
+

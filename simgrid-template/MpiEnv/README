@@ -1,0 +1,11 @@
+-----About running large simulations-------
+
+When running large simulations, default debian configuration will complain that too many files are open. You then need to increase the maximum in PAM 
+
+#Add to /etc/limits/pam.conf (need root rights)
+*           soft    nofile          20000
+*           hard    nofile          20000
+
+#And then reboot (need PAM to update its hard limits)
+
+

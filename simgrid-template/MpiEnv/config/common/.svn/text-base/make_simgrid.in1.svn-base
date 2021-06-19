@@ -1,0 +1,20 @@
+
+#Global parameters
+SIMGRID_PATH=${MPIENVPREFIX}/simgrid/inst/
+
+
+#Fortran parameters
+MPIF77 = ${SIMGRID_PATH}/bin/smpiff
+FMPI_LIB  =  -lsimgrid -lgfortran #-lsmpi -lgras  
+FMPI_INC = -I${SIMGRID_PATH}/include/smpi/
+FFLAGS	= -O
+FLINKFLAGS = -O  -L${SIMGRID_PATH}/lib
+
+
+#C++ parameters
+MPICC= ${SIMGRID_PATH}/bin/smpicc
+CMPI_LIB  =  -lsimgrid -lgfortran #-lsmpi -lgras  
+CMPI_INC = -I${SIMGRID_PATH}/include/smpi/
+CFLAGS	= -O
+CLINKFLAGS = -O -L${SIMGRID_PATH}/lib
+
