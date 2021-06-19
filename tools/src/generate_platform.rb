@@ -182,13 +182,13 @@ def generateplatform(edgefile,platformbase,opts)
   <!--  Negative values enable auto-select... -->
   <prop id='contexts/nthreads' value='1'/>
   <!--  Power of the executing computer in Flop per seconds. Used for extrapolating tasks execution time by SMPI [default is 20000]-->
-  <prop id='smpi/running_power' value='#{opts[:machinepower]}'/>
+  <prop id='smpi/host-speed' value='#{opts[:machinepower]}'/>
   <!--  Display simulated timing at the end of simulation -->
-  <prop id='smpi/display_timing' value='1'/>
+  <prop id='smpi/display-timing' value='1'/>
   <prop id='cpu/optim' value='Lazy'/>
   <prop id='network/optim' value='Lazy'/>
-  <prop id='smpi/coll_selector' value='#{opts[:collselector]}'/>
-  <prop id='smpi/cpu_threshold' value='0.00000001'/>"
+  <prop id='smpi/coll-selector' value='#{opts[:collselector]}'/>
+  <prop id='smpi/cpu-threshold' value='0.00000001'/>"
 
   if(opts[:addproperties])
     if(opts[:addproperties].class=="String")
