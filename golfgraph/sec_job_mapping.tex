@@ -15,7 +15,7 @@
 
 \subsubsection{Application Performance}
 
-We use a discrete-event simulation framework, SimGrid (v3.21)~\cite{SimGrid}, to evaluate the performance of parallel application benchmarks,  which include Block Tri (BT), Conjugate Gradient (CG), Fast Fourier (FT), Multi-Grid (MG) and Scalar Penta (SP) taken from NAS parallel benchmarks~\cite{benchmark}, Matrix Multiplication (MM) and Graph500.   
+We use a discrete-event simulation framework, SimGrid (v3.12)~\cite{SimGrid}, to evaluate the performance of parallel application benchmarks,  which include Block Tri (BT), Conjugate Gradient (CG), Fast Fourier (FT), Multi-Grid (MG) and Scalar Penta (SP) taken from NAS parallel benchmarks~\cite{benchmark}, Matrix Multiplication (MM) and Graph500.   
 We configure SimGrid so that each switch has a 100ns delay, switches and compute nodes are interconnected via the links with 100Gbps bandwidth each, and each compute node has a 5TFlops computation power. 
 For realistic simulation time, we use Class B as the problem size of BT, CG, FT, SP and MM, use Class A as the problem size of FT, and use Class Tiny as the problem size of Graph500.
 
