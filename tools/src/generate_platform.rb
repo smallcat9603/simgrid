@@ -3,7 +3,7 @@
 #	Generate Simgrid platform configuration files from an edgelist file
 #	Fabien Chaix	<fabien_chaix@nii.ac.jp>  
 #	Ikki Fujiwara <ikki@nii.ac.jp>
-# Yao Hu <huyao@nii.ac.jp>
+# Yao Hu <huyao@nii.ac.jp> for use of SimGrid v3.2X
 # 
 
 OVERHEAD_OUTER = 400 # Inter-rack cabling overhead [cm]
