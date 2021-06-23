@@ -46,6 +46,7 @@ We use a contiguous mapping policy on target interconnection networks, which all
 In this case, the end-to-end hop count can be relatively reduced, which leads to a compact low-diameter embedded topology for job execution.
 
 We assume that each application occupies a fixed number of compute nodes during runtime by applying a common approach to model parallel ``rigid" jobs.
+We use FCFS (First Come First Served) together with EASY backfilling~\cite{easy} as the job queuing policy.
 We employ the following two workload types:
 \begin{itemize}
 \item 
