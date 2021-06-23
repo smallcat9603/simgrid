@@ -1,7 +1,9 @@
 \ifx\allfiles\undefined
 \documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage[]{subfigure}
 \begin{document}
-\title{job mapping evaluation}
+\title{job mapping evaluation (golfgraph)}
 \author{huyao}
 \date{}
 \maketitle
@@ -19,6 +21,20 @@ For realistic simulation time, we use Class B as the problem size of BT, CG, FT,
 
 In the simulation, we assume the minimal routing using the Dijkstra algorithm on target 256-node interconnection networks, which are divided into two groups: degree-4 and degree-8.
 For each group we evaluate the performance on Torus ($16 \times 16$ for degree-4 and $4 \times 4 \times 4 \times 4$ for degree-8), Random and GolfGraph.
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=8cm]{ps/exec-d4.pdf}
+	\caption{Execution time of benchmark applications (nodes = 256, degree = 4).}
+	\label{fig:exec-d4}
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=8cm]{ps/exec-d8.pdf}
+	\caption{Execution time of benchmark applications (nodes = 256, degree = 8).}
+	\label{fig:exec-d8}
+\end{figure}
 
 \subsubsection{Scheduling Performance}
 
@@ -42,6 +58,34 @@ We use real-world supercomputer workload traces of user jobs by employing the pa
 Each archive in the PWA datasets uses a standard workload format, which concerns the arrivals of jobs and their basic resource requirements, namely the number of compute nodes and the processing time. 
 In the evaluation, we exemplarily use four PWA datasets: SDSC-Par, NASA-iPSC, SDSC-SP2 and HPC2N.
 More detailed information about the PWA datasets can be found in \cite{pwa2014}.
+
+\begin{figure}[tb]
+	\centering
+	\subfigure[Average response time (s)]{
+	  \label{fig:subfig:npb-time} 
+	  \includegraphics[width=4cm]{ps/npb-time.pdf}}
+	% \hspace{0.1in} 	
+	\subfigure[Resource utilization]{
+	  \label{fig:subfig:npb-uti} 
+	  \includegraphics[width=4cm]{ps/npb-uti.pdf}}        
+	\caption{Job scheduling performance using NPB applications on 1024-node interconnection networks.}
+	\label{fig:npb} 
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=8cm]{ps/pwa-time.pdf}
+	\caption{Average turnaround time using PWA workload traces on 1024-node interconnection networks.}
+	\label{fig:pwa-time}
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=8cm]{ps/pwa-uti.pdf}
+	\caption{Resource utilization using PWA workload traces on 1024-node interconnection networks.}
+	\label{fig:pwa-uti}
+\end{figure}
+
 \end{itemize}
 
 \ifx\allfiles\undefined
