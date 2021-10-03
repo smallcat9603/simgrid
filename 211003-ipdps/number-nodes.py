@@ -54,4 +54,4 @@ for edge in edges:
 # write to file
 edgefile_re = edgefile + ".re.edges"
 df = pd.DataFrame(edges)
-df.to_csv(edgefile_re, index=False, header=False)
+df.to_csv(edgefile_re, sep=" ", index=False, header=False)
