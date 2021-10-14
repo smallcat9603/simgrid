@@ -1,3 +1,13 @@
+# by smallcat 211003
+# renumber nodes so that neighboring ranks are mapped to neighboring nodes
+# Algorithm of re-numbering nodes (in TAD topology)
+# STEP 1: Add weight = 1 to all TAD links
+# STEP 2: Obtain the Complement Graph (TAD_C) of TAD
+# STEP 3: Set weight = LN (Large Number) to all TAD_C edges, and merge them to TAD
+# STEP 4: Solve TSP problem using a greedy method in TAD
+# STEP 5: Re-number nodes according to their order in result list
+ 
+
 import pandas as pd
 import networkx as nx
 from networkx.algorithms import approximation as approx
