@@ -2,20 +2,16 @@
 # coding: utf-8
 #=======================================================================
 #
-#	Create a random graph
-#	by Ikki Fujiwara, National Institute of Informatics
-#	2018-11-12
+#	Create a graph with (possible) largest bisection bandwidth
+#	by smallcat
+#	2021-10-14
 #
 #=======================================================================
-# "create-random.py" is licensed under a Creative Commons Attribution 4.0 International License.
-# http://creativecommons.org/licenses/by/4.0/
-
-author = "(random)"
-email = "graphgolf@nii.ac.jp"
-text1 = "A random graph provided as a baseline."
 
 import networkx as nx
 import argparse
+import os
+
 argumentparser = argparse.ArgumentParser()
 argumentparser.add_argument('nnodes', type=int)
 argumentparser.add_argument('degree', type=int)
@@ -35,9 +31,31 @@ def main(args):
 	print("{}\t{}\t{}\t{}\t{}\t{}\t{}%".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl))
 	
 	basename = "n{}d{}.random".format(nnodes, degree)
-	save_edges(g, basename + ".edges")
+	edgefile = basename + ".edges"
+	save_edges(g, edgefile)
 # 	save_image(g, basename + ".png")
-# 	save_json(author, email, text1, basename + ".edges", basename + ".json")
+	
+	# ruby
+	cmd = "./bisec.rb " + edgefile
+	# get initial bisection bandwidth
+	rr = os.popen(cmd).read()
+	bisec_init = int(rr.split("\t")[1])
+
+	LOOP = 100
+	bisec = bisec_init
+	for n in range(LOOP):
+		g_temp = g		
+		# 2-opt
+		nx.connected_double_edge_swap(g)
+		save_edges(g, edgefile)
+		cmd = "./bisec.rb " + edgefile
+		rr = os.popen(cmd).read()
+		bisec_update = int(rr.split("\t")[1])
+		if bisec_update < bisec: #restore
+			g = g_temp
+		else: #update
+			bisec = bisec_update
+	print("{}\t{}".format(bisec_init, bisec))
 	return
 
 def save_edges(g, filepath):
@@ -54,22 +72,6 @@ def save_image(g, filepath):
 	nx.draw(g, with_labels=False, node_size=50, linewidths=0, alpha=0.5, node_color='#3399ff', edge_color='#666666', pos=layout)
 	plt.draw()
 	plt.savefig(filepath)
-	return
-
-def save_json(author, email, text1, graph_file, filepath):
-	import os
-	import json
-	from datetime import datetime
-	
-	metadata = {}
-	metadata['author'] = author
-	metadata['email'] = email
-	metadata['text1'] = text1
-	metadata['disclose'] = True
-	metadata['graph_file'] = os.path.basename(graph_file)
-	metadata['stamp'] = datetime.isoformat(datetime.utcnow())
-	with open(filepath, 'w') as f:
-		json.dump(metadata, f, indent=1)
 	return
 
 def lower_bound_of_diam_aspl(nnodes, degree):
@@ -114,3 +116,4 @@ def max_avg_for_matrix(data):
 
 if __name__ == '__main__':
 	main(argumentparser.parse_args())
+
