@@ -15,21 +15,16 @@ import os
 argumentparser = argparse.ArgumentParser()
 argumentparser.add_argument('nnodes', type=int)
 argumentparser.add_argument('degree', type=int)
-argumentparser.add_argument('-it', type=int, default=10) #iteration
+argumentparser.add_argument('-it', type=int, default=1000) #iteration
 
 def main(args):
 	nnodes = args.nnodes
 	degree = args.degree
 	assert degree < nnodes
+	LOOP = args.it
 	
 	low_diam, low_aspl = lower_bound_of_diam_aspl(nnodes, degree)
 	g = nx.random_regular_graph(degree, nnodes, 0)
-	if nx.is_connected(g):
-		hops = nx.shortest_path_length(g, weight=None)
-		diam, aspl = max_avg_for_matrix(hops)
-	else:
-		diam, aspl = float("inf"), float("inf")
-	print("{}\t{}\t{}\t{}\t{}\t{}\t{}%".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl))
 	
 	basename = "n{}d{}.random".format(nnodes, degree)
 	edgefile = basename + ".edges"
@@ -41,10 +36,14 @@ def main(args):
 	# get initial bisection bandwidth
 	rr = os.popen(cmd).read()
 	bisec_init = int(rr.split("\t")[1])
-
-	LOOP = args.it
 	bisec = bisec_init
-	for n in range(LOOP):
+
+	if not os.path.exists("output/"):
+		os.makedirs("output/")
+	output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, LOOP)
+
+	#for n in range(LOOP):
+	while(LOOP > 0):
 		g_temp = g.copy()		
 		# 2-opt
 		nx.connected_double_edge_swap(g)
@@ -54,10 +53,29 @@ def main(args):
 		bisec_update = int(rr.split("\t")[1])
 		if bisec_update < bisec: #restore
 			g = g_temp.copy()
-		else: #update
-			bisec = bisec_update
-	print("{}\t{}".format(bisec_init, bisec))
+			LOOP = LOOP - 1
+		elif bisec_update == bisec: #accept but no update
+			LOOP = LOOP - 1
+		else:
+			bisec = bisec_update #update
+			LOOP = args.it
+		print(LOOP, end=" ", flush=True)
+	# print("{}\t{}".format(bisec_init, bisec))
+	print()
+	output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, LOOP)
+
 	return
+
+def output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, iteration):
+	if nx.is_connected(g):
+		hops = nx.shortest_path_length(g, weight=None)
+		diam, aspl = max_avg_for_matrix(hops)
+	else:
+		diam, aspl = float("inf"), float("inf")
+	print("{}\t{}\t{}\t{}\t{}\t{}\t{}%\t{}\t{}".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl, bisec, iteration))
+	file = open("output/"+basename+".txt", mode='a')
+	file.writelines("{}\t{}\t{}\t{}\t{}\t{}\t{}%\t{}\t{}\n".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl, bisec, iteration))
+	file.close()
 
 def save_edges(g, filepath):
 	nx.write_edgelist(g, filepath, data=False)
