@@ -50,9 +50,9 @@ def main(args):
 		else:
 			bisec = bisec_update # update
 			LOOP = args.i
-		# print(LOOP, end=" ", flush=True)
+		print(LOOP, end=" ", flush=True)
 		# print(".", end="", flush=True) # prevent freezing
-	# print()
+	print()
 	output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, LOOP)
 
 	return
