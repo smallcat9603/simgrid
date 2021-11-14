@@ -26,7 +26,7 @@ def main(args):
 	low_diam, low_aspl = lower_bound_of_diam_aspl(nnodes, degree)
 	g = nx.random_regular_graph(degree, nnodes, 0)
 	
-	basename = "n{}d{}.random".format(nnodes, degree)
+	basename = "n{}d{}r.bisec".format(nnodes, degree)
 	edgefile = basename + ".edges"
 	dir = "output/"
 	if not os.path.exists(dir):
