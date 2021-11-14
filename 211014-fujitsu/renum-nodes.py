@@ -89,7 +89,7 @@ def main(argv):
     # print(edges)
 
     # write to file
-    edgefile_re = edgefile + ".re.edges"
+    edgefile_re = edgefile.split('.edges')[0] + ".re" + str(stride) + ".edges"
     df = pd.DataFrame(edges)
     df.to_csv(edgefile_re, sep=" ", index=False, header=False)
 
