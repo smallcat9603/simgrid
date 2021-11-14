@@ -22,12 +22,12 @@ PLATFORMS = [
   'n64d8r',
   'n64d8r-bisec',
   'n64d8r-aspl',
-  'n64d8r.re',
-  'n64d8r-bisec.re',
-  'n64d8r-aspl.re',
-  'n64d8r.st',
-  'n64d8r-bisec.st',
-  'n64d8r-aspl.st',  
+  'n64d8r-re',
+  'n64d8r-bisec-re',
+  'n64d8r-aspl-re',
+  'n64d8r-re4',
+  'n64d8r-bisec-re4',
+  'n64d8r-aspl-re4',  
   ]
 
 MPI = [
