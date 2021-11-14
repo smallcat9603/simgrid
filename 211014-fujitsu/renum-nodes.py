@@ -28,7 +28,7 @@ def main(argv):
         elif opt == "-f":
             edgefile = arg
         elif opt == "-s":
-            stride = arg
+            stride = int(arg)
         else:
             print('Usage: python3 renum-nodes.py -f <inputfile>')
             sys.exit(2)
@@ -66,10 +66,16 @@ def main(argv):
     cycle = approx.greedy_tsp(G, source=0)
     # print(cycle)
 
+    cycle_stride = []
+    for s in range(stride):
+        for i in range(s, len(cycle)-1, stride): #duplicate head=tail
+            cycle_stride.append(cycle[i])
+
+    # print(cycle)
+    # print(cycle_stride)
+
     # renumber nodes
-    for number, node in enumerate(cycle):
-        if number == len(cycle)-1: #duplicate head=tail
-            break
+    for number, node in enumerate(cycle_stride):
         for num in range(len(edges)):
             if edges[num][0] == node:
                 edges[num][0] = number + LN
