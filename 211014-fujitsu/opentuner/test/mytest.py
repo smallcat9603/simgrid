@@ -11,7 +11,7 @@ from opentuner import EnumParameter
 from opentuner import MeasurementInterface
 from opentuner import Result
 
-# from /home/huyao/simgrid-template/MpiEnv/config/211014-fujitsu/platforms/
+# from /home/huyao/simgrid-template/MpiEnv/config/211014-fujitsu/opentuner/test/platforms/
 PLATFORMS = [
   'mesh-8-8',
   'mesh-4-4-4',
@@ -77,14 +77,14 @@ class IPDPSSimGridTuner(MeasurementInterface):
     """
     cfg = desired_result.configuration.data
 
-    platform_file_prefix = '/home/huyao/simgrid-template/MpiEnv/config/211014-fujitsu/platforms/{0}'.format(cfg['platform'])
+    platform_file_prefix = '/home/huyao/simgrid-template/MpiEnv/config/211014-fujitsu/opentuner/test/platforms/{0}'.format(cfg['platform'])
 
     run_cmd = '/home/huyao/simgrid-template/MpiEnv/simgrid/inst/bin/smpirun '
     run_cmd += '-np 64 '
     run_cmd += '-platform ' + platform_file_prefix + '.xml '
     run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
     run_cmd += '--cfg=smpi/coll-selector:' + '{0} '.format(cfg['mpi'])
-    run_cmd += 'your_execution_binary'
+    run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/ft.A.64'
 
     print(run_cmd)
     
