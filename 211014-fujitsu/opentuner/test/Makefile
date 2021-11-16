@@ -3,7 +3,7 @@ help:
 	@echo "do make test"
 
 test:	jansel-opentuner
-	python ipdps-simgrid.py
+	python mytest.py
 
 jansel-opentuner:
 	git clone https://github.com/jansel/opentuner $@
