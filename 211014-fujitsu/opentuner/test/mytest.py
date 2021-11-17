@@ -83,6 +83,7 @@ class IPDPSSimGridTuner(MeasurementInterface):
     run_cmd += '-np 64 '
     run_cmd += '-platform ' + platform_file_prefix + '.xml '
     run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
+    run_cmd += '--cfg=smpi/privatize_global_variables:yes '
     run_cmd += '--cfg=smpi/coll-selector:' + '{0} '.format(cfg['mpi'])
     run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/bt.A.64'
 
