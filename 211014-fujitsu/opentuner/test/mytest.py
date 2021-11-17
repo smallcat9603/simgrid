@@ -54,7 +54,7 @@ MPI = [
   'mvapich2',
 ]
 
-class IPDPSSimGridTuner(MeasurementInterface):
+class TestSimGridTuner(MeasurementInterface):
 
   def manipulator(self):
     """
@@ -104,4 +104,4 @@ class IPDPSSimGridTuner(MeasurementInterface):
 
 if __name__ == '__main__':
   argparser = opentuner.default_argparser()
-  IPDPSSimGridTuner.main(argparser.parse_args())
+  TestSimGridTuner.main(argparser.parse_args())
