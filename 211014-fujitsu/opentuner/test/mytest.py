@@ -84,7 +84,7 @@ class TestSimGridTuner(MeasurementInterface):
     run_cmd += '-platform ' + platform_file_prefix + '.xml '
     run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
     run_cmd += '--cfg=smpi/privatize_global_variables:yes '
-    run_cmd += '--cfg=smpi/coll-selector:' + '{0} '.format(cfg['mpi'])
+    run_cmd += '--cfg=smpi/coll_selector:' + '{0} '.format(cfg['mpi']) #coll_selector for simgrid 3.12, coll-selector for simgrid 3.2x
     run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/bt.A.64'
 
     print(run_cmd)
