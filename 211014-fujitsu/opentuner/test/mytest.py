@@ -101,7 +101,7 @@ class TestSimGridTuner(MeasurementInterface):
     """called at the end of tuning"""
     print("Optimal result to mytest.json:", configuration.data)
     self.manipulator().save_to_file(configuration.data,
-                                    'mytest' + run_cmd.split('/')[-1] + '.json')
+                                    'mytest.' + run_cmd.split('/')[-1] + '.json')
 
 
 if __name__ == '__main__':
