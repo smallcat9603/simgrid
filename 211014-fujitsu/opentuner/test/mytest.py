@@ -54,6 +54,8 @@ MPI = [
   'mvapich2',
 ]
 
+run_cmd = ""
+
 class TestSimGridTuner(MeasurementInterface):
 
   def manipulator(self):
@@ -85,7 +87,7 @@ class TestSimGridTuner(MeasurementInterface):
     run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
     run_cmd += '--cfg=smpi/privatize_global_variables:yes '
     run_cmd += '--cfg=smpi/coll_selector:' + '{0} '.format(cfg['mpi']) #coll_selector for simgrid 3.12, coll-selector for simgrid 3.2x
-    run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/bt.A.64'
+    run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/lu.A.64'
 
     print(run_cmd)
     
@@ -99,7 +101,7 @@ class TestSimGridTuner(MeasurementInterface):
     """called at the end of tuning"""
     print("Optimal result to mytest.json:", configuration.data)
     self.manipulator().save_to_file(configuration.data,
-                                    'mytest.json')
+                                    'mytest' + run_cmd.split('/')[-1] + '.json')
 
 
 if __name__ == '__main__':
