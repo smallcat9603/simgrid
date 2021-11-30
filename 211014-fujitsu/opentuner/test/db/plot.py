@@ -2,8 +2,13 @@ import sqlite3
 import matplotlib.pyplot as plt
 from matplotlib import style
 style.use('fivethirtyeight')
+import os.path
 
-dbase = sqlite3.connect("calc5.db")
+db = "calc5.db" # assume in the same directory with __file__
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, db)
+dbase = sqlite3.connect(db_path)
 cursor = dbase.cursor()
 
 def graph_data():
