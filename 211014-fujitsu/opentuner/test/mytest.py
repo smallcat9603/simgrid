@@ -93,7 +93,7 @@ class TestSimGridTuner(MeasurementInterface):
     assert run_result['returncode'] == 0
     assert 'SUCCESSFUL' in run_result['stdout']
 
-    return Result(time=run_result['time']) # you may need to change according to what you want to read (hirasawa)
+    return Result(time=run_result['stime']) # simulated time for simgrid (added new objective in interface.py)
  
   def save_final_config(self, configuration):
     """called at the end of tuning"""
