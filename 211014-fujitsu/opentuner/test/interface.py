@@ -289,7 +289,7 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
 
         #add new objective (simulated time for simgrid)
         output = p.stdout.read().decode()
-        stime = output.split("[simgrid/info] Simulated time: ")[-1].split(" ")[0]
+        stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
 
         return {'time': float('inf') if killed else (t1 - t0),
                 'timeout': killed,
