@@ -91,7 +91,7 @@ class TestSimGridTuner(MeasurementInterface):
     
     run_result = self.call_program(run_cmd)
     assert run_result['returncode'] == 0
-    assert 'SUCCESSFUL' in run_result['stdout']
+    # assert 'SUCCESSFUL' in run_result['stdout']
 
     return Result(time=run_result['stime']) # simulated time for simgrid (added new objective in interface.py)
  

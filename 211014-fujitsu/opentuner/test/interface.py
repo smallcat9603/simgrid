@@ -253,6 +253,12 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
         self.pids.append(p.pid)
         self.pid_lock.release()
 
+        #add new objective (simulated time for simgrid)
+        output = p.stdout.read().decode()
+        # stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
+        stime = output.split("Time in seconds =")[-1].split("Total processes =")[0].strip().replace('\n', '').replace('\r', '')
+        print("stime: " + stime)
+
         try:
             stdout_result = the_io_thread_pool.apply_async(p.stdout.read)
             stderr_result = the_io_thread_pool.apply_async(p.stderr.read)
@@ -284,13 +290,7 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
             if p.pid in self.pids:
                 self.pids.remove(p.pid)
             self.pid_lock.release()
-
         t1 = time.time()
-
-        #add new objective (simulated time for simgrid)
-        output = p.stdout.read().decode()
-        stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
-
         return {'time': float('inf') if killed else (t1 - t0),
                 'timeout': killed,
                 'returncode': p.returncode,
