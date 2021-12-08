@@ -85,7 +85,7 @@ class TestSimGridTuner(MeasurementInterface):
     run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
     run_cmd += '--cfg=smpi/privatize_global_variables:yes '
     run_cmd += '--cfg=smpi/coll_selector:' + '{0} '.format(cfg['mpi']) #coll_selector for simgrid 3.12, coll-selector for simgrid 3.2x
-    run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/mg.A.64'
+    run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/' + self.args.appname
 
     print(run_cmd)
     
@@ -97,11 +97,14 @@ class TestSimGridTuner(MeasurementInterface):
  
   def save_final_config(self, configuration):
     """called at the end of tuning"""
-    print("Optimal result to mytest.json:", configuration.data)
+    file_name = self.args.appname + ".json"
+    print("Optimal result to ", file_name, ": ", configuration.data)
     self.manipulator().save_to_file(configuration.data,
-                                    'mytest.mg.A.64.json')
+                                    file_name)
 
 
 if __name__ == '__main__':
   argparser = opentuner.default_argparser()
+  argparser.add_argument('-a', '--appname', required=True,
+                       help="application name to be tuned")
   TestSimGridTuner.main(argparser.parse_args())
