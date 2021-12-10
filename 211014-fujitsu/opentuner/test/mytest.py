@@ -98,7 +98,7 @@ class TestSimGridTuner(MeasurementInterface):
   def save_final_config(self, configuration):
     """called at the end of tuning"""
     file_name = self.args.appname + ".json"
-    print("Optimal result to " + file_name + ": " + configuration.data)
+    print("Optimal result to " + file_name + ":", configuration.data)
     self.manipulator().save_to_file(configuration.data,
                                     file_name)
 
