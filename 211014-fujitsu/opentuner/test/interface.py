@@ -254,9 +254,10 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
         self.pid_lock.release()
 
         #add new objective (simulated time for simgrid)
-        output = p.stdout.read().decode()
-        # stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
-        stime = output.split("Time in seconds =")[-1].split("Total processes =")[0].strip().replace('\n', '').replace('\r', '')
+        # output = p.stdout.read().decode()
+        # stime = output.split("Time in seconds =")[-1].split("Total processes =")[0].strip().replace('\n', '').replace('\r', '')
+        output = p.stderr.read().decode()
+        stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
         print("stime: " + stime)
 
         try:
