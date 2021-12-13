@@ -32,6 +32,42 @@ MPI = [
   'mvapich2',
 ]
 
+ALLTOALL = [
+  'bruck',
+  '2dmesh',
+  '3dmesh',
+  'rdb',
+  'pair',
+  'ring',
+  'basic_linear',
+]
+
+ALLREDUCE = [
+  'rdb',
+  'lr',
+  'rab1',
+  'rab2',
+  'rab_rsag',
+  'rab',
+]
+
+ALLGATHER =[
+  '2dmesh',
+  '3dmesh',
+  'bruck',
+  'pair',
+  'rdb',
+  'ring',
+  'spreading_simple',
+]
+
+BCAST =[
+  'binomial_tree',
+  'flattree',
+  'scatter_LR_allgather',
+  'scatter_rdb_allgather',
+]
+
 class TestSimGridTuner(MeasurementInterface):
 
   def manipulator(self):
@@ -45,6 +81,18 @@ class TestSimGridTuner(MeasurementInterface):
     )
     manipulator.add_parameter(
       EnumParameter('mpi', MPI)
+    )
+    manipulator.add_parameter(
+      EnumParameter('alltoall', ALLTOALL)
+    )
+    manipulator.add_parameter(
+      EnumParameter('allreduce', ALLREDUCE)
+    )
+    manipulator.add_parameter(
+      EnumParameter('allgather', ALLGATHER)
+    )
+    manipulator.add_parameter(
+      EnumParameter('bcast', BCAST)
     )
     return manipulator
 
@@ -63,6 +111,10 @@ class TestSimGridTuner(MeasurementInterface):
     run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
     run_cmd += '--cfg=smpi/privatize_global_variables:yes '
     run_cmd += '--cfg=smpi/coll_selector:' + '{0} '.format(cfg['mpi']) #coll_selector for simgrid 3.12, coll-selector for simgrid 3.2x
+    run_cmd += '--cfg=smpi/alltoall:' + '{0} '.format(cfg['alltoall'])
+    run_cmd += '--cfg=smpi/allreduce:' + '{0} '.format(cfg['allreduce'])
+    run_cmd += '--cfg=smpi/allgather:' + '{0} '.format(cfg['allgather'])
+    run_cmd += '--cfg=smpi/bcast:' + '{0} '.format(cfg['bcast'])
     run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/bin/' + self.args.appname
 
     print(run_cmd)

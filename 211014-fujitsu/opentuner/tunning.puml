@@ -19,16 +19,32 @@
 *** mpich
 *** mvapich2
 **[#OrangeRed] Collective
-*** all-to-all
-**** bruck 
+*** alltoall
+**** bruck
+**** 2dmesh
+**** 3dmesh
+**** recursive-doubling 
 **** pair 
 **** ring
-*** all-gather
-**** linear 
-**** binomial-tree
-*** all-reduce
-**** linear
-**** binomial-tree
-**** flat-tree
-**** scatter-gather
+**** basic-linear
+*** allreduce
+**** recursive-doubling
+**** logical-ring reduce-scatter-allgather
+**** reduce-scatter-allgather
+**** alltoall-allgather
+**** recursive-doubling reduce-scatter-allgather 
+**** Rabenseifner algo
+*** allgather
+**** 2dmesh
+**** 3dmesh
+**** bruck
+**** pair
+**** recursive-doubling
+**** ring
+**** spread 
+*** bcast 
+**** binomial-tree 
+**** flat-tree 
+**** scatter-logical-ring-allgather 
+**** scatter-recursive-doubling-allgather
 @endmindmap
