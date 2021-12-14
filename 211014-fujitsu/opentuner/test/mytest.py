@@ -47,7 +47,7 @@ ALLREDUCE = [
   'lr',
   'rab1',
   'rab2',
-  'rab_rsag',
+  # 'rab_rsag',
   'rab',
 ]
 
