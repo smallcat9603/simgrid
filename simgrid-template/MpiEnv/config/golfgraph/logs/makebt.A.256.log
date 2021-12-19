@@ -1,0 +1,52 @@
+make bt CLASS=A NPROCS=256
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd BT; make NPROCS=256 CLASS=A SUBTYPE= VERSION=
+make[1]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make[2]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+cc -g  -o setparams setparams.c
+make[2]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams bt 256 A 
+make[2]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams bt 256 A 
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O bt.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O make_set.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O initialize.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O exact_solution.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O exact_rhs.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O set_constants.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O adi.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O define.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O copy_faces.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O rhs.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O solve_subs.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O x_solve.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O y_solve.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O z_solve.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O add.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O error.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O verify.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O setup_mpi.f
+make[3]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//include/smpi/ -O btio.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//bin/smpiff -O  -L/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT/../../../..//simgrid/inst//lib -o ../bin/bt.A.256 bt.o make_set.o initialize.o exact_solution.o exact_rhs.o set_constants.o adi.o define.o copy_faces.o rhs.o solve_subs.o x_solve.o y_solve.o z_solve.o add.o error.o verify.o setup_mpi.o ../common/print_results.o ../common/timers.o btio.o -lsimgrid -lgfortran 
+/usr/bin/ld: ../common/print_results.o: relocation R_X86_64_32S against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
+/usr/bin/ld: ../common/timers.o: relocation R_X86_64_32S against undefined symbol `tt_' can not be used when making a shared object; recompile with -fPIC
+/usr/bin/ld: final link failed: Nonrepresentable section on output
+collect2: error: ld returned 1 exit status
+Makefile:58: recipe for target 'bt-bt' failed
+make[3]: *** [bt-bt] Error 1
+make[3]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+Makefile:37: recipe for target 'exec' failed
+make[2]: *** [exec] Error 2
+make[2]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+Makefile:28: recipe for target '../bin/bt.A.256' failed
+make[1]: *** [../bin/bt.A.256] Error 2
+make[1]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/BT'
+Makefile:13: recipe for target 'bt' failed
+make: *** [bt] Error 2

@@ -1,0 +1,31 @@
+make cg CLASS=A NPROCS=256
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd CG; make NPROCS=256 CLASS=A
+make[1]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG'
+make[2]: Entering directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+cc -g  -o setparams setparams.c
+make[2]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys'
+../sys/setparams cg 256 A 
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams cg 256 A 
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//include/smpi/ -O cg.f
+cg.f_ngmNURuVoM.f:1593:72:
+
+      >             v, iv(1), iv(n+1), nnza )
+                                                                        1
+Warning: Type mismatch in argument ‘mark’ at (1); passed INTEGER(4) to LOGICAL(4)
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//bin/smpiff -O  -L/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG/../../../..//simgrid/inst//lib -o ../bin/cg.A.256 cg.o ../common/print_results.o ../common/randi8.o ../common/timers.o -lsimgrid -lgfortran 
+/usr/bin/ld: ../common/print_results.o: relocation R_X86_64_32S against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
+/usr/bin/ld: ../common/timers.o: relocation R_X86_64_32S against undefined symbol `tt_' can not be used when making a shared object; recompile with -fPIC
+/usr/bin/ld: final link failed: Nonrepresentable section on output
+collect2: error: ld returned 1 exit status
+Makefile:13: recipe for target '../bin/cg.A.256' failed
+make[1]: *** [../bin/cg.A.256] Error 1
+make[1]: Leaving directory '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/CG'
+Makefile:37: recipe for target 'cg' failed
+make: *** [cg] Error 2

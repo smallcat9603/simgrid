@@ -1,0 +1,89 @@
+/home/huyao/simgrid-template/MpiEnv/config/golfgraph/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 256  --cfg=smpi/privatize_global_variables:yes -platform /home/huyao/simgrid-template/MpiEnv/config/golfgraph/platforms/2_n256d8g.xml -hostfile /home/huyao/simgrid-template/MpiEnv/config/golfgraph/platforms/2_n256d8g.txt  /tmp/mpienv_lu.B.25620210621-46692-vlkh5q/lu.B.256  
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '5000000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+[0.000000] [surf_config/INFO] Switching workstation model to compound since you changed the network and/or cpu model(s)
+
+
+ NAS Parallel Benchmarks 3.3 -- LU Benchmark
+
+ Size:  102x 102x 102
+ Iterations:  250
+ Number of processes:   256
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class B
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.3553267296998E+04 0.3553267296998E+04 0.3839401707302E-15
+           2   0.2621475079531E+03 0.2621475079531E+03 0.4336750656503E-14
+           3   0.8833372185095E+03 0.8833372185095E+03 0.1029612114961E-14
+           4   0.7781277473943E+03 0.7781277473943E+03 0.1168824405528E-14
+           5   0.7308796959255E+04 0.7308796959255E+04 0.5724164525953E-14
+ Comparison of RMS-norms of solution error
+           1   0.1140117638021E+03 0.1140117638021E+03 0.1246437581640E-15
+           2   0.8109896365542E+01 0.8109896365542E+01 0.7885285253474E-14
+           3   0.2848059731770E+02 0.2848059731770E+02 0.1995864701387E-14
+           4   0.2590539456783E+02 0.2590539456783E+02 0.2742836955830E-14
+           5   0.2605490750486E+03 0.2605490750486E+03 0.6545034042076E-15
+ Comparison of surface integral
+               0.4788716270331E+02 0.4788716270331E+02 0.1187028331851E-14
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      250
+ Time in seconds =                     2.29
+ Total processes =                      256
+ Compiled procs  =                      256
+ Mop/s total     =                218072.26
+ Mop/s/process   =                   851.84
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              21 Jun 2021
+
+ Compile options:
+    MPIF77       = ${SIMGRID_PATH}/bin/smpiff
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    FMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    FFLAGS       = -O
+    FLINKFLAGS   = -O  -L${SIMGRID_PATH}/lib
+    RAND         = (none)
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+
+[2.298880] [smpi_kernel/INFO] Simulated time: 2.29888 seconds. 
+ The simulation took 17580.7 seconds (after parsing and platform setup)
+1273.63 seconds were actual computation of the application

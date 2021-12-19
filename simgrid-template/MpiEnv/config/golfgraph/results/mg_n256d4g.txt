@@ -1,0 +1,50 @@
+
+
+ NAS Parallel Benchmarks 3.3 -- MG Benchmark
+
+ No input file. Using compiled defaults 
+ Size:  256x 256x 256  (class A)
+ Iterations:    4
+ Number of processes:    256
+
+ Initialization time:           0.014 seconds
+
+  iter    1
+  iter    4
+
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ L2 Norm is  0.2433365309069E-05
+ Error is    0.1964974584552E-12
+
+
+ MG Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 256
+ Iterations      =                        4
+ Time in seconds =                     0.01
+ Total processes =                      256
+ Compiled procs  =                      256
+ Mop/s total     =                435732.65
+ Mop/s/process   =                  1702.08
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              22 Feb 2016
+
+ Compile options:
+    MPIF77       = ${SIMGRID_PATH}/bin/smpiff
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    FMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    FFLAGS       = -O
+    FLINKFLAGS   = -L${SIMGRID_PATH}/lib
+    RAND         = randi8
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+

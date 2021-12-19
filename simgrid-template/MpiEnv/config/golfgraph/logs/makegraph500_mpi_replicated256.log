@@ -1,0 +1,34 @@
+make
+gcc-4.6 -flto -fwhole-program -g -std=c99 -Wall -O3 -march=native -I./generator   seq-list/seq-list.c graph500.c options.c rmat.c kronecker.c verify.c prng.c xalloc.c timer.c generator/splittable_mrg.c generator/graph_generator.c generator/make_graph.c generator/utils.c  -lm -lrt -o seq-list/seq-list
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from graph500.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from options.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from rmat.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from kronecker.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from verify.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from prng.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from xalloc.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+In file included from /usr/include/inttypes.h:25:0,
+                 from compat.h:14,
+                 from timer.c:4:
+/usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]

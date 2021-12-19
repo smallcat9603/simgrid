@@ -1,0 +1,19 @@
+/home/huyao/simgrid-template/MpiEnv/config/golfgraph/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 256  --cfg=smpi/privatize_global_variables:yes -platform /home/huyao/simgrid-template/MpiEnv/config/golfgraph/platforms/2_torus-16-16.xml -hostfile /home/huyao/simgrid-template/MpiEnv/config/golfgraph/platforms/2_torus-16-16.txt  /tmp/mpienv_graph500_mpi_replicated20210621-16858-1kcba9w/graph500_mpi_replicated   16 16 
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '5000000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+[0.000000] [surf_config/INFO] Switching workstation model to compound since you changed the network and/or cpu model(s)
+graph_generation:               0.038865 s
+construction_time:              0.001435 s
+Running BFS 0
+Time for BFS 0 is 0.004210
+Running BFS 1

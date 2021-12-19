@@ -1,0 +1,22 @@
+make mg CLASS=B NPROCS=256
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd MG; make NPROCS=256 CLASS=B
+make[1]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/MG' に入ります
+make[1]: 警告: ファイル '../config/make.def' の修正時刻 0.0056 は未来の時刻です
+make[2]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys' に入ります
+make[2]: 警告: ファイル '../config/make.def' の修正時刻 0.00095 は未来の時刻です
+cc -g  -o setparams setparams.c
+make[2]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[2]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys' から出ます
+../sys/setparams mg 256 B 
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams mg 256 B 
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/MG/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/MG/../../../..//simgrid/inst//include/smpi/ -O mg.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/MG/../../../..//simgrid/inst//bin/smpiff -O  -L/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/MG/../../../..//simgrid/inst//lib -o ../bin/mg.B.256 mg.o ../common/print_results.o ../common/randi8.o ../common/timers.o -lsimgrid -lgfortran 
+make[1]: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+make[1]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/MG' から出ます

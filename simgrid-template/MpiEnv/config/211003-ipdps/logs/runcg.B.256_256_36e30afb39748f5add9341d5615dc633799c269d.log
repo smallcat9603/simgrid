@@ -1,0 +1,37 @@
+/home/huyao/simgrid-template/MpiEnv/config/211003-ipdps/../../../MpiEnv/../MpiEnv/simgrid/inst/bin//smpirun -np 256  --cfg=smpi/privatize_global_variables:yes -platform /home/huyao/simgrid-template/MpiEnv/config/211003-ipdps/platforms/2_n256d4g.xml -hostfile /home/huyao/simgrid-template/MpiEnv/config/211003-ipdps/platforms/2_n256d4g.txt  /tmp/mpienv_cg.B.25620211005-47737-1misip6/cg.B.256  
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'surf/precision' to '1e-9'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/model' to 'SMPI'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/TCP_gamma' to '4194304'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/privatize_global_variables' to 'yes'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'cpu/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'maxmin/precision' to '1e-4'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/coll_selector' to 'mvapich2'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/cpu_threshold' to '0.00000001'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/running_power' to '5000000000000.0'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'network/optim' to 'Lazy'
+[0.000000] [xbt_cfg/INFO] Configuration change: Set 'smpi/display_timing' to '1'
+[0.000000] [surf_parse/INFO] The custom configuration 'network/model' is already defined by user!
+[0.000000] [surf_config/INFO] Switching workstation model to compound since you changed the network and/or cpu model(s)
+
+
+ NAS Parallel Benchmarks 3.3 -- CG Benchmark
+
+ Size:      75000
+ Iterations:    75
+ Number of active processes:   256
+ Number of nonzeroes per row:       13
+ Eigenvalue shift: .600E+02
+
+   iteration           ||r||                 zeta
+        1       0.11095900170425E-12    59.9994751578754
+        2       0.45059421418384E-15    21.7627846142538
+        3       0.48094778208166E-15    22.2876617043224
+        4       0.49125385881157E-15    22.5230738188352
+        5       0.49442209432274E-15    22.6275390653890
+        6       0.49773660035261E-15    22.6740259189537
+        7       0.49589126439156E-15    22.6949056826254
+        8       0.49593525832528E-15    22.7044023166871
+        9       0.49820702830522E-15    22.7087834345616
+       10       0.49440573974313E-15    22.7108351397172
+       11       0.49717538875869E-15    22.7118107121337
+       12       0.49517834407928E-15    22.7122816240973

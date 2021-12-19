@@ -1,0 +1,18 @@
+make ft CLASS=A NPROCS=256
+   =========================================
+   =      NAS Parallel Benchmarks 3.3      =
+   =      MPI/F77/C                        =
+   =========================================
+
+cd FT; make NPROCS=256 CLASS=A
+make[1]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/FT' に入ります
+make[2]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys' に入ります
+cc -g  -o setparams setparams.c
+make[2]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/sys' から出ます
+../sys/setparams ft 256 A 
+make.def modified. Rebuilding npbparams.h just in case
+rm -f npbparams.h
+../sys/setparams ft 256 A 
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/FT/../../../..//simgrid/inst//bin/smpiff -c -I/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/FT/../../../..//simgrid/inst//include/smpi/ -O ft.f
+/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/FT/../../../..//simgrid/inst//bin/smpiff -O  -L/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/FT/../../../..//simgrid/inst//lib -o ../bin/ft.A.256 ft.o ../common/randi8.o ../common/print_results.o ../common/timers.o -lsimgrid -lgfortran 
+make[1]: ディレクトリ '/home/huyao/simgrid-template/MpiEnv/bench/NPB3.3.1/NPB3.3-MPI/FT' から出ます

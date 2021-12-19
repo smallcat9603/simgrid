@@ -1,0 +1,55 @@
+
+ NAS Parallel Benchmarks 3.3 -- EP Benchmark
+
+ Number of random numbers generated:       536870912
+ Number of active processes:                     256
+
+EP Benchmark Results:
+
+CPU Time =    0.0004
+N = 2^   28
+No. Gaussian Pairs =     210832767.
+Sums =    -4.295875165632400D+03   -1.580732573678571D+04
+Counts:
+  0      98257395.
+  1      93827014.
+  2      17611549.
+  3       1110028.
+  4         26536.
+  5           245.
+  6             0.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                536870912
+ Iterations      =                        0
+ Time in seconds =                     0.00
+ Total processes =                      256
+ Compiled procs  =                      256
+ Mop/s total     =               1262147.40
+ Mop/s/process   =                  4930.26
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                    3.3.1
+ Compile date    =              11 Dec 2014
+
+ Compile options:
+    MPIF77       = ${SIMGRID_PATH}/bin/smpiff
+    FLINK        = $(MPIF77)
+    FMPI_LIB     = -lsimgrid -lgfortran #-lsmpi -lgras  
+    FMPI_INC     = -I${SIMGRID_PATH}/include/smpi/
+    FFLAGS       = -O
+    FLINKFLAGS   = -L${SIMGRID_PATH}/lib
+    RAND         = randi8
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+
