@@ -1,0 +1,40 @@
+FILE(REMOVE_RECURSE
+  "src/viva/moc_VivaWindow.cxx"
+  "src/viva/moc_VivaGraphView.cxx"
+  "src/viva/moc_VivaApplication.cxx"
+  "src/viva/moc_VivaLayoutRunner.cxx"
+  "src/viva/moc_VivaGraph.cxx"
+  "src/viva/moc_VivaRenderingThread.cxx"
+  "qrc_VivaResource.cxx"
+  "CMakeFiles/viva.dir/src/libtupi/bary.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/basic.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/dynar.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/dict.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/particle.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/box.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/cell.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/layout.c.o"
+  "CMakeFiles/viva.dir/src/libtupi/node.c.o"
+  "CMakeFiles/viva.dir/src/viva/main.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaWindow.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaGraphView.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaApplication.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaLayoutRunner.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaGraph.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaNode.cc.o"
+  "CMakeFiles/viva.dir/src/viva/VivaRenderingThread.cc.o"
+  "CMakeFiles/viva.dir/src/viva/moc_VivaWindow.cxx.o"
+  "CMakeFiles/viva.dir/src/viva/moc_VivaGraphView.cxx.o"
+  "CMakeFiles/viva.dir/src/viva/moc_VivaApplication.cxx.o"
+  "CMakeFiles/viva.dir/src/viva/moc_VivaLayoutRunner.cxx.o"
+  "CMakeFiles/viva.dir/src/viva/moc_VivaGraph.cxx.o"
+  "CMakeFiles/viva.dir/src/viva/moc_VivaRenderingThread.cxx.o"
+  "CMakeFiles/viva.dir/qrc_VivaResource.cxx.o"
+  "viva.pdb"
+  "viva"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang C CXX)
+  INCLUDE(CMakeFiles/viva.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

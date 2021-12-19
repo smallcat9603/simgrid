@@ -1,0 +1,10 @@
+prefix=/home/fabien/copyX/MpiEnv/simgrid/inst-pajeng
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: pajeutils
+Description: An auxiliary library for libPaje with QT-dependent classes
+Version: 1
+Libs: -L${libdir} -lpajeutils
+Cflags: -I${includedir}

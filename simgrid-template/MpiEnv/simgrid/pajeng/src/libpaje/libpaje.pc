@@ -1,0 +1,10 @@
+prefix=/home/fabien/copyX/MpiEnv/simgrid/inst-pajeng
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: paje
+Description: A library to read, simulate and filter paje traces prior to visualization
+Version: 1
+Libs: -L${libdir} -lpaje
+Cflags: -I${includedir}

@@ -1,0 +1,96 @@
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec799430254/fast"
+make: Warning: File `Makefile' has modification time 0.34 s in the future
+/usr/bin/make -f CMakeFiles/cmTryCompileExec799430254.dir/build.make CMakeFiles/cmTryCompileExec799430254.dir/build
+make[1]: Entering directory `/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp'
+make[1]: Warning: File `CMakeFiles/cmTryCompileExec799430254.dir/flags.make' has modification time 0.33 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec799430254.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec799430254.dir/CheckSymbolExists.cxx.o -c /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function 'int main(int, char**)':
+/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: 'Q_WS_WIN' was not declared in this scope
+make[1]: Leaving directory `/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec799430254.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTryCompileExec799430254/fast] Error 2
+
+File /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2966014802/fast"
+make: Warning: File `Makefile' has modification time 0.32 s in the future
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2966014802.dir/build.make CMakeFiles/cmTryCompileExec2966014802.dir/build
+make[1]: Entering directory `/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp'
+make[1]: Warning: File `CMakeFiles/cmTryCompileExec2966014802.dir/flags.make' has modification time 0.32 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2966014802.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2966014802.dir/CheckSymbolExists.cxx.o -c /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function 'int main(int, char**)':
+/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: 'Q_WS_QWS' was not declared in this scope
+make[1]: Leaving directory `/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec2966014802.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTryCompileExec2966014802/fast] Error 2
+
+File /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3887412108/fast"
+make: Warning: File `Makefile' has modification time 0.34 s in the future
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3887412108.dir/build.make CMakeFiles/cmTryCompileExec3887412108.dir/build
+make[1]: Entering directory `/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp'
+make[1]: Warning: File `CMakeFiles/cmTryCompileExec3887412108.dir/flags.make' has modification time 0.33 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3887412108.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3887412108.dir/CheckSymbolExists.cxx.o -c /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function 'int main(int, char**)':
+/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: 'Q_WS_MAC' was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec3887412108.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3887412108/fast] Error 2
+
+File /home/fabien/copyX/MpiEnv/simgrid/viva/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
