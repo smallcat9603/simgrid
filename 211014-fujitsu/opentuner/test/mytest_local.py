@@ -115,8 +115,8 @@ class TestSimGridTuner(MeasurementInterface):
     run_cmd += '--cfg=smpi/allreduce:' + '{0} '.format(cfg['allreduce'])
     run_cmd += '--cfg=smpi/allgather:' + '{0} '.format(cfg['allgather'])
     run_cmd += '--cfg=smpi/bcast:' + '{0} '.format(cfg['bcast'])
-    if self.args.appname == "MM_mpi": # MM
-      run_cmd += '/home/huyao/simgrid-template/MpiEnv/simgrid/Simgrid-git/examples/smpi/MM/' + self.args.appname + " -K 4096 -B 64"
+    if self.args.appname == "gemm": # MM
+      run_cmd += '../../../simgrid-template-smpi/' + self.args.appname
     elif self.args.appname == "graph500_mpi_simple": # graph500
       run_cmd += '../../../simgrid-template/MpiEnv/bench/graph500/graph500/mpi/' + self.args.appname + " 64 8"
     elif self.args.appname == "himeno": # himeno
