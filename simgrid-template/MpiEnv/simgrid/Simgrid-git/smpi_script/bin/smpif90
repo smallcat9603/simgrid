@@ -1,0 +1,144 @@
+#! /bin/sh
+
+# Copyright (c) 2012-2014. The SimGrid Team.
+# All rights reserved.
+
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the license (GNU LGPL) which comes with this package.
+
+SIMGRID_VERSION="SimGrid version 3.12-devel\nCopyright (c) 2004-2014. The Simgrid Team.\nRelease build at commit c87fbc1 (2014-11-24 15:33:47 +0100)"
+
+F90=/usr/bin/gfortran
+
+INCLUDEARGS="-I/home/koibuchi/simgrid/copyX20141203/MpiEnv/simgrid/Simgrid-git/include -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/simgrid/Simgrid-git/include/smpi -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/simgrid/Simgrid-git/include -I/home/koibuchi/simgrid/copyX20141203/MpiEnv/simgrid/Simgrid-git/include/smpi"
+CMAKE_LINKARGS="-L/home/koibuchi/simgrid/copyX20141203/MpiEnv/simgrid/Simgrid-git/lib"
+
+#!/bin/sh
+#---- smpitools.sh --------------------------------------------------------#
+
+# Copyright (c) 2013-2014. The SimGrid Team.
+# All rights reserved.
+
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the license (GNU LGPL) which comes with this package.
+
+SAVEIFS="$IFS"
+LISTSEP="$(printf '\b')"
+
+# Create a temporary file, with its name of the form $1_XXX$2, where XXX is
+# replaced by an unique string.
+# $1: prefix, $2: suffix
+mymktemp () {
+    tmp=$(mktemp --suffix="$2" "$1_XXXXXXXXXX" 2> /dev/null)
+    if [ -z "$tmp" ]; then
+        # mktemp failed (unsupported --suffix ?), try unsafe mode
+        tmp=$(mktemp -u "$1_XXXXXXXXXX" 2> /dev/null)
+        if [ -z "$tmp" ]; then
+            # mktemp failed again (doesn't exist ?), try very unsafe mode
+            if [ -z "${mymktemp_seq}" ]; then
+                mymktemp_seq=$(date +%d%H%M%S)
+            fi
+            tmp="$1_$$x${mymktemp_seq}"
+            mymktemp_seq=$((mymktemp_seq + 1))
+        fi
+        tmp="${tmp}$2"
+        # create temp file, and exit if it existed before
+        sh -C -c "true > \"${tmp}\"" || exit 1
+    fi
+    echo "${tmp}"
+}
+
+# Add a word to the end of a list (words separated by LISTSEP)
+# $1: list, $2...: words to add
+list_add () {
+    local list content newcontent
+    list="$1"
+    shift
+    if [ $# -gt 0 ]; then
+        eval content=\"\${$list}\"
+        IFS="$LISTSEP"
+        newcontent="$*"
+        IFS="$SAVEIFS"
+        if [ -z "$content" ]; then
+            content="$newcontent"
+        else
+            content="$content${LISTSEP}$newcontent"
+        fi
+        eval $list=\"\${content}\"
+    fi
+}
+
+# Like list_add, but only if first word to add ($2) is not empty
+list_add_not_empty () {
+    if [ -n "$2" ]; then
+        list_add "$@"
+    fi
+}
+
+# Set contents of a list (words separated by LISTSEP)
+# $1: list, $2...: words to set
+list_set () {
+    eval $1=""
+    list_add "$@"
+}
+
+# Get the content of a list: positional parameters ($1, $2, ...) are set to the
+# content of the list
+# $1: list
+# usage:  eval $(list_get list)
+list_get () {
+    printf 'IFS="$LISTSEP"; eval set -- \\$%s; IFS="$SAVEIFS"' "$1"
+}
+
+#---- end of smpitools.sh -------------------------------------------------#
+
+
+list_set FFLAGS "-ff2c" "-fno-second-underscore"
+list_set LINKARGS "-lsimgrid" "-lm" "-lgfortran"
+list_set TMPFILES
+main_name=main
+
+cleanup () {
+    eval $(list_get TMPFILES)
+    rm -f "$@"
+}
+trap 'cleanup' EXIT
+
+list_set CMDLINE "${F90}"
+list_add_not_empty CMDLINE "${FFLAGS}"
+while [ $# -gt 0 ]; do
+    ARG="$1"
+    shift
+    case "${ARG}" in
+        -c)
+            CMAKE_LINKARGS=""
+            LINKARGS=""
+            list_add CMDLINE "-c"
+            ;;
+        *.f90|*.F90)
+            TMPFILE=$(mymktemp "${ARG}" ".f90")
+            list_add TMPFILES "${TMPFILE}"
+      #replace "program main_name by subroutine user\_main (and the end clause as well)"
+            sed 's/[[:space:]]*program[[:space:]]*\([a-zA-Z0-9\-\_]*\)/ subroutine user\_main /gI;s/[[:space:]]*use[[:space:]]*mpi/\include \"mpif\.h\" /gI' "${ARG}" > "${TMPFILE}"
+            SRCFILE="${TMPFILE}"
+            list_add CMDLINE "${SRCFILE}"
+            ;;
+        '-version' | '--version')
+            printf '%b\n' "$SIMGRID_VERSION"
+            exit 0
+            ;;
+        '-compiler-version' | '--compiler-version')
+            ${F90} --version
+            ;;
+        *)
+            list_add CMDLINE "${ARG}"
+            ;;
+    esac
+done
+
+list_add_not_empty CMDLINE ${INCLUDEARGS}
+list_add_not_empty CMDLINE ${CMAKE_LINKARGS}
+list_add_not_empty CMDLINE "${LINKARGS}"
+
+eval $(list_get CMDLINE)
+"$@"

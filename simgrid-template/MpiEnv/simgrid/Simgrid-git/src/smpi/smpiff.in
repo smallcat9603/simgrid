@@ -1,0 +1,78 @@
+#! /bin/sh
+
+# Copyright (c) 2012-2014. The SimGrid Team.
+# All rights reserved.
+
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the license (GNU LGPL) which comes with this package.
+
+SIMGRID_VERSION="@SIMGRID_VERSION_STRING@"
+
+F77=@GFORTRAN_EXE@
+
+INCLUDEARGS="@includeflag@"
+CMAKE_LINKARGS="-L@libdir@"
+
+@SMPITOOLS_SH@
+
+list_set FFLAGS "-ff2c" "-fno-second-underscore"
+list_set LINKARGS "-lsimgrid" "-lm" "-lgfortran"
+list_set TMPFILES
+main_name=main
+
+cleanup () {
+    eval $(list_get TMPFILES)
+    rm -f "$@"
+}
+trap 'cleanup' EXIT
+
+
+NEEDS_OUTPUT=1
+
+list_set CMDLINE "${F77}"
+list_add_not_empty CMDLINE "${FFLAGS}"
+while [ $# -gt 0 ]; do
+    ARG="$1"
+    shift
+    case "${ARG}" in
+        -c)
+            CMAKE_LINKARGS=""
+            LINKARGS=""
+            list_add CMDLINE "-c"
+            ;;
+        *.f|*.F)
+            TMPFILE=$(mymktemp "${ARG}" ".f")
+            list_add TMPFILES "${TMPFILE}"
+      #replace "program main_name by subroutine user\_main (and the end clause as well)"
+            sed 's/[[:space:]]\{6\}[[:space:]]*\(end \)\{0,1\}program[[:space:]]*\([a-zA-Z0-9\-\_]*\)/      \1subroutine user_main /gI;s/[[:space:]]*use[[:space:]]*mpi/\include \"mpif\.h\" /gI' "${ARG}" > "${TMPFILE}"
+            ORIGFILE="${ARG}"
+            SRCFILE="${TMPFILE}"
+            list_add CMDLINE "${SRCFILE}"
+            ;;
+        '-version' | '--version')
+            printf '%b\n' "$SIMGRID_VERSION"
+            exit 0
+            ;;
+        '-compiler-version' | '--compiler-version')
+            ${F77} --version
+            ;;
+        -o)
+            NEEDS_OUTPUT=0
+            list_add CMDLINE "-o"   
+            ;;        
+        *)
+            list_add CMDLINE "${ARG}"
+            ;;
+    esac
+done
+
+if [ $NEEDS_OUTPUT -ne 0 ]; then
+   list_add CMDLINE "-o${ORIGFILE%.f}.o"     
+fi
+
+list_add_not_empty CMDLINE ${INCLUDEARGS}
+list_add_not_empty CMDLINE ${CMAKE_LINKARGS}
+list_add_not_empty CMDLINE "${LINKARGS}"
+
+eval $(list_get CMDLINE)
+"$@"

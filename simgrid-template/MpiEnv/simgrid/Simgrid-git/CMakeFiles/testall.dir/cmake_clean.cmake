@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "src/context_sysv_config.h"
+  "src/internal_config.h"
+  "include/smpi/mpif.h"
+  "include/simgrid_config.h"
+  "bin/smpicc"
+  "bin/smpicxx"
+  "bin/smpiff"
+  "bin/smpif90"
+  "bin/smpirun"
+  "bin/colorize"
+  "bin/simgrid_update_xml"
+  "examples/smpi/tracing/smpi_traced.trace"
+  "src/cunit_unit.c"
+  "src/ex_unit.c"
+  "src/dynar_unit.c"
+  "src/dict_unit.c"
+  "src/set_unit.c"
+  "src/swag_unit.c"
+  "src/xbt_str_unit.c"
+  "src/xbt_strbuff_unit.c"
+  "src/xbt_sha_unit.c"
+  "src/config_unit.c"
+  "src/simgrid_units_main.c"
+  "CMakeFiles/testall.dir/src/cunit_unit.c.o"
+  "CMakeFiles/testall.dir/src/ex_unit.c.o"
+  "CMakeFiles/testall.dir/src/dynar_unit.c.o"
+  "CMakeFiles/testall.dir/src/dict_unit.c.o"
+  "CMakeFiles/testall.dir/src/set_unit.c.o"
+  "CMakeFiles/testall.dir/src/swag_unit.c.o"
+  "CMakeFiles/testall.dir/src/xbt_str_unit.c.o"
+  "CMakeFiles/testall.dir/src/xbt_strbuff_unit.c.o"
+  "CMakeFiles/testall.dir/src/xbt_sha_unit.c.o"
+  "CMakeFiles/testall.dir/src/config_unit.c.o"
+  "CMakeFiles/testall.dir/src/simgrid_units_main.c.o"
+  "src/testall.pdb"
+  "src/testall"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/testall.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

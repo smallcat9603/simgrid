@@ -1,0 +1,193 @@
+/*!
+\page inside_extending Extending SimGrid
+
+\tableofcontents
+
+\section simgrid_dev_guide_model How to add a new model in surf?
+The figure below show the architecture of the SURF layer. This layer is composed
+of different kind of models representing the differents systems we want to
+modelize (i.e.cpu, network, storage, workstation, virtual machine).
+
+A model in simgrid is composed of three classes: Model, Resource and Action
+(surf_interface.hpp).
+
+\image html surf++.png
+\image latex surf++.pdf "surf++" width=\textwidth
+
+Actually there are five kind of models: CpuModel, NetworkModel, WorkstationModel,
+WorkstationVMModel and StorageModel. For each kind of model, there is an
+interface (e.g.: cpu_interface.hpp) and some implementations (e.g.: cpu_cas01.hpp,
+cpu_ti.hpp).
+
+init function:
+void surf_cpu_model_init_Cas01()
+s_surf_model_description_t surf_network_model_description[] = {
+
+\subsection simgrid_dev_guide_model_implem How to add a new model implementation in surf?
+
+If you want to create a new implementation of a kind of model you must extend
+the classes of the corresponding interfaces.
+
+For instance, if you want to add a new cup model called `Plop`, create two files
+cpu_plop.hpp and cpu_plop_cpp which contains classes CpuPlopModel, CpuPlop and
+CpuPlopAction implementating respectively the interfaces CpuModel, Cpu and
+CpuAction. You also need to define a initializing function like this:
+
+~~~~
+void surf_cpu_model_init_plop()
+{
+  xbt_assert(!surf_cpu_model_pm);
+
+  surf_cpu_model_pm = new CpuPlopModel();
+
+  sg_platf_host_add_cb(cpu_parse_init);
+  sg_platf_postparse_add_cb(cpu_add_traces);
+
+  xbt_dynar_push(model_list, &surf_cpu_model_pm);
+}
+~~~~
+
+and add an entry in the corresponding array in surf_interface.cpp
+
+~~~~
+s_surf_model_description_t surf_cpu_model_description[] = {
+  {"Cas01",
+   "Simplistic CPU model (time=size/power).",
+   surf_cpu_model_init_Cas01},
+  {"Plop",
+   "The new plop CPU model.",
+   surf_cpu_model_init_plop},
+  {NULL, NULL, NULL}      // this array must be NULL terminated
+};
+~~~~
+
+\subsection simgrid_dev_guide_model_kind How to add a new kind of model in surf?
+
+If you want to create a new kind of model, you must create a new interface
+where you extend the classes Model, Resource and Action, and then create an
+implementation of this interface.
+
+
+\section simgrid_dev_guide_surf_callbacks How to use surf callbacks?
+
+Adding features to surf could also be handle by using surf callbacks (instead
+of adding new implementation model). The list of available callbacks is
+accessible there \ref SURF_callbacks. An example of using surf callbacks is the
+energy plugin. If you want to add a plugin you need to define callback function
+and to connect them to callbacks handler in an initialization function.
+
+~~~~
+static void MyNetworkLinkCreatedCallback(NetworkLinkPtr cpu){
+  // your code
+}
+
+static void MyNetworkLinkDestructedCallback(NetworkLinkPtr cpu){
+  // your code
+}
+
+static void MyNetworkCommunicationCallback(NetworkActionPtr cpu,
+                                           RoutingEdgePtr src,
+                                           RoutingEdgePtr dst){
+  // your code
+}
+
+void sg_my_network_plugin_init() {
+  surf_callback_connect(networkLinkCreatedCallbacks,
+                        MyNetworkLinkCreatedCallback);
+  surf_callback_connect(networkLinkDestructedCallbacks,
+                        MyNetworkLinkDestructedCallback);
+  surf_callback_connect(networkCommunicationCallbacks,
+                        MyNetworkCommunicationCallback);
+}
+~~~~
+
+Then you need to add an entry in surf_interface.cpp refering to your
+initialization function.
+
+~~~~
+s_surf_model_description_t surf_plugin_description[] = {
+                  {"Energy",
+                   "Cpu energy consumption.",
+                   sg_energy_plugin_init},
+                  {"MyNetworkPlugin",
+                   "My network plugin.",
+                   sg_my_network_plugin_init},
+                  {NULL, NULL, NULL}      // this array must be NULL terminated
+};
+~~~~
+
+\section simgrid_dev_guide_simcall How to add a new simcall?
+
+A simcall is used to go from user mode to kernel mode. There is some
+sort of popping dance involved, as we want to isolate the user
+contextes from their environment (so that they can run in parallel).
+
+The workflow of a simcall is the following:
+
+- `<ret> simcall_<name>(<args>)`
+ - `simcall_BODY_<name>(<args>)`
+  - Initializes the simcall (store the arguments in position)
+  - If maestro, executes the simcall directly (and return)
+  - If not, call `SIMIX_process_yield` to give back the control to maestro
+  - ========== KERNEL MODE ==========
+  - `SIMIX_simcall_handle` large switch (on simcall) doing for each:
+   - `simcall_HANDLER_<name>(simcall, <args>)` (the manual code handling the simcall)
+   - If the simcall is not marked as "blocking" in its definition,
+     call `SIMIX_simcall_answer(simcall)` that adds back the issuer
+     process to the list of processes to run in the next scheduling round.
+     It is thus the responsability of the blocking simcalls to call
+     `SIMIX_simcall_answer(simcall)` themselves in their handler.
+
+Note that empty HANDLERs can be omitted. These functions usually do
+some parameter checking, or retrieve some information about the
+simcall issuer, but when there no need for such things, the handler
+can be omited. In that case, we directly call the function
+`simcall_<name>(<args>)`.
+
+To simplify the simcall creation, a python script generates most of
+the code and give helpers for the remaining stuff. That script reads
+the simcall definitions from src/simix/simcalls.in, checks that both
+`simcall_<name>()` and `simcall_HANDLER()` are defined somewhere, and
+generates the following files:
+
+- smx_popping_accessors.h:
+  Helper functions to get and set simcall arguments and results
+- smx_popping_bodies.c:
+  The BODY function of each simcall
+- smx_popping_enum.c:
+  Definition of type `enum e_smx_simcall_t` (one value per existing simcall)
+- smx_popping_generated.c:
+  Definitions of `simcall_names[]` (debug name of each simcall), and
+  SIMIX_simcall_enter() that deals with the simcall from within the kernel
+
+The simcall.in file list all the simcalls in sections. A line starting by "##"
+define a new section which will be replace by a "ifdef" in the generated code.
+There is a simcall by line which follow this format:
+
+~~~~
+Simcall -> Name HasAnswer Res Args
+Name -> [a-z0-9_]+
+Has_Answer -> "True" | "False"
+Res -> "(" Type MaybeCast ")"
+Args -> Args Arg | Arg
+Arg -> "(" Name "," Type MaybeCast ")"
+Type -> "char" | "const char*" | "int" | "long" | "unsigned char" | "unsigned short" | "unsigned int" | "unsigned long" | "float" | "double" | "void*" | "FPtr" | "const void*" | "size_t" | "sg_size_t" | "void" | "void*"
+MaybeCast -> "," Cast | ""
+Cast -> [a-z0-9_* ]+
+~~~~
+
+\section simgrid_dev_guide_tag What is How to add a new tag for xml files?
+Search for expression \"TUTORIAL: New TAG\".
+\verbatim
+user@caraja:~/workspace/simgrid/src$ cg "TUTORIAL: New TAG"
+0 surf/sg_platf.c                    43 /* TUTORIAL: New TAG*/
+1 surf/sg_platf.c                    89 /* TUTORIAL: New TAG*/
+2 surf/sg_platf.c                   124 /* TUTORIAL: New TAG*/
+3 surf/sg_platf.c                   337 /* TUTORIAL: New TAG*/
+4 surf/surfxml_parse.c              769 /* TUTORIAL: New TAG*/
+5 surf/surf_private.h               205 /* TUTORIAL: New TAG*/
+6 surf/surfxml_parseplatf.c          64 /* TUTORIAL: New TAG*/
+7 surf/surfxml_parseplatf.c          85 /* TUTORIAL: New TAG*/
+8 include/simgrid/platf_interface.h  42 /* TUTORIAL: New TAG*/
+\endverbatim
+*/
