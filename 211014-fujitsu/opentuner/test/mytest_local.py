@@ -120,7 +120,7 @@ class TestSimGridTuner(MeasurementInterface):
     elif self.args.appname == "graph500_mpi_simple": # graph500
       run_cmd += '../../../simgrid-template/MpiEnv/bench/graph500/graph500/mpi/' + self.args.appname + " 64 8"
     elif self.args.appname == "himeno": # himeno
-      run_cmd += '/home/huyao/simgrid-template/MpiEnv/bench/himeno/bin/' + self.args.appname
+      run_cmd += '../../../simgrid-template/MpiEnv/bench/himeno/bin/' + self.args.appname
     else: # NPB
       run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
