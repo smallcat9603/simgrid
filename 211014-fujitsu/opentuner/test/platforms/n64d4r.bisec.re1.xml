@@ -1,405 +1,405 @@
 <?xml version='1.0'?> 
-<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid.dtd">
-<platform version='3'>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version='4.1'>
  <config>
   <prop id='maxmin/precision' value='1e-4'/>
   <prop id='network/model' value='SMPI'/>
   <!--  Negative values enable auto-select... -->
   <prop id='contexts/nthreads' value='1'/>
   <!--  Power of the executing computer in Flop per seconds. Used for extrapolating tasks execution time by SMPI [default is 20000]-->
-  <prop id='smpi/running_power' value='5000000000000.0'/>
+  <prop id='smpi/host-speed' value='5000000000000.0f'/>
   <!--  Display simulated timing at the end of simulation -->
-  <prop id='smpi/display_timing' value='1'/>
+  <prop id='smpi/display-timing' value='1'/>
   <prop id='cpu/optim' value='Lazy'/>
   <prop id='network/optim' value='Lazy'/>
-  <prop id='smpi/coll_selector' value='mvapich2'/>
-  <prop id='smpi/cpu_threshold' value='0.00000001'/>
+  <prop id='smpi/coll-selector' value='mpich'/>
+  <prop id='smpi/cpu-threshold' value='0.00000001'/>
  </config>
- <AS id='AS0' routing='Floyd'>
-  <host id='n1' power='5000000000000.0' core='1'/>
-  <link id='linkn1s0' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls0' bandwidth='5000000000000.0' latency='1.0e-07'/>
+ <AS id='AS0' routing='Dijkstra'>
+  <host id='n1' speed='5000000000000.0f' core='1'/>
+  <link id='linkn1s0' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls0' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s0'/>
-  <host id='n2' power='5000000000000.0' core='1'/>
-  <link id='linkn2s1' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls1' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n2' speed='5000000000000.0f' core='1'/>
+  <link id='linkn2s1' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls1' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s1'/>
-  <host id='n3' power='5000000000000.0' core='1'/>
-  <link id='linkn3s2' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls2' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n3' speed='5000000000000.0f' core='1'/>
+  <link id='linkn3s2' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls2' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s2'/>
-  <host id='n4' power='5000000000000.0' core='1'/>
-  <link id='linkn4s3' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls3' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n4' speed='5000000000000.0f' core='1'/>
+  <link id='linkn4s3' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls3' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s3'/>
-  <host id='n5' power='5000000000000.0' core='1'/>
-  <link id='linkn5s4' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls4' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n5' speed='5000000000000.0f' core='1'/>
+  <link id='linkn5s4' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls4' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s4'/>
-  <host id='n6' power='5000000000000.0' core='1'/>
-  <link id='linkn6s5' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls5' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n6' speed='5000000000000.0f' core='1'/>
+  <link id='linkn6s5' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls5' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s5'/>
-  <host id='n7' power='5000000000000.0' core='1'/>
-  <link id='linkn7s6' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls6' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n7' speed='5000000000000.0f' core='1'/>
+  <link id='linkn7s6' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls6' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s6'/>
-  <host id='n8' power='5000000000000.0' core='1'/>
-  <link id='linkn8s7' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls7' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n8' speed='5000000000000.0f' core='1'/>
+  <link id='linkn8s7' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls7' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s7'/>
-  <host id='n9' power='5000000000000.0' core='1'/>
-  <link id='linkn9s8' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls8' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n9' speed='5000000000000.0f' core='1'/>
+  <link id='linkn9s8' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls8' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s8'/>
-  <host id='n10' power='5000000000000.0' core='1'/>
-  <link id='linkn10s9' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls9' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n10' speed='5000000000000.0f' core='1'/>
+  <link id='linkn10s9' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls9' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s9'/>
-  <host id='n11' power='5000000000000.0' core='1'/>
-  <link id='linkn11s10' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls10' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n11' speed='5000000000000.0f' core='1'/>
+  <link id='linkn11s10' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls10' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s10'/>
-  <host id='n12' power='5000000000000.0' core='1'/>
-  <link id='linkn12s11' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls11' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n12' speed='5000000000000.0f' core='1'/>
+  <link id='linkn12s11' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls11' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s11'/>
-  <host id='n13' power='5000000000000.0' core='1'/>
-  <link id='linkn13s12' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls12' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n13' speed='5000000000000.0f' core='1'/>
+  <link id='linkn13s12' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls12' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s12'/>
-  <host id='n14' power='5000000000000.0' core='1'/>
-  <link id='linkn14s13' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls13' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n14' speed='5000000000000.0f' core='1'/>
+  <link id='linkn14s13' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls13' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s13'/>
-  <host id='n15' power='5000000000000.0' core='1'/>
-  <link id='linkn15s14' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls14' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n15' speed='5000000000000.0f' core='1'/>
+  <link id='linkn15s14' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls14' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s14'/>
-  <host id='n16' power='5000000000000.0' core='1'/>
-  <link id='linkn16s15' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls15' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n16' speed='5000000000000.0f' core='1'/>
+  <link id='linkn16s15' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls15' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s15'/>
-  <host id='n17' power='5000000000000.0' core='1'/>
-  <link id='linkn17s16' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls16' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n17' speed='5000000000000.0f' core='1'/>
+  <link id='linkn17s16' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls16' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s16'/>
-  <host id='n18' power='5000000000000.0' core='1'/>
-  <link id='linkn18s17' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls17' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n18' speed='5000000000000.0f' core='1'/>
+  <link id='linkn18s17' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls17' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s17'/>
-  <host id='n19' power='5000000000000.0' core='1'/>
-  <link id='linkn19s18' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls18' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n19' speed='5000000000000.0f' core='1'/>
+  <link id='linkn19s18' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls18' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s18'/>
-  <host id='n20' power='5000000000000.0' core='1'/>
-  <link id='linkn20s19' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls19' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n20' speed='5000000000000.0f' core='1'/>
+  <link id='linkn20s19' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls19' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s19'/>
-  <host id='n21' power='5000000000000.0' core='1'/>
-  <link id='linkn21s20' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls20' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n21' speed='5000000000000.0f' core='1'/>
+  <link id='linkn21s20' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls20' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s20'/>
-  <host id='n22' power='5000000000000.0' core='1'/>
-  <link id='linkn22s21' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls21' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n22' speed='5000000000000.0f' core='1'/>
+  <link id='linkn22s21' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls21' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s21'/>
-  <host id='n23' power='5000000000000.0' core='1'/>
-  <link id='linkn23s22' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls22' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n23' speed='5000000000000.0f' core='1'/>
+  <link id='linkn23s22' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls22' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s22'/>
-  <host id='n24' power='5000000000000.0' core='1'/>
-  <link id='linkn24s23' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls23' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n24' speed='5000000000000.0f' core='1'/>
+  <link id='linkn24s23' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls23' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s23'/>
-  <host id='n25' power='5000000000000.0' core='1'/>
-  <link id='linkn25s24' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls24' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n25' speed='5000000000000.0f' core='1'/>
+  <link id='linkn25s24' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls24' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s24'/>
-  <host id='n26' power='5000000000000.0' core='1'/>
-  <link id='linkn26s25' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls25' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n26' speed='5000000000000.0f' core='1'/>
+  <link id='linkn26s25' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls25' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s25'/>
-  <host id='n27' power='5000000000000.0' core='1'/>
-  <link id='linkn27s26' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls26' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n27' speed='5000000000000.0f' core='1'/>
+  <link id='linkn27s26' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls26' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s26'/>
-  <host id='n28' power='5000000000000.0' core='1'/>
-  <link id='linkn28s27' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls27' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n28' speed='5000000000000.0f' core='1'/>
+  <link id='linkn28s27' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls27' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s27'/>
-  <host id='n29' power='5000000000000.0' core='1'/>
-  <link id='linkn29s28' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls28' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n29' speed='5000000000000.0f' core='1'/>
+  <link id='linkn29s28' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls28' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s28'/>
-  <host id='n30' power='5000000000000.0' core='1'/>
-  <link id='linkn30s29' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls29' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n30' speed='5000000000000.0f' core='1'/>
+  <link id='linkn30s29' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls29' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s29'/>
-  <host id='n31' power='5000000000000.0' core='1'/>
-  <link id='linkn31s30' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls30' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n31' speed='5000000000000.0f' core='1'/>
+  <link id='linkn31s30' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls30' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s30'/>
-  <host id='n32' power='5000000000000.0' core='1'/>
-  <link id='linkn32s31' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls31' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n32' speed='5000000000000.0f' core='1'/>
+  <link id='linkn32s31' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls31' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s31'/>
-  <host id='n33' power='5000000000000.0' core='1'/>
-  <link id='linkn33s32' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls32' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n33' speed='5000000000000.0f' core='1'/>
+  <link id='linkn33s32' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls32' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s32'/>
-  <host id='n34' power='5000000000000.0' core='1'/>
-  <link id='linkn34s33' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls33' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n34' speed='5000000000000.0f' core='1'/>
+  <link id='linkn34s33' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls33' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s33'/>
-  <host id='n35' power='5000000000000.0' core='1'/>
-  <link id='linkn35s34' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls34' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n35' speed='5000000000000.0f' core='1'/>
+  <link id='linkn35s34' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls34' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s34'/>
-  <host id='n36' power='5000000000000.0' core='1'/>
-  <link id='linkn36s35' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls35' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n36' speed='5000000000000.0f' core='1'/>
+  <link id='linkn36s35' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls35' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s35'/>
-  <host id='n37' power='5000000000000.0' core='1'/>
-  <link id='linkn37s36' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls36' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n37' speed='5000000000000.0f' core='1'/>
+  <link id='linkn37s36' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls36' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s36'/>
-  <host id='n38' power='5000000000000.0' core='1'/>
-  <link id='linkn38s37' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls37' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n38' speed='5000000000000.0f' core='1'/>
+  <link id='linkn38s37' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls37' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s37'/>
-  <host id='n39' power='5000000000000.0' core='1'/>
-  <link id='linkn39s38' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls38' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n39' speed='5000000000000.0f' core='1'/>
+  <link id='linkn39s38' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls38' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s38'/>
-  <host id='n40' power='5000000000000.0' core='1'/>
-  <link id='linkn40s39' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls39' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n40' speed='5000000000000.0f' core='1'/>
+  <link id='linkn40s39' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls39' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s39'/>
-  <host id='n41' power='5000000000000.0' core='1'/>
-  <link id='linkn41s40' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls40' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n41' speed='5000000000000.0f' core='1'/>
+  <link id='linkn41s40' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls40' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s40'/>
-  <host id='n42' power='5000000000000.0' core='1'/>
-  <link id='linkn42s41' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls41' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n42' speed='5000000000000.0f' core='1'/>
+  <link id='linkn42s41' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls41' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s41'/>
-  <host id='n43' power='5000000000000.0' core='1'/>
-  <link id='linkn43s42' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls42' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n43' speed='5000000000000.0f' core='1'/>
+  <link id='linkn43s42' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls42' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s42'/>
-  <host id='n44' power='5000000000000.0' core='1'/>
-  <link id='linkn44s43' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls43' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n44' speed='5000000000000.0f' core='1'/>
+  <link id='linkn44s43' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls43' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s43'/>
-  <host id='n45' power='5000000000000.0' core='1'/>
-  <link id='linkn45s44' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls44' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n45' speed='5000000000000.0f' core='1'/>
+  <link id='linkn45s44' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls44' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s44'/>
-  <host id='n46' power='5000000000000.0' core='1'/>
-  <link id='linkn46s45' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls45' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n46' speed='5000000000000.0f' core='1'/>
+  <link id='linkn46s45' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls45' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s45'/>
-  <host id='n47' power='5000000000000.0' core='1'/>
-  <link id='linkn47s46' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls46' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n47' speed='5000000000000.0f' core='1'/>
+  <link id='linkn47s46' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls46' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s46'/>
-  <host id='n48' power='5000000000000.0' core='1'/>
-  <link id='linkn48s47' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls47' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n48' speed='5000000000000.0f' core='1'/>
+  <link id='linkn48s47' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls47' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s47'/>
-  <host id='n49' power='5000000000000.0' core='1'/>
-  <link id='linkn49s48' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls48' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n49' speed='5000000000000.0f' core='1'/>
+  <link id='linkn49s48' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls48' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s48'/>
-  <host id='n50' power='5000000000000.0' core='1'/>
-  <link id='linkn50s49' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls49' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n50' speed='5000000000000.0f' core='1'/>
+  <link id='linkn50s49' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls49' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s49'/>
-  <host id='n51' power='5000000000000.0' core='1'/>
-  <link id='linkn51s50' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls50' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n51' speed='5000000000000.0f' core='1'/>
+  <link id='linkn51s50' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls50' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s50'/>
-  <host id='n52' power='5000000000000.0' core='1'/>
-  <link id='linkn52s51' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls51' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n52' speed='5000000000000.0f' core='1'/>
+  <link id='linkn52s51' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls51' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s51'/>
-  <host id='n53' power='5000000000000.0' core='1'/>
-  <link id='linkn53s52' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls52' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n53' speed='5000000000000.0f' core='1'/>
+  <link id='linkn53s52' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls52' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s52'/>
-  <host id='n54' power='5000000000000.0' core='1'/>
-  <link id='linkn54s53' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls53' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n54' speed='5000000000000.0f' core='1'/>
+  <link id='linkn54s53' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls53' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s53'/>
-  <host id='n55' power='5000000000000.0' core='1'/>
-  <link id='linkn55s54' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls54' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n55' speed='5000000000000.0f' core='1'/>
+  <link id='linkn55s54' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls54' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s54'/>
-  <host id='n56' power='5000000000000.0' core='1'/>
-  <link id='linkn56s55' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls55' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n56' speed='5000000000000.0f' core='1'/>
+  <link id='linkn56s55' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls55' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s55'/>
-  <host id='n57' power='5000000000000.0' core='1'/>
-  <link id='linkn57s56' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls56' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n57' speed='5000000000000.0f' core='1'/>
+  <link id='linkn57s56' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls56' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s56'/>
-  <host id='n58' power='5000000000000.0' core='1'/>
-  <link id='linkn58s57' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls57' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n58' speed='5000000000000.0f' core='1'/>
+  <link id='linkn58s57' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls57' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s57'/>
-  <host id='n59' power='5000000000000.0' core='1'/>
-  <link id='linkn59s58' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls58' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n59' speed='5000000000000.0f' core='1'/>
+  <link id='linkn59s58' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls58' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s58'/>
-  <host id='n60' power='5000000000000.0' core='1'/>
-  <link id='linkn60s59' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls59' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n60' speed='5000000000000.0f' core='1'/>
+  <link id='linkn60s59' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls59' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s59'/>
-  <host id='n61' power='5000000000000.0' core='1'/>
-  <link id='linkn61s60' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls60' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n61' speed='5000000000000.0f' core='1'/>
+  <link id='linkn61s60' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls60' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s60'/>
-  <host id='n62' power='5000000000000.0' core='1'/>
-  <link id='linkn62s61' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls61' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n62' speed='5000000000000.0f' core='1'/>
+  <link id='linkn62s61' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls61' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s61'/>
-  <host id='n63' power='5000000000000.0' core='1'/>
-  <link id='linkn63s62' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls62' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n63' speed='5000000000000.0f' core='1'/>
+  <link id='linkn63s62' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls62' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s62'/>
-  <host id='n64' power='5000000000000.0' core='1'/>
-  <link id='linkn64s63' bandwidth='100000000000.0' latency='8.799999999999999e-07'/>
-  <link id='ls63' bandwidth='5000000000000.0' latency='1.0e-07'/>
+  <host id='n64' speed='5000000000000.0f' core='1'/>
+  <link id='linkn64s63' bandwidth='100000000000.0Bps' latency='8.799999999999999e-07s'/>
+  <link id='ls63' bandwidth='5000000000000.0Bps' latency='1.0e-07s'/>
   <router id='s63'/>
-  <link id='links48s55' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links48s49' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links23s48' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links23s24' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links23s31' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links7s48' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links7s62' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links7s8' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links49s50' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links11s50' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links11s56' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links11s12' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links41s50' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links41s60' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links41s42' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links1s50' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links1s5' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links1s2' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links37s38' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links38s39' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links38s61' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links15s37' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links15s36' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links15s16' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links36s37' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links8s37' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links8s9' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links8s56' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links28s49' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links28s29' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links28s38' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links19s49' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links19s25' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links19s20' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links21s55' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links21s22' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links21s63' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links20s21' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links20s43' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links20s52' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links22s23' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links22s56' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links31s36' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links31s32' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links35s36' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links35s47' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links10s11' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links10s46' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links10s58' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links9s10' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links9s53' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links9s47' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links46s47' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links58s59' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links39s40' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links30s39' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links30s31' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links30s52' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links40s41' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links40s55' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links40s62' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links25s39' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links25s26' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links26s27' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links26s57' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links26s51' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links27s28' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links27s58' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links27s57' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links51s53' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links51s52' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links60s62' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links60s61' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links14s62' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links14s15' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links14s59' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links5s6' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links5s35' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links2s12' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links2s3' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links0s1' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links0s24' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links0s2' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links0s59' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links24s47' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links24s25' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links6s7' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links6s34' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links6s44' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links33s54' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links33s34' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links33s56' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links54s55' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links34s35' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links32s33' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links32s42' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links32s46' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links44s45' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links44s57' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links29s34' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links29s30' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links29s45' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links16s58' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links16s17' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links16s53' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links17s61' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links17s18' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links17s54' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links4s61' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links4s60' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links4s5' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links45s46' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links13s14' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links13s54' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links13s57' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links43s63' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links43s44' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links42s43' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links42s51' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links52s53' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links12s13' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links12s63' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links3s4' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links3s63' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links3s59' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links18s22' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links18s45' bandwidth='100000000000.0' latency='2.0852e-06'/>
-  <link id='links18s19' bandwidth='100000000000.0' latency='2.0852e-06'/>
+  <link id='links48s55' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links48s49' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links23s48' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links23s24' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links23s31' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links7s48' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links7s62' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links7s8' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links49s50' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links11s50' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links11s56' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links11s12' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links41s50' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links41s60' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links41s42' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links1s50' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links1s5' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links1s2' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links37s38' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links38s39' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links38s61' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links15s37' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links15s36' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links15s16' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links36s37' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links8s37' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links8s9' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links8s56' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links28s49' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links28s29' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links28s38' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links19s49' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links19s25' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links19s20' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links21s55' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links21s22' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links21s63' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links20s21' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links20s43' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links20s52' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links22s23' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links22s56' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links31s36' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links31s32' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links35s36' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links35s47' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links10s11' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links10s46' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links10s58' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links9s10' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links9s53' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links9s47' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links46s47' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links58s59' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links39s40' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links30s39' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links30s31' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links30s52' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links40s41' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links40s55' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links40s62' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links25s39' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links25s26' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links26s27' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links26s57' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links26s51' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links27s28' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links27s58' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links27s57' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links51s53' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links51s52' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links60s62' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links60s61' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links14s62' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links14s15' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links14s59' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links5s6' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links5s35' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links2s12' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links2s3' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links0s1' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links0s24' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links0s2' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links0s59' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links24s47' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links24s25' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links6s7' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links6s34' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links6s44' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links33s54' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links33s34' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links33s56' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links54s55' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links34s35' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links32s33' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links32s42' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links32s46' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links44s45' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links44s57' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links29s34' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links29s30' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links29s45' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links16s58' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links16s17' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links16s53' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links17s61' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links17s18' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links17s54' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links4s61' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links4s60' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links4s5' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links45s46' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links13s14' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links13s54' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links13s57' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links43s63' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links43s44' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links42s43' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links42s51' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links52s53' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links12s13' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links12s63' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links3s4' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links3s63' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links3s59' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links18s22' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links18s45' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
+  <link id='links18s19' bandwidth='100000000000.0Bps' latency='2.0852e-06s'/>
   <route src='n1' dst='s0' symmetrical='NO'>
    <link_ctn id='linkn1s0'/>
    <link_ctn id='ls0'/>
