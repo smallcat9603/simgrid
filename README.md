@@ -74,7 +74,7 @@ make
 smpirun -np 64 -platform <PLATFORM> -hostfile <HOSTFILE> ./graph500_mpi_simple 64 8
 ```
 
-## Example 6: Compile and Run HPL
+## Example 7: Compile and Run HPL
 ```bash
 cd SMPI-proxy-apps/
 # download hpl-2.3
@@ -89,7 +89,7 @@ cd bin/SMPI
 smpirun -np 16 -hostfile ../src/common/cluster_hostfile.txt -platform ../src/common/cluster_crossbar.xml ./xhpl
 ```
 
-## Example 7: Run OpenTuner
+## Example 8: Run OpenTuner
 ```bash
 # download opentuner
 # replace jansel-opentuner/opentuner/measurement/interface.py
