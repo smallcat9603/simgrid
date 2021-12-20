@@ -162,3 +162,18 @@ python generate_stupid_workloads.py -p delays.json -o ../output/stupid.json -i 4
 ```bash
 python generate_npb_workloads.py -p npb_profiles.json -o ../output/npb.json -i 4 [-n NB_JOBS] [--nb-res NB_RES]
 ```
+
+### renumber nodes so that neighboring ranks are mapped to neighboring nodes
+```bash
+$ python3 renum-nodes.py -f <edgefile> -s <stride> //default stride = 1
+```
+
+### create a graph with (possible) smallest average shortest path length (ASPL)
+```bash
+$ python3 topo-aspl.py <nnodes> <degree> [-i <iteration>] #default iteration is 1,000
+```
+
+### create a graph with (possible) largest bisection bandwidth
+```bash
+$ python3 topo-bisec.py <nnodes> <degree> [-i <iteration>] #default iteration is 1,000
+```
