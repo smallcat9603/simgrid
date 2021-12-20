@@ -74,6 +74,21 @@ make
 smpirun -np 64 -platform <PLATFORM> -hostfile <HOSTFILE> ./graph500_mpi_simple 64 8
 ```
 
+## Example 6: Compile and Run HPL
+```bash
+cd SMPI-proxy-apps/
+# download hpl-2.3
+cd hpl-2.3
+cp ../src/HPL/Make.SMPI .
+mkdir -p bin/SMPI
+cp ../src/HPL/HPL.dat bin/SMPI
+# modify Make.SMPI for TOPdir path, like TOPdir=/github/simgrid/SMPI-proxy-apps/hpl-2.3, or run "sed -ri "s|TOPdir\s*=.+|TOPdir="`pwd`"|g" Make.SMPI"
+make startup arch=SMPI
+make arch=SMPI
+cd bin/SMPI
+smpirun -np 16 -hostfile ../src/common/cluster_hostfile.txt -platform ../src/common/cluster_crossbar.xml ./xhpl
+```
+
 ## Install Batsim
 ```bash
 curl -L https://nixos.org/nix/install | sh
