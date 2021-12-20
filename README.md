@@ -89,6 +89,13 @@ cd bin/SMPI
 smpirun -np 16 -hostfile ../src/common/cluster_hostfile.txt -platform ../src/common/cluster_crossbar.xml ./xhpl
 ```
 
+## Example 7: Run OpenTuner
+```bash
+# download opentuner
+# replace jansel-opentuner/opentuner/measurement/interface.py
+python mytest.py -a himeno --no-dups --stop-after=600 --database himeno.64.db --results-log-details himeno.64.log
+```
+
 ## Install Batsim
 ```bash
 curl -L https://nixos.org/nix/install | sh
