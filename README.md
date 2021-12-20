@@ -34,7 +34,7 @@ smpicc -O3 roundtrip.c -o roundtrip
 smpirun -np 16 -platform cluster_crossbar.xml -hostfile cluster_hostfile [--cfg=smpi/display-timing:yes] ./roundtrip
 ```
 
-### Example 2: time dependent trace
+### Example 2: time dependent trace (NPB)
 ```bash
 cd simgrid-template-smpi/NPB3.3-MPI/
 make lu NPROCS=4 CLASS=S
@@ -42,7 +42,7 @@ smpirun -np 4 -platform ../cluster_backbone.xml -trace --cfg=tracing/filename:lu
 Rscript draw_gantt.R lu.S.4.trace
 ```
 
-### Example 3: time independent trace
+### Example 3: time independent trace (NPB)
 ```bash
 cd simgrid-template-smpi/NPB3.3-MPI/
 make lu NPROCS=8 CLASS=A
@@ -50,11 +50,28 @@ smpirun -np 8 -platform ../cluster_backbone.xml -trace-ti --cfg=tracing/filename
 smpirun -np 8 -platform ../cluster_crossbar.xml -hostfile ../cluster_hostfile -replay LU.A.8
 ```
 
-### Example 4: computation size (1000, 2000, 3000)
+### Example 4: computation size (MM) (1000, 2000, 3000)
 ```bash
 cd simgrid-template-smpi/
 smpicxx -O3 gemm_mpi.cpp -o gemm
 time smpirun -np 16 -platform cluster_crossbar.xml -hostfile cluster_hostfile --cfg=smpi/display-timing:yes --cfg=smpi/host-speed:1000000000 ./gemm
+```
+## Example 5: Compile and Run Himeno
+```bash
+cd simgrid-template/MpiEnv/bench/himeno/
+sh paramset.sh S 4 4 4 # for 64 procs (p= X x Y x Z)
+# modify config/make.def for simgrid path, like SIMGRID_PATH=/opt/simgrid3.26/
+make
+smpirun -np 64 -platform <PLATFORM> -hostfile <HOSTFILE> bin/himeno
+```
+
+## Example 6: Compile and Run Graph500
+```bash
+cd simgrid-template/MpiEnv/bench/graph500/graph500/mpi/
+# modify make.def for simgrid path, like SIMGRID_PATH=/opt/simgrid3.26/
+# modify Makefile for smpicc path, like MPICC = /opt/simgrid3.26/bin/smpicc
+make
+smpirun -np 64 -platform <PLATFORM> -hostfile <HOSTFILE> ./graph500_mpi_simple 64 8
 ```
 
 ## Install Batsim
