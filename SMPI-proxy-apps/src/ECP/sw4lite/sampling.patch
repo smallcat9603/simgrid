@@ -1,0 +1,23 @@
+diff --git a/src/rhs4sg_rev.C b/src/rhs4sg_rev.C
+index 9f0fd4f..4f1b672 100644
+--- a/src/rhs4sg_rev.C
++++ b/src/rhs4sg_rev.C
+@@ -30,7 +30,7 @@
+ // # along with this program; if not, write to the Free Software
+ // # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA 
+ #include "sw4.h"
+-
++#include "smpi.h"
+ //#include <iostream>
+ //using namespace std;
+ 
+@@ -109,7 +109,8 @@ void rhs4sg_rev( int ifirst, int ilast, int jfirst, int jlast, int kfirst, int k
+ 	      u2zjp2,u2zjp1,u2zjm1,u2zjm2,mu2zy,lau1xz,lau2yz,kb,qb,mb,muz1,muz2,muz3,muz4)
+    {
+ #pragma omp for
+-   for( k= k1; k <= k2 ; k++ )
++//   for( k= k1; k <= k2 ; k++ )
++   SMPI_SAMPLE_GLOBAL( k= k1, k <= k2 , k++ , 10, 0.005)
+       for( j=jfirst+2; j <= jlast-2 ; j++ )
+ #pragma simd
+ #pragma ivdep

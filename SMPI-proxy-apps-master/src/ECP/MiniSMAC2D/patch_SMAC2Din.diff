@@ -1,0 +1,19 @@
+Index: miniSMAC2D/smac2d.in
+===================================================================
+--- miniSMAC2D.orig/smac2d.in
++++ miniSMAC2D/smac2d.in
+@@ -16,8 +16,9 @@ $input
+   underr=0.01d0					! under-relaxation parameter, 0<underr<1
+   zz_run_default_input=.false.			! use default run case in sub. initia
+   write_plot3d_q_file=.false.			! solution file can be big! write only if desired
+-  bcmain_directory='/gscratch1/dwbarne/ms2d_2d_only_partitioned_grids/src'
+-  bcmain_filename='bcmain.dat_original'
+-  xygrid_directory='/gscratch1/dwbarne/ms2d_2d_only_partitioned_grids/src'
+-  xygrid_filename='xy.dat_original'
++  bcmain_directory='.'
++  bcmain_filename='bcmain.dat_original_119x31'
++  xygrid_directory='.'
++  xygrid_filename='xy.dat_original_119x31'
+   $end
++  
+\ No newline at end of file

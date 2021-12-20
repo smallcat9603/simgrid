@@ -1,0 +1,11 @@
+--- Export_Mesh.F90     2018-06-14 13:06:22.742435044 +0200
++++ Export_Mesh2.F90    2018-06-14 13:06:08.430434722 +0200
+@@ -17,7 +17,7 @@
+ ! Local
+ PROTEUS_Int Element,Vertex,File_Unit,IOS,I
+ PROTEUS_Real dXX,dYY,dZZ
+-
++File_Unit=100
+ ! We do a FE transformation here to make the geometry look like something other than a brick :-)
+ ! This is done to highlight the fact that CFE does not care about element-angle ordering
+ DO I = 1,NumVertices

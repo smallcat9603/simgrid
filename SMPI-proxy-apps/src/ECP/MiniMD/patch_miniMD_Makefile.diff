@@ -1,0 +1,37 @@
+Index: ref/Makefile.default
+===================================================================
+--- ref.orig/Makefile.default
++++ ref/Makefile.default
+@@ -2,8 +2,9 @@
+ SHELL = /bin/sh
+ 
+ #Compiler and Linker
+-CC =    mpicxx
+-LINK =    mpicxx
++MPICC = gcc -fpic -L$(SIMGRID_PATH)/lib
++CC =    smpicxx
++LINK =    smpicxx
+ 
+ # MiniMD Files
+ 
+@@ -17,8 +18,8 @@ ROOT =	miniMD
+ EXE =	$(ROOT)
+ OBJ =	$(SRC:.cpp=.o) $(KOKKOS_SRC:.cpp=.o) 
+ 
+-CCFLAGS = -O3 -DMPICH_IGNORE_CXX_SEEK -DDEVICE=1  -I./ -g -mavx -fopenmp -DUSE_SIMD -DNOCHUNK
+-LINKFLAGS = -O3 -g -mavx -fopenmp 
++CCFLAGS = -O3 -DMPICH_IGNORE_CXX_SEEK -DDEVICE=1  -I./ -g -DNOCHUNK
++LINKFLAGS = -O3 -g
+ USRLIB =  
+ SYSLIB =  
+
+@@ -39,8 +40,7 @@ all: $(OBJ)
+
+ .cpp.o:
+	$(CC) $(CCFLAGS) -E $*.cpp > $*.2.cpp
+-	$(CC) $(CCFLAGS) -c $*.2.cpp -o $*.o
+-
++	$(MPICC) $(CCFLAGS) -c $*.2.cpp -o $*.o
+ # Individual dependencies
+
+ $(OBJ): $(INC)

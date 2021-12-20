@@ -1,0 +1,101 @@
+* Preparing source code
+
+** Open-MPI test suite
+#+BEGIN_SRC sh :tangle bin/Others_mpi-test-suite.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+mkdir -p Benchmarks/Others/
+cd Benchmarks/Others/
+echo "Checkout or update the git containing the source code"
+if [ -e mpi-test-suite ] ; then
+   cd mpi-test-suite ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/open-mpi/mpi-test-suite.git
+fi
+
+echo "Install the modified sources"
+cd mpi-test-suite
+patch -p1 < $WORKSPACE/src/Others/mpi-test-suite/patch-mpi-test-suite.diff
+
+echo "Compile it"
+./autogen.sh
+SMPI_PRETEND_CC=1 ./configure CC=smpicc CFLAGS="-g -O2 -pthread"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make cmdline.h
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 1 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./mpi_test_suite
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./mpi_test_suite
+smpirun -np 6 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./mpi_test_suite
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** NPB tests with replay.
+#+BEGIN_SRC sh :tangle bin/Others_NPB.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+mkdir -p Benchmarks/Others/
+cd Benchmarks/Others/
+rm -rf cd Benchmarks/Others/NPB
+echo "Checkout or update the git containing the source code"
+test -e npb-source.tar.gz || curl -o npb-source.tar.gz -Lkf https://www.nas.nasa.gov/assets/npb/NPB3.4.2.tar.gz
+
+echo "Unpack the code"
+mkdir NPB &&  tar -xvf npb-source.tar.gz -C NPB --strip-components 1
+
+echo "Compile it"
+cd NPB/NPB*MPI
+
+cp $WORKSPACE/src/Others/NPB/make.def ./config/
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+for i in BT CG EP FT  IS  LU  MG SP
+do
+  cd $i
+  make $i CLASS=A
+  rm -rf trace*
+  smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/display-timing:yes --cfg=smpi/host-speed:100 -trace-ti --cfg=tracing/filename:trace1 ../bin/$(echo $i | tr '[:upper:]' '[:lower:]').A.x
+  smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/display-timing:yes --cfg=smpi/host-speed:100 -trace-ti --cfg=tracing/filename:trace2 -replay trace1
+  diff trace1_files/*-1.txt trace2_files/*-1.txt || true
+  cd ..
+done
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  for i in BT CG EP FT  IS  LU  MG SP
+  do
+    cd $i
+    make $i CLASS=A clean
+    rm -rf trace*
+    cd ..
+  done
+fi
+ #+END_SRC
+
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

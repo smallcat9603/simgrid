@@ -1,0 +1,105 @@
+* High Performance Linpack
+** Brief description 
+[[http://www.netlib.org/benchmark/hpl/][HPL]] is a software package that solves a (random) dense linear system in double precision (64 bits) arithmetic on
+distributed-memory computers.
+** Vanilla
+*** Brief description
+No modification was made to the source code of HPL, except for a basic Makefile.
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/HPL_vanilla.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/HPL/Vanilla
+mkdir -p Benchmarks/HPL/Vanilla
+cd Benchmarks/HPL
+echo "Download the source code"
+test -e hpl-2.2.tar.gz || curl -o hpl-2.2.tar.gz -Lkf http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
+
+echo "Unpack the code"
+tar -xf hpl-2.2.tar.gz -C Vanilla
+mv Vanilla/hpl-2.2/* Vanilla
+rmdir Vanilla/hpl-2.2
+
+echo "Install the modified sources"
+cd Vanilla
+cp ../../../src/HPL/Make.SMPI .
+mkdir -p bin/SMPI
+cp ../../../src/HPL/HPL.dat bin/SMPI
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+sed -ri "s|TOPdir\s*=.+|TOPdir="`pwd`"|g" Make.SMPI
+make startup arch=SMPI
+make arch=SMPI
+
+echo "Run it"
+cd bin/SMPI
+smpirun -np 16 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./xhpl
+ #+END_SRC
+** Optimized
+*** Brief description
+The source code was modified to allow an efficient simulation. See the [[https://github.com/Ezibenroc/hpl][git repository]].
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/HPL_optimized.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/HPL/Optimized
+mkdir -p Benchmarks/HPL/Optimized
+cd Benchmarks/HPL
+echo "Download the source code"
+test -e hpl-2.2.tar.gz || curl -o hpl-2.2.tar.gz -Lkf http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
+
+echo "Unpack the code"
+tar -xf hpl-2.2.tar.gz -C Optimized
+mv Optimized/hpl-2.2/* Optimized
+rmdir Optimized/hpl-2.2
+
+echo "Install the modified sources"
+cd Optimized
+cp ../../../src/HPL/Make.SMPI .
+mkdir -p bin/SMPI
+cp ../../../src/HPL/HPL.dat* bin/SMPI
+cp ../../../src/HPL/*.py bin/SMPI
+PLATFORMDIR=$WORKSPACE/src/common
+mv -f bin/SMPI/HPL.dat.144 bin/SMPI/HPL.dat
+patch -p1 < ../../../src/HPL/patch_hpl_optimization.diff
+awk '{for(i=0;i<12;i++)print}' $PLATFORMDIR/cluster_hostfile.txt > bin/SMPI/cluster_hostfile_multicore.txt
+
+echo "Compile it"
+sed -ri "s|TOPdir\s*=.+|TOPdir="`pwd`"|g" Make.SMPI
+make startup arch=SMPI
+make SMPI_OPTS="-DSMPI_OPTIMIZATION -DSMPI_DGEMM_INTERCEPT=0 -DSMPI_DGEMM_COEFFICIENT=2.445036e-10 -DSMPI_DTRSM_COEFFICIENT=1.259681e-10 -DSMPI_DGEMM_PHI_INTERCEPT=0 -DSMPI_DGEMM_PHI_COEFFICIENT=2.445036e-10" arch=SMPI
+
+echo "Run it"
+cd bin/SMPI
+smpirun --cfg=smpi/privatization:dlopen --cfg=smpi/display-timing:yes --cfg=smpi/shared-malloc-blocksize:2097152 -hostfile ./cluster_hostfile_multicore.txt -platform $PLATFORMDIR/cluster_fattree.xml -np 144 xhpl 1> stdout.txt 2> stderr.txt || echo "Error detected when running : printing stderr"; cat stderr.txt; exit 1
+# Results taken from the experiment of https://hal.inria.fr/hal-01544827/document section 5.1, page 30.
+python3 parser.py stderr.txt check_stderr 0.12 15.34
+python3 parser.py stdout.txt check_stdout 15.23 3.503e02
+    # TODO: make another test with option --cfg=smpi/shared-malloc-hugepage:/path/to/huge
+ #+END_SRC
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images) 
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

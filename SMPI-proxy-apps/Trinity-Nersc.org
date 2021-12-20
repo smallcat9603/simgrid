@@ -1,0 +1,658 @@
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/smb/][SMB]]
+**** Brief description
+It includes two benchmarks:
+- The msg_rate test measures the sustained MPI message rate using a
+  communication pattern found in many real applications.
+- The mpi_overhead test uses a post-work-wait method using MPI
+  non-blocking send and receive calls to measure the user level
+  overhead of the respective MPI calls.
+**** mpi_overhead :
+#+BEGIN_SRC sh :tangle bin/Trinity_SMB_mpiHeader.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/smb
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e smb-source.tgz || curl -o smb-source.tgz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/Jan9/smb1.0-1.tar
+
+echo "Unpack the code"
+mkdir smb && tar -xf smb-source.tgz -C smb --strip-components 1
+
+cd smb/src/mpi_overhead/
+echo "Install the modified sources"
+patch -p1 < $WORKSPACE/src/Trinity-Nersc/smb/mpi_overhead/patch_OverHead_RunScript.diff
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc LINK=smpicc -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+./run_script
+
+make clean
+
+#+END_SRC
+
+**** Msgrate :
+#+BEGIN_SRC sh :tangle bin/Trinity_SMB_msgrate.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/smb
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e smb-source.tgz || curl -o smb-source.tgz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/Jan9/smb1.0-1.tar
+
+echo "Unpack the code"
+mkdir smb && tar -xf smb-source.tgz -C smb --strip-components 1
+
+cd smb/src/msgrate/
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -n 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./msgrate -n 1 -p 2 -i 100 -s 8
+
+make clean
+
+#+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/ziatest/][ZiaTest]]
+**** Brief description
+It executes a new proposed standard benchmark method for MPI startup that is intended to provide a realistic assessment of
+both launch and wireup requirements. Accordingly, it exercises both the launch system of the environment and the interconnect subsystem in a specified pattern.
+**** Build and run
+#+BEGIN_SRC sh :tangle bin/Trinity_ZiaTest.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/ziatest
+mkdir -p Benchmarks/Trinity-Nersc/ziatest
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e ziatest-source.tgz || curl -o ziatest-source.tgz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/Jan9/ziatest.tar
+
+echo "Unpack the code"
+cd ziatest
+tar -xf ../ziatest-source.tgz
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc MPICC=smpicc -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./ziaprobe 4 4 2
+
+make clean
+
+ #+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/mdtest/][MDTest]]
+**** Brief description
+mdtest is a program that measures performance of various metadata operations. It uses MPI to coordinate the operations and to collect the results.
+The code is composed of one C file, mdtest.c.
+**** Build and run
+The execution should done with 2 proc.
+#+BEGIN_SRC sh :tangle bin/Trinity_MDTest.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/mdtest
+mkdir Benchmarks/Trinity-Nersc/ || true
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source"
+test -e mdtest-source.tgz || curl -o mdtest-source.tgz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/Mar29/mdtest-1.8.4.tar
+
+echo "Unpack the code"
+mkdir mdtest && tar -xf mdtest-source.tgz -C mdtest --strip-components 1
+
+echo "Install the modified sources"
+cd mdtest
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC.Linux="smpicc -Wall" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./mdtest --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes
+
+make clean
+
+ #+END_SRC
+
+*** [[https://github.com/hpc/mpimemu][MPIMemu]]
+**** Brief description
+The code is a simple tool that helps approximate MPI library memory usage as a function of scale.  It takes samples of /proc/meminfo (node level)
+ and /proc/self/status (process level) and outputs the min, max and avg values for a specified period of time.
+**** Build and run
+#+BEGIN_SRC sh :tangle bin/Trinity_MPIMemu.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+export MPIMEMU_START_INDEX=1
+export MPIMEMU_NUMPE_FUN="X +1"
+export MPIMEMU_MAX_PES=4
+
+echo "Clean up the place"
+
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+
+echo "Checkout or update the git containing the source code"
+if [ -e mpimemu ] ; then
+   cd mpimemu ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/hpc/mpimemu.git
+fi
+
+echo "Install the modified sources"
+cd mpimemu/
+./autogen
+sed -i -e "s/\mpicc/\smpicc/g" configure.ac
+./configure SMPI_PRETEND_CC=1 CC=smpicc CFLAGS="-O2 -g -fcommon"
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+cd src/
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./mpimemu -t 2 -s 10 -w
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/omb-mpi-tests/][OMB_MPI]]
+**** Brief description
+The Ohio MicroBenchmark suite is a collection of independent MPI message passing performance microbenchmarks developed and written at The Ohio State University.
+It includes traditional benchmarks and performance measures such as latency, bandwidth and host overhead and can be used for both traditional and GPU-enhanced nodes.
+**** Pt2pt
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_OMB_MPI_pt2pt.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/OMB_MPI
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e OMB_MPI-source.tar.gz || curl -o OMB_MPI-source.tar.gz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/July12/osu-micro-benchmarks-3.8-July12.tar
+
+echo "Unpack the code"
+mkdir OMB_MPI && tar -xf OMB_MPI-source.tar.gz -C OMB_MPI --strip-components 1
+
+cd OMB_MPI/
+
+echo "Configure it"
+SMPI_PRETEND_CC=1 ./configure CC=smpicc
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd mpi/pt2pt
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run osu_bibw"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_bibw
+
+echo "Run osu_bw"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_bw
+
+echo "Run osu_mbw_mr"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_mbw_mr
+
+echo "Run osu_multi_lat"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_multi_lat
+
+echo "Run osu_latency"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_latency
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+ #+RESULTS:
+
+**** One-sided
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_OMB_MPI_one-sided.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/OMB_MPI
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e OMB_MPI-source.tar.gz || curl -o OMB_MPI-source.tar.gz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/July12/osu-micro-benchmarks-3.8-July12.tar
+
+echo "Unpack the code"
+mkdir OMB_MPI && tar -xf OMB_MPI-source.tar.gz -C OMB_MPI --strip-components 1
+
+cd OMB_MPI/
+
+echo "Configure it"
+SMPI_PRETEND_CC=1 ./configure CC=smpicc
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd mpi/one-sided
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+ echo "Run osu_acc_latency"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_acc_latency
+
+ echo "Run osu_get_latency"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_get_latency
+
+ echo "Run osu_passive_acc_latency"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_passive_acc_latency
+
+ echo "Run osu_passive_get_bw"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_passive_get_bw
+
+ echo "Run osu_passive_put_bw"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_passive_put_bw
+
+ echo "Run osu_passive_put_latency"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_passive_put_latency
+
+ echo "Run osu_put_bibw"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_put_bibw
+
+ echo "Run osu_get_bw"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_get_bw
+
+ echo "Run osu_put_bw"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_put_bw
+
+ echo "Run osu_put_latency"
+ smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./osu_put_latency
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+**** Collective
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_OMB_MPI_collective.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/OMB_MPI
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e OMB_MPI-source.tar.gz || curl -o OMB_MPI-source.tar.gz -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/July12/osu-micro-benchmarks-3.8-July12.tar
+
+echo "Unpack the code"
+mkdir OMB_MPI && tar -xf OMB_MPI-source.tar.gz -C OMB_MPI --strip-components 1
+
+cd OMB_MPI/
+
+echo "Configure it"
+SMPI_PRETEND_CC=1 ./configure CC=smpicc
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd mpi/collective
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run osu_allgather"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_allgather
+
+echo "Run osu_allgatherv"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_allgatherv
+
+echo "Run osu_allreduce"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_allreduce
+
+echo "Run osu_alltoall"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_alltoall
+
+echo "Run osu_barrier"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_barrier
+
+echo "Run osu_bcast"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_bcast
+
+echo "Run osu_gather"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_gather
+
+echo "Run osu_gatherv"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_gatherv
+
+echo "Run osu_reduce"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_reduce
+
+echo "Run osu_reduce_scatter"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_reduce_scatter
+
+echo "Run osu_scatter"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_scatter
+
+echo "Run osu_scatter"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./osu_scatterv
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/gtc/][GTC]]
+**** Brief description
+GTC is used for Gyrokinetic Particle Simulation of Turbulent Transport in Burning Plasmas.
+**** Build and run
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_GTC.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/GTC
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc
+
+echo "Download the source code"
+test -e GTC-source.tar || curl -o GTC-source.tar -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/May31/TrN8GTCMay30.tar
+
+echo "Unpack the code"
+mkdir GTC && tar -xf GTC-source.tar -C GTC --strip-components 1
+
+cd GTC/source/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+sed -i -e "s/mstep=1500/mstep=50/g" setup.F90
+sed -i -e "s/mpsi=90/mpsi=45/g" setup.F90
+make ESSL=n CMP=smpif90 F90C=smpif90 OPT="-std=legacy"
+
+cd ../run/
+sed -i -e "s/mstep=248/mstep=48/g" gtc.input.64p
+sed -i -e "s/mpsi=90/mpsi=45/g" gtc.input.64p
+sed -i -e "s/micell=100/micell=2/g" gtc.input.64p
+cp gtc.input.64p gtc.input
+
+echo "Run it"
+smpirun -np 64 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ../source/gtcomp gtc.input
+
+cd ../source
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/minife/][MiniFE]]
+**** Brief description
+FE is a Finite Element mini-application which implements a couple of kernels representative of implicit finite-element applications.
+It assembles a sparse linear-system from the steady-state conduction equation on a brick-shaped problem domain of linear 8-node hex elements.
+**** Build and run
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_MiniFE.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/MiniFE
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e MiniFE-source.tar || curl -o MiniFE-source.tar -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/Feb22/MiniFE_ref_1.4b.tar
+
+echo "Unpack the code"
+mkdir MiniFE && tar -xf MiniFE-source.tar -C MiniFE --strip-components 1
+
+cd MiniFE/
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc CXX=smpicxx -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./miniFE.x -nx 32 -ny 51 -nz 18
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/minidft/][MiniDFT]]
+**** Brief description
+Mini-DFT is a plane-wave denstity functional theory (DFT) mini-app for modeling materials.  Given an set of atomic coordinates and pseudopotentials,  mini-DFT computes self-consistent solutions of the Kohn-Sham equations  using either the LDA or PBE exchange-correlation functionals. For each iteration of the self-consistent field cycle, the Fock matrix is constructed and then diagonalized. To build the Fock matrix, Fast Fourier Transforms are used to tranform orbitals from the plane wave basis ( where the kinetic energy is most readily compted ) to real space ( where the potential is evaluated ) and back. Davidson diagonalization is used to compute the orbital energies and update the orbital coefficients.
+
+MiniDFT also needs scalapack, so we are building an SMPI-based version of the library for testing purposes
+**** Build and run
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_MiniDFT.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Trinity-Nersc/scalapack
+rm -rf Benchmarks/Trinity-Nersc/MiniDFT
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+# Instead of Scalapack, we use Intel MKL. 
+# Follow https://software.intel.com/en-us/articles/using-intel-mkl-mpi-wrapper-with-the-intel-mkl-cluster-functions to install with SMPI support.
+# We want the static lib with lp64 interface, so : make libintel64 interface=lp64 MPICC='/builds/simgrid_install/bin/smpicc'
+
+echo "Download the source code"
+if [ -e MiniDFT ] ; then
+   cd MiniDFT ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/NERSC/MiniDFT.git
+fi
+
+echo "Install the modified sources"
+cp -f $WORKSPACE/src/Trinity-Nersc/MiniDFT/Makefile.simgrid.gnu  ./MiniDFT/src/Makefile
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+cd MiniDFT/src/
+# avoid successful run from exiting with code 1, as it makes SMPI exit with 1, and complain.
+sed -i "s/STOP 1/STOP/" ./stop_run.f90
+make
+cd ../test/
+
+echo "Run it"
+#replace pbe0 by pbe, as pbe0 hybrid functional is really expensive
+sed -i "s/pbe0/pbe/" small.in
+
+GFORTRAN=$(ldd ../src/mini_dft | grep libgf | cut -d\  -f3)
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatize-libs:$GFORTRAN ../src/mini_dft < small.in || true
+cd ../src
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/minidft/][MILC]]
+**** Brief description
+This code was developed for simulations of SU3 lattice gauge theory on MIMD parallel machines.
+**** Build and run
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_MILC.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/MILC
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e MILC-source.tar || curl -o MILC-source.tar -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/May31/TrN8MILC7May30.tar
+
+echo "Unpack the code"
+mkdir MILC && tar -xf MILC-source.tar -C MILC --strip-components 1
+
+echo "Install the modified sources"
+cd MILC/ks_imp_dyn/
+cd ..
+cp -f $WORKSPACE/src/Trinity-Nersc/MILC/test.in  ./benchmark_n8/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+cd ks_imp_dyn/
+make su3_rmd CC=smpicc LIBADD="" CLFS=""
+cd ../benchmark_n8/
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ../ks_imp_dyn/su3_rmd < test.in
+
+cd ../ks_imp_dyn/
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/stream/][Stream]]
+**** Brief description
+The STREAM source code also allows the use of an offset to separate
+the three arrays.
+**** Build and run
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_stream.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/stream
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e stream-source.tar || curl -o stream-source.tar -Lkf http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/Jan9/stream.tar
+
+echo "Unpack the code"
+mkdir stream && tar -xf stream-source.tar -C stream
+
+echo "Install the modified sources"
+cd stream/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make  CC=smpicc FF=smpiff CFLAGS="" FFLAGS="" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/wtime:0.1 ./stream_c.exe
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/wtime:0.1 ./stream_f.exe
+
+echo "Clean it"
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+*** [[http://www.nersc.gov/users/computational-systems/cori/nersc-8-procurement/trinity-nersc-8-rfp/nersc-8-trinity-benchmarks/psnap/][psnap]]
+**** Brief description
+PSNAP is the PAL System Noise Activity Program from the Performance and Architecture Laboratory at Los Alamos National Laboratory.  It consists of a spin loop that is calibrated to take a given amount of time (typically 1 ms). This loop is repeated for a number of iterations. The actual time each iteration takes is recorded.  Analysis of those times allows one to quantify operating system interference or noise.
+.
+**** Build and run
+#+BEGIN_SRC sh  sh :tangle bin/Trinity_psnap.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+
+rm -rf Benchmarks/Trinity-Nersc/psnap
+mkdir -p Benchmarks/Trinity-Nersc/
+cd Benchmarks/Trinity-Nersc/
+echo "Download the source code"
+test -e psnap-source.tar || curl -o psnap-source.tar -Lkf https://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/June28/psnap-1.2June28.tar
+
+echo "Unpack the code"
+mkdir psnap && tar -xf psnap-source.tar -C psnap
+
+echo "Install the modified sources"
+cd psnap/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100000000 --cfg=smpi/wtime:0.000001 ./psnap -n 1000 -w 10 -c 10
+
+echo "Clean it"
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

@@ -1,0 +1,12 @@
+diff --git a/packages/Utils/utils/Member_Manager.hh b/packages/Utils/utils/Member_Manager.hh
+index db67bea..3935ac7 100644
+--- a/packages/Utils/utils/Member_Manager.hh
++++ b/packages/Utils/utils/Member_Manager.hh
+@@ -224,7 +224,7 @@ class Member_Manager_Vector : public Member_Manager
+         vec->~vector();
+ #else
+         // Some older compilers may still require this?
+-        vec->template ~Vector_t();
++        ~Vector_t();
+ #endif
+     }

@@ -1,0 +1,13 @@
+diff --git a/src/comb.cpp b/src/comb.cpp
+index 7ed1af9..c4a22af 100644
+--- a/src/comb.cpp
++++ b/src/comb.cpp
+@@ -36,7 +36,7 @@
+ int main(int argc, char** argv)
+ {
+ #ifdef COMB_ENABLE_MPI
+-  int required = MPI_THREAD_FUNNELED; // MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED, MPI_THREAD_MULTIPLE
++  int required = MPI_THREAD_SINGLE; // MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED, MPI_THREAD_MULTIPLE
+   int provided = detail::MPI::Init_thread(&argc, &argv, required);
+ #endif
+ 

@@ -1,0 +1,47 @@
+--- CMakeLists.txt	2018-04-24 19:21:21.026634180 -0400
++++ CMakeLists.txt.2	2018-04-24 19:34:32.057902928 -0400
+@@ -22,13 +22,16 @@
+ 
+ 
+ 
+-set( CMAKE_C_COMPILER "mpicc-openmpi-gcc46") 
+-set( CMAKE_CXX_COMPILER "mpicxx-openmpi-gcc46" )
++set( CMAKE_C_COMPILER "smpicc") 
++set( CMAKE_CXX_COMPILER "smpicxx" )
+ 
+ # This project is designed to be built outside the Insight source tree.
+ PROJECT(VPFFT++)
+-set( EIGEN_PATH "/Users/li31/LLNL/ExMatEx/VonnegutSvn/svn/proxyApps/VPFFT/trunk/ExtLib/eigen-eigen-6e7488e20373")
+-set( FFTW_PATH "/Users/li31/LLNL/ExtLib/fftw3")
++set( EIGEN_PATH "/usr/include/eigen3")
++set( FFTW_PATH "$ENV{FFTW3_PATH}")
++
++set(CMAKE_MODULE_PATH "~/simgrid/src/smpi/")
++include_directories(BEFORE "$ENV{SIMGRID_PATH}/include")
+ 
+ include_directories("Src/")
+ include_directories(${EIGEN_PATH})
+@@ -41,7 +44,7 @@
+ find_library( FFTW_LIBRARY libfftw3.a HINTS ${FFTW_PATH}/lib)
+ find_library( FFTW_LIBRARY_THREADS libfftw3_threads.a HINTS ${FFTW_PATH}/lib)
+ ADD_EXECUTABLE( VPFFT++ ${VPFFT_List} )	
+-TARGET_LINK_LIBRARIES(  VPFFT++ ${FFTW_LIBRARY} ${FFTW_LIBRARY_MPI} ${FFTW_LIBRARY_THREADS} ) 
++TARGET_LINK_LIBRARIES(  VPFFT++ ${FFTW_LIBRARY_MPI} ${FFTW_LIBRARY} ${FFTW_LIBRARY_THREADS} ) 
+ 
+ 
+ 
+--- Src/UnitTester.cpp	2018-04-24 19:12:40.642752740 -0400
++++ Src/UnitTester.cpp.2	2018-04-24 19:29:56.046218315 -0400
+@@ -392,9 +392,9 @@
+       VPFFT::FCC_CrystalTest::FCC_SchmidtBasis FCC_Schmidt = VPFFT::FCC_CrystalTest::FCC_SchmidtBasis::Get();
+ 
+ 
+-      const int NumX = 16;
+-      const int NumY = 16;
+-      const int NumZ = 16;
++      const int NumX = 2;
++      const int NumY = 2;
++      const int NumZ = 2;
+       
+       std::cout << "Sample Grid construction " << std::endl;
+       

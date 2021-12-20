@@ -1,0 +1,452 @@
+* Apps
+** [[https://asc.llnl.gov/sites/asc/files/2020-09/AMG_Summary_v1_7.pdf][AMG2013]]
+*** Brief description
+AMG is a parallel algebraic multigrid solver for linear systems
+arising from problems on unstructured grids. [[https://asc.llnl.gov/sites/asc/files/2020-09/AMG_Summary_v1_7.pdf][:book:]] [[https://asc.llnl.gov/sites/asc/files/2020-09/amg-master-5.zip][:package:]]
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/Coral_AMG2013.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/AMG
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Download the source code"
+test -e amg-source.zip || curl -o amg-source.zip -Lkf https://asc.llnl.gov/sites/asc/files/2020-09/amg-master-5.zip
+
+echo "Unpack the code"
+unzip -o amg-source.zip
+mv AMG-master AMG
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd AMG/
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc INCLUDE_CFLAGS="-O2 -DHYPRE_LONG_LONG -fopenmp" -j $NUMBER_OF_PROCESSORS
+cd test/
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./amg -pooldist 1 -r 12 12 12
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/HACC_IO_Summary_v1.0.pdf][HACC_IO]]
+*** Brief description 
+The HACC I/O benchmark capture the I/O patterns of the HACC simulation
+code. [[https://asc.llnl.gov/sites/asc/files/2020-06/HACC_IO_Summary_v1.0.pdf][:book:]] [[https://asc.llnl.gov/sites/asc/files/2020-09/hacc_io_kernel.zip][:package:]]
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/Coral_HACC_IO.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/HACC_IO
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Download the source code"
+test -e HACC_IO-source.zip || curl -o HACC_IO-source.zip -Lkf https://asc.llnl.gov/sites/asc/files/2020-09/hacc_io_kernel.zip
+
+echo "Unpack the code"
+unzip -o HACC_IO-source.zip HACC_IO_KERNEL/* && mv HACC_IO_KERNEL HACC_IO
+
+echo "Install the modified sources"
+cd HACC_IO/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make MPICXX=smpicxx -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./HACC_IO 2 3
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/KMI_Summary_v1.1.pdf][KMI_HASH]]
+*** Brief description
+KMI_HASH evaluate the performance of the architecture integer
+operations, specifically for hashing, and for memory-intensive
+genomics applications.
+ [[https://asc.llnl.gov/sites/asc/files/2020-06/KMI_Summary_v1.1.pdf][:book:]] [https://asc.llnl.gov/sites/asc/files/2020-09/kmi_hash_coral.zip][:package:]]
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/Coral_KMI_HASH.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/KMI_HASH
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Download the source code"
+test -e KMI_HASH-source.zip || curl -o KMI_HASH-source.zip -Lkf https://asc.llnl.gov/sites/asc/files/2020-09/kmi_hash_coral.zip
+
+echo "Unpack the code"
+unzip -o KMI_HASH-source.zip kmi_hash_coral/* && mv kmi_hash_coral KMI_HASH
+
+echo "Install the modified sources"
+cd KMI_HASH/tests/
+cd ../src/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make MPICC=smpicc MPICXX=smpicxx MPI_CFLAGS="-I. -O3 -fcommon -g -pg -DKMI_CONFIG_BINARY_STRING -DKMI_CONFIG_SORTING -DKMI_CONFIG_INDEXED_ARRAY -DKMI_CONFIG_SAMPLING_ITERATION -DKMI_CONFIG_INDEXED_ARRAY_HASH -DKMI_PROFILING_ALLTOALL " -j $NUMBER_OF_PROCESSORS
+cd ../tests/
+make MPICC=smpicc MPICXX=smpicxx
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./BENCH_QUERY
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/LULESH_Summary_v1.pdf][Lulesh]]
+*** Brief description
+LULESH performs a hydrodynamics stencil calculation using both MPI and
+OpenMP to achieve parallelism. [[https://asc.llnl.gov/sites/asc/files/2020-06/LULESH_Summary_v1.pdf][:book:]] [[https://github.com/LLNL/LULESH/archive/2.0.3.tar.gz][:package:]]
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/Coral_Lulesh.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/Lulesh
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Download the source code"
+test -e lulesh-source.tar.gz || curl -o lulesh-source.tar.gz -Lkf https://github.com/LLNL/LULESH/archive/2.0.3.tar.gz
+
+echo "Unpack the code"
+mkdir Lulesh &&  tar -xvf lulesh-source.tar.gz -C Lulesh --strip-components 1
+
+echo "Install the modified sources"
+cd Lulesh/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make MPI_INC="" MPICXX="smpicxx -DUSE_MPI=1" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./lulesh2.0 -i 10
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/IOR_Summary_v1.0.pdf][IOR]]
+*** Brief description
+IOR is used for testing performance of parallel filesystems using various interfaces and access patterns. [[https://asc.llnl.gov/sites/asc/files/2020-06/IOR_Summary_v1.0.pdf][:book:]] [[https://github.com/hpc/ior/releases/download/3.2.0/ior-3.2.0.tar.gz][:package:]]
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Coral_IOR.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/IOR
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Download the source code"
+test -e ior-source.tar.gz || curl -o ior-source.tar.gz -Lkf https://github.com/hpc/ior/releases/download/3.2.0/ior-3.2.0.tar.gz
+
+echo "Unpack the code"
+tar -xvf ior-source.tar.gz
+
+echo "Install the modified sources"
+cd ior-3.2.0
+
+PLATFORMDIR=$WORKSPACE/src/common
+SMPI_PRETEND_CC=1 ./configure MPICC=smpicc
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt -platform $PLATFORMDIR/cluster_storage.xml -np 8 ./src/ior -a MPIIO -r -O testfile=/builds/testfile -w -z -k -e -i1 -m -t 100k -b 100k
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt -platform $PLATFORMDIR/cluster_storage.xml -np 16 ./src/ior -a MPIIO -O testfile=/builds/testfile -r -t 1000 -b 1000 -s 30
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/UMT2013_Summary_v1.2.pdf][UMT2013]]
+*** Brief description
+UMT is an ASC proxy application (mini-app) that performs three-dimensional, non-linear, radiation transport calculations using deterministic (Sn) methods. [[https://asc.llnl.gov/sites/asc/files/2020-06/UMT2013_Summary_v1.2.pdf][:book:]] [[https://asc.llnl.gov/sites/asc/files/2020-09/umt2013-20140204.zip][:package:]]
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Coral_UMT2013.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/UMT2013
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Download the source code"
+test -e umt-source.zip || curl -o umt-source.zip -Lkf https://asc.llnl.gov/sites/asc/files/2020-09/umt2013-20140204.zip
+
+echo "Unpack the code"
+unzip -o umt-source.zip UMT2013-20140204/*
+mv UMT2013-20140204/ UMT2013
+
+echo "Install the modified sources"
+cd UMT2013/
+
+PLATFORMDIR=$WORKSPACE/src/common
+cp -f $WORKSPACE/src/Coral/UMT2013/make.defs ./
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make
+cd Teton
+make SuOlsonTest -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml -np 2 ./SuOlsonTest ./problem2.cmg 200 2 1 1 1
+export OMP_NUM_THREADS=4
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml -np 2 ./SuOlsonTest ./problem2.cmg 200 2 1 1 1
+cd ..
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** [[qboxcode.org][Qbox]]
+*** Brief description
+ Qbox is a C++/MPI/OpenMP implementation of First-Principles Molecular Dynamics. It implements electronic structure calculations within the framework
+ of Density Functional Theory, using a plane-wave basis set and norm-conserving pseudopotentials.
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Coral_Qbox.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "WARNING: dependencies xerces-c-devel, fftw-devel, libuuid-devel"
+echo "Clean up the place"
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+echo "Download and install scalapack"
+test -e scalapack.tar.gz || curl -o scalapack.tar.gz -Lkf https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.1.0.tar.gz
+
+echo "Unpack the code"
+mkdir scalapack &&  tar -xvf scalapack.tar.gz -C scalapack --strip-components 1
+
+echo "Install the modified sources"
+cd scalapack/
+mkdir -p build
+cd build
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx -DCMAKE_Fortran_COMPILER=smpif90 -DCMAKE_Fortran_FLAGS=-std=legacy -DBUILD_SHARED_LIBS=ON ..
+make -j $NUMBER_OF_PROCESSORS
+
+export LD_LIBRARY_PATH=${PWD}/lib:${LD_LIBRARY_PATH:-}
+export LIBRARY_PATH=${PWD}/lib:${LIBRARY_PATH:-}
+
+cd ../..
+
+echo "Checkout or update the git containing the source code"
+if [ -e Qbox ] ; then
+   cd Qbox ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1  https://github.com/qboxcode/qbox-public.git ./Qbox
+fi
+
+echo "Install the modified sources"
+cd Qbox/
+cp -f $WORKSPACE/src/Coral/Qbox/simgrid.mk ./src
+cd src
+echo "Compile it"
+
+TARGET=simgrid make -j $NUMBER_OF_PROCESSORS
+
+cd ../test/h2ogs/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt -platform $PLATFORMDIR/cluster_storage.xml -np 4 --cfg=smpi/privatize-libs:"libscalapack.so" ../../src/qb ./test.i
+
+cd ../../src
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  TARGET=simgrid  make clean
+fi
+#+END_SRC
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/LSMS_Summary_v1.1.pdf][LSMS]]
+*** Brief description
+ -LSMS is a code to perform first principles ground state calculations of solid state 
+systems and statistical physics calculations with a focus on magnetic systems
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Coral_LSMS.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "WARNING - Depencencies : libhdf5-dev (hdf5-dvel)"
+
+echo "Clean up the place"
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Checkout or update the git containing the source code"
+if [ -e LSMS ] ; then
+   cd LSMS ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/mstsuite/lsms.git ./LSMS
+fi
+
+echo "Install the modified sources"
+cd LSMS/
+
+if $(apt -v >/dev/null 2>&1); then
+  export HDF=-lhdf5_serial
+else
+  export HDF=-lhdf5
+fi
+
+cp -f $WORKSPACE/src/Coral/LSMS/architecture.h .
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+cd Test/Fe2
+PLATFORMDIR=$WORKSPACE/src/common
+
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml -np 2 ../../src/Main/lsms i_lsms
+
+cd ../..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/MCB_Summary_v1.1.pdf][LSMS]]
+*** Brief description
+ MCB is a Monte Carlo particle transport benchmark.
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Coral_MCB.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "WARNING - Depencencies : libhdf5-dev (hdf5-dvel)"
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/MCB
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Checkout or update the git containing the source code"
+test -e mcb-source.tar.gz || curl -o mcb-source.tar.gz -Lkf https://hpc.llnl.gov/sites/default/files/mcb-20130723.tar.gz
+
+echo "Unpack the code"
+mkdir MCB &&  tar -xvf mcb-source.tar.gz -C MCB --strip-components 1
+
+echo "Install the modified sources"
+cd MCB/
+
+cp -f $WORKSPACE/src/Coral/MCB/Makefile-linux-x86_64 .
+echo "Compile it"
+./build-linux-x86_64.sh
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml -np 4 ./src/MCBenchmark.exe --nCores=1 --numParticles=65536 --nZonesX=4 --nZonesY=4 --xDim=4 --yDim=4 --nThreadCore=1
+
+cd src
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make -f ../Makefile-linux-x86_64 veryclean
+fi
+cd ..
+#+END_SRC
+
+
+** [[https://asc.llnl.gov/sites/asc/files/2020-06/CLOMP_Summary_v1.2.pdf][CLOMP]]
+*** Brief description
+CLOMP is the C version of the Livermore OpenMP benchmark developed to measure OpenMP
+overheads and other performance impacts due to threading
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Coral_CLOMP.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/Coral/CLOMP
+mkdir -p Benchmarks/Coral/
+cd Benchmarks/Coral/
+echo "Checkout or update the git containing the source code"
+test -e clomp-source.zip || curl -o clomp-source.zip -Lkf https://asc.llnl.gov/sites/asc/files/2020-09/clomp_v1.2.zip
+
+echo "Unpack the code"
+unzip -o clomp-source.zip
+mv clomp_v1.2/ CLOMP
+
+echo "Install the modified sources"
+cd CLOMP/
+
+echo "Compile it"
+smpicc -DWITH_MPI -fopenmp -O3 clomp.c -o clomp_mpi
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+export OMP_NUM_THREADS=2
+smpirun -np 2 -platform $PLATFORMDIR/cluster_storage.xml -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt ./clomp_mpi   2 1 2 400 32 1 100
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm clomp_mpi
+fi
+#+END_SRC
+
+
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

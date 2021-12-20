@@ -1,0 +1,142 @@
+diff --git a/core/src/Kokkos_Parallel.hpp b/core/src/Kokkos_Parallel.hpp
+index a00da447..6852fb6e 100644
+--- a/core/src/Kokkos_Parallel.hpp
++++ b/core/src/Kokkos_Parallel.hpp
+@@ -156,6 +156,7 @@ template <class ExecPolicy, class FunctorType>
+ inline void parallel_for(
+     const ExecPolicy& policy, const FunctorType& functor,
+     const std::string& str = "",
++    int shared=0,
+     typename std::enable_if<
+         Kokkos::Impl::is_execution_policy<ExecPolicy>::value>::type* =
+         nullptr) {
+@@ -165,7 +166,7 @@ inline void parallel_for(
+   Kokkos::Tools::Impl::begin_parallel_for(inner_policy, functor, str, kpID);
+ 
+   Kokkos::Impl::shared_allocation_tracking_disable();
+-  Impl::ParallelFor<FunctorType, ExecPolicy> closure(functor, inner_policy);
++  Impl::ParallelFor<FunctorType, ExecPolicy> closure(functor, inner_policy, shared);
+   Kokkos::Impl::shared_allocation_tracking_enable();
+ 
+   closure.execute();
+@@ -175,7 +176,8 @@ inline void parallel_for(
+ 
+ template <class FunctorType>
+ inline void parallel_for(const size_t work_count, const FunctorType& functor,
+-                         const std::string& str = "") {
++                         const std::string& str = "",
++                         int shared = 0) {
+   using execution_space =
+       typename Impl::FunctorPolicyExecutionSpace<FunctorType,
+                                                  void>::execution_space;
+@@ -188,7 +190,7 @@ inline void parallel_for(const size_t work_count, const FunctorType& functor,
+   Kokkos::Tools::Impl::begin_parallel_for(execution_policy, functor, str, kpID);
+ 
+   Kokkos::Impl::shared_allocation_tracking_disable();
+-  Impl::ParallelFor<FunctorType, policy> closure(functor, execution_policy);
++  Impl::ParallelFor<FunctorType, policy> closure(functor, execution_policy, shared);
+   Kokkos::Impl::shared_allocation_tracking_enable();
+ 
+   closure.execute();
+@@ -213,13 +215,14 @@
+ 
+ template <class ExecPolicy, class FunctorType>
+ inline void parallel_for(const std::string& str, const ExecPolicy& policy,
+-                         const FunctorType& functor) {
++                         const FunctorType& functor,
++			 int shared = 0) {
+ #if KOKKOS_ENABLE_DEBUG_PRINT_KERNEL_NAMES
+   Kokkos::fence();
+   std::cout << "KOKKOS_DEBUG Start parallel_for kernel: " << str << std::endl;
+ #endif
+ 
+-  ::Kokkos::parallel_for(policy, functor, str);
++  ::Kokkos::parallel_for(policy, functor, str, shared);
+ 
+ #if KOKKOS_ENABLE_DEBUG_PRINT_KERNEL_NAMES
+   Kokkos::fence();
+diff --git a/core/src/Kokkos_Serial.hpp b/core/src/Kokkos_Serial.hpp
+index 5821b0c..a354b6e 100644
+--- a/core/src/Kokkos_Serial.hpp
++++ b/core/src/Kokkos_Serial.hpp
+@@ -67,7 +67,7 @@
+ #include <KokkosExp_MDRangePolicy.hpp>
+ 
+ #include <Kokkos_UniqueToken.hpp>
+-
++#include "smpi.h"
+ namespace Kokkos {
+ 
+ /// \class Serial
+@@ -519,13 +519,20 @@
+ 
+   const FunctorType m_functor;
+   const Policy m_policy;
++  int m_shared;
+ 
+   template <class TagType>
+   typename std::enable_if<std::is_same<TagType, void>::value>::type exec()
+       const {
+     const typename Policy::member_type e = m_policy.end();
+-    for (typename Policy::member_type i = m_policy.begin(); i < e; ++i) {
+-      m_functor(i);
++    if(!m_shared){
++        for ( typename Policy::member_type i = m_policy.begin() ; i < e ; ++i ) {
++          m_functor( i );
++        }
++      }else{
++      SMPI_SAMPLE_GLOBAL ( typename Policy::member_type i = m_policy.begin() , i < e , ++i, 10, 0.005 ) {
++          m_functor( i );
++      }
+     }
+   }
+ 
+@@ -534,8 +541,14 @@
+       const {
+     const TagType t{};
+     const typename Policy::member_type e = m_policy.end();
+-    for (typename Policy::member_type i = m_policy.begin(); i < e; ++i) {
+-      m_functor(t, i);
++    if(!m_shared){
++      for ( typename Policy::member_type i = m_policy.begin() ; i < e ; ++i ) {
++        m_functor( t , i );
++      }
++    }else{
++      SMPI_SAMPLE_GLOBAL ( typename Policy::member_type i = m_policy.begin() , i < e , ++i, 10, 0.005 ) {
++        m_functor( t , i );
++      }
+     }
+   }
+ 
+@@ -544,8 +557,10 @@
+     this->template exec<typename Policy::work_tag>();
+   }
+ 
+-  inline ParallelFor(const FunctorType& arg_functor, const Policy& arg_policy)
+-      : m_functor(arg_functor), m_policy(arg_policy) {}
++  inline ParallelFor(const FunctorType& arg_functor, const Policy& arg_policy, int shared)
++      : m_functor(arg_functor), m_policy(arg_policy), m_shared(shared) {}
++  inline ParallelFor(const FunctorType & arg_functor, const Policy& arg_policy)
++      : m_functor(arg_functor), m_policy(arg_policy), m_shared (0) {}
+ };
+ 
+ /*--------------------------------------------------------------------------*/
+@@ -820,7 +835,8 @@
+   inline void execute() const { this->exec(); }
+ 
+   inline ParallelFor(const FunctorType& arg_functor,
+-                     const MDRangePolicy& arg_policy)
++                     const MDRangePolicy& arg_policy, 
++		     int shared=0)
+       : m_functor(arg_functor),
+         m_mdr_policy(arg_policy),
+         m_policy(Policy(0, m_mdr_policy.m_num_tiles).set_chunk_size(1)) {}
+@@ -984,7 +1000,7 @@
+     this->template exec<typename Policy::work_tag>(data);
+   }
+ 
+-  ParallelFor(const FunctorType& arg_functor, const Policy& arg_policy)
++  ParallelFor(const FunctorType& arg_functor, const Policy& arg_policy, int shared=0)
+       : m_functor(arg_functor),
+         m_league(arg_policy.league_size()),
+         m_shared(arg_policy.scratch_size(0) + arg_policy.scratch_size(1) +

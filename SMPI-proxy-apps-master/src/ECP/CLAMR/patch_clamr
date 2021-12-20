@@ -1,0 +1,14 @@
+diff --git a/./CMakeLists.txt b/CMakeLists.txt
+index d157e92..4c6826f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -242,7 +242,7 @@ set (LIB_TYPE STATIC)
+ if (BUILD_SHARED_LIBS)
+   set (LIB_TYPE SHARED)
+ endif (BUILD_SHARED_LIBS)
+-set (CMAKE_POSITION_INDEPENDENT_CODE ON)
++set (CMAKE_POSITION_INDEPENDENT_CODE OFF)
+ 
+ if (NOT PRECISION_TYPE)
+    set (PRECISION_TYPE full_precision)
+

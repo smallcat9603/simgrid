@@ -1,0 +1,13 @@
+Index: src-mpi/matrixio.c
+===================================================================
+--- src-mpi.orig/matrixio.c
++++ src-mpi/matrixio.c
+@@ -87,7 +87,7 @@ void writeMTX(char* fname, struct Sparse
+   mFile = fopen(fname, "w");
+ 
+   // Write header
+-  fprintf(mFile, "\%\%\%MatrixMarket matrix coordinate real general\n");
++  fprintf(mFile, "MatrixMarket matrix coordinate real general\n");
+ 
+   // Collect number of non-zero elements
+   // Write out matrix size as dense and number of non-zero elements

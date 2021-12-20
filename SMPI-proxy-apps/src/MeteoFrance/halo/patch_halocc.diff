@@ -1,0 +1,42 @@
+Index: halo/halo.cc
+===================================================================
+--- halo.orig/halo.cc
++++ halo/halo.cc
+@@ -60,8 +60,8 @@ int main(int argc, char *argv[]) {
+ 	//shm_malloc((void **)(&GO_MBLOCK), shmid);
+ 	if (icpu == 0) fprintf(stderr, "Shared memory seen from virtual MPI: %p\nMPI_PROC_NULL=%d\n", GO_MBLOCK, MPI_PROC_NULL);
+ #else
+-	//GO_MBLOCK = (char *)malloc(sizeof(struct t_config) + sizeof(struct t_domain) * ncpu);
+-	shmc((void **)(&GO_MBLOCK), sizeof(struct t_config) + sizeof(struct t_domain) * ncpu + sizeof(struct t_stat) * ncpu, 0);
++	GO_MBLOCK = (char *)SMPI_SHARED_MALLOC(sizeof(struct t_config) + sizeof(struct t_domain) * ncpu);
++	// shmc((void **)(&GO_MBLOCK), sizeof(struct t_config) + sizeof(struct t_domain) * ncpu + sizeof(struct t_stat) * ncpu, 0);
+ #endif
+ 
+ 	/***************************************************************************
+@@ -134,7 +134,7 @@ for (nx = 1800; nx <= 7200; nx += 1800)
+ #else
+ 	double *dblock;
+ 	if (dm_z->mcube > 0) {
+-		dblock = (double *)malloc(sizeof(double) * (dm_z->mcube * 3));
++		dblock = (double *)SMPI_SHARED_MALLOC(sizeof(double) * (dm_z->mcube * 3));
+ 		// field
+ 		fldz = dblock;
+ 		// derivative in x direction
+@@ -261,7 +261,7 @@ for (nx = 1800; nx <= 7200; nx += 1800)
+ 	fldz = fldz_x = fldz_y = NULL;
+ #else
+ 	fldz = fldz_x = fldz_y = NULL;
+-	if (dm_z->mcube > 0) free(dblock);
++	if (dm_z->mcube > 0) SMPI_SHARED_FREE(dblock);
+ #endif
+ 	config = NULL;
+ 	dm_z = NULL;
+@@ -269,7 +269,7 @@ for (nx = 1800; nx <= 7200; nx += 1800)
+ #if defined(_SHM_)
+ 	//shm_free((void **)(&GO_MBLOCK));
+ #else
+-	shmd((void **)(&GO_MBLOCK), sizeof(struct t_config) + sizeof(struct t_domain) * ncpu + sizeof(struct t_stat) * ncpu, 0);
++	SMPI_SHARED_FREE((void **)(&GO_MBLOCK));
+ #endif
+ 
+ 

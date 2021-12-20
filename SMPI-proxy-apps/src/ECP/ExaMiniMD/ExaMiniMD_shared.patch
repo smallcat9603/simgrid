@@ -1,0 +1,27 @@
+diff --git a/src/force_types/force_lj_neigh_impl.h b/src/force_types/force_lj_neigh_impl.h
+index e6789c2..0b7d65c 100644
+--- a/src/force_types/force_lj_neigh_impl.h
++++ b/src/force_types/force_lj_neigh_impl.h
+@@ -37,7 +37,7 @@
+ //************************************************************************
+ 
+ #include<force_lj_neigh.h>
+-
++#include "smpi.h"
+ template<class NeighborClass>
+ ForceLJNeigh<NeighborClass>::ForceLJNeigh(char** args, System* system, bool half_neigh_):Force(args,system,half_neigh_) {
+   ntypes = system->ntypes;
+@@ -112,8 +112,11 @@ void ForceLJNeigh<NeighborClass>::compute(System* system, Binning* binning, Neig
+   if (use_stackparams) {
+     if(half_neigh)
+       Kokkos::parallel_for("ForceLJNeigh::compute", t_policy_half_neigh_stackparams(0, system->N_local), *this);
+-    else
+-      Kokkos::parallel_for("ForceLJNeigh::compute", t_policy_full_neigh_stackparams(0, system->N_local), *this);
++    else{
++      SMPI_SAMPLE_GLOBAL (int i=0, i<1, i++, 5, 0.005) {
++            Kokkos::parallel_for("ForceLJNeigh::compute", t_policy_full_neigh_stackparams(0, system->N_local), *this);
++      }
++    }
+   } else {
+     if(half_neigh)
+       Kokkos::parallel_for("ForceLJNeigh::compute", t_policy_half_neigh(0, system->N_local), *this);

@@ -1,0 +1,30 @@
+diff --git a/tst_comm.c b/tst_comm.c
+index 162968e..8b727d9 100644
+--- a/tst_comm.c
++++ b/tst_comm.c
+@@ -450,9 +450,9 @@ int tst_comms_register() {
+   tst_comm_register_2D_cart_comm();
+   tst_comm_register_3D_cart_comm();
+   tst_comm_register_odd_even_split();
+-  tst_comm_register_fully_connected_topology();
+-  tst_comm_register_halved_inter_comm();
+-  tst_comm_register_merged_inter_comm();
++//  tst_comm_register_fully_connected_topology();
++//  tst_comm_register_halved_inter_comm();
++//  tst_comm_register_merged_inter_comm();
+   tst_comm_register_split_type_shared();
+ 
+   return num_registered_comms;
+diff --git a/tst_tests.c b/tst_tests.c
+index f7f1f7e..8dcece6 100644
+--- a/tst_tests.c
++++ b/tst_tests.c
+@@ -255,7 +255,7 @@ static struct tst_test tst_tests[] = {
+     * LAM core-dumps with sig-segv when running this test with
+     * "MPI_COMM_WORLD,Reversed MPI_COMM_WORLD"
+     */
+-#ifndef HAVE_MPI_LAM
++#if 0
+   {TST_CLASS_P2P, "Many-to-one with Isend and Cancellation",
+    TST_MPI_INTRA_COMM, /* XXX We use a MPI_Gather insided the tests -- no intercomm allowed! | TST_MPI_INTER_COMM,*/
+    1,

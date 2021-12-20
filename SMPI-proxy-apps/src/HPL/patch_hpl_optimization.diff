@@ -1,0 +1,726 @@
+commit 24a9bff04e9cd65f1bab53e0d3be6840f55089dd
+Author: Tom Cornebize <tom.cornebize@univ-grenoble-alpes.fr>
+Date:   Fri Jul 6 09:11:34 2018 +0200
+
+    HPL optimization.
+
+diff --git a/Make.SMPI b/Make.SMPI
+index b5f5672..f2942d5 100644
+--- a/Make.SMPI
++++ b/Make.SMPI
+@@ -157,7 +157,7 @@ HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) -lm -lsimgrid
+ #    *) call the Fortran 77 BLAS interface
+ #    *) not display detailed timing information.
+ #
+-HPL_OPTS     = -DHPL_CALL_CBLAS -DHPL_NO_MPI_DATATYPE
++HPL_OPTS     = -DHPL_CALL_CBLAS -DHPL_NO_MPI_DATATYPE $(SMPI_OPTS)
+ #
+ # ----------------------------------------------------------------------
+ #
+diff --git a/include/hpl.h b/include/hpl.h
+index 11b5775..2873c4d 100644
+--- a/include/hpl.h
++++ b/include/hpl.h
+@@ -67,6 +67,14 @@
+ #define HPL_CALL_FBLAS
+ #endif
+ #endif
++
++#ifdef SMPI_OPTIMIZATION
++#ifdef SMPI_OPTIMIZATION_LEVEL
++#error "Mixing macros SMPI_OPTIMIZATION and SMPI_OPTIMIZATION_LEVEL."
++#endif
++#define SMPI_OPTIMIZATION_LEVEL 1000
++#endif
++
+ /*
+  * ---------------------------------------------------------------------
+  * Include files
+diff --git a/include/hpl_blas.h b/include/hpl_blas.h
+index 41e5afd..cc13399 100644
+--- a/include/hpl_blas.h
++++ b/include/hpl_blas.h
+@@ -159,18 +159,152 @@ STDC_ARGS(
+  * HPL C BLAS macro definition
+  * ---------------------------------------------------------------------
+  */
+-#define    HPL_dswap           cblas_dswap
+ #define    HPL_dcopy           cblas_dcopy
++
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++#define    HPL_dswap(...)      {}
++#define    HPL_dgemv(...)      {}
++#define    HPL_daxpy(...)      {}
++#define    HPL_dscal(...)      {}
++#define    HPL_idamax(...)      3 // FIXME: 3 is arbitrary... is the value returned by idamax important?
++#define    HPL_dtrsv(...)      {}
++#define    HPL_dger(...)       {}
++#pragma message "[SMPI] Using no-op for the “cheapest” BLAS functions."
++#else
++#define    HPL_dswap           cblas_dswap
++#define    HPL_dgemv           cblas_dgemv
+ #define    HPL_daxpy           cblas_daxpy
+ #define    HPL_dscal           cblas_dscal
+ #define    HPL_idamax          cblas_idamax
+-
+-#define    HPL_dgemv           cblas_dgemv
+ #define    HPL_dtrsv           cblas_dtrsv
+ #define    HPL_dger            cblas_dger
++#pragma message "[SMPI] Using cblas for the “cheapest” BLAS functions."
++#endif
++
++// From http://stackoverflow.com/a/10227059/4110059
++#define VALUE_TO_STRING(x) #x
++#define VALUE(x) VALUE_TO_STRING(x)
++#define VAR_NAME_VALUE(var) #var "="  VALUE(var)
++
++
++#ifdef SMPI_MEASURE
++#pragma message "[SMPI] Tracing the calls to BLAS functions."
++#define START_MEASURE(before) ({\
++    gettimeofday(&before, NULL);\
++})
++#define STOP_MEASURE(before, function, M, N, K, lda, ldb, ldc, expected_time)  ({\
++    struct timeval after = {};\
++    gettimeofday(&after, NULL);\
++    double real_time = (after.tv_sec-before.tv_sec) + 1e-6*(after.tv_usec-before.tv_usec);\
++    int my_rank, buff=0;\
++    double timestamp = before.tv_sec + before.tv_usec*1e-6;\
++    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);\
++    printf("function=%s file=%s line=%d rank=%d m=%d n=%d k=%d lead_A=%d lead_B=%d lead_C=%d real_time=%g expected_time=%g timestamp=%g\n", function, __FILE__, __LINE__, my_rank, M, N, K, lda, ldb, ldc, real_time, expected_time, timestamp);\
++})
++#else
++#pragma message "[SMPI] Not tracing the calls to BLAS functions."
++#define START_MEASURE(...)   {}
++#define STOP_MEASURE(...)    {}
++#endif
++
++#define STR(x)   #x
++#define SHOW_DEFINE(x) printf("%s=%s\n", #x, STR(x))
+ 
+-#define    HPL_dgemm           cblas_dgemm
+-#define    HPL_dtrsm           cblas_dtrsm
++// DGEMM
++#if SMPI_OPTIMIZATION_LEVEL >= 1
++#ifndef SMPI_DGEMM_COEFFICIENT
++#error "SMPI_DGEMM_COEFFICIENT not defined."
++#endif
++#ifndef SMPI_DGEMM_INTERCEPT
++#warning "SMPI_DGEMM_INTERCEPT not defined, will use 0."
++#define SMPI_DGEMM_INTERCEPT 0
++#endif
++#ifndef SMPI_DGEMM_PHI_COEFFICIENT
++#warning "SMPI_DGEMM_PHI_COEFFICIENT not defined, will use SMPI_DGEMM_COEFFICIENT."
++#define SMPI_DGEMM_PHI_COEFFICIENT SMPI_DGEMM_COEFFICIENT
++#endif
++#ifndef SMPI_DGEMM_PHI_INTERCEPT
++#warning "SMPI_DGEMM_PHI_INTERCEPT not defined, will use 0."
++#define SMPI_DGEMM_PHI_INTERCEPT 0
++#endif
++#pragma message "[SMPI] Using smpi_execute for HPL_dgemm."
++#pragma message(VAR_NAME_VALUE(SMPI_DGEMM_COEFFICIENT))
++#define  HPL_dgemm(layout, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc)  ({\
++    double expected_time;\
++    double coefficient, intercept;\
++    if((M) > 1280 && (N) > 1280 && (K) > 256) {\
++        coefficient = (double)SMPI_DGEMM_PHI_COEFFICIENT;\
++        intercept = (double)SMPI_DGEMM_PHI_INTERCEPT;\
++    } else {\
++        coefficient = (double)SMPI_DGEMM_COEFFICIENT;\
++        intercept = (double)SMPI_DGEMM_INTERCEPT;\
++    }\
++    expected_time = coefficient*((double)(M))*((double)(N))*((double)(K)) + intercept;\
++    struct timeval before = {};\
++    START_MEASURE(before);\
++    if(expected_time > 0)\
++        smpi_execute_benched(expected_time);\
++    STOP_MEASURE(before, "dgemm", M, N, K, lda, ldb, ldc, expected_time);\
++})
++#else
++#pragma message "[SMPI] Using cblas_dgemm for HPL_dgemm."
++#define  HPL_dgemm(layout, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc)  ({\
++    struct timeval before = {};\
++    START_MEASURE(before);\
++    cblas_dgemm(layout, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc);\
++    STOP_MEASURE(before, "dgemm", M, N, K, lda, ldb, ldc, -1);\
++})
++#endif
++
++// DTRSM
++#if SMPI_OPTIMIZATION_LEVEL >= 1
++#ifndef SMPI_DTRSM_COEFFICIENT
++#error "SMPI_DTRSM_COEFFICIENT not defined."
++#endif
++#ifndef SMPI_DTRSM_INTERCEPT
++#warning "SMPI_DTRSM_INTERCEPT not defined, will use 0."
++#define SMPI_DTRSM_INTERCEPT 0
++#endif
++#ifndef SMPI_DTRSM_PHI_COEFFICIENT
++#warning "SMPI_DTRSM_PHI_COEFFICIENT not defined, will use SMPI_DTRSM_COEFFICIENT."
++#define SMPI_DTRSM_PHI_COEFFICIENT SMPI_DTRSM_COEFFICIENT
++#endif
++#ifndef SMPI_DTRSM_PHI_INTERCEPT
++#warning "SMPI_DTRSM_PHI_INTERCEPT not defined, will use 0."
++#define SMPI_DTRSM_PHI_INTERCEPT 0
++#endif
++#pragma message "[SMPI] Using smpi_execute for HPL_dtrsm."
++#pragma message(VAR_NAME_VALUE(SMPI_DTRSM_COEFFICIENT))
++#define HPL_dtrsm(layout, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, B, ldb) ({\
++    double expected_time;\
++    double coefficient, intercept;\
++    if((M) > 512 && (N) > 512) {\
++        coefficient = (double)SMPI_DTRSM_PHI_COEFFICIENT;\
++        intercept = (double)SMPI_DTRSM_PHI_INTERCEPT;\
++    } else {\
++        coefficient = (double)SMPI_DTRSM_COEFFICIENT;\
++        intercept = (double)SMPI_DTRSM_INTERCEPT;\
++    }\
++    if((Side) == HplLeft) {\
++        expected_time = coefficient*((double)(M))*((double)(M))*((double)(N)) + intercept;\
++    } else {\
++        expected_time = coefficient*((double)(M))*((double)(N))*((double)(N)) + intercept;\
++    }\
++    struct timeval before = {};\
++    START_MEASURE(before);\
++    if(expected_time > 0)\
++        smpi_execute_benched(expected_time);\
++    STOP_MEASURE(before, "dtrsm", M, N, -1, lda, ldb, -1, expected_time);\
++})
++#else
++#pragma message "[SMPI] Using cblas_dtrsm for HPL_dtrsm."
++#define HPL_dtrsm(layout, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, B, ldb) ({\
++    struct timeval before = {};\
++    START_MEASURE(before);\
++    cblas_dtrsm(layout, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, B, ldb);\
++    STOP_MEASURE(before, "dtrsm", M, N, -1, lda, ldb, -1, -1);\
++})
++#endif
+ 
+ #endif
+ 
+diff --git a/include/hpl_panel.h b/include/hpl_panel.h
+index 44b864e..cba8b35 100644
+--- a/include/hpl_panel.h
++++ b/include/hpl_panel.h
+@@ -91,6 +91,7 @@ typedef struct HPL_S_panel
+    int                 msgid;           /* message id for panel bcast */
+    int                 ldl2;         /* local leading dim of array L2 */
+    int                 len;      /* length of the buffer to broadcast */
++   int                 lwork;      /* total length of the WORK buffer */
+ #ifdef HPL_CALL_VSIPL
+    vsip_block_d        * Ablock;                           /* A block */
+    vsip_block_d        * L1block;                         /* L1 block */
+diff --git a/src/auxil/HPL_dlacpy.c b/src/auxil/HPL_dlacpy.c
+index 89ae13b..8c1396a 100644
+--- a/src/auxil/HPL_dlacpy.c
++++ b/src/auxil/HPL_dlacpy.c
+@@ -127,6 +127,9 @@ void HPL_dlacpy
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+ #ifdef HPL_LACPY_USE_COPY
+    register int               j;
+ #else
+diff --git a/src/auxil/HPL_dlatcpy.c b/src/auxil/HPL_dlatcpy.c
+index 7643676..417a1d5 100644
+--- a/src/auxil/HPL_dlatcpy.c
++++ b/src/auxil/HPL_dlatcpy.c
+@@ -127,6 +127,9 @@ void HPL_dlatcpy
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+ #ifdef HPL_LATCPY_USE_COPY
+    register int               j;
+ #else
+diff --git a/src/panel/HPL_pdpanel_free.c b/src/panel/HPL_pdpanel_free.c
+index f70f200..00931c0 100644
+--- a/src/panel/HPL_pdpanel_free.c
++++ b/src/panel/HPL_pdpanel_free.c
+@@ -46,6 +46,17 @@
+  */ 
+ #include "hpl.h"
+ 
++#if SMPI_OPTIMIZATION_LEVEL == 3
++#pragma message "[SMPI] Using partial shared malloc/free."
++#define smpi_free SMPI_SHARED_FREE
++#elif SMPI_OPTIMIZATION_LEVEL >= 4
++#pragma message "[SMPI] Using partial shared malloc/free and reusing panel buffers."
++#define smpi_free(...) {}
++#else
++#pragma message "[SMPI] Using standard malloc/free."
++#define smpi_free free
++#endif
++
+ #ifdef STDC_HEADERS
+ int HPL_pdpanel_free
+ (
+@@ -94,7 +105,9 @@ int HPL_pdpanel_free
+       vsip_blockdestroy_d( PANEL->Ublock );
+ #endif
+ 
+-   if( PANEL->WORK  ) free( PANEL->WORK  );
++   if( PANEL->WORK  ) {
++        smpi_free( PANEL->WORK);
++   }
+    if( PANEL->IWORK ) free( PANEL->IWORK );
+ 
+    return( MPI_SUCCESS );
+diff --git a/src/panel/HPL_pdpanel_init.c b/src/panel/HPL_pdpanel_init.c
+index 961ee8d..b0a11cc 100644
+--- a/src/panel/HPL_pdpanel_init.c
++++ b/src/panel/HPL_pdpanel_init.c
+@@ -47,8 +47,64 @@
+ /*
+  * Include files
+  */
++#define _GNU_SOURCE
++#include <stdio.h>
++#include <stdlib.h>
++#include <sys/mman.h>
++#include <fcntl.h>
++#include <unistd.h>
++#include <time.h>
++#include <assert.h>
++#include <stdint.h>
+ #include "hpl.h"
+ 
++static size_t shared_size = 0;
++static size_t shared_start_private=0, shared_stop_private=0;
++static void *shared_ptr = NULL;
++
++void *allocate_shared(size_t size, size_t start_private, size_t stop_private) {
++    size_t shared_block_offsets[] = {0, start_private, stop_private, size};
++    void *ptr = SMPI_PARTIAL_SHARED_MALLOC(size, shared_block_offsets, 2);
++    return ptr;
++}
++
++// Allocate a partially shared block, based on SMPI_SHARED_MALLOC
++// It also reuses the block from one iteration to another, if the new allocation can fit in the old one.
++// There is a memory leak, since the last true allocation to be done is never freed. Not sure if we care.
++void *allocate_shared_reuse(size_t size, size_t start_private, size_t stop_private) {
++    if(shared_size < size || (shared_stop_private - shared_start_private) < (stop_private-start_private)) { // have to reallocate
++        if(shared_ptr)
++            SMPI_SHARED_FREE(shared_ptr);
++        void *ptr = allocate_shared(size, start_private, stop_private);
++        shared_size = size;
++        shared_start_private = start_private;
++        shared_stop_private = stop_private;
++        shared_ptr = ptr;
++        return ptr;
++    }
++    else {
++        uint8_t *old_ptr = (uint8_t*)shared_ptr; // cannot do pointer arithmetic on void*
++        uint8_t *ptr = (old_ptr + shared_start_private - start_private);
++        assert(ptr >= old_ptr);
++        assert(ptr+size <= shared_ptr+shared_size);
++        assert(ptr+start_private >= old_ptr+shared_start_private);
++        assert(ptr+stop_private <= old_ptr+shared_stop_private);
++        return (void*)ptr;
++    }
++}
++
++#if SMPI_OPTIMIZATION_LEVEL == 3
++#pragma message "[SMPI] Using partial shared malloc/free."
++#define smpi_partial_malloc(size, start_private, stop_private) allocate_shared(size, start_private, stop_private)
++#elif SMPI_OPTIMIZATION_LEVEL >= 4
++#pragma message "[SMPI] Using partial shared malloc/free and reusing panel buffers."
++#define smpi_partial_malloc(size, start_private, stop_private) allocate_shared_reuse(size, start_private, stop_private)
++#else
++#pragma message "[SMPI] Using standard malloc/free."
++#define smpi_partial_malloc(size, start_private, stop_private) malloc(size)
++#endif
++
++
+ #ifdef HPL_NO_MPI_DATATYPE  /* The user insists to not use MPI types */
+ #ifndef HPL_COPY_L       /* and also want to avoid the copy of L ... */
+ #define HPL_COPY_L   /* well, sorry, can not do that: force the copy */
+@@ -209,8 +265,11 @@ void HPL_pdpanel_init
+       if( nprow > 1 )                                 /* space for U */
+       { nu = nq - JB; lwork += JB * Mmax( 0, nu ); }
+ 
+-      if( !( PANEL->WORK = (void *)malloc( (size_t)(lwork) * 
+-                                           sizeof( double ) ) ) )
++      size_t work_size = (size_t)(lwork)*sizeof(double);
++      int start_private = JB*JB;
++      PANEL->lwork = lwork*sizeof(double);
++      PANEL->WORK = (void *)smpi_partial_malloc(work_size, start_private*sizeof(double), (start_private+JB+1)*sizeof(double)); 
++      if(!PANEL->WORK)
+       {
+          HPL_pabort( __LINE__, "HPL_pdpanel_init",
+                      "Memory allocation failed" );
+@@ -241,8 +300,17 @@ void HPL_pdpanel_init
+          lwork += JB * Mmax( 0, nu );
+       }
+ 
+-      if( !( PANEL->WORK = (void *)malloc( (size_t)(lwork) *
+-                                           sizeof( double ) ) ) )
++      size_t work_size = (size_t)(lwork)*sizeof(double);
++      int start_private = JB*JB;
++#ifdef HPL_COPY_L
++      start_private += ml2*JB;
++#else
++      if(mycol != icurcol)
++          start_private += ml2*JB;
++#endif
++      PANEL->lwork = lwork*sizeof(double);
++      PANEL->WORK = (void *)smpi_partial_malloc(work_size, start_private*sizeof(double), (start_private+JB+1)*sizeof(double)); 
++      if(!PANEL->WORK)
+       {
+          HPL_pabort( __LINE__, "HPL_pdpanel_init",
+                      "Memory allocation failed" );
+diff --git a/src/pauxil/HPL_dlaswp00N.c b/src/pauxil/HPL_dlaswp00N.c
+index 60ae8b1..2cab3c3 100644
+--- a/src/pauxil/HPL_dlaswp00N.c
++++ b/src/pauxil/HPL_dlaswp00N.c
+@@ -112,6 +112,9 @@ void HPL_dlaswp00N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    register double            r;
+    double                     * a0, * a1;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp01N.c b/src/pauxil/HPL_dlaswp01N.c
+index f467470..45aec37 100644
+--- a/src/pauxil/HPL_dlaswp01N.c
++++ b/src/pauxil/HPL_dlaswp01N.c
+@@ -140,6 +140,9 @@ void HPL_dlaswp01N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    double                     * a0, * a1;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+                                             HPL_LASWP01N_LOG2_DEPTH ),
+diff --git a/src/pauxil/HPL_dlaswp01T.c b/src/pauxil/HPL_dlaswp01T.c
+index c3c9e4a..afb24b6 100644
+--- a/src/pauxil/HPL_dlaswp01T.c
++++ b/src/pauxil/HPL_dlaswp01T.c
+@@ -141,6 +141,9 @@ void HPL_dlaswp01T
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    double                     * a0, * a1;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+                                             HPL_LASWP01T_LOG2_DEPTH ),
+diff --git a/src/pauxil/HPL_dlaswp02N.c b/src/pauxil/HPL_dlaswp02N.c
+index 84a887b..a49d28b 100644
+--- a/src/pauxil/HPL_dlaswp02N.c
++++ b/src/pauxil/HPL_dlaswp02N.c
+@@ -137,6 +137,9 @@ void HPL_dlaswp02N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * A0 = A, * a0;
+    double                     * w0;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp03N.c b/src/pauxil/HPL_dlaswp03N.c
+index 711c211..f08ed10 100644
+--- a/src/pauxil/HPL_dlaswp03N.c
++++ b/src/pauxil/HPL_dlaswp03N.c
+@@ -127,6 +127,9 @@ void HPL_dlaswp03N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * w = W, * w0;
+    double                     * u0;
+    const int                  incU = (int)( (unsigned int)(LDU) <<
+diff --git a/src/pauxil/HPL_dlaswp03T.c b/src/pauxil/HPL_dlaswp03T.c
+index d6629de..efffab5 100644
+--- a/src/pauxil/HPL_dlaswp03T.c
++++ b/src/pauxil/HPL_dlaswp03T.c
+@@ -127,6 +127,9 @@ void HPL_dlaswp03T
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * w = W, * w0; 
+    double                     * u0;
+    const int                  incU = ( 1 << HPL_LASWP03T_LOG2_DEPTH );
+diff --git a/src/pauxil/HPL_dlaswp04N.c b/src/pauxil/HPL_dlaswp04N.c
+index 822a5ac..c167354 100644
+--- a/src/pauxil/HPL_dlaswp04N.c
++++ b/src/pauxil/HPL_dlaswp04N.c
+@@ -158,6 +158,9 @@ void HPL_dlaswp04N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * w = W, * w0;
+    double                     * a0, * u0;
+    const int                  incA = (int)( (unsigned int)(LDA) << 
+diff --git a/src/pauxil/HPL_dlaswp04T.c b/src/pauxil/HPL_dlaswp04T.c
+index 4b62689..f279771 100644
+--- a/src/pauxil/HPL_dlaswp04T.c
++++ b/src/pauxil/HPL_dlaswp04T.c
+@@ -159,6 +159,9 @@ void HPL_dlaswp04T
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * w = W, * w0;
+    double                     * a0, * u0;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp05N.c b/src/pauxil/HPL_dlaswp05N.c
+index 928e7f7..9b5f348 100644
+--- a/src/pauxil/HPL_dlaswp05N.c
++++ b/src/pauxil/HPL_dlaswp05N.c
+@@ -129,6 +129,9 @@ void HPL_dlaswp05N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * U0 = U, * u0;
+    double                     * a0;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp05T.c b/src/pauxil/HPL_dlaswp05T.c
+index 50f337a..019e173 100644
+--- a/src/pauxil/HPL_dlaswp05T.c
++++ b/src/pauxil/HPL_dlaswp05T.c
+@@ -129,6 +129,9 @@ void HPL_dlaswp05T
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    const double               * U0 = U, * u0;
+    double                     * a0;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp06N.c b/src/pauxil/HPL_dlaswp06N.c
+index 8954577..a745348 100644
+--- a/src/pauxil/HPL_dlaswp06N.c
++++ b/src/pauxil/HPL_dlaswp06N.c
+@@ -124,6 +124,9 @@ void HPL_dlaswp06N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    double                     r;
+    double                     * U0 = U, * a0, * u0;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp06T.c b/src/pauxil/HPL_dlaswp06T.c
+index 481b53b..1fa1268 100644
+--- a/src/pauxil/HPL_dlaswp06T.c
++++ b/src/pauxil/HPL_dlaswp06T.c
+@@ -124,6 +124,9 @@ void HPL_dlaswp06T
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    double                     r;
+    double                     * U0 = U, * a0, * u0;
+    const int                  incA = (int)( (unsigned int)(LDA) <<
+diff --git a/src/pauxil/HPL_dlaswp10N.c b/src/pauxil/HPL_dlaswp10N.c
+index 8b33de5..912b842 100644
+--- a/src/pauxil/HPL_dlaswp10N.c
++++ b/src/pauxil/HPL_dlaswp10N.c
+@@ -111,6 +111,9 @@ void HPL_dlaswp10N
+ /*
+  * .. Local Variables ..
+  */
++#if SMPI_OPTIMIZATION_LEVEL >= 2
++    return;
++#endif
+    double                     r;
+    double                     * a0, * a1;
+    const int                  incA = ( 1 << HPL_LASWP10N_LOG2_DEPTH );
+diff --git a/src/pgesv/HPL_pdgesv0.c b/src/pgesv/HPL_pdgesv0.c
+index 8bcf71a..ab695cc 100644
+--- a/src/pgesv/HPL_pdgesv0.c
++++ b/src/pgesv/HPL_pdgesv0.c
+@@ -126,6 +126,11 @@ void HPL_pdgesv0
+    for( j = 0; j < N; j += nb )
+    {
+       n = N - j; jb = Mmin( n, nb );
++#ifdef SMPI_SHORT_RUN
++      if(j/nb >= SMPI_SHORT_RUN) {
++	return;
++      }
++#endif
+ #ifdef HPL_PROGRESS_REPORT
+       /* if this is process 0,0 and not the first panel */
+       if ( GRID->myrow == 0 && GRID->mycol == 0 && j > 0 ) 
+diff --git a/testing/matgen/HPL_dmatgen.c b/testing/matgen/HPL_dmatgen.c
+index c983cce..93cb695 100644
+--- a/testing/matgen/HPL_dmatgen.c
++++ b/testing/matgen/HPL_dmatgen.c
+@@ -127,7 +127,10 @@ void HPL_dmatgen
+  * Generate an M by N matrix
+  */
+    for( j = 0; j < N; A += incA, j++ )
+-      for( i = 0; i < M; A++, i++ ) *A = HPL_rand();
++      for( i = 0; i < M; A++, i++ ) {
++         *A = HPL_rand();
++         if (j < 2 && i < 10) { printf("Number at (%i,%i): %d\n", j, i, *A); }
++      }
+ /*
+  * End of HPL_dmatgen
+  */
+diff --git a/testing/pmatgen/HPL_pdmatgen.c b/testing/pmatgen/HPL_pdmatgen.c
+index 88eba5f..db72912 100644
+--- a/testing/pmatgen/HPL_pdmatgen.c
++++ b/testing/pmatgen/HPL_pdmatgen.c
+@@ -178,7 +178,9 @@ void HPL_pdmatgen
+          for( iblk = 0; iblk < mblks; iblk++ )
+          {
+             ib = ( iblk == mblks - 1 ? lmb : NB );
+-            for( ik = 0; ik < ib; A++, ik++ ) *A = HPL_rand();
++            for( ik = 0; ik < ib; A++, ik++ ) { *A = HPL_rand();
++            //  if (jk < 2 && ik < 10) { printf("Number at (%i,%i): %d\n", jk, ik, *A); }
++            }
+             HPL_jumpit( ia2, ic2, ib1, iran2 );
+             ib1[0] = iran2[0]; ib1[1] = iran2[1];
+          }
+diff --git a/testing/ptest/HPL_pddriver.c b/testing/ptest/HPL_pddriver.c
+index dd2b3fd..c5329bf 100644
+--- a/testing/ptest/HPL_pddriver.c
++++ b/testing/ptest/HPL_pddriver.c
+@@ -222,6 +222,8 @@ int main( ARGC, ARGV )
+ 
+               HPL_pdtest( &test, &grid, &algo, nval[in], nbval[inb] );
+ 
++	      MPI_Finalize();
++              return 0;
+              }
+             }
+            }
+@@ -284,7 +286,6 @@ label_end_of_npqs: ;
+    vsip_finalize((void*)0);
+ #endif
+    MPI_Finalize();
+-   exit( 0 );
+ 
+    return( 0 );
+ /*
+diff --git a/testing/ptest/HPL_pdtest.c b/testing/ptest/HPL_pdtest.c
+index 9039693..bc4425a 100644
+--- a/testing/ptest/HPL_pdtest.c
++++ b/testing/ptest/HPL_pdtest.c
+@@ -49,6 +49,20 @@
+  */
+ #include "hpl.h"
+ 
++#if SMPI_OPTIMIZATION_LEVEL >= 3
++#pragma message "[SMPI] Using shared malloc/free."
++#define smpi_malloc SMPI_SHARED_MALLOC
++#define smpi_free SMPI_SHARED_FREE
++#else
++#pragma message "[SMPI] Using standard malloc/free."
++#define smpi_malloc malloc
++#define smpi_free free
++#endif
++
++#if SMPI_OPTIMIZATION_LEVEL <= 1
++#define SMPI_DO_INITIALIZATION_VERIFICATION
++#endif
++
+ #ifdef STDC_HEADERS
+ void HPL_pdtest
+ (
+@@ -161,7 +175,7 @@ void HPL_pdtest
+ /*
+  * Allocate dynamic memory
+  */
+-   vptr = (void*)malloc( ( (size_t)(ALGO->align) + 
++   vptr = (void*)smpi_malloc( ( (size_t)(ALGO->align) + 
+                            (size_t)(mat.ld+1) * (size_t)(mat.nq) ) *
+                          sizeof(double) );
+    info[0] = (vptr == NULL); info[1] = myrow; info[2] = mycol;
+@@ -182,7 +196,9 @@ void HPL_pdtest
+    mat.A  = (double *)HPL_PTR( vptr,
+                                ((size_t)(ALGO->align) * sizeof(double) ) );
+    mat.X  = Mptr( mat.A, 0, mat.nq, mat.ld );
++#ifdef SMPI_DO_INITIALIZATION_VERIFICATION
+    HPL_pdmatgen( GRID, N, N+1, NB, mat.A, mat.ld, HPL_ISEED );
++#endif
+ #ifdef HPL_CALL_VSIPL
+    mat.block = vsip_blockbind_d( (vsip_scalar_d *)(mat.A),
+                                  (vsip_length)(mat.ld * mat.nq),
+@@ -315,11 +331,17 @@ void HPL_pdtest
+                       "========================================" );
+    }
+ #endif
++
++#ifndef SMPI_DO_INITIALIZATION_VERIFICATION
++    if(vptr)
++        smpi_free(vptr);
++    return;
++#endif
+ /*
+  * Quick return, if I am not interested in checking the computations
+  */
+    if( TEST->thrsh <= HPL_rzero )
+-   { (TEST->kpass)++; if( vptr ) free( vptr ); return; }
++   { (TEST->kpass)++; if( vptr ) smpi_free( vptr ); return; }
+ /*
+  * Check info returned by solve
+  */
+@@ -329,7 +351,7 @@ void HPL_pdtest
+          HPL_pwarn( TEST->outfp, __LINE__, "HPL_pdtest", "%s %d, %s", 
+                     "Error code returned by solve is", mat.info, "skip" );
+       (TEST->kskip)++;
+-      if( vptr ) free( vptr ); return;
++      if( vptr ) smpi_free( vptr ); return;
+    }
+ /*
+  * Check computation, re-generate [ A | b ], compute norm 1 and inf of A and x,
+@@ -406,6 +428,7 @@ void HPL_pdtest
+ 
+    if( ( myrow == 0 ) && ( mycol == 0 ) )
+    {
++#if SMPI_OPTIMIZATION_LEVEL == 0 // there is a buffer overflow with level==1, no idea why
+       HPL_fprintf( TEST->outfp, "%s%s\n",
+                    "----------------------------------------",
+                    "----------------------------------------" );
+@@ -413,7 +436,7 @@ void HPL_pdtest
+          "||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)= ", resid1,
+          " ...... ", ( resid1 < TEST->thrsh ? "PASSED" : "FAILED" ) );
+ 
+-      if( resid1 >= TEST->thrsh ) 
++      if( 1 || resid1 >= TEST->thrsh ) 
+       {
+          HPL_fprintf( TEST->outfp, "%s%18.6f\n",
+          "||Ax-b||_oo  . . . . . . . . . . . . . . . . . = ", resid0 );
+@@ -428,8 +451,9 @@ void HPL_pdtest
+          HPL_fprintf( TEST->outfp, "%s%18.6f\n",
+          "||b||_oo . . . . . . . . . . . . . . . . . . . = ", BnormI );
+       }
++#endif
+    }
+-   if( vptr ) free( vptr );
++   if( vptr ) smpi_free( vptr );
+ /*
+  * End of HPL_pdtest
+  */

@@ -1,0 +1,33 @@
+diff --git a/AlignedAllocator.h b/AlignedAllocator.h
+index 995088f..a2cdf06 100644
+--- a/AlignedAllocator.h
++++ b/AlignedAllocator.h
+@@ -57,7 +57,7 @@
+ 
+ #include <stddef.h>
+ #include <stdlib.h>
+-
++#include "smpi.h"
+ #include <new>
+ 
+ namespace hacc {
+@@ -101,17 +101,12 @@ public:
+   pointer allocate(size_type n,
+                    const void * /*hint*/ = 0)
+   {
+-    pointer p;
+-    if (posix_memalign((void **) &p, N, n*sizeof(T)) != 0) {
+-      throw std::bad_alloc();
+-    }
+-
+-    return p;
++    return (pointer)SMPI_SHARED_MALLOC(n*sizeof(T));
+   }
+ 
+   void deallocate(pointer p, size_type n)
+   {
+-    free((void *) p);
++    SMPI_SHARED_FREE(p);
+   }
+ };
+ } // namespace hacc

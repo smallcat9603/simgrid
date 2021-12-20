@@ -1,0 +1,197 @@
+* Preparing source code
+#+BEGIN_SRC sh :tangle bin/CodeVault_PreExec.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/
+cd Benchmarks
+echo "Checkout or update the git containing the source code"
+if [ -e CodeVault ] ; then
+   cd CodeVault ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://gitlab.com/PRACE-4IP/CodeVault.git
+fi
+
+ #+END_SRC
+
+* Apps
+** Monte-carlo 
+#+BEGIN_SRC sh :tangle bin/CodeVault_MCM.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+cd Benchmarks/CodeVault/hpc_kernel_samples/monte_carlo_methods
+echo "Compile them"
+mkdir -p build
+cd build/
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx  ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run them all"
+echo "Integral-basic tests"
+smpirun -np 6 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./integral_basic/7_montecarlo_integral1d_mpi 100
+smpirun -np 6 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./integral_basic/7_montecarlo_integral1d_serial 100
+
+echo "Pi tests"
+smpirun -np 6 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./pi/7_montecarlo_pi_mpi 10 100
+
+echo "Prng tests"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./prng/7_montecarlo_prng_mpi 10 100 --cfg=smpi/host-speed:10
+
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+ #+END_SRC
+
+** N-Body methods
+*** Dynamic sparse data exchange
+#+BEGIN_SRC sh :tangle bin/CodeVault_DynSparse.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+cd Benchmarks/CodeVault/hpc_kernel_samples/n-body_methods/dynamic_sparse_data_exchange/
+
+echo "Compile it"
+mkdir -p build
+cd build/
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx  ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 6 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./4_nbody_dsde
+
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+
+ #+END_SRC
+
+** Parallel_IO
+**** Brief description 
+This code demonstrate the basic usage of MPI parallel I/O.
+**** Build and run 
+#+BEGIN_SRC sh :tangle bin/CodeVault_parallelio.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+cd Benchmarks/CodeVault/hpc_kernel_samples/parallel_io/basicMPIIO/
+
+echo "Compile it"
+if [ -e build ] ; then
+  rm -rf build
+fi
+mkdir build
+cd build
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx  ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt -platform $PLATFORMDIR/cluster_storage.xml --cfg=smpi/host-speed:100 ./8_io_basic_mpi_io -f=/builds/test.dat
+
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+
+#+END_SRC
+
+** Read2shmem
+**** Brief description 
+This code demonstrates:
+
+ * how to **read a large data structure** from disk using **collective MPI I/O** and
+ * how to **save memory** by using **MPI shared memory windows**.
+**** Build and run 
+#+BEGIN_SRC sh :tangle bin/CodeVault_read2shmem.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+cd Benchmarks/CodeVault/hpc_kernel_samples/parallel_io/read2shmem/
+
+echo "Compile it"
+if [ -e build ] ; then
+  rm -rf build
+fi
+mkdir build
+cd build
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx  ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt -platform $PLATFORMDIR/cluster_storage.xml --cfg=smpi/host-speed:100 --cfg=smpi/pedantic:off ./8_io_read2shmem /builds/test.dat
+
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+
+#+END_SRC
+
+#+BEGIN_SRC sh :tangle bin/CodeVault_bhtree_mpi.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+cd Benchmarks/CodeVault/hpc_kernel_samples/n-body_methods/bhtree_mpi/
+
+echo "Compile it"
+if [ -e build ] ; then
+  rm -rf build
+fi
+mkdir build
+cd build
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx  ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./4_nbody_bhtree_mpi ../src/data/tab8096.dat
+
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+#+END_SRC
+
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

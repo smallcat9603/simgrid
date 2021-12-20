@@ -1,0 +1,42 @@
+Index: transpose/transpose.cc
+===================================================================
+--- transpose.orig/transpose.cc
++++ transpose/transpose.cc
+@@ -71,8 +71,8 @@ int main(int argc, char *argv[]) {
+     //shm_malloc((void **)(&GO_MBLOCK), shmid);
+     if (icpu == 0) fprintf(stderr, "Shared memory seen from virtual MPI: %p\nMPI_PROC_NULL=%d\n", GO_MBLOCK, MPI_PROC_NULL);
+ #else
+-    //GO_MBLOCK = (char *)malloc(sizeof(struct t_config) + sizeof(struct t_domain) * ncpu * 2);
+-    shmc((void **)(&GO_MBLOCK), sizeof(struct t_config) + sizeof(struct t_domain) * ncpu * 2 + sizeof(struct t_stat) * ncpu, 0);
++    GO_MBLOCK = (char *)SMPI_SHARED_MALLOC(sizeof(struct t_config) + sizeof(struct t_domain) * ncpu * 2);
++    // shmc((void **)(&GO_MBLOCK), sizeof(struct t_config) + sizeof(struct t_domain) * ncpu * 2 + sizeof(struct t_stat) * ncpu, 0);
+ #endif
+ 
+     /***************************************************************************
+@@ -185,7 +185,7 @@ for (nx = 1800; nx <= 7200; nx += 1800)
+ #else
+     double *dblock;
+     if (dm_y->mcube * 2 + dm_x->mcube * 2 > 0) {
+-        dblock = (double *)malloc(sizeof(double) * (dm_y->mcube * 2 + dm_x->mcube * 2));
++        dblock = (double *)SMPI_SHARED_MALLOC(sizeof(double) * (dm_y->mcube * 2 + dm_x->mcube * 2));
+         // for partition in xz
+         fldy = dblock;
+         fldy_y = dblock + dm_y->mcube;
+@@ -347,7 +347,7 @@ for (nx = 1800; nx <= 7200; nx += 1800)
+     fldy = fldy_y = fldx = fldx_x = NULL;
+ #else
+     fldy = fldy_y = fldx = fldx_x = NULL;
+-    if (dm_y->mcube * 2+ dm_x->mcube * 2 > 0) free(dblock);
++    if (dm_y->mcube * 2+ dm_x->mcube * 2 > 0) SMPI_SHARED_FREE(dblock);
+ #endif
+     config = NULL;
+     dm_y = dm_x = NULL;
+@@ -355,7 +355,7 @@ for (nx = 1800; nx <= 7200; nx += 1800)
+ #if defined(_SHM_)
+     //shm_free((void **)(&GO_MBLOCK));
+ #else
+-    shmd((void **)(&GO_MBLOCK), sizeof(struct t_config) + sizeof(struct t_domain) * ncpu * 2 + sizeof(struct t_stat) * ncpu, 0);
++    SMPI_SHARED_FREE((void **)(&GO_MBLOCK));
+ #endif
+ 
+ #if defined(_COMM_)

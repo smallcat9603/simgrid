@@ -1,0 +1,13 @@
+Index: src/initMC.cc
+===================================================================
+--- src.orig/initMC.cc
++++ src/initMC.cc
+@@ -254,6 +254,8 @@ namespace
+       mpiComm_rank(MPI_COMM_WORLD, &myRank);
+       mpiComm_size(MPI_COMM_WORLD, &nRanks);
+       
++      srand48(params.simulationParams.seed);
++      
+       int nDomainsPerRank = 1; // SAD set this to 1 for some types of tests
+       if( xDom == 0 && yDom == 0 && zDom == 0 )
+          if (nRanks == 1)

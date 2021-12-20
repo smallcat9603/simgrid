@@ -1,0 +1,51 @@
+Index: kokkos/Makefile
+===================================================================
+--- kokkos.orig/Makefile
++++ kokkos/Makefile
+@@ -1,30 +1,24 @@
+ KOKKOS_PATH = ${HOME}/kokkos
+-KOKKOS_DEVICES=OpenMP
++KOKKOS_DEVICES=#OpenMP
+ 
+ default: build
+ 	echo "Start Build"
+ 
+-ifneq (,$(findstring Cuda,$(KOKKOS_DEVICES)))
+-CXX = ${KOKKOS_PATH}/config/nvcc_wrapper
+-EXE = miniAero.cuda
+-KOKKOS_ARCH = "SNB,Kepler35"
+-KOKKOS_CUDA_OPTIONS=enable_lambda
+-else
+-CXX = g++
+-EXE = miniAero.host
+-KOKKOS_ARCH = "SNB"
+-endif
+-CXXFLAGS = -O3 -g -DATOMICS_FLUX
++CXX = smpicxx
++EXE = miniAero
++
++CXXFLAGS = -O3 -g -DWITH_MPI=1 -DATOMICS_FLUX -DNDEBUG -fPIC -DSMPI_NO_OVERRIDE_MALLOC
+ LINK = ${CXX}
+ LINKFLAGS =  
+ 
++KOKKOS_CUDA_OPTIONS=enable_lambda
+ DEPFLAGS = -M
+ 
+ SRC = $(wildcard *.C)
+ OBJ = $(SRC:.C=.o)
+ LIB =
+ 
+-CXXFLAGS += -Isrc
++CXXFLAGS += -Isrc -fPIC
+ include $(KOKKOS_PATH)/Makefile.kokkos
+ 
+ build: $(EXE)
+@@ -37,7 +31,7 @@ clean: kokkos-clean
+ 
+ test: $(EXE)
+ 	cd tests; \
+-	./run_tests.sh ../$(EXE)
++	./run_tests.sh ../$(EXE) SMPI
+ 
+ # Compilation rules
+ 

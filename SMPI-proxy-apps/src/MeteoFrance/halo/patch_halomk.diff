@@ -1,0 +1,17 @@
+Index: halo/halo.mk
+===================================================================
+--- halo.orig/halo.mk
++++ halo/halo.mk
+@@ -4,9 +4,9 @@ SRC := shm.cc mpp.cc utils.cc halo.cc
+ COMM := _none_
+ ALGO := _ISENDIRECV_
+ 
+-CXX := sst++
+-CC := sstcc
+-CXXFLAGS := --std=c++11 -fPIC -D_CELL_ -D$(COMM) -D$(ALGO) -D_SHM_ -D_EXTERNAL_ -D_NOMEM_ #-D_COMPUTATION_ -D_OUTPUT_
++CXX := smpicxx
++CC := smpicc
++CXXFLAGS := --std=c++11 -fPIC -D_CELL_ -D$(COMM) -D$(ALGO) -D_EXTERNAL_ -D_NOMEM_ -D_COMPUTATION_ -D_OUTPUT_ 
+ #CXXFLAGS := --std=c++11 -fPIC -D_CELL_ -D$(COMM) -D$(ALGO) -D_SHM_ -D_EXTERNAL_ -D_COMPUTATION_ -D_OUTPUT_
+ CPPFLAGS := -I. -I/usr/include/libxml2 -I$(BOOST)/include
+ LIBDIR :=

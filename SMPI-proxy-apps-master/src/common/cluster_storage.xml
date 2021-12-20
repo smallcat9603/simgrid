@@ -1,0 +1,955 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4">
+<AS id="AS0" routing="Full">
+  <host id="host-0.hawaii.edu" speed="10Gf">
+    <disk id="NFS" read_bw="10GBps" write_bw="5GBps">
+      <prop id="size" value="5000GB"/>
+      <prop id="mount" value="/builds"/>
+      <prop id="content" value="content.txt"/>
+    </disk>
+  </host>
+  <host id="host-1.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-10.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-11.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-12.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-13.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-14.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-15.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-2.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-3.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-4.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-5.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-6.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-7.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-8.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <host id="host-9.hawaii.edu" speed="10Gf">
+     <prop id="remote_disk" value="/builds:NFS:host-0.hawaii.edu"/>
+  </host>
+  <router id="host-my_cluster_router.hawaii.edu"/>
+  <link id="my_cluster_link_0_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_0_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_10_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_10_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_11_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_11_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_12_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_12_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_13_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_13_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_14_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_14_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_15_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_15_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_1_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_1_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_2_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_2_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_3_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_3_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_4_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_4_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_5_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_5_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_6_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_6_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_7_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_7_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_8_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_8_UP" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_9_DOWN" bandwidth="225Mbps" latency="5us"/>
+  <link id="my_cluster_link_9_UP" bandwidth="225Mbps" latency="5us"/>
+  <route src="host-0.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-0.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_UP"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-1.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_UP"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-10.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_UP"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-11.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_UP"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-12.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_UP"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-13.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_UP"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-14.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_UP"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-15.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_UP"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-2.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_UP"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-3.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_UP"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-4.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_UP"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-5.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_UP"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-6.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_UP"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-7.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_UP"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-8.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_UP"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/><link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+  <route src="host-9.hawaii.edu" dst="host-my_cluster_router.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_UP"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-0.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_0_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-1.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_1_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-10.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_10_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-11.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_11_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-12.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_12_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-13.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_13_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-14.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_14_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-15.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_15_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-2.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_2_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-3.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_3_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-4.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_4_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-5.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_5_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-6.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_6_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-7.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_7_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-8.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_8_DOWN"/>
+  </route>
+  <route src="host-my_cluster_router.hawaii.edu" dst="host-9.hawaii.edu" symmetrical="no">
+  <link_ctn id="my_cluster_link_9_DOWN"/>
+  </route>
+</AS>
+</platform>

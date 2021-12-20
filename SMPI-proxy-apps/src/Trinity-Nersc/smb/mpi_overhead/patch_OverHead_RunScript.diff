@@ -1,0 +1,31 @@
+Index: mpi_overhead/run_script
+===================================================================
+--- mpi_overhead.orig/run_script
++++ mpi_overhead/run_script
+@@ -10,15 +10,15 @@
+ #PBS -l mppwidth=48,walltime=0:30:00
+-cd $PBS_O_WORKDIR
++
+ 
+-#mpirun="mpirun -npernode 1"
+-mpirun="aprun -cc cpu -ss -N 1 -q"
++mpirun="smpirun" # -npernode 1"
++# mpirun="aprun -cc cpu -ss -N 1 -q"
+ 
+ min_msgsize=0
+ max_msgsize=`expr 4 \* 1024 \* 1024`
+ msgsize=$min_msgsize
+ while [ $msgsize -le $max_msgsize ]
+ do
+-  command="$mpirun -n 2 ./mpi_overhead --msgsize $msgsize $1"
++  command="$mpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatization:yes ./mpi_overhead --msgsize $msgsize $1"
+   if [ $msgsize -gt $min_msgsize ]; then
+     command="$command --nohdr"
+   fi
+@@ -29,4 +29,4 @@ do
+   else
+     msgsize=`expr $msgsize \* 2`
+   fi
+-done
++done
+\ No newline at end of file

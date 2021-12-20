@@ -1,0 +1,136 @@
+pipeline {
+    agent {label 'pipeline'}
+    stages {
+        stage('Proxy-Apps') {
+            steps {
+                //ircNotify notifyOnStart:true
+                //mattermostSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                git 'https://framagit.org/simgrid/SMPI-Proxy-Apps.git'
+                generateFiles()
+            }
+        }
+    }
+    post { 
+        failure { 
+            emailext body: '', recipientProviders: [culprits(), buildUser()], subject: 'SMPI-Proxy-Apps Pipeline failed !', to: 'adegomme@gmail.com'            
+            mattermostSend (color: "danger", message: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Link to build>)")
+        }
+        success {
+            mattermostSend (color: "good", message: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Link to build>)")
+        }
+        unstable {
+            mattermostSend (color: "warning", message: "Build UNSTABLE: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Link to build>)")
+        }
+        //always {
+        //    ircNotify()
+        //}
+    }
+}
+
+class Chunk {
+    String name
+    Integer min
+    Integer max
+}
+def generateFiles(){
+    def orgfiles = findFiles(glob: '**/*.org', excludes: '**/MeteoFrance.org')
+
+    def chunks=[];
+    for (f in orgfiles){
+        def file = readFile f.name
+        def chunksize = 10
+        def linecount = file.readLines().count{ it.contains("BEGIN_SRC") }
+        for(int i=0; i*chunksize < linecount; i+=1){
+            chunks.add(new Chunk(name:f.name, min:i*chunksize, max:(i+1)*chunksize))
+        }
+    }
+    /*try to reverse to see if jenkins picks Trinity first this way*/
+    def stepsForParallel = chunks.reverse().collectEntries {
+        ["${it.name}-${it.min}" : transformIntoStep(it)]
+    }
+    /*def stepsForParallel = chunks.collect {
+          transformIntoStep(it)
+    }*/
+    parallel stepsForParallel
+}
+
+def transformIntoStep(input) {
+    return {
+        node('proxy-apps'){
+            environment{
+                SIMGRID_PATH='/builds/simgrid_install'
+                CLEANUP_PROXY_APPS='yes'
+            }
+            stage("generating for \"${input.name}\""){
+                timestamps{
+                    git 'https://framagit.org/simgrid/SMPI-Proxy-Apps.git'
+                    sh """
+                       cmake -Dbuild_mode=SMPI .;
+                       rm -rf tests
+                       mkdir tests;
+                       rm -rf bin;
+                       mkdir bin;
+                       emacs --batch --eval \"(require 'org)\" --eval '(org-babel-tangle-file \"${input.name}\")';
+                       """
+                    sh "ls bin/*.sh | sed 's|bin/\\(.*\\)\\.sh|\\1|' > testlist_${input.name}"
+                }
+            }
+            try{
+                stage(input.name){
+                    timestamps{
+                        def file = readFile "testlist_${input.name}"
+                        def lines = file.readLines()
+                        def index = 0
+                        for (f in lines) {
+                            //First execute PreExec if present, as ordering by date does not work (timestamps too close)
+                            //It's also useful for chunks of jobs on different nodes.
+                            if (f.contains("PreExec")){
+                                stage("Test ${f}") {
+                                sh "bin/${f}.sh"
+                                }
+                            }
+                        }
+                        for (f in lines) {
+                            if((index >= input.min && index < input.max) && !(f.contains("PreExec"))){
+                                def TestBadge = addEmbeddableBadgeConfiguration(id: "${f}", 
+                                                    subject: "Test", 
+                                                    link: "https://ci.inria.fr/simgrid/job/SMPI-proxy-apps-pipeline/lastCompletedBuild/testReport/(root)/projectroot/${f}", 
+                                                    status: "failing" )
+                                stage("Test ${f} on ${NODE_NAME}") {
+                                    try{
+                                        def ret = sh(returnStatus: true, script: "ctest -T test -R \"^${f}\$\" --no-compress-output --test-output-size-failed 1000000")
+                                        if(ret==0){
+                                          TestBadge.setStatus("passing")
+                                        }
+                                    } catch(e) {
+                                    } finally {
+                                        sh """
+                                            mv Testing/\$( head -n 1 < Testing/TAG )/Test.xml ./tests/\"${f}\".xml
+                                            #xsltproc ./src/ctest2junit.xsl Testing/\$( head -n 1 < Testing/TAG )/Test.xml > ./tests/\"${f}\".xml
+                                            rm -rf Testing
+                                        """
+                                    }
+                                }
+                            }
+                            index++
+                        }
+                    }
+                }
+            } catch (e) {
+                sh "rm -rf testlist_*"
+                sh "rm -rf tests"
+                throw e
+            } finally {
+                step([$class: 'XUnitPublisher', 
+                        thresholds: [
+                                [$class: 'SkippedThreshold', failureThreshold: '0'],
+                                [$class: 'FailedThreshold', unstableThreshold: '0']],
+                        tools: [[$class: 'CTestType', pattern: 'tests/*.xml']]])
+                step([$class: 'ArtifactArchiver', artifacts: 'bin/*.sh', excludes: null])
+                sh "rm -rf testlist_\"${input.name}\""
+                sh "rm -rf tests"
+            }
+        }
+    }
+}
+

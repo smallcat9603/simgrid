@@ -1,0 +1,18 @@
+diff --git a/src/Makefile b/src/Makefile
+index e763ae9..ba3ebc3 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -16,11 +16,11 @@ default: build
+ 
+ 
+ EXE = ExaMiniMD
+-CXXFLAGS = -O3 -g
++CXXFLAGS = -O3 -g -DSMPI_NO_OVERRIDE_MALLOC
+ LINKFLAGS = -O3 -g
+ 
+ ifeq ($(MPI), 1)
+-  CXX = mpicxx
++  CXX = smpicxx
+   CXXFLAGS += -DEXAMINIMD_ENABLE_MPI
+ else
+   ifneq (,$(findstring Cuda,$(KOKKOS_DEVICES)))

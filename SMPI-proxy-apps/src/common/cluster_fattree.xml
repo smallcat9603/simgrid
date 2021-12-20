@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='ASCII'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+<config id="General">
+ <prop id="contexts/stack-size" value="1280000"/>
+ <prop id="contexts/factory" value="raw"/>
+ <prop id="surf/precision" value="1e-9"/>
+ <prop id="tracing/precision" value="9"/>
+ <prop id="smpi/os" value="0:3.79946267082783e-06:1.09809596167633e-10;1420:4.06752467953734e-06:8.98782555257323e-11;33500:6.01204627458251e-06:7.10122202865045e-11;65536:7.28270630967833e-05:1.9683266729216e-10;320000:0:0"/>
+ <prop id="smpi/ois" value="0:3.65848336553355e-06:1.33280621516301e-10;1420:3.83673729379869e-06:7.84867337035856e-11;33500:5.57232433176236e-06:6.5668893954931e-11;65536:4.17803219267394e-06:2.37460347640595e-12;320000:4.70677307448713e-06:3.38065421824938e-13"/>
+ <prop id="smpi/or" value="0:3.51809764924934e-06:3.01847204118237e-10;1420:8.16124874852713e-06:2.66840481979518e-10;33500:1.49347740713389e-05:1.97645004617501e-10;65536:5.88893263987424e-05:1.29160163208845e-09;320000:0:0"/>
+ <prop id="smpi/bw-factor" value="0:0.0489825651012801;1420:0.824385608826111;33500:0.600278012183156;65536:1;320000:0.536759617074721"/>
+ <prop id="smpi/lat-factor" value="0:1;1420:2.16408517748122;33500:1.76905573216394;65536:2.9114462429055;320000:2.5981998109037"/>
+ <prop id="smpi/async-small-thresh" value="65536"/>
+ <prop id="smpi/send-is-detached-thresh" value="320000"/>
+ <prop id="smpi/wtime" value="4.195637e-08"/>
+ <prop id="smpi/iprobe" value="3.49479752916953e-07"/>
+ <prop id="smpi/test" value="2.46327639751553e-07"/>
+ <prop id="smpi/display-timing" value="yes"/>
+ <prop id="smpi/host-speed" value="20000"/>
+ <prop id="smpi/init" value="0.1"/>
+</config>
+
+<AS id="AS0" routing="Full">
+  <cluster id="cluster0" prefix="host-" suffix=".hawaii.edu" radical="0-255" speed="20000" bw="10Gbps" lat="2.4E-5s" loopback_bw="5120MiBps" loopback_lat="1.5E-9s" topology="FAT_TREE" topo_parameters="2;16,16;1,2;1,1" core="12">
+    <prop id="watt_per_state" value="115:120.75:214.75,94.62:119.38:207,94.38:118.12:198.94,94.5:116.88:190.62,94.44:115.62:183.62,94.5:114.62:177,94.62:113.5:170.12,94.62:112.25:163.44,94.62:111.5:157.75,94.62:110.5:152.12,94.62:109.62:146.815,94.62:108.75:142.12"/>
+    <prop id="watt_off" value="10"/>
+  </cluster>
+</AS>
+</platform>

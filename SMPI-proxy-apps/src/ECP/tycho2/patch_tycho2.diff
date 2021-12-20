@@ -1,0 +1,18 @@
+diff --git a/src/TychoMeshIO.cc b/src/TychoMeshIO.cc
+index 42b95a2..52595ae 100644
+--- a/src/TychoMeshIO.cc
++++ b/src/TychoMeshIO.cc
+@@ -158,8 +158,11 @@ void TychoMesh::readTychoMesh(const std::string &filename)
+     
+     
+     // Read mesh
+-    ParallelMesh::readInParallel(filename, partData);
+-    
++    //ParallelMesh::readInParallel(filename, partData);
++    //Read mesh - serial version for simulation.
++    ParallelMesh mesh;
++    mesh.read(filename);
++    partData=mesh.c_partitionData[Comm::rank()];
+     
+     // g_nCells, c_nNodes
+     g_nCells = partData.numCells;

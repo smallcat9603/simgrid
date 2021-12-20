@@ -1,0 +1,13 @@
+Index: src_processmesh/Makefile
+===================================================================
+--- src_processmesh.orig/Makefile
++++ src_processmesh/Makefile
+@@ -11,7 +11,7 @@ COMPILER=$(shell  \
+   )
+ 
+ EXTFLAGS=-DUSEMETIS
+-METISLIB=../metis/libmetis.a
++METISLIB= -lmetis
+ 
+ # Initialization of null variables
+ FF=echo

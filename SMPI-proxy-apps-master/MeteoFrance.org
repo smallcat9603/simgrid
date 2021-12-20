@@ -1,0 +1,98 @@
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/MeteoFrance_getcode.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+rm -rf Benchmarks/MeteoFrance
+mkdir -p Benchmarks/MeteoFrance/
+cd Benchmarks/MeteoFrance/
+echo "Download the source code"
+test -e code-source.tar.gz || curl -o code-source.tar.gz -Lkf https://zenodo.org/record/1066934/files/code.tgz?download=1
+
+echo "Unpack the code"
+mkdir code && tar -xvf code-source.tar.gz -C code --strip-components 1
+echo "Install the modified sources"
+cd code/
+PLATFORMDIR=$WORKSPACE/src/common
+
+#+END_SRC
+
+** GCR
+*** Brief description 
+See https://www.geosci-model-dev-discuss.net/gmd-2017-301/gmd-2017-301.pdf
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/MeteoFrance_GCR.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Install the modified sources"
+cd Benchmarks/MeteoFrance/code/gcr/
+
+smpicxx allreduce.cc -o allreduce
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./allreduce 2 3
+#+END_SRC
+
+** Halo
+*** Brief description 
+See https://www.geosci-model-dev-discuss.net/gmd-2017-301/gmd-2017-301.pdf
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/MeteoFrance_Halo.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Install the modified sources"
+cd Benchmarks/MeteoFrance/code/halo/
+patch -p1 < $WORKSPACE/src/MeteoFrance/halo/patch_halomk.diff
+patch -p1 < $WORKSPACE/src/MeteoFrance/halo/patch_halocc.diff
+patch -p1 < $WORKSPACE/src/MeteoFrance/patch_shm_mgrmk.diff
+
+echo "Compile it"
+make -f halo.mk
+make -f shm_mgr.mk
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./halo.exe
+#+END_SRC
+
+** Transpose
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/MeteoFrance_transpose.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Install the modified sources"
+cd Benchmarks/MeteoFrance/code/transpose/
+patch -p1 < $WORKSPACE/src/MeteoFrance/transpose/patch_transposemk.diff
+patch -p1 < $WORKSPACE/src/MeteoFrance/transpose/patch_transposecc.diff
+patch -p1 < $WORKSPACE/src/MeteoFrance/patch_shm_mgrmk.diff
+
+echo "Compile it"
+make -f transpose.mk
+make -f shm_mgr.mk
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./transpose.exe
+#+END_SRC
+
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

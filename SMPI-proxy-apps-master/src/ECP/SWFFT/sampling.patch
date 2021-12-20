@@ -1,0 +1,112 @@
+diff --git a/distribution.c b/distribution.c
+index b16e22a..3741206 100644
+--- a/distribution.c
++++ b/distribution.c
+@@ -59,7 +59,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdint.h>
+-
++#include <smpi.h>
+ #include "distribution.h"
+ 
+ #ifndef USE_SLAB_WORKAROUND
+@@ -1647,7 +1647,8 @@ static void redistribute_2_and_3(const complex_t *a,
+     if(direction == REDISTRIBUTE_2_TO_3){	
+       int64_t ch_indx=0;
+       int dims_size=pencil_dims[0]*pencil_dims[1]*pencil_dims[2];
+-      for(int i0=d2_array_start[0];i0<d2_array_start[0]+local_sizes[0];i0++){
++      SMPI_SAMPLE_GLOBAL(int i0=d2_array_start[0],i0<d2_array_start[0]+local_sizes[0],i0++, 10, 0.005){
++      //for(int i0=d2_array_start[0];i0<d2_array_start[0]+local_sizes[0];i0++){
+ 	for(int i1=d2_array_start[1];i1<d2_array_start[1]+local_sizes[1];i1++){
+ 	  for(int i2=d2_array_start[2];i2<d2_array_start[2]+local_sizes[2];i2++){
+ 	    int64_t local_indx=pencil_dims[2]*(pencil_dims[1]*i0+i1) + i2;
+@@ -1745,7 +1746,9 @@ static void redistribute_2_and_3(const complex_t *a,
+       if((self == me) && print_me)fprintf(stderr, "%d, %d, MAKE 3D Chunk...\n", self,d3_peer);
+       switch(z_dim){
+ 	case 0:
+-	  for(int i2=d3_array_start[y_dim];i2>d3_array_start[y_dim]-subsizes[y_dim];i2--){//perhaps y_dim
++	{
++	  SMPI_SAMPLE_GLOBAL(int i2=d3_array_start[y_dim],i2>d3_array_start[y_dim]-subsizes[y_dim],i2--,10,0.005){//perhaps y_dim
++	  //for(int i2=d3_array_start[y_dim];i2>d3_array_start[y_dim]-subsizes[y_dim];i2--){//perhaps y_dim
+ 	    for(int i1=d3_array_start[x_dim];i1<d3_array_start[x_dim]+subsizes[x_dim];i1++){//perhaps x_dim
+ 	      for(int i0=d3_array_start[z_dim];i0<d3_array_start[z_dim]+subsizes[z_dim];i0++){//perhaps z_dim
+ 		int64_t local_indx=d->process_topology_3.n[2]*(d->process_topology_3.n[1]*i0+i1) + i2;
+@@ -1756,9 +1759,12 @@ static void redistribute_2_and_3(const complex_t *a,
+ 	      }
+ 	    }
+ 	  }
++	  }
+ 	  break;
+ 	case 1:
+-	  for(int i0=d3_array_start[y_dim];i0<d3_array_start[y_dim]+subsizes[y_dim];i0++){
++	{
++	  SMPI_SAMPLE_GLOBAL(int i0=d3_array_start[y_dim],i0<d3_array_start[y_dim]+subsizes[y_dim],i0++, 10,0.005){
++/*	  for(int i0=d3_array_start[y_dim];i0<d3_array_start[y_dim]+subsizes[y_dim];i0++){*/
+ 	    for(int i2=d3_array_start[x_dim];i2>d3_array_start[x_dim]-subsizes[x_dim];i2--){
+ 	      for(int i1=d3_array_start[z_dim];i1<d3_array_start[z_dim]+subsizes[z_dim];i1++){
+ 		int64_t local_indx=d->process_topology_3.n[2]*(d->process_topology_3.n[1]*i0+i1) + i2;
+@@ -1769,10 +1775,12 @@ static void redistribute_2_and_3(const complex_t *a,
+ 	      }
+ 	    }
+ 	  }
+-	  
++	  }
+ 	  break;
+ 	case 2:
+-	  for(int i0=d3_array_start[x_dim];i0<d3_array_start[x_dim]+subsizes[x_dim];i0++){
++	{
++	  SMPI_SAMPLE_GLOBAL(int i0=d3_array_start[x_dim],i0<d3_array_start[x_dim]+subsizes[x_dim],i0++, 10,0.005){
++/*	  for(int i0=d3_array_start[x_dim];i0<d3_array_start[x_dim]+subsizes[x_dim];i0++){*/
+ 	    for(int i1=d3_array_start[y_dim];i1<d3_array_start[y_dim]+subsizes[y_dim];i1++){
+ 	      for(int i2=d3_array_start[z_dim];i2<d3_array_start[z_dim]+subsizes[z_dim];i2++){
+ 		int64_t local_indx=d->process_topology_3.n[2]*(d->process_topology_3.n[1]*i0+i1) + i2;
+@@ -1783,7 +1791,7 @@ static void redistribute_2_and_3(const complex_t *a,
+ 	      }
+ 	    }
+ 	  }
+-	  
++	  }
+ 	  break;
+       }
+     }
+@@ -1866,7 +1874,8 @@ static void redistribute_2_and_3(const complex_t *a,
+       if(self==me && print_me)fprintf(stderr,"REAL SUBSIZES (%d,%d,%d)\n",subsizes[x_dim],subsizes[y_dim],subsizes[z_dim]);
+       if(self==me && print_me)fprintf(stderr,"PENCIL DIMENSION VS. local sizes (%d,%d,%d) vs (%d,%d,%d)\n",pencil_dims[0],pencil_dims[1],pencil_dims[2],local_sizes[0],local_sizes[1],local_sizes[2]);
+       if(self==me && print_me)fprintf(stderr,"DIM_2_ARRAY_START (%d,%d,%d) \n",d2_array_start[0],d2_array_start[1],d2_array_start[2]);
+-      for(int i0=d2_array_start[0];i0<d2_array_start[0]+local_sizes[0];i0++){
++      	  SMPI_SAMPLE_GLOBAL(int i0=d2_array_start[0],i0<d2_array_start[0]+local_sizes[0],i0++, 10,0.005){
++/*      for(int i0=d2_array_start[0];i0<d2_array_start[0]+local_sizes[0];i0++){*/
+ 	for(int i1=d2_array_start[1];i1<d2_array_start[1]+local_sizes[1];i1++){
+ 	  for(int i2=d2_array_start[2];i2<d2_array_start[2]+local_sizes[2];i2++){
+ 	    int64_t local_indx=pencil_dims[2]*(pencil_dims[1]*i0+i1) + i2;
+@@ -1901,7 +1910,8 @@ static void redistribute_2_and_3(const complex_t *a,
+       if(z_dim==0){
+ 	//fill the local array with the received chunk.
+ 	
+-	for(int i2=d3_array_start[y_dim];i2>d3_array_start[y_dim]-subsizes[y_dim];i2--){
++	SMPI_SAMPLE_GLOBAL(int i2=d3_array_start[y_dim],i2>d3_array_start[y_dim]-subsizes[y_dim],i2--, 100, 0.005){	
++/*	for(int i2=d3_array_start[y_dim];i2>d3_array_start[y_dim]-subsizes[y_dim];i2--){*/
+ 	  for(int i1=d3_array_start[x_dim];i1<d3_array_start[x_dim]+subsizes[x_dim];i1++){
+ 	    for(int i0=d3_array_start[z_dim];i0<d3_array_start[z_dim]+subsizes[z_dim];i0++){
+ 	      int64_t local_indx=d->process_topology_3.n[2]*(d->process_topology_3.n[1]*i0+i1) + i2;
+@@ -1916,7 +1926,8 @@ static void redistribute_2_and_3(const complex_t *a,
+ 	}
+       }
+       else if(z_dim==1){
+-	for(int i0=d3_array_start[y_dim];i0<d3_array_start[y_dim]+subsizes[y_dim];i0++){
++	SMPI_SAMPLE_GLOBAL(int i0=d3_array_start[y_dim],i0<d3_array_start[y_dim]+subsizes[y_dim],i0++, 100, 0.005){      
++/*	for(int i0=d3_array_start[y_dim];i0<d3_array_start[y_dim]+subsizes[y_dim];i0++){*/
+ 	  for(int i2=d3_array_start[x_dim];i2>d3_array_start[x_dim]-subsizes[x_dim];i2--){
+ 	    for(int i1=d3_array_start[z_dim];i1<d3_array_start[z_dim]+subsizes[z_dim];i1++){
+ 	      int64_t local_indx=d->process_topology_3.n[2]*(d->process_topology_3.n[1]*i0+i1) + i2;
+@@ -1932,7 +1943,8 @@ static void redistribute_2_and_3(const complex_t *a,
+ 	
+       }
+       else if(z_dim==2){
+-	for(int i0=d3_array_start[x_dim];i0<d3_array_start[x_dim]+subsizes[x_dim];i0++){
++	SMPI_SAMPLE_GLOBAL(int i0=d3_array_start[x_dim],i0<d3_array_start[x_dim]+subsizes[x_dim],i0++, 100, 0.005){      
++/*	for(int i0=d3_array_start[x_dim];i0<d3_array_start[x_dim]+subsizes[x_dim];i0++){*/
+ 	  for(int i1=d3_array_start[y_dim];i1<d3_array_start[y_dim]+subsizes[y_dim];i1++){
+ 	    for(int i2=d3_array_start[z_dim];i2<d3_array_start[z_dim]+subsizes[z_dim];i2++){
+ 	      int64_t local_indx=d->process_topology_3.n[2]*(d->process_topology_3.n[1]*i0+i1) + i2;

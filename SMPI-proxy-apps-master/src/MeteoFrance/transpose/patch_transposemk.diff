@@ -1,0 +1,19 @@
+Index: transpose/transpose.mk
+===================================================================
+--- transpose.orig/transpose.mk
++++ transpose/transpose.mk
+@@ -4,10 +4,10 @@ SRC := shm.cc mpp.cc utils.cc transpose.
+ COMM := _none_
+ ALGO := _RINGONE_
+ 
+-CXX := sst++
+-CC := sstcc
+-CXXFLAGS := --std=c++11 -fPIC -D_PACKING_ -D_NOPAD_ -D_CELL_ -D$(COMM) -D$(ALGO) -D_SHM_ -D_EXTERNAL_ -D_STAT_ -D_COMPUTATION_ -D_OUTPUT_
+-CXXFLAGS := --std=c++11 -fPIC -D_PACKING_ -D_NOPAD_ -D_CELL_ -D$(COMM) -D$(ALGO) -D_SHM_ -D_EXTERNAL_ -D_NOMEM_
++CXX := smpicxx
++CC := smpicc
++CXXFLAGS := --std=c++11 -fPIC -D_PACKING_ -D_NOPAD_ -D_CELL_ -D$(COMM) -D$(ALGO) -D_NOMEM_ -D_STAT_ -D_COMPUTATION_ -D_OUTPUT_
++# CXXFLAGS := --std=c++11 -fPIC -D_PACKING_ -D_NOPAD_ -D_CELL_ -D$(COMM) -D$(ALGO) -D_SHM_ -D_EXTERNAL_ -D_NOMEM_
+ CPPFLAGS := -I. -I/usr/include/libxml2 -I$(FFTW)/include -I$(BOOST)/include
+ LIBDIR :=
+ PREFIX :=

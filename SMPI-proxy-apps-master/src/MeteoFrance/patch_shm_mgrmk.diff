@@ -1,0 +1,15 @@
+Index: halo/shm_mgr.mk
+===================================================================
+--- halo.orig/shm_mgr.mk
++++ halo/shm_mgr.mk
+@@ -1,8 +1,8 @@
+ TARGET := shm_mgr.x
+ SRC := shm.cc mpp.cc utils.cc shm_mgr.cc
+ 
+-CXX :=    mpicxx
+-CC :=     mpicc
++CXX :=    smpicxx
++CC :=     smpicc
+ CXXFLAGS := -D_CELL_
+ CPPFLAGS := -I. -I/usr/include/libxml2 -I$(FFTW)/include
+ LIBDIR :=  

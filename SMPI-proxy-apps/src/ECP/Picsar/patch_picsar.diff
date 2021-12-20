@@ -1,0 +1,22 @@
+diff --git a/src/boundary_conditions/particle_boundaries.F90 b/src/boundary_conditions/particle_boundaries.F90
+index 7ef2eca7..049c54ba 100644
+--- a/src/boundary_conditions/particle_boundaries.F90
++++ b/src/boundary_conditions/particle_boundaries.F90
+@@ -2684,7 +2684,7 @@ DO is=1, nspecies! LOOP ON SPECIES
+   !curr=> species_parray(is)
+ 
+   !$OMP PARALLEL DO DEFAULT(NONE) SHARED(is, mpi_npart, comm, neighbour, nrecv_buf)   &
+-  !$OMP FIRSTPRIVATE(tag, status, stats, reqs, MPI_STATUSES_IGNORE) PRIVATE(ix, iy,   &
++  !$OMP FIRSTPRIVATE(tag, status, stats, reqs) PRIVATE(ix, iy,   &
+   !$OMP iz, k, ipx, ipy, ipz, dest, src, ib, ibs, errcode) COLLAPSE(3)                &
+   !$OMP SCHEDULE(runtime) NUM_THREADS(nthreads_loop2)
+ 
+@@ -2797,7 +2797,7 @@ IF (.FALSE.) THEN
+   ENDDO
+ 
+   !$OMP PARALLEL DO DEFAULT(NONE) SHARED(is, mpi_npart, npid, comm, neighbour,        &
+-  !$OMP nrecv_buf, nrecv_buf_tot, recvbuf_index, MPI_STATUSES_IGNORE, bufsend,        &
++  !$OMP nrecv_buf, nrecv_buf_tot, recvbuf_index, bufsend,        &
+   !$OMP mpidbl, recvbuf) FIRSTPRIVATE(tag, status, stats, reqs) PRIVATE(ix, iy, iz,   &
+   !$OMP k, j, ipx, ipy, ipz, dest, src, ib, ibs, errcode, typebuffer) COLLAPSE(3)     &
+   !$OMP SCHEDULE(runtime) NUM_THREADS(nthreads_loop2)

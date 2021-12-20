@@ -1,0 +1,1886 @@
+* Apps
+** CoMD
+*** Brief description 
+CoMD is a reference implementation of typical classical molecular dynamics algorithms and workloads.
+*** Build and run  
+#+BEGIN_SRC sh :tangle bin/ECP_CoMD.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+mkdir -p Benchmarks/ECP/ 
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e CoMD ] ; then
+   cd CoMD ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ECP-copa/CoMD.git
+fi
+
+echo "Install the modified sources"
+cd CoMD/src-mpi/
+cp Makefile.vanilla Makefile
+
+echo "Compile it" 
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+make CC=smpicc -j $NUMBER_OF_PROCESSORS
+cd ../examples/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ../bin/CoMD-mpi -e -i 4 -j 2 -k 1 -x 40 -y 40 -z 40
+cd ../src-mpi/
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** AMG
+*** Brief description 
+AMG is a parallel algebraic multigrid solver for linear systems arising from
+problems on unstructured grids.  The driver provided with AMG builds linear 
+systems for various 3-dimensional problems.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_AMG.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+mkdir -p Benchmarks/ECP/ 
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e AMG ] ; then
+   cd AMG ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/LLNL/AMG.git
+fi
+
+echo "Install the modified sources"
+cd AMG/
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+echo "Compile it" 
+make veryclean
+make CC=smpicc -j $NUMBER_OF_PROCESSORS
+PLATFORMDIR=$WORKSPACE/src/common
+cd test/
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./amg
+
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make veryclean
+fi
+
+ #+END_SRC
+
+** Sw4lite
+*** Brief description 
+Sw4lite is a bare bone version of SW4 (Github) intended for testing performance optimizations in a few important numerical kernels of SW4.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_sw4lite.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+mkdir -p Benchmarks/ECP/ 
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e sw4lite ] ; then
+   cd sw4lite ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/geodynamics/sw4lite.git
+fi
+
+echo "Install the modified sources"
+cp -f $WORKSPACE/src/ECP/sw4lite/pointsource.in ./sw4lite/tests/pointsource/
+cd sw4lite
+sed -i -e "s/\mpicxx/\smpicxx/g" Makefile
+sed -i -e "s/\mpic++/\smpicxx/g" Makefile
+sed -i -e "s/\mpif90/\smpiff/g" Makefile
+
+#This patch adds SMPI_SAMPLE_GLOBAL call for loop in src/rhs4sg_rev.C 
+#WARNING : this makes results false. Please read the doc and comment these out if not needed
+patch -p1 < $WORKSPACE/src/ECP/sw4lite/sampling.patch
+
+#This patch adds SMPI_SHARED_MALLOC calls in Sarrays
+#WARNING : this makes results false. Please read the doc and comment these out if not needed
+patch -p1 < $WORKSPACE/src/ECP/sw4lite/shared_alloc.patch
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make openmp=no ckernel=yes -j $NUMBER_OF_PROCESSORS
+PLATFORMDIR=$WORKSPACE/src/common
+cd optimize_c/
+
+smpirun -np 16 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./sw4lite ../tests/pointsource/pointsource.in
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** QuickSilver
+*** Brief description 
+Quicksilver is a proxy application that represents some elements of the Mercury workload by solving a simpliﬁed dynamic monte carlo particle transport problem.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_quicksilver.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+mkdir -p Benchmarks/ECP/ 
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e Quicksilver ] ; then
+   cd Quicksilver ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/LLNL/Quicksilver.git
+fi
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd Quicksilver/src/
+patch -p1 < $WORKSPACE/src/ECP/Quicksilver/patch_QSilver_initMC.diff
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CXX=smpicxx CXXFLAGS="-O2 -DHAVE_MPI"  -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./qs
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** SimpleMOC
+*** Brief description 
+The purpose of this mini-app is to demonstrate the performance characterterics and viability of the Method of Characteristics (MOC)
+for 3D neutron transport calculations in the context of full scale light water reactor simulation.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_SimpleMOC.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e SimpleMOC ] ; then
+   cd SimpleMOC ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ANL-CESAR/SimpleMOC.git
+fi
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd SimpleMOC/src/
+patch -p1 < $WORKSPACE/src/ECP/SimpleMOC/patch_SimpleMOC.diff
+cp $WORKSPACE/src/ECP/SimpleMOC/input.in ./
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./SimpleMOC -i input.in
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+ 
+** PENNANT
+*** Brief description 
+PENNANT is a mini-app intended for use in advanced architecture research.  It has data structures for manipulating 2-D unstructured
+finite element meshes containing arbitrary polygons.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_PENNANT.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e PENNANT ] ; then
+   cd PENNANT ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/lanl/PENNANT.git
+fi
+
+cd PENNANT/
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+patch -p1 < $WORKSPACE/src/ECP/PENNANT/patch_PennantMakefile.diff
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./build/pennant ./test/leblanc/leblanc.pnt
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** SWFFT
+*** Brief description 
+Fast Fourier transform which distributes data between ranks in a 3D cartesian grid communicator, and then re-distributed across three 2D pencil dsitributions to compute the DFFTs along each dimension. 
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_SWFFT.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "WARNING - Dependency : libfftw-dev (apt) fftw3-devel (yum)"
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e SWFFT ] ; then
+   cd SWFFT ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://xgitlab.cels.anl.gov/hacc/SWFFT.git
+fi
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd SWFFT/
+sed -i -e "s/\mpicxx/\smpicxx/g" GNUmakefile
+sed -i -e "s/\mpicc/\smpicc/g" GNUmakefile
+sed -i -e "s/\mpif90/\smpiff/g" GNUmakefile
+
+#This patch adds SMPI_SAMPLE_GLOBAL calls for loops in distribution.c
+#WARNING : this makes results false. Please read the doc and comment these out if not needed
+patch -p1 < $WORKSPACE/src/ECP/SWFFT/sampling.patch
+
+#This patch adds SMPI_SHARED_MALLOC calls in AlignedAllocator.h
+#WARNING : this makes results false. Please read the doc and comment these out if not needed
+patch -p1 < $WORKSPACE/src/ECP/SWFFT/shared_alloc.patch
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./build/TestDfft 2 128
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** EBMS
+*** Brief description 
+This is a miniapp for the Energy Banding Monte Carlo (EBMC) neutron transportation simulation code.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_EBMS.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e EBMS ] ; then
+   cd EBMS ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ANL-CESAR/EBMS.git
+fi
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd EBMS/
+sed -i -e "s/\mpicc/\smpicc/g" Makefile
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+make ebmc-rget -j $NUMBER_OF_PROCESSORS
+make ebmc-iallgather -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./ebmc-rget ./inputs/params.small
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./ebmc-iallgather ./inputs/params.small
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** CoSP2
+*** Brief description 
+CoSP2 is a reference implementation of typical linear algebra algorithms and workloads for a quantum molecular dynamics (QMD) electronic structure code.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_CoSP2.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e CoSP2 ] ; then
+   cd CoSP2 ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/exmatex/CoSP2.git
+fi
+
+echo "Install the modified sources"
+cd CoSP2/src-mpi
+PLATFORMDIR=$WORKSPACE/src/common
+patch -p1 < $WORKSPACE/src/ECP/CoSP2/patch_CoSP2.diff
+
+echo "Compile it"
+smpicc *.c -o CoSP2 -lm
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./CoSP2 
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm CoSP2
+fi
+
+ #+END_SRC
+
+** ExaMiniMD
+*** Brief description 
+ExaMiniMD is a proxy application and research vehicle for particle codes, in particular Molecular Dynamics (MD). Compared to 
+previous MD proxy apps (MiniMD, COMD), its design is significantly more modular in order to allow independent investigation of different aspects.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_ExaMiniMD.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e ExaMiniMD ] ; then
+   cd ExaMiniMD ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ECP-copa/ExaMiniMD.git
+fi
+
+
+if [ -e kokkos ] ; then
+   cd kokkos ; git reset --hard 3.3.01 ; git clean -dfx ; git pull origin 3.3.01 ; cd ..
+else
+   git clone --branch 3.3.01 https://github.com/kokkos/kokkos
+fi
+
+cd kokkos
+
+echo "Patch kokkos for https://github.com/kokkos/kokkos/issues/2870 with GCC10"
+sed -i '/^# Default settings common options./a\
+\
+# assign hash sign to variable for compat. with make 4.3\
+H := \\#
+s/\(['\''"]\)\\#/\1$H\1\1/' Makefile.kokkos
+
+echo "Install the modified sources"
+cd ../ExaMiniMD
+
+#This patch is to add SMPI_SAMPLE_GLOBAL calls for main ForceLJNeigh::compute loop.
+#WARNING : this makes results false. Please read the doc and comment these out if not needed
+patch -p1 < $WORKSPACE/src/ECP/ExaMiniMD/ExaMiniMD_shared.patch
+
+patch -p1 < $WORKSPACE/src/ECP/ExaMiniMD/ExaMiniMD_makefile.patch
+
+PLATFORMDIR=$WORKSPACE/src/common
+cd src
+
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+echo "Compile it"
+make KOKKOS_PATH=$PWD/../../kokkos KOKKOS_DEVICES=Serial -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./ExaMiniMD -il ../input/in.lj --comm-type MPI --kokkos-threads=12 
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make KOKKOS_PATH=$PWD/../../kokkos KOKKOS_DEVICES=Serial CXX=smpicxx clean
+fi
+
+ #+END_SRC
+
+** CabanaMD
+*** Brief description
+A molecular dynamics proxy app built with Kokkos and Cabana.
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_CabanaMD.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e CabanaMD ] ; then
+   cd CabanaMD ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ECP-copa/CabanaMD.git
+fi
+
+if [ -e Cabana ] ; then
+   cd Cabana ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ECP-copa/Cabana.git
+fi
+
+if [ -e kokkos ] ; then
+   cd kokkos ; git reset --hard 3.4.01 ; git clean -dfx ; git pull origin 3.4.01 ; cd ..
+else
+   git clone --branch 3.4.01 https://github.com/kokkos/kokkos
+fi
+
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+
+echo "Build Kokkos"
+export KOKKOS_INSTALL_DIR=$PWD/kokkos/build/install
+
+cd kokkos
+rm -rf build
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE="Release" -D CMAKE_INSTALL_PREFIX=$KOKKOS_INSTALL_DIR -D Kokkos_ENABLE_OPENMP=ON -D Kokkos_ENABLE_SERIAL=ON -D CMAKE_CXX_FLAGS="-fPIC" ..
+make install -j $NUMBER_OF_PROCESSORS
+
+echo "Build Cabana"
+cd ../../Cabana
+rm -rf build
+mkdir build
+cd build
+export CABANA_DIR=$PWD/install
+cmake -D CMAKE_BUILD_TYPE="Debug" -D CMAKE_PREFIX_PATH=$KOKKOS_INSTALL_DIR -D CMAKE_INSTALL_PREFIX=$CABANA_DIR -D Cabana_REQUIRE_OPENMP=ON \
+      -D Cabana_ENABLE_EXAMPLES=ON -D Cabana_ENABLE_TESTING=ON -D Cabana_ENABLE_PERFORMANCE_TESTING=OFF -D Cabana_ENABLE_CAJITA=ON \
+      -D CMAKE_CXX_COMPILER="smpicxx" -D CMAKE_CXX_FLAGS="-DSMPI_NO_OVERRIDE_MALLOC=1" ..
+make install -j $NUMBER_OF_PROCESSORS
+
+echo "Build CabanaMD"
+cd ../../CabanaMD
+rm -rf build
+mkdir build
+cd build
+export CABANAMD_INSTALL_DIR=$PWD/install
+cmake -D CMAKE_PREFIX_PATH="$CABANA_DIR" -D CMAKE_INSTALL_PREFIX=$CABANAMD_INSTALL_DIR -D CMAKE_CXX_COMPILER=smpicxx -D CMAKE_CXX_FLAGS="-DSMPI_NO_OVERRIDE_MALLOC=1 -Wno-error=maybe-uninitialized" ..
+make install -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+cd ../input
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+export OMP_PROC_BIND=false
+smpirun -np 10 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ../build/bin/cbnMD -il ./in.lj
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf ../build
+  rm -rf ../../kokkos/build
+  rm -rf ../../Cabana/build
+fi
+
+ #+END_SRC
+
+** MINITRI
+*** Brief description 
+This directory contains different implementations of a linear algebra based formulation of miniTri.  These implementations are supposed to be prototypes of future Graph BLAS based
+implementations.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_miniTri.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e miniTri ] ; then
+   cd miniTri ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniTri.git
+fi
+
+cd miniTri/miniTri
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+cd linearAlgebra/MPI/
+sed -i -e "s/\mpicxx/\smpicxx/g" Makefile
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "get input file"
+if [ ! -e ca-GrQc ] ; then
+  wget https://sparse.tamu.edu/MM/SNAP/ca-GrQc.tar.gz
+  tar xzf ca-GrQc.tar.gz
+  rm ca-GrQc.tar.gz
+fi
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./miniTri.exe ./ca-GrQc/ca-GrQc.mtx
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** CLAMR
+*** Brief description
+The CLAMR code is a cell-based adaptive mesh refinement (AMR) mini-app developed as a testbed for hybrid algorithm development using MPI and OpenCL GPU code. 
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_CLAMR.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e CLAMR ] ; then
+   cd CLAMR ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/lanl/CLAMR.git
+fi
+
+cd CLAMR/
+
+echo "Install the modified sources"
+patch -p1 < $WORKSPACE/src/ECP/CLAMR/patch_clamr
+patch -p1 < $WORKSPACE/src/ECP/CLAMR/patch_clamr_memstats
+
+if [ -e build ] ; then
+  rm -rf build
+fi
+mkdir build
+cd build
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it" 
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+SMPI_PRETEND_CC=1 cmake -DCMAKE_C_COMPILER=smpicc -DCMAKE_CXX_COMPILER=smpicxx -DCMAKE_Fortran_COMPILER=smpif90 -DCMAKE_Fortran_FLAGS="-std=legacy -O3" ..
+SMPI_NO_UNDEFINED_CHECK=1 make clamr_mpionly -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./clamr_mpionly -n 256 -l 2 -i 10 -t 100
+cd ..
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+
+ #+END_SRC
+
+** Kripke
+*** Brief description 
+Kripke is a simple, scalable, 3D Sn deterministic particle transport code.  Its primary purpose is to research how data layout, programming paradigms and architectures effect the implementation and performance of Sn transport.  A main goal of Kripke is investigating how different data-layouts affect instruction, thread and task level parallelism, and what the implications are on overall solver performance.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_kripke.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Download the source code"
+
+echo "Checkout or update the git containing the source code"
+if [ -e Kripke ] ; then
+   cd Kripke ; git reset --hard develop ; git clean -dfx ; git pull --recurse-submodules ; cd ..
+else
+   git clone --depth=1 --single-branch --branch develop --recurse-submodules https://github.com/LLNL/Kripke.git
+fi
+
+cd Kripke/
+
+echo "Install the modified sources"
+patch -p0 < $WORKSPACE/src/ECP/kripke/patch_kripke.diff
+
+if [ -e build ] ; then
+  rm -rf build
+fi
+mkdir build
+cd build
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+cmake -DCMAKE_CXX_COMPILER=smpicxx -DCMAKE_CXX_FLAGS="-DSMPI_NO_OVERRIDE_MALLOC=1" -DENABLE_MPI_WRAPPER=1 -DBLT_CXX_STD=c++14 ..
+make kripke.exe -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./bin/kripke.exe --procs 2,2,2
+cd ..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm -rf build
+fi
+
+ #+END_SRC
+
+** MiniAero
+*** Brief description 
+MiniAero is a mini-application for the evaulation of programming models and hardware for next generation platforms. MiniAero is an explicit (using RK4) unstructured finite volume code that solves the compressible Navier-Stokes equations. Both inviscid and viscous terms are included. The viscous terms can be optionally included or excluded.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_miniAero.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e miniAero ] ; then
+   cd miniAero ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniAero.git
+fi
+
+if [ -e kokkos ] ; then
+   cd kokkos ; git reset --hard 2.04.11 ; git clean -dfx ; git pull origin 2.04.11
+else
+   git clone --branch 2.04.11 https://github.com/kokkos/kokkos
+   cd kokkos
+fi
+
+echo "Patch kokkos for https://github.com/kokkos/kokkos/issues/2870 with GCC10"
+sed -i '/^# Default settings common options./a\
+\
+# assign hash sign to variable for compat. with make 4.3\
+H := \\#
+s/\(['\''"]\)\\#/\1$H\1\1/' Makefile.kokkos
+
+cd ../miniAero/kokkos
+
+echo "Install the modified sources"
+patch -p1 < $WORKSPACE/src/ECP/miniAero/patch_makefile.diff
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make KOKKOS_PATH=$PWD/../../kokkos KOKKOS_DEVICES=Serial -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+cd tests/3D_Sod_Parallel
+PLATFORMDIR=$WORKSPACE/src/common
+
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ../../miniAero
+cd ../..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make KOKKOS_PATH=$PWD/../../kokkos KOKKOS_DEVICES=Serial clean
+fi
+
+ #+END_SRC
+
+** TeaLeaf
+*** Brief description 
+TeaLeaf is a mini-app that solves the linear heat conduction equation on a spatially decomposed regularly grid using a 5 point stencil with implicit solvers. TeaLeaf currently solves the equations in two dimensions, but three dimensional support is in beta.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_TeaLeaf.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e TeaLeaf_ref ] ; then
+   cd TeaLeaf_ref ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/UK-MAC/TeaLeaf_ref.git
+fi
+
+cd TeaLeaf_ref/
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make MPI_COMPILER=smpif90 C_MPI_COMPILER=smpicc FLAGS_="-O3 -std=legacy" -j $NUMBER_OF_PROCESSORS
+echo "Find libgfortran"
+GFORTRAN=$(ldd ./tea_leaf | grep libgf | cut -d\  -f3)
+echo "Run it"
+smpirun --cfg=smpi/privatize-libs:$GFORTRAN -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./tea_leaf
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** FFTW
+*** Brief description
+FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST).
+*** Build
+#+BEGIN_SRC sh :tangle bin/FFTW_PreExec.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/FFTW/
+cd Benchmarks/FFTW/
+
+test -e fftw-3.3.7.tar.gz || wget http://www.fftw.org/fftw-3.3.7.tar.gz
+tar xzf fftw-3.3.7.tar.gz 
+
+cd fftw-3.3.7
+patch -p1 < $WORKSPACE/src/ECP/FFTW/patch_fftw3.diff
+
+SMPI_PRETEND_CC=1 ./configure --enable-mpi --enable-threads MPICC=smpicc CC=smpicc LD=ld CFLAGS="-DSMPI_NO_OVERRIDE_MALLOC=1 -O3 -fomit-frame-pointer -mtune=native -malign-double -fstrict-aliasing -fno-schedule-insns -ffast-math -fPIC" --prefix=${PWD}/../fftw3-install
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+make install
+
+#+END_SRC
+
+** VPFFT
+*** Brief description 
+VPFFT is an implementation of a mesoscale micromechanical materials model. By solving the viscoplasticity model, VPFFT simulates the evolution of a material under deformation. The solution time to the viscoplasticity model, described by a set of partial differential equations, is significantly reduced by the application of Fast Fourier Transform in the VPFFT algorithm.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_VPFFT.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "WARNING - Dependency : libeigen3-dev (apt) eigen3-devel (yum) + FFTW"
+
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e VPFFT ] ; then
+   cd VPFFT ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/exmatex/VPFFT.git
+fi
+export FFTW3_PATH=${PWD}/../FFTW/fftw3-install/
+cd VPFFT/
+
+echo "Install the modified sources"
+cp ./CMakeBuild/CMakeLists.txt.example CMakeLists.txt
+patch -p0 < $WORKSPACE/src/ECP/VPFFT/patch_vpfft.diff
+   
+if [ -e build ] ; then
+  rm -rf build
+fi
+mkdir build
+cd build
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+cmake ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./VPFFT++
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** SNbone
+*** Brief description 
+This program emulates the inversion of A in A*x=S on a single node arch, and it is broken into three steps.
+1) Create an unstructured mesh.
+2) Process the produced mesh by re-ordered it with respect to element and vertex such that it can be applied in n*thread independent steps.
+3) Run the mini-app (fortran or c version).
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_SNbone.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e SNbone ] ; then
+   cd SNbone ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ANL-CESAR/SNbone.git
+fi
+
+echo "Install the modified sources"
+
+cd SNbone/src_makemesh
+ls
+echo "Create an unstructured mesh"
+patch -p0 < $WORKSPACE/src/ECP/SNbone/patch_makemesh.diff
+make COMPILER=gfortran
+
+./makemesh.x 10 10 10 0
+
+echo "Process this mesh"
+cd ../src_processmesh/
+patch -p1 < $WORKSPACE/src/ECP/SNbone/patch_procmesh.diff
+
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make COMPILER=gfortran -j $NUMBER_OF_PROCESSORS
+mv ../src_makemesh/grid_tet_mesh.ascii inputmesh.ascii
+./processmesh.x 1  1
+rm inputmesh.ascii
+
+cd ..
+patch -p1 < $WORKSPACE/src/ECP/SNbone/patch_SNboneff.diff
+cd src_fortran/
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+make USEMETIS=yes COMPILER=smpi -j $NUMBER_OF_PROCESSORS
+mv ../src_processmesh/pmesh.ascii .
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./SNaCFE.x 0  100 30 2 2
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** MiniXyce
+*** Brief description 
+This code is a simple linear circuit simulator with a basic parser that performs transient analysis. 
+*** Build and run  
+#+BEGIN_SRC sh :tangle bin/ECP_MiniXyce.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place" 
+set -xeu
+rm -rf Benchmarks/ECP/miniXyce
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e miniXyce ] ; then
+   cd miniXyce ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniXyce.git
+fi
+
+echo "Install the modified sources"
+cd miniXyce/ref/src/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+./get_common_files
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CXX=smpicxx LINKER=smpicxx EXEC="smpirun -np 2" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 3 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./miniXyce.x --circuit tests/cir1.net --t_start 1e-6 --pf params.txt
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** HPCCG
+*** Brief description 
+HPCCG is a simple conjugate gradient benchmark code for a 3D chimney domain on an arbitrary number of processors.
+*** Build and run  
+#+BEGIN_SRC sh :tangle bin/Mantevo_HPCCG.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place" 
+set -xeu
+rm -rf Benchmarks/ECP/HPCCG
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e HPCCG ] ; then
+   cd HPCCG ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/HPCCG.git
+fi
+
+echo "Install the modified sources"
+cd HPCCG/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CXX=smpicxx LINKER=smpicxx USE_MPI="-DUSING_MPI" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./test_HPCCG 3 5 2
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+** PETSC
+*** Brief description
+Not an ECP app per se, but a toolbox used by some ECP apps
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_PETSC.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place"
+set -xeu
+rm -rf Benchmarks/ECP/petsc
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e petsc ] ; then
+   cd petsc ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://gitlab.com/petsc/petsc.git
+fi
+
+cd petsc/
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Configure"
+SMPI_PRETEND_CC=1 ./configure --with-cc=smpicc --with-fc=smpif90 --with-cxx=smpicxx --with-shared-libraries=0 --CFLAGS=-DSMPI_NO_OVERRIDE_MALLOC=1 --with-mpiexec="smpirun -hostfile $PWD/cluster_hostfile.txt -platform $PWD/cluster_crossbar.xml --cfg=smpi/host-speed:20000000 -np 2 --cfg=smpi/finalization-barrier:yes" --force --ignoreLinkOutput
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make PETSC_DIR=$PWD PETSC_ARCH=arch-linux-c-debug all -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+#linear test
+cd src/snes/tutorials
+make testex5f
+
+#parallel test
+make testex19
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+  cd ../../..
+  make clean
+fi
+ #+END_SRC
+
+
+** HPGMG
+*** Brief description 
+HPGMG implements full multigrid (FMG) algorithms using finite-volume and finite-element methods. FV variant only, without PETSC dependency.
+*** Build and run  
+#+BEGIN_SRC sh :tangle bin/ECP_HPGMG.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place" 
+set -xeu
+rm -rf Benchmarks/ECP/hpgmg
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e hpgmg ] ; then
+   cd hpgmg ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://bitbucket.org/hpgmg/hpgmg.git
+fi
+echo "Configure"
+cd hpgmg/
+./configure --CC=smpicc
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -C build -j $NUMBER_OF_PROCESSORS
+
+echo "Install the modified sources"
+cd build/bin
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:1000000000000 ./hpgmg-fv 4 32
+cd ../..
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+ 
+** MiniAMR
+*** Brief description 
+HPCCG is a simple conjugate gradient benchmark code for a 3D chimney domain on an arbitrary number of processors.
+*** Build and run  
+#+BEGIN_SRC sh :tangle bin/Mantevo_MiniAMR.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place" 
+set -xeu
+rm -rf Benchmarks/ECP/MiniAMR
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+echo "Checkout or update the git containing the source code"
+if [ -e miniAMR ] ; then
+   cd miniAMR ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniAMR.git
+fi
+
+echo "Install the modified sources"
+cd miniAMR/ref
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc LD=smpicc CFLAGS="-O3 -fcommon" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 16 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./miniAMR.x --init_x 1 --init_y 1 --init_z 1 --npx 4 --npy 2 --npz 2 --nx 4 --ny 4 --nz 4
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** MiniFE
+*** Brief description  
+miniFE is a Finite Element mini-application which implements a couple of kernels representative of implicit finite-element applications.
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Mantevo_MiniFE.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+rm -rf Benchmarks/Mantevo/MiniFE
+mkdir -p Benchmarks/Mantevo/ || true
+cd Benchmarks/Mantevo/
+echo "Download the source"
+if [ -e miniFE ] ; then
+   cd miniFE ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniFE.git
+fi
+
+echo "Install the modified sources"
+cd miniFE/ref/src
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CXX=smpicxx CC=smpicc -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 6 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./miniFE.x
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** CloverLeaf
+*** Brief description 
+CloverLeaf is a mini-app that solves the compressible Euler equations on a Cartesian grid.
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Mantevo_CloverLeaf.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place" 
+set -xeu
+rm -rf Benchmarks/Mantevo/CloverLeaf
+mkdir -p Benchmarks/Mantevo/
+cd Benchmarks/Mantevo
+echo "Download the source code"
+if [ -e CloverLeaf ] ; then
+   cd CloverLeaf ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/UK-MAC/CloverLeaf_ref.git ./CloverLeaf
+fi
+ 
+echo "Install the modified sources"
+cd CloverLeaf/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+make C_MPI_COMPILER=smpicc MPI_COMPILER=smpif90 COMPILER=GNU
+echo "Find libgfortran"
+GFORTRAN=$(ldd clover_leaf | grep libgf | cut -d\  -f3)
+echo "Run it" 
+smpirun --cfg=smpi/privatize-libs:$GFORTRAN -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./clover_leaf
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** CloverLeaf3D
+*** Brief description 
+CloverLeaf3D is a 3D variant of CloverLeaf, with tiling support
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/Mantevo_CloverLeaf3D.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "Clean up the place" 
+set -xeu
+rm -rf Benchmarks/Mantevo/CloverLeaf3D
+mkdir -p Benchmarks/Mantevo/
+cd Benchmarks/Mantevo
+echo "Download the source code"
+if [ -e CloverLeaf3D ] ; then
+   cd CloverLeaf3D ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/UK-MAC/CloverLeaf3D_ref.git ./CloverLeaf3D
+fi
+
+echo "Install the modified sources"
+cd CloverLeaf3D/
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make C_MPI_COMPILER=smpicc MPI_COMPILER=smpif90 COMPILER=GNU -j $NUMBER_OF_PROCESSORS
+echo "Find libgfortran"
+GFORTRAN=$(ldd clover_leaf | grep libgf | cut -d\  -f3)
+echo "Run it" 
+smpirun --cfg=smpi/privatize-libs:$GFORTRAN -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml ./clover_leaf
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** MiniSMAC2D
+**** Brief description 
+The code is incompressible Navier-Stokes flow solver.
+**** Build and run
+#+BEGIN_SRC shell :tangle bin/Mantevo_MiniSMAC2D.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place" 
+set -xe
+rm -rf Benchmarks/ECP/miniSMAC2D
+mkdir -p Benchmarks/ECP/miniSMAC2D
+cd Benchmarks/ECP/
+echo "Download the source code and data on need"
+if [ -e miniSMAC ] ; then
+   cd miniSMAC ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniSMAC.git
+fi
+cd miniSMAC/ref
+
+echo "Install the modified sources"
+patch -p1 < $WORKSPACE/src/ECP/MiniSMAC2D/patch_SMAC2Din.diff
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make FC=smpif90 CXX=smpicxx FFLAGS="-O3 -std=legacy -c -g -DD_PRECISION" CPPFLAGS="-P -traditional -DD_PRECISION" LD=smpiff MPIDIR="-I${SIMGRID_PATH}/include/smpi -I${SIMGRID_PATH}/build/include/smpi" -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./smac2d_mpi_and_threads_with_AVX
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+** MiniMD
+*** Brief description 
+miniMD is a simple, parallel molecular dynamics (MD) code.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_MiniMD.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e miniMD ] ; then
+   cd miniMD ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniMD.git
+fi
+
+cd miniMD/ref/
+
+echo "Install the modified sources"
+patch -p1 < $WORKSPACE/src/ECP/MiniMD/patch_miniMD_Makefile.diff
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -f Makefile.default -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./miniMD
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** MiniGhost
+*** Brief description 
+MiniGhost is not configured to solve any particular problem, allowing the user to control running time, by setting the number of time steps executed.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_MiniGhost.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e miniGhost ] ; then
+   cd miniGhost ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Mantevo/miniGhost.git
+fi
+
+cd miniGhost/ref/
+
+echo "Install the modified sources"
+patch -p1 < $WORKSPACE/src/ECP/MiniGhost/patch_miniGhost_mk.diff
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+make -f makefile.mpi.gnu
+
+echo "Run it"
+
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./miniGhost.x --npx 2 --npy 2 --npz 2 --num_tsteps 40
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+
+** MiniGMG
+*** Brief description 
+miniGMG is a compact benchmark for understanding the performance challenges associated with geometric multigrid solvers found in applications built from AMR MG frameworks like CHOMBO or BoxLib when running on modern multi- and manycore-based supercomputers.
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_MiniGMG.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+test -e miniGMG-source.tar.gz || curl -o miniGMG-source.tar.gz -Lkf https://crd.lbl.gov/assets/Uploads/FTG/Projects/miniGMG/miniGMG.tar.gz
+echo "Unpack the code"
+mkdir miniGMG && tar -xvf miniGMG-source.tar.gz -C miniGMG --strip-components 1
+
+cd miniGMG
+
+echo "Install the modified sources"
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+smpicc -O3 -fopenmp bench.c mg.c box.c solver.c operators.ompif.c timer.x86.c -D__MPI -D__FUSION_RESIDUAL_RESTRICTION -D__COLLABORATIVE_THREADING=6 -o run_smpi -lm
+
+echo "Run it"
+export OMP_NUM_THREADS=1
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./run_smpi 3  2 2 2   4 2 1
+export OMP_NUM_THREADS=4
+smpirun -np 8 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./run_smpi 3  2 2 2   4 2 1
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  rm run_smpi
+fi
+
+ #+END_SRC
+ 
+** XSBench
+*** Brief description 
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_XSBench.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e XSBench ] ; then
+   cd XSBench ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ANL-CESAR/XSBench.git
+fi
+
+cd XSBench/openmp-threading/
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make MPI=yes CC=smpicc CFLAGS="-fopenmp -flto"  -j $NUMBER_OF_PROCESSORS
+
+echo "Run it"
+
+smpirun -np 2 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./XSBench -s small
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** Nekbone
+*** Brief description 
+*** Build and run 
+#+BEGIN_SRC sh :tangle bin/ECP_Nekbone.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e Nekbone ] ; then
+   cd Nekbone ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Nek5000/Nekbone.git
+fi
+
+cd Nekbone/test/example1/
+
+
+echo "Generate Makefile - fails build on purpose"
+./makenek toto "$WORKSPACE/Benchmarks/ECP/Nekbone/src"
+
+echo "Start again, with SMPI this time"
+make clean
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CC=smpicc F77="smpiff -std=legacy" -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./nekbone
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** MiniVite
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_MiniVite.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e miniVite ] ; then
+   cd miniVite ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/Exa-Graph/miniVite.git
+fi
+
+cd miniVite
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CXX=smpicxx OPTFLAGS="-O3 -fopenmp -DPRINT_DIST_STATS -DDEBUG_PRINTF" -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+#need to put OMP to 1, or to remove the check for MPI_THREAD_FUNNELED as SMPI does not answer it supports it (but it works in some/this case)
+export OMP_NUM_THREADS=1
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile.txt -platform $PLATFORMDIR/cluster_crossbar.xml --cfg=smpi/host-speed:100 ./miniVite -n 40
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+
+** Picsar
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_Picsar.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e picsar ] ; then
+   cd picsar ; git reset --hard development ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/ECP-WarpX/picsar.git
+fi
+
+cd picsar
+
+patch -p1 < $WORKSPACE/src/ECP/Picsar/patch_picsar.diff
+
+
+echo "Compile it"
+make CC=smpicc FC=smpif90 FARGS="-std=legacy -O3 -JModules -ftree-vectorize"
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Find libgfortran"
+GFORTRAN=$(ldd ./fortran_bin/picsar | grep libgf | cut -d\  -f3)
+
+echo "Run it"
+cp examples/example_decks_fortran/plane_wave_test.pixr input_file.pixr
+smpirun -np 4 -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt -platform $PLATFORMDIR/cluster_storage.xml --cfg=smpi/host-speed:100 --cfg=smpi/privatize-libs:$GFORTRAN ./fortran_bin/picsar
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** Chatterbug
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_Chatterbug.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e chatterbug ] ; then
+   cd chatterbug ; git reset --hard develop ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://github.com/LLNL/chatterbug.git
+fi
+
+cd chatterbug
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make CXX=smpicxx -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 4 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./pairs/pairs.x 100000 10
+smpirun -np 10 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./spread/spread.x 1 10 2 100000 100
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./subcom3d-a2a/subcom3d-a2a.x 2 2 2 10000 100000 1000000 100
+smpirun -np 32 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./stencil4d/stencil4d.x 2 2 4 2 50 20 30 20 25 10
+smpirun -np 16 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./unstr-mesh/unstr-mesh.x 2 4 2 7 20 3 100000 100
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+ #+END_SRC
+
+** ProfugusMC
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_ProfugusMC.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e ProfugusMC ] ; then
+   cd ProfugusMC ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 https://code.ornl.gov/ProfugusMC/ProfugusMC.git
+fi
+
+cd ProfugusMC
+
+echo "Patch for python 3"
+patch -p1 < $WORKSPACE/src/ECP/ProfugusMC/patch_cmake.diff
+echo "Patch for forbidden template use in GCC10"
+patch -p1 < $WORKSPACE/src/ECP/ProfugusMC/patch_template.diff
+
+echo "Compile it"
+mkdir build
+cd build
+cmake \
+    -DCMAKE_BUILD_TYPE:STRING=Release \
+    -DCMAKE_C_COMPILER="smpicc" \
+    -DCMAKE_CXX_COMPILER="smpicxx" \
+    -DCMAKE_Fortran_FLAGS="-fPIC" \
+    -DCMAKE_INSTALL_PREFIX:PATH=$PWD/.. \
+    -DBUILD_SHARED_LIBS:BOOL=OFF \
+    -DProfugusMC_ENABLE_CXX11:BOOL=ON \
+    -DTPL_ENABLE_MPI:BOOL=ON \
+    -DProfugusMC_ENABLE_MC:BOOL=ON \
+    -DProfugusMC_ENABLE_TESTS:BOOL=OFF \
+    ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+#somehow there is an issue with dlopen privatization and the xml parsing of the input file. mmap works fine, though.
+
+smpirun -np 8 --cfg=smpi/privatization:mmap -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt packages/MC/profugus -np 200
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+
+ #+END_SRC
+
+** Comb
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_Comb.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e comb ] ; then
+   cd comb ; git clean -xfd ; git submodule foreach --recursive git clean -xfd ; git reset --hard ; git submodule foreach --recursive git reset --hard; git submodule update --init --recursive;  git pull ; cd ..
+else
+   git clone --depth=1 --recursive https://github.com/llnl/comb.git
+fi
+
+cd comb
+patch -p1 < $WORKSPACE/src/ECP/comb/patch_comb.diff
+cd blt
+patch -p1 < $WORKSPACE/src/ECP/comb/patch_blt.diff
+cd ..
+
+echo "Compile it"
+mkdir build
+cd build
+cmake \
+    -DCMAKE_C_COMPILER="smpicc" \
+    -DCMAKE_CXX_COMPILER="smpicxx" \
+    -DCMAKE_CXX_FLAGS="-DSMPI_NO_OVERRIDE_MALLOC=1" \
+    ..
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./bin/comb 200_200_200 -divide 2_2_2 -periodic 1_1_1 -ghost 1_1_1 -vars 3 -cycles 25 -comm cutoff 250
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+
+#+END_SRC
+
+ ** SNAP
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_SNAP.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e SNAP ] ; then
+   cd SNAP ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 --recursive https://github.com/lanl/SNAP.git
+fi
+
+cd SNAP/src
+
+echo "Compile it"
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make FORTRAN=smpif90 -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+#fails with more OMP threads.
+export OMP_NUM_THREADS=1
+smpirun -np 4 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./gsnap ../qasnap/center_src/in11 out
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+  rm out
+fi
+
+#+END_SRC
+
+ ** Tycho2
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_Tycho2.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+echo "WARNING - Dependency : libmetis-dev (apt) metis-devel (yum)"
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e tycho2 ] ; then
+   cd tycho2 ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 --recursive https://github.com/lanl/tycho2.git
+fi
+
+cd tycho2
+patch -p1 < $WORKSPACE/src/ECP/tycho2/patch_tycho2.diff
+
+echo "Compile it"
+cp ./util/make.inc.example ./make.inc
+cp ./util/make.inc.example ./util/make.inc
+cd util
+echo "Find libmetis"
+METIS=$(find /usr/lib*/ -name libmetis.so | head -n 1)
+
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+make PartitionMetis CPP="g++" LIB_METIS=$METIS -j $NUMBER_OF_PROCESSORS
+make RefineSerialMesh CPP="g++" LIB_METIS=$METIS -j $NUMBER_OF_PROCESSORS
+cd ..
+
+make MPICC="smpicxx -fopenmp" -j $NUMBER_OF_PROCESSORS
+
+PLATFORMDIR=$WORKSPACE/src/common
+
+echo "Run it"
+
+NUM_PARTS=4
+IN_FILE="./util/cube-1374.smesh"
+OUT_FILE="temp.pmesh"
+INPUT_DECK="input.deck"
+export OMP_NUM_THREADS=2
+
+cp ./test/regression/input-gold.deck ./$INPUT_DECK
+
+./util/PartitionMetis.x $NUM_PARTS $IN_FILE $OUT_FILE
+smpirun -n $NUM_PARTS -platform $PLATFORMDIR/cluster_storage.xml -hostfile $PLATFORMDIR/cluster_hostfile_storage.txt ./sweep.x $OUT_FILE $INPUT_DECK
+
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+  rm $OUT_FILE
+  rm $INPUT_DECK
+  rm make.inc
+  rm util/make.inc
+fi
+
+ #+END_SRC
+
+
+ ** Ember
+*** Brief description
+*** Build and run
+#+BEGIN_SRC sh :tangle bin/ECP_Ember.sh :shebang "#!/bin/sh -uxe"
+export SIMGRID_PATH="${SIMGRID_PATH:=~/simgrid}"
+export WORKSPACE="${WORKSPACE:=$PWD}"
+export LD_LIBRARY_PATH=$SIMGRID_PATH/build/lib:$SIMGRID_PATH/lib:${LD_LIBRARY_PATH:=}
+export PATH=$SIMGRID_PATH/build/smpi_script/bin:$SIMGRID_PATH/bin:${PATH:=}
+
+echo "Clean up the place"
+mkdir -p Benchmarks/ECP/
+cd Benchmarks/ECP/
+
+echo "Checkout or update the git containing the source code"
+if [ -e Ember ] ; then
+   cd Ember ; git reset --hard master ; git clean -dfx ; git pull ; cd ..
+else
+   git clone --depth=1 --recursive https://github.com/sstsimulator/ember.git ./Ember
+fi
+
+#only test MPI, OpenShmem could be tested with oshmpi, but there are issues with it and SMPI for now
+cd Ember/mpi
+
+NUMBER_OF_PROCESSORS="$(nproc)" >/dev/null 2>&1 || NUMBER_OF_PROCESSORS=1
+PLATFORMDIR=$WORKSPACE/src/common
+
+cd halo3d
+make CC=smpicc
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./halo3d
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+cd ../halo3d-26
+make CC=smpicc
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./halo3d-26
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+cd ../incast
+make CC=smpicc
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./incast
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+cd ../pingpong
+make CC=smpicc
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./pingpong
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+cd ../sweep3d
+make CC=smpicc
+smpirun -np 8 -platform $PLATFORMDIR/cluster_crossbar.xml -hostfile $PLATFORMDIR/cluster_hostfile.txt ./sweep3d  -pex 2 -pey 4
+if [ ! -z "${CLEANUP_PROXY_APPS-}" ]; then
+  echo "Cleanup"
+  make clean
+fi
+#+END_SRC
+
+
+* Emacs settings
+# Local Variables:
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '( (shell . t) (R . t) (perl . t) (ditaa . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images) 
+# eval:    (add-hook 'org-mode-hook 'org-display-inline-images)
+# eval:    (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+# eval:    (setq org-babel-default-header-args:R '((:session . "org-R")))
+# eval:    (setq org-export-babel-evaluate nil)
+# eval:    (setq ispell-local-dictionary "american")
+# eval:    (setq org-export-latex-table-caption-above nil)
+# eval:    (eval (flyspell-mode t))
+# End:

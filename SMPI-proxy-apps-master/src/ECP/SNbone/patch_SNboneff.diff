@@ -1,0 +1,307 @@
+diff --git a/src_fortran/Driver.F90 b/src_fortran/Driver.F90
+index 7d36bf1..723e5b8 100755
+--- a/src_fortran/Driver.F90
++++ b/src_fortran/Driver.F90
+@@ -11,7 +11,7 @@ USE Method_Krylov
+   USE OMP_LIB
+ #endif
+ #ifdef WITHBGQHPM
+-#include "mpif.h"
++use mpi
+ #endif
+ IMPLICIT NONE
+ ! preprocessing inclusions
+@@ -51,57 +51,63 @@ PROTEUS_Real :: SomeReal1,SomeReal2,AssemblyTime
+ #endif
+ 
+ ! Read command line input
+-NumArguments = COMMAND_ARGUMENT_COUNT()   ! # User defined command line arguments
+-IF ((NumArguments .LT. 4) .OR. (NumArguments .GT. 5)) THEN
++!NumArguments = COMMAND_ARGUMENT_COUNT()   ! # User defined command line arguments
++!IF ((NumArguments .LT. 4) .OR. (NumArguments .GT. 5)) THEN
+ 200 FORMAT('[SN-KERNEL]',109('.'))
+-499 FORMAT('[SN-KERNEL] The list of arguments was incomplete....................',52('.'))
+-500 FORMAT('[SN-KERNEL] Version 1.0 SNaCFE mini-app to study on node performance',52('.'))
+-501 FORMAT('[SN-KERNEL] This mini-app is a test of the within-group FGMRES solver for a CFE SUPG based SN methodology',15('.'))
+-502 FORMAT('[SN-KERNEL] Usage:   snacfe.x  Scheme Iter BackV Angles Threads',52('.'))
+-503 FORMAT('[SN-KERNEL] Example: snacfe.x  1      100  30    32     1      ',52('.'))
+-504 FORMAT('[SN-KERNEL] Scheme          specifies which scheme to use for the study (0=all)...........',15('.'))
+-505 FORMAT('[SN-KERNEL] Iter(ation)     specifies the maximum FGMRES iterations to allow..............',30('.'))
+-506 FORMAT('[SN-KERNEL] Back V(ectors)  specifies the maximum back vectors to use in FGMRES...........',30('.'))
+-507 FORMAT('[SN-KERNEL] Angles          specifies the number of angles assigned to the local process..',30('.'))
+-510 FORMAT('[SN-KERNEL] T(hreads)       specifies the number of threads to use during the execution...',30('.'))
+-   WRITE(Output_Unit,499)
+-   WRITE(Output_Unit,500)
+-   WRITE(Output_Unit,501)
+-   WRITE(Output_Unit,200)
+-   WRITE(Output_Unit,502)
+-   WRITE(Output_Unit,503)
+-   WRITE(Output_Unit,200)
+-   WRITE(Output_Unit,504)
+-   WRITE(Output_Unit,505)
+-   WRITE(Output_Unit,506)
+-   WRITE(Output_Unit,507)
+-   WRITE(Output_Unit,510)
+-   WRITE(Output_Unit,200)
+-   STOP
+-ELSE
+-   WRITE(Output_Unit,500)
+-   WRITE(Output_Unit,501)
+-   WRITE(Output_Unit,200)
+-   WRITE(Output_Unit,502)
+-   WRITE(Output_Unit,503)
+-   WRITE(Output_Unit,200)
+-   ! Assign command line input to variables
+-   CALL GET_COMMAND_ARGUMENT(1,Some_String)
+-   READ(Some_String,*,IOSTAT=ReturnedError) Input_Scheme
+-   CALL GET_COMMAND_ARGUMENT(2,Some_String)
+-   READ(Some_String,*,IOSTAT=ReturnedError) Input_Iterations
+-   CALL GET_COMMAND_ARGUMENT(3,Some_String)
+-   READ(Some_String,*,IOSTAT=ReturnedError) Input_BackVectors
+-   CALL GET_COMMAND_ARGUMENT(4,Some_String)
+-   READ(Some_String,*,IOSTAT=ReturnedError) Input_Angles
+-   IF (NumArguments .EQ. 5) THEN
+-      CALL GET_COMMAND_ARGUMENT(5,Some_String)
+-      READ(Some_String,*,IOSTAT=ReturnedError) Input_Nthreads
+-   ELSE
+-      Input_Nthreads = 0
+-   END IF
+-   WRITE(Output_Unit,200)
+-END IF
++!499 FORMAT('[SN-KERNEL] The list of arguments was incomplete....................',52('.'))
++!500 FORMAT('[SN-KERNEL] Version 1.0 SNaCFE mini-app to study on node performance',52('.'))
++!501 FORMAT('[SN-KERNEL] This mini-app is a test of the within-group FGMRES solver for a CFE SUPG based SN methodology',15('.'))
++!502 FORMAT('[SN-KERNEL] Usage:   snacfe.x  Scheme Iter BackV Angles Threads',52('.'))
++!503 FORMAT('[SN-KERNEL] Example: snacfe.x  1      100  30    32     1      ',52('.'))
++!504 FORMAT('[SN-KERNEL] Scheme          specifies which scheme to use for the study (0=all)...........',15('.'))
++!505 FORMAT('[SN-KERNEL] Iter(ation)     specifies the maximum FGMRES iterations to allow..............',30('.'))
++!506 FORMAT('[SN-KERNEL] Back V(ectors)  specifies the maximum back vectors to use in FGMRES...........',30('.'))
++!507 FORMAT('[SN-KERNEL] Angles          specifies the number of angles assigned to the local process..',30('.'))
++!510 FORMAT('[SN-KERNEL] T(hreads)       specifies the number of threads to use during the execution...',30('.'))
++!   WRITE(Output_Unit,499)
++!   WRITE(Output_Unit,500)
++!   WRITE(Output_Unit,501)
++!   WRITE(Output_Unit,200)
++!   WRITE(Output_Unit,502)
++!   WRITE(Output_Unit,503)
++!   WRITE(Output_Unit,200)
++!   WRITE(Output_Unit,504)
++!   WRITE(Output_Unit,505)
++!   WRITE(Output_Unit,506)
++!   WRITE(Output_Unit,507)
++!   WRITE(Output_Unit,510)
++!   WRITE(Output_Unit,200)
++!   STOP
++!ELSE
++!   WRITE(Output_Unit,500)
++!   WRITE(Output_Unit,501)
++!   WRITE(Output_Unit,200)
++!   WRITE(Output_Unit,502)
++!   WRITE(Output_Unit,503)
++!   WRITE(Output_Unit,200)
++!   ! Assign command line input to variables
++!   CALL GET_COMMAND_ARGUMENT(1,Some_String)
++!   READ(Some_String,*,IOSTAT=ReturnedError) Input_Scheme
++!   CALL GET_COMMAND_ARGUMENT(2,Some_String)
++!   READ(Some_String,*,IOSTAT=ReturnedError) Input_Iterations
++!   CALL GET_COMMAND_ARGUMENT(3,Some_String)
++!   READ(Some_String,*,IOSTAT=ReturnedError) Input_BackVectors
++!   CALL GET_COMMAND_ARGUMENT(4,Some_String)
++!   READ(Some_String,*,IOSTAT=ReturnedError) Input_Angles
++!   IF (NumArguments .EQ. 5) THEN
++!      CALL GET_COMMAND_ARGUMENT(5,Some_String)
++!      READ(Some_String,*,IOSTAT=ReturnedError) Input_Nthreads
++!   ELSE
++!      Input_Nthreads = 0
++!   END IF
++!   WRITE(Output_Unit,200)
++!END IF
++
++Input_Scheme=0
++Input_Iterations=100
++Input_BackVectors=30
++Input_Angles=2
++Input_Nthreads=0
+ 
+ #ifdef WITHOMP
+    IF (Input_Nthreads .NE. 0) THEN
+@@ -188,24 +194,24 @@ MyIterCnt = 0
+ ! -----------------------------------------------------
+ ! This is the part of the code which we wish to measure
+ ! -----------------------------------------------------
+-#ifdef WITHBGQHPM
+-   call summary_start() ! This is the MPI tracking stuff
+-#endif
++!#ifdef WITHBGQHPM
++!   call summary_start() ! This is the MPI tracking stuff
++!#endif
+ 
+ DO I = ii_start,ii_end,1
+    CALL GETTHETIME(SomeReal1)
+-#ifdef WITHBGQHPM
+-   call hpm_start(MyHPMname(I)) ! Initializes and starts the hardware counters
+-#endif
++!#ifdef WITHBGQHPM
++!   call hpm_start(MyHPMname(I)) ! Initializes and starts the hardware counters
++!#endif
+    CALL SolveWGS(Input_Iterations,MyIterCnt(I),I,LHS_C,RHS_C,SN_GMRESdata)
+-#ifdef WITHBGQHPM
+-      call hpm_stop(MyHPMname(I)) ! Stops the hardware counters
+-#endif
++!#ifdef WITHBGQHPM
++!      call hpm_stop(MyHPMname(I)) ! Stops the hardware counters
++!#endif
+    CALL GETTHETIME(SomeReal2)
+    MyTime(I) = SomeReal2 - SomeReal1
+    ! Verify that the outgoing vector is accurate
+-   J = NumVertices*NumAngles
+-   CALL Verify(Output_Unit,J,LHS_C,LHS_Answer,MyHPMname(I))
++!   J = NumVertices*NumAngles
++!   CALL Verify(Output_Unit,J,LHS_C,LHS_Answer,MyHPMname(I))
+ END DO ! methods
+ 
+ MyFlopCnt(3) = NZS_NonZeros*NumAngles ! This is the number of mults per application of A
+@@ -216,7 +222,7 @@ CALL PrintSummary(Output_Unit,NumElements,NumAngles,NumVertices,Input_Iterations
+ WRITE(Output_Unit,200)
+ 
+ #ifdef WITHBGQHPM
+-   CALL summary_stop() ! This finishes the MPI measurements
++   !CALL summary_stop() ! This finishes the MPI measurements
+    CALL MPI_Finalize()
+ #endif
+ 
+@@ -237,4 +243,4 @@ PROTEUS_Real SomeReal
+    CALL CPU_Time(SomeReal)
+ #endif
+ 
+-END SUBROUTINE GETTHETIME
+\ No newline at end of file
++END SUBROUTINE GETTHETIME
+diff --git a/src_fortran/Makefile b/src_fortran/Makefile
+index f81fe89..079650a 100755
+--- a/src_fortran/Makefile
++++ b/src_fortran/Makefile
+@@ -12,7 +12,7 @@ COMPILER=$(shell  \
+ # You can enable or disable OPENMP threading by using "THREAD=no"
+ # You can enable or disable the two PAPI options by using PAPIFLOP and PAPISET1. They cannot both be used
+ # You can change the optimization settings by using "OPT=2"
+-THREAD=yes
++THREAD=no
+ PAPI=no
+ IBMHPM=no
+ OPT=3
+@@ -61,7 +61,7 @@ ifeq (${USEGREEDY},yes)
+ endif
+ ifeq (${USEMETIS},yes)
+    EXTFLAGS=-DUSEMETIS
+-   METISLIB=../metis/libmetis.a
++   METISLIB=-lmetis
+ endif
+ # ------------------------------
+ # IBM IBM IBM IBM IBM IBM IBM
+@@ -90,7 +90,14 @@ ifeq (${USEMETIS},yes)
+ endif
+ endif
+ 
+-
++# ------------------------------
++# SMPI
++# ------------------------------
++ifeq (${COMPILER}, smpi)
++   FF     = smpiff
++   LD     = ${FF}
++   LDFLAGS = -O${OPT} ${DEBUG} -std=legacy -DWITHBGQHPM -g
++endif
+ # ------------------------------
+ # Add the PAPI preprocessing stuff
+ TARGET = SNaCFE.x
+diff --git a/src_fortran/SolveWGS_PassThrough_AVE1.F90 b/src_fortran/SolveWGS_PassThrough_AVE1.F90
+index 0832c30..4f01e61 100755
+--- a/src_fortran/SolveWGS_PassThrough_AVE1.F90
++++ b/src_fortran/SolveWGS_PassThrough_AVE1.F90
+@@ -17,9 +17,9 @@ PROTEUS_Int MyThreadID
+ #else
+    MyThreadID = 1
+ #endif
+-#ifdef WITHBGQHPM
+-   IF (MyThreadID .EQ. 1) call hpm_start('AVE1_ApplyA')
+-#endif
++!#ifdef WITHBGQHPM
++!   IF (MyThreadID .EQ. 1) call hpm_start('AVE1_ApplyA')
++!#endif
+ ! This barrier ensures that the incoming vector is fully defined by all threads
+ !$OMP BARRIER
+    CALL ApplyA_AVE1_Tet_SUPG(NumElements,NumAngles,NumVertices,Conn,    &
+@@ -28,9 +28,9 @@ PROTEUS_Int MyThreadID
+                         FEShapeFunctions,FEDerivatives,FEDetJacandWgt,  &
+                         Omega,OmegaOmega,                               &
+                         LHS_C,RHS_C)
+-#ifdef WITHBGQHPM
+-   IF (MyThreadID .EQ. 1) call hpm_stop('AVE1_ApplyA') ! Stops the hardware counters
+-#endif
++!#ifdef WITHBGQHPM
++!   IF (MyThreadID .EQ. 1) call hpm_stop('AVE1_ApplyA') ! Stops the hardware counters
++!#endif
+ 
+ END SUBROUTINE SolveWGS_PassThrough_AVE1
+ 
+diff --git a/src_fortran/SolveWGS_PassThrough_AVE2.F90 b/src_fortran/SolveWGS_PassThrough_AVE2.F90
+index bf8e973..36601af 100755
+--- a/src_fortran/SolveWGS_PassThrough_AVE2.F90
++++ b/src_fortran/SolveWGS_PassThrough_AVE2.F90
+@@ -17,9 +17,9 @@ PROTEUS_Int MyThreadID
+ #else
+    MyThreadID = 1
+ #endif
+-#ifdef WITHBGQHPM
+-   IF (MyThreadID .EQ. 1) call hpm_start('AVE2_ApplyA')
+-#endif
++!#ifdef WITHBGQHPM
++!   IF (MyThreadID .EQ. 1) call hpm_start('AVE2_ApplyA')
++!#endif
+ ! This barrier ensures that the incoming vector is fully defined by all threads
+ !$OMP BARRIER
+    CALL ApplyA_AVE2_Tet_SUPG(NumElements,NumAngles,NumVertices,Conn,   &
+@@ -29,9 +29,9 @@ PROTEUS_Int MyThreadID
+                         Omega,OmegaOmega,                               &
+                         LHS_C,RHS_C,   &
+                         Scratch_V1(1,1,MyThreadID),Scratch_V2(1,1,MyThreadID))
+-#ifdef WITHBGQHPM
+-   IF (MyThreadID .EQ. 1) call hpm_stop('AVE2_ApplyA') ! Stops the hardware counters
+-#endif
++!#ifdef WITHBGQHPM
++!   IF (MyThreadID .EQ. 1) call hpm_stop('AVE2_ApplyA') ! Stops the hardware counters
++!#endif
+ END SUBROUTINE SolveWGS_PassThrough_AVE2
+ 
+ 
+diff --git a/src_fortran/SolveWGS_PassThrough_AVE3.F90 b/src_fortran/SolveWGS_PassThrough_AVE3.F90
+index 41bd44e..f7e01ef 100755
+--- a/src_fortran/SolveWGS_PassThrough_AVE3.F90
++++ b/src_fortran/SolveWGS_PassThrough_AVE3.F90
+@@ -25,9 +25,9 @@ PROTEUS_Int I,J,K,iRowStart,iRowEnd
+    iRowStart = 1
+    iRowEnd   = NumVertices
+ #endif
+-#ifdef WITHBGQHPM
+-   IF (MyThreadID .EQ. 1) call hpm_start('AVE3_ApplyA')
+-#endif
++!#ifdef WITHBGQHPM
++!   IF (MyThreadID .EQ. 1) call hpm_start('AVE3_ApplyA')
++!#endif
+ ! This barrier ensures that the incoming vector is fully defined by all threads
+ !$OMP BARRIER
+ DO I = iRowStart,iRowEnd
+@@ -39,9 +39,9 @@ DO I = iRowStart,iRowEnd
+ END DO
+ ! This second barrier is needed because the FGMRES threadwise splitting is currently different than the above. Likely need to change that
+ !$OMP BARRIER
+-#ifdef WITHBGQHPM
+-   IF (MyThreadID .EQ. 1) call hpm_stop('AVE3_ApplyA') ! Stops the hardware counters
+-#endif
++!#ifdef WITHBGQHPM
++!   IF (MyThreadID .EQ. 1) call hpm_stop('AVE3_ApplyA') ! Stops the hardware counters
++!#endif
+ END SUBROUTINE SolveWGS_PassThrough_AVE3
+ 
+ 

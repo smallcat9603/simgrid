@@ -1,0 +1,31 @@
+Index: PENNANT/Makefile
+===================================================================
+--- PENNANT.orig/Makefile
++++ PENNANT/Makefile
+@@ -21,8 +21,8 @@ BINARY := $(BUILDDIR)/$(PRODUCT)
+ # intel flags:
+ CXX := icpc
+ CXXFLAGS_DEBUG := -g
+-CXXFLAGS_OPT := -O3 -fast -fno-alias
+-CXXFLAGS_OPENMP := -openmp
++CXXFLAGS_OPT := -O3 -DSMPI_NO_OVERRIDE_MALLOC # -fast -fno-alias
++#CXXFLAGS_OPENMP := -openmp
+ 
+ # pgi flags:
+ #CXX := pgCC
+@@ -39,12 +39,12 @@ CXXFLAGS := $(CXXFLAGS_OPT)
+ # add mpi to compile (comment out for serial build)
+ # the following assumes the existence of an mpi compiler
+ # wrapper called mpicxx
+-CXX := mpicxx
++CXX := smpicxx
+ CXXFLAGS += -DUSE_MPI
+ 
+ # add openmp flags (comment out for serial build)
+-CXXFLAGS += $(CXXFLAGS_OPENMP)
+-LDFLAGS += $(CXXFLAGS_OPENMP)
++# CXXFLAGS += $(CXXFLAGS_OPENMP)
++# LDFLAGS += $(CXXFLAGS_OPENMP)
+ 
+ LD := $(CXX)
+ 

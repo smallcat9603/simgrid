@@ -1,0 +1,86 @@
+diff --git a/src/EW.C b/src/EW.C
+index d46541e..c4b0a3b 100644
+--- a/src/EW.C
++++ b/src/EW.C
+@@ -2361,12 +2361,12 @@ void EW::timesteploop( vector<Sarray>& U, vector<Sarray>& Um )
+       int ifirst = m_iStart[g], ilast = m_iEnd[g];
+       int jfirst = m_jStart[g], jlast = m_jEnd[g];
+       int kfirst = m_kStart[g], klast = m_kEnd[g];
+-      F[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast);
+-      Lu[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast);
+-      Uacc[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast);
+-      Up[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast);
+-      U[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast);
+-      Um[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast);
++      F[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast,1);
++      Lu[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast,1);
++      Uacc[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast,1);
++      Up[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast,1);
++      U[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast,1);
++      Um[g].define(3,ifirst,ilast,jfirst,jlast,kfirst,klast,1);
+    }
+ 
+    // Set up boundary data array
+diff --git a/src/Sarray.C b/src/Sarray.C
+index f61a3db..0e59471 100644
+--- a/src/Sarray.C
++++ b/src/Sarray.C
+@@ -280,7 +280,7 @@ void Sarray::define( int iend, int jend, int kend )
+ 
+ //-----------------------------------------------------------------------
+ void Sarray::define( int nc, int ibeg, int iend, int jbeg, int jend, int kbeg,
+-		     int kend )
++		     int kend, int shared )
+ {
+    if( m_data != NULL )
+       delete[] m_data;
+@@ -294,7 +294,10 @@ void Sarray::define( int nc, int ibeg, int iend, int jbeg, int jend, int kbeg,
+    m_ni = m_ie-m_ib+1;
+    m_nj = m_je-m_jb+1;
+    m_nk = m_ke-m_kb+1;
+-   if( m_nc*m_ni*m_nj*m_nk > 0 )
++   m_shared = shared;
++   if( m_nc*m_ni*m_nj*m_nk > 0 && shared != 0)
++      m_data = (float_sw4*)SMPI_SHARED_MALLOC(m_nc*m_ni*m_nj*m_nk*sizeof(float_sw4));
++   else if( m_nc*m_ni*m_nj*m_nk > 0)
+       m_data = new float_sw4[m_nc*m_ni*m_nj*m_nk];
+    else
+       m_data = NULL;
+diff --git a/src/Sarray.h b/src/Sarray.h
+index 08cfa9f..1a8c73c 100644
+--- a/src/Sarray.h
++++ b/src/Sarray.h
+@@ -40,7 +40,7 @@
+ #include <string>
+ #include <unistd.h>
+ #include "sw4.h"
+-
++#include "smpi.h"
+ using std::string;
+ 
+ class EWCuda;
+@@ -62,12 +62,14 @@ public:
+    Sarray( const Sarray& u );
+    Sarray( Sarray& u, int nc=-1 );
+    Sarray();
+-   ~Sarray() {if( m_data != 0 ) delete[] m_data;}
++   ~Sarray() {if(m_shared=1 &&m_data != 0)
++                SMPI_SHARED_FREE(m_data);
++              else if( m_data != 0 ) delete[] m_data;}
+ //   void define( CartesianProcessGrid* cartcomm, int nc );
+    void define( int iend, int jend, int kend );
+    void define( int nc, int iend, int jend, int kend );
+    void define( int nc, int ibeg, int iend, int jbeg, int jend, int kbeg,
+-		int kend );
++		int kend, int shared=0 );
+    void define( int ibeg, int iend, int jbeg, int jend, int kbeg,
+ 		int kend );
+    void define( const Sarray& u );
+@@ -179,6 +181,7 @@ public:
+ private:
+    float_sw4* m_data;
+    float_sw4* dev_data;
++   int m_shared;
+    inline int min(int i1,int i2){if( i1<i2 ) return i1;else return i2;}
+    inline int max(int i1,int i2){if( i1>i2 ) return i1;else return i2;}
+ //   void init_mpi_datatype( CartesianProcessGrid* cartcomm );
