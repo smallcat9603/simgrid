@@ -2,9 +2,9 @@
 # coding: utf-8
 #=======================================================================
 #
-#	Create a graph with (possible) largest bisection bandwidth
+#	Create a graph with (possible) smallest average shortest path length (aspl)
 #	by smallcat
-#	2021-10-14
+#	2021-11-14
 #
 #=======================================================================
 
@@ -26,53 +26,54 @@ def main(args):
 	low_diam, low_aspl = lower_bound_of_diam_aspl(nnodes, degree)
 	g = nx.random_regular_graph(degree, nnodes, 0)
 	
-	basename = "n{}d{}r.bisec".format(nnodes, degree)
+	basename = "n{}d{}r.aspl".format(nnodes, degree)
 	edgefile = basename + ".edges"
 	dir = "output/"
 	if not os.path.exists(dir):
 		os.makedirs(dir)
 		
-	# get initial bisection bandwidth
-	bisec = calc_bisec(g, dir+edgefile)		
-	print("nnodes\tdegree\tdiam\taspl\tdiam_diff\taspl_diff\taspl_diff_rel\tbisec\titeration")
-	output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, LOOP)
+	# get initial aspl
+	diam, aspl = calc_aspl(g)
+	print("nnodes\tdegree\tdiam\taspl\tdiam_diff\taspl_diff\taspl_diff_rel\titeration")
+	output(basename, g, nnodes, degree, diam, aspl, low_diam, low_aspl, LOOP)
 
 	while(LOOP > 0):
 		g_temp = g.copy()		
 		# 2-opt (A-B C-D --> A-D B-C)
 		nx.connected_double_edge_swap(g)
-		bisec_update = calc_bisec(g, dir+edgefile)
-		if bisec_update < bisec: # restore
+		diam_update, aspl_update = calc_aspl(g)
+		if aspl_update > aspl: # restore
 			g = g_temp.copy()
 			LOOP = LOOP - 1
-		elif bisec_update == bisec: # accept but no update
+		elif aspl_update == aspl: # accept but no update
 			LOOP = LOOP - 1
 		else:
-			bisec = bisec_update # update
+			diam = diam_update
+			aspl = aspl_update # update
 			LOOP = args.i
+			# print(aspl)
 		print(LOOP, end=" ", flush=True)
 		# print(".", end="", flush=True) # prevent freezing
 	print()
-	output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, LOOP)
+	output(basename, g, nnodes, degree, diam, aspl, low_diam, low_aspl, LOOP)
 
 	return
 
-def calc_bisec(g, edgefile):
-	save_edges(g, edgefile)
-	# ikki tool (ruby)
-	cmd = "./bisec.rb " + edgefile 
-	rr = os.popen(cmd).read()
-	return int(rr.split("\t")[1])
-
-def output(basename, g, nnodes, degree, low_diam, low_aspl, bisec, iteration):
+def calc_aspl(g):
+	diam = 0
+	aspl = 0
 	if nx.is_connected(g):
 		hops = nx.shortest_path_length(g, weight=None)
 		diam, aspl = max_avg_for_matrix(hops)
 	else:
-		diam, aspl = float("inf"), float("inf")
-	print("{}\t{}\t{}\t{}\t{}\t{}\t{}%\t{}\t{}".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl, bisec, iteration))
+		diam, aspl = float("inf"), float("inf")	
+	return diam, aspl
+
+def output(basename, g, nnodes, degree, diam, aspl, low_diam, low_aspl, iteration):
+	save_edges(g, "output/"+basename+".edges")
+	print("{}\t{}\t{}\t{}\t{}\t{}\t{}%\t{}".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl, iteration))
 	file = open("output/"+basename+".txt", mode='a')
-	file.writelines("{}\t{}\t{}\t{}\t{}\t{}\t{}%\t{}\t{}\n".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl, bisec, iteration))
+	file.writelines("{}\t{}\t{}\t{}\t{}\t{}\t{}%\t{}\n".format(nnodes, degree, diam, aspl, diam - low_diam, aspl - low_aspl, 100 * (aspl - low_aspl) / low_aspl, iteration))
 	file.close()
 
 def save_edges(g, filepath):
