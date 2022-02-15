@@ -64,7 +64,7 @@ ALLGATHER =[
 BCAST =[
   'binomial_tree',
   'flattree',
-  'scatter_LR_allgather',
+  # 'scatter_LR_allgather',
   'scatter_rdb_allgather',
 ]
 
@@ -72,6 +72,7 @@ CT =[
   0, # no compression
   1, # bytewise compression
   5, # bitwise compression
+  7, # bitmask compression
 ]
 
 class TestSimGridTuner(MeasurementInterface):
