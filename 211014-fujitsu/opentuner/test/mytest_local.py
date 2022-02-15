@@ -68,6 +68,12 @@ BCAST =[
   'scatter_rdb_allgather',
 ]
 
+CT =[
+  0, # no compression
+  1, # bytewise compression
+  5, # bitwise compression
+]
+
 class TestSimGridTuner(MeasurementInterface):
 
   def manipulator(self):
@@ -93,6 +99,9 @@ class TestSimGridTuner(MeasurementInterface):
     )
     manipulator.add_parameter(
       EnumParameter('bcast', BCAST)
+    )
+    manipulator.add_parameter(
+      EnumParameter('ct', CT)
     )
     return manipulator
 
@@ -121,6 +130,8 @@ class TestSimGridTuner(MeasurementInterface):
       run_cmd += '../../../simgrid-template/MpiEnv/bench/graph500/graph500/mpi/' + self.args.appname + " 64 8"
     elif self.args.appname == "himeno": # himeno
       run_cmd += '../../../simgrid-template/MpiEnv/bench/himeno/bin/' + self.args.appname
+    elif self.args.appname == "kmeans_simgrid": # k-means (modified for compression)
+      run_cmd += '../../../../data-compression/impl/' + self.args.appname + ' {0}'.format(cfg['ct'])
     else: # NPB
       run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
