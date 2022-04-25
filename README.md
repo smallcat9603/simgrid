@@ -92,8 +92,9 @@ smpirun -np 16 -hostfile ../src/common/cluster_hostfile.txt -platform ../src/com
 ## Example 8: Run OpenTuner
 ```bash
 # download opentuner
+git clone https://github.com/jansel/opentuner
 # replace jansel-opentuner/opentuner/measurement/interface.py
-python mytest.py -a himeno --no-dups --stop-after=600 --database himeno.64.db --results-log-details himeno.64.log
+python3 mytest_local.py -a himeno --no-dups --stop-after=600 --database himeno.64.db --results-log-details himeno.64.log
 ```
 
 ## Install Batsim
