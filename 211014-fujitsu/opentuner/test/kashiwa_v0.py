@@ -11,68 +11,21 @@ from opentuner import EnumParameter
 from opentuner import MeasurementInterface
 from opentuner import Result
 
-# from platforms/
-PLATFORMS = [
-  'mesh-8-8', 'mesh-4-4-4', 'mesh-4-4-2-2',
-  'torus-8-8', 'torus-4-4-4', 'torus-4-4-2-2',
-  'n64d8r', 'n64d8r.bisec', 'n64d8r.aspl', 
-  'n64d8r.re1', 'n64d8r.bisec.re1', 'n64d8r.aspl.re1',
-  'n64d8r.re4', 'n64d8r.bisec.re4', 'n64d8r.aspl.re4',  
-  'n64d6r', 'n64d6r.bisec', 'n64d6r.aspl',
-  'n64d6r.re1', 'n64d6r.bisec.re1', 'n64d6r.aspl.re1',
-  'n64d6r.re4', 'n64d6r.bisec.re4', 'n64d6r.aspl.re4',  
-  'n64d4r', 'n64d4r.bisec', 'n64d4r.aspl',
-  'n64d4r.re1', 'n64d4r.bisec.re1', 'n64d4r.aspl.re1',
-  'n64d4r.re4', 'n64d4r.bisec.re4', 'n64d4r.aspl.re4',    
-  ]
+# CT =[
+#   0, # no compression
+#   1, # bytewise compression
+#   5, # bitwise compression
+#   7, # bitmask compression
+# ]
 
-MPI = [
-  'ompi',
-  'mpich',
-  'mvapich2',
+NW = [
+  'btl openib,self', # Infiniband 100G
+  'btl_tcp_if_include eth0', # Ethernet 10G
 ]
 
-ALLTOALL = [
-  'bruck',
-  '2dmesh',
-  '3dmesh',
-  'rdb',
-  'pair',
-  'ring',
-  'basic_linear',
-]
-
-ALLREDUCE = [
-  'rdb',
-  'lr',
-  'rab1',
-  'rab2',
-  # 'rab_rsag',
-  'rab',
-]
-
-ALLGATHER =[
-  '2dmesh',
-  '3dmesh',
-  'bruck',
-  'pair',
-  'rdb',
-  'ring',
-  'spreading_simple',
-]
-
-BCAST =[
-  'binomial_tree',
-  'flattree',
-  # 'scatter_LR_allgather',
-  'scatter_rdb_allgather',
-]
-
-CT =[
-  0, # no compression
-  1, # bytewise compression
-  5, # bitwise compression
-  7, # bitmask compression
+MAP_BY = [
+  'node',
+  'slot',
 ]
 
 class TestSimGridTuner(MeasurementInterface):
@@ -84,25 +37,10 @@ class TestSimGridTuner(MeasurementInterface):
     """
     manipulator = ConfigurationManipulator()
     manipulator.add_parameter(
-      EnumParameter('platform', PLATFORMS)
+      EnumParameter('nw', NW)
     )
     manipulator.add_parameter(
-      EnumParameter('mpi', MPI)
-    )
-    manipulator.add_parameter(
-      EnumParameter('alltoall', ALLTOALL)
-    )
-    manipulator.add_parameter(
-      EnumParameter('allreduce', ALLREDUCE)
-    )
-    manipulator.add_parameter(
-      EnumParameter('allgather', ALLGATHER)
-    )
-    manipulator.add_parameter(
-      EnumParameter('bcast', BCAST)
-    )
-    manipulator.add_parameter(
-      EnumParameter('ct', CT)
+      EnumParameter('map_by', MAP_BY)
     )
     return manipulator
 
@@ -113,28 +51,24 @@ class TestSimGridTuner(MeasurementInterface):
     """
     cfg = desired_result.configuration.data
 
-    platform_file_prefix = 'platforms/{0}'.format(cfg['platform'])
+    mpi_bench_dir = '/home/huyao/mpi/bench/'
 
-    run_cmd = '/opt/simgrid3.26/bin/smpirun '
-    run_cmd += '-np 64 '
-    run_cmd += '-platform ' + platform_file_prefix + '.xml '
-    run_cmd += '-hostfile ' + platform_file_prefix + '.txt '
-    # run_cmd += '--cfg=smpi/privatize_global_variables:yes '
-    run_cmd += '--cfg=smpi/coll-selector:' + '{0} '.format(cfg['mpi']) #coll_selector for simgrid 3.12, coll-selector for simgrid 3.2x
-    run_cmd += '--cfg=smpi/alltoall:' + '{0} '.format(cfg['alltoall'])
-    run_cmd += '--cfg=smpi/allreduce:' + '{0} '.format(cfg['allreduce'])
-    run_cmd += '--cfg=smpi/allgather:' + '{0} '.format(cfg['allgather'])
-    run_cmd += '--cfg=smpi/bcast:' + '{0} '.format(cfg['bcast'])
-    if self.args.appname == "gemm": # MM
-      run_cmd += '../../../simgrid-template-smpi/' + self.args.appname
-    elif self.args.appname == "graph500_mpi_simple": # graph500
-      run_cmd += '../../../simgrid-template/MpiEnv/bench/graph500/graph500/mpi/' + self.args.appname + " 64 8"
+    run_cmd = '/home/proj/atnw/local/bin/mpirun '
+    run_cmd += '-np 8 -H calc09,calc10 '
+    # run_cmd += '-hostfile '
+    run_cmd += '-mca btl_openib_allow_ib true '
+    run_cmd += '-mca ' + '{0} '.format(cfg['nw'])
+    run_cmd += '--map-by ' + '{0} '.format(cfg['map_by'])
+    if self.args.appname == "mm": # MM
+      run_cmd += mpi_bench_dir + 'mm/mm'
+    elif self.args.appname == "graph500": # graph500
+      run_cmd += mpi_bench_dir + 'graph500/mpi/graph500_mpi_simple 16'
     elif self.args.appname == "himeno": # himeno
-      run_cmd += '../../../simgrid-template/MpiEnv/bench/himeno/bin/' + self.args.appname
-    elif self.args.appname == "kmeans_simgrid": # k-means (modified for compression)
-      run_cmd += '../../../../data-compression/impl/' + self.args.appname + ' {0}'.format(cfg['ct'])
-    else: # NPB
-      run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
+      run_cmd += mpi_bench_dir + 'himeno/bmt'
+    elif self.args.appname == "kmeans": # k-means (modified for compression)
+      run_cmd += mpi_bench_dir + 'kmeans/kmeans'
+    # else: # NPB
+    #   run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
     print(run_cmd)
     
@@ -142,7 +76,7 @@ class TestSimGridTuner(MeasurementInterface):
     assert run_result['returncode'] == 0
     # assert 'SUCCESSFUL' in run_result['stdout']
 
-    return Result(time=run_result['stime']) # simulated time for simgrid (added new objective in interface.py)
+    return Result(time=run_result['time']) 
  
   def save_final_config(self, configuration):
     """called at the end of tuning"""
@@ -150,7 +84,6 @@ class TestSimGridTuner(MeasurementInterface):
     print("Optimal result to " + file_name + ":", configuration.data)
     self.manipulator().save_to_file(configuration.data,
                                     file_name)
-
 
 if __name__ == '__main__':
   argparser = opentuner.default_argparser()
