@@ -18,6 +18,11 @@ from opentuner import Result
 #   7, # bitmask compression
 # ]
 
+HOSTS = ['calc09', 'calc10', 'calc11', 'calc12', 'calc13', 'calc14', 'calc15', 'calc16']
+num_hosts = len(HOSTS)
+num_procs = 16
+HOST_SLOTS = []
+
 NW = [
   'btl openib,self', # Infiniband 100G
   'btl_tcp_if_include eth0', # Ethernet 10G
@@ -28,6 +33,17 @@ MAP_BY = [
   'slot',
 ]
 
+# m = number of processes (slots), n = number of nodes, p = [node:processes]
+def gen(m, n, p=[]):
+    if n==0:
+        if m==0:
+            yield p
+        else:
+            return
+    else:
+        for i in range(m+1):
+            yield from gen(m-i, n-1, p+[i])
+
 class TestSimGridTuner(MeasurementInterface):
 
   def manipulator(self):
@@ -36,6 +52,17 @@ class TestSimGridTuner(MeasurementInterface):
     ConfigurationManipulator
     """
     manipulator = ConfigurationManipulator()
+    # get HOST_SLOTS
+    for p in gen(num_procs,num_hosts):
+      slots = [ str(i) for i in p]
+      host_slots = zip(HOSTS, slots)
+      host_slots_new = []
+      for host_slot in host_slots:
+          host_slots_new.append(':'.join(host_slot))
+      HOST_SLOTS.append(','.join(host_slots_new))
+    manipulator.add_parameter(
+      EnumParameter('host_slots', HOST_SLOTS)
+    )
     manipulator.add_parameter(
       EnumParameter('nw', NW)
     )
@@ -54,7 +81,8 @@ class TestSimGridTuner(MeasurementInterface):
     mpi_bench_dir = '/home/huyao/mpi/bench/'
 
     run_cmd = '/home/proj/atnw/local/bin/mpirun '
-    run_cmd += '-np 8 -H calc09,calc10 '
+    run_cmd += '-np ' + str(num_procs) + ' '
+    run_cmd += '-H ' + '{0} '.format(cfg['host_slots'])
     # run_cmd += '-hostfile '
     run_cmd += '-mca btl_openib_allow_ib true '
     run_cmd += '-mca ' + '{0} '.format(cfg['nw'])
