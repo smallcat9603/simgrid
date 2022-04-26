@@ -33,6 +33,7 @@ MAP_BY = [
   'slot',
 ]
 
+# Top-down Recursive
 # m = number of processes (slots), n = number of nodes, p = [node:processes]
 def gen(m, n, p=[]):
     if n==0:
