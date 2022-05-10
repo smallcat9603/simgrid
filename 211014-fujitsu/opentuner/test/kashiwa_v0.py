@@ -54,7 +54,7 @@ class TestSimGridTuner(MeasurementInterface):
     """
     manipulator = ConfigurationManipulator()
     # get HOST_SLOTS
-    for p in gen(num_procs,num_hosts):
+    for p in gen(num_procs, num_hosts):
       slots = [ str(i) for i in p]
       host_slots = zip(HOSTS, slots)
       host_slots_new = []
