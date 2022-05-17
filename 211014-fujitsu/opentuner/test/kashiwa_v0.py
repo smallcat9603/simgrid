@@ -11,26 +11,30 @@ from opentuner import EnumParameter
 from opentuner import MeasurementInterface
 from opentuner import Result
 
-# CT =[
-#   0, # no compression
-#   1, # bytewise compression
-#   5, # bitwise compression
-#   7, # bitmask compression
-# ]
-
+# hosts
 HOSTS = ['calc09', 'calc10', 'calc11', 'calc12', 'calc13', 'calc14', 'calc15', 'calc16']
 num_hosts = len(HOSTS)
 num_procs = 16
 HOST_SLOTS = []
 
+# network
 NW = [
   'btl openib,self', # Infiniband 100G
   'btl_tcp_if_include eth0', # Ethernet 10G
 ]
 
+# mapping 
 MAP_BY = [
   'node',
   'slot',
+]
+
+# compression
+CT =[
+  0, # no compression
+  1, # bytewise compression
+  5, # bitwise compression
+  7, # bitmask compression
 ]
 
 # Top-down Recursive
@@ -70,6 +74,9 @@ class TestSimGridTuner(MeasurementInterface):
     manipulator.add_parameter(
       EnumParameter('map_by', MAP_BY)
     )
+    manipulator.add_parameter(
+      EnumParameter('ct', CT)
+    )
     return manipulator
 
   def run(self, desired_result, input, limit):
@@ -95,7 +102,7 @@ class TestSimGridTuner(MeasurementInterface):
     elif self.args.appname == "himeno": # himeno
       run_cmd += mpi_bench_dir + 'himeno/bmt'
     elif self.args.appname == "kmeans": # k-means (modified for compression)
-      run_cmd += mpi_bench_dir + 'kmeans/kmeans'
+      run_cmd += mpi_bench_dir + 'kmeans/kmeans' #+ ' {0}'.format(cfg['ct'])
     # else: # NPB
     #   run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
