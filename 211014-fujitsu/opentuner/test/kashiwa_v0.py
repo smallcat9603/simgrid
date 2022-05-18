@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
-# ipdps-simgrid-Tuner
+# Kashiwa-AutoTuner
 #
+
 import adddeps  # fix sys.path
 
 import opentuner
@@ -93,7 +94,10 @@ class TestSimGridTuner(MeasurementInterface):
     run_cmd += '-H ' + '{0} '.format(cfg['host_slots'])
     # run_cmd += '-hostfile '
     run_cmd += '-mca btl_openib_allow_ib true '
-    run_cmd += '-mca ' + '{0} '.format(cfg['nw'])
+    if self.args.appname == "kmeans": # not work well at Ethernet NW
+      run_cmd += '-mca btl openib,self '
+    else:
+      run_cmd += '-mca ' + '{0} '.format(cfg['nw'])
     run_cmd += '--map-by ' + '{0} '.format(cfg['map_by'])
     if self.args.appname == "mm": # MM
       run_cmd += mpi_bench_dir + 'mm/mm'
@@ -102,7 +106,7 @@ class TestSimGridTuner(MeasurementInterface):
     elif self.args.appname == "himeno": # himeno
       run_cmd += mpi_bench_dir + 'himeno/bmt'
     elif self.args.appname == "kmeans": # k-means (modified for compression)
-      run_cmd += mpi_bench_dir + 'kmeans/kmeans' #+ ' {0}'.format(cfg['ct'])
+      run_cmd += mpi_bench_dir + 'kmeans/kmeans' + ' {0}'.format(cfg['ct'])
     # else: # NPB
     #   run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
