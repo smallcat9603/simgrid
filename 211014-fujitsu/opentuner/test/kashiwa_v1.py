@@ -12,6 +12,8 @@ from opentuner import EnumParameter
 from opentuner import MeasurementInterface
 from opentuner import Result
 
+import os
+
 # hosts
 HOSTS = ['calc09', 'calc10', 'calc11', 'calc12', 'calc13', 'calc14', 'calc15', 'calc16']
 num_hosts = len(HOSTS)
@@ -55,7 +57,7 @@ SWAP = [1, 2] #1=long/2=mix
 SWAPTHRESHOLD = [64]
 L1 = [0] #0=transposed
 U = [0] #0=transposed
-EQUILIBRATION = 1 #1=yes
+EQUILIBRATION = [1] #1=yes
 MEMALIGN = [4, 8]
 
 # Top-down Recursive
@@ -207,6 +209,7 @@ class TestSimGridTuner(MeasurementInterface):
       with open(mpi_bench_dir+"hpl-2.3/bin/ompi/HPL.dat", "w") as f:
         f.write("".join(hpl_dat)) 
       run_cmd = '/home/proj/atnw/local/bin/mpirun -np 8 -npernode 1 -H calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16 -mca btl_openib_allow_ib true -mca btl openib,self -x OMP_NUM_THREADS=10 -x PATH -x LD_LIBRARY_PATH taskset -c 0-9 ' + mpi_bench_dir + 'hpl-2.3/bin/ompi/xhpl'
+      os.system("source /home/proj/atnw/honda/setenv")
     # else: # NPB
     #   run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
