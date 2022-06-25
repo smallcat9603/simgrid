@@ -256,8 +256,8 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
 
         stime = '0.0' # simgrid
         hpltime = '0.0' # hpl time
-        hpltime1 = '0.0' # hpl time = 1/gflops
-        hpcgtime1 = '0.0' # hpcg time = 1/gflops
+        hplgflops = '0.0' # hpl time = 1/gflops
+        hpcggflops = '0.0' # hpcg time = 1/gflops
         if 'smpirun ' in cmd:
             #add new objective (simulated time for simgrid)
             # output = p.stdout.read().decode()
@@ -268,13 +268,13 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
         elif 'xhpl' in cmd:
             output = p.stdout.read().decode()
             hpltime = output.split('HPL_pdgesv() start time')[0].split()[-2] # -2=time
-            hpltime1 = output.split('HPL_pdgesv() start time')[0].split()[-1] # -1=Gflops
+            hplgflops = output.split('HPL_pdgesv() start time')[0].split()[-1] # -1=Gflops
             print("hpltime: " + hpltime)
-            print("hpltime1: " + hpltime1)
+            print("hplgflops: " + hplgflops)
         elif 'xhpcg' in cmd:
             output = p.stdout.read().decode()
-            hpcgtime1 = output.split()[-1]
-            print("hpcgtime1: " + hpcgtime1)
+            hpcggflops = output.split()[-1]
+            print("hpcggflops: " + hpcggflops)
 
         try:
             stdout_result = the_io_thread_pool.apply_async(p.stdout.read)
@@ -315,8 +315,8 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
                 'stderr': stderr_result.get(),
                 'stime': float(stime),
                 'hpltime': float(hpltime),
-                'hpltime1': float('inf') if float(hpltime1)==0.0 else 1/float(hpltime1),
-                'hpcgtime1': float('inf') if float(hpcgtime1)==0.0 else 1/float(hpcgtime1)}
+                'hpltime1': float('inf') if float(hplgflops)==0.0 else 1/float(hplgflops),
+                'hpcgtime1': float('inf') if float(hpcggflops)==0.0 else 1/float(hpcggflops)}
 
     def prefix_hook(self, session):
         pass

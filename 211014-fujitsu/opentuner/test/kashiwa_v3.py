@@ -92,7 +92,8 @@ class TestSimGridTuner(MeasurementInterface):
       for host_slot in host_slots:
           host_slots_new.append(':'.join(host_slot))
       HOST_SLOTS.append(','.join(host_slots_new))
-    if self.args.appname != "hpcg": # for hpcg, use ppn instead
+    app_name = self.args.appname
+    if app_name != "hpcg": # for hpcg, use ppn instead
       manipulator.add_parameter(
         EnumParameter('host_slots', HOST_SLOTS)
       )
@@ -102,11 +103,11 @@ class TestSimGridTuner(MeasurementInterface):
     manipulator.add_parameter(
       EnumParameter('map_by', MAP_BY)
     )
-    if self.args.appname == "kmeans": # k-means (modified for compression)
+    if app_name == "kmeans": # k-means (modified for compression)
       manipulator.add_parameter(
         EnumParameter('ct', CT)
       )
-    elif self.args.appname == "hpl": # hpl-2.3
+    elif app_name == "hpl": # hpl-2.3
       manipulator.add_parameter(
         EnumParameter('ns', Ns)
       )
@@ -163,7 +164,7 @@ class TestSimGridTuner(MeasurementInterface):
       )
       # set env
       os.system("source /home/proj/atnw/honda/setenv")
-    elif self.args.appname == "hpcg": # intel mkl hpcg
+    elif app_name == "hpcg": # intel mkl hpcg
       # get COMB for hpcg & set env
       ppn = [1, 2, 4, 5]
       for p in ppn:
@@ -187,27 +188,31 @@ class TestSimGridTuner(MeasurementInterface):
 
     mpi_bench_dir = '/home/huyao/mpi/bench/'
 
-    run_cmd = '/home/proj/atnw/local/bin/mpirun '
-    if self.args.appname != "hpcg": # for hpcg
+    app_name = self.args.appname
+
+    run_cmd = ''
+    run_cmd += '/home/proj/atnw/local/bin/mpirun '
+    if app_name != "hpcg":
       run_cmd += '-np ' + str(num_procs) + ' '
       run_cmd += '-H {0} '.format(cfg['host_slots'])
-      run_cmd += '-mca btl_openib_allow_ib true '
-    if self.args.appname == "kmeans": # not work well at Ethernet NW
+    run_cmd += '-mca btl_openib_allow_ib true '
+    if app_name == "kmeans": # not work well at Ethernet NW
       run_cmd += '-mca btl openib,self '
     else:
       run_cmd += '-mca {0} '.format(cfg['nw'])
     run_cmd += '--map-by {0} '.format(cfg['map_by'])
-    if self.args.appname == "mm": # MM
+    if app_name == "mm": # MM
       run_cmd += mpi_bench_dir + 'mm/mm'
-    elif self.args.appname == "graph500": # graph500
+    elif app_name == "graph500": # graph500
       run_cmd += mpi_bench_dir + 'graph500/mpi/graph500_mpi_simple 16'
-    elif self.args.appname == "himeno": # himeno
+    elif app_name == "himeno": # himeno
       run_cmd += mpi_bench_dir + 'himeno/bmt'
-    elif self.args.appname == "kmeans": # k-means (modified for compression)
+    elif app_name == "kmeans": # k-means (modified for compression)
       run_cmd += mpi_bench_dir + 'kmeans/kmeans {0}'.format(cfg['ct'])
-    elif self.args.appname == "hpl": # hpl-2.3
+    elif app_name == "hpl": # hpl-2.3
       # for HPL (update HPL.dat)
-      HPL_dat = mpi_bench_dir+"hpl-2.3/bin/ompi/HPL.dat"
+      # HPL_dat = mpi_bench_dir+"hpl-2.3/bin/ompi/HPL.dat"
+      HPL_dat = "./HPL.dat" # in the same directory of this file (kashiwa_vx.py)
       hpl_dat = []
       with open(HPL_dat, "r") as f:
         hpl_dat = f.readlines()
@@ -234,7 +239,7 @@ class TestSimGridTuner(MeasurementInterface):
       # run_cmd = '/home/proj/atnw/local/bin/mpirun -np 8 -npernode 1 -H calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16 -mca btl_openib_allow_ib true -mca btl openib,self -x OMP_NUM_THREADS=10 -x PATH -x LD_LIBRARY_PATH taskset -c 0-9 ' + mpi_bench_dir + 'hpl-2.3/bin/ompi/xhpl'
       run_cmd += '-x OMP_NUM_THREADS=10 -x PATH -x LD_LIBRARY_PATH taskset -c 0-9 '
       run_cmd += mpi_bench_dir + 'hpl-2.3/bin/ompi/xhpl'
-    elif self.args.appname == "hpcg": # intel mkl hpcg
+    elif app_name == "hpcg": # intel mkl hpcg
       comb = eval('{0}'.format(cfg['comb']))
       nx = comb[0]
       ny = comb[1]
@@ -242,7 +247,8 @@ class TestSimGridTuner(MeasurementInterface):
       ppn = comb[3]
       num_threads = comb[4]
       nprocs = ppn * num_hosts # calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16
-      run_cmd = 'OMP_NUM_THREADS={0} '.format(num_threads) + run_cmd
+      run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/local/mpich-3.4.3/bin/mpirun '.format(num_threads)
+      run_cmd += '--map-by {0} '.format(cfg['map_by'])
       run_cmd += '-np {0} -hosts calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16 -ppn {1} '.format(nprocs, ppn)
       run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_mpich {0} {1} {2} 30'.format(nx, ny, nz)
     # else: # NPB
@@ -254,7 +260,12 @@ class TestSimGridTuner(MeasurementInterface):
     # assert run_result['returncode'] == 0
     # assert 'SUCCESSFUL' in run_result['stdout']
 
-    return Result(time=run_result['time']) 
+    if app_name == "hpl":
+      return Result(time=run_result['hpltime1']) 
+    elif app_name == "hpcg":
+      return Result(time=run_result['hpcgtime1']) 
+    else:
+      return Result(time=run_result['time']) 
  
   def save_final_config(self, configuration):
     """called at the end of tuning"""
