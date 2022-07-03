@@ -265,7 +265,7 @@ class TestSimGridTuner(MeasurementInterface):
         # set env
         # os.system("source /home/proj/atnw/honda/setenv --force")        
         os.system("source /home/huyao/mpi/bench/hpl-2.3/setenv --force")
-        run_cmd = 'mpiexec.hydra ' 
+        run_cmd = '/home/proj/atnw/honda/intel/oneapi/mpi/2021.5.1/bin/mpiexec.hydra ' 
         run_cmd += '-np ' + str(num_procs) + ' '
         run_cmd += '-hosts {0} '.format(cfg['host_slots'])  
         run_cmd += '-genv I_MPI_DEBUG=10 -genv I_MPI_PIN_DOMAIN=auto -genv OMP_NUM_THREADS=10 taskset -c 0-9 '     
