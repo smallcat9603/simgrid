@@ -184,7 +184,9 @@ class TestSimGridTuner(MeasurementInterface):
       manipulator.add_parameter(
         EnumParameter('comb', COMB)
       )
-      os.system("source /home/proj/atnw/nagasaka/script/env_mpich.sh")
+      manipulator.add_parameter(
+        EnumParameter('mpiv', MPI_V)
+      )
     return manipulator
 
   def run(self, desired_result, input, limit):
@@ -278,10 +280,32 @@ class TestSimGridTuner(MeasurementInterface):
       ppn = comb[3]
       num_threads = comb[4]
       nprocs = ppn * num_hosts # calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16
-      run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/local/mpich-3.4.3/bin/mpirun '.format(num_threads)
-      run_cmd += '--map-by {0} '.format(cfg['map_by'])
-      run_cmd += '-np {0} -hosts calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16 -ppn {1} '.format(nprocs, ppn)
-      run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_mpich {0} {1} {2} 30'.format(nx, ny, nz)
+      mpiv = '{0}'.format(cfg['mpiv'])
+      rtime = 30
+      if mpiv == 'openmpi':
+        # os.system("source /home/proj/atnw/nagasaka/script/env_openmpi.sh --force")
+        os.system("source /home/huyao/mpi/bench/hpcg/env_openmpi.sh --force")
+        run_cmd = '/home/proj/atnw/local/bin/mpirun '
+        run_cmd += '-np {0} -H calc09:{1},calc10:{1},calc11:{1},calc12:{1},calc13:{1},calc14:{1},calc15:{1},calc16:{1} '.format(nprocs, ppn)
+        run_cmd += '--map-by {0} '.format(cfg['map_by'])
+        run_cmd += '-mca btl_openib_allow_ib true '
+        run_cmd += '-mca btl openib,self '
+        run_cmd += '-x OMP_NUM_THREADS={0} -x PATH -x LD_LIBRARY_PATH taskset -c 0-9 '.format(num_threads)
+        run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_ompi {0} {1} {2} {3}'.format(nx, ny, nz, rtime)
+      elif mpiv == 'mpich':
+        # os.system("source /home/proj/atnw/nagasaka/script/env_mpich.sh --force")
+        os.system("source /home/huyao/mpi/bench/hpcg/env_mpich.sh --force")
+        run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/local/mpich-3.4.3/bin/mpirun '.format(num_threads)
+        run_cmd += '-np {0} -hosts calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16 -ppn {1} '.format(nprocs, ppn)
+        run_cmd += '--map-by {0} '.format(cfg['map_by'])
+        run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_mpich {0} {1} {2} {3}'.format(nx, ny, nz, rtime)
+      elif mpiv == 'intel':
+        # os.system("source /home/proj/atnw/nagasaka/script/env_intel.sh --force")
+        os.system("source /home/huyao/mpi/bench/hpcg/env_intel.sh --force")
+        run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/honda/intel/oneapi/mpi/2021.5.1/bin/mpirun '.format(num_threads)
+        run_cmd += '-np {0} -hosts calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16 -ppn {1} '.format(nprocs, ppn)
+        run_cmd += '--map-by {0} '.format(cfg['map_by'])
+        run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_skx {0} {1} {2} {3}'.format(nx, ny, nz, rtime)
     # else: # NPB
     #   run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
