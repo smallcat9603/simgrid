@@ -13,6 +13,7 @@ from opentuner import MeasurementInterface
 from opentuner import Result
 
 import os
+import time
 
 # hosts
 HOSTS = ['calc09', 'calc10', 'calc11', 'calc12', 'calc13', 'calc14', 'calc15', 'calc16']
@@ -47,7 +48,7 @@ MPI_V = [
 ]
 
 # for HPL
-Ns = [100000]
+Ns = [10000]
 NBs = [256, 288, 320, 352, 384]
 MAPPING = [0] #0=Row-major
 Ps = [2]
@@ -252,12 +253,14 @@ class TestSimGridTuner(MeasurementInterface):
         # set env
         # os.system("source /home/proj/atnw/honda/setenv --force")
         os.system("source /home/huyao/mpi/bench/hpl-2.3/setenv --force")
+        time.sleep(1)
         run_cmd += '-x OMP_NUM_THREADS=10 -x PATH -x LD_LIBRARY_PATH taskset -c 0-9 '
         run_cmd += mpi_bench_dir + 'hpl-2.3/bin/ompi/xhpl'
       elif mpiv == 'mpich':
          # set env
         # os.system("source /home/proj/atnw/honda/setenv_mpich --force")
         os.system("source /home/huyao/mpi/bench/hpl-2.3/setenv_mpich --force")     
+        time.sleep(1)
         run_cmd = '/home/proj/atnw/local/mpich-3.4.3/bin/mpirun '  
         run_cmd += '-np ' + str(num_procs) + ' '
         run_cmd += '-hosts {0} '.format(cfg['host_slots'])  
@@ -267,6 +270,7 @@ class TestSimGridTuner(MeasurementInterface):
         # set env
         # os.system("source /home/proj/atnw/honda/setenv --force")        
         os.system("source /home/huyao/mpi/bench/hpl-2.3/setenv --force")
+        time.sleep(1)
         run_cmd = '/home/proj/atnw/honda/intel/oneapi/mpi/2021.5.1/bin/mpiexec.hydra ' 
         run_cmd += '-np ' + str(num_procs) + ' '
         run_cmd += '-hosts {0} '.format(cfg['host_slots'])  
@@ -290,6 +294,7 @@ class TestSimGridTuner(MeasurementInterface):
       if mpiv == 'openmpi':
         # os.system("source /home/proj/atnw/nagasaka/script/env_openmpi.sh --force")
         os.system("source /home/huyao/mpi/bench/hpcg/env_openmpi.sh --force")
+        time.sleep(1)
         run_cmd = '/home/proj/atnw/local/bin/mpirun '
         run_cmd += '-np {0} -H {1} '.format(nprocs, host_slots)
         run_cmd += '--map-by {0} '.format(cfg['map_by'])
@@ -300,6 +305,7 @@ class TestSimGridTuner(MeasurementInterface):
       elif mpiv == 'mpich':
         # os.system("source /home/proj/atnw/nagasaka/script/env_mpich.sh --force")
         os.system("source /home/huyao/mpi/bench/hpcg/env_mpich.sh --force")
+        time.sleep(1)
         run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/local/mpich-3.4.3/bin/mpirun '.format(num_threads)
         run_cmd += '-np {0} -hosts {1} -ppn {2} '.format(nprocs, hosts, ppn)
         run_cmd += '--map-by {0} '.format(cfg['map_by'])
@@ -307,6 +313,7 @@ class TestSimGridTuner(MeasurementInterface):
       elif mpiv == 'intel':
         # os.system("source /home/proj/atnw/nagasaka/script/env_intel.sh --force")
         os.system("source /home/huyao/mpi/bench/hpcg/env_intel.sh --force")
+        time.sleep(1)
         run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/honda/intel/oneapi/mpi/2021.5.1/bin/mpirun '.format(num_threads)
         run_cmd += '-np {0} -hosts {1} -ppn {2} '.format(nprocs, hosts, ppn)
         run_cmd += '--map-by {0} '.format(cfg['map_by'])
