@@ -322,16 +322,18 @@ class TestSimGridTuner(MeasurementInterface):
     #   run_cmd += '../../../simgrid-template-smpi/NPB3.3-MPI/bin/' + self.args.appname
 
     print(run_cmd)
-    
-    run_result = self.call_program(run_cmd)
+      
     # assert run_result['returncode'] == 0
     # assert 'SUCCESSFUL' in run_result['stdout']
 
     if app_name == "hpl":
+      run_result = self.call_program(run_cmd, limit=None)
       return Result(time=run_result['hpltime1']) 
     elif app_name == "hpcg":
+      run_result = self.call_program(run_cmd, limit=1800)
       return Result(time=run_result['hpcgtime1']) 
     else:
+      run_result = self.call_program(run_cmd, limit=None)
       return Result(time=run_result['time']) 
  
   def save_final_config(self, configuration):
