@@ -277,6 +277,8 @@ class TestSimGridTuner(MeasurementInterface):
         run_cmd += '-genv I_MPI_DEBUG=10 -genv I_MPI_PIN_DOMAIN=auto -genv OMP_NUM_THREADS=10 taskset -c 0-9 '     
         run_cmd += mpi_bench_dir + 'hpl-2.3/bin/impi/xhpl'     
     elif app_name == "hpcg": # intel mkl hpcg
+      HOSTS = ['calc09', 'calc10', 'calc11', 'calc12']
+      num_hosts = len(HOSTS)
       comb = eval('{0}'.format(cfg['comb']))
       nx = comb[0]
       ny = comb[1]
