@@ -178,3 +178,13 @@ $ python3 topo-aspl.py <nnodes> <degree> [-i <iteration>] #default iteration is 
 ```bash
 $ python3 topo-bisec.py <nnodes> <degree> [-i <iteration>] #default iteration is 1,000
 ```
+
+### generate a file with random (equal) int numbers
+```bash
+$ python3 gen_nums_int.py <num> [0] #equal numbers if 0 is specified 
+```
+
+### generate a file with random (equal) float numbers
+```bash
+$ python3 gen_nums_float.py <num> [0] #equal numbers if 0 is specified 
+```
