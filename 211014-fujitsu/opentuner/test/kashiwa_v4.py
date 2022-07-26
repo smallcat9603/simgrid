@@ -332,7 +332,7 @@ class TestSimGridTuner(MeasurementInterface):
       run_result = self.call_program(run_cmd, limit=None)
       return Result(time=run_result['hpltime1']) 
     elif app_name == "hpcg":
-      run_result = self.call_program(run_cmd, limit=1800)
+      run_result = self.call_program(run_cmd, limit=None)
       return Result(time=run_result['hpcgtime1']) 
     else:
       run_result = self.call_program(run_cmd, limit=None)
