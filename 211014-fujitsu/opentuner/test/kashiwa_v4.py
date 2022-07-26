@@ -48,7 +48,7 @@ MPI_V = [
 ]
 
 # for HPL
-Ns = [10000]
+Ns = [100000]
 NBs = [256, 288, 320, 352, 384]
 MAPPING = [0] #0=Row-major
 Ps = [2]
