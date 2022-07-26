@@ -266,11 +266,40 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
             stderr_result = the_io_thread_pool.apply_async(p.stderr.read)
             while p.returncode is None:
                 if limit is None:
-                    goodwait(p) # wait until p is finished                 
+                    goodwait(p) # wait until p is finished   
+                    #v4
+                    if 'smpirun ' in cmd:
+                        #add new objective (simulated time for simgrid)
+                        # output = p.stdout.read().decode()
+                        # stime = output.split("Time in seconds =")[-1].split("Total processes =")[0].strip().replace('\n', '').replace('\r', '')
+                        # output = p.stderr.read().decode()
+                        output = stderr_result.get().decode().strip()
+                        if " [smpi_kernel/INFO] Simulated time: " in output:
+                            stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
+                        print("stime: " + stime)
+                    elif 'xhpl' in cmd:
+                        output = stdout_result.get().decode().strip()
+                        if 'HPL_pdgesv() start time' in output:
+                            hpltime = output.split('HPL_pdgesv() start time')[0].split()[-2] # -2=time
+                            hplgflops = output.split('HPL_pdgesv() start time')[0].split()[-1] # -1=Gflops
+                        print("hpltime: " + hpltime)
+                        print("hplgflops: " + hplgflops)
+                    elif 'xhpcg' in cmd:
+                        output = stdout_result.get().decode().strip()
+                        if "HPCG result is VALID with a GFLOP/s rating of " in output:   
+                            hpcggflops = output.split()[-1]
+                        print("hpcggflops: " + hpcggflops)                                   
                 elif limit and time.time() > t0 + limit:
                     killed = True
                     goodkillpg(p.pid)
                     goodwait(p) # wait until p is completely killed
+                    #v4
+                    if 'xhpl' in cmd:
+                        output = stdout_result.get().decode().strip()
+                        if 'Column=' in output:
+                            hplgflops = output.split('Gflops=')[-1].split()[0]
+                        print("hpltime: " + hpltime)
+                        print("hplgflops: " + hplgflops)
                 else:
                     # still waiting...
                     sleep_for = limit - (time.time() - t0)
@@ -282,30 +311,6 @@ class MeasurementInterface(with_metaclass(abc.ABCMeta, object)):
                         # TODO(jansel): replace this with a portable waitpid
                         time.sleep(0.001) 
                 p.poll() # update p.returncode
-                #v4
-                if 'smpirun ' in cmd:
-                    #add new objective (simulated time for simgrid)
-                    # output = p.stdout.read().decode()
-                    # stime = output.split("Time in seconds =")[-1].split("Total processes =")[0].strip().replace('\n', '').replace('\r', '')
-                    # output = p.stderr.read().decode()
-                    output = stderr_result.get().decode().strip()
-                    if " [smpi_kernel/INFO] Simulated time: " in output:
-                        stime = output.split(" [smpi_kernel/INFO] Simulated time: ")[-1].split(" ")[0]
-                    print("stime: " + stime)
-                elif 'xhpl' in cmd:
-                    output = stdout_result.get().decode().strip()
-                    if 'HPL_pdgesv() start time' in output:
-                        hpltime = output.split('HPL_pdgesv() start time')[0].split()[-2] # -2=time
-                        hplgflops = output.split('HPL_pdgesv() start time')[0].split()[-1] # -1=Gflops
-                    elif 'Column=' in output:
-                        hplgflops = output.split('Gflops=')[-1].split()[0]
-                    print("hpltime: " + hpltime)
-                    print("hplgflops: " + hplgflops)
-                elif 'xhpcg' in cmd:
-                    output = stdout_result.get().decode().strip()
-                    if "HPCG result is VALID with a GFLOP/s rating of " in output:   
-                        hpcggflops = output.split()[-1]
-                    print("hpcggflops: " + hpcggflops) 
         except:
             if p.returncode is None:
                 goodkillpg(p.pid)
