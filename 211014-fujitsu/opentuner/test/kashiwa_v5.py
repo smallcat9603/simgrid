@@ -175,13 +175,13 @@ class TestSimGridTuner(MeasurementInterface):
       )
     elif app_name == "hpcg": # intel mkl hpcg
       # get COMB for hpcg & set env
-      ppn = [1, 2, 4, 5]
+      ppn = [1, 2, 5, 10]
       for p in ppn:
-          for nx in range(192, 1152, 32):
-              for ny in range(192, 1152, 32):
-                  for nz in range(192, 1152, 32):
-                      if (nx * ny * nz * p)//(192 * 192 * 192 * 1) <= 5:
-                          COMB.append((nx, ny, nz, p, 20//p))
+          for nx in range(128, 512, 32):
+              for ny in range(128, 512, 32):
+                  for nz in range(128, 512, 32):
+                      if (nx * ny * nz * p)//(128 * 128 * 128 * 1) <= 4:
+                          COMB.append((nx, ny, nz, p, 10//p))
       manipulator.add_parameter(
         EnumParameter('comb', COMB)
       )
@@ -277,8 +277,8 @@ class TestSimGridTuner(MeasurementInterface):
         run_cmd += '-genv I_MPI_DEBUG=10 -genv I_MPI_PIN_DOMAIN=auto -genv OMP_NUM_THREADS=10 taskset -c 0-9 '     
         run_cmd += mpi_bench_dir + 'hpl-2.3/bin/impi/xhpl'     
     elif app_name == "hpcg": # intel mkl hpcg
-      HOSTS = ['calc09', 'calc10', 'calc11', 'calc12']
-      num_hosts = len(HOSTS)
+      # HOSTS = ['calc09', 'calc10', 'calc11', 'calc12']
+      # num_hosts = len(HOSTS)
       comb = eval('{0}'.format(cfg['comb']))
       nx = comb[0]
       ny = comb[1]
@@ -287,7 +287,7 @@ class TestSimGridTuner(MeasurementInterface):
       num_threads = comb[4]
       nprocs = ppn * num_hosts # calc09,calc10,calc11,calc12,calc13,calc14,calc15,calc16
       mpiv = '{0}'.format(cfg['mpiv'])
-      rtime = 30
+      rtime = 60
       host_slots = ""
       for host in HOSTS:
           host_slots += host + ":" + str(ppn) + ","
@@ -295,8 +295,8 @@ class TestSimGridTuner(MeasurementInterface):
       hosts = ",".join(HOSTS)
       if mpiv == 'openmpi':
         # os.system("source /home/proj/atnw/nagasaka/script/env_openmpi.sh --force")
-        os.system("source /home/huyao/mpi/bench/hpcg/env_openmpi.sh --force")
-        time.sleep(1)
+        # os.system("source /home/huyao/mpi/bench/hpcg/env_openmpi.sh --force")
+        # time.sleep(1)
         run_cmd = '/home/proj/atnw/local/bin/mpirun '
         run_cmd += '-np {0} -H {1} '.format(nprocs, host_slots)
         run_cmd += '--map-by {0} '.format(cfg['map_by'])
@@ -306,16 +306,16 @@ class TestSimGridTuner(MeasurementInterface):
         run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_ompi {0} {1} {2} {3}'.format(nx, ny, nz, rtime)
       elif mpiv == 'mpich':
         # os.system("source /home/proj/atnw/nagasaka/script/env_mpich.sh --force")
-        os.system("source /home/huyao/mpi/bench/hpcg/env_mpich.sh --force")
-        time.sleep(1)
+        # os.system("source /home/huyao/mpi/bench/hpcg/env_mpich.sh --force")
+        # time.sleep(1)
         run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/local/mpich-3.4.3/bin/mpirun '.format(num_threads)
         run_cmd += '-np {0} -hosts {1} -ppn {2} '.format(nprocs, hosts, ppn)
         run_cmd += '--map-by {0} '.format(cfg['map_by'])
         run_cmd += mpi_bench_dir + 'hpcg/bin/xhpcg_mpich {0} {1} {2} {3}'.format(nx, ny, nz, rtime)
       elif mpiv == 'intel':
         # os.system("source /home/proj/atnw/nagasaka/script/env_intel.sh --force")
-        os.system("source /home/huyao/mpi/bench/hpcg/env_intel.sh --force")
-        time.sleep(1)
+        # os.system("source /home/huyao/mpi/bench/hpcg/env_intel.sh --force")
+        # time.sleep(1)
         run_cmd = 'OMP_NUM_THREADS={0} /home/proj/atnw/honda/intel/oneapi/mpi/2021.5.1/bin/mpirun '.format(num_threads)
         run_cmd += '-np {0} -hosts {1} -ppn {2} '.format(nprocs, hosts, ppn)
         run_cmd += '--map-by {0} '.format(cfg['map_by'])
@@ -329,7 +329,7 @@ class TestSimGridTuner(MeasurementInterface):
     # assert 'SUCCESSFUL' in run_result['stdout']
 
     if app_name == "hpl":
-      run_result = self.call_program(run_cmd, limit=None)
+      run_result = self.call_program(run_cmd, limit=600)
       return Result(time=run_result['hpltime1']) 
     elif app_name == "hpcg":
       run_result = self.call_program(run_cmd, limit=None)
