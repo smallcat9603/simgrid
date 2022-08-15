@@ -86,7 +86,7 @@ cp ../src/HPL/HPL.dat bin/SMPI
 make startup arch=SMPI
 make arch=SMPI
 cd bin/SMPI
-smpirun -np 16 -hostfile ../src/common/cluster_hostfile.txt -platform ../src/common/cluster_crossbar.xml ./xhpl
+smpirun -np 16 -hostfile ../../../src/common/cluster_hostfile.txt -platform ../../../src/common/cluster_crossbar.xml ./xhpl
 ```
 
 ## Example 8: Run OpenTuner
