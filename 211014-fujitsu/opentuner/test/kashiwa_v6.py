@@ -292,10 +292,10 @@ class TestSimGridTuner(MeasurementInterface):
         run_cmd += '-np ' + str(num_procs) + ' '
         run_cmd += '-hosts {0} '.format(cfg['host_slots'])  
         run_cmd += '-genv I_MPI_DEBUG=10 -genv I_MPI_PIN_DOMAIN=auto -genv OMP_NUM_THREADS=10 taskset -c 0-9 '  
-        # if bct == 'nc':   
-        run_cmd += mpi_bench_dir + 'hpl-2.3/bin/impi/xhpl'    
-        # else:
-        #   run_cmd += mpi_bench_dir + 'hpl-2.3-comp/bin/impi/xhpl_' + bct
+        if bct == 'nc':   
+          run_cmd += mpi_bench_dir + 'hpl-2.3/bin/impi/xhpl'    
+        else:
+          run_cmd += mpi_bench_dir + 'hpl-2.3-comp/bin/impi/xhpl_' + bct
     elif app_name == "hpcg": # intel mkl hpcg
       # HOSTS = ['calc09', 'calc10', 'calc11', 'calc12']
       # num_hosts = len(HOSTS)
