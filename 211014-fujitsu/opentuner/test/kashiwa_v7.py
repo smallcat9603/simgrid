@@ -3,8 +3,6 @@
 # Kashiwa-AutoTuner
 #
 
-import adddeps  # fix sys.path
-
 import opentuner
 from opentuner import ConfigurationManipulator
 from opentuner import IntegerParameter
